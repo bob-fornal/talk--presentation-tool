@@ -1,0 +1,22 @@
+{
+  "ORDER": [
+    "in-the-test",
+    "dry-principle",
+    "non-deterministic",
+    "side-effects",
+    "too-much",
+    "bad-test-double",
+    "false-positives",
+    "private"
+  ],
+  
+  "in-the-test": {
+    "title": "Keep The Reader In The Test",
+    "folder": "test-001",
+    "files": [
+      "manager.js",
+      "manager.NOT.spec.js",
+      "manager.spec.js"
+    ]
+  }
+}
