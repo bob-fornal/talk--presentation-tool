@@ -1,0 +1,7 @@
+<h1>Talks</h1>
+<div class="talks">
+  <ng-container *ngFor="let talk of talks; let i = index;">
+    <span>{{ i + 1 }}.</span>&nbsp;
+    <a [routerLink]="'/talk/' + talk.folder">{{ talk.title }}</a>
+  </ng-container>
+</div>

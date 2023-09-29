@@ -1,5 +1,6 @@
 {
   "ORDER": [
+    "cover-slide",
     "in-the-test",
     "dry-principle",
     "non-deterministic",
@@ -9,14 +10,45 @@
     "false-positives",
     "private"
   ],
+
+  "STYLE": [
+    "background-color: darkgreen;",
+    "color: palegreen;",
+    "font-family: Arial, sans-serif;"
+  ],
   
+  "cover-slide": {
+    "title": "What to Avoid When Writing Unit Tests",
+    "type": "cover-slide",
+    "author": "Bob Fornal"
+  },
   "in-the-test": {
     "title": "Keep The Reader In The Test",
+    "type": "code-editor",
     "folder": "test-001",
     "files": [
       "manager.js",
       "manager.NOT.spec.js",
       "manager.spec.js"
+    ]
+  },
+  "dry-principle": {
+    "title": "Dry Principle",
+    "type": "code-editor",
+    "files": [
+      "manager.js",
+      "manager.NOT.spec.js",
+      "manager.spec.js"
+    ]
+  },
+  "non-deterministic": {
+    "title": "Non-Deterministic",
+    "type": "code-editor",
+    "files": [
+      "time.NOT.js",
+      "time.NOT.spec.js",
+      "time.js",
+      "time.spec.js"
     ]
   }
 }

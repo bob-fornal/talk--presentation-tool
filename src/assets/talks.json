@@ -1,3 +1,6 @@
 [
-  { "folder": "what-not-to-do--code", "title": "What Not To Do When Writing Unit Tests" }
+  {
+    "folder": "what-not-to-do--code",
+    "title": "What Not To Do When Writing Unit Tests"
+  }
 ]

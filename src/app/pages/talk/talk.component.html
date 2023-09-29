@@ -1,0 +1,14 @@
+<div class="outer-wrapper" [style]="getTalkStyle()">
+  <h1 class="title">{{title}}</h1>
+
+  <ng-container [ngSwitch]="type">
+    <div *ngSwitchCase="'cover-slide'">COVER</div>
+    <div *ngSwitchCase="'code-editor'">CODE</div>
+    <div *ngSwitchDefault="">NONE</div>
+  </ng-container>
+
+  <nav class="navigation">
+    <button class="btn" mat-flat-button (click)="previous()">previous</button>
+    <button class="btn" mat-flat-button (click)="next()">next</button>
+  </nav>
+</div>

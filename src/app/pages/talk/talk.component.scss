@@ -1,0 +1,27 @@
+
+.outer-wrapper {
+  padding: 1rem;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+
+  font-size: 16px;
+
+  .title {
+    font-size: 2.5rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .navigation {
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+  }
+}
+
+.btn {
+  margin-right: 0.5em;
+}
