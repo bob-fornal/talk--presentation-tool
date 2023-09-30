@@ -9,19 +9,32 @@
 
   font-size: 16px;
 
-  .title {
-    font-size: 2.5rem;
-    margin: 0 auto;
-    text-align: center;
-  }
+  // .title {
+  //   font-size: 2.5rem;
+  //   margin: 0 auto;
+  //   text-align: center;
+  // }
 
   .navigation {
     position: fixed;
-    bottom: 1em;
-    right: 1em;
+    bottom: 2vh;
+    right: 2vw;
+  }
+
+  .slide-wrapper {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
   }
 }
 
 .btn {
-  margin-right: 0.5em;
+  color: gray !important;
+  border-radius: 0.5vh;
+  font-size: 1.5vh;
+  height: 4vh;
+  min-width: 1vw;
+  margin-right: 1vw;
+  padding: 0 2.5vw;
 }

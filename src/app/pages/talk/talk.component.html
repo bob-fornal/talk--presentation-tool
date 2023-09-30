@@ -1,10 +1,8 @@
-<div class="outer-wrapper" [style]="getTalkStyle()">
-  <h1 class="title">{{title}}</h1>
-
+<div class="outer-wrapper">
   <ng-container [ngSwitch]="type">
-    <div *ngSwitchCase="'cover-slide'">COVER</div>
-    <div *ngSwitchCase="'code-editor'">CODE</div>
-    <div *ngSwitchDefault="">NONE</div>
+    <div class="slide-wrapper" *ngSwitchCase="'cover-slide'">COVER</div>
+    <div class="slide-wrapper" *ngSwitchCase="'code-editor'">CODE</div>
+    <div class="slide-wrapper" *ngSwitchDefault="">NONE</div>
   </ng-container>
 
   <nav class="navigation">

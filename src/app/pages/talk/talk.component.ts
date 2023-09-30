@@ -2,6 +2,7 @@ import { Component, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Structure, StructureType } from 'src/app/core/interfaces/structure';
 import { CodeService } from 'src/app/core/services/code.service';
+import { StyleService } from 'src/app/core/services/style.service';
 
 @Component({
   selector: 'app-talk',
@@ -17,6 +18,7 @@ export class TalkComponent {
         this.previous();
       }
     }
+
   structure: Structure = { ORDER: [], STYLE: [] };
 
   slideIndex: number = 0;
@@ -26,7 +28,8 @@ export class TalkComponent {
 
   constructor(
     private code: CodeService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private style: StyleService
   ) {
     this.code.structure.subscribe(this.handleStructure.bind(this));
     this.init();
@@ -47,10 +50,14 @@ export class TalkComponent {
   setPage = (index: number, structure: Structure): void => {
     if (structure.ORDER.length === 0) return;
     const key: string = structure.ORDER[index];
+
     const page: StructureType = (this.structure[key] as StructureType);
     this.title = page.title;
     this.type = page.type;
     console.log(page);
+
+    const style = structure.STYLE;
+    this.style.add(style.join('\n'));
   };
 
   next = (): void => {

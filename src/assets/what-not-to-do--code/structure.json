@@ -12,9 +12,13 @@
   ],
 
   "STYLE": [
-    "background-color: darkgreen;",
-    "color: palegreen;",
-    "font-family: Arial, sans-serif;"
+    ".outer-wrapper {",
+    "  background: url(\"/assets/images/grid--green.jpeg\");",
+    "  background-repeat: no-repeat;",
+    "  background-size: cover;",
+    "  color: palegreen;",
+    "  font-family: Arial, sans-serif;",
+    "}"
   ],
   
   "cover-slide": {
