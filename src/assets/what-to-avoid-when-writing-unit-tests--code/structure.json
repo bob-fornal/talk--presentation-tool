@@ -16,7 +16,7 @@
     "  background: url(\"/assets/images/grid--green.jpeg\");",
     "  background-repeat: no-repeat;",
     "  background-size: cover;",
-    "  color: palegreen;",
+    "  color: #69f0ae;",
     "  font-family: Arial, sans-serif;",
     "}"
   ],

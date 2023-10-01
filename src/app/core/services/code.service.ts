@@ -1,14 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, firstValueFrom } from 'rxjs';
-import { Talk } from '../interfaces/talks';
+import { Talks } from '../interfaces/talks';
 import { Structure } from '../interfaces/structure';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CodeService {
-  talks: BehaviorSubject<Array<Talk>> = new BehaviorSubject<Array<Talk>>([]);
+  talks: BehaviorSubject<Talks> = new BehaviorSubject<Talks>({ STYLE: [], TAGS: [], TALKS: []});
   structure: BehaviorSubject<Structure> = new BehaviorSubject<Structure>({ ORDER: [], STYLE: [] });
 
   constructor(private http: HttpClient) {}
