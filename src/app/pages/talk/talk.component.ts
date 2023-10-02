@@ -23,6 +23,7 @@ export class TalkComponent {
 
   slideIndex: number = 0;
 
+  page: StructureType = { title: '', type: '' };
   title: string = '';
   type: string = '';
 
@@ -54,6 +55,8 @@ export class TalkComponent {
     const page: StructureType = (this.structure[key] as StructureType);
     this.title = page.title;
     this.type = page.type;
+    this.page = page;
+    console.log(this.title, this.type, this.page);
 
     const style = structure.STYLE;
     this.style.add(style.join('\n'));

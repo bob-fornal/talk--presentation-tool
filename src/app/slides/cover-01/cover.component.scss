@@ -1,0 +1,32 @@
+
+.cover-wrapper {
+  width: calc(100% - 2em);
+  height: calc(100% - 2em);
+
+  .cover--title {
+    font-size: 2.8rem;
+    font-weight: bold;;
+    position: absolute;
+    right: 75px;
+    top: calc(40% - 4rem);
+    z-index: 100;
+  }
+  .cover--author {
+    font-size: 2.0rem;
+    font-weight: normal;
+    position: absolute;
+    right: 75px;
+    bottom: calc(60% - 3.6rem);
+    z-index: 100;
+  }
+  .cover--lower {
+    position: absolute;
+    left: 0;
+    top: 40%;
+    height: 60%;
+    width: 100%;
+    background-color: rgba(100, 100, 100, 0.5);
+    border-top: 8px solid #69f0ae;
+    z-index: 10;
+  }
+}

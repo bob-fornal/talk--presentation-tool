@@ -1,6 +1,8 @@
 {
   "ORDER": [
-    "cover-slide",
+    "what-are-unit-tests",
+    "cover-slide-01",
+    "engineers-in-a-bar",
     "in-the-test",
     "dry-principle",
     "non-deterministic",
@@ -21,10 +23,27 @@
     "}"
   ],
   
-  "cover-slide": {
+  "cover-slide-01": {
     "title": "What to Avoid When Writing Unit Tests",
-    "type": "cover-slide",
+    "type": "cover-slide-01",
     "author": "Bob Fornal"
+  },
+  "cover-slide-02": {
+    "title": "What to Avoid When Writing Unit Tests",
+    "type": "cover-slide-02",
+    "author": "Bob Fornal"
+  },
+  "engineers-in-a-bar": {
+    "title": "",
+    "type": "text-image",
+    "orientation": "left",
+    "text": "A QA Engineer walks into a bar.<br/><br/><ul><li>Orders a beer.</li><li>Orders 0 beers.</li><li>Orders 999,999,999,999 beers.</li><li>Orders a lizard.</li><li>Orders -1 beers.</li><li>Orders a ueicbksjdhd.</li></ul><br/>The first real customer walks in and asks where the bathroom is.  The bar bursts into flames, killing everyone.",
+    "image": "/assets/images/beers-on-the-wall.png"
+  },
+  "what-are-unit-tests": {
+    "title": "What Are Unit Tests?",
+    "type": "panel-single",
+    "text": "<ul><li>Unit Tests exercise small parts of the application (code-under-test).</li><li>... in complete isolation.</li><li>... actual behavior versus expected behavior.</li></ul><ul><li>Unit Tests should be fast, simple, and stable.</li></ul><ul><li>Unit Tests reflect the specifications.</li><li>... can act as documentation.</li></ul><ul><li>Unit Tests are a safety net.</li><li>... provide immediate feedback about code changes.</li><li>... find and fix bugs earlier.</li><li>... contribute to higher code quality and better architecture.</li><li>... faster detection of code smells.</li></ul>"
   },
   "in-the-test": {
     "title": "Keep The Reader In The Test",

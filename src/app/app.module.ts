@@ -11,12 +11,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatButtonModule } from '@angular/material/button';
 
+import { Cover01Component } from './slides/cover-01/cover.component';
+import { Cover02Component } from './slides/cover-02/cover.component';
+import { TextImageComponent } from './slides/text-image/text-image.component';
+import { PanelSingleComponent } from './slides/panel-single/panel-single.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoursesComponent,
-    TalkComponent
+    TalkComponent,
+
+    Cover01Component,
+    Cover02Component,
+    TextImageComponent,
+    PanelSingleComponent
   ],
   imports: [
     BrowserModule,

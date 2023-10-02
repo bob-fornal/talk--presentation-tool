@@ -1,6 +1,20 @@
 <div class="outer-wrapper">
   <ng-container [ngSwitch]="type">
-    <div class="slide-wrapper" *ngSwitchCase="'cover-slide'">COVER</div>
+    <div class="slide-wrapper" *ngSwitchCase="'cover-slide-01'">
+      <cover-01 [title]="page.title" [author]="page.author!" [html]="page.html || ''"></cover-01>
+    </div>
+    <div class="slide-wrapper" *ngSwitchCase="'cover-slide-02'">
+      <cover-02 [title]="page.title" [author]="page.author!" [html]="page.html || ''"></cover-02>
+    </div>
+
+    <div class="slide-wrapper" *ngSwitchCase="'text-image'">
+      <text-image [title]="page.title" [orientation]="page.orientation!" [text]="page.text!" [image]="page.image!"></text-image>
+    </div>
+
+    <div class="slide-wrapper" *ngSwitchCase="'panel-single'">
+      <panel-single [title]="page.title" [text]="page.text!"></panel-single>
+    </div>
+
     <div class="slide-wrapper" *ngSwitchCase="'code-editor'">CODE</div>
     <div class="slide-wrapper" *ngSwitchDefault="">NONE</div>
   </ng-container>

@@ -7,6 +7,12 @@ export type StructureType = {
   type: string;
   author?: string;
 
+  html?: string;
+
+  orientation?: string;
+  text?: string;
+  image?: string;
+
   folder?: string;
   files?: Array<string>;
 }

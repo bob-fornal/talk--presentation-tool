@@ -1,0 +1,10 @@
+<div class="text-image-wrapper">
+  <div class="text-image--title">{{ title }}</div>
+
+  <div [class]="'text-image--content-wrapper orient-' + orientation">
+    <div class="text-image--text" [innerHTML]="text"></div>
+    <div class="text-image--image">
+      <img class="img" [src]="image" [alt]="image" />
+    </div>
+  </div>
+</div>
