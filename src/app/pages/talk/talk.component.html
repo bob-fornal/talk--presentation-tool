@@ -7,6 +7,9 @@
       <cover-02 [title]="page.title" [author]="page.author!" [html]="page.html || ''"></cover-02>
     </div>
 
+    <div class="slide-wrapper" *ngSwitchCase="'image-only'">
+      <image-only [title]="page.title" [image]="page.image!"></image-only>
+    </div>
     <div class="slide-wrapper" *ngSwitchCase="'text-image'">
       <text-image [title]="page.title" [orientation]="page.orientation!" [text]="page.text!" [image]="page.image!"></text-image>
     </div>

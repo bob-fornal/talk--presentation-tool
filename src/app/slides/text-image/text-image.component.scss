@@ -20,6 +20,7 @@
     
     display: flex;
     align-items: center;
+    height: calc(100% - 18em);
 
     &.orient-left {
       flex-direction: row;
@@ -37,6 +38,7 @@
 
       padding: 1em;
       background-color: rgba(100, 100, 100, 0.5);
+      height: 100%;
     }
     .text-image--text,
     .text-image--image {
@@ -45,6 +47,8 @@
       width: 48%;
     }
     .text-image--image .img {
+      background-color: #0f0f0f;
+      border: 2px solid #0f0f0f;
       width: 100%;
     }
   }

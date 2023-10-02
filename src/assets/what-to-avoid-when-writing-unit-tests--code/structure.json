@@ -1,8 +1,12 @@
 {
   "ORDER": [
-    "what-are-unit-tests",
     "cover-slide-01",
     "engineers-in-a-bar",
+    "what-are-unit-tests",
+    "talk-details",
+    "art-form",
+    "test-code-in-production",
+
     "in-the-test",
     "dry-principle",
     "non-deterministic",
@@ -45,6 +49,24 @@
     "type": "panel-single",
     "text": "<ul><li>Unit Tests exercise small parts of the application (code-under-test).</li><li>... in complete isolation.</li><li>... actual behavior versus expected behavior.</li></ul><ul><li>Unit Tests should be fast, simple, and stable.</li></ul><ul><li>Unit Tests reflect the specifications.</li><li>... can act as documentation.</li></ul><ul><li>Unit Tests are a safety net.</li><li>... provide immediate feedback about code changes.</li><li>... find and fix bugs earlier.</li><li>... contribute to higher code quality and better architecture.</li><li>... faster detection of code smells.</li></ul>"
   },
+  "talk-details": {
+    "title": "Talk Details",
+    "type": "panel-single",
+    "text": "Code Repository: https://github.com/bob-fornal/what-to-avoid-when-writing-unit-tests<br/><br/>I can be found at ...<br><ul><li>https://linqapp.com/conference</li><li>Twitter: @rfornal</li><li>Articles https://dev.to/rfornal</li><li>LinkedIn: https://www.linkedin.com/in/rfornal/</li></ul>"
+  },
+  "art-form": {
+    "title": "",
+    "type": "text-image",
+    "orientation": "left",
+    "text": "Testing Code has been described as an \"art form\"<br/><br/>It is, ... but it shouldn't be.",
+    "image": "/assets/images/bob-ross.png"
+  },
+  "test-code-in-production": {
+    "title": "",
+    "type": "image-only",
+    "image": "/assets/images/vader-testing-production.png"
+  },
+
   "in-the-test": {
     "title": "Keep The Reader In The Test",
     "type": "code-editor",
