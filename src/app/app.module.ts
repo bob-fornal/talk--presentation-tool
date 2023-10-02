@@ -16,6 +16,7 @@ import { Cover02Component } from './slides/cover-02/cover.component';
 import { TextImageComponent } from './slides/text-image/text-image.component';
 import { PanelSingleComponent } from './slides/panel-single/panel-single.component';
 import { ImageOnlyComponent } from './slides/image-only/image-only.component';
+import { PanelDoubleComponent } from './slides/panel-double/panel-double.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ImageOnlyComponent } from './slides/image-only/image-only.component';
     Cover02Component,
     TextImageComponent,
     PanelSingleComponent,
-    ImageOnlyComponent
+    ImageOnlyComponent,
+    PanelDoubleComponent
   ],
   imports: [
     BrowserModule,

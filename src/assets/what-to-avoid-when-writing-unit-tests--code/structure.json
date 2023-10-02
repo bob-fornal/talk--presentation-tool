@@ -6,6 +6,7 @@
     "talk-details",
     "art-form",
     "test-code-in-production",
+    "not--well-factored",
 
     "in-the-test",
     "dry-principle",
@@ -65,6 +66,12 @@
     "title": "",
     "type": "image-only",
     "image": "/assets/images/vader-testing-production.png"
+  },
+  "not--well-factored": {
+    "title": "Tests Should Not Be \"Well Factored\"",
+    "type": "panel-double",
+    "textLeft": "<div class=\"bold\">Keep the Reader in the test.</div><br/><div class=\"bold\">Given</div><div class=\"indent\">A function that returns a score.</div><br/><div class=\"bold;\">Problem</div><div class=\"indent\">The unit test has has some part of it abstracted in a way that makes reading the test difficult.</div>",
+    "textRight": "<div class=\"bold\">Dare to violate the DRY Principle.</div><div>“Duplication of Code Logic”</div><br/><div class=\"bold\">Given</div><div class=\"indent\">A function that adjusts a score.</div><br/><div class=\"bold\">Problem</div><div class=\"indent\">The unit test has has some part of it abstracted in a way that makes reading the test difficult.</div>"
   },
 
   "in-the-test": {

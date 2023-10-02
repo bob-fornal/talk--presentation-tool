@@ -11,6 +11,8 @@ export type StructureType = {
 
   orientation?: string;
   text?: string;
+  textLeft?: string;
+  textRight?: string;
   image?: string;
 
   folder?: string;
