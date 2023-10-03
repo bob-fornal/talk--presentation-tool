@@ -23,6 +23,7 @@ export class TalkComponent {
 
   slideIndex: number = 0;
 
+  path: string = '';
   page: StructureType = { title: '', type: '' };
   title: string = '';
   type: string = '';
@@ -38,6 +39,7 @@ export class TalkComponent {
 
   init = (): void => {
     const path: string = this.route.snapshot.paramMap.get('folder') || '';
+    this.path = path;
     this.code.getStructure(path);
   };
 
@@ -62,9 +64,14 @@ export class TalkComponent {
     this.style.add(style.join('\n'));
   };
 
+  home = (): void => {
+    this.slideIndex = 0;
+    this.setPage(this.slideIndex, this.structure);
+  };
+
   next = (): void => {
-    if (this.slideIndex >= this.structure.ORDER.length) return;
-    
+    if ((this.slideIndex + 1) >= this.structure.ORDER.length) return;
+
     this.slideIndex++;
     this.setPage(this.slideIndex, this.structure);
   };
@@ -73,6 +80,11 @@ export class TalkComponent {
     if (this.slideIndex === 0) return;
     
     this.slideIndex--;
+    this.setPage(this.slideIndex, this.structure);
+  };
+
+  end = (): void => {
+    this.slideIndex = this.structure.ORDER.length - 1;
     this.setPage(this.slideIndex, this.structure);
   };
 }

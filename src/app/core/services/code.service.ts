@@ -23,6 +23,10 @@ export class CodeService {
     this.structure.next(structure);
   };
 
+  getCode = async (filepath: string): Promise<string> => {
+    const file: string = await firstValueFrom(this.http.get(filepath, { responseType: 'text' }));
+    return file;
+  };
   // retrieve = async (talkIndex: number, section: string, filename: string): Promise<string> => {
   //   const talkFolder: string = this.talks.value[talkIndex].folder;
   //   const codeFolder: string = this.structures[section].folder;

@@ -1,0 +1,14 @@
+<div class="code-editor-wrapper">
+  <div class="code-editor--title">{{ title }}</div>
+
+  <div class="code-editor--content-wrapper">
+    <div class="code-editor--files">
+      <mat-selection-list role="list">
+        <a mat-list-item [routerLink]="" [attr.selected]="file === selected" *ngFor="let file of files;" (click)="fileSelection(file)" class="file">{{ file }}</a>
+      </mat-selection-list>
+    </div>
+    <div class="code-editor--editor">
+      <nu-monaco-editor class="editor" style="height: 100%;" [(ngModel)]="code" [options]="editorOptions"></nu-monaco-editor>
+    </div>
+  </div>
+</div>

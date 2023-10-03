@@ -45,3 +45,30 @@ body {
     margin-left: 2em;
   }
 }
+
+.file[selected=true] {
+  .mdc-list-item__primary-text {
+    color: #111111 !important;
+  }
+}
+
+
+.btn {
+  color: gray !important;
+  border-radius: 0.5vh;
+  font-size: 1.5vh;
+  height: 4vh;
+  margin-right: 1vw;
+  min-width: 1vw;
+  padding: 0 1vw;
+
+  .mat-icon {
+    margin: 0 !important;
+  }
+}
+
+.position {
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+}
+

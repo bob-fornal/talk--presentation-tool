@@ -21,12 +21,26 @@
       <panel-double [title]="page.title" [textLeft]="page.textLeft!" [textRight]="page.textRight!"></panel-double>
     </div>
 
-    <div class="slide-wrapper" *ngSwitchCase="'code-editor'">CODE</div>
+    <div class="slide-wrapper" *ngSwitchCase="'code-editor'">
+      <code-editor [title]="page.title" [path]="path" [folder]="page.folder!" [files]="page.files!"></code-editor>
+    </div>
+
     <div class="slide-wrapper" *ngSwitchDefault="">NONE</div>
   </ng-container>
 
   <nav class="navigation">
-    <button class="btn" mat-flat-button (click)="previous()">previous</button>
-    <button class="btn" mat-flat-button (click)="next()">next</button>
+    <button class="btn" mat-flat-button (click)="home()">
+      <mat-icon>first_page</mat-icon>
+    </button>
+    <button class="btn" mat-flat-button (click)="previous()">
+      <mat-icon>navigate_before</mat-icon>
+    </button>
+    <button class="btn" mat-flat-button (click)="next()">
+      <mat-icon>navigate_next</mat-icon>
+    </button>
+    <button class="btn" mat-flat-button (click)="end()">
+      <mat-icon>last_page</mat-icon>
+    </button>
+    <span class="position"><span>{{ slideIndex + 1}}</span> / <span>{{ structure.ORDER.length }}</span></span>
   </nav>
 </div>
