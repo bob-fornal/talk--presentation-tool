@@ -6,6 +6,8 @@ export type StructureType = {
   title: string;
   type: string;
   author?: string;
+  bio1?: string;
+  bio2?: string;
 
   html?: string;
 

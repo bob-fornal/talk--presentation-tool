@@ -1,5 +1,7 @@
 <div class="cover-wrapper">
   <div class="cover--title">{{ title }}</div>
   <div class="cover--author">{{ author }}</div>
+  <div class="cover--bio left" *ngIf="!!bio1 && bio1.length > 0" [innerHTML]="bio1"></div>
+  <div class="cover--bio right" *ngIf="!!bio2 && bio2.length > 0" [innerHTML]="bio2"></div>
   <div class="cover--lower"></div>
 </div>

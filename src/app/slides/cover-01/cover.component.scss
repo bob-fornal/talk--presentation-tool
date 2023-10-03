@@ -19,6 +19,21 @@
     bottom: calc(60% - 3.6rem);
     z-index: 100;
   }
+  .cover--bio {
+    position: absolute;
+    top: calc(40% + 5rem);
+    width: 40vw;
+    z-index: 100;
+    font-size: 1.5rem;
+
+    &.left {
+      left: 4rem;
+    }
+    &.right {
+      right: 4rem;
+    }
+  }
+
   .cover--lower {
     position: absolute;
     left: 0;

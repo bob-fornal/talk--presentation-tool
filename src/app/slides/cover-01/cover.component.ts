@@ -8,5 +8,7 @@ import { Component, Input } from '@angular/core';
 export class Cover01Component {
   @Input() title: string = '';
   @Input() author: string = '';
+  @Input() bio1?: string = '';
+  @Input() bio2?: string = '';
   @Input() html: string = '';
 }
