@@ -35,7 +35,7 @@ import { CodeEditorComponent } from './slides/code-editor/code-editor.component'
     PanelSingleComponent,
     ImageOnlyComponent,
     PanelDoubleComponent,
-    CodeEditorComponent
+    CodeEditorComponent,
   ],
   imports: [
     BrowserModule,

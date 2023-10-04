@@ -1,3 +1,5 @@
+import { Trigger } from "./triggers";
+
 export type OrderType = Array<string>;
 
 export type StyleType = Array<string>;
@@ -17,8 +19,10 @@ export type StructureType = {
   textRight?: string;
   image?: string;
 
+  script?: string;
   folder?: string;
   files?: Array<string>;
+  triggers?: Array<Trigger>;
 }
 
 export interface Structure {

@@ -48,8 +48,16 @@
 }
 
 .file {
+  margin-bottom: 0.25em;
+
   &[selected=true] {
     color: #111111;
     background-color: #69f0ae;
   }
+}
+
+.trigger {
+  color: #111111;
+  background-color: #69aef0;
+  margin-bottom: 0.25em;
 }

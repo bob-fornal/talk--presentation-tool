@@ -1,0 +1,1 @@
+console.log("testing this");var myFunc1=()=>{encodeURI("\ud800")},myFunc2=()=>{a=l},myFunc3=()=>{null.f()};try{myFunc1()}catch(c){console.log(c)}try{myFunc2()}catch(c){console.log(c)}try{myFunc3()}catch(c){console.log(c)}(function*(){})().throw(new Error("example"));

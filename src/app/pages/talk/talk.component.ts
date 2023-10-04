@@ -58,7 +58,7 @@ export class TalkComponent {
     this.title = page.title;
     this.type = page.type;
     this.page = page;
-    console.log(this.title, this.type, this.page);
+    // console.log(this.title, this.type, this.page);
 
     const style = structure.STYLE;
     this.style.add(style.join('\n'));

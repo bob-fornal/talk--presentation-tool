@@ -12,6 +12,9 @@
     {
       "tag": "unit-tests",
       "title": "Unit Tests"
+    }, {
+      "tag": "tools",
+      "title": "Tools"
     }
   ],
   "TALKS": [
@@ -20,6 +23,12 @@
       "title": "What To Avoid When Writing Unit Tests",
       "tags": [
         "unit-tests"
+      ]
+    }, {
+      "folder": "developer-tools-for-non-developers",
+      "title": "Developer Tools for non-Developers",
+      "tags": [
+        "tools"
       ]
     }
   ]

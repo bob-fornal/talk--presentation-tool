@@ -1,0 +1,50 @@
+{
+  "ORDER": [
+    "cover-slide-01",
+
+    "docking--slide",
+    "testing--slide"
+  ],
+
+  "STYLE": [
+    ".outer-wrapper {",
+    "  background: url(\"/assets/images/grid--green.jpeg\");",
+    "  background-repeat: no-repeat;",
+    "  background-size: cover;",
+    "  color: #69f0ae;",
+    "  font-family: Arial, sans-serif;",
+    "}"
+  ],
+
+  "cover-slide-01": {
+    "title": "Developer Tools for non-Developers",
+    "type": "cover-slide-01",
+    "author": "Bob Fornal"
+  },
+  "docking--slide": {
+    "title": "Docking",
+    "type": "panel-single",
+    "text": "<div>To open ...</div><ul><li>F12</li><li>RIGHT-CLICK > Inspect</li><li>Menu > More Tools > Dev Tools</li></ul><div>Docking ...</div><ul><li>Undock into separate window</li><li>Dock to left</li><li>Dock to bottom</li><li>Dock to right</li><ul>"
+  },
+  "testing--slide": {
+    "title": "Testing",
+    "type": "code-editor",
+    "folder": "code-001",
+    "files": [
+      "test.normal.js",
+      "test.mangled.js"
+    ],
+    "triggers": [
+      {
+        "title": "Run Normal Code",
+        "file": "test.normal.js",
+        "init": "dtfndInit001"
+      },
+      {
+        "title": "Run Mangled Code",
+        "file": "test.mangled.js",
+        "init": "dtfndInit002"
+      }
+    ]
+  }
+}
