@@ -25,8 +25,8 @@ export class CoursesComponent {
 
   handleTalks = (wrapper: Talks): void => {
     const orderedTalks: Array<Talk> = wrapper.TALKS.sort((a: Talk, b: Talk): number => {
-      if (a > b) return 1;
-      if (b > a) return -1;
+      if (a.title > b.title) return 1;
+      if (b.title > a.title) return -1;
       return 0;
     });
 

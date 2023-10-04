@@ -55,8 +55,7 @@ export class CodeEditorComponent {
     this.selected = file;
     const fileAndPath: string = `assets/${ this.path }/${ this.folder }/${ file }`;
     const code: string = await this.codeService.getCode(fileAndPath);
-    const adjustedCode = this.cleanHeaders(code)
-    this.code = adjustedCode;
+    this.code = code;
   };
 
   triggerFile = (trigger: Trigger): void => {
@@ -90,14 +89,5 @@ export class CodeEditorComponent {
     for (let i = 0, len = templateElement.attributes.length; i < len; i++) {
       script.attributes.setNamedItem(templateElement.attributes[i].cloneNode() as Attr);
     }
-  };
-
-  cleanHeaders = (code: string): string => {
-    const regexKEY = /'X-RapidAPI-Key':\s*'([^']+)'/gm;
-    const regexHOST = /'X-RapidAPI-Host':\s*'([^']+)'/gm;
-
-    return code
-      .replace(regexKEY, `'X-RapidAPI-Key': '...............................................'`)
-      .replace(regexHOST, `'X-RapidAPI-Host': '...............................................'`);
   };
 }
