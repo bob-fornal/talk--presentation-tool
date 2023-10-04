@@ -3,6 +3,8 @@ import { Component, Inject, Input, OnChanges, SimpleChanges, ViewChild } from '@
 import { Trigger } from 'src/app/core/interfaces/triggers';
 import { CodeService } from 'src/app/core/services/code.service';
 
+import { environment } from 'src/environment/environment';
+
 @Component({
   selector: 'code-editor',
   templateUrl: './code-editor.component.html',
@@ -14,6 +16,7 @@ export class CodeEditorComponent {
   @Input() folder: string = '';
   @Input() files: Array<string> = [];
   @Input() triggers: Array<Trigger> = [];
+  @Input() keys: Array<string> = [];
 
   @ViewChild('handleScript') handleScript: any;
 
@@ -52,12 +55,13 @@ export class CodeEditorComponent {
     this.selected = file;
     const fileAndPath: string = `assets/${ this.path }/${ this.folder }/${ file }`;
     const code: string = await this.codeService.getCode(fileAndPath);
-    this.code = code;
+    const adjustedCode = this.cleanHeaders(code)
+    this.code = adjustedCode;
   };
 
   triggerFile = (trigger: Trigger): void => {
     const init: string = trigger.init;
-    const fileAndPath: string = `assets/${ this.path }/${ this.folder }/${ trigger.file }`;
+    const fileAndPath: string = `/assets/${ this.path }/${ this.folder }/${ trigger.file }`;
     this.filepath = fileAndPath;
 
     setTimeout(() => {
@@ -66,8 +70,14 @@ export class CodeEditorComponent {
     }, 100);
 
     setTimeout(() => {
-      (window as any)[init]()
-    }, 200, init);
+      const env: { [key: string]: string; } = {};
+      for (let i = 0, len = this.keys.length; i < len; i++) {
+        const key: string = this.keys[i];
+        env[key] = (environment as any)[key];
+      }
+
+      (window as any)[init](env);
+    }, 500, init);
   };
 
   replaceDivWithScript = (templateElement: HTMLElement): void => {
@@ -80,5 +90,14 @@ export class CodeEditorComponent {
     for (let i = 0, len = templateElement.attributes.length; i < len; i++) {
       script.attributes.setNamedItem(templateElement.attributes[i].cloneNode() as Attr);
     }
+  };
+
+  cleanHeaders = (code: string): string => {
+    const regexKEY = /'X-RapidAPI-Key':\s*'([^']+)'/gm;
+    const regexHOST = /'X-RapidAPI-Host':\s*'([^']+)'/gm;
+
+    return code
+      .replace(regexKEY, `'X-RapidAPI-Key': '...............................................'`)
+      .replace(regexHOST, `'X-RapidAPI-Host': '...............................................'`);
   };
 }

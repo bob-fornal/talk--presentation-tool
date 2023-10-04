@@ -23,6 +23,7 @@ export type StructureType = {
   folder?: string;
   files?: Array<string>;
   triggers?: Array<Trigger>;
+  environment_keys?: Array<string>;
 }
 
 export interface Structure {

@@ -3,7 +3,8 @@
     "cover-slide-01",
 
     "docking--slide",
-    "testing--slide"
+    "reading-error-messages--slide",
+    "xhr-versus-preflight--slide"
   ],
 
   "STYLE": [
@@ -26,8 +27,8 @@
     "type": "panel-single",
     "text": "<div>To open ...</div><ul><li>F12</li><li>RIGHT-CLICK > Inspect</li><li>Menu > More Tools > Dev Tools</li></ul><div>Docking ...</div><ul><li>Undock into separate window</li><li>Dock to left</li><li>Dock to bottom</li><li>Dock to right</li><ul>"
   },
-  "testing--slide": {
-    "title": "Testing",
+  "reading-error-messages--slide": {
+    "title": "Reading Error Messages",
     "type": "code-editor",
     "folder": "code-001",
     "files": [
@@ -44,6 +45,24 @@
         "title": "Run Mangled Code",
         "file": "test.mangled.js",
         "init": "dtfndInit002"
+      }
+    ]
+  },
+  "xhr-versus-preflight--slide": {
+    "title": "XHR versus Preflight",
+    "type": "code-editor",
+    "folder": "code-002",
+    "files": [
+      "api-call.js"
+    ],
+    "environment_keys": [
+      "RAPID_API_KEY"
+    ],
+    "triggers": [
+      {
+        "title": "Run Code",
+        "file": "api-call.js",
+        "init": "dtfndInit003"
       }
     ]
   }
