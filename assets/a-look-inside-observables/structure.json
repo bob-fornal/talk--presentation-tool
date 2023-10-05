@@ -1,0 +1,172 @@
+{
+  "ORDER": [
+    "cover-slide-01",
+
+    "what-is-rxjs--slide",
+    "history--slide",
+    "essential-concepts--slide",
+    "promises-versus-observables--slide",
+    "subject--slide",
+
+    "observable--code",
+    "subject--code",
+    "behavior-subject--code",
+    "replay-subject--code",
+    "async-subject--code",
+    "void-subject--code",
+
+    "time-for-questions"
+  ],
+
+  "STYLE": [
+    ".outer-wrapper {",
+    "  background: url(\"/assets/images/grid--green.jpeg\");",
+    "  background-repeat: no-repeat;",
+    "  background-size: cover;",
+    "  color: #69f0ae;",
+    "  font-family: Arial, sans-serif;",
+    "}"
+  ],
+
+  "cover-slide-01": {
+    "title": "A Look Inside Observables",
+    "type": "cover-slide-01",
+    "author": "Bob Fornal",
+    "bio1": "<img class=bio-logo src=/assets/images/code-squid.png /><br/><div class=\"bold bio-header\">Entrepreneur</div>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.",
+    "bio2": "<img class=bio-logo src=/assets/images/leading-edje.png /><br/><div class=bold>Senior Solutions Developer</div><div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth."
+  },
+  "what-is-rxjs--slide": {
+    "title": "What is RxJS",
+    "type": "panel-single",
+    "text": "<div>... and what problem does it solve?</div><ul><li>Reactive Extensions - dealing with streams of things.</li><li>Extensions to the JavaScript language around Reactive Programming.</li><li>Reacts to events or signals and contain all state and pass the event to the next step in the chain.</li><ul>"
+  },
+  "history--slide": {
+    "title": "History",
+    "type": "panel-single",
+    "text": "<ul><li>Callback-Hell: handling multiple requests and accounting for the order-of-response.</li><li>Promise-Hell: better code-readability with then, catch, finally.</li><li>Async/Await: improved code-readability, unwraps promises.</li><li><span class=bold>Observables</span>: Push/Pull models ...</li><ul>"
+  },
+  "essential-concepts--slide": {
+    "title": "Essential Concepts",
+    "type": "panel-single",
+    "text": "<div>The essential concepts in RxJS what solve async event management are ...</div><br/><div class=bold>Observable</div><div class=indent>Represents the idea of an invokable collection of future values or events.</div><div class=bold>Observer</div><div class=indent>Is a collection of callbacks that know how to listen to values delivered by the Observable.</div><div class=bold>Subscription</div><div class=indent>Represents the execution of an Observable, is primarily useful for cancelling the execution.</div><div class=bold>Operators</div><div class=indent>Are pure functions that enable a functional programming style of dealing with collections with operations like map, filter, concat, reduce, etc.</div><div class=bold>Subject</div><div class=indent>Is equivalent to an EventEmitter, and the only way of multicasting a value or event to multiple Observers.</div><div class=bold>Schedulers</div><div class=indent>Are centralized dispatchers to control concurrency, allowing us to coordinate when computation happens on e.g. setTimeout or requestAnimationFrame or others.</div>"
+  },
+  "promises-versus-observables--slide": {
+    "title": "Promises versus Observables",
+    "type": "panel-single",
+    "text": "<div>Observables are lazy whereas promises are not.</div><div class=indent>This is pretty self-explanatory: observables are lazy, that is we have to subscribe observables to get the results. In the case of promises, they execute immediately.</div><br/><div>Observables handle multiple values unlike promises.</div><div class=indent>Promises can only provide a single value whereas observables can give you multiple values.</div><br/><div>Observables are cancelable.</div><div class=indent>You can cancel observables by unsubscribing it using the unsubscribe method whereas promises don't have such a feature.</div><br/><div>Observables provide many <span class=bold>operators</span>.</div><div class=indent>There are many operators like map, forEach, filter etc. Observables provide these whereas promises does not have any operators in their bucket.</div>"
+  },
+  "subject--slide": {
+    "title": "Subject",
+    "type": "panel-single",
+    "text": "<div>An <span class=bold>RxJS Subject</span> is a special type of <span class=bold>Observable</span> that allows values to be multicasted to many Observers. While plain Observables are unicast (each subscribed Observer owns an independent execution of the Observable), Subjects are multicast.</div><br/><div>BehaviorSubject</div><div class=indent>Has a notion of \"the current value.\" It stores the latest value emitted to its consumers, and whenever a new Observer subscribes, it will immediately receive the \"current value\" from the BehaviorSubject.</div><br/><div>ReplaySubject</div><div class=indent>A ReplaySubject is similar to a BehaviorSubject in that it can send old values to new subscribers, but it can also record a part of the Observable execution.</div><br/><div>AsyncSubject</div><div class=indent>The AsyncSubject is a variant where only the last value of the Observable execution is sent to its observers, and only when the execution completes.</div><br/><div>void Subject</div><div class=indent>Sometimes the emitted value doesn't matter as much as the fact that a value was emitted.</div>"
+  },
+
+  "observable--code": {
+    "title": "Observable",
+    "type": "code-editor",
+    "folder": "code-001",
+    "files": [
+      "observable-01.js",
+      "observable-02.js"
+    ],
+    "triggers": [
+      {
+        "title": "Run Observable Code 1",
+        "file": "observable-01.js",
+        "init": "dtfndDemo0"
+      },
+      {
+        "title": "Run Observable Code 2",
+        "file": "observable-02.js",
+        "init": "dtfndDemo1"
+      }
+    ]
+  },
+  "subject--code": {
+    "title": "Subject",
+    "type": "code-editor",
+    "folder": "code-002",
+    "files": [
+      "subject.js"
+    ],
+    "triggers": [
+      {
+        "title": "Run Code",
+        "file": "subject.js",
+        "init": "dtfndDemo2"
+      }
+    ]
+  },
+  "behavior-subject--code": {
+    "title": "BehaviorSubject",
+    "type": "code-editor",
+    "folder": "code-003",
+    "files": [
+      "behavior-subject.js"
+    ],
+    "triggers": [
+      {
+        "title": "Run Code",
+        "file": "behavior-subject.js",
+        "init": "dtfndDemo3"
+      }
+    ]
+  },
+  "replay-subject--code": {
+    "title": "ReplaySubject",
+    "type": "code-editor",
+    "folder": "code-004",
+    "files": [
+      "replay-subject-01.js",
+      "replay-subject-02.js"
+    ],
+    "triggers": [
+      {
+        "title": "Run Code 1",
+        "file": "replay-subject-01.js",
+        "init": "dtfndDemo4"
+      }, {
+        "title": "Run Code 2",
+        "file": "replay-subject-02.js",
+        "init": "dtfndDemo5"
+      }
+    ]
+  },
+  "async-subject--code": {
+    "title": "AsyncSubject",
+    "type": "code-editor",
+    "folder": "code-005",
+    "files": [
+      "async-subject.js"
+    ],
+    "triggers": [
+      {
+        "title": "Run Code",
+        "file": "async-subject.js",
+        "init": "dtfndDemo6"
+      }
+    ]
+  },
+  "void-subject--code": {
+    "title": "void Subject",
+    "type": "code-editor",
+    "folder": "code-006",
+    "files": [
+      "void-subject.js"
+    ],
+    "triggers": [
+      {
+        "title": "Run Code",
+        "file": "void-subject.js",
+        "init": "dtfndDemo7"
+      }
+    ]
+  },
+
+  "time-for-questions": {
+    "title": "",
+    "type": "image-only",
+    "background": "transparent",
+    "image": "/assets/images/time-for-questions.png"
+  }
+}
