@@ -10,11 +10,12 @@
   ],
   "TAGS": [
     {
-      "tag": "unit-tests",
-      "title": "Unit Tests"
-    }, {
       "tag": "tools",
       "title": "Tools"
+    },
+    {
+      "tag": "unit-tests",
+      "title": "Unit Tests"
     }
   ],
   "TALKS": [
