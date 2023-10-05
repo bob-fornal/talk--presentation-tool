@@ -72,7 +72,8 @@ export class CodeEditorComponent {
       const env: { [key: string]: string; } = {};
       for (let i = 0, len = this.keys.length; i < len; i++) {
         const key: string = this.keys[i];
-        env[key] = (environment as any)[key];
+        const value: string = (environment as any)[key];
+        env[key] = atob(value);
       }
 
       (window as any)[init](env);
