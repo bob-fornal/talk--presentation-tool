@@ -1,0 +1,231 @@
+{
+  "ORDER": [
+    "cover-slide-01",
+    "engineers-in-a-bar",
+    "what-are-unit-tests",
+    "talk-details",
+    "art-form",
+    "test-code-in-production",
+
+    "not--well-factored",
+    "in-the-test",
+    "dry-principle",
+
+    "poisoning-the-codebase--non-deterministic",
+    "non-deterministic",
+
+    "poisining-the-codebase--side-effects",
+    "side-effects",
+
+    "testing-too-much--slide",
+    "testing-too-much--code",
+
+    "bad-test-double--slide",
+    "bad-test-double--code",
+
+    "false-positives--slide",
+    "false-positives--code",
+
+    "excessive-setup",
+
+    "testing-private-functionality-directly--slide",
+    "testing-private-functionality-directly--code",
+
+    "unit-test-recommendations",
+    "time-for-questions"
+  ],
+
+  "STYLE": [
+    ".outer-wrapper {",
+    "  background: url(\"/assets/images/grid--green.jpeg\");",
+    "  background-repeat: no-repeat;",
+    "  background-size: cover;",
+    "  color: #69f0ae;",
+    "  font-family: Arial, sans-serif;",
+    "}"
+  ],
+  
+  "cover-slide-01": {
+    "title": "What to Avoid When Writing Unit Tests",
+    "type": "cover-slide-01",
+    "author": "Bob Fornal",
+    "bio1": "<img class=bio-logo src=/assets/images/code-squid.png /><br/><div class=\"bold bio-header\">Entrepreneur</div>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.",
+    "bio2": "<img class=bio-logo src=/assets/images/leading-edje.png /><br/><div class=bold>Senior Solutions Developer</div><div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth."
+  },
+  "cover-slide-02": {
+    "title": "What to Avoid When Writing Unit Tests",
+    "type": "cover-slide-02",
+    "author": "Bob Fornal"
+  },
+  "engineers-in-a-bar": {
+    "title": "",
+    "type": "text-image",
+    "orientation": "left",
+    "text": "A QA Engineer walks into a bar.<br/><br/><ul><li>Orders a beer.</li><li>Orders 0 beers.</li><li>Orders 999,999,999,999 beers.</li><li>Orders a lizard.</li><li>Orders -1 beers.</li><li>Orders a ueicbksjdhd.</li></ul><br/>The first real customer walks in and asks where the bathroom is.  The bar bursts into flames, killing everyone.",
+    "image": "/assets/images/beers-on-the-wall.png"
+  },
+  "what-are-unit-tests": {
+    "title": "What Are Unit Tests?",
+    "type": "panel-single",
+    "text": "<ul><li>Unit Tests exercise small parts of the application (code-under-test).</li><li>... in complete isolation.</li><li>... actual behavior versus expected behavior.</li></ul><ul><li>Unit Tests should be fast, simple, and stable.</li></ul><ul><li>Unit Tests reflect the specifications.</li><li>... can act as documentation.</li></ul><ul><li>Unit Tests are a safety net.</li><li>... provide immediate feedback about code changes.</li><li>... find and fix bugs earlier.</li><li>... contribute to higher code quality and better architecture.</li><li>... faster detection of code smells.</li></ul>"
+  },
+  "talk-details": {
+    "title": "Talk Details",
+    "type": "panel-single",
+    "text": "Code Repository: https://github.com/bob-fornal/what-to-avoid-when-writing-unit-tests<br/><br/>I can be found at ...<br><ul><li>https://linqapp.com/conference</li><li>Twitter: @rfornal</li><li>Articles https://dev.to/rfornal</li><li>LinkedIn: https://www.linkedin.com/in/rfornal/</li></ul>"
+  },
+  "art-form": {
+    "title": "",
+    "type": "text-image",
+    "orientation": "left",
+    "text": "Testing Code has been described as an \"art form\"<br/><br/>It is, ... but it shouldn't be.",
+    "image": "/assets/images/bob-ross.png"
+  },
+  "test-code-in-production": {
+    "title": "",
+    "type": "image-only",
+    "image": "/assets/images/vader-testing-production.png"
+  },
+
+  "not--well-factored": {
+    "title": "Tests Should Not Be \"Well Factored\"",
+    "type": "panel-double",
+    "textLeft": "<div class=bold>Keep the Reader in the test.</div><br/><div class=bold>Given</div><div class=indent>A function that returns a score.</div><br/><div class=bold>Problem</div><div class=indent>The unit test has has some part of it abstracted in a way that makes reading the test difficult.</div>",
+    "textRight": "<div class=bold>Dare to violate the DRY Principle.</div><div>“Duplication of Code Logic”</div><br/><div class=bold>Given</div><div class=indent>A function that adjusts a score.</div><br/><div class=bold>Problem</div><div class=indent>The unit test has has some part of it abstracted in a way that makes reading the test difficult.</div>"
+  },
+  "in-the-test": {
+    "title": "Keep The Reader In The Test",
+    "type": "code-editor",
+    "folder": "test-001",
+    "files": [
+      "manager.js",
+      "manager.NOT.spec.js",
+      "manager.spec.js"
+    ]
+  },
+  "dry-principle": {
+    "title": "Dry Principle",
+    "type": "code-editor",
+    "folder": "test-002",
+    "files": [
+      "manager.js",
+      "manager.NOT.spec.js",
+      "manager.spec.js"
+    ]
+  },
+
+  "poisoning-the-codebase--non-deterministic": {
+    "title": "Poisoning the Codebase: Non-Deterministic Factors",
+    "type": "panel-single",
+    "text": "<div class=bold>Given</div><div class=indent>A function that returns a category, the time of day.</div><br/><br/><div class=bold>Problem</div><div class=indent>The function under test is tightly coupled to a concrete data source, violating the Single Responsibility Principle. The test cannot easily test the functionality.</div>"
+  },
+  "non-deterministic": {
+    "title": "Non-Deterministic",
+    "type": "code-editor",
+    "folder": "test-003",
+    "files": [
+      "time.NOT.js",
+      "time.NOT.spec.js",
+      "time.js",
+      "time.spec.js"
+    ]
+  },
+
+  "poisining-the-codebase--side-effects": {
+    "title": "Poisoning the Codebase: Side-Effects",
+    "type": "panel-single",
+    "text": "<div class=bold>Given</div><div class=indent>A function that updates the time of last motion and triggers something off or on.</div><br/><br/><div class=bold>Problem</div><div class=indent>The function under test has too many side effects that become hard to test.</div>"
+  },
+  "side-effects": {
+    "title": "Side-Effects",
+    "type": "code-editor",
+    "folder": "test-004",
+    "files": [
+      "controller.NOT.js",
+      "controller.NOT.spec.js",
+      "controller.js",
+      "controller.spec.js"
+    ]
+  },
+
+  "testing-too-much--slide": {
+    "title": "Testing Too Much",
+    "type": "panel-single",
+    "text": "<div class=bold>Given</div><div class=indent>A function that does too many things.</div><br/><br/><div class=bold>Problem</div><div class=indent>The function under test has too possible paths to handle easily.</div>"
+  },
+  "testing-too-much--code": {
+    "title": "Testing Too Much",
+    "type": "code-editor",
+    "folder": "test-005",
+    "files": [
+      "messaging.NOT.js",
+      "messaging.NOT.spec.js",
+      "messaging.js",
+      "messaging.spec.js"
+    ]
+  },
+
+  "bad-test-double--slide": {
+    "title": "Bad Test Double",
+    "type": "panel-single",
+    "text": "<div class=bold>\"Testing the Mock\"</div><br/><div class=bold>Given</div><div class=indent>A service is used to get some data.</div><br/><br/><div class=bold>Problem</div><div class=indent>Replacing the service (test double) does not correctly take into account changes in the service or returned data.</div>"
+  },
+  "bad-test-double--code": {
+    "title": "Bad Test Double",
+    "type": "code-editor",
+    "folder": "test-006",
+    "files": [
+      "service.js",
+      "service.NOT.spec.js",
+      "service.spec.js"
+    ]
+  },
+
+  "false-positives--slide": {
+    "title": "False Positives",
+    "type": "panel-single",
+    "text": "<div class=bold>Given</div><div class=indent>A function that processes some time delay.</div><br/><br/><div class=bold>Problem</div><div class=indent>The unit test does not get to the code inside the setTimeout and “does not fail” which equates to a pass.</div>"
+  },
+  "false-positives--code": {
+    "title": "False Positives",
+    "type": "code-editor",
+    "folder": "test-007",
+    "files": [
+      "false-positive.NOT.spec.js",
+      "false-positive.spec.js"
+    ]
+  },
+
+  "excessive-setup": {
+    "title": "Excessive Setup",
+    "type": "panel-single",
+    "text": "<div class=bold>Given</div><div class=indent>A unit test that take a lot of setup code to run.</div><br/><br/><div class=bold>Problem</div><div class=indent>Excessive setup is more of a CODE SMELL than something where code can be shown that is incorrect versus correct.<br/><br/>Just be aware that this is a case where care should be taken to examine why the setup is so lengthy.</div><br/><br/><div class=bold>Solutions</div><div class=indent><ol><li>If there is a legitimate need, increase documentation.</li><li>If the code under test does not adhere to the Single Responsibility Principle, maybe a refactor would be appropriate to make it more testable.</li></ol></div>"
+  },
+
+  "testing-private-functionality-directly--slide": {
+    "title": "Testing Private Functionality Directly",
+    "type": "panel-single",
+    "text": "<div class=bold>Given</div><div class=indent>A class with private functionality that is difficult to test indirectly.</div><br/><br/><div class=bold>Problem</div><div class=indent>How do we test private functionality.</div><br/><br/><div class=bold>Solutions</div><div class=indent><ol><li>Indirectly</li><li>Make it public, directly.</li><li>Abstract it into a new service, directly.</li><li>(TypeScript/JavaScript Option)</li></ol></div>"
+  },
+  "testing-private-functionality-directly--code": {
+    "title": "Testing Private Functionality Directly",
+    "type": "code-editor",
+    "folder": "test-009",
+    "files": [
+      "user.service.js",
+      "user.service.spec.js"
+    ]
+  },
+
+  "unit-test-recommendations": {
+    "title": "Unit Test Recommendations",
+    "type": "panel-single",
+    "text": "<ol><li>Unit Tests should be Readable.</li><li>One Assert per Test Method.</li><li>Avoid Test Interdependence.</li><li>Keep it Short, Sweet, and Visible.</li><li>Add them to the Build.</li><ol>"
+  },
+  "time-for-questions": {
+    "title": "",
+    "type": "image-only",
+    "background": "transparent",
+    "image": "/assets/images/time-for-questions.png"
+  }
+}

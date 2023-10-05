@@ -1,0 +1,36 @@
+{
+  "STYLE": [
+    ".outer-wrapper {",
+    "  background: url(\"/assets/images/grid--green.jpeg\");",
+    "  background-repeat: no-repeat;",
+    "  background-size: cover;",
+    "  color: #69f0ae;",
+    "  font-family: Arial, sans-serif;",
+    "}"
+  ],
+  "TAGS": [
+    {
+      "tag": "tools",
+      "title": "Tools"
+    },
+    {
+      "tag": "unit-tests",
+      "title": "Unit Tests"
+    }
+  ],
+  "TALKS": [
+    {
+      "folder": "what-to-avoid-when-writing-unit-tests--code",
+      "title": "What To Avoid When Writing Unit Tests",
+      "tags": [
+        "unit-tests"
+      ]
+    }, {
+      "folder": "developer-tools-for-non-developers",
+      "title": "Developer Tools for non-Developers",
+      "tags": [
+        "tools"
+      ]
+    }
+  ]
+}
