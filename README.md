@@ -14,6 +14,8 @@ This project was designed to provide a means of doing a presentation with code e
 
 ## To Do
 
-- [ ] Include RxJS Tooling for Code Examples.
+- [x] Incorporate Monaco Editor.
+- [x] Incorporate means of injecting JavaScript and being able to trigger via function call.
+- [x] Include RxJS Tooling for Code Examples / CDN [](https://rxjs.dev/guide/importing#cdn).
 - [ ] Unit Tests.
 - [ ] GitHub Actions Pipeline.
