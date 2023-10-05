@@ -6,7 +6,7 @@ This project was designed to provide a means of doing a presentation with code e
 
 ## Talks
 
-- [ ] A Look Inside Observables
+- [x] A Look Inside Observables
 - [ ] Asynchronous JavaScript: Livin' on a Prayer
 - [ ] Designing Effective Unit Tests for React
 - [x] Developer Tools for non-Developers
@@ -18,4 +18,4 @@ This project was designed to provide a means of doing a presentation with code e
 - [x] Incorporate means of injecting JavaScript and being able to trigger via function call.
 - [x] Include RxJS Tooling for Code Examples / CDN [](https://rxjs.dev/guide/importing#cdn).
 - [ ] Unit Tests.
-- [ ] GitHub Actions Pipeline.
+- [x] GitHub Actions Pipeline.

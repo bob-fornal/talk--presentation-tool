@@ -10,6 +10,14 @@
   ],
   "TAGS": [
     {
+      "tag": "observables",
+      "title": "Observables"
+    },
+    {
+      "tag": "rxjs",
+      "title": "RxJS"
+    },
+    {
       "tag": "tools",
       "title": "Tools"
     },
@@ -19,6 +27,14 @@
     }
   ],
   "TALKS": [
+    {
+      "folder": "a-look-inside-observables",
+      "title": "A Look Inside Observables",
+      "tags": [
+        "observables",
+        "rxjs"
+      ]
+    },
     {
       "folder": "what-to-avoid-when-writing-unit-tests--code",
       "title": "What To Avoid When Writing Unit Tests",

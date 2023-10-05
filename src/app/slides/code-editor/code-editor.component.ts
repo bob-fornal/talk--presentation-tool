@@ -10,7 +10,7 @@ import { environment } from 'src/environment/environment';
   templateUrl: './code-editor.component.html',
   styleUrls: ['./code-editor.component.scss']
 })
-export class CodeEditorComponent {
+export class CodeEditorComponent implements OnChanges {
   @Input() title: string = '';
   @Input() path: string = '';
   @Input() folder: string = '';
@@ -25,15 +25,13 @@ export class CodeEditorComponent {
   constructor(
     private codeService: CodeService,
     @Inject(DOCUMENT) private document: Document
-  ) {
-    this.init();
-  }
+  ) { }
 
-  init = () => {
+  ngOnChanges() {
     setTimeout(() => {
       this.fileSelection(this.files[0]);
     }, 100);
-  };
+  }
 
   editorOptions = {
     theme: 'vs-dark',
