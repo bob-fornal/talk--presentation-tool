@@ -10,6 +10,14 @@
   ],
   "TAGS": [
     {
+      "tag": "asyncronous",
+      "title": "Asynchronous"
+    },
+    {
+      "tag": "javascript",
+      "title": "JavaScript"
+    },
+    {
       "tag": "observables",
       "title": "Observables"
     },
@@ -33,6 +41,14 @@
       "tags": [
         "observables",
         "rxjs"
+      ]
+    },
+    {
+      "folder": "asyncronous-javacript-living-on-a-prayer",
+      "title": "Asynchronous JavaScript: Livin' On A Prayer",
+      "tags": [
+        "asynchronous",
+        "javascript"
       ]
     },
     {
