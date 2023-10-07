@@ -1,6 +1,10 @@
 {
   "ORDER": [
-    "cover-slide-01"
+    "cover-slide-01",
+
+    "spoiler--slide",
+    "definitions--slide",
+    "javascript-engine-details--slide"
   ],
 
   "STYLE": [
@@ -19,5 +23,23 @@
     "author": "Bob Fornal",
     "bio1": "<img class=bio-logo src=/assets/images/code-squid.png /><br/><div class=\"bold bio-header\">Entrepreneur</div>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.",
     "bio2": "<img class=bio-logo src=/assets/images/leading-edje.png /><br/><div class=bold>Senior Solutions Developer</div><div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth."
+  },
+
+  "spoiler--slide": {
+    "title": "Spoiler",
+    "type": "panel-single",
+    "text": "At it's core, JavaScript is a synchronous, blocking, single-threaded language. This means that only one thing can happen at a time.<br/><br/>When people say that JavaScript is an <span class=underline>asynchronous</span> language, what they mean is that you can manipulate JavaScript to behave asynchronously.<br/<br/><div class=bold>Boundaries of Asynchronicity</div><ul><li>User Interactions</li><li>Network IO</li><li>Disk IO</li><li>Inter-Process Communications</li><li>Timers</li></ul>"
+  },
+  "definitions--slide": {
+    "title": "Definitions",
+    "type": "panel-single",
+    "text": "<div class=bold>Parallelism</div><div class=indent>Multi-thread processing and scheduling (same time).</div><div class=bold>Asynchronous</div><div class=indent>Single-thread with an event loop.</div><br/><div class=bold>Managed by ...</div><br/><div class=bold>Concurrency</div><div class=indent>Higer-level tasks that can occur within the same time frame.<br/>Code in the queue has some level of control over what happens next with the queue.</div><div class=bold>Contention</div><div class=indent>Multiple things need to occur at the same instant.</div>"
+  },
+  "javascript-engine-details--slide": {
+    "title": "JavaScript Engine Details",
+    "type": "text-image",
+    "orientation": "left",
+    "text": "These are not a part of the JavaScript Engine; they are included in Browser or NodeJS runtime environment ...<br><ul><li>setTimeout</li><li>Event Loop</li><li>Web APIs</li><li>Message Queue</li><li>Task Queue</li></ul>",
+    "image": "/assets/images/event-queues.png"
   }
 }
