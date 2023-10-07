@@ -1,0 +1,63 @@
+.outer-wrapper {
+  display: flex;
+}
+
+.organization {
+  border-right: 2px solid #69f0ae;
+  padding: 1rem;
+  height: calc(100vh - 4rem);
+  width: 30rem;
+  overflow-y: auto;
+
+  .home-navigation {
+    text-align: center;
+  }
+
+  .sections {
+    margin-bottom: 1rem;
+
+    .section {
+      padding: 1rem 0.5rem;
+
+      &:not(.included) {
+        background-color: palevioletred;
+        color: white;
+      }
+      &.included {
+        background-color: #69f0ae;
+        color: black;
+      }
+    }
+  }
+
+  .global-style {
+    background-color: rgba(100, 100, 100, 0.5);
+    border: 1px solid #69f0ae;
+    padding: 1rem;
+    white-space: pre;
+  }
+}
+
+.editor-space {
+  padding: 1rem;
+  height: calc(100vh - 4rem);
+  width: calc(100vw - 32rem);
+  overflow-y: auto;
+
+  .slide-section {
+    padding: 1rem;
+    border: 1px solid silver;
+    width: calc(100% - 4rem);
+    margin-bottom: 1rem;
+
+    .slide-section--title {
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .full-width {
+      width: 100%;
+    }
+  }
+}

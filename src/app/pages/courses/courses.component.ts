@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Tag } from 'src/app/core/interfaces/tag';
 import { Talk, Talks } from 'src/app/core/interfaces/talks';
 import { CodeService } from 'src/app/core/services/code.service';
@@ -9,7 +10,9 @@ import { StyleService } from 'src/app/core/services/style.service';
   templateUrl: './courses.component.html',
   styleUrls: ['./courses.component.scss']
 })
-export class CoursesComponent {
+export class CoursesComponent implements OnDestroy {
+  subscription: Subscription;
+  
   talks: Array<Talk> = [];
   tags: Array<Tag> = [];
 
@@ -20,7 +23,11 @@ export class CoursesComponent {
     private code: CodeService,
     private style: StyleService
   ) {
-    this.code.talks.subscribe(this.handleTalks.bind(this));
+    this.subscription = this.code.talks.subscribe(this.handleTalks.bind(this));
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   handleTalks = (wrapper: Talks): void => {

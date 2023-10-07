@@ -1,5 +1,6 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { Structure, StructureType } from 'src/app/core/interfaces/structure';
 import { CodeService } from 'src/app/core/services/code.service';
 import { StyleService } from 'src/app/core/services/style.service';
@@ -9,7 +10,9 @@ import { StyleService } from 'src/app/core/services/style.service';
   templateUrl: './talk.component.html',
   styleUrls: ['./talk.component.scss'],
 })
-export class TalkComponent {
+export class TalkComponent implements OnDestroy {
+  subscription: Subscription;
+
   @HostListener('document:keydown', ['$event'])
     handleKeyboardEvent(event: KeyboardEvent) {
       if (['ArrowRight', 'ArrowUp'].includes(event.key)) {
@@ -33,8 +36,12 @@ export class TalkComponent {
     private route: ActivatedRoute,
     private style: StyleService
   ) {
-    this.code.structure.subscribe(this.handleStructure.bind(this));
+    this.subscription = this.code.structure.subscribe(this.handleStructure.bind(this));
     this.init();
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   init = (): void => {

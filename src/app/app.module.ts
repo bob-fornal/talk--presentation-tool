@@ -12,7 +12,9 @@ import { TalkComponent } from './pages/talk/talk.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 
 import { Cover01Component } from './slides/cover-01/cover.component';
@@ -22,6 +24,7 @@ import { PanelSingleComponent } from './slides/panel-single/panel-single.compone
 import { ImageOnlyComponent } from './slides/image-only/image-only.component';
 import { PanelDoubleComponent } from './slides/panel-double/panel-double.component';
 import { CodeEditorComponent } from './slides/code-editor/code-editor.component';
+import { EditComponent } from './pages/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +39,7 @@ import { CodeEditorComponent } from './slides/code-editor/code-editor.component'
     ImageOnlyComponent,
     PanelDoubleComponent,
     CodeEditorComponent,
+    EditComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,9 @@ import { CodeEditorComponent } from './slides/code-editor/code-editor.component'
     NuMonacoEditorModule.forRoot(),
 
     MatButtonModule,
+    MatFormFieldModule,
     MatIconModule,
+    MatInputModule,
     MatListModule
   ],
   providers: [],

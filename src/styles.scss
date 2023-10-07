@@ -44,6 +44,9 @@ body {
   .indent {
     margin-left: 2em;
   }
+  .underline {
+    text-decoration: underline;
+  }
 }
 
 .file[selected=true] {
@@ -53,6 +56,7 @@ body {
 }
 
 .btn {
+  display: inline-block !important;
   color: gray !important;
   border-radius: 0.5vh;
   font-size: 1.5vh;
