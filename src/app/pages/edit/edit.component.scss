@@ -38,6 +38,17 @@
   }
 }
 
+.wrapper-title {
+  padding: 1rem;
+  border: 1px solid silver;
+  width: calc(100% - 2rem);
+  margin-bottom: 1rem;
+
+  font-weight: bold;
+  font-size: 1.8rem;
+  text-align: right;
+}
+
 .editor-space {
   padding: 1rem;
   height: calc(100vh - 4rem);
@@ -46,10 +57,17 @@
 
   .slide-section {
     padding: 1rem;
+    background-color: rgba(50, 50, 50, 0.25);
     border: 1px solid silver;
     width: calc(100% - 4rem);
     margin-bottom: 1rem;
 
+    &.not-included {
+      background-color: rgba(185, 143, 158, 0.25);
+    }
+    &.not-included .slide-section--title {
+      color: palevioletred;
+    }
     .slide-section--title {
       font-weight: bold;
       font-size: 1.5rem;
@@ -60,4 +78,16 @@
       width: 100%;
     }
   }
+}
+
+.files-wrapper {
+  padding: 1em;
+  display: inline-block;
+  width: 40%;
+  vertical-align: top;
+}
+.triggers-wrapper {
+  padding: 1em;
+  display: inline-block;
+  width: 50%;
 }

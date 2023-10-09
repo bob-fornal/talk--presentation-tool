@@ -2,9 +2,9 @@ import { Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { KeyStatuses } from 'src/app/core/interfaces/key-statuses';
-import { SlidePattern } from 'src/app/core/interfaces/slide-pattern';
+import { SlideDataPattern, SlidePattern } from 'src/app/core/interfaces/slide-pattern';
 import { Structure, StructureType } from 'src/app/core/interfaces/structure';
-import { Talks } from 'src/app/core/interfaces/talks';
+import { Talk, Talks } from 'src/app/core/interfaces/talks';
 import { CodeService } from 'src/app/core/services/code.service';
 import { SlidePatternsService } from 'src/app/core/services/slide-patterns.service';
 import { StyleService } from 'src/app/core/services/style.service';
@@ -21,6 +21,9 @@ export class EditComponent implements OnDestroy {
   keyStatuses: Array<KeyStatuses> = [];
 
   path: string = '';
+
+  title: string = '';
+  tags: Array<string> = [];
 
   constructor(
     private code: CodeService,
@@ -43,6 +46,15 @@ export class EditComponent implements OnDestroy {
     const path: string = this.route.snapshot.paramMap.get('folder') || '';
     this.path = path;
     this.code.getStructure(path);
+
+    if (this.path !== '') {
+      const talk = this.talks.find((item: any) => this.path === item.folder);
+      if (talk !== undefined) {
+        this.title = talk!.title;
+        this.tags = [...talk!.tags];  
+      }
+    }
+
   };
 
   handleChange = (event: any): void => {
@@ -61,17 +73,39 @@ export class EditComponent implements OnDestroy {
     });
   };
 
+  talks: Array<Talk> = [];
   handleTalks = (wrapper: Talks): void => {
+    if (this.path !== '') {
+      const talk = wrapper.TALKS.find((item: any) => this.path === item.folder);
+      if (talk !== undefined) {
+        this.title = talk!.title;
+        this.tags = [...talk!.tags];  
+      }
+    } else {
+      this.talks = wrapper.TALKS;
+    }
+
     const style = wrapper.STYLE;
     this.style.add(style.join('\n'));
   };
 
-  getSlidePattern = (type: string): Array<SlidePattern> => {
-    return this.slidePatterns.patterns[type];
+  hasSlidePattern = (key: string): boolean => {
+    const pattern: string = (this.structure[key] as StructureType).type;
+    return this.slidePatterns.hasPattern(pattern);
   };
 
-  getStructureType = (slide: KeyStatuses): string => {
-    return (this.structure[slide.key] as StructureType).type;
+  getSlidePatternData = (key: string): Array<SlideDataPattern> => {
+    const pattern: string = (this.structure[key] as StructureType).type;
+    return this.slidePatterns.getSlidePatternData(pattern);
+  };
+
+  getSlidePatternTitle = (key: string): string => {
+    const title: string = (this.structure[key] as StructureType).title;
+    return title !== '' ? title : 'NO TITLE';
+  };
+
+  getStructureType = (key: string): string => {
+    return (this.structure[key] as StructureType).type;
   };
 
   getStyle = (): string => {
@@ -79,14 +113,14 @@ export class EditComponent implements OnDestroy {
     return style;
   };
 
-  getValue = (slide: KeyStatuses, key: string): string => {
-    const struct: any = { ...(this.structure[slide.key] as StructureType) };
-    return struct[key];
+  getValue = (slideKey: string, itemKey: string): any => {
+    const struct: any = { ...(this.structure[slideKey] as StructureType) };
+    return struct[itemKey];
   };
 
-  getCode = (slide: KeyStatuses, key: string): string => {
-    const struct: any = { ...(this.structure[slide.key] as StructureType) };
-    const code: string = struct[key];
+  getCode = (slideKey: string, itemKey: string): string => {
+    const struct: any = { ...(this.structure[slideKey] as StructureType) };
+    const code: string = struct[itemKey];
 
     const pattern01 = /\/>/gm;
     const pattern02 = /<(\/[a-z]*)>/gm;

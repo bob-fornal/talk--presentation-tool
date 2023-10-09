@@ -84,6 +84,7 @@
   "test-code-in-production": {
     "title": "",
     "type": "image-only",
+    "background": "transparent",
     "image": "/assets/images/vader-testing-production.png"
   },
 

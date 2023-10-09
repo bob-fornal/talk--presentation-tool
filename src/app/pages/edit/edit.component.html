@@ -7,31 +7,70 @@
           <mat-icon>home</mat-icon>
         </button>
       </div>
-      <div class="sections">
-        <div class="section" [class.included]="status.included" *ngFor="let status of keyStatuses;">
-          {{ status.key }}
-        </div>
-      </div>
+      <div class="wrapper-title">{{ title }}</div>
       <div class="global-style" [innerText]="getStyle()"></div>
     </div>
   </div>
   
   <div class="editor-space">
     <div class="editor-wrapper">
-      <div class="slide-section" *ngFor="let slide of this.keyStatuses">
-        <ng-container [ngSwitch]="slide.key">
+      <div class="slide-section" [class.not-included]="slide.included === false" [attr.data-group]="slide.key" *ngFor="let slide of this.keyStatuses">
+        <ng-container [ngSwitch]="true">
 
-          <ng-container *ngSwitchCase="'cover-slide-01'">
-            <div class="slide-section--title">Cover Slide 01</div>
-            <mat-form-field class="full-width" *ngFor="let item of getSlidePattern('cover-slide-01')">
-              <mat-label>{{ item.title }}</mat-label>
-              <input *ngIf="item.codeAdjust === false" matInput [value]="getValue(slide, item.key)" />
-              <textarea *ngIf="item.codeAdjust === true" matInput (input)="handleChange($event)">{{ getCode(slide, item.key) }}</textarea>
-            </mat-form-field>
+          <ng-container *ngSwitchCase="hasSlidePattern(slide.key)">
+            <div class="slide-section--title">{{ getSlidePatternTitle(slide.key) }}</div>
+            <ng-container *ngFor="let item of getSlidePatternData(slide.key)">
+              <ng-container *ngIf="item.codeAdjust === false">
+                <ng-container [ngSwitch]="item.key">
+
+                  <div class="files-wrapper" *ngSwitchCase="'files'">
+                    <ng-container *ngFor="let file of getValue(slide.key, item.key)">
+                      <mat-form-field class="full-width">
+                        <mat-label>File</mat-label>
+                        <input matInput [value]="file" />    
+                      </mat-form-field>
+                    </ng-container>
+                  </div>
+
+                  <div class="triggers-wrapper" *ngSwitchCase="'triggers'">
+                    <ng-container *ngFor="let trigger of getValue(slide.key, item.key)">
+                      <mat-form-field class="full-width">
+                        <mat-label>Title</mat-label>
+                        <input matInput [value]="(trigger).title" />
+                      </mat-form-field>
+                      <mat-form-field class="full-width">
+                        <mat-label>File</mat-label>
+                        <input matInput [value]="(trigger).file" />
+                      </mat-form-field>
+                      <mat-form-field class="full-width">
+                        <mat-label>Initializer</mat-label>
+                        <input matInput [value]="(trigger).init" />
+                      </mat-form-field>
+                    </ng-container>
+                  </div>
+
+                  <ng-container *ngSwitchDefault>
+                    <mat-form-field class="full-width">
+                      <mat-label>{{ item.title }}</mat-label>
+                      <input [attr.data-item]="item.key" matInput [value]="getValue(slide.key, item.key)" />
+                    </mat-form-field>
+                  </ng-container>
+                
+                </ng-container>
+              </ng-container>
+              
+              <ng-container *ngIf="item.codeAdjust === true">
+                <mat-form-field class="full-width">
+                  <mat-label>{{ item.title }}</mat-label>
+                  <textarea [attr.data-item]="item.key" matInput (input)="handleChange($event)">{{ getCode(slide.key, item.key) }}</textarea>
+                </mat-form-field>
+              </ng-container>
+
+            </ng-container>
           </ng-container>
 
           <ng-container *ngSwitchDefault>
-            Working: {{ getStructureType(slide) }}
+            Working: {{ getStructureType(slide.key) }}
           </ng-container>
         </ng-container>
       </div>
