@@ -57,7 +57,7 @@
 
   .slide-section {
     padding: 1rem;
-    background-color: rgba(50, 50, 50, 0.25);
+    background-color: rgba(50, 50, 50, 0.5);
     border: 1px solid silver;
     width: calc(100% - 4rem);
     margin-bottom: 1rem;
@@ -80,14 +80,17 @@
   }
 }
 
-.files-wrapper {
-  padding: 1em;
-  display: inline-block;
-  width: 40%;
-  vertical-align: top;
-}
 .triggers-wrapper {
-  padding: 1em;
-  display: inline-block;
-  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 1em;
+
+  .trigger-wrapper {
+    display: inline-block;
+    width: 30%;
+    padding: 1em 1em 0 1em;
+    background-color: rgba(50, 50, 50, 0.25);
+    border: 1px solid silver;
+  }
 }

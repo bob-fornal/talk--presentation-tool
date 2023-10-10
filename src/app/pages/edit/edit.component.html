@@ -17,37 +17,56 @@
       <div class="slide-section" [class.not-included]="slide.included === false" [attr.data-group]="slide.key" *ngFor="let slide of this.keyStatuses">
         <ng-container [ngSwitch]="true">
 
-          <ng-container *ngSwitchCase="hasSlidePattern(slide.key)">
+          <ng-container *ngSwitchCase="hasSlidePattern(slide.key) && getStructureType(slide.key) === 'code-editor'">
+            <div class="slide-section--title">{{ getSlidePatternTitle(slide.key) }}</div>
+
+            <mat-form-field class="full-width">
+              <mat-label>Title</mat-label>
+              <input [attr.data-item]="'title'" matInput [value]="getValue(slide.key, 'title')" />
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+              <mat-label>Type</mat-label>
+              <input [attr.data-item]="'type'" matInput [value]="getValue(slide.key, 'type')" />
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+              <mat-label>Folder</mat-label>
+              <input [attr.data-item]="'folder'" matInput [value]="getValue(slide.key, 'folder')" />
+            </mat-form-field>
+
+            <div class="file-wrapper">
+              <mat-form-field class="full-width">
+                <mat-label>Files</mat-label>
+                <input [attr.data-item]="'files'" matInput [value]="getValue(slide.key, 'files').join(', ')" />
+              </mat-form-field>
+            </div>
+
+            <div class="triggers-wrapper">
+              <div class="trigger-wrapper" *ngFor="let trigger of getValue(slide.key, 'triggers')">
+                <mat-form-field class="full-width">
+                  <mat-label>Trigger Title</mat-label>
+                  <input [attr.data-item]="'trigger-title'" matInput [value]="trigger.title" />
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                  <mat-label>Trigger File</mat-label>
+                  <input [attr.data-item]="'trigger-file'" matInput [value]="trigger.file" />
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                  <mat-label>Trigger Init</mat-label>
+                  <input [attr.data-item]="'trigger-init'" matInput [value]="trigger.init" />
+                </mat-form-field>
+              </div>
+            </div>
+          </ng-container>
+
+          <ng-container *ngSwitchCase="hasSlidePattern(slide.key) && getStructureType(slide.key) !== 'code-editor'">
             <div class="slide-section--title">{{ getSlidePatternTitle(slide.key) }}</div>
             <ng-container *ngFor="let item of getSlidePatternData(slide.key)">
               <ng-container *ngIf="item.codeAdjust === false">
                 <ng-container [ngSwitch]="item.key">
-
-                  <div class="files-wrapper" *ngSwitchCase="'files'">
-                    <ng-container *ngFor="let file of getValue(slide.key, item.key)">
-                      <mat-form-field class="full-width">
-                        <mat-label>File</mat-label>
-                        <input matInput [value]="file" />    
-                      </mat-form-field>
-                    </ng-container>
-                  </div>
-
-                  <div class="triggers-wrapper" *ngSwitchCase="'triggers'">
-                    <ng-container *ngFor="let trigger of getValue(slide.key, item.key)">
-                      <mat-form-field class="full-width">
-                        <mat-label>Title</mat-label>
-                        <input matInput [value]="(trigger).title" />
-                      </mat-form-field>
-                      <mat-form-field class="full-width">
-                        <mat-label>File</mat-label>
-                        <input matInput [value]="(trigger).file" />
-                      </mat-form-field>
-                      <mat-form-field class="full-width">
-                        <mat-label>Initializer</mat-label>
-                        <input matInput [value]="(trigger).init" />
-                      </mat-form-field>
-                    </ng-container>
-                  </div>
 
                   <ng-container *ngSwitchDefault>
                     <mat-form-field class="full-width">
