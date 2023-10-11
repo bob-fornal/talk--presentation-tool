@@ -6,7 +6,7 @@
   border-right: 2px solid #69f0ae;
   padding: 1rem;
   height: calc(100vh - 4rem);
-  width: 30rem;
+  width: 25rem;
   overflow-y: auto;
 
   .home-navigation {
@@ -52,30 +52,57 @@
 .editor-space {
   padding: 1rem;
   height: calc(100vh - 4rem);
-  width: calc(100vw - 32rem);
+  width: calc(100vw - 27rem);
   overflow-y: auto;
 
-  .slide-section {
-    padding: 1rem;
-    background-color: rgba(50, 50, 50, 0.5);
-    border: 1px solid silver;
-    width: calc(100% - 4rem);
-    margin-bottom: 1rem;
+  .editor-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
 
-    &.not-included {
-      background-color: rgba(185, 143, 158, 0.25);
+    .slide-section {
+      padding: 1rem;
+      background-color: rgba(50, 50, 50, 0.5);
+      border: 1px solid silver;
+      width: calc(100% - 4rem);
+      margin-bottom: 1rem;
+  
+      &.not-included {
+        background-color: rgba(185, 143, 158, 0.25);
+      }
+      &.not-included .slide-section--title {
+        color: palevioletred;
+      }
+      .slide-section--title {
+        font-weight: bold;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+  
+      .full-width {
+        width: 100%;
+      }
     }
-    &.not-included .slide-section--title {
-      color: palevioletred;
-    }
-    .slide-section--title {
-      font-weight: bold;
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
+  
+    .slide-card {
+      min-width: 300px;
 
-    .full-width {
-      width: 100%;
+      .card-body {
+        color: white;
+      }
+
+      &.cover-slide-01,
+      &.cover-slide-01 {
+        background-color: rgb(66, 66, 88);
+      }
+      &.image-only,
+      &.panel-single,
+      &.panel-double {
+        background-color: rgb(88, 66, 66);
+      }
+      &.code-editor {
+        background-color: rgb(66, 88, 66);
+      }
     }
   }
 }

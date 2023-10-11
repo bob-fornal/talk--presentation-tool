@@ -11,12 +11,12 @@
 
   <div class="talks">
     <div *ngFor="let talk of filteredTalks; let i = index;">
+      <button class="btn" mat-flat-button color="primary" [routerLink]="'/edit/' + talk.folder">
+        <mat-icon>edit</mat-icon>
+      </button>
       <button class="btn" mat-flat-button color="accent" [routerLink]="'/talk/' + talk.folder">
         <span>{{ i + 1 }}.</span>&nbsp;
         {{ talk.title }}
-      </button>
-      <button class="btn" mat-flat-button color="primary" [routerLink]="'/edit/' + talk.folder">
-        <mat-icon>edit</mat-icon>
       </button>
     </div>
   </div>

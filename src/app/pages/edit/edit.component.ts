@@ -128,4 +128,10 @@ export class EditComponent implements OnDestroy {
 
     return formatted;
   };
+
+  editClasses = (slide: string): Array<string> => {
+    const base = ['slide-card'];
+    base.push(this.getStructureType(slide));
+    return base;
+  }
 }
