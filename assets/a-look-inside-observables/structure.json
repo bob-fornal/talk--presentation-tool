@@ -20,7 +20,7 @@
 
   "STYLE": [
     ".outer-wrapper {",
-    "  background: url(\"/assets/images/grid--green.jpeg\");",
+    "  background: url(\"/#/assets/images/grid--green.jpeg\");",
     "  background-repeat: no-repeat;",
     "  background-size: cover;",
     "  color: #69f0ae;",
@@ -32,8 +32,8 @@
     "title": "A Look Inside Observables",
     "type": "cover-slide-01",
     "author": "Bob Fornal",
-    "bio1": "<img class=bio-logo src=/assets/images/code-squid.png /><br/><div class=\"bold bio-header\">Entrepreneur</div>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.",
-    "bio2": "<img class=bio-logo src=/assets/images/leading-edje.png /><br/><div class=bold>Senior Solutions Developer</div><div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth."
+    "bio1": "<img class=bio-logo src=/#/assets/images/code-squid.png /><br/><div class=\"bold bio-header\">Entrepreneur</div>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.",
+    "bio2": "<img class=bio-logo src=/#/assets/images/leading-edje.png /><br/><div class=bold>Senior Solutions Developer</div><div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth."
   },
   "what-is-rxjs--slide": {
     "title": "What is RxJS",
@@ -167,6 +167,6 @@
     "title": "",
     "type": "image-only",
     "background": "transparent",
-    "image": "/assets/images/time-for-questions.png"
+    "image": "/#/assets/images/time-for-questions.png"
   }
 }
