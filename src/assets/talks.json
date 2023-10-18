@@ -1,7 +1,7 @@
 {
   "STYLE": [
     ".outer-wrapper {",
-    "  background: url(\"/assets/images/grid--green.jpeg\");",
+    "  background: url(\"/#/assets/images/grid--green.jpeg\");",
     "  background-repeat: no-repeat;",
     "  background-size: cover;",
     "  color: #69f0ae;",
