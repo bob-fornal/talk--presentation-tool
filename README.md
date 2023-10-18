@@ -19,6 +19,7 @@ This project was designed to provide a means of doing a presentation with code e
 - [x] Include RxJS Tooling for Code Examples / CDN [](https://rxjs.dev/guide/importing#cdn).
 - [ ] Unit Tests.
 - [x] GitHub Actions Pipeline.
+- [ ] BUG: Fix GitHub Page
 
 ### Editing Talk
 
