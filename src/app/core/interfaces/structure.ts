@@ -17,6 +17,9 @@ export type StructureType = {
   text?: string;
   textLeft?: string;
   textRight?: string;
+  text1?: string;
+  text2?: string;
+  text3?: string;
   image?: string;
 
   script?: string;

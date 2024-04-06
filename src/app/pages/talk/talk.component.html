@@ -20,6 +20,9 @@
     <div class="slide-wrapper" *ngSwitchCase="'panel-double'">
       <panel-double [title]="page.title" [textLeft]="page.textLeft!" [textRight]="page.textRight!"></panel-double>
     </div>
+    <div class="slide-wrapper" *ngSwitchCase="'panel-triple'">
+      <panel-triple [title]="page.title" [text1]="page.text1!" [text2]="page.text2!" [text3]="page.text3!"></panel-triple>
+    </div>
 
     <div class="slide-wrapper" *ngSwitchCase="'code-editor'">
       <code-editor [title]="page.title" [path]="path" [folder]="page.folder!" [files]="page.files!" [triggers]="page.triggers || []" [keys]="page.environment_keys || []"></code-editor>

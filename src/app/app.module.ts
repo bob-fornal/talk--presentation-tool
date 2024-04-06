@@ -20,10 +20,12 @@ import { MatListModule } from '@angular/material/list';
 
 import { Cover01Component } from './slides/cover-01/cover.component';
 import { Cover02Component } from './slides/cover-02/cover.component';
-import { TextImageComponent } from './slides/text-image/text-image.component';
-import { PanelSingleComponent } from './slides/panel-single/panel-single.component';
 import { ImageOnlyComponent } from './slides/image-only/image-only.component';
+import { PanelSingleComponent } from './slides/panel-single/panel-single.component';
 import { PanelDoubleComponent } from './slides/panel-double/panel-double.component';
+import { PanelTripleComponent } from './slides/panel-triple/panel-triple.component';
+import { TextImageComponent } from './slides/text-image/text-image.component';
+
 import { CodeEditorComponent } from './slides/code-editor/code-editor.component';
 import { EditComponent } from './pages/edit/edit.component';
 
@@ -35,10 +37,12 @@ import { EditComponent } from './pages/edit/edit.component';
 
     Cover01Component,
     Cover02Component,
-    TextImageComponent,
-    PanelSingleComponent,
     ImageOnlyComponent,
+    PanelSingleComponent,
     PanelDoubleComponent,
+    PanelTripleComponent,
+    TextImageComponent,
+
     CodeEditorComponent,
     EditComponent,
   ],
@@ -55,7 +59,7 @@ import { EditComponent } from './pages/edit/edit.component';
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    MatListModule
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
