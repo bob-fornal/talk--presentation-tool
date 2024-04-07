@@ -1,8 +1,8 @@
-<div class="code-editor-wrapper">
-  <div class="code-editor--title">{{ title }}</div>
+<div class="panel-wrapper">
+  <div class="panel--title">{{ title }}</div>
 
-  <div class="code-editor--content-wrapper">
-    <div class="code-editor--files">
+  <div class="panel--content-wrapper">
+    <div class="panel--files">
       <mat-selection-list role="list">
         <a mat-list-item [routerLink]="" [attr.selected]="file === selected" *ngFor="let file of files;" (click)="fileSelection(file)" class="file">{{ file }}</a>
       </mat-selection-list>
@@ -10,7 +10,7 @@
         <a mat-list-item [routerLink]="" *ngFor="let trigger of triggers;" (click)="triggerFile(trigger)" class="trigger">{{ trigger.title }}</a>
       </mat-selection-list>
     </div>
-    <div class="code-editor--editor">
+    <div class="panel--editor">
       <nu-monaco-editor class="editor" style="height: 100%;" [(ngModel)]="code" [options]="editorOptions"></nu-monaco-editor>
     </div>
     <div #handleScript>

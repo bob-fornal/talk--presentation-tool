@@ -1,41 +1,22 @@
-
-.cover-wrapper {
-  width: calc(100% - 2em);
-  height: calc(100% - 2em);
-
-  .cover--title {
-    font-size: 2.8rem;
-    font-weight: bold;;
-    position: absolute;
-    bottom: 0.5em;
-    z-index: 100;
-  }
-  .cover--author {
-    font-size: 2.0rem;
-    font-weight: normal;
-    z-index: 100;
-  }
-
-  .title-wrapper {
-    position: absolute;
-    left: 50%;
-    width: 40%;
-    top: 10%;
-    height: 40%;
-    background-color: rgba(100, 100, 100, 0.5);
-    border: 4px solid #69f0ae;
-    padding: 1em;
-    box-sizing: border-box;
-  }
-  .author-wrapper {
-    position: absolute;
-    left: 50%;
-    width: 40%;
-    top: calc(50% - 4px);
-    height: 20%;
-    background-color: rgba(100, 100, 100, 0.5);
-    border: 4px solid #69f0ae;
-    padding: 1em;
-    box-sizing: border-box;
-  }
+.title-wrapper {
+  position: absolute;
+  left: 50%;
+  width: 40%;
+  top: 10%;
+  height: 40%;
+  background-color: rgba(100, 100, 100, 0.5);
+  border: 4px solid #69f0ae;
+  padding: 1em;
+  box-sizing: border-box;
+}
+.author-wrapper {
+  position: absolute;
+  left: 50%;
+  width: 40%;
+  top: calc(50% - 4px);
+  height: 20%;
+  background-color: rgba(100, 100, 100, 0.5);
+  border: 4px solid #69f0ae;
+  padding: 1em;
+  box-sizing: border-box;
 }

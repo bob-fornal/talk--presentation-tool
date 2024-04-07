@@ -4,7 +4,10 @@ import { NgIf } from '@angular/common';
 @Component({
     selector: 'cover-01',
     templateUrl: './cover.component.html',
-    styleUrls: ['./cover.component.scss'],
+    styleUrls: [
+      '../cover.shared.scss',
+      './cover.component.scss'
+    ],
     standalone: true,
     imports: [NgIf]
 })

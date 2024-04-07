@@ -1,25 +1,17 @@
 
 .cover-wrapper {
-  width: calc(100% - 2em);
-  height: calc(100% - 2em);
 
   .cover--title {
-    font-size: 2.8rem;
-    font-weight: bold;;
-    position: absolute;
     right: 75px;
     text-align: right;
     bottom: calc(60% + 1rem);
-    z-index: 100;
   }
   .cover--author {
-    font-size: 2.0rem;
-    font-weight: normal;
     position: absolute;
     right: 75px;
     bottom: calc(60% - 3.6rem);
-    z-index: 100;
   }
+
   .cover--bio {
     position: absolute;
     top: calc(40% + 3rem);
@@ -34,7 +26,6 @@
       right: 4rem;
     }
   }
-
   .cover--lower {
     position: absolute;
     left: 0;

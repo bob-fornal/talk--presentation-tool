@@ -3,7 +3,10 @@ import { Component, Input } from '@angular/core';
 @Component({
     selector: 'text-image',
     templateUrl: './text-image.component.html',
-    styleUrls: ['./text-image.component.scss'],
+    styleUrls: [
+      '../panel.shared.scss',
+      './text-image.component.scss'
+    ],
     standalone: true
 })
 export class TextImageComponent {

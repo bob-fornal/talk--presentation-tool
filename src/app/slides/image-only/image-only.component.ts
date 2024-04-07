@@ -3,7 +3,10 @@ import { Component, Input } from '@angular/core';
 @Component({
     selector: 'image-only',
     templateUrl: './image-only.component.html',
-    styleUrls: ['./image-only.component.scss'],
+    styleUrls: [
+      '../panel.shared.scss',
+      './image-only.component.scss'
+    ],
     standalone: true
 })
 export class ImageOnlyComponent {

@@ -1,9 +1,9 @@
-<div class="text-image-wrapper">
-  <div class="text-image--title">{{ title }}</div>
+<div class="panel-wrapper">
+  <div class="panel--title">{{ title }}</div>
 
-  <div [class]="'text-image--content-wrapper orient-' + orientation">
-    <div class="text-image--text" [innerHTML]="text"></div>
-    <div class="text-image--image">
+  <div [class]="'panel--content-wrapper orient-' + orientation">
+    <div class="panel--text" [innerHTML]="text"></div>
+    <div class="panel--image">
       <img class="img" [src]="image" [alt]="image" />
     </div>
   </div>

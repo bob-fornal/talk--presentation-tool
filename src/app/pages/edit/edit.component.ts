@@ -2,11 +2,9 @@ import { Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { KeyStatuses } from 'src/app/core/interfaces/key-statuses';
-import { SlideDataPattern, SlidePattern } from 'src/app/core/interfaces/slide-pattern';
 import { Structure, StructureType } from 'src/app/core/interfaces/structure';
 import { Talk, Talks } from 'src/app/core/interfaces/talks';
 import { CodeService } from 'src/app/core/services/code.service';
-import { SlidePatternsService } from 'src/app/core/services/slide-patterns.service';
 import { StyleService } from 'src/app/core/services/style.service';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
@@ -34,7 +32,6 @@ export class EditComponent implements OnDestroy {
     private code: CodeService,
     private route: ActivatedRoute,
     private router: Router,
-    private slidePatterns: SlidePatternsService,
     private style: StyleService
   ) {
     this.subscriptions.push(this.code.structure.subscribe(this.handleStructure.bind(this)));
@@ -94,16 +91,6 @@ export class EditComponent implements OnDestroy {
 
     const style = wrapper.STYLE;
     this.style.add(style.join('\n'));
-  };
-
-  hasSlidePattern = (key: string): boolean => {
-    const pattern: string = (this.structure[key] as StructureType).type;
-    return this.slidePatterns.hasPattern(pattern);
-  };
-
-  getSlidePatternData = (key: string): Array<SlideDataPattern> => {
-    const pattern: string = (this.structure[key] as StructureType).type;
-    return this.slidePatterns.getSlidePatternData(pattern);
   };
 
   getSlidePatternTitle = (key: string): string => {

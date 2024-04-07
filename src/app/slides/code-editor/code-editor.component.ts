@@ -12,7 +12,10 @@ import { MatListModule } from '@angular/material/list';
 @Component({
     selector: 'code-editor',
     templateUrl: './code-editor.component.html',
-    styleUrls: ['./code-editor.component.scss'],
+    styleUrls: [
+      '../panel.shared.scss',
+      './code-editor.component.scss'
+    ],
     standalone: true,
     imports: [MatListModule, NgFor, RouterLink, NuMonacoEditorComponent, FormsModule]
 })

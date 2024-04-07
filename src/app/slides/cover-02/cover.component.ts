@@ -3,7 +3,10 @@ import { Component, Input } from '@angular/core';
 @Component({
     selector: 'cover-02',
     templateUrl: './cover.component.html',
-    styleUrls: ['./cover.component.scss'],
+    styleUrls: [
+      '../cover.shared.scss',
+      './cover.component.scss'
+    ],
     standalone: true
 })
 export class Cover02Component {

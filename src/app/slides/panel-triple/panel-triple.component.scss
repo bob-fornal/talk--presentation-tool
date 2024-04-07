@@ -1,50 +1,7 @@
 
-.panel-triple-wrapper {
-  width: calc(100% - 2em);
-  height: calc(100% - 2em);
+.panel-wrapper {
 
-  .panel-triple--title {
-    position: absolute;
-    top: 75px;
-    left: 50px;
-    width: calc(100% - 132px);
-    font-weight: bold;  
-
-    &:not([data-editing]) {
-      font-size: 2.8rem;
-    }
-    &[data-editing] {
-      font-size: 1rem;
-    }
-  }
-
-  .panel-triple--content-wrapper {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    margin: 0 4em;
-    width: calc(100% - 12em);
-    height: calc(100% - 18em);
-    display: flex;
-  }
-  .panel-triple--text {
-    color: #eeeeee;
-    margin-right: 1em;
-    margin-left: 1em;
-    box-sizing: border-box;
-    font-weight: normal;
-
-    display: inline-block;
-    padding: 1em;
-    background-color: rgba(100, 100, 100, 0.5);
-    height: 100%;
+  .panel--text {
     width: 31%;
-
-    &:not([data-editing]) {
-      font-size: 1.5rem;
-    }
-    &[data-editing] {
-      font-size: 1rem;
-    }
-  }
+  }  
 }

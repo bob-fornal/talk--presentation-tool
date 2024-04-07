@@ -5,7 +5,10 @@ import { MatButtonModule } from '@angular/material/button';
 @Component({
     selector: 'panel-triple',
     templateUrl: './panel-triple.component.html',
-    styleUrl: './panel-triple.component.scss',
+    styleUrls: [
+      '../panel.shared.scss',
+      './panel-triple.component.scss'
+    ],
     standalone: true,
     imports: [MatButtonModule]
 })
