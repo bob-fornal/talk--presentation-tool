@@ -1,8 +1,18 @@
 <div class="panel-double-wrapper">
-  <div class="panel-double--title">{{ title }}</div>
+  @if (editing === false) {
+    <div class="panel-double--title">{{ title }}</div>
 
-  <div class="panel-double--content-wrapper">
-    <div class="panel-double--text left" [innerHTML]="textLeft"></div>
-    <div class="panel-double--text right" [innerHTML]="textRight"></div>
-  </div>
+    <div class="panel-double--content-wrapper">
+      <div class="panel-double--text left" [innerHTML]="textLeft"></div>
+      <div class="panel-double--text right" [innerHTML]="textRight"></div>
+    </div>
+  } @else {
+    <div class="panel-double--title" data-editing="title" contenteditable>{{ title }}</div>
+    <button mat-flat-button (click)="saveEvent()">Save</button>
+
+    <div class="panel-double--content-wrapper">
+      <div class="panel-double--text left" data-editing="textLeft" contenteditable [innerText]="textLeft"></div>
+      <div class="panel-double--text right" data-editing="textRight" contenteditable [innerText]="textRight"></div>
+    </div>
+  }
 </div>

@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { KeyStatuses } from 'src/app/core/interfaces/key-statuses';
 import { SlideDataPattern, SlidePattern } from 'src/app/core/interfaces/slide-pattern';
@@ -28,6 +28,7 @@ export class EditComponent implements OnDestroy {
   constructor(
     private code: CodeService,
     private route: ActivatedRoute,
+    private router: Router,
     private slidePatterns: SlidePatternsService,
     private style: StyleService
   ) {
@@ -45,6 +46,7 @@ export class EditComponent implements OnDestroy {
   init = (): void => {
     const path: string = this.route.snapshot.paramMap.get('folder') || '';
     this.path = path;
+    console.log('edit init', path);
     this.code.getStructure(path);
 
     if (this.path !== '') {
@@ -129,9 +131,15 @@ export class EditComponent implements OnDestroy {
     return formatted;
   };
 
-  editClasses = (slide: string): Array<string> => {
+  editClasses = (slideKey: string): Array<string> => {
     const base = ['slide-card'];
-    base.push(this.getStructureType(slide));
+    base.push(this.getStructureType(slideKey));
     return base;
-  }
+  };
+
+  editEvent = (slideKey: string): void => {
+    const url: string = `/edit/${this.path}/${slideKey}`;
+    console.log('edit', url);
+    this.router.navigateByUrl(url);
+  };
 }

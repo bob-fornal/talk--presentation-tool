@@ -1,5 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { Structure } from 'src/app/core/interfaces/structure';
 import { Tag } from 'src/app/core/interfaces/tag';
 import { Talk, Talks } from 'src/app/core/interfaces/talks';
 import { CodeService } from 'src/app/core/services/code.service';
@@ -21,6 +23,7 @@ export class CoursesComponent implements OnDestroy {
 
   constructor(
     private code: CodeService,
+    private router: Router,
     private style: StyleService
   ) {
     this.subscription = this.code.talks.subscribe(this.handleTalks.bind(this));
@@ -71,5 +74,10 @@ export class CoursesComponent implements OnDestroy {
   selectedTag = (tag: Tag): string => {
     if (this.selectedTags.includes(tag.tag) === true) return 'primary';
     return '';
+  };
+
+  clickTalkEvent = async (talk: Talk): Promise<void> => {
+    const structure: Structure = await this.code.getStructureImmediate(talk.folder);
+    this.router.navigate(['talk', talk.folder, structure.ORDER[0]]);
   };
 }

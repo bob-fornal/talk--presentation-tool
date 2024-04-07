@@ -1,9 +1,20 @@
 <div class="panel-triple-wrapper">
-  <div class="panel-triple--title">{{ title }}</div>
+  @if (editing === false) {
+    <div class="panel-triple--title">{{ title }}</div>
 
-  <div class="panel-triple--content-wrapper">
-    <div class="panel-triple--text text1" [innerHTML]="text1"></div>
-    <div class="panel-triple--text text2" [innerHTML]="text2"></div>
-    <div class="panel-triple--text text2" [innerHTML]="text3"></div>
-  </div>
+    <div class="panel-triple--content-wrapper">
+      <div class="panel-triple--text text1" [innerHTML]="text1"></div>
+      <div class="panel-triple--text text2" [innerHTML]="text2"></div>
+      <div class="panel-triple--text text2" [innerHTML]="text3"></div>
+    </div>
+  } @else {
+    <div class="panel-triple--title" data-editing="title" contenteditable>{{ title }}</div>
+    <button mat-flat-button (click)="saveEvent()">Save</button>
+
+    <div class="panel-triple--content-wrapper">
+      <div class="panel-triple--text text1" data-editing="text1" contenteditable [innerText]="text1"></div>
+      <div class="panel-triple--text text2" data-editing="text2" contenteditable [innerText]="text2"></div>
+      <div class="panel-triple--text text2" data-editing="text3" contenteditable [innerText]="text3"></div>
+    </div>
+  }
 </div>

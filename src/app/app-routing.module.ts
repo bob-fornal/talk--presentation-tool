@@ -7,8 +7,9 @@ import { EditComponent } from './pages/edit/edit.component';
 import { TalkComponent } from './pages/talk/talk.component';
 
 const routes: Routes = [
-  { path: 'talk/:folder', component: TalkComponent },
+  { path: 'talk/:folder/:slideKey', component: TalkComponent, data: { type: 'talk-slide' } },
   { path: 'edit/:folder', component: EditComponent },
+  { path: 'edit/:folder/:slideKey', component: TalkComponent, data: { type: 'edit-slide'} },
   
   { path: 'courses', component: CoursesComponent },
   { path: '', redirectTo: '/courses', pathMatch: 'full' }

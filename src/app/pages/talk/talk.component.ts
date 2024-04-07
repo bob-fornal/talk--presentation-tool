@@ -1,5 +1,5 @@
 import { Component, HostListener, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Structure, StructureType } from 'src/app/core/interfaces/structure';
 import { CodeService } from 'src/app/core/services/code.service';
@@ -30,10 +30,12 @@ export class TalkComponent implements OnDestroy {
   page: StructureType = { title: '', type: '' };
   title: string = '';
   type: string = '';
+  editing: boolean = false;
 
   constructor(
     private code: CodeService,
     private route: ActivatedRoute,
+    private router: Router,
     private style: StyleService
   ) {
     this.subscription = this.code.structure.subscribe(this.handleStructure.bind(this));
@@ -52,14 +54,29 @@ export class TalkComponent implements OnDestroy {
 
   handleStructure = (structure: Structure): void => {
     this.structure = structure;
-    this.setPage(this.slideIndex, structure);
+    this.setPageByRoute(structure);
   };
 
   getTalkStyle = (): string => this.structure.STYLE.join(' ');
 
-  setPage = (index: number, structure: Structure): void => {
+  setPageByRoute = (structure: Structure): void => {
+    if (this.path === '') return;
+    const routeData: any = this.route.snapshot.data;
+    const page = this.route.snapshot.paramMap.get('slideKey') || '';
+    switch (true) {
+      case routeData.type === 'edit-slide':
+        this.editing = true;
+        break;
+      case routeData.type === 'talk-slide':
+        this.editing = false;
+        break;
+    }
+    this.setPage(page, structure);
+  };
+
+  setPage = (key: string, structure: Structure): void => {
     if (structure.ORDER.length === 0) return;
-    const key: string = structure.ORDER[index];
+    this.slideIndex = structure.ORDER.indexOf(key);
 
     const page: StructureType = (this.structure[key] as StructureType);
     this.title = page.title;
@@ -68,29 +85,40 @@ export class TalkComponent implements OnDestroy {
 
     const style = structure.STYLE;
     this.style.add(style.join('\n'));
+
+    const base: string = this.editing === false ? 'talk' : 'edit';
+    this.router.navigate([base, this.path, structure.ORDER[this.slideIndex]]);
   };
 
   home = (): void => {
     this.slideIndex = 0;
-    this.setPage(this.slideIndex, this.structure);
+    const page: string = this.structure.ORDER[this.slideIndex];
+    this.setPage(page, this.structure);
   };
 
   next = (): void => {
     if ((this.slideIndex + 1) >= this.structure.ORDER.length) return;
 
     this.slideIndex++;
-    this.setPage(this.slideIndex, this.structure);
+    const page: string = this.structure.ORDER[this.slideIndex];
+    this.setPage(page, this.structure);
   };
 
   previous = (): void => {
     if (this.slideIndex === 0) return;
     
     this.slideIndex--;
-    this.setPage(this.slideIndex, this.structure);
+    const page: string = this.structure.ORDER[this.slideIndex];
+    this.setPage(page, this.structure);
   };
 
   end = (): void => {
     this.slideIndex = this.structure.ORDER.length - 1;
-    this.setPage(this.slideIndex, this.structure);
+    const page: string = this.structure.ORDER[this.slideIndex];
+    this.setPage(page, this.structure);
+  };
+
+  handleDataSave = (event: any): void => {
+    console.log(event);
   };
 }

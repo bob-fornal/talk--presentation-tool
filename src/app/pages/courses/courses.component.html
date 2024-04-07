@@ -10,14 +10,16 @@
   </div>
 
   <div class="talks">
-    <div *ngFor="let talk of filteredTalks; let i = index;">
-      <button class="btn" mat-flat-button color="primary" [routerLink]="'/edit/' + talk.folder">
-        <mat-icon>edit</mat-icon>
-      </button>
-      <button class="btn" mat-flat-button color="accent" [routerLink]="'/talk/' + talk.folder">
-        <span>{{ i + 1 }}.</span>&nbsp;
-        {{ talk.title }}
-      </button>
-    </div>
+    @for (talk of filteredTalks; track talk; let i = $index;) {
+      <div>
+        <button class="btn" mat-flat-button color="primary" [routerLink]="'/edit/' + talk.folder">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button class="btn" mat-flat-button color="accent" (click)="clickTalkEvent(talk)">
+          <span>{{ i + 1 }}.</span>&nbsp;
+          {{ talk.title }}
+        </button>
+      </div>  
+    }
   </div>
 </div>
