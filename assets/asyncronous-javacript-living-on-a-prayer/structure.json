@@ -9,7 +9,7 @@
 
   "STYLE": [
     ".outer-wrapper {",
-    "  background: url(\"./assets/images/grid--green.jpeg\");",
+    "  background: url(\"https://res.cloudinary.com/bob-fornal/image/upload/v1712505542/grid--green.jpg\");",
     "  background-repeat: no-repeat;",
     "  background-size: cover;",
     "  color: #69f0ae;",
