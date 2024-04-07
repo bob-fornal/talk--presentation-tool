@@ -29,9 +29,22 @@ This project was designed to provide a means of doing a presentation with code e
 - [ ] Edit Deck Title.
 - [ ] Edit Global CSS.
 - [/] Edit Slide (Specific to Type)
+- [ ] Add Speaker Notes to Slide Editor
 - [ ] Code-Editor (add and remove) triggers.
 - [ ] Add new Slide (before and after Slide).
 - [ ] Reorder Slides (up and down).
 - [ ] Delete Slide with Verification.
 - [ ] Split, indent, and Unsplit content (code adjust).
 - [ ] Copy JSON result.
+
+## Multiple Tabs
+
+- [ ] Broadcast Message Service(s) / Parent and Child
+- [ ] Add Speaker Notes to Deck (EDITING)
+
+### Control Slide Deck
+
+- [ ] List of Pages
+- [ ] Next, Previous
+- [ ] Font Size (Zoom)
+- [ ] Determine and Trigger Functionality (code)

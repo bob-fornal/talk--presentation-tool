@@ -58,7 +58,9 @@ export class TalkComponent implements OnDestroy {
   page: StructureType = { title: '', type: '' };
   title: string = '';
   type: string = '';
+
   editing: boolean = false;
+  control: boolean = false;
 
   constructor(
     private code: CodeService,
@@ -148,5 +150,12 @@ export class TalkComponent implements OnDestroy {
 
   handleDataSave = (event: any): void => {
     console.log(event);
+  };
+
+  openControlPanel = (): void => {
+    const url = this.router.createUrlTree(['control-panel', this.path]);
+    console.log(url.toString());
+    window.open(url.toString(), '_blank');
+    this.control = true;
   };
 }

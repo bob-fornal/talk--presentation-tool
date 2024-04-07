@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
+import { ControlPanelComponent } from './pages/control-panel/control-panel.component';
 import { CoursesComponent } from './pages/courses/courses.component';
+
 import { EditComponent } from './pages/edit/edit.component';
 import { TalkComponent } from './pages/talk/talk.component';
 
@@ -13,8 +15,10 @@ const routes: Routes = [
   { path: 'talk/:folder/:slideKey', component: TalkComponent, data: { type: 'talk-slide' } },
   { path: 'edit/:folder', component: EditComponent },
   { path: 'edit/:folder/:slideKey', component: TalkComponent, data: { type: 'edit-slide'} },
-  
+
+  { path: 'control-panel/:folder', component: ControlPanelComponent },
   { path: 'courses', component: CoursesComponent },
+
   { path: '', redirectTo: '/courses', pathMatch: 'full' }
 ]
 
