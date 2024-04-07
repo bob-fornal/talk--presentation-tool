@@ -1,10 +1,13 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-  selector: 'panel-triple',
-  templateUrl: './panel-triple.component.html',
-  styleUrl: './panel-triple.component.scss'
+    selector: 'panel-triple',
+    templateUrl: './panel-triple.component.html',
+    styleUrl: './panel-triple.component.scss',
+    standalone: true,
+    imports: [MatButtonModule]
 })
 export class PanelTripleComponent {
   @Input() title: string = '';

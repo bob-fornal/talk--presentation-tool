@@ -1,10 +1,13 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-  selector: 'panel-double',
-  templateUrl: './panel-double.component.html',
-  styleUrls: ['./panel-double.component.scss']
+    selector: 'panel-double',
+    templateUrl: './panel-double.component.html',
+    styleUrls: ['./panel-double.component.scss'],
+    standalone: true,
+    imports: [MatButtonModule]
 })
 export class PanelDoubleComponent {
   @Input() title: string = '';

@@ -8,8 +8,8 @@ describe('PanelDoubleComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [PanelDoubleComponent]
-    });
+    imports: [PanelDoubleComponent]
+});
     fixture = TestBed.createComponent(PanelDoubleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

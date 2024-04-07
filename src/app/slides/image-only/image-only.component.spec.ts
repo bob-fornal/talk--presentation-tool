@@ -8,8 +8,8 @@ describe('ImageOnlyComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ImageOnlyComponent]
-    });
+    imports: [ImageOnlyComponent]
+});
     fixture = TestBed.createComponent(ImageOnlyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

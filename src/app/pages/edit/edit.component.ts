@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { KeyStatuses } from 'src/app/core/interfaces/key-statuses';
 import { SlideDataPattern, SlidePattern } from 'src/app/core/interfaces/slide-pattern';
@@ -8,11 +8,16 @@ import { Talk, Talks } from 'src/app/core/interfaces/talks';
 import { CodeService } from 'src/app/core/services/code.service';
 import { SlidePatternsService } from 'src/app/core/services/slide-patterns.service';
 import { StyleService } from 'src/app/core/services/style.service';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-  selector: 'edit',
-  templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.scss']
+    selector: 'edit',
+    templateUrl: './edit.component.html',
+    styleUrls: ['./edit.component.scss'],
+    standalone: true,
+    imports: [MatButtonModule, RouterLink, MatIconModule, MatCardModule]
 })
 export class EditComponent implements OnDestroy {
   subscriptions: Array<Subscription> = [];

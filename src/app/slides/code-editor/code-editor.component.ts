@@ -1,14 +1,20 @@
-import { DOCUMENT } from '@angular/common';
+import { DOCUMENT, NgFor } from '@angular/common';
 import { Component, Inject, Input, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
 import { Trigger } from 'src/app/core/interfaces/triggers';
 import { CodeService } from 'src/app/core/services/code.service';
 
 import { environment } from 'src/environment/environment';
+import { FormsModule } from '@angular/forms';
+import { NuMonacoEditorComponent } from '@ng-util/monaco-editor';
+import { RouterLink } from '@angular/router';
+import { MatListModule } from '@angular/material/list';
 
 @Component({
-  selector: 'code-editor',
-  templateUrl: './code-editor.component.html',
-  styleUrls: ['./code-editor.component.scss']
+    selector: 'code-editor',
+    templateUrl: './code-editor.component.html',
+    styleUrls: ['./code-editor.component.scss'],
+    standalone: true,
+    imports: [MatListModule, NgFor, RouterLink, NuMonacoEditorComponent, FormsModule]
 })
 export class CodeEditorComponent implements OnChanges {
   @Input() title: string = '';

@@ -1,14 +1,42 @@
 import { Component, HostListener, OnDestroy } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Structure, StructureType } from 'src/app/core/interfaces/structure';
 import { CodeService } from 'src/app/core/services/code.service';
 import { StyleService } from 'src/app/core/services/style.service';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { CodeEditorComponent } from '../../slides/code-editor/code-editor.component';
+import { PanelTripleComponent } from '../../slides/panel-triple/panel-triple.component';
+import { PanelDoubleComponent } from '../../slides/panel-double/panel-double.component';
+import { PanelSingleComponent } from '../../slides/panel-single/panel-single.component';
+import { TextImageComponent } from '../../slides/text-image/text-image.component';
+import { ImageOnlyComponent } from '../../slides/image-only/image-only.component';
+import { Cover02Component } from '../../slides/cover-02/cover.component';
+import { Cover01Component } from '../../slides/cover-01/cover.component';
+import { NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 
 @Component({
-  selector: 'app-talk',
-  templateUrl: './talk.component.html',
-  styleUrls: ['./talk.component.scss'],
+    selector: 'app-talk',
+    templateUrl: './talk.component.html',
+    styleUrls: ['./talk.component.scss'],
+    standalone: true,
+    imports: [
+        NgSwitch,
+        NgSwitchCase,
+        Cover01Component,
+        Cover02Component,
+        ImageOnlyComponent,
+        TextImageComponent,
+        PanelSingleComponent,
+        PanelDoubleComponent,
+        PanelTripleComponent,
+        CodeEditorComponent,
+        NgSwitchDefault,
+        MatButtonModule,
+        RouterLink,
+        MatIconModule,
+    ],
 })
 export class TalkComponent implements OnDestroy {
   subscription: Subscription;
