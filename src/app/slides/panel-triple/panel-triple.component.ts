@@ -40,4 +40,12 @@ export class PanelTripleComponent {
     const path: string = this.route.snapshot.paramMap.get('folder') || '';
     this.router.navigate(['edit', path]);
   };
+
+  cancelEvent = (): void => {
+    const response: any = { type: 'cancel' };
+    this.save.emit(response);
+
+    const path: string = this.route.snapshot.paramMap.get('folder') || '';
+    this.router.navigate(['edit', path]);
+  };
 }
