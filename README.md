@@ -19,13 +19,15 @@ This project was designed to provide a means of doing a presentation with code e
 - [x] Include RxJS Tooling for Code Examples / CDN [](https://rxjs.dev/guide/importing#cdn).
 - [ ] Unit Tests.
 - [x] GitHub Actions Pipeline.
-- [ ] BUG: Fix GitHub Page
+- [x] BUG: Fix GitHub Page.
+- [x] Angular Upgrade to 17, Standalone Components
 
 ### Editing Talk
 
 - [x] Incorporate a means of editing a talk.
 - [ ] Edit Deck Title.
 - [ ] Edit Global CSS.
+- [/] Edit Slide (Specific to Type)
 - [ ] Code-Editor (add and remove) triggers.
 - [ ] Add new Slide (before and after Slide).
 - [ ] Reorder Slides (up and down).
