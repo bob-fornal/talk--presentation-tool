@@ -8,14 +8,21 @@
     top: 75px;
     left: 50px;
     width: calc(100% - 132px);
-    font-weight: bold;  
+    font-weight: bold;
+    font-size: 2.8rem;
+  }
 
-    &:not([data-editing]) {
-      font-size: 2.8rem;
-    }
-    &[data-editing] {
-      font-size: 1rem;
-    }
+  [data-editing="title"] {
+    color: #eee;
+    margin-right: 1em;
+    margin-left: 1em;
+    box-sizing: border-box;
+    font-weight: 400;
+    display: inline-block;
+    padding: 1em;
+    background-color: #64646480;
+    border: 1px solid rgb(118, 118, 118);
+    font-size: 1rem;
   }
 
   .panel--content-wrapper {
