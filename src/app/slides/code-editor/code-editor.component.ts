@@ -57,14 +57,14 @@ export class CodeEditorComponent implements OnChanges {
 
   fileSelection = async (file: string): Promise<void> => {
     this.selected = file;
-    const fileAndPath: string = `/assets/${ this.path }/${ this.folder }/${ file }`;
+    const fileAndPath: string = `./assets/${ this.path }/${ this.folder }/${ file }`;
     const code: string = await this.codeService.getCode(fileAndPath);
     this.code = code;
   };
 
   triggerFile = (trigger: Trigger): void => {
     const init: string = trigger.init;
-    const fileAndPath: string = `/assets/${ this.path }/${ this.folder }/${ trigger.file }`;
+    const fileAndPath: string = `./assets/${ this.path }/${ this.folder }/${ trigger.file }`;
     this.filepath = fileAndPath;
 
     setTimeout(() => {
