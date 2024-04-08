@@ -117,6 +117,8 @@ export class TalkComponent implements OnDestroy {
 
   setPageByRoute = (structure: Structure): void => {
     if (this.path === '') return;
+    if (structure.ORDER.length === 0) return;
+
     const routeData: any = this.route.snapshot.data;
     const page = this.route.snapshot.paramMap.get('slideKey') || '';
     switch (true) {

@@ -7,10 +7,11 @@ This project was designed to provide a means of doing a presentation with code e
 ## Talks
 
 - [x] A Look Inside Observables
+- [/] Active Career Management
 - [ ] Asynchronous JavaScript: Livin' on a Prayer
-- [ ] Designing Effective Unit Tests for React
 - [x] Developer Tools for non-Developers
 - [x] What to Avoid When Writing Unit Tests
+- [x] Writing Testable Code
 
 ## To Do
 
