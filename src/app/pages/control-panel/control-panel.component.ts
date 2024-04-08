@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { BroadcastService } from 'src/app/core/services/broadcast-service.service';
 import { BroadcastMessage } from 'src/app/core/interfaces/broadcast';
+import { StyleService } from 'src/app/core/services/style.service';
 
 @Component({
   selector: 'app-control-panel',
@@ -41,6 +42,7 @@ export class ControlPanelComponent {
     private route: ActivatedRoute,
     private router: Router,
     private service: BroadcastService,
+    private style: StyleService,
   ) {
     this.subscription = this.code.structure.subscribe(this.handleStructure.bind(this));
     this.service.messagesOfType('file-update').subscribe(this.handleFileUpdate.bind(this));
@@ -63,6 +65,7 @@ export class ControlPanelComponent {
     this.structure = structure;
     this.getDeckTitle(structure);
     this.getDeckSlide(this.slideKey);
+    this.setDeckStyle(structure);
   };
 
   handleFileUpdate = (message: BroadcastMessage): void => {
@@ -84,6 +87,11 @@ export class ControlPanelComponent {
   getDeckSlide = (key: string): void => {
     if (this.structure.ORDER.length === 0) return;
     this.deckSlide = this.structure[key] as StructureType;
+  };
+
+  setDeckStyle = (structure: Structure): void => {
+    const style = structure.STYLE;
+    this.style.add(style.join('\n'));
   };
 
   getActive = (key: string): boolean => {
