@@ -25,12 +25,16 @@
       @if (deckSlide.type === 'code-editor') {
         <div class="triggers">
           @for (file of deckSlide.files; track file;) {
-            <div class="btn-wrapper">
-              <button mat-flat-button class="file-button" (click)="triggerFileChange(file)">{{ file }}</button>
-            </div>
+            <button
+              mat-flat-button
+              class="file-button"
+              [class.mat-accent]="file === selectedFile"
+              (click)="triggerFileChange(file)">
+              {{ file }}
+            </button>
           }
-        </div>  
-      }  
+        </div>
+      }
     </div>
   </div>
 </div>

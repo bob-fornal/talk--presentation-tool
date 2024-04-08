@@ -9,6 +9,8 @@ import { NuMonacoEditorComponent } from '@ng-util/monaco-editor';
 import { RouterLink } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
 import { Subject } from 'rxjs';
+import { BroadcastService } from 'src/app/core/services/broadcast-service.service';
+import { BroadcastMessage } from 'src/app/core/interfaces/broadcast';
 
 @Component({
     selector: 'code-editor',
@@ -36,7 +38,8 @@ export class CodeEditorComponent implements OnChanges, OnInit {
   constructor(
     private cdr: ChangeDetectorRef,
     private codeService: CodeService,
-    @Inject(DOCUMENT) private document: Document
+    @Inject(DOCUMENT) private document: Document,
+    private service: BroadcastService,
   ) { }
 
   ngOnChanges() {
@@ -73,6 +76,9 @@ export class CodeEditorComponent implements OnChanges, OnInit {
     const code: string = await this.codeService.getCode(fileAndPath);
     this.code = code;
     this.cdr.detectChanges();
+
+    const message: BroadcastMessage = { type: 'file-update', payload: { file } };
+    this.service.publish(message);
   };
 
   triggerFile = (trigger: Trigger): void => {

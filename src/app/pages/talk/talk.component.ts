@@ -98,7 +98,6 @@ export class TalkComponent implements OnDestroy {
   };
 
   handleControlMessage = (message: BroadcastMessage): void => {
-    console.log(message.payload);
     switch (true) {
       case message.payload.type === 'navigate':
         this.slideIndex = message.payload.index;
@@ -146,11 +145,6 @@ export class TalkComponent implements OnDestroy {
 
     const base: string = this.editing === false ? 'talk' : 'edit';
     this.zone.run(() => this.router.navigate([base, this.path, structure.ORDER[this.slideIndex]]));
-
-    console.log(page);
-    if (page.type === 'code-editor') {
-      console.log('true');
-    }
   };
 
   home = (): void => {

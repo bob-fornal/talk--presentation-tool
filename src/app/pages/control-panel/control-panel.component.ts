@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { ChangeDetectorRef, Component, HostListener } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Structure, StructureType } from 'src/app/core/interfaces/structure';
@@ -33,14 +33,17 @@ export class ControlPanelComponent {
   deckSlide: StructureType = { title: '', type: '' };
   path: string = '';
   slideKey: string = '';
+  selectedFile: string = '';
 
   constructor(
+    private cdr: ChangeDetectorRef,
     private code: CodeService,
     private route: ActivatedRoute,
     private router: Router,
     private service: BroadcastService,
   ) {
     this.subscription = this.code.structure.subscribe(this.handleStructure.bind(this));
+    this.service.messagesOfType('file-update').subscribe(this.handleFileUpdate.bind(this));
     this.init();
   }
 
@@ -60,6 +63,11 @@ export class ControlPanelComponent {
     this.structure = structure;
     this.getDeckTitle(structure);
     this.getDeckSlide(this.slideKey);
+  };
+
+  handleFileUpdate = (message: BroadcastMessage): void => {
+    this.selectedFile = message.payload.file;
+    this.cdr.detectChanges();
   };
 
   close = (): void => {
@@ -95,6 +103,8 @@ export class ControlPanelComponent {
     this.service.publish(message);
     this.router.navigate(['control-panel', this.path, key]);
     this.slideKey = key;
+    this.getDeckSlide(key);
+    // this.cdr.detectChanges();
   };
 
   triggerFileChange = (file: string): void => {
