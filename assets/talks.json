@@ -30,6 +30,10 @@
       "title": "RxJS"
     },
     {
+      "tag": "testing",
+      "title": "Testing"
+    },
+    {
       "tag": "tools",
       "title": "Tools"
     },
@@ -61,18 +65,25 @@
         "asynchronous",
         "javascript"
       ]
-    },
-    {
-      "folder": "what-to-avoid-when-writing-unit-tests--code",
-      "title": "What To Avoid When Writing Unit Tests",
-      "tags": [
-        "unit-tests"
-      ]
     }, {
       "folder": "developer-tools-for-non-developers",
       "title": "Developer Tools for non-Developers",
       "tags": [
         "tools"
+      ]
+    },
+    {
+      "folder": "what-to-avoid-when-writing-unit-tests--code",
+      "title": "What To Avoid When Writing Unit Tests",
+      "tags": [
+        "testing",
+        "unit-tests"
+      ]
+    }, {
+      "folder": "writing-testable-code",
+      "title": "Writing Testable Code",
+      "tags": [
+        "testing"
       ]
     }
   ]

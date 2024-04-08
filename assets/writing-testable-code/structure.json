@@ -1,0 +1,175 @@
+{
+  "ORDER": [
+    "cover-slide-01",
+
+    "constructor-does-real-work--warning-signs",
+    "constructor-does-real-work--code-examples-001",
+    "constructor-does-real-work--code-examples-002",
+
+    "collaborator--warning-signs",
+    "collaborator--code-examples-001",
+    "collaborator--code-examples-002",
+    "collaborator--code-examples-003",
+
+    "brittle-global-state-and-singletons--warning-signs",
+    "brittle-global-state-and-singletons--spooky-action",
+    "brittle-global-state-and-singletons--code-examples-001",
+    "brittle-global-state-and-singletons--ok",
+
+    "class-does-too-much--warning-signs-001",
+    "class-does-too-much--warning-signs-002",
+    "class-does-too-much--warning-signs-003",
+
+    "time-for-questions"
+  ],
+
+  "STYLE": [
+    ".outer-wrapper {",
+    "  background: url(\"https://res.cloudinary.com/bob-fornal/image/upload/v1712505542/grid--green.jpg\");",
+    "  background-repeat: no-repeat;",
+    "  background-size: cover;",
+    "  color: #69f0ae;",
+    "  font-family: Arial, sans-serif;",
+    "}",
+
+    ".italic {",
+    "  font-style: italic;",
+    "}"
+  ],
+  
+  "cover-slide-01": {
+    "title": "Writing Testable Code",
+    "type": "cover-slide-01",
+    "author": "Bob Fornal",
+    "bio1": "<img class=bio-logo src=./assets/images/code-squid.png /><br/><div class=\"bold bio-header\">Entrepreneur</div>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.",
+    "bio2": "<img class=bio-logo src=./assets/images/leading-edje.png /><br/><div class=bold>Senior Solutions Developer</div><div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth."
+  },
+
+  "constructor-does-real-work--warning-signs": {
+    "title": "Constructor Does Real Work",
+    "type": "panel-single",
+    "text": "Work in the constructor such as: creating orinitializing collaborators, communicating with other services, and logic to set up its own state <span class=italic>complicates test setup</span>.<br/<br/><ul><li>\"new\" keyword in a constructor or at field declaration</li><li>Static method calls in a constructor or at field declaration</li><li>Anything more than field assignment in constructors</li><li>Control flow (conditional or looping logic) in a constructor</li></ul>It all comes down to how hard or easy it is to construct the class in isolation or with test-double collaborators.<br/><ul><li>If it's hard, you're doing too much work in the constructor!</li><li>If it's easy, pat yourself on the back.</li></ul>",
+    "notes": "When a constructor has to instantiate and initialize its collaborators, the result tends to be an inflexible and prematurely coupled design. Such constructors shut off the ability to inject test collaborators when testing.<br/><br/><span class=italic>It violates the Single Responsibility Principle</span><br/><br/>When collaborator construction is mixed with initialization, it suggests that there is only one way to configure the class, which closes off reuse opportunities that might otherwise be available.<br/><br/><span class=italic>Testing Directly is Difficult</span><br/><br/>Testing such constructors is difficult. To instantiate an object, the constructor must execute. And if that constructor does lots of work, you are forced to do that work when creating the object in tests. If collaborators access external resources (e.g. files, network services, or databases), subtle changes in collaborators may need to be reflected in the constructor, but may be missed due to missing test coverage from tests that weren't written because the constructor is so difficult to test. We end up in a vicious cycle."
+  },
+  "constructor-does-real-work--code-examples-001": {
+    "title": "Constructor Does Real Work",
+    "type": "code-editor",
+    "folder": "code-001",
+    "files": [
+      "hard-to-test.js",
+      "hard-to-test.spec.js",
+      "testable-and-flexible.js",
+      "testable-and-flexible.spec.js"
+    ],
+    "notes": "This example mixes object creation with logic. In tests we often want to create different data than in production. Usually it is a smaller dataset with some objects replaced with test-doubles. By leaving the new operators inline we will never be able to create a graph of objects for testing."
+  },
+  "constructor-does-real-work--code-examples-002": {
+    "title": "Constructor Does Real Work",
+    "type": "code-editor",
+    "folder": "code-002",
+    "files": [
+      "hard-to-test.js",
+      "hard-to-test.spec.js",
+      "testable-and-flexible.js",
+      "testable-and-flexible.spec.js"
+    ],
+    "notes": "This example mixes object creation with logic. In tests we often want to create different data than in production. Usually it is a smaller dataset with some objects replaced with test-doubles. By leaving the new operators inline we will never be able to create a graph of objects for testing.<br/><br/>When configuration and instantiation are mixed together in the constructor, objects become more brittle and tied to concrete data structures. This makes code harder to modify, and (more or less) impossible to test."
+  },
+
+  "collaborator--warning-signs": {
+    "title": "Collaborators",
+    "type": "panel-single",
+    "text": "Avoid \"holder\", \"context\", and \"kitchen sink\" objects (these take all sorts of other objects and are a grab bag of collaborators). Pass in the specific object you need as a parameter, instead of a holder of that object. Avoid reaching into one object, to get another, etc.<br/>The chain does not need to be deep. If you count more than one period in the chain, you're looking right at an example of this flaw.<br/><ul><li>Objects are passed in but never used directly (only used to get access to other objects)</li><li>Law of Demeter violation: method call chain walks an object graph with more than one dot (.)</li><li>Suspicious names: context, environment, principal, container, or manager",
+    "notes": "<span class=italic>Makes for Brittle Code</span>Imagine when something needs to change, and you have all these \"Middle Men\" that are used to dig around in and get the objects you need. Many of them will need to be modified to accommodate new interactions. Instead, try to get the most specific object that you need, where you need it. (In the process you may discover a class needs to be split up, because it has more than one responsibility. Don't be afraid; strive for the Single Responsibility Principle).<br/><br/><span class=italic>Bloats your Code and Complicates what's Really Happening</span><br/>With all these intermediary steps to dig around and find what you want; your code is more confusing. And it's longer than it needs to be.<br/><br/><span class=italic>Hard to Test</span><br/>If you have to test a method that takes an object, when you exercise that method it's hard to guess what is pulled out and what's not. Typically this means we pass in an empty context, get some null pointers, then set some state in the context and try again. We repeat until all the null pointers go away. See also Breaking the Law of Demeter is Like Looking for a Needle in the Haystack."
+  },
+  "collaborator--code-examples-001": {
+    "title": "Collaborators",
+    "type": "code-editor",
+    "folder": "code-003",
+    "files": [
+      "hard-to-test.js",
+      "hard-to-test.spec.js",
+      "testable-and-flexible.js",
+      "testable-and-flexible.spec.js"
+    ],
+    "notes": "This example mixes object lookup with calculation. The core responsibility is to multiply an amount by a tax rate."
+  },
+  "collaborator--code-examples-002": {
+    "title": "Collaborators",
+    "type": "code-editor",
+    "folder": "code-004",
+    "files": [
+      "hard-to-test.js",
+      "hard-to-test.spec.js",
+      "testable-and-flexible.js",
+      "testable-and-flexible.spec.js"
+    ],
+    "notes": "The most common Law of Demeter violations have many chained calls, however this example shows that you can violate it with a single chain. For testing the original code we had to mock out the client and request. Also, the test has intimate knowledge of the implementation details. In the fixed code we didn't have to mock the data as deeply. This is easier, and helps our code be less brittle."
+  },
+  "collaborator--code-examples-003": {
+    "title": "Collaborators",
+    "type": "code-editor",
+    "folder": "code-005",
+    "files": [
+      "not-a-flaw.js"
+    ],
+    "notes": "Domain Specific Languages can violate the Law of Demeter for Ease of Configuration<br/>This may be acceptable if working in some Domain Specific Languages. They violate the Law of Demeter for ease of configuration. This is not a problem because it is building up a value object, in a fluent, easily understandable way."
+  },
+
+  "brittle-global-state-and-singletons--warning-signs": {
+    "title": "Brittle Global State and Singletons",
+    "type": "panel-single",
+    "text": "Accessing global state statically doesn't clarify those shared dependencies to readers of the constructors and methods that use the Global State. Global State and Singletons make APIs lie about their true dependencies. To really understand the dependencies, developers must read every line of code. It causes Spooky Action at a Distance: when running test suites, global state mutated in one test can cause a subsequent or parallel test to fail unexpectedly. Break the static dependency using manual or Guice dependency injection.<br/><ul><li>Adding or using singletons</li><li>Adding or using static fields or static methods</li><li>Adding or using static initialization blocks</li><li>Adding or using registries</li><li>Adding or using service locators</li></ul>NOTE: \"Singleton\" here is the classic Gang of Four singleton. An “application singleton” on the other hand is an object which has a single instance in our application, but which does not enforce its own \"singletonness.\"",
+    "notes": ""
+  },
+  "brittle-global-state-and-singletons--spooky-action": {
+    "title": "Global State allows Spooky Action at a Distance",
+    "type": "panel-single",
+    "text": "Spooky Action at a Distance is when we run one thing that we believe is isolated (since we did not pass any references in) but unexpected interactions and state changes happen in distant locations of the system which we did not tell the object about. This can only happen via global state.<br/><br/>Whenever we use static state, we're creating secret communication channels and not making them clear in the API. Spooky Action at a Distance forces developers to read every line of code to understand the potential interactions, lowers developer productivity, and confuses new team members.",
+    "notes": ""
+  },
+  "brittle-global-state-and-singletons--code-examples-001": {
+    "title": "Brittle Global State and Singletons",
+    "type": "code-editor",
+    "folder": "code-006",
+    "files": [
+      "hard-to-test.js",
+      "hard-to-test.spec.js",
+      "testable-and-flexible.js",
+      "testable-and-flexible.spec.js"
+    ],
+    "notes": "Sometimes you will be stuck with a static method in a library that you need to prevent from running in a test (TrackStatusChecker). But you need the library so you can't remove or replace it with a non-static implementation. Because it is a library, you don't have the control to remove the static modifier and make it an instance method."
+  },
+  "brittle-global-state-and-singletons--ok": {
+    "title": "When is Global State OK?",
+    "type": "panel-single",
+    "text": "There are two cases when global state is tolerable.<br/><ol><li>When the reference is a constant and the object it points to is either primitive or immutable. So const URL = \"http://google.com\"; is OK since there is no way to mutate the value.</li><li>When the information only travels one way. For example a Logger is one big singleton. However our application only writes to logger and never reads from it. More importantly our application does not behave differently based on what is or is not enabled in our logger.</li></ol>",
+    "notes": "<ol><li>Remember, the transitive closure of all objects you are pointing to must be immutable as well since globality is transitive. The String is safe, but replace it with a MyObject, and it gets be risky due to the transitive closure of all state MyObject exposes. You are on thin ice if someone in the future decides to add mutable state to your immutable object and then your innocent code changes into a headache.</li><li>While it is not a problem from test point of view, it is a problem if you want to assert that your application does indeed log important messages. This is because there is no way for the test to replace the Logger with a test-double (I know we can set our own handler for log level, but those are just more of the problems shown above). If you want to test the logger then change the class to dependency inject in the Logger so that you can insert a MockLogger and assert that the correct things were written to the Logger. (As a convenience, Guice automatically knows how to Constructor Inject a configured logger for any class, just add it to the constructor's params and the right one will be passed in.)</li></ol>"
+  },
+
+  "class-does-too-much--warning-signs-001": {
+    "title": "Class Does Too Much",
+    "type": "panel-single",
+    "text": "The class has too many responsibilities. Interactions between responsibilities are buried within the class.<br/><br/>Tests do not have a clear seam between these interactions.<br/><br/>Construction of depended upon components (such as constructing object) is a responsibility that should be isolated from the class's real responsibility. Use dependency injection to pass in pre-configured objects. Extract classes with single responsibilities.<br/><ul><li>Summing up what the class does includes the word \"and\"</li><li>Class would be challenging for new team members to read and quickly \"get it\"</li><li>Class has fields that are only used in some methods</li><li>Class has static methods that only operate on parameters</li></ul>",
+    "notes": ""
+  },
+  "class-does-too-much--warning-signs-002": {
+    "title": "Class Does Too Much",
+    "type": "panel-single",
+    "text": "When classes have a large span of responsibilities and activities, you end up with code that is:<br/><ul><li>Hard to debug</li><li>Hard to test</li><li>Non-extensible system</li><li>Difficult for Nooglers and hard to hand off</li><li>Not subject to altering behavior via standard mechanisms: decorator, strategy, subclassing: you end up adding another conditional test</li><li>Hard to give a name to describe what the class does. Whenever struggling with a name, the code is telling you that the responsibilities are muddled. When objects have a clear name, it is easy to keep them focused and shear off any excess baggage.</li></ul>",
+    "notes": ""
+  },
+  "class-does-too-much--warning-signs-003": {
+    "title": "Class Does Too Much (Fixing)",
+    "type": "panel-single",
+    "text": "If someone tries to introduce a class that does too much, require them to split it up<br/><ol><li>Identify the individual responsibilities.</li><li>Name each one crisply.</li><li>Extract functionality into a separate class for each responsibility.</li><li>One class may perform the hidden responsibility of mediating between the others.</li><li>Celebrate that now you can test each class in isolation much easier than before.</li></ol>If working with a legacy class that did too much, and you can't fix the whole legacy problem today, you can at least:<br/><ol><li>Sprout a new class with the sole responsibility of the new functionality.</li><li>Extract a class where you are altering existing behavior. As you work on existing functionality, (i.e. adding another conditional) extract a class pulling along that responsibility. This will start to take chunks out of the legacy class, and you will be able to test each chunk in isolation (using Dependency Injection).</li></ol>",
+    "notes": ""
+  },
+
+  "time-for-questions": {
+    "title": "",
+    "type": "image-only",
+    "background": "transparent",
+    "image": "./assets/images/time-for-questions.png"
+  }
+}
