@@ -1,4 +1,5 @@
 import { ChangeDetectorRef, Component, HostListener } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Structure, StructureType } from 'src/app/core/interfaces/structure';
@@ -43,6 +44,7 @@ export class ControlPanelComponent {
     private router: Router,
     private service: BroadcastService,
     private style: StyleService,
+    private title: Title,
   ) {
     this.subscription = this.code.structure.subscribe(this.handleStructure.bind(this));
     this.service.messagesOfType('file-update').subscribe(this.handleFileUpdate.bind(this));
@@ -54,6 +56,7 @@ export class ControlPanelComponent {
   }
 
   init = (): void => {
+    this.title.setTitle('Presentation Control');
     const path: string = this.route.snapshot.paramMap.get('folder') || '';
     const slideKey: string = this.route.snapshot.paramMap.get('slideKey') || '';
     this.path = path;
@@ -117,6 +120,11 @@ export class ControlPanelComponent {
 
   triggerFileChange = (file: string): void => {
     const message: BroadcastMessage = { type: 'control', payload: { type: 'trigger-code', file } };
+    this.service.publish(message);
+  };
+
+  triggerFontsizeChange = (fontsize: string): void => {
+    const message: BroadcastMessage = { type: 'control', payload: { type: 'trigger-fontsize', fontsize } };
     this.service.publish(message);
   };
 }

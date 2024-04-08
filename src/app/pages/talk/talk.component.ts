@@ -17,6 +17,7 @@ import { Cover01Component } from '../../slides/cover-01/cover.component';
 import { NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 import { BroadcastService } from 'src/app/core/services/broadcast-service.service';
 import { BroadcastMessage } from 'src/app/core/interfaces/broadcast';
+import { FontsizeService } from 'src/app/core/services/fontsize.service';
 
 @Component({
     selector: 'app-talk',
@@ -68,9 +69,12 @@ export class TalkComponent implements OnDestroy {
   editing: boolean = false;
   control: boolean = false;
 
+  fontsizeSelected: string | undefined;
+
   constructor(
     private cdr: ChangeDetectorRef,
     private code: CodeService,
+    private fonts: FontsizeService,
     private route: ActivatedRoute,
     private router: Router,
     private service: BroadcastService,
@@ -79,6 +83,7 @@ export class TalkComponent implements OnDestroy {
   ) {
     this.subscription = this.code.structure.subscribe(this.handleStructure.bind(this));
     this.service.messagesOfType('control').subscribe(this.handleControlMessage.bind(this));
+    this.fonts.current.subscribe(this.handleFontsizeChange.bind(this));
     this.init();
   }
 
@@ -92,12 +97,17 @@ export class TalkComponent implements OnDestroy {
     this.code.getStructure(path);
   };
 
+  handleFontsizeChange = (font: string): void => {
+    this.fontsizeSelected = font;
+  };
+
   handleStructure = (structure: Structure): void => {
     this.structure = structure;
     this.setPageByRoute(structure);
   };
 
   handleControlMessage = (message: BroadcastMessage): void => {
+    console.log(message);
     switch (true) {
       case message.payload.type === 'navigate':
         this.slideIndex = message.payload.index;
@@ -105,6 +115,9 @@ export class TalkComponent implements OnDestroy {
         break;
       case message.payload.type === 'trigger-code':
         this.triggerCodeFileChange.next(message.payload.file);
+        break;
+      case message.payload.type === 'trigger-fontsize':
+        this.fonts.change(message.payload.fontsize);
         break;
       case message.payload.type === 'close':
         this.control = false;

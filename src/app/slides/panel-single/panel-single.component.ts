@@ -12,4 +12,5 @@ import { Component, Input } from '@angular/core';
 export class PanelSingleComponent {
   @Input() title: string = '';
   @Input() text: string = '';
+  @Input() fontsize: string | undefined = undefined;
 }

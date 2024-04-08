@@ -22,6 +22,14 @@
     </nav>
 
     <div class="control-content">
+      <div class="fontsizes">
+        <button mat-flat-button class="btn" (click)="triggerFontsizeChange('font-xxs')">XXS</button>
+        <button mat-flat-button class="btn" (click)="triggerFontsizeChange('font-xs')">XS</button>
+        <button mat-flat-button class="btn" (click)="triggerFontsizeChange('font-normal')">Normal</button>
+        <button mat-flat-button class="btn" (click)="triggerFontsizeChange('font-xl')">XL</button>
+        <button mat-flat-button class="btn" (click)="triggerFontsizeChange('font-xxl')">XXL</button>
+      </div>
+
       @if (deckSlide.type === 'code-editor') {
         <div class="triggers">
           @for (file of deckSlide.files; track file;) {
@@ -35,7 +43,7 @@
           }
         </div>
       }
-      <div class="notes" [innerHTML]="deckSlide.notes"></div>
+      <div class="notes font-normal" [innerHTML]="deckSlide.notes"></div>
     </div>
   </div>
 </div>

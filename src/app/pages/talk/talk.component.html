@@ -15,7 +15,7 @@
     </div>
 
     <div class="slide-wrapper" *ngSwitchCase="'panel-single'">
-      <panel-single [title]="page.title" [text]="page.text!"></panel-single>
+      <panel-single [title]="page.title" [text]="page.text!" [fontsize]="fontsizeSelected"></panel-single>
     </div>
     <div class="slide-wrapper" *ngSwitchCase="'panel-double'">
       <panel-double [title]="page.title" [textLeft]="page.textLeft!" [textRight]="page.textRight!" [editing]="editing" (save)="handleDataSave($event)"></panel-double>

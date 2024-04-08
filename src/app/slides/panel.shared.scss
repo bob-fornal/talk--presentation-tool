@@ -9,7 +9,7 @@
     left: 50px;
     width: calc(100% - 132px);
     font-weight: bold;
-    font-size: 2.8rem;
+    font-size: 2.8em;
   }
 
   [data-editing="title"] {
@@ -20,7 +20,7 @@
     border: 1px solid rgb(118, 118, 118);
     color: #eee;
     font-weight: normal;
-    font-size: 1rem;
+    font-size: 1em;
 
     margin-right: 1em;
     margin-left: 1em;
@@ -55,7 +55,7 @@
     height: 100%;
 
     &:not([data-editing]) {
-      font-size: 1.5rem;
+      font-size: var(--font--normal);
     }
     &[data-editing] {
       font-size: 1rem;
