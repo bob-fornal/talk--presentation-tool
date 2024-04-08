@@ -37,6 +37,7 @@
   height: calc(100vh - 9rem);
   display: inline-block;
   max-width: 24vw;
+  min-width: 24vw;
   overflow-y: scroll;
 
   .nav-button {
@@ -45,4 +46,11 @@
     text-indent: -2em;
     text-align: left;
   }
+}
+.notes {
+  background-color: rgb(88, 88, 88);
+  color: white;
+  padding: 1rem;
+  margin-top: 1rem;
+  width: calc(100vw - 32vw);
 }
