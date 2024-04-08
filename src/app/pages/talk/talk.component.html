@@ -31,27 +31,27 @@
     <div class="slide-wrapper" *ngSwitchDefault="">NONE</div>
   </ng-container>
 
-  @if (editing === false && control === false) {
     <nav class="navigation">
-      <button class="btn" mat-flat-button (click)="openControlPanel()">
-        <mat-icon>tune</mat-icon>
-      </button>
       <button class="btn" mat-flat-button routerLink="/">
         <mat-icon>home</mat-icon>
       </button>
-      <button class="btn" mat-flat-button (click)="home()">
-        <mat-icon>first_page</mat-icon>
-      </button>
-      <button class="btn" mat-flat-button (click)="previous()">
-        <mat-icon>navigate_before</mat-icon>
-      </button>
-      <button class="btn" mat-flat-button (click)="next()">
-        <mat-icon>navigate_next</mat-icon>
-      </button>
-      <button class="btn" mat-flat-button (click)="end()">
-        <mat-icon>last_page</mat-icon>
-      </button>
-      <span class="position"><span>{{ slideIndex + 1}}</span> / <span>{{ structure.ORDER.length }}</span></span>
+      @if (editing === false && control === false) {
+        <button class="btn" mat-flat-button (click)="home()">
+          <mat-icon>first_page</mat-icon>
+        </button>
+        <button class="btn" mat-flat-button (click)="previous()">
+          <mat-icon>navigate_before</mat-icon>
+        </button>
+        <button class="btn" mat-flat-button (click)="next()">
+          <mat-icon>navigate_next</mat-icon>
+        </button>
+        <button class="btn" mat-flat-button (click)="end()">
+          <mat-icon>last_page</mat-icon>
+        </button>
+        <span class="position"><span>{{ slideIndex + 1}}</span> / <span>{{ structure.ORDER.length }}</span></span>
+        <button class="btn" mat-flat-button (click)="openControlPanel()">
+          <mat-icon>tune</mat-icon>
+        </button>
+      }
     </nav>
-  }
 </div>

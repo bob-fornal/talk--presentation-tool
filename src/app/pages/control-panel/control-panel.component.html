@@ -1,1 +1,19 @@
-<p>control-panel works!</p>
+<div class="control-wrapper">
+  <div class="control-title">{{ deckTitle }}</div>
+
+  <nav class="control-navigation--outer">
+    <div class="control-navigation--inner">
+      @for (key of structure.ORDER; track key; let index = $index;) {
+        <div class="btn-wrapper">
+          <button
+            mat-flat-button
+            class="nav-button"
+            [class.mat-accent]="getActive(key)"
+            (click)="changePage(key)">
+            {{ getTitle(key, index) }}
+          </button>
+        </div>
+      }
+    </div>
+  </nav>
+</div>

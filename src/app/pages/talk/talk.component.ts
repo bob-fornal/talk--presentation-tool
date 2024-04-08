@@ -15,6 +15,8 @@ import { ImageOnlyComponent } from '../../slides/image-only/image-only.component
 import { Cover02Component } from '../../slides/cover-02/cover.component';
 import { Cover01Component } from '../../slides/cover-01/cover.component';
 import { NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
+import { BroadcastService } from 'src/app/core/services/broadcast-service.service';
+import { BroadcastMessage } from 'src/app/core/interfaces/broadcast';
 
 @Component({
     selector: 'app-talk',
@@ -43,6 +45,8 @@ export class TalkComponent implements OnDestroy {
 
   @HostListener('document:keydown', ['$event'])
     handleKeyboardEvent(event: KeyboardEvent) {
+      if (this.control === true) return;
+
       if (['ArrowRight', 'ArrowUp'].includes(event.key)) {
         this.next();
       } else if (['ArrowLeft', 'ArrowDown'].includes(event.key)) {
@@ -66,9 +70,11 @@ export class TalkComponent implements OnDestroy {
     private code: CodeService,
     private route: ActivatedRoute,
     private router: Router,
-    private style: StyleService
+    private service: BroadcastService,
+    private style: StyleService,
   ) {
     this.subscription = this.code.structure.subscribe(this.handleStructure.bind(this));
+    this.service.messagesOfType('control').subscribe(this.handleControlMessage.bind(this));
     this.init();
   }
 
@@ -85,6 +91,15 @@ export class TalkComponent implements OnDestroy {
   handleStructure = (structure: Structure): void => {
     this.structure = structure;
     this.setPageByRoute(structure);
+  };
+
+  handleControlMessage = (message: BroadcastMessage): void => {
+    console.log(message.payload);
+    switch (true) {
+      case message.payload.type === 'navigate':
+        this.setPage(message.payload.to, this.structure);
+        break;
+    }
   };
 
   getTalkStyle = (): string => this.structure.STYLE.join(' ');
@@ -153,8 +168,7 @@ export class TalkComponent implements OnDestroy {
   };
 
   openControlPanel = (): void => {
-    const url = this.router.createUrlTree(['control-panel', this.path]);
-    console.log(url.toString());
+    const url = this.router.createUrlTree(['control-panel', this.path, this.page.type]);
     window.open(url.toString(), '_blank');
     this.control = true;
   };

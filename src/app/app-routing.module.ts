@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'edit/:folder', component: EditComponent },
   { path: 'edit/:folder/:slideKey', component: TalkComponent, data: { type: 'edit-slide'} },
 
-  { path: 'control-panel/:folder', component: ControlPanelComponent },
+  { path: 'control-panel/:folder/:slideKey', component: ControlPanelComponent },
   { path: 'courses', component: CoursesComponent },
 
   { path: '', redirectTo: '/courses', pathMatch: 'full' }
