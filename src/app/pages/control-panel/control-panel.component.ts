@@ -4,13 +4,14 @@ import { Subscription } from 'rxjs';
 import { Structure, StructureType } from 'src/app/core/interfaces/structure';
 import { CodeService } from 'src/app/core/services/code.service';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { BroadcastService } from 'src/app/core/services/broadcast-service.service';
 import { BroadcastMessage } from 'src/app/core/interfaces/broadcast';
 
 @Component({
   selector: 'app-control-panel',
   standalone: true,
-  imports: [MatButtonModule],
+  imports: [MatButtonModule, MatIconModule],
   templateUrl: './control-panel.component.html',
   styleUrl: './control-panel.component.scss'
 })
@@ -58,6 +59,12 @@ export class ControlPanelComponent {
     this.structure = structure;
     console.log(structure);
     this.getDeckTitle(structure);
+  };
+
+  close = (): void => {
+    const message: BroadcastMessage = { type: 'control', payload: { type: 'close' } };
+    this.service.publish(message);
+    window.self.close();
   };
 
   getDeckTitle = (structure: Structure): void => {

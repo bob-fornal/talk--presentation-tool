@@ -1,5 +1,8 @@
 <div class="control-wrapper">
-  <div class="control-title">{{ deckTitle }}</div>
+  <div class="control-title">
+    <span>{{ deckTitle }}</span>
+    <span class="right" (click)="close()"><mat-icon>close</mat-icon></span>
+  </div>
 
   <nav class="control-navigation--outer">
     <div class="control-navigation--inner">

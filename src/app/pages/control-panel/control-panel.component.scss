@@ -8,6 +8,12 @@
   font-size: 2.8rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  position: relative;
+
+  .right {
+    position: absolute;
+    right: 0;
+  }
 }
 
 .control-navigation--outer {

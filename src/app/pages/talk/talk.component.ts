@@ -1,4 +1,4 @@
-import { Component, HostListener, OnDestroy } from '@angular/core';
+import { ChangeDetectorRef, Component, HostListener, NgZone, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Structure, StructureType } from 'src/app/core/interfaces/structure';
@@ -59,6 +59,7 @@ export class TalkComponent implements OnDestroy {
   slideIndex: number = 0;
 
   path: string = '';
+  slideKey: string = '';
   page: StructureType = { title: '', type: '' };
   title: string = '';
   type: string = '';
@@ -67,11 +68,13 @@ export class TalkComponent implements OnDestroy {
   control: boolean = false;
 
   constructor(
+    private cdr: ChangeDetectorRef,
     private code: CodeService,
     private route: ActivatedRoute,
     private router: Router,
     private service: BroadcastService,
     private style: StyleService,
+    private zone: NgZone,
   ) {
     this.subscription = this.code.structure.subscribe(this.handleStructure.bind(this));
     this.service.messagesOfType('control').subscribe(this.handleControlMessage.bind(this));
@@ -99,7 +102,11 @@ export class TalkComponent implements OnDestroy {
       case message.payload.type === 'navigate':
         this.setPage(message.payload.to, this.structure);
         break;
+      case message.payload.type === 'close':
+        this.control = false;
+        break;
     }
+    this.cdr.detectChanges();
   };
 
   getTalkStyle = (): string => this.structure.STYLE.join(' ');
@@ -127,12 +134,13 @@ export class TalkComponent implements OnDestroy {
     this.title = page.title;
     this.type = page.type;
     this.page = page;
+    this.slideKey = key;
 
     const style = structure.STYLE;
     this.style.add(style.join('\n'));
 
     const base: string = this.editing === false ? 'talk' : 'edit';
-    this.router.navigate([base, this.path, structure.ORDER[this.slideIndex]]);
+    this.zone.run(() => this.router.navigate([base, this.path, structure.ORDER[this.slideIndex]]));
   };
 
   home = (): void => {
@@ -168,8 +176,9 @@ export class TalkComponent implements OnDestroy {
   };
 
   openControlPanel = (): void => {
-    const url = this.router.createUrlTree(['control-panel', this.path, this.page.type]);
-    window.open(url.toString(), '_blank');
     this.control = true;
+    const url = this.router.createUrlTree(['control-panel', this.path, this.slideKey]);
+    window.open(url.toString(), '_blank');
+    this.cdr.detectChanges();
   };
 }
