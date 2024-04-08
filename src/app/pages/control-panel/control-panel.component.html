@@ -4,19 +4,33 @@
     <span class="right" (click)="close()"><mat-icon>close</mat-icon></span>
   </div>
 
-  <nav class="control-navigation--outer">
-    <div class="control-navigation--inner">
-      @for (key of structure.ORDER; track key; let index = $index;) {
-        <div class="btn-wrapper">
-          <button
-            mat-flat-button
-            class="nav-button"
-            [class.mat-accent]="getActive(key)"
-            (click)="changePage(key)">
-            {{ getTitle(key, index) }}
-          </button>
-        </div>
-      }
+  <div class="control-inner-wrapper">
+    <nav class="control-navigation--outer">
+      <div class="control-navigation--inner">
+        @for (key of structure.ORDER; track key; let index = $index;) {
+          <div class="btn-wrapper">
+            <button
+              mat-flat-button
+              class="nav-button"
+              [class.mat-accent]="getActive(key)"
+              (click)="changePage(key)">
+              {{ getTitle(key, index) }}
+            </button>
+          </div>
+        }
+      </div>
+    </nav>
+
+    <div class="control-content">
+      @if (deckSlide.type === 'code-editor') {
+        <div class="triggers">
+          @for (file of deckSlide.files; track file;) {
+            <div class="btn-wrapper">
+              <button mat-flat-button class="file-button" (click)="triggerFileChange(file)">{{ file }}</button>
+            </div>
+          }
+        </div>  
+      }  
     </div>
-  </nav>
+  </div>
 </div>

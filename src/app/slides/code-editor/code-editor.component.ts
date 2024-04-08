@@ -1,5 +1,5 @@
 import { DOCUMENT, NgFor } from '@angular/common';
-import { ChangeDetectorRef, Component, Inject, Input, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, Inject, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { Trigger } from 'src/app/core/interfaces/triggers';
 import { CodeService } from 'src/app/core/services/code.service';
 
@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { NuMonacoEditorComponent } from '@ng-util/monaco-editor';
 import { RouterLink } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
+import { Subject } from 'rxjs';
 
 @Component({
     selector: 'code-editor',
@@ -19,13 +20,14 @@ import { MatListModule } from '@angular/material/list';
     standalone: true,
     imports: [MatListModule, NgFor, RouterLink, NuMonacoEditorComponent, FormsModule]
 })
-export class CodeEditorComponent implements OnChanges {
+export class CodeEditorComponent implements OnChanges, OnInit {
   @Input() title: string = '';
   @Input() path: string = '';
   @Input() folder: string = '';
   @Input() files: Array<string> = [];
   @Input() triggers: Array<Trigger> = [];
   @Input() keys: Array<string> = [];
+  @Input() changeFileSelection: Subject<string> = new Subject();
 
   @ViewChild('handleScript') handleScript: any;
 
@@ -41,6 +43,12 @@ export class CodeEditorComponent implements OnChanges {
     setTimeout(() => {
       this.fileSelection(this.files[0]);
     }, 100);
+  }
+
+  ngOnInit() {
+    this.changeFileSelection.subscribe((page: string) => {
+      this.fileSelection(page);
+    })
   }
 
   editorOptions = {

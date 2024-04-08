@@ -1,5 +1,20 @@
 .control-wrapper {
   padding: 1rem;
+
+  .control-inner-wrapper {
+    display: flex;
+    flex-direction: row;
+
+    .control-content {
+      display: flex;
+      flex-direction: column;
+      padding: 1em;
+
+      .file-button {
+        margin-bottom: 1em;
+      }
+    }
+  }
 }
 
 .control-title {

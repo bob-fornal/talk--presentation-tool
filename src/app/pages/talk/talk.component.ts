@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, HostListener, NgZone, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Subject, Subscription } from 'rxjs';
 import { Structure, StructureType } from 'src/app/core/interfaces/structure';
 import { CodeService } from 'src/app/core/services/code.service';
 import { StyleService } from 'src/app/core/services/style.service';
@@ -42,6 +42,7 @@ import { BroadcastMessage } from 'src/app/core/interfaces/broadcast';
 })
 export class TalkComponent implements OnDestroy {
   subscription: Subscription;
+  triggerCodeFileChange: Subject<string> = new Subject();
 
   @HostListener('document:keydown', ['$event'])
     handleKeyboardEvent(event: KeyboardEvent) {
@@ -103,6 +104,9 @@ export class TalkComponent implements OnDestroy {
         this.slideIndex = message.payload.index;
         this.setPage(message.payload.to, this.structure);
         break;
+      case message.payload.type === 'trigger-code':
+        this.triggerCodeFileChange.next(message.payload.file);
+        break;
       case message.payload.type === 'close':
         this.control = false;
         break;
@@ -142,6 +146,11 @@ export class TalkComponent implements OnDestroy {
 
     const base: string = this.editing === false ? 'talk' : 'edit';
     this.zone.run(() => this.router.navigate([base, this.path, structure.ORDER[this.slideIndex]]));
+
+    console.log(page);
+    if (page.type === 'code-editor') {
+      console.log('true');
+    }
   };
 
   home = (): void => {

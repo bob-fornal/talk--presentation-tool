@@ -30,6 +30,7 @@ export class ControlPanelComponent {
   structure: Structure = { ORDER: [], STYLE: [] };
 
   deckTitle: string = '';
+  deckSlide: StructureType = { title: '', type: '' };
   path: string = '';
   slideKey: string = '';
 
@@ -57,8 +58,8 @@ export class ControlPanelComponent {
 
   handleStructure = (structure: Structure): void => {
     this.structure = structure;
-    console.log(structure);
     this.getDeckTitle(structure);
+    this.getDeckSlide(this.slideKey);
   };
 
   close = (): void => {
@@ -70,6 +71,11 @@ export class ControlPanelComponent {
   getDeckTitle = (structure: Structure): void => {
     if (structure.ORDER.length === 0) return;
     this.deckTitle = (structure[structure.ORDER[0]] as StructureType).title;
+  };
+
+  getDeckSlide = (key: string): void => {
+    if (this.structure.ORDER.length === 0) return;
+    this.deckSlide = this.structure[key] as StructureType;
   };
 
   getActive = (key: string): boolean => {
@@ -89,5 +95,10 @@ export class ControlPanelComponent {
     this.service.publish(message);
     this.router.navigate(['control-panel', this.path, key]);
     this.slideKey = key;
+  };
+
+  triggerFileChange = (file: string): void => {
+    const message: BroadcastMessage = { type: 'control', payload: { type: 'trigger-code', file } };
+    this.service.publish(message);
   };
 }

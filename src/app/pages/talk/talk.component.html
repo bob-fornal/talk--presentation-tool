@@ -25,7 +25,14 @@
     </div>
 
     <div class="slide-wrapper" *ngSwitchCase="'code-editor'">
-      <code-editor [title]="page.title" [path]="path" [folder]="page.folder!" [files]="page.files!" [triggers]="page.triggers || []" [keys]="page.environment_keys || []"></code-editor>
+      <code-editor
+        [title]="page.title"
+        [path]="path"
+        [folder]="page.folder!"
+        [files]="page.files!"
+        [triggers]="page.triggers || []"
+        [keys]="page.environment_keys || []"
+        [changeFileSelection]="triggerCodeFileChange"></code-editor>
     </div>
 
     <div class="slide-wrapper" *ngSwitchDefault="">NONE</div>
