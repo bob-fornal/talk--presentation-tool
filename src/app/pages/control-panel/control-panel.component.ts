@@ -84,7 +84,8 @@ export class ControlPanelComponent {
   };
 
   changePage = (key: string): void => {
-    const message: BroadcastMessage = { type: 'control', payload: { type: 'navigate', to: key } };
+    const index: number = this.structure.ORDER.indexOf(key);
+    const message: BroadcastMessage = { type: 'control', payload: { type: 'navigate', to: key, index } };
     this.service.publish(message);
     this.router.navigate(['control-panel', this.path, key]);
     this.slideKey = key;

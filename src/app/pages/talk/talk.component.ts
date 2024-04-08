@@ -100,6 +100,7 @@ export class TalkComponent implements OnDestroy {
     console.log(message.payload);
     switch (true) {
       case message.payload.type === 'navigate':
+        this.slideIndex = message.payload.index;
         this.setPage(message.payload.to, this.structure);
         break;
       case message.payload.type === 'close':

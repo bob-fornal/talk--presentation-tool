@@ -1,5 +1,5 @@
 import { DOCUMENT, NgFor } from '@angular/common';
-import { Component, Inject, Input, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, Inject, Input, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
 import { Trigger } from 'src/app/core/interfaces/triggers';
 import { CodeService } from 'src/app/core/services/code.service';
 
@@ -32,6 +32,7 @@ export class CodeEditorComponent implements OnChanges {
   selected: string = '';
 
   constructor(
+    private cdr: ChangeDetectorRef,
     private codeService: CodeService,
     @Inject(DOCUMENT) private document: Document
   ) { }
@@ -63,6 +64,7 @@ export class CodeEditorComponent implements OnChanges {
     const fileAndPath: string = `./assets/${ this.path }/${ this.folder }/${ file }`;
     const code: string = await this.codeService.getCode(fileAndPath);
     this.code = code;
+    this.cdr.detectChanges();
   };
 
   triggerFile = (trigger: Trigger): void => {
