@@ -18,6 +18,7 @@ import { NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 import { BroadcastService } from 'src/app/core/services/broadcast-service.service';
 import { BroadcastMessage } from 'src/app/core/interfaces/broadcast';
 import { FontsizeService } from 'src/app/core/services/fontsize.service';
+import { Trigger } from 'src/app/core/interfaces/triggers';
 
 @Component({
     selector: 'app-talk',
@@ -44,6 +45,7 @@ import { FontsizeService } from 'src/app/core/services/fontsize.service';
 export class TalkComponent implements OnDestroy {
   subscription: Subscription;
   triggerCodeFileChange: Subject<string> = new Subject();
+  triggerFileSelection: Subject<Trigger> = new Subject();
 
   @HostListener('document:keydown', ['$event'])
     handleKeyboardEvent(event: KeyboardEvent) {
@@ -107,14 +109,16 @@ export class TalkComponent implements OnDestroy {
   };
 
   handleControlMessage = (message: BroadcastMessage): void => {
-    console.log(message);
     switch (true) {
       case message.payload.type === 'navigate':
         this.slideIndex = message.payload.index;
         this.setPage(message.payload.to, this.structure);
         break;
-      case message.payload.type === 'trigger-code':
+      case message.payload.type === 'trigger-file':
         this.triggerCodeFileChange.next(message.payload.file);
+        break;
+      case message.payload.type === 'trigger-code':
+        this.triggerFileSelection.next(message.payload.trigger);
         break;
       case message.payload.type === 'trigger-fontsize':
         this.fonts.change(message.payload.fontsize);

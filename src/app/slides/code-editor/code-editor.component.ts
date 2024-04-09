@@ -29,7 +29,9 @@ export class CodeEditorComponent implements OnChanges, OnInit {
   @Input() files: Array<string> = [];
   @Input() triggers: Array<Trigger> = [];
   @Input() keys: Array<string> = [];
+
   @Input() changeFileSelection: Subject<string> = new Subject();
+  @Input() triggerFileSelection: Subject<Trigger> = new Subject();
 
   @ViewChild('handleScript') handleScript: any;
 
@@ -52,6 +54,9 @@ export class CodeEditorComponent implements OnChanges, OnInit {
     this.changeFileSelection.subscribe((page: string) => {
       this.fileSelection(page);
     })
+    this.triggerFileSelection.subscribe((trigger: Trigger) => {
+      this.triggerFile(trigger);
+    });
   }
 
   editorOptions = {

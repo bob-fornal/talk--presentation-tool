@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { BroadcastService } from 'src/app/core/services/broadcast-service.service';
 import { BroadcastMessage } from 'src/app/core/interfaces/broadcast';
 import { StyleService } from 'src/app/core/services/style.service';
+import { Trigger } from 'src/app/core/interfaces/triggers';
 
 @Component({
   selector: 'app-control-panel',
@@ -119,7 +120,12 @@ export class ControlPanelComponent {
   };
 
   triggerFileChange = (file: string): void => {
-    const message: BroadcastMessage = { type: 'control', payload: { type: 'trigger-code', file } };
+    const message: BroadcastMessage = { type: 'control', payload: { type: 'trigger-file', file } };
+    this.service.publish(message);
+  };
+
+  triggerFileSelection = (trigger: Trigger): void => {
+    const message: BroadcastMessage = { type: 'control', payload: { type: 'trigger-code', trigger } };
     this.service.publish(message);
   };
 

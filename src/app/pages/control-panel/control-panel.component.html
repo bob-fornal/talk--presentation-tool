@@ -31,7 +31,7 @@
       </div>
 
       @if (deckSlide.type === 'code-editor') {
-        <div class="triggers">
+        <div class="action-buttons">
           @for (file of deckSlide.files; track file;) {
             <button
               mat-flat-button
@@ -41,7 +41,19 @@
               {{ file }}
             </button>
           }
-        </div>
+          @if (deckSlide.hasOwnProperty('triggers')) {
+            <span class="separator">|</span>
+            @for (trigger of deckSlide.triggers; track trigger;) {
+              <button
+              mat-flat-button
+              color="primary"
+              class="file-button"
+              (click)="triggerFileSelection(trigger)">
+              {{ trigger.title }}
+              </button>
+            }
+          }
+      </div>
       }
       <div class="notes font-normal" [innerHTML]="deckSlide.notes"></div>
     </div>
