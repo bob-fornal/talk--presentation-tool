@@ -17,4 +17,19 @@
       <div [attr.src]="filepath"></div>
     </div>
   </div>
+
+  <div class="log-wrapper" [class.open]="loggingOpen === true">
+    <div class="handle" (click)="toggleLogging()">
+      @if (loggingOpen === true) {
+        <mat-icon>arrow_right</mat-icon>
+      } @else {
+        <mat-icon>arrow_left</mat-icon>
+      }
+    </div>
+    @if (loggingOpen === true) {
+      <div class="log-container">
+        <pre [innerHTML]="logging.logged"></pre>
+      </div>
+    }
+  </div>
 </div>

@@ -7,7 +7,10 @@ import { environment } from 'src/environment/environment';
 import { FormsModule } from '@angular/forms';
 import { NuMonacoEditorComponent } from '@ng-util/monaco-editor';
 import { RouterLink } from '@angular/router';
+
+import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+
 import { Subject } from 'rxjs';
 import { BroadcastService } from 'src/app/core/services/broadcast-service.service';
 import { BroadcastMessage } from 'src/app/core/interfaces/broadcast';
@@ -21,7 +24,15 @@ import { LoggingService } from 'src/app/core/services/logging.service';
       './code-editor.component.scss'
     ],
     standalone: true,
-    imports: [MatListModule, NgFor, RouterLink, NuMonacoEditorComponent, FormsModule]
+    imports: [
+      NgFor,
+      RouterLink,
+      NuMonacoEditorComponent,
+      FormsModule,
+
+      MatIconModule,
+      MatListModule,
+    ]
 })
 export class CodeEditorComponent implements OnChanges, OnInit {
   @Input() title: string = '';
@@ -37,11 +48,12 @@ export class CodeEditorComponent implements OnChanges, OnInit {
   @ViewChild('handleScript') handleScript: any;
 
   selected: string = '';
+  loggingOpen: boolean = false;
 
   constructor(
     private cdr: ChangeDetectorRef,
     private codeService: CodeService,
-    private logging: LoggingService,
+    public logging: LoggingService,
     @Inject(DOCUMENT) private document: Document,
     private service: BroadcastService,
   ) { }
@@ -107,14 +119,15 @@ export class CodeEditorComponent implements OnChanges, OnInit {
         env[key] = atob(value);
       }
 
-      setTimeout(() => {
-        const logged = this.logging.logged;
-        this.logging.stop();
-        console.log(logged);
-      }, 100);
-
       (window as any)[init](env);
     }, 500, init);
+  };
+
+  toggleLogging = (): void => {
+    this.loggingOpen = !this.loggingOpen;
+    if (this.loggingOpen === false) {
+      this.logging.stop();
+    }
   };
 
   replaceDivWithScript = (templateElement: HTMLElement): void => {

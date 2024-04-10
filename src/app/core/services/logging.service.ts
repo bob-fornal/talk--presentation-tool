@@ -31,7 +31,6 @@ export class LoggingService {
 
   old: any = {};
   replace: Array<string> = ['log', 'debug', 'warn', 'error', 'info'];
-  // replace: Array<string> = ['log', 'debug', 'warn', 'error'];
 
   active: boolean = false;
 
@@ -57,7 +56,8 @@ export class LoggingService {
       if (this.active === true) {
         const output = this.produceOutput(name, args);
         this.logged += `${ output }`;
-        this.logged$.next(output);  
+        const history: string = this.logged$.value;
+        this.logged$.next(history + output);
       }
     };
   };
@@ -72,13 +72,15 @@ export class LoggingService {
           content = JSON.stringify(arg.stack).replaceAll('\\n', '<br/>').replaceAll('"', '');
           break;
         case isObject:
-          content = JSON.stringify(arg);
+          content = JSON.stringify(arg, null, 2)
+            .replace(' ', '&nbsp;')
+            .replace('\n', '<br/>');;
           break;
         default:
           content = arg;
           break;
       }
-      output += `<span class="log-${ (typeof arg) } log-${ name }">${ content }</span>&nbsp;`;
+      output += `<span class="type-${ (typeof arg) } log-${ name }">${ content }</span>&nbsp;`;
     });
     return output + '<br/><div class="linebreak"></div>';
   };
