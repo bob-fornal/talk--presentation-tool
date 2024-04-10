@@ -36,7 +36,8 @@
     "type": "panel-triple",
     "text1": "<div class=bold>Early Career</div><br/>",
     "text2": "<div class=bold>Mid Career</div><br/>",
-    "text3": "<div class=bold>Late Career</div><br/>"
+    "text3": "<div class=bold>Late Career</div><br/>",
+    "notes": "These are notes"
   },
 
   "time-for-questions": {
