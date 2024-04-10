@@ -11,6 +11,7 @@ import { MatListModule } from '@angular/material/list';
 import { Subject } from 'rxjs';
 import { BroadcastService } from 'src/app/core/services/broadcast-service.service';
 import { BroadcastMessage } from 'src/app/core/interfaces/broadcast';
+import { LoggingService } from 'src/app/core/services/logging.service';
 
 @Component({
     selector: 'code-editor',
@@ -40,6 +41,7 @@ export class CodeEditorComponent implements OnChanges, OnInit {
   constructor(
     private cdr: ChangeDetectorRef,
     private codeService: CodeService,
+    private logging: LoggingService,
     @Inject(DOCUMENT) private document: Document,
     private service: BroadcastService,
   ) { }
@@ -87,6 +89,7 @@ export class CodeEditorComponent implements OnChanges, OnInit {
   };
 
   triggerFile = (trigger: Trigger): void => {
+    this.logging.start();
     const init: string = trigger.init;
     const fileAndPath: string = `./assets/${ this.path }/${ this.folder }/${ trigger.file }`;
     this.filepath = fileAndPath;
@@ -103,6 +106,12 @@ export class CodeEditorComponent implements OnChanges, OnInit {
         const value: string = (environment as any)[key];
         env[key] = atob(value);
       }
+
+      setTimeout(() => {
+        const logged = this.logging.logged;
+        this.logging.stop();
+        console.log(logged);
+      }, 100);
 
       (window as any)[init](env);
     }, 500, init);

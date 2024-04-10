@@ -3,6 +3,7 @@ import { CodeService } from './core/services/code.service';
 import { RouterOutlet } from '@angular/router';
 
 import { inject } from "@vercel/analytics"
+import { LoggingService } from './core/services/logging.service';
 
 @Component({
     selector: 'app-root',
@@ -22,11 +23,15 @@ export class AppComponent {
     ORDER: []
   };
 
-  constructor(private code: CodeService) {
+  constructor(
+    private code: CodeService,
+    private logging: LoggingService,
+  ) {
     this.init();
   }
 
   init = async (): Promise<void> => {
     await this.code.init();
+    this.logging.initLogging();
   };
 }
