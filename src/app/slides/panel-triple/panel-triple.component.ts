@@ -1,6 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+
+import { EditNotesDialogComponent } from 'src/app/shared/edit-notes-dialog/edit-notes-dialog.component';
 
 @Component({
     selector: 'panel-triple',
@@ -10,18 +14,23 @@ import { MatButtonModule } from '@angular/material/button';
       './panel-triple.component.scss'
     ],
     standalone: true,
-    imports: [MatButtonModule]
+    imports: [
+      MatButtonModule,
+      MatDialogModule,
+    ],
 })
 export class PanelTripleComponent {
   @Input() title: string = '';
   @Input() text1: string = '';
   @Input() text2: string = '';
   @Input() text3: string = '';
+  @Input() notes: string = '';
   @Input() editing: boolean = false;
 
   @Output() save: EventEmitter<any> = new EventEmitter();
 
   constructor(
+    private dialog: MatDialog,
     private route: ActivatedRoute,
     private router: Router
   ) {}
@@ -47,5 +56,17 @@ export class PanelTripleComponent {
 
     const path: string = this.route.snapshot.paramMap.get('folder') || '';
     this.router.navigate(['edit', path]);
+  };
+
+  editNotes = (): void => {
+    const dialogRef = this.dialog.open(EditNotesDialogComponent, {
+      data: { notes: this.notes },
+    });
+
+    dialogRef.afterClosed().subscribe(this.handleEditNotesClosed.bind(this));
+  };
+
+  handleEditNotesClosed = (result: any): void => {
+    console.log(result);
   };
 }

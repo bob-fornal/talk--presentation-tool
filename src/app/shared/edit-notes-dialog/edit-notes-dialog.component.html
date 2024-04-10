@@ -1,0 +1,13 @@
+<h2 mat-dialog-title>Notes Editor</h2>
+
+<mat-dialog-content>
+  <mat-form-field class="full-width">
+    <mat-label>Notes</mat-label>
+    <textarea matInput placeholder="Add notes">{{ data.notes }}</textarea>
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-flat-button (click)="cancel()">Cancel</button>
+  <button mat-flat-button (click)="save()">Save</button>
+</mat-dialog-actions>
