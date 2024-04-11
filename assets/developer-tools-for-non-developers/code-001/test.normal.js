@@ -1,4 +1,4 @@
-function dtfndInit001() {
+function dtfndInit001(args) {
   console.log('testing this');
 
   var myFunc1 = () => {
@@ -28,7 +28,6 @@ function dtfndInit001() {
   } catch (error) {
     console.log(error);
   }
-  
-  
-  (function*(){})().throw(new Error("example"));  
+
+  (function*(){})().throw(new Error("example"));
 }
