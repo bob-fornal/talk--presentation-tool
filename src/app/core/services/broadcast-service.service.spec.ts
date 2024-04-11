@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { BroadcastServiceService } from './broadcast-service.service';
+import { BroadcastService } from './broadcast-service.service';
 
 describe('BroadcastServiceService', () => {
-  let service: BroadcastServiceService;
+  let service: BroadcastService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(BroadcastServiceService);
+    service = TestBed.inject(BroadcastService);
   });
 
   it('should be created', () => {

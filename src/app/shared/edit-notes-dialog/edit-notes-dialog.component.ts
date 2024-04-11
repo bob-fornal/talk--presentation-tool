@@ -30,7 +30,12 @@ export class EditNotesDialogComponent {
   cancel = (): void => {
     this.dialogRef.close({ type: 'cancel' });
   };
+
   save = (): void => {
     this.dialogRef.close({ type: 'save', data: this.data });
+  };
+
+  handleNotesChange = (notes: string): void => {
+    this.data.notes = notes;
   };
 }

@@ -40,10 +40,16 @@ export class PanelTripleComponent {
     const elements: any = document.querySelectorAll('[data-editing]');
     for (let i = 0, len = elements.length; i < len; i++) {
       const item = elements[i];
+      console.log(item);
       const key = item.dataset.editing;
       response.items.push(key);
-      response[key] = item.innerText;
+      response[key] = item.value;
     }
+
+    console.log(this.notes);
+    response.items.push('notes');
+    response.notes = this.notes;
+    
     this.save.emit(response);
 
     const path: string = this.route.snapshot.paramMap.get('folder') || '';
@@ -59,14 +65,18 @@ export class PanelTripleComponent {
   };
 
   editNotes = (): void => {
+    const notes = this.notes.toString();
     const dialogRef = this.dialog.open(EditNotesDialogComponent, {
-      data: { notes: this.notes },
+      data: { notes },
     });
 
     dialogRef.afterClosed().subscribe(this.handleEditNotesClosed.bind(this));
   };
 
   handleEditNotesClosed = (result: any): void => {
-    console.log(result);
+    if (result === undefined || result.type === 'cancel') return;
+
+    this.notes = result.data.notes;
+    console.log(result, this.notes);
   };
 }
