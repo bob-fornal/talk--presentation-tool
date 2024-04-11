@@ -32,8 +32,7 @@
         [files]="page.files!"
         [triggers]="page.triggers || []"
         [keys]="page.environment_keys || []"
-        [changeFileSelection]="triggerCodeFileChange"
-        [triggerFileSelection]="triggerFileSelection"></code-editor>
+        [external]="sendExternal"></code-editor>
     </div>
 
     <div class="slide-wrapper" *ngSwitchDefault="">NONE</div>

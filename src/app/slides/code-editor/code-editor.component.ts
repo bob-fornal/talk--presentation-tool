@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { NuMonacoEditorComponent } from '@ng-util/monaco-editor';
 import { RouterLink } from '@angular/router';
 
+import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 
@@ -30,6 +31,7 @@ import { LoggingService } from 'src/app/core/services/logging.service';
       NuMonacoEditorComponent,
       FormsModule,
 
+      MatButtonModule,
       MatIconModule,
       MatListModule,
     ]
@@ -42,13 +44,13 @@ export class CodeEditorComponent implements OnChanges, OnInit {
   @Input() triggers: Array<Trigger> = [];
   @Input() keys: Array<string> = [];
 
-  @Input() changeFileSelection: Subject<string> = new Subject();
-  @Input() triggerFileSelection: Subject<Trigger> = new Subject();
+  @Input() external: Subject<any> = new Subject();
 
   @ViewChild('handleScript') handleScript: any;
 
   selected: string = '';
   loggingOpen: boolean = false;
+  logs: string = '';
 
   constructor(
     private cdr: ChangeDetectorRef,
@@ -56,7 +58,7 @@ export class CodeEditorComponent implements OnChanges, OnInit {
     public logging: LoggingService,
     @Inject(DOCUMENT) private document: Document,
     private service: BroadcastService,
-  ) { }
+  ) {}
 
   ngOnChanges() {
     setTimeout(() => {
@@ -65,11 +67,21 @@ export class CodeEditorComponent implements OnChanges, OnInit {
   }
 
   ngOnInit() {
-    this.changeFileSelection.subscribe((page: string) => {
-      this.fileSelection(page);
-    })
-    this.triggerFileSelection.subscribe((trigger: Trigger) => {
-      this.triggerFile(trigger);
+    this.external.subscribe((payload: any) => {
+      switch (true) {
+        case payload.type === 'trigger-file':
+          this.fileSelection(payload.file);
+          break;
+        case payload.type === 'trigger-code':
+          this.triggerFile(payload.trigger);
+          break;
+        case payload.type === 'toggle-console':
+          this.toggleLogging();
+          break;
+        case payload.type === 'trigger-clear':
+          this.clearLogging();
+          break;
+      }
     });
   }
 
@@ -89,6 +101,8 @@ export class CodeEditorComponent implements OnChanges, OnInit {
   code: string = 'function x() {\n  console.log("Hello world");\n}';
   filepath: string = '';
 
+  sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
   fileSelection = async (file: string): Promise<void> => {
     this.selected = file;
     const fileAndPath: string = `./assets/${ this.path }/${ this.folder }/${ file }`;
@@ -100,34 +114,42 @@ export class CodeEditorComponent implements OnChanges, OnInit {
     this.service.publish(message);
   };
 
-  triggerFile = (trigger: Trigger): void => {
+  triggerFile = async (trigger: Trigger): Promise<void> => {
     this.logging.start();
+
+    await this.sleep(100);
     const init: string = trigger.init;
     const fileAndPath: string = `./assets/${ this.path }/${ this.folder }/${ trigger.file }`;
     this.filepath = fileAndPath;
 
-    setTimeout(() => {
-      const templateElement = this.handleScript.nativeElement.firstElementChild as HTMLElement;
-      this.replaceDivWithScript(templateElement);  
-    }, 100);
+    await this.sleep(100);
+    const templateElement = this.handleScript.nativeElement.firstElementChild as HTMLElement;
+    this.replaceDivWithScript(templateElement);  
 
-    setTimeout(() => {
-      const env: { [key: string]: string; } = {};
-      for (let i = 0, len = this.keys.length; i < len; i++) {
-        const key: string = this.keys[i];
-        const value: string = (environment as any)[key];
-        env[key] = atob(value);
-      }
+    await this.sleep(500);
+    const env: { [key: string]: any; } = {};
+    for (let i = 0, len = this.keys.length; i < len; i++) {
+      const key: string = this.keys[i];
+      const value: string = (environment as any)[key];
+      env[key] = atob(value);
+    }
+    env['callback'] = this.handleTriggerCallback.bind(this);
 
-      (window as any)[init](env);
-    }, 500, init);
+    (window as any)[init](env);
+  };
+
+  handleTriggerCallback = (): void => {
+    this.logs = this.logging.logged;
+    this.logging.stop();
   };
 
   toggleLogging = (): void => {
     this.loggingOpen = !this.loggingOpen;
-    if (this.loggingOpen === false) {
-      this.logging.stop();
-    }
+  };
+
+  clearLogging = (): void => {
+    this.logging.clear();
+    this.logs = '';
   };
 
   replaceDivWithScript = (templateElement: HTMLElement): void => {

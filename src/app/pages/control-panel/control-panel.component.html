@@ -28,6 +28,9 @@
         <button mat-flat-button class="btn" (click)="triggerFontsizeChange('font-normal')">Normal</button>
         <button mat-flat-button class="btn" (click)="triggerFontsizeChange('font-xl')">XL</button>
         <button mat-flat-button class="btn" (click)="triggerFontsizeChange('font-xxl')">XXL</button>
+        <span class="separator">|</span>
+        <button mat-flat-button class="btn" (click)="triggerConsole('toggle-open')">Toggle Open</button>
+        <button mat-flat-button class="btn" (click)="triggerConsole('clear')">Clear</button>
       </div>
 
       @if (deckSlide.type === 'code-editor') {

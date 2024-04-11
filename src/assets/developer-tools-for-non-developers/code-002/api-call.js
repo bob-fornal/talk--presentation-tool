@@ -13,4 +13,6 @@ async function dtfndInit003(env) {
   } catch (error) {
     console.log(error);
   }
+
+  env.callback();
 }

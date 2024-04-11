@@ -119,6 +119,19 @@ export class ControlPanelComponent {
     // this.cdr.detectChanges();
   };
 
+  triggerConsole = (type: string): void => {
+    let message: BroadcastMessage = { type: 'control', payload: {} };
+    switch (true) {
+      case type === 'toggle-open':
+        message.payload = { type: 'toggle-console' };
+        break;
+      case type === 'clear':
+        message.payload = { type: 'trigger-clear' };
+        break;
+    }
+    this.service.publish(message);
+  };
+
   triggerFileChange = (file: string): void => {
     const message: BroadcastMessage = { type: 'control', payload: { type: 'trigger-file', file } };
     this.service.publish(message);

@@ -44,8 +44,7 @@ import { Trigger } from 'src/app/core/interfaces/triggers';
 })
 export class TalkComponent implements OnDestroy {
   subscription: Subscription;
-  triggerCodeFileChange: Subject<string> = new Subject();
-  triggerFileSelection: Subject<Trigger> = new Subject();
+  sendExternal: Subject<any> = new Subject();
 
   @HostListener('document:keydown', ['$event'])
     handleKeyboardEvent(event: KeyboardEvent) {
@@ -109,16 +108,19 @@ export class TalkComponent implements OnDestroy {
   };
 
   handleControlMessage = (message: BroadcastMessage): void => {
+    const codeEditor: Array<string> = [
+      'toggle-console',
+      'trigger-clear',
+      'trigger-code',
+      'trigger-file',
+    ];
     switch (true) {
       case message.payload.type === 'navigate':
         this.slideIndex = message.payload.index;
         this.setPage(message.payload.to, this.structure);
         break;
-      case message.payload.type === 'trigger-file':
-        this.triggerCodeFileChange.next(message.payload.file);
-        break;
-      case message.payload.type === 'trigger-code':
-        this.triggerFileSelection.next(message.payload.trigger);
+      case codeEditor.includes(message.payload.type):
+        this.sendExternal.next(message.payload)
         break;
       case message.payload.type === 'trigger-fontsize':
         this.fonts.change(message.payload.fontsize);

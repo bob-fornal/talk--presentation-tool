@@ -11,24 +11,6 @@ export class LoggingService {
   logged: string = '';
   logged$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
-  // #log-container { overflow: auto; height: 100%; }
-
-  // .log-warn { color: orange; }
-  // .log-error { color: red; }
-  // .log-info { color: skyblue; }
-  // .log-log { color: grey; }
-  // .log-warn, .log-error { font-weight: bold; }
-
-  // .linebreak {
-  //   border-top: 1px solid silver;
-  //   margin-top: 5px;
-  //   margin-bottom: 5px;
-  // }
-  
-  // <div id="log-container">
-  //   <pre id="log"></pre>
-  // </div>
-
   old: any = {};
   replace: Array<string> = ['log', 'debug', 'warn', 'error', 'info'];
 
@@ -42,10 +24,13 @@ export class LoggingService {
     this.active = true;
   };
 
-  stop = (): void => {
-    this.active = false;
+  clear = (): void => {
     this.logged = '';
     this.logged$.next('');
+  };
+
+  stop = (): void => {
+    this.active = false;
   };
 
   fixLogging = (name: any): void => {

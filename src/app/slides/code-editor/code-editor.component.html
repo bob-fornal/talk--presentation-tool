@@ -27,8 +27,10 @@
       }
     </div>
     @if (loggingOpen === true) {
+      <button class="log-clear" mat-flat-button (click)="clearLogging()">Clear</button>
+      <button class="log-capture" mat-flat-button (click)="handleTriggerCallback()">Capture Logs</button>
       <div class="log-container">
-        <pre [innerHTML]="logging.logged"></pre>
+        <pre [innerHTML]="logs"></pre>
       </div>
     }
   </div>
