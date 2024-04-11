@@ -133,14 +133,17 @@ export class CodeEditorComponent implements OnChanges, OnInit {
       const value: string = (environment as any)[key];
       env[key] = atob(value);
     }
-    env['callback'] = this.handleTriggerCallback.bind(this);
 
-    (window as any)[init](env);
-  };
+    try {
+      (window as any)[init](env);
+    } catch (error) {
+      console.error(error);
+    }
 
-  handleTriggerCallback = (): void => {
+    await this.sleep(100);
     this.logs = this.logging.logged;
     this.logging.stop();
+    this.loggingOpen = true;
   };
 
   toggleLogging = (): void => {
