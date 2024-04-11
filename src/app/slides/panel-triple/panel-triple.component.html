@@ -9,9 +9,9 @@
     </div>
   } @else {
     <input data-editing="title" contenteditable [value]="title">
-    <button class="btn save" mat-flat-button (click)="saveEvent()">Save</button>
-    <button class="btn cancel" mat-flat-button (click)="cancelEvent()">Cancel</button>
-    <button class="btn notes" mat-flat-button (click)="editNotes()">Edit Notes</button>
+    <button class="btn save" mat-flat-button color="accent" (click)="saveEvent()">Save</button>
+    <button class="btn cancel" mat-flat-button color="accent" (click)="cancelEvent()">Cancel</button>
+    <button class="btn notes" mat-flat-button color="accent" (click)="editNotes()">Edit Notes</button>
 
     <div class="panel--content-wrapper">
       <textarea class="panel--text text1" data-editing="text1" contenteditable [innerText]="text1"></textarea>

@@ -103,6 +103,12 @@
       &.code-editor {
         background-color: rgb(66, 88, 66);
       }
+
+      .card-actions {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+      }
     }
   }
 }
