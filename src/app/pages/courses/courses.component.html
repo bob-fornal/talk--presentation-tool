@@ -3,7 +3,7 @@
 
   <div class="tags">
     <ng-container *ngFor="let tag of tags; let i = index;">
-      <button class="btn" mat-flat-button [color]="selectedTag(tag)" (click)="filterTalks(tag)">
+      <button [name]="tag.title" class="btn" mat-flat-button [color]="selectedTag(tag)" (click)="filterTalks(tag)">
         {{ tag.title }}
       </button>
     </ng-container>
