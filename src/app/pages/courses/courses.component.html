@@ -3,7 +3,7 @@
 
   <div class="tags">
     <ng-container *ngFor="let tag of tags; let i = index;">
-      <button [name]="tag.title" class="btn" mat-flat-button [color]="selectedTag(tag)" (click)="filterTalks(tag)">
+      <button [name]="tag.title + ' tag'" class="btn" mat-flat-button [color]="selectedTag(tag)" (click)="filterTalks(tag)">
         {{ tag.title }}
       </button>
     </ng-container>
@@ -12,10 +12,10 @@
   <div class="talks">
     @for (talk of filteredTalks; track talk; let i = $index;) {
       <div>
-        <button name="edit" class="btn" mat-flat-button color="primary" [routerLink]="'/edit/' + talk.folder">
+        <button [name]="'edit ' + talk.title + ' talk'" class="btn" mat-flat-button color="primary" [routerLink]="'/edit/' + talk.folder">
           <mat-icon>edit</mat-icon>
         </button>
-        <button [name]="talk.title" class="btn" mat-flat-button color="accent" (click)="clickTalkEvent(talk)">
+        <button [name]="talk.title + ' presentation'" class="btn" mat-flat-button color="accent" (click)="clickTalkEvent(talk)">
           <span>{{ i + 1 }}.</span>&nbsp;
           {{ talk.title }}
         </button>
