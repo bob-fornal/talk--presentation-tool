@@ -1,27 +1,31 @@
+import { CommonModule, NgFor } from '@angular/common';
 import { Component, OnDestroy } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { Subscription } from 'rxjs';
+
 import { Structure } from 'src/app/core/interfaces/structure';
 import { Tag } from 'src/app/core/interfaces/tag';
 import { Talk, Talks } from 'src/app/core/interfaces/talks';
 import { CodeService } from 'src/app/core/services/code.service';
 import { StyleService } from 'src/app/core/services/style.service';
+
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { NgFor } from '@angular/common';
 
 @Component({
     selector: 'app-courses',
     templateUrl: './courses.component.html',
     styleUrls: ['./courses.component.scss'],
     standalone: true,
-    imports: [NgFor, MatButtonModule, RouterLink, MatIconModule]
+    imports: [CommonModule,NgFor, MatButtonModule, RouterLink, MatIconModule]
 })
 export class CoursesComponent implements OnDestroy {
   subscription: Subscription;
   
   talks: Array<Talk> = [];
   tags: Array<Tag> = [];
+
+  talkData: { [key: string]: any } = {};
 
   selectedTags: Array<string> = [];
   filteredTalks: Array<Talk> = [];
@@ -51,6 +55,8 @@ export class CoursesComponent implements OnDestroy {
 
     const style = wrapper.STYLE;
     this.style.add(style.join('\n'));
+
+    this.captureTalks(orderedTalks);
   };
 
   filterTalks = (tag: Tag): void => {
@@ -84,5 +90,24 @@ export class CoursesComponent implements OnDestroy {
   clickTalkEvent = async (talk: Talk): Promise<void> => {
     const structure: Structure = await this.code.getStructureImmediate(talk.folder);
     this.router.navigate(['talk', talk.folder, structure.ORDER[0]]);
+  };
+
+  captureTalks = async (talks: Array<Talk>): Promise<void> => {
+    talks.forEach(async (talk: Talk) => {
+      const structure: Structure = await this.code.getStructureImmediate(talk.folder);
+      this.talkData[talk.folder] = structure;
+    });
+  };
+
+  getStatus = (talk: Talk): string => {
+    const talkData: any = this.talkData[talk.folder];
+    if (talkData === undefined) return '';
+
+    let slides: number = talkData.ORDER.length;
+    let notes: number = 0;
+    talkData.ORDER.forEach((slide: string) => {
+      if (talkData[slide].hasOwnProperty('notes') === true) notes++;
+    });
+    return `Slides: ${ slides }, Notes: ${ notes }`;
   };
 }

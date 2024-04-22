@@ -11,7 +11,7 @@
 
   <div class="talks">
     @for (talk of filteredTalks; track talk; let i = $index;) {
-      <div>
+      <div class="talk-wrapper">
         <button [attr.aria-label]="'Edit ' + talk.title + ' Talk'" class="btn" mat-flat-button color="primary" [routerLink]="'/edit/' + talk.folder">
           <mat-icon>edit</mat-icon>
         </button>
@@ -19,7 +19,8 @@
           <span>{{ i + 1 }}.</span>&nbsp;
           {{ talk.title }}
         </button>
-      </div>  
+        <span class="status">{{ getStatus(talk) }}</span>
+      </div>
     }
   </div>
 </div>
