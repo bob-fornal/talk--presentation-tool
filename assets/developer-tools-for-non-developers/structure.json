@@ -41,12 +41,14 @@
     "type": "cover-slide-01",
     "author": "Bob Fornal",
     "bio1": "<img class=bio-logo src=./assets/images/code-squid.webp /><br/><div class=\"bold bio-header\">Entrepreneur</div>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.",
-    "bio2": "<img class=bio-logo src=./assets/images/leading-edje.webp /><br/><div class=bold>Senior Solutions Developer</div><div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth."
+    "bio2": "<img class=bio-logo src=./assets/images/leading-edje.webp /><br/><div class=bold>Senior Solutions Developer</div><div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth.",
+    "notes": "This presentation was created after working with several business and UI/UX that were not able to properly report about issues that they were seeing."
   },
   "docking--slide": {
     "title": "Docking",
     "type": "panel-single",
-    "text": "<div>To open ...</div><ul><li>F12</li><li>RIGHT-CLICK > Inspect</li><li>Menu > More Tools > Dev Tools</li></ul><div>Docking ...</div><ul><li>Undock into separate window</li><li>Dock to left</li><li>Dock to bottom</li><li>Dock to right</li><ul>"
+    "text": "<div>To open ...</div><ul><li>F12</li><li>RIGHT-CLICK > Inspect</li><li>Menu > More Tools > Dev Tools</li></ul><div>Docking ...</div><ul><li>Undock into separate window</li><li>Dock to left</li><li>Dock to bottom</li><li>Dock to right</li><ul>",
+    "notes": "This is about \"docking\" the developer tools. There are several ways to dock; each with it's own use-case."
   },
   "reading-error-messages--slide": {
     "title": "Reading Error Messages",
@@ -67,8 +69,10 @@
         "file": "test.mangled.js",
         "init": "dtfndInit002"
       }
-    ]
+    ],
+    "notes": "Reading error messages should be pretty straight forward. Screenshots are useful in some cases.<br/><br/>Normal<br/>When run, this code identified the line that the issue occurs on and basic information.<br/>RUN THIS CODE.<br/><br/>Mangled<br/>This code is more challenging; column is more important than the line the issue is on.<ul><li>A few large lines.</li><li>Variables are simplified.</li><li>Function names are simplified.</li></ul>RUN THIS CODE."
   },
+
   "xhr-versus-preflight--slide": {
     "title": "XHR versus Preflight",
     "type": "code-editor",
@@ -85,8 +89,10 @@
         "file": "api-call.js",
         "init": "dtfndInit003"
       }
-    ]
+    ],
+    "notes": "Preflight requests are often run by the browser, on the browser. XHR are the actual calls - sometimes blocked by the browser Preflight checks.<br/>RUN THIS CODE - SHOW NETWORK."
   },
+
   "copying-data-after-load--slide": {
     "title": "Copying Data after Data Load",
     "type": "code-editor",
@@ -103,8 +109,10 @@
         "file": "api-call.js",
         "init": "dtfndInit003"
       }
-    ]
+    ],
+    "notes": "Copying data after loading.<ol><li>Right-Click > Store as Global Variable (Network, Console, Elements)</li><li>copy(temp1)</li></ol>"
   },
+
   "size-and-frequency-of-data--slide": {
     "title": "Size and Frequency of Data",
     "type": "code-editor",
@@ -118,7 +126,8 @@
         "file": "api-calls.js",
         "init": "dtfndInit004"
       }
-    ]
+    ],
+    "notes": "Show Network Tab with \"Disable cache\" checked. Identify how larger sized files \"hide\" in the dataset.<br/>RUN THIS CODE."
   },
 
   "reading-compiled-code--breakpoints--slide": {
@@ -134,7 +143,8 @@
         "file": "mangled.min.js",
         "init": "dtfndInit005"
       }
-    ]
+    ],
+    "notes": "In the Sources Tab, look up ...<ol><li>top</li><li>localhost:4200 or URL</li><li>assets</li><li>developer-tools-for-non-developers</li><li>codee-004</li><li>mangled.min.js</li></ol>Examine code compared to unmangled view and how breakpoints can be inserted.<br/>RUN THIS CODE."
   },
 
   "console-and-data-in-time--slide": {
@@ -156,31 +166,36 @@
         "file": "data-in-time-02.js",
         "init": "dtfndInit007"
       }
-    ]
+    ],
+    "notes": "Objects that are consoled can show the last good value unless steps are taken to ensure point-in-time values.<br/><br/>Run this code and view in the actual console. Expand the first value.<br/><br/>Run the adjusted code and see the difference."
   },
 
   "storage--slide": {
     "title": "Storage",
     "type": "panel-single",
-    "text": "<div class=bold>Application</div><br/><div>LocalStorage</div><div class=indent>localStorage allows for stored key/value paris; the stored data is saved across browser sessions.<br/>Limited to 10MB.</div><br/><div>sessionStorage</div><div class=indent>Data in sessionStorage is cleared when the page session ends.<br/>Limited to 5MB.</div><br/><div>IndexedDB (not IndexDB)</div><div class=indent>IndexedDB is a way to persistently store data inside a user's browser. It is an object-oriented database.<br/>Limited by disk space.</div><br/><div>Cookies</div><div class=indent>Cookies are data, stored in small text files on the computer.<br/>Limited to ~50 to ~180 at 4K.</div>"
+    "text": "<div class=bold>Application</div><br/><div>LocalStorage</div><div class=indent>localStorage allows for stored key/value paris; the stored data is saved across browser sessions.<br/>Limited to 10MB.</div><br/><div>sessionStorage</div><div class=indent>Data in sessionStorage is cleared when the page session ends.<br/>Limited to 5MB.</div><br/><div>IndexedDB (not IndexDB)</div><div class=indent>IndexedDB is a way to persistently store data inside a user's browser. It is an object-oriented database.<br/>Limited by disk space.</div><br/><div>Cookies</div><div class=indent>Cookies are data, stored in small text files on the computer.<br/>Limited to ~50 to ~180 at 4K.</div>",
+    "notes": "Knowing what storage is available and what exists there can be important."
   },
 
   "devices--slide": {
     "title": "Devices",
     "type": "panel-single",
-    "text": "<ul><li>Turning On/Off</li><li>Types of Devices</li><li>Edit ... Add custom device ...</li><ul>"
+    "text": "<ul><li>Turning On/Off</li><li>Types of Devices</li><li>Edit ... Add custom device ...</li><ul>",
+    "notes": "Open Dev Tools and show devices ... turning them on and off."
   },
 
   "targeting--slide": {
     "title": "Targeting",
     "type": "panel-single",
-    "text": "Select an element on the page to inspect.<br/><ul><li>Type</li><li>Class</li><li>Size</li><li>Details</li><li>Accessibility</li></ul>"
+    "text": "Select an element on the page to inspect.<br/><ul><li>Type</li><li>Class</li><li>Size</li><li>Details</li><li>Accessibility</li></ul>",
+    "notes": "Target elements on this page. Showcase how to navigate around."
   },
 
   "styles--slide": {
     "title": "Styles / Styling",
     "type": "panel-single",
-    "text": "<ul><li>Changing color \"type\" (SHIFT + CLICK on the box) - Color Format</li><li>Changing color \"displayed\" (CLICK on the box) - Actual Color</li><ul>"
+    "text": "<ul><li>Changing color \"type\" (SHIFT + CLICK on the box) - Color Format</li><li>Changing color \"displayed\" (CLICK on the box) - Actual Color</li><ul>",
+    "notes": "Open the Dev Tools ...<br/><br/>Change color of this text; identify how to change the \"Color Format\" using SHIFT-CLICK on the color box."
   },
   
   "overrides--slide": {
@@ -196,13 +211,15 @@
         "file": "object-handler.js",
         "init": "dtfndInit008"
       }
-    ]
+    ],
+    "notes": "In the Developer Tools, select Sources ...<br>(RUN THIS CODE FIRST)<ol><li>(Page)</li><li>top</li><li>localhost:4200 or URL</li><li>developer-tools-for-non-developers</li><li>Right-Click \"object-handler.js\"</li><li>Select \"Override Content\" (may need to select folder and allow)</li><li>Change the file</li><li>Mac-S or CTRL-S</li></ol>(REFRESH TO SEE OVERRIDES).<ol><li>Developer Tools</li><li>Sources</li><li>Overrides</li><li>CLEAR</li></ol>(REFRESH TO SEE OVERRIDES CLEARED)."
   },
 
   "time-for-questions": {
     "title": "",
     "type": "image-only",
     "background": "transparent",
-    "image": "./assets/images/time-for-questions.webp"
+    "image": "./assets/images/time-for-questions.webp",
+    "notes": ""
   }
 }
