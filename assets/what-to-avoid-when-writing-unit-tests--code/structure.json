@@ -14,7 +14,7 @@
     "poisoning-the-codebase--non-deterministic",
     "non-deterministic",
 
-    "poisining-the-codebase--side-effects",
+    "poisoning-the-codebase--side-effects",
     "side-effects",
 
     "testing-too-much--slide",
@@ -50,7 +50,8 @@
     "type": "cover-slide-01",
     "author": "Bob Fornal",
     "bio1": "<img class=bio-logo src=./assets/images/code-squid.webp /><br/><div class=\"bold bio-header\">Entrepreneur</div>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.",
-    "bio2": "<img class=bio-logo src=./assets/images/leading-edje.webp /><br/><div class=bold>Senior Solutions Developer</div><div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth."
+    "bio2": "<img class=bio-logo src=./assets/images/leading-edje.webp /><br/><div class=bold>Senior Solutions Developer</div><div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth.",
+    "notes": "Good Unit Tests are a critical part of the development process and vital to the lifecycle of the code-under-test.<br/><br/>Previous employer ...<br/><ul><li>No tests, there wasn't enough time.</li><li>Flaky code.</li><li>Didn't stand the test of time.</li></ul>Another ...<br/<><ul><li>Script language story</li></li>180,000 lines of code with 97% Unit Test Coverage</li><li>Unit Tests in-depth.</li><li>Used TDD when bugs found before release.</li><li>3 Bug Cards in 365-days, two were missed requirement issues.</li></ul>Others ...<br/><ul><li>2,000+ Unit Tests against Promises (JavaScript) that passed, even when the tests should have failed.</li><li>No or limited Unit Testing because of monolithic code (3-6,000 line functions).</li></ul>Let me reiterate,<br/>Good Unit Tests are a critical part of the development process and vital to the lifecycle of the code-under-test."
   },
   "cover-slide-02": {
     "title": "What to Avoid When Writing Unit Tests",
@@ -62,37 +63,43 @@
     "type": "text-image",
     "orientation": "left",
     "text": "A QA Engineer walks into a bar.<br/><br/><ul><li>Orders a beer.</li><li>Orders 0 beers.</li><li>Orders 999,999,999,999 beers.</li><li>Orders a lizard.</li><li>Orders -1 beers.</li><li>Orders a ueicbksjdhd.</li></ul><br/>The first real customer walks in and asks where the bathroom is.  The bar bursts into flames, killing everyone.",
-    "image": "./assets/images/beers-on-the-wall.webp"
+    "image": "./assets/images/beers-on-the-wall.webp",
+    "notes": ""
   },
   "what-are-unit-tests": {
     "title": "What Are Unit Tests?",
     "type": "panel-single",
-    "text": "<ul><li>Unit Tests exercise small parts of the application (code-under-test).</li><li>... in complete isolation.</li><li>... actual behavior versus expected behavior.</li></ul><ul><li>Unit Tests should be fast, simple, and stable.</li></ul><ul><li>Unit Tests reflect the specifications.</li><li>... can act as documentation.</li></ul><ul><li>Unit Tests are a safety net.</li><li>... provide immediate feedback about code changes.</li><li>... find and fix bugs earlier.</li><li>... contribute to higher code quality and better architecture.</li><li>... faster detection of code smells.</li></ul>"
+    "text": "<ul><li>Unit Tests exercise small parts of the application (code-under-test).</li><li>... in complete isolation.</li><li>... actual behavior versus expected behavior.</li></ul><ul><li>Unit Tests should be fast, simple, and stable.</li></ul><ul><li>Unit Tests reflect the specifications.</li><li>... can act as documentation.</li></ul><ul><li>Unit Tests are a safety net.</li><li>... provide immediate feedback about code changes.</li><li>... find and fix bugs earlier.</li><li>... contribute to higher code quality and better architecture.</li><li>... faster detection of code smells.</li></ul>",
+    "notes": "<ul><li>Unit tests exercise very small parts of the application in complete isolation</li><li>They comparing the code-under-test's actual behavior with the expected behavior.</li></ul><ul><li>The \"complete isolation\" part means that, when unit testing, you don't typically connect your application with external dependencies such as databases, the filesystem, or HTTP services.</li><li>That allows unit tests to be fast and more stable since they won't fail due to problems with those external services.</li></ul><ul><li>Each unit test is like a specification or example of how that part behaves in a specific scenario.  By executing the suite of tests, developers can get immediate feedback when they change some codebase.</li></ul>"
   },
   "talk-details": {
     "title": "Talk Details",
     "type": "panel-single",
-    "text": "Code Repository: https://github.com/bob-fornal/talk--presentation-tool<br/><br/>I can be found at ...<br><ul><li>https://linqapp.com/conference</li><li>Twitter: @rfornal</li><li>Articles https://dev.to/rfornal</li><li>LinkedIn: https://www.linkedin.com/in/rfornal/</li></ul>"
+    "text": "Code Repository: https://github.com/bob-fornal/talk--presentation-tool<br/><br/>I can be found at ...<br><ul><li>https://linqapp.com/conference</li><li>Twitter: @rfornal</li><li>Articles https://dev.to/rfornal</li><li>LinkedIn: https://www.linkedin.com/in/rfornal/</li></ul>",
+    "notes": ""
   },
   "art-form": {
     "title": "",
     "type": "text-image",
     "orientation": "left",
     "text": "Testing Code has been described as an \"art form\"<br/><br/>It is, ... but it shouldn't be.",
-    "image": "./assets/images/bob-ross.webp"
+    "image": "./assets/images/bob-ross.webp",
+    "notes": "Testing code has been described as an \"art form.\" It is, but it should not be.<br/><ul><li>There are many good patterns that should be followed when writing tests.</li><li>There are also many BAD patterns that developers should be aware of so that they can be avoided (or cleaned up).</li></ul>"
   },
   "test-code-in-production": {
     "title": "",
     "type": "image-only",
     "background": "transparent",
-    "image": "./assets/images/vader-testing-production.webp"
+    "image": "./assets/images/vader-testing-production.webp",
+    "notes": "Good production code achieves encapsulation.<br/><ul><li>It allows the reader to navigate large systems with ease, diving down into the details or rising to a higher level of abstraction, as needed.</li></ul>Test code is a different beast.<br/><ul><li>A good unit test is often small enough that a developer can conceptualize all the logic at one time.</li><li>Adding layers of abstraction to test code increases its complexity.</li><li>Tests are a diagnostic tool, so they should be as simple and obvious as possible.</li></ul>"
   },
 
   "not--well-factored": {
     "title": "Tests Should Not Be \"Well Factored\"",
     "type": "panel-double",
     "textLeft": "<div class=bold>Keep the Reader in the test.</div><br/><div class=bold>Given</div><div class=indent>A function that returns a score.</div><br/><div class=bold>Problem</div><div class=indent>The unit test has has some part of it abstracted in a way that makes reading the test difficult.</div>",
-    "textRight": "<div class=bold>Dare to violate the DRY Principle.</div><div>“Duplication of Code Logic”</div><br/><div class=bold>Given</div><div class=indent>A function that adjusts a score.</div><br/><div class=bold>Problem</div><div class=indent>The unit test has has some part of it abstracted in a way that makes reading the test difficult.</div>"
+    "textRight": "<div class=bold>Dare to violate the DRY Principle.</div><div>“Duplication of Code Logic”</div><br/><div class=bold>Given</div><div class=indent>A function that adjusts a score.</div><br/><div class=bold>Problem</div><div class=indent>The unit test has has some part of it abstracted in a way that makes reading the test difficult.</div>",
+    "notes": "Well-Factored Code.<br/><ul><li>Code that is easy to read and reason about.</li><li>Code that can be tested easily.</li><li>Well Designed and often has a high level of complex.</li></ul>"
   },
   "in-the-test": {
     "title": "Keep The Reader In The Test",
@@ -102,7 +109,8 @@
       "manager.js",
       "manager.NOT.spec.js",
       "manager.spec.js"
-    ]
+    ],
+    "notes": "<div class=bold>Keep the Reader in the test.</div><br/><div class=bold>Given</div><div class=indent>A function that returns a score.</div><br/><div class=bold>Problem</div><div class=indent>The unit test has has some part of it abstracted in a way that makes reading the test difficult.</div>"
   },
   "dry-principle": {
     "title": "Dry Principle",
@@ -112,13 +120,15 @@
       "manager.js",
       "manager.NOT.spec.js",
       "manager.spec.js"
-    ]
+    ],
+    "notes": "<div class=bold>Dare to violate the DRY Principle.</div><div>“Duplication of Code Logic”</div><br/><div class=bold>Given</div><div class=indent>A function that adjusts a score.</div><br/><div class=bold>Problem</div><div class=indent>The unit test has has some part of it abstracted in a way that makes reading the test difficult.</div>"
   },
 
   "poisoning-the-codebase--non-deterministic": {
     "title": "Poisoning the Codebase: Non-Deterministic Factors",
     "type": "panel-single",
-    "text": "<div class=bold>Given</div><div class=indent>A function that returns a category, the time of day.</div><br/><br/><div class=bold>Problem</div><div class=indent>The function under test is tightly coupled to a concrete data source, violating the Single Responsibility Principle. The test cannot easily test the functionality.</div>"
+    "text": "<div class=bold>Given</div><div class=indent>A function that returns a category, the time of day.</div><br/><br/><div class=bold>Problem</div><div class=indent>The function under test is tightly coupled to a concrete data source, violating the Single Responsibility Principle. The test cannot easily test the functionality.</div>",
+    "notes": "In this case, tightly coupled data can make testing challenging.<br><ul><li>Assumption that the code-under-test uses the current date to generate a string value.</li><li>The current date is a concrete data source.</li><li>The code gets the date AND generates a string based on the date.</li><ul>"
   },
   "non-deterministic": {
     "title": "Non-Deterministic",
@@ -129,13 +139,15 @@
       "time.NOT.spec.js",
       "time.js",
       "time.spec.js"
-    ]
+    ],
+    "notes": "<div class=bold>Given</div><div class=indent>A function that returns a category, the time of day.</div><br/><div class=bold>Problem</div><div class=indent>The function under test is tightly coupled to a concrete data source, violating the Single Responsibility Principle. The test cannot easily test the functionality.</div>"
   },
 
-  "poisining-the-codebase--side-effects": {
+  "poisoning-the-codebase--side-effects": {
     "title": "Poisoning the Codebase: Side-Effects",
     "type": "panel-single",
-    "text": "<div class=bold>Given</div><div class=indent>A function that updates the time of last motion and triggers something off or on.</div><br/><br/><div class=bold>Problem</div><div class=indent>The function under test has too many side effects that become hard to test.</div>"
+    "text": "<div class=bold>Given</div><div class=indent>A function that updates the time of last motion and triggers something off or on.</div><br/><br/><div class=bold>Problem</div><div class=indent>The function under test has too many side effects that become hard to test.</div>",
+    "notes": "Assume a class that turns light on or off at certain times OR with motion.<br/><ul><li>Tight coupling: calculated date and time.</li><li>Tied directly to an additional Switch class.</li></ul>"
   },
   "side-effects": {
     "title": "Side-Effects",
@@ -146,13 +158,15 @@
       "controller.NOT.spec.js",
       "controller.js",
       "controller.spec.js"
-    ]
+    ],
+    "notes": "<div class=bold>Given</div><div class=indent>A function that updates the time of last motion and triggers something off or on.</div><br/><div class=bold>Problem</div><div class=indent>The function under test has too many side effects that become hard to test.</div>"
   },
 
   "testing-too-much--slide": {
     "title": "Testing Too Much",
     "type": "panel-single",
-    "text": "<div class=bold>Given</div><div class=indent>A function that does too many things.</div><br/><br/><div class=bold>Problem</div><div class=indent>The function under test has too possible paths to handle easily.</div>"
+    "text": "<div class=bold>Given</div><div class=indent>A function that does too many things.</div><br/><br/><div class=bold>Problem</div><div class=indent>The function under test has too possible paths to handle easily.</div>",
+    "notes": "Often, functions have switch statements or if-branching and as they get larger the code is not refactored leaving too many paths through to test easily."
   },
   "testing-too-much--code": {
     "title": "Testing Too Much",
@@ -163,13 +177,15 @@
       "messaging.NOT.spec.js",
       "messaging.js",
       "messaging.spec.js"
-    ]
+    ],
+    "notes": "<div class=bold>Given</div><div class=indent>A function that does too many things.</div><br/><div class=bold>Problem</div><div class=indent>The function under test has too possible paths to handle easily.</div>"
   },
 
   "bad-test-double--slide": {
     "title": "Bad Test Double",
     "type": "panel-single",
-    "text": "<div class=bold>\"Testing the Mock\"</div><br/><div class=bold>Given</div><div class=indent>A service is used to get some data.</div><br/><br/><div class=bold>Problem</div><div class=indent>Replacing the service (test double) does not correctly take into account changes in the service or returned data.</div>"
+    "text": "<div class=bold>\"Testing the Mock\"</div><br/><div class=bold>Given</div><div class=indent>A service is used to get some data.</div><br/><br/><div class=bold>Problem</div><div class=indent>Replacing the service (test double) does not correctly take into account changes in the service or returned data.</div>",
+    "notes": "This is one that I see all the time.<br/><ul><li>A mock service is created that allows functionality to be \"mocked.\"</li><li>In reality, we are testing the mock in this case.</li><li>A better pattern is to create a mock service FROM the original service being injected.</li><li>Then add mock data or spy on functionality from within the service.</li></ul>"
   },
   "bad-test-double--code": {
     "title": "Bad Test Double",
@@ -179,13 +195,15 @@
       "service.js",
       "service.NOT.spec.js",
       "service.spec.js"
-    ]
+    ],
+    "notes": "<div class=bold>\"Testing the Mock\"</div><br/><div class=bold>Given</div><div class=indent>A service is used to get some data.</div><br/><div class=bold>Problem</div><div class=indent>Replacing the service (test double) does not correctly take into account changes in the service or returned data.</div>"
   },
 
   "false-positives--slide": {
     "title": "False Positives",
     "type": "panel-single",
-    "text": "<div class=bold>Given</div><div class=indent>A function that processes some time delay.</div><br/><br/><div class=bold>Problem</div><div class=indent>The unit test does not get to the code inside the setTimeout and “does not fail” which equates to a pass.</div>"
+    "text": "<div class=bold>Given</div><div class=indent>A function that processes some time delay.</div><br/><br/><div class=bold>Problem</div><div class=indent>The unit test does not get to the code inside the setTimeout and “does not fail” which equates to a pass.</div>",
+    "notes": "These occur when ...<br/><ul><li>Forgetting to EXPECT (some test suites warn of this).</li><li>When testing ASYNCHRONOUS activity. Promises that DON'T FAIL.</li></ul>Jasmine used to use DONE ...<br/><ul><li>DONE has become unreliable in certain scenarios (see the commented out code).</li><li>JavaScript allows for async/await and try/catch. These are better patterns and more readable, as well.</li></ul>"
   },
   "false-positives--code": {
     "title": "False Positives",
@@ -194,19 +212,22 @@
     "files": [
       "false-positive.NOT.spec.js",
       "false-positive.spec.js"
-    ]
+    ],
+    "notes": "<div class=bold>Given</div><div class=indent>A function that processes some time delay.</div><br/><div class=bold>Problem</div><div class=indent>The unit test does not get to the code inside the setTimeout and “does not fail” which equates to a pass.</div>"
   },
 
   "excessive-setup": {
     "title": "Excessive Setup",
     "type": "panel-single",
-    "text": "<div class=bold>Given</div><div class=indent>A unit test that take a lot of setup code to run.</div><br/><br/><div class=bold>Problem</div><div class=indent>Excessive setup is more of a CODE SMELL than something where code can be shown that is incorrect versus correct.<br/><br/>Just be aware that this is a case where care should be taken to examine why the setup is so lengthy.</div><br/><br/><div class=bold>Solutions</div><div class=indent><ol><li>If there is a legitimate need, increase documentation.</li><li>If the code under test does not adhere to the Single Responsibility Principle, maybe a refactor would be appropriate to make it more testable.</li></ol></div>"
+    "text": "<div class=bold>Given</div><div class=indent>A unit test that take a lot of setup code to run.</div><br/><br/><div class=bold>Problem</div><div class=indent>Excessive setup is more of a CODE SMELL than something where code can be shown that is incorrect versus correct.<br/><br/>Just be aware that this is a case where care should be taken to examine why the setup is so lengthy.</div><br/><br/><div class=bold>Solutions</div><div class=indent><ol><li>If there is a legitimate need, increase documentation.</li><li>If the code under test does not adhere to the Single Responsibility Principle, maybe a refactor would be appropriate to make it more testable.</li></ol></div>",
+    "notes": "This is a challenging one to show examples of ...<br/><ul><li>There is code.</li><li>Let's simply talk about the issues.</li><li>This is more of a code smell - that something can be wrong in the test setup or in the code-under-test.</li><li>Code-under-test should be examined to see if a refactor can help.</li><li>There can be legitimate needs for larger setups.</li></ul>"
   },
 
   "testing-private-functionality-directly--slide": {
     "title": "Testing Private Functionality Directly",
     "type": "panel-single",
-    "text": "<div class=bold>Given</div><div class=indent>A class with private functionality that is difficult to test indirectly.</div><br/><br/><div class=bold>Problem</div><div class=indent>How do we test private functionality.</div><br/><br/><div class=bold>Solutions</div><div class=indent><ol><li>Indirectly</li><li>Make it public, directly.</li><li>Abstract it into a new service, directly.</li><li>(TypeScript/JavaScript Option)</li></ol></div>"
+    "text": "<div class=bold>Given</div><div class=indent>A class with private functionality that is difficult to test indirectly.</div><br/><br/><div class=bold>Problem</div><div class=indent>How do we test private functionality.</div><br/><br/><div class=bold>Solutions</div><div class=indent><ol><li>Indirectly</li><li>Make it public, directly.</li><li>Abstract it into a new service, directly.</li><li>(TypeScript/JavaScript Option)</li></ol></div>",
+    "notes": "There is a challenging one to show a FIXED version of ...<br><ul><li>There is code.</li><li>Private code can be tested via exposed functionality.</li><li>Private code can be made public (JavaScript: everything is accessible at some level).</li><li>Private code can be abstracted into a service ...</li></ul><ol><li>The code has to be public for injection.</li><li>The code can be tested directly since it is public.</li></ol>"
   },
   "testing-private-functionality-directly--code": {
     "title": "Testing Private Functionality Directly",
@@ -215,18 +236,22 @@
     "files": [
       "user.service.js",
       "user.service.spec.js"
-    ]
+    ],
+    "notes": "<div class=bold>Given</div><div class=indent>A class with private functionality that is difficult to test indirectly.</div><br/><div class=bold>Problem</div><div class=indent>How do we test private functionality.</div><br/><div class=bold>Solutions</div><div class=indent><ol><li>Indirectly</li><li>Make it public, directly.</li><li>Abstract it into a new service, directly.</li><li>(TypeScript/JavaScript Option)</li></ol></div>"
   },
 
   "unit-test-recommendations": {
     "title": "Unit Test Recommendations",
     "type": "panel-single",
-    "text": "<ol><li>Unit Tests should be Readable.</li><li>One Assert per Test Method.</li><li>Avoid Test Interdependence.</li><li>Keep it Short, Sweet, and Visible.</li><li>Add them to the Build.</li><ol>"
+    "text": "<ol><li>Unit Tests should be Readable.</li><li>One Assert per Test Method.</li><li>Avoid Test Interdependence.</li><li>Keep it Short, Sweet, and Visible.</li><li>Add them to the Build.</li><ol>",
+    "notes": "I get asked about the first one often.<br/><ul><li>Even in my tests, I assert more than once.</li><li>I recommend checking to see if the functionality can be refactored to allow for ONE TEST per METHOD.</li></ul>Test Order shouldn't matter.<br/>Unit Tests absolutely should be a part of the pipeline."
   },
+
   "time-for-questions": {
     "title": "",
     "type": "image-only",
     "background": "transparent",
-    "image": "./assets/images/time-for-questions.webp"
+    "image": "./assets/images/time-for-questions.webp",
+    "notes": "HTML Credit Code for Can Stock Photo<br/>https://www.canstockphoto.com<br/>(c) Can Stock Photo / catalby"
   }
 }
