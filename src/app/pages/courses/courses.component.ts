@@ -108,6 +108,8 @@ export class CoursesComponent implements OnDestroy {
     talkData.ORDER.forEach((slide: string) => {
       if (talkData[slide].hasOwnProperty('notes') === true) notes++;
     });
+    if (slides === notes) return 'COMPLETE';
+
     return `Slides: ${ slides }, Notes: ${ notes }`;
   };
 }
