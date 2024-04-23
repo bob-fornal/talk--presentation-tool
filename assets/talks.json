@@ -10,7 +10,7 @@
   ],
   "TAGS": [
     {
-      "tag": "asyncronous",
+      "tag": "asynchronous",
       "title": "Asynchronous"
     },
     {
@@ -59,7 +59,7 @@
       ]
     },
     {
-      "folder": "asyncronous-javacript-living-on-a-prayer",
+      "folder": "asynchronous-javacript-living-on-a-prayer",
       "title": "Asynchronous JavaScript: Livin' On A Prayer",
       "tags": [
         "asynchronous",
