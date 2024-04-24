@@ -1,6 +1,6 @@
 import { DOCUMENT, NgFor } from '@angular/common';
 import { ChangeDetectorRef, Component, Inject, Input, OnChanges, OnInit, ViewChild } from '@angular/core';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { Router, NavigationEnd, NavigationSkipped } from '@angular/router';
 
 import { Trigger } from 'src/app/core/interfaces/triggers';
 import { CodeService } from 'src/app/core/services/code.service';
@@ -55,16 +55,16 @@ export class CodeEditorComponent implements OnChanges, OnInit {
   loggingOpen: boolean = false;
   logs: string = '';
 
-  panelOpen: boolean = false;
-
   constructor(
     private cdr: ChangeDetectorRef,
     private codeService: CodeService,
     public logging: LoggingService,
     @Inject(DOCUMENT) private document: Document,
-    private sanitizer: DomSanitizer,
+    private router: Router,
     private service: BroadcastService,
-  ) {}
+  ) {
+    this.router.events.subscribe(this.handleNavigation);
+  }
 
   ngOnChanges() {
     setTimeout(() => {
@@ -90,6 +90,25 @@ export class CodeEditorComponent implements OnChanges, OnInit {
       }
     });
   }
+
+  handleNavigation = (event: any): void => {
+    if (event.routerEvent instanceof NavigationSkipped) {
+      this.triggerContainerUpdate();
+    }
+    if (event instanceof NavigationEnd) {
+      this.triggerContainerUpdate();
+    }
+  };
+
+  triggerContainerUpdate = (): void => {
+    setTimeout(() => {
+      const container = this.document.getElementById('display-container');
+      container!.innerHTML = this.panel === undefined ? '' : this.panel!;
+      
+      this.logging.stop();
+      clearInterval(this.scriptLoggingInterval);
+    }, 500);
+  };
 
   editorOptions = {
     theme: 'vs-dark',
@@ -120,25 +139,29 @@ export class CodeEditorComponent implements OnChanges, OnInit {
     this.service.publish(message);
   };
 
-  scriptLoaded: boolean = false;
+  scriptLoaded: { [key: string]: string } = {};
+  scriptIntervalCount: number = 0;
+  scriptLoggingInterval: any;
   triggerFile = async (trigger: Trigger): Promise<void> => {
-    const isLogging: boolean = trigger.open !== 'panel';
-    if (isLogging) {
-      this.logging.start();
-    } else {
-      this.panelOpen = true;
-    }
+    this.logging.start();
+    this.scriptLoggingInterval = setInterval(() => {
+      this.scriptIntervalCount++;
+      if (this.scriptIntervalCount >= 360000) {
+        clearInterval(this.scriptLoggingInterval);
+      }
+      this.logs = this.logging.logged;
+    }, 500);
 
     await this.sleep(100);
     const init: string = trigger.init;
-    if (this.scriptLoaded === false) {
+    if (this.scriptLoaded[trigger.file] === undefined) {
       const fileAndPath: string = `./assets/${ this.path }/${ this.folder }/${ trigger.file }`;
       this.filepath = fileAndPath;
   
       await this.sleep(100);
       const templateElement = this.handleScript.nativeElement.firstElementChild as HTMLElement;
       this.replaceDivWithScript(templateElement);
-      this.scriptLoaded = true;
+      this.scriptLoaded[trigger.file] = 'loaded';
     }
 
     await this.sleep(500);
@@ -155,16 +178,11 @@ export class CodeEditorComponent implements OnChanges, OnInit {
       console.error(error);
     }
 
-    await this.sleep(100);
-    if (isLogging) {
-      this.logs = this.logging.logged;
-      this.logging.stop();
-      this.loggingOpen = true;
-    }
+    await this.sleep(trigger.closeTime || 100);
+    this.loggingOpen = true;
   };
 
   toggleLogging = (): void => {
-    this.panelOpen = false;
     this.loggingOpen = !this.loggingOpen;
   };
 
@@ -173,24 +191,10 @@ export class CodeEditorComponent implements OnChanges, OnInit {
     this.logs = '';
   };
 
-  getPanel = (): SafeHtml | undefined => {
-    if (this.panel === undefined) return undefined;
-    return this.sanitizer.bypassSecurityTrustHtml(this.panel);
-  };
-
-  togglePanel = (): void => {
-    this.panelOpen = !this.panelOpen;
-    if (this.panelOpen === true) {
-      this.clearLogging();
-      this.loggingOpen = false;  
-    }
-  };
-
   replaceDivWithScript = (templateElement: HTMLElement): void => {
     const script = this.document.createElement('script');
     this.copyAttributesFromTemplateToScript(templateElement, script);
     this.handleScript.nativeElement.appendChild(script);
-    console.log(script)
   };
 
   copyAttributesFromTemplateToScript = (templateElement: HTMLElement, script: HTMLScriptElement): void => {

@@ -1,5 +1,5 @@
 function triggerEvent() {
-  const time = 2000;
+  const time = 5000;
   const wrapper = document.getElementById('thought-wrapper');
 
   wrapper.style.backgroundColor = 'red';
@@ -14,9 +14,6 @@ function triggerEvent() {
 }
 
 function dtfndDemo01Start() {
-  const wrapper = document.getElementById('thought-wrapper');
-  wrapper.classList.remove('hide');
-
   const button = document.querySelector('#thought-button');
   button.addEventListener('click', triggerEvent);
 }
@@ -25,9 +22,7 @@ function dtfndDemo01End() {
   const wrapper = document.getElementById('thought-wrapper');
   const button = document.getElementById('thought-button');
 
-  button.classList.add('hide');
   button.removeEventListener('click', triggerEvent);
-
   wrapper.style.backgroundColor = '';
 
   const p = document.getElementById('thought-run');

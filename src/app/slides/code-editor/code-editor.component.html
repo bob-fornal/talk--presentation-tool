@@ -26,27 +26,13 @@
         <mat-icon>arrow_left</mat-icon>
       }
     </div>
-    @if (loggingOpen === true) {
-      <button class="log-clear" mat-flat-button (click)="clearLogging()">Clear</button>
-      <div class="log-container">
+    <div class="panel-container-wrapper" [hidden]="loggingOpen === false">
+      <div id="display-container" class="display-container" [hidden]="!panel"></div>
+
+      <button class="log-clear" mat-flat-button (click)="clearLogging()">Clear Logs</button>
+      <div class="log-container" [class.half]="!!panel">
         <pre [innerHTML]="logs"></pre>
       </div>
-    }
-  </div>
-  @if (!!panel) {
-    <div class="display-wrapper" [class.open]="panelOpen === true">
-      <div class="handle" (click)="togglePanel()">
-        @if (panelOpen === true) {
-          <mat-icon>arrow_right</mat-icon>
-        } @else {
-          <mat-icon>arrow_left</mat-icon>
-        }
-      </div>
-      @if (panelOpen === true) {
-        <div class="display-container">
-          <div class="hide" id=thought-wrapper><button id=thought-button>Click Me</button></div>
-        </div>
-      }
     </div>
-  }
+  </div>
 </div>

@@ -65,16 +65,36 @@
     cursor: pointer;
   }
 
+  --height: 42em;
+  --half-height: calc(calc(var(--height) / 2) - 1em);
+
+  .display-container {
+    background-color: white;
+    font-size: 10pt;
+
+    height: var(--half-height);
+    width: calc(100% - 3.5em);
+    margin-left: 0.5em;
+    margin-bottom: 0.5em;
+    padding: 1em;
+  }
+
   .log-container {
     overflow: auto;
     color: black;
     background-color: white;
     font-size: 10pt;
 
-    height: 42em;
     width: calc(100% - 3.5em);
     margin-left: 0.5em;
     padding: 1em;
+
+    &:not(.half) {
+      height: var(--height);
+    }
+    &.half {
+      height: var(--half-height);
+    }
 
     ::ng-deep .log-warn {
       color: orange;

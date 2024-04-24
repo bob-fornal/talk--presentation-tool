@@ -3,4 +3,5 @@ export interface Trigger {
   file: string;
   init: string;
   open?: string;
+  closeTime?: number;
 }
