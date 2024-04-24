@@ -10,7 +10,14 @@
     "overview-001--slide",
     "overview-002--slide",
 
-    "thought-exercise--slide"
+    "thought-exercise--slide",
+
+    "non-asynchronous-code--slide",
+    "network-code--slide",
+    "promise-code--slide",
+    "generator-throttle-code--slide",
+    "user-interaction-code--slide",
+    "event-listeners--slide"
   ],
 
   "STYLE": [
@@ -27,6 +34,18 @@
     "}",
     ".hide {",
     "  visibility: hidden;",
+    "}",
+    "#drag {",
+    "  background-color: red;",
+    "  height: 50px;",
+    "  margin-bottom: 5px;",
+    "  width: 50px;",
+    "}",
+    ".drop {",
+    " border: 1px solid black;",
+    " height: 60px;",
+    " margin-bottom: 5px;",
+    " width: 60px;",
     "}"
   ],
 
@@ -101,6 +120,137 @@
         "file": "exercise.js",
         "init": "dtfndDemo01End",
         "open": "panel"
+      }
+    ],
+    "notes": "The idea here is for you to see how these examples will work."
+  },
+
+  "non-asynchronous-code--slide": {
+    "title": "Non-Asynchronous Code",
+    "type": "code-editor",
+    "folder": "code-002",
+    "files": [
+      "sync-code.js",
+      "async-code.js"
+    ],
+    "triggers": [
+      {
+        "title": "Start Sync",
+        "file": "sync-code.js",
+        "init": "runSync"
+      }, {
+        "title": "Start Async",
+        "file": "async-code.js",
+        "init": "runAsync"
+      }
+    ],
+    "notes": "Should we see, \"The Start, 2, 4, 6, The End\" or \"The Start, The End, 2, 4, 6\"?"
+  },
+
+  "network-code--slide": {
+    "title": "Network Code",
+    "type": "code-editor",
+    "folder": "code-003",
+    "files": [
+      "simple-network.js",
+      "complex-network.js"
+    ],
+    "triggers": [
+      {
+        "title": "Start Simple",
+        "file": "simple-network.js",
+        "init": "startSimpleNetwork"
+      }, {
+        "title": "Start Complex",
+        "file": "complex-network.js",
+        "init": "startComplexNetwork"
+      }
+    ],
+    "notes": "Simple Network Code<br/>Should we see, \"The Start, Async Code after 100ms., The End\" or \"The Start, The End, Async Code after 100ms.\"?<br/><br/>Complex Network Code<br/>Should we see \"1, 2, 3, 4, 5\", \"1, 5, 2, 4, 3\", or other?"
+  },
+
+  "promise-code--slide": {
+    "title": "Promise Code",
+    "type": "code-editor",
+    "folder": "code-004",
+    "files": [
+      "simple-promise.js",
+      "complex-promise.js"
+    ],
+    "triggers": [
+      {
+        "title": "Start Simple",
+        "file": "simple-promise.js",
+        "init": "startSimplePromise"
+      }, {
+        "title": "Start Complex",
+        "file": "complex-promise.js",
+        "init": "startComplexPromise"
+      }
+    ],
+    "notes": "Simple Promise Code<br/>Should we see, \"The Start, Resolved, setTimeout Fired, The End\" or \"The Start, Resolved, The End, setTimeout Fired\", or \"The Start, The End, Resolved, setTimeout Fired\"?<br/><br/>Complex Promise Code<br/>Should we see \"The Start, The End, Resolved 1, Resolved 2, Resolved 3, setTimeout Fired\"?"
+  },
+
+  "generator-throttle-code--slide": {
+    "title": "Generator Throttle Code",
+    "type": "code-editor",
+    "folder": "code-005",
+    "files": [
+      "throttle.js"
+    ],
+    "triggers": [
+      {
+        "title": "Start Throttle",
+        "file": "throttle.js",
+        "init": "startThrottle",
+        "closeTime": 5000
+      }, {
+        "title": "Trigger Throttle",
+        "file": "throttle.js",
+        "init": "triggerSendComment",
+        "closeTime": 5000
+      }
+    ],
+    "notes": "Start, Trigger, Trigger, Trigger; wait 5 seconds and Trigger again."
+  },
+
+  "user-interaction-code--slide": {
+    "title": "User Interaction",
+    "type": "code-editor",
+    "folder": "code-006",
+    "panel": "<div id=drag draggable=true></div><div class=drop></div><div class=drop></div>",
+    "files": [
+      "interaction.js"
+    ],
+    "triggers": [
+      {
+        "title": "Configure",
+        "file": "interaction.js",
+        "init": "startInteraction",
+        "closeTime": 180000
+      }
+    ]
+  },
+
+  "event-listeners--slide": {
+    "title": "Event Listeners",
+    "type": "code-editor",
+    "folder": "code-007",
+    "panel": "<p><a id=event-listener-link href=\"javascript:void(0);\">Used to connect Event Listeners to ...</a></p>",
+    "files": [
+      "event-listeners.js"
+    ],
+    "triggers": [
+      {
+        "title": "Setup Listeners",
+        "file": "event-listeners.js",
+        "init": "setupEventListeners",
+        "closeTime": 180000
+      }, {
+        "title": "Start Listeners",
+        "file": "event-listeners.js",
+        "init": "startEventListeners",
+        "closeTime": 180000
       }
     ]
   }
