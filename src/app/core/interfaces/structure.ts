@@ -12,6 +12,7 @@ export type StructureType = {
   bio2?: string;
 
   html?: string;
+  panel?: string;
 
   orientation?: string;
   text?: string;

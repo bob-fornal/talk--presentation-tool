@@ -33,4 +33,20 @@
       </div>
     }
   </div>
+  @if (!!panel) {
+    <div class="display-wrapper" [class.open]="panelOpen === true">
+      <div class="handle" (click)="togglePanel()">
+        @if (panelOpen === true) {
+          <mat-icon>arrow_right</mat-icon>
+        } @else {
+          <mat-icon>arrow_left</mat-icon>
+        }
+      </div>
+      @if (panelOpen === true) {
+        <div class="display-container">
+          <div class="hide" id=thought-wrapper><button id=thought-button>Click Me</button></div>
+        </div>
+      }
+    </div>
+  }
 </div>

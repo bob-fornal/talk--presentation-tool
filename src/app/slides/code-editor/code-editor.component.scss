@@ -100,3 +100,38 @@
     }
   }
 }
+
+.display-wrapper {
+  position: fixed;
+  right: 0;
+  top: 13em;
+  max-width: 60%;
+  max-height: calc(100vh - 22em);
+
+  background-color: rgba(100, 100, 100, 0.5);
+  border: 1px solid silver;
+  padding: 1em 0 1em 0.5em;
+
+  &:not(.open) {
+    min-width: 2em;
+  }
+  &.open {
+    min-width: 30%;
+  }
+
+  .handle {
+    cursor: pointer;
+  }
+
+  .display-container {
+    overflow: auto;
+    color: black;
+    background-color: white;
+    font-size: 10pt;
+
+    height: 38em;
+    width: calc(100% - 3.5em);
+    margin-left: 0.5em;
+    padding: 1em;
+  }
+}
