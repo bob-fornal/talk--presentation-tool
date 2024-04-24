@@ -36,6 +36,7 @@ export class LoggingService {
   fixLogging = (name: any): void => {
     this.old[name] = globalThis.console[name];
     globalThis.console[name] = (...args) => {
+      if (name === 'warn' && args[0] === 'WARNING: sanitizing HTML stripped some content, see https://g.co/ng/security#xss') return;
       this.old[name].apply(undefined, args);
 
       if (this.active === true) {

@@ -18,7 +18,12 @@
     "generator-throttle-code--slide",
     "user-interaction-code--slide",
     "event-listeners--slide",
-    "web-workers--slide"
+    "web-workers--slide",
+    "race-condition--slide",
+    "set-timeout-timer--slide",
+    "async-await--slide",
+
+    "time-for-questions"
   ],
 
   "STYLE": [
@@ -283,5 +288,71 @@
       }
     ],
     "notes": "Inline has issues showing the console data."
+  },
+
+  "race-condition--slide": {
+    "title": "Timing Code (Race Condition)",
+    "type": "code-editor",
+    "folder": "code-009",
+    "panel": "<div id=general-wrapper class=general-wrapper></div>",
+    "files": [
+      "race-condition.js"
+    ],
+    "triggers": [
+      {
+        "title": "Trigger Race",
+        "file": "race-condition.js",
+        "init": "startRaceCondition"
+      }
+    ]
+  },
+
+  "set-timeout-timer--slide": {
+    "title": "Set Timeout Timer",
+    "type": "code-editor",
+    "folder": "code-010",
+    "files": [
+      "set-timeout-timer.js"
+    ],
+    "triggers": [
+      {
+        "title": "Trigger (0)",
+        "file": "set-timeout-timer.js",
+        "init": "startSetTimeoutTimerZero"
+      }, {
+        "title": "Trigger (10)",
+        "file": "set-timeout-timer.js",
+        "init": "startSetTimeoutTimerTen"
+      }
+    ]
+  },
+
+  "async-await--slide": {
+    "title": "ES2017 Async/Await",
+    "type": "code-editor",
+    "folder": "code-011",
+    "files": [
+      "async-await.js"
+    ],
+    "triggers": [
+      {
+        "title": "Run Resolve",
+        "file": "async-await.js",
+        "init": "startAsyncAwaitResolve"
+      }, {
+        "title": "Run Reject",
+        "file": "async-await.js",
+        "init": "startAsyncAwaitReject"
+      }
+    ],
+    "notes": "Expands on use of Promises.<br/>Writing asyncronous code that looks and feels synchronous.<br/>Cleans up the syntax, making it more readable."
+  },
+  
+  "time-for-questions": {
+    "title": "",
+    "type": "image-only",
+    "background": "transparent",
+    "image": "./assets/images/time-for-questions.webp",
+    "notes": "We've examined:<ul><li>Sync and Async code using callbacks.</li><li>... debugging</li></ul><ul><li>ES2015 Promise(s) Chains.</li><li>Generators (throttling)</li><li>User Interaction.</li><li>Event Listeners (syncronous).</li><li>Web Workers.</li><li>Load Timing.</li><li>ES2017 Async/Await.</li></ul>"
   }
 }
