@@ -17,7 +17,8 @@
     "promise-code--slide",
     "generator-throttle-code--slide",
     "user-interaction-code--slide",
-    "event-listeners--slide"
+    "event-listeners--slide",
+    "web-workers--slide"
   ],
 
   "STYLE": [
@@ -28,9 +29,10 @@
     "  color: #69f0ae;",
     "  font-family: Arial, sans-serif;",
     "}",
-    "#thought-wrapper {",
+    "#thought-wrapper, .general-wrapper {",
     "  padding: 1em;",
     "  background-color: silver;",
+    "  color: black;",
     "}",
     ".hide {",
     "  visibility: hidden;",
@@ -46,6 +48,10 @@
     " height: 60px;",
     " margin-bottom: 5px;",
     " width: 60px;",
+    "}",
+    ".progress {",
+    "  color: blue;",
+    "  width: 100%;",
     "}"
   ],
 
@@ -253,5 +259,29 @@
         "closeTime": 180000
       }
     ]
+  },
+
+  "web-workers--slide": {
+    "title": "Web Workers",
+    "type": "code-editor",
+    "folder": "code-008",
+    "panel": "<div class=general-wrapper><div>Inline</div><progress id=inline-worker class=progress value=0 max=100></progress><div>Web Worker</div><progress id=web-worker class=progress value=0 max=100></progress></div>",
+    "files": [
+      "inline.js",
+      "web-worker.js",
+      "crunch-numbers.js"
+    ],
+    "triggers": [
+      {
+        "title": "Trigger Inline",
+        "file": "inline.js",
+        "init": "startInlineWorker"
+      }, {
+        "title": "Trigger Web Worker",
+        "file": "web-worker.js",
+        "init": "startWebWorker"
+      }
+    ],
+    "notes": "Inline has issues showing the console data."
   }
 }
