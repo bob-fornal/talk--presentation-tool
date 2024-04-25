@@ -19,7 +19,7 @@
           <span>{{ i + 1 }}.</span>&nbsp;
           {{ talk.title }}
         </button>
-        <span class="status">{{ getStatus(talk) }}</span>
+        <span class="status" [class.complete]="isComplete(talk)">{{ getStatus(talk) }}</span>
       </div>
     }
   </div>

@@ -99,6 +99,20 @@ export class CoursesComponent implements OnDestroy {
     });
   };
 
+  isComplete = (talk: Talk): boolean => {
+    const talkData: any = this.talkData[talk.folder];
+    if (talkData === undefined) return false;
+
+    let slides: number = talkData.ORDER.length;
+    let notes: number = 0;
+    talkData.ORDER.forEach((slide: string) => {
+      if (talkData[slide].hasOwnProperty('notes') === true) notes++;
+    });
+
+    if (slides === notes) return true;
+    return false;
+  };
+
   getStatus = (talk: Talk): string => {
     const talkData: any = this.talkData[talk.folder];
     if (talkData === undefined) return '';
@@ -108,8 +122,8 @@ export class CoursesComponent implements OnDestroy {
     talkData.ORDER.forEach((slide: string) => {
       if (talkData[slide].hasOwnProperty('notes') === true) notes++;
     });
-    if (slides === notes) return 'COMPLETE';
 
+    if (slides === notes) return 'COMPLETE';
     return `Slides: ${ slides }, Notes: ${ notes }`;
   };
 }

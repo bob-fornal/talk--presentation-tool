@@ -13,5 +13,15 @@
   .talk-wrapper {
     display: flex;
     align-items: center;
+
+    .status {
+
+      &:not(.complete) {
+        color: antiquewhite;
+      }
+      &.complete {
+        color: #69f0ae;
+      }
+    }
   }
 }
