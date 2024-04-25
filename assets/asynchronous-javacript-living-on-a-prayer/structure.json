@@ -240,7 +240,8 @@
         "init": "startInteraction",
         "closeTime": 180000
       }
-    ]
+    ],
+    "notes": "Drag and Drop are active ..."
   },
 
   "event-listeners--slide": {
@@ -263,7 +264,8 @@
         "init": "startEventListeners",
         "closeTime": 180000
       }
-    ]
+    ],
+    "notes": "Event Listeners are SURPRISINGLY Synchronous (not async)"
   },
 
   "web-workers--slide": {
@@ -304,7 +306,8 @@
         "file": "race-condition.js",
         "init": "startRaceCondition"
       }
-    ]
+    ],
+    "notes": "Original Content (expect this to change via code)<br/>Changed Content Correctly (via code)"
   },
 
   "set-timeout-timer--slide": {
@@ -324,7 +327,8 @@
         "file": "set-timeout-timer.js",
         "init": "startSetTimeoutTimerTen"
       }
-    ]
+    ],
+    "notes": "How long is a setTimeout delay?<br/>(Careful with delay tested ... 1000 iterations)"
   },
 
   "async-await--slide": {
