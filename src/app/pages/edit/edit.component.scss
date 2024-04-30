@@ -87,6 +87,10 @@
     .slide-card {
       min-width: 300px;
 
+      &.not-original {
+        background: repeating-linear-gradient(-45deg, rgba(255, 255, 0, 0.4), rgba(255, 255, 0, 0.4) 10px, transparent 10px, transparent 20px);
+      }
+
       .card-body {
         color: white;
       }

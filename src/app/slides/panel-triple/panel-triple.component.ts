@@ -36,19 +36,18 @@ export class PanelTripleComponent {
   ) {}
 
   saveEvent = (): void => {
-    const response: any = { type: 'save', items: [] };
+    const response: any = { ACTION: 'save', ITEMS: [] };
     const elements: any = document.querySelectorAll('[data-editing]');
     for (let i = 0, len = elements.length; i < len; i++) {
       const item = elements[i];
-      console.log(item);
       const key = item.dataset.editing;
-      response.items.push(key);
+      response.ITEMS.push(key);
       response[key] = item.value;
     }
 
-    console.log(this.notes);
-    response.items.push('notes');
+    response.ITEMS.push('notes');
     response.notes = this.notes;
+    response.slideKey = this.route.snapshot.paramMap.get('slideKey');
     
     this.save.emit(response);
 
@@ -57,7 +56,7 @@ export class PanelTripleComponent {
   };
 
   cancelEvent = (): void => {
-    const response: any = { type: 'cancel' };
+    const response: any = { ACTION: 'cancel' };
     this.save.emit(response);
 
     const path: string = this.route.snapshot.paramMap.get('folder') || '';

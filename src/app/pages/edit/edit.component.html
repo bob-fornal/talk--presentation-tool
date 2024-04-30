@@ -1,37 +1,82 @@
-<div class="outer-wrapper">
+@if (slideKey === null) {
+  <div class="outer-wrapper">
 
-  <div class="organization">
-    <div class="organization-wrapper">
-      <div class="home-navigation">
-        <button class="btn" mat-flat-button routerLink="/">
-          <mat-icon>home</mat-icon>
-        </button>
+    <div class="organization">
+      <div class="organization-wrapper">
+        <div class="home-navigation">
+          <button class="btn" mat-flat-button routerLink="/">
+            <mat-icon>home</mat-icon>
+          </button>
+        </div>
+        <div class="wrapper-title">{{ title }}</div>
+        <div class="global-style" [innerText]="getStyle()"></div>
       </div>
-      <div class="wrapper-title">{{ title }}</div>
-      <div class="global-style" [innerText]="getStyle()"></div>
     </div>
-  </div>
+    
+    <div class="editor-space">
+      <div class="editor-wrapper">
+        @for (slide of keyStatuses; track slide;) {
+          <mat-card
+            [class]="editClasses(slide.key)"
+            [class.not-included]="slide.included === false"
+            [class.not-original]="isOriginal(slide.key)"
+            [attr.slide.key]>
+          <mat-card-header>
+            <mat-card-title>
+              {{ getSlidePatternTitle(slide.key) }}
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="card-body">
+            Type: {{ getStructureType(slide.key) }}
+          </mat-card-content>
+          <mat-card-actions class="card-actions">
+            <button mat-flat-button color="accent" (click)="editEvent(slide.key)">EDIT</button>
+          </mat-card-actions>
+        </mat-card>
+        }
+      </div>
+    </div>
   
-  <div class="editor-space">
-    <div class="editor-wrapper">
-      @for (slide of keyStatuses; track slide;) {
-        <mat-card
-        [class]="editClasses(slide.key)" [class.not-included]="slide.included === false"
-        [attr.slide.key]>
-        <mat-card-header>
-          <mat-card-title>
-            {{ getSlidePatternTitle(slide.key) }}
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content class="card-body">
-          Type: {{ getStructureType(slide.key) }}
-        </mat-card-content>
-        <mat-card-actions class="card-actions">
-          <button mat-flat-button color="accent" (click)="editEvent(slide.key)">EDIT</button>
-        </mat-card-actions>
-      </mat-card>
-      }
-    </div>
   </div>
-
-</div>
+} @else {
+  <div class="outer-wrapper">
+    <ng-container [ngSwitch]="type">
+      <div class="slide-wrapper" *ngSwitchCase="'cover-slide-01'">
+        <cover-01 [title]="page.title" [author]="page.author!" [html]="page.html || ''" [bio1]="page.bio1 || undefined" [bio2]="page.bio2 || undefined"></cover-01>
+      </div>
+      <div class="slide-wrapper" *ngSwitchCase="'cover-slide-02'">
+        <cover-02 [title]="page.title" [author]="page.author!" [html]="page.html || ''"></cover-02>
+      </div>
+  
+      <div class="slide-wrapper" *ngSwitchCase="'image-only'">
+        <image-only [title]="page.title" [image]="page.image!"></image-only>
+      </div>
+      <div class="slide-wrapper" *ngSwitchCase="'text-image'">
+        <text-image [title]="page.title" [orientation]="page.orientation!" [text]="page.text!" [image]="page.image!"></text-image>
+      </div>
+  
+      <div class="slide-wrapper" *ngSwitchCase="'panel-single'">
+        <panel-single [title]="page.title" [text]="page.text!" [fontsize]="fontsizeSelected"></panel-single>
+      </div>
+      <div class="slide-wrapper" *ngSwitchCase="'panel-double'">
+        <panel-double [title]="page.title" [textLeft]="page.textLeft!" [textRight]="page.textRight!" [editing]="editing" (save)="handleDataSave($event)"></panel-double>
+      </div>
+      <div class="slide-wrapper" *ngSwitchCase="'panel-triple'">
+        <panel-triple [title]="page.title" [text1]="page.text1!" [text2]="page.text2!" [text3]="page.text3!" [notes]="page.notes!" [editing]="editing" (save)="handleDataSave($event)"></panel-triple>
+      </div>
+  
+      <div class="slide-wrapper" *ngSwitchCase="'code-editor'">
+        <code-editor
+          [title]="page.title"
+          [path]="path"
+          [folder]="page.folder!"
+          [files]="page.files!"
+          [triggers]="page.triggers || []"
+          [keys]="page.environment_keys || []"
+          [panel]="page.panel"></code-editor>
+      </div>
+  
+      <div class="slide-wrapper" *ngSwitchDefault="">NONE</div>
+    </ng-container>
+  </div>
+}

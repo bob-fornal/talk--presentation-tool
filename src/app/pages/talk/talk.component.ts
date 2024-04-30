@@ -1,11 +1,18 @@
 import { ChangeDetectorRef, Component, HostListener, NgZone, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Subject, Subscription } from 'rxjs';
+import { NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
+
 import { Structure, StructureType } from 'src/app/core/interfaces/structure';
+
+import { BroadcastService } from 'src/app/core/services/broadcast-service.service';
+import { BroadcastMessage } from 'src/app/core/interfaces/broadcast';
 import { CodeService } from 'src/app/core/services/code.service';
 import { StyleService } from 'src/app/core/services/style.service';
+
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+
 import { CodeEditorComponent } from '../../slides/code-editor/code-editor.component';
 import { PanelTripleComponent } from '../../slides/panel-triple/panel-triple.component';
 import { PanelDoubleComponent } from '../../slides/panel-double/panel-double.component';
@@ -14,20 +21,19 @@ import { TextImageComponent } from '../../slides/text-image/text-image.component
 import { ImageOnlyComponent } from '../../slides/image-only/image-only.component';
 import { Cover02Component } from '../../slides/cover-02/cover.component';
 import { Cover01Component } from '../../slides/cover-01/cover.component';
-import { NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
-import { BroadcastService } from 'src/app/core/services/broadcast-service.service';
-import { BroadcastMessage } from 'src/app/core/interfaces/broadcast';
 import { FontsizeService } from 'src/app/core/services/fontsize.service';
-import { Trigger } from 'src/app/core/interfaces/triggers';
 
 @Component({
-    selector: 'app-talk',
+    selector: 'talk',
     templateUrl: './talk.component.html',
     styleUrls: ['./talk.component.scss'],
     standalone: true,
     imports: [
         NgSwitch,
         NgSwitchCase,
+        NgSwitchDefault,
+        RouterLink,
+
         Cover01Component,
         Cover02Component,
         ImageOnlyComponent,
@@ -36,9 +42,8 @@ import { Trigger } from 'src/app/core/interfaces/triggers';
         PanelDoubleComponent,
         PanelTripleComponent,
         CodeEditorComponent,
-        NgSwitchDefault,
+
         MatButtonModule,
-        RouterLink,
         MatIconModule,
     ],
 })
@@ -67,7 +72,6 @@ export class TalkComponent implements OnDestroy {
   title: string = '';
   type: string = '';
 
-  editing: boolean = false;
   control: boolean = false;
 
   fontsizeSelected: string | undefined;
@@ -138,16 +142,7 @@ export class TalkComponent implements OnDestroy {
     if (this.path === '') return;
     if (structure.ORDER.length === 0) return;
 
-    const routeData: any = this.route.snapshot.data;
     const page = this.route.snapshot.paramMap.get('slideKey') || '';
-    switch (true) {
-      case routeData.type === 'edit-slide':
-        this.editing = true;
-        break;
-      case routeData.type === 'talk-slide':
-        this.editing = false;
-        break;
-    }
     this.setPage(page, structure);
   };
 
@@ -164,8 +159,7 @@ export class TalkComponent implements OnDestroy {
     const style = structure.STYLE;
     this.style.add(style.join('\n'));
 
-    const base: string = this.editing === false ? 'talk' : 'edit';
-    this.zone.run(() => this.router.navigate([base, this.path, structure.ORDER[this.slideIndex]]));
+    this.zone.run(() => this.router.navigate(['talk', this.path, structure.ORDER[this.slideIndex]]));
   };
 
   home = (): void => {
@@ -194,10 +188,6 @@ export class TalkComponent implements OnDestroy {
     this.slideIndex = this.structure.ORDER.length - 1;
     const page: string = this.structure.ORDER[this.slideIndex];
     this.setPage(page, this.structure);
-  };
-
-  handleDataSave = (event: any): void => {
-    console.log(event);
   };
 
   openControlPanel = (): void => {

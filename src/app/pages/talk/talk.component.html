@@ -18,10 +18,10 @@
       <panel-single [title]="page.title" [text]="page.text!" [fontsize]="fontsizeSelected"></panel-single>
     </div>
     <div class="slide-wrapper" *ngSwitchCase="'panel-double'">
-      <panel-double [title]="page.title" [textLeft]="page.textLeft!" [textRight]="page.textRight!" [editing]="editing" (save)="handleDataSave($event)"></panel-double>
+      <panel-double [title]="page.title" [textLeft]="page.textLeft!" [textRight]="page.textRight!"></panel-double>
     </div>
     <div class="slide-wrapper" *ngSwitchCase="'panel-triple'">
-      <panel-triple [title]="page.title" [text1]="page.text1!" [text2]="page.text2!" [text3]="page.text3!" [notes]="page.notes!" [editing]="editing" (save)="handleDataSave($event)"></panel-triple>
+      <panel-triple [title]="page.title" [text1]="page.text1!" [text2]="page.text2!" [text3]="page.text3!" [notes]="page.notes!"></panel-triple>
     </div>
 
     <div class="slide-wrapper" *ngSwitchCase="'code-editor'">
@@ -40,7 +40,7 @@
   </ng-container>
 
     <nav class="navigation">
-      @if (editing === false && control === false) {
+      @if (control === false) {
         <button class="btn" mat-flat-button routerLink="/">
           <mat-icon>home</mat-icon>
         </button>
@@ -58,7 +58,7 @@
         </button>
       }
       <span class="position"><span>{{ slideIndex + 1}}</span> / <span>{{ structure.ORDER.length }}</span></span>
-      @if (editing === false && control === false) {
+      @if (control === false) {
         <button class="btn" mat-flat-button (click)="openControlPanel()">
           <img src="./assets/images/remote.svg">
         </button>

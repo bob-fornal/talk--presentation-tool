@@ -13,8 +13,8 @@ injectSpeedInsights();
 
 const routes: Routes = [
   { path: 'talk/:folder/:slideKey', component: TalkComponent, data: { type: 'talk-slide' } },
-  { path: 'edit/:folder', component: EditComponent },
-  { path: 'edit/:folder/:slideKey', component: TalkComponent, data: { type: 'edit-slide'} },
+  { path: 'edit/:folder', component: EditComponent, data: { type: 'edit-talk' } },
+  { path: 'edit/:folder/:slideKey', component: EditComponent, data: { type: 'edit-slide'} },
 
   { path: 'control-panel/:folder/:slideKey', component: ControlPanelComponent },
   { path: 'courses', component: CoursesComponent },

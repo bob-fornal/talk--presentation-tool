@@ -34,5 +34,5 @@ export type StructureType = {
 export interface Structure {
   ORDER: OrderType;
   STYLE: StyleType;
-  [key: string]: OrderType | StructureType | StyleType;
+  [key: string]: OrderType | StructureType | StyleType | string | boolean;
 }
