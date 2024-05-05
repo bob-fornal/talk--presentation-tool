@@ -4,7 +4,10 @@
     "asynchronous-patterns--slide",
 
     "callbacks--slide",
-    "callbacks--code"
+    "callbacks--code",
+
+    "promise--slide",
+    "promise--code"
   ],
 
   "STYLE": [
@@ -36,7 +39,7 @@
   "callbacks--slide": {
     "title": "Callback Pattern",
     "type": "panel-single",
-    "text": "The <span class=bold>Callback Pattern</span> is the key to asynchronous execution, and our understanding of how it's handled moving forward.",
+    "text": "The <span class=bold>Callback Pattern</span> is the key to asynchronous execution,<br/><br/>... and our understanding of how it's handled moving forward.",
     "notes": "Using this mechanism we can build JavaScript applications that make use of external APIs that might be unreliable, or take a comparatively long time to return results, without freezing the application while it's waiting for an API."
   },
   "callbacks--code": {
@@ -55,5 +58,51 @@
       }
     ],
     "notes": ""
+  },
+  
+  "promise--slide": {
+    "title": "Promise Pattern",
+    "type": "panel-single",
+    "text": "The <span class=bold>Promise Pattern</span> allows for asynchronous execution of JavaScript code which is aided by external APIs,<br/><br/>... but are often times, confused to be asynchronous themselves.",
+    "notes": "Using this mechanism we can build JavaScript applications that make use of external APIs that might be unreliable, or take a comparatively long time to return results, without freezing the application while it's waiting for an API."
+  },
+  "promise--code": {
+    "title": "Promise Exercise",
+    "type": "code-editor",
+    "folder": "code-002",
+    "files": [
+      "promise-01.js",
+      "promise-02.js",
+      "promise-03.js"
+    ],
+    "triggers": [
+      {
+        "title": "Run Simple Exercise",
+        "file": "promise-01.js",
+        "init": "startSimplePromise",
+        "open": "panel"
+      }, {
+        "title": "Run Improved (Resolve)",
+        "file": "promise-02.js",
+        "init": "startImprovedPromiseResolve",
+        "open": "panel"
+      }, {
+        "title": "Run Improved (Reject)",
+        "file": "promise-02.js",
+        "init": "startImprovedPromiseReject",
+        "open": "panel"
+      }, {
+        "title": "Run Improved (Async)",
+        "file": "promise-02.js",
+        "init": "startImprovedPromiseAsync",
+        "open": "panel"
+      }, {
+        "title": "Run Chained Promise",
+        "file": "promise-03.js",
+        "init": "startChainingPromise",
+        "open": "panel"
+      }
+    ],
+    "notes": "In the Simple Promise Example, we can handle simple asynchronous activity (setTimeout).<br/><br/>In the Improved Promise Example, we can handle asynchronous activity, resolving, and rejecting.<br/><br/>In the Chained Promise Example, we've added logic to return a promise on the use of then, and identified if we've been passed a ChainedPromise or a resolution of some sort."
   }
 }
