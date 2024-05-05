@@ -18,7 +18,7 @@ function ajax(_object, callback = null) {
 
   request.open(_object.type || 'GET', _object.url, _object.isTrue || true);
 
-  request.onreadystatechange = function(event) {
+  request.onreadystatechange = function() {
     if (request.readyState === 4 && request.status >= 200 && request.status < 400) {
       complete(request.responseText);
     } else {
