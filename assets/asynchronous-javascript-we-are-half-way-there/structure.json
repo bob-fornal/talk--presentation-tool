@@ -1,0 +1,59 @@
+{
+  "ORDER": [
+    "cover-slide-01",
+    "asynchronous-patterns--slide",
+
+    "callbacks--slide",
+    "callbacks--code"
+  ],
+
+  "STYLE": [
+    ".outer-wrapper {",
+    "  background: url(\"./assets/images/grid--green.webp\");",
+    "  background-repeat: no-repeat;",
+    "  background-size: cover;",
+    "  color: #69f0ae;",
+    "  font-family: Arial, sans-serif;",
+    "}"
+  ],
+
+  "cover-slide-01": {
+    "title": "Asynchronous JavaScript: We're Half Way There",
+    "type": "cover-slide-01",
+    "author": "Bob Fornal",
+    "bio1": "<img class=bio-logo src=./assets/images/code-squid.webp /><br/><div class=\"bold bio-header\">Entrepreneur</div>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.",
+    "bio2": "<img class=bio-logo src=./assets/images/leading-edje.webp /><br/><div class=bold>Senior Solutions Developer</div><div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth.",
+    "notes": "This is an intermediate talk. You should have some understanding of JavaScript and familiarity with React and/or Angular."
+  },
+
+  "asynchronous-patterns--slide": {
+    "title": "Asynchronous Patterns",
+    "type": "panel-single",
+    "text": "At it's core, JavaScript is a synchronous, blocking, single-threaded language. This means that only one thing can happen at a time.<br/><br/>We use tools, such as ...<ul><li>Callbacks</li><li>Pomises</li><li>Observable</li><li>Signals</li></ul>... to make it behave asynchronously.",
+    "notes": "What we want to do throughout this talk is look at how these patterns are created and used.<br/><br/>Based on this deeper understanding, we can think more logically about the patterns we are creating and using.<br/><br/>I equate this to the difference between a driver, a driver that can change the oil, and a mechanic. Each has an understanding of how a car works, but the mechanic has a depth of understanding that allows him to do much more with a vehicle."
+  },
+
+  "callbacks--slide": {
+    "title": "Callback Pattern",
+    "type": "panel-single",
+    "text": "The <span class=bold>Callback Pattern</span> is the key to asynchronous execution, and our understanding of how it's handled moving forward.",
+    "notes": "Using this mechanism we can build JavaScript applications that make use of external APIs that might be unreliable, or take a comparatively long time to return results, without freezing the application while it's waiting for an API."
+  },
+  "callbacks--code": {
+    "title": "Callback Exercise",
+    "type": "code-editor",
+    "folder": "code-001",
+    "files": [
+      "callback.js"
+    ],
+    "triggers": [
+      {
+        "title": "Run Exercise",
+        "file": "callback.js",
+        "init": "startCallback",
+        "open": "panel"
+      }
+    ],
+    "notes": ""
+  }
+}
