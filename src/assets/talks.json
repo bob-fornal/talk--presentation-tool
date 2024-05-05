@@ -14,6 +14,10 @@
       "title": "Asynchronous"
     },
     {
+      "tag": "callbacks",
+      "title": "Callbacks"
+    },
+    {
       "tag": "career",
       "title": "Career"
     },
@@ -22,12 +26,20 @@
       "title": "JavaScript"
     },
     {
+      "tag": "promises",
+      "title": "Promises"
+    },
+    {
       "tag": "observables",
       "title": "Observables"
     },
     {
       "tag": "rxjs",
       "title": "RxJS"
+    },
+    {
+      "tag": "signals",
+      "title": "Signals"
     },
     {
       "tag": "testing",
@@ -63,7 +75,20 @@
       "title": "Asynchronous JavaScript: Livin' On A Prayer",
       "tags": [
         "asynchronous",
-        "javascript"
+        "callbacks",
+        "javascript",
+        "promises"
+      ]
+    }, {
+      "folder": "asynchronous-javascript-we-are-half-way-there",
+      "title": "Asynchronous JavaSCript: We're Half Way There",
+      "tags": [
+        "asynchronous",
+        "callbacks",
+        "javascript",
+        "observables",
+        "promises",
+        "signals"
       ]
     }, {
       "folder": "developer-tools-for-non-developers",
