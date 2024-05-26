@@ -1,4 +1,8 @@
 {
+  "__NOTES": [
+    "https://www.toptal.com/javascript/comprehensive-guide-javascript-design-patterns"
+  ],
+
   "STYLE": [
     ".outer-wrapper {",
     "  background: url(\"./assets/images/grid--green.webp\");",

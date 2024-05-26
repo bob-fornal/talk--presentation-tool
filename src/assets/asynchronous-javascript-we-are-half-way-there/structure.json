@@ -7,7 +7,13 @@
     "callbacks--code",
 
     "promise--slide",
-    "promise--code"
+    "promise--code",
+
+    "pubsub--slide",
+    "pubsub--code",
+
+    "observable--slide",
+    "observable--code"
   ],
 
   "STYLE": [
@@ -104,5 +110,53 @@
       }
     ],
     "notes": "In the Simple Promise Example, we can handle simple asynchronous activity (setTimeout).<br/><br/>In the Improved Promise Example, we can handle asynchronous activity, resolving, and rejecting.<br/><br/>In the Chained Promise Example, we've added logic to return a promise on the use of then, and identified if we've been passed a ChainedPromise or a resolution of some sort."
+  },
+
+  "pubsub--slide": {
+    "title": "PubSub Pattern",
+    "type": "panel-single",
+    "text": "The <span class=bold>Publish/Subscribe Pattern</span> is a crutial pattern to leverage the understanding of building scalable, maintainable, and responsive applications.<br/><br/>It not only promotes clean code but also enables efficient communication between components.",
+    "notes": "It helps developers understand the internal functioning of many libraries and frameworks, as the Pub-Sub pattern is often used as a core concept in various programming environments."
+  },
+  "pubsub--code": {
+    "title": "PubSub Exercise",
+    "type": "code-editor",
+    "folder": "code-003",
+    "files": [
+      "pubsub.js"
+    ],
+    "triggers": [
+      {
+        "title": "Run Exercise",
+        "file": "pubsub.js",
+        "init": "startPublishSubscribe",
+        "open": "panel"
+      }
+    ],
+    "notes": ""
+  },
+
+  "observable--slide": {
+    "title": "PubSub Pattern",
+    "type": "panel-single",
+    "text": "The <span class=bold>Observable Pattern</span> is ...",
+    "notes": ""
+  },
+  "observable--code": {
+    "title": "Observable Exercise",
+    "type": "code-editor",
+    "folder": "code-004",
+    "files": [
+      "observable.js"
+    ],
+    "triggers": [
+      {
+        "title": "Run Exercise",
+        "file": "observable.js",
+        "init": "startSimpleObservable",
+        "open": "panel"
+      }
+    ],
+    "notes": ""
   }
 }
