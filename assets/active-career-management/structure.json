@@ -28,6 +28,10 @@
     "  background-size: cover;",
     "  color: #69f0ae;",
     "  font-family: Arial, sans-serif;",
+    "}",
+    ".indent-color {",
+    "  color: yellow;",
+    "  margin-left: 1.7em !important;",
     "}"
   ],
 
@@ -104,24 +108,29 @@
     "title": "x/Twitter",
     "type": "panel-double",
     "textLeft": "<h2>Sections</h2><ul><li>Banner, Image, and Tagline</li><li>Links</li><li>Pinned Article</li></ul><h2>Why?</h2><ul><li>Strong Tech Community</li><li>Recruiters / Visibility</li></ul>",
-    "textRight": "<h2>Considerations</h2><ul><li>Are links correct?</li></ul>"
+    "textRight": "<h2>Patterns</h2><ul><li>Follow recruiters</li><li>Create a recruiter list</li><li>Retweet good content</li><li>Find the influencers in your industry</li><li>People with common interest or passion</li><li>People in your hometown or current location</li></ul><h2>Considerations</h2><ul><li>Are links correct?</li></ul>",
+    "notes": "Is there value in using x/Twitter?<ul><li>YES; Recruiters find people here all the time</li></ul>Patterns<ul><li>Recruiters: The list helps you see what they are sharing more easily.</li><li>RT: People you follow will be grateful.</li></ul>"
   },
 
   "connections--slide": {
     "title": "Connections",
     "type": "panel-double",
-    "textLeft": "<h2>LinkedIn</h2><ul><li>How to connect?</li><li>What is your ask?</li><li>Social Saturday?</li></ul><h2>X/Twitter</h2><ul><li>Strong Tech Community</li><li>Recruiters / Visibility</li><li>Strengthen Connections</li></ul>",
-    "textRight": "<h2>Considerations</h2><ul><li>Stories - people remember the stories.</li><li>Active Listening</li><li>Validate connections in some meaningful way.</li><li>Use meaningful times to reconnect (Christmas).</li><ul>"
+    "textLeft": "<h2>LinkedIn</h2><ul><li>How to connect?</li><li>What is your ask?</li><li>Social Saturday?</li></ul><h2>x/Twitter</h2><ul><li>Strong Tech Community</li><li>Recruiters / Visibility</li><li>Strengthen Connections</li></ul>",
+    "textRight": "<h2>Considerations</h2><ul><li>Stories - people remember the stories.</li><li>Active Listening</li><li>Validate connections in some meaningful way.</li><li>Use meaningful times to reconnect (Christmas).</li><ul>",
+    "notes": "LinkedIn<ul><li>Connecting: Use the activity, become known.</li><li>What is your ask?</li><li>Do Social Saturdays have value?</li></ul>x/Twitter<ul><li>There is a string tech community</li><li>It increases your visibility; recruiters</li></ul>"
   },
   "interview-types--slide": {
     "title": "Interview Types",
-    "type": "panel-single",
-    "text": "<ul><li>Cultural Fit</li><li>Technical - Code Challenge</li><li>Technical - Conversational</li><li>AI - Resume Overview</li><li>Technical - Take Home, Code Review</li><li>Technical - Project on Portfolio</li></ul>"
+    "type": "panel-double",
+    "textLeft": "<ul><li>Cultural Fit</li><li>AI - Resume Overview</li><li>Technical - Code Challenge</li><li>Technical - Conversational</li><li>Technical - Take Home, Code Review</li><li>Technical - Project on Portfolio</li></ul>",
+    "textRight": "Things to account for, research, and practice:<ul><li>30-second elevator pitch.</li><li>Company Website</li><li>Postings</li><li>Interviewer(s)</li><li>Tech Stack</li><li>Glassdoor</li></ul>Plan out questions.",
+    "notes": "<ul><li>Cultural Fit</li><li>AI - Resume Overview</li><li>Technical - Code Challenge</li><li>Technical - Conversational</li><li>Technical - Take Home, Code Review</li><li>Technical - Project on Portfolio</li></ul>30-second elevator pitch<ul><li>Remember that it should go beyond the resume and LinkedIn.</li></ul>Company Website<ul><li>People on LinkedIn, Products, Clients, Feedback, News, Articles, and Values.</li></ul>Posting<ul><li>What is the job? Re-read any emails. Check calendar invite.</li></ul>Interviewer(s)<ul><li>LinkedIn, Posts, Articles.</li></ul>Tech Stack<ul><li>Tools, Libraries, Frameworks (anything on GitHub) - Release Notes and Related Projects.</li></ul>Glassdoor<ul><li>Interviews, About, People.</li></ul>"
   },
   "job-search--slide": {
     "title": "Job Search",
     "type": "panel-single",
-    "text": "<h2>2-Hour Job Search</h2><ul><li>Small/Mid-Size Companies</li><li>Tight Focus on Domain</li></ul><h2>Thoughts</h2><ul><li>Google Search Pattern</li></ul><code>site:icims.com | greenhouse.io | jobvite.io | smartrecruiters.com | workable.com | zoho.com | myworkdayjobs.com \"fullstack developer\" OR \"fullstack engineer\" OR \"full stack developer\" OR \"full stack engineer\" AND \"remote\"</code>"
+    "text": "<h2>2-Hour Job Search</h2><ul><li>Small/Mid-Size Companies</li><li>Tight Focus on Domain</li></ul><h2>Thoughts</h2><ul><li>Google Search Pattern</li></ul><div class=indent-color><code>site:icims.com | greenhouse.io | jobvite.io | smartrecruiters.com | workable.com | zoho.com | myworkdayjobs.com \"fullstack developer\" OR \"fullstack engineer\" OR \"full stack developer\" OR \"full stack engineer\" AND \"remote\"</code></div>",
+    "notes": "Job Search<ul><li>Company size - large ar not safe.</li><li>Domain - build in that stack.</li></ul>Google Seach Pattern<ul><li>Search within 24 hours, daily.</li></ul>"
   },
 
   "time-for-questions": {
