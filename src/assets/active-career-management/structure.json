@@ -44,32 +44,32 @@
     "title": "History",
     "type": "panel-single",
     "text": "<h2>My History</h2><ul><li>25+ Years as a Teacher</li><li>#100Devs Bootcamp</li><li>600+ Coffee Chats</li></ul>Over the years ...<ul><li>\"I did nothing to ACTIVELY manage my career over the years.\"</li></ul>I have come to realize that ...<ul><li>I have an obligation to myself and my family to build a strong network.</li><li>I need to know what companies are good companies (by my standards).</li><li> I need to be prepared for the unexpected.</li></ul>",
-    "notes": "I did EVERYTHING WRONG. I started working with bootcamp students and had to figure out how to help them. I had to learn more about myself."
+    "notes": "<ul><li>Throughout my career, I did EVERYTHING WRONG.</li><li>I started working with bootcamp students and had to figure out how to help them.</li><li>I had to learn more about myself.</li></ul>"
   },
 
   "career-levels--early-career": {
-    "title": "Career Levels",
+    "title": "Career Levels: Early-Career",
     "type": "panel-triple",
-    "text1": "<div class=bold>Early Career</div><br/>- Social Media<br/><br/>- Right Job<br/><br/>- Right Company<br/><br/>- Connections",
+    "text1": "<div class=bold>Early Career</div><br/>&bull; Social Media<br/><br/>&bull; Right Job<br/><br/>&bull; Right Company<br/><br/>&bull; Connections",
     "text2": "<div class=bold>Mid Career</div><br/>",
     "text3": "<div class=bold>Late Career</div><br/>",
-    "notes": "Social Media: LinkedIn & Twitter: use #100DaysOfCode to work with the algorithm.<br/>Right Job (Goals)<br/>Right Company (60 - Values)<br/>Connections: fellow students, past co-workers, company peers."
+    "notes": "Social Media:<ul><li>Conferences and Meetups</li><li>LinkedIn & Twitter</li><li>Use #100DaysOfCode to work with the algorithm.</li></ul>Right Job:<ul><li>Goals - define</li></ul>Right Company:<ul><li>60 Companies</li><li>Examine Values</li></ul>Connections:<ul><li>Fellow students</li><li>Past co-workers</li><li>Company peers</li></ul>"
   },
   "career-levels--mid-career": {
-    "title": "Career Levels",
+    "title": "Career Levels: Mid-Career",
     "type": "panel-triple",
-    "text1": "<div class=bold>Early Career</div><br/>- Social Media<br/><br/>- Right Job<br/><br/>- Right Company<br/><br/>- Connections",
-    "text2": "<div class=bold>Mid Career</div><br/>- Social Media<br/><br/>- Right Job<br/><br/>- Right Company<br/><br/>- Connections",
+    "text1": "<div class=bold>Early Career</div><br/>&bull; Social Media<br/><br/>&bull; Right Job<br/><br/>&bull; Right Company<br/><br/>&bull; Connections",
+    "text2": "<div class=bold>Mid Career</div><br/>&bull; Social Media<br/><br/>&bull; Right Job<br/><br/>&bull; Right Company<br/><br/>&bull; Connections",
     "text3": "<div class=bold>Late Career</div><br/>",
-    "notes": "Mid Career: Social media - maintain activity and details.<br/>Right Job (Goals) - actively maintain<br/>Right Company - actively maintain<br/>Connections - peers, tech leads, immediate manager; past peers from school."
+    "notes": "Social media:<ul><li>Conferences and Meetups</li><li>Maintain activity and details.</li></ul>Right Job:<ul><li>Goals - actively maintain</li></ul>Right Company:<ul><li>60 Companies</li><li>Actively maintain</li></ul>Connections<ul><li>Peers</li><li>Tech leads</li><li>Immediate manager</li><li>Past peers from school</li></ul>"
   },
   "career-levels--late-career": {
-    "title": "Career Levels",
+    "title": "Career Levels: Late-Career",
     "type": "panel-triple",
-    "text1": "<div class=bold>Early Career</div><br/>- Social Media<br/><br/>- Right Job<br/><br/>- Right Company<br/><br/>- Connections",
-    "text2": "<div class=bold>Mid Career</div><br/>- Social Media<br/><br/>- Right Job<br/><br/>- Right Company<br/><br/>- Connections",
-    "text3": "<div class=bold>Late Career</div><br/>- Social Media<br/><br/>- Right Job<br/><br/>- Right Company<br/><br/>- Connections",
-    "notes": "Late Career: Social Media - clean up and working network.<br/>Right Job (Goals)<br/>Right Company (60 - Values)<br/>Connections: fellow students, past co-workers, company peers.<br/><br/>Mid Career: Social media - maintain activity<br/>Right Job (Goals) - actively maintain<br/>Right Company - actively maintain<br/>Connections - peers, tech leads, immediate manager; past peers from school."
+    "text1": "<div class=bold>Early Career</div><br/>&bull; Social Media<br/><br/>&bull; Right Job<br/><br/>&bull; Right Company<br/><br/>&bull; Connections",
+    "text2": "<div class=bold>Mid Career</div><br/>&bull; Social Media<br/><br/>&bull; Right Job<br/><br/>&bull; Right Company<br/><br/>&bull; Connections",
+    "text3": "<div class=bold>Late Career</div><br/>&bull; Social Media<br/><br/>&bull; Right Job<br/><br/>&bull; Right Company<br/><br/>&bull; Connections",
+    "notes": "Social Media:<ul><li>Conferences and Meetups</li><li>Clean up and working network</li></ul>Right Job:<ul><li>Goals</li></ul>Right Company:<ul><li>60 Companies</li><li>Actively maintain</li></ul>Connections:<ul><li>Fellow students</li><li>Past co-workers</li><li>Company peers</li></ul>"
   },
 
   "linkedin--slide": {
@@ -77,38 +77,40 @@
     "type": "panel-double",
     "textLeft": "<h2>Sections</h2><ul><li>Banner, Image, and Tagline</li><li>About - Sell yourself</li><li>Featured - You decide</li><li>Activity - weekly (minimum)</li><li>Experience - Industry Standard Terms</li><li>Skills - Endorsed</li><li>Recommendations</li></ul>",
     "textRight": "<h2>Considerations</h2><ul><li>Social Saturday</li></ul>",
-    "notes": "Banner needs to say, \"I'm in technology.\" Reduce the cognitive load.<br/>Image needs to be clean and bright.<br/>Tagline is the first thing a recruiter sees.<br/>About - Above The Fold<br/>Featured: Resume, Project(s), Portfolio, Articles, Content / Posts (use an image).<br/>Activity: The algorithm rewards activity; posts, not re-post.<br/>Recommendations - can be considered a \"red flag\" if not present."
+    "notes": "<ul><li>Banner needs to say, \"I am in technology;\" Reduce the cognitive load.</li><li>Image needs to be clean and bright.</li><li>Tagline is the first thing a recruiter sees.</li><li>About - Above The Fold</li><li>Featured: Resume, Project(s), Portfolio, Articles, Content / Posts (use an image).</li><li>Activity: The algorithm rewards activity; posts, not re-post.</li><li>Recommendations - can be considered a \"red flag\" if not present.</li></ul>"
   },
   "resume-ats--slide": {
     "title": "Resume / ATS",
     "type": "panel-double",
     "textLeft": "<h2>Resume</h2><ul><li>Summary</li><li>Skills</li><li>Employment</li></ul><h2>Considerations</h2><ul><li>Master Resume</li><li>Simpler is better (no photo, ATS ready)</li><li>Broken Links, Bad Spelling, and Grammer</li><li>Regional Differences</li><li>Cover Letter?</li></ul>",
     "textRight": "<h2>Applicant Tracking Systems</h2>\"While we are talking about resumes ...\"<h2>Considerations</h2><ul><li>Track EVERYTHING</li><li>Applying Early</li><li>Opimizing Resume Content Sent</li><li>\"The goal of the recruiter is to hire you; not to reject you.\" - Francesco Cuilla</li></ul>",
-    "notes": "Don't lie.<br/>Summary: Why are you the best person for this job?<br/>Skills: Just those listed for this job.<br/>Focus bullets on what was ROI.<br/><br/>ATS will group by percentage match of resume to posting; then, it will match by time applied - earlier and complete is the best option. Track everything: Application, followups, and thank you."
+    "notes": "Resume<ul><li>Don't lie.</li><li>Summary: Why are you the best person for this job?</li><li>Skills: Just those listed for this job.</li><li>Focus bullets on what was ROI.</li></ul>ATS<ul><li>ATS will group by percentage match of resume to posting;</li><li>then, it will match by time applied - earlier and complete is the best option.</li><li>Track everything: Application, followups, and thank you (exquisite detail).</li></ul>"
   },
   "project--slide": {
     "title": "Project(s)",
     "type": "panel-double",
     "textLeft": "<h2>Include</h2><ul><li>Branching</li><li>Wiki Notes (documentation)</li><li>Project Board</li><li>PR Markdown</li><li>Pipeline</li><li>README (documentation)</li><li>Pipeline (live)</li><li>Unit Tests (tested)</li></ul><h2>",
     "textRight": "<h2>Types</h2><ul><li>Group</li><li>Personal / Passion</li><li>Exploratory</li></ul><h2>Considerations</h2><ul><li>Build around what you know</li><li>What does a good project look like?</li><li>Broken Links, Bad Spelling, and Grammer</li></ul>",
-    "notes": "There are a few types of projects. Passion projects allow your care and concern to show through; this should be a solution to a problem you can speak to. Define and work to MVP complete."
+    "notes": "There are a few types of projects.<ul><li>Group</li><li>Personal / Passion projects allow your care and concern to show through; this should be a solution to a problem you can speak to. Define and work to MVP complete.</li><li>Exploratory</li></ul>"
   },
   "portfolio--slide": {
     "title": "Portfolio",
     "type": "panel-double",
-    "textLeft": "<h2>Sections</h2><ul><li>Hero (with Call To Action)</li><li>Images as a Dev, at Meetups</li><li>(then Work)</li></ul>",
-    "textRight": "<h2>Considerations</h2><ul><li>Who are we creating this for?</li><li>Developers or Recruiter / Hiring Manager?</li></ul>"
+    "textLeft": "<h2>Sections</h2><ul><li>Hero (with Call To Action)</li><li>Images as a Dev, at Meetups</li><li>Projects and Tech Used</li><li>Resume</li><li>Contact Information</li></ul>",
+    "textRight": "<h2>Considerations</h2><ul><li>Who are we creating this for?</li><li>Developers or Recruiter / Hiring Manager?</li><li>Are resume and links up to date?</li></ul>",
+    "notes": "<ul><li>Make sure you have the right focus for your portfolio.</li><li>Have at least two projects that you have ownership of.</li><li>Do you need the resume here? Especially, if you are applying for more than one type of position.</li></ul>"
   },
   "twitter-x--slide": {
     "title": "X/Twitter",
-    "type": "panel-single",
-    "text": "<h2>Sections</h2><ul><li>Banner, Image, and Tagline</li><li>Links</li></ul>"
+    "type": "panel-double",
+    "textLeft": "<h2>Sections</h2><ul><li>Banner, Image, and Tagline</li><li>Links</li><li>Pinned Article</li></ul>",
+    "textRight": "<h2>Considerations</h2><ul><li>Are links correct?</li></ul>"
   },
 
   "connections--slide": {
     "title": "Connections",
     "type": "panel-double",
-    "textLeft": "<h2>LinkedIn</h2><ul><li>How to connect?</li><li>What is your ask?</li><li>Social Saturday?</li></ul><h2>X/Twitter</h2>",
+    "textLeft": "<h2>LinkedIn</h2><ul><li>How to connect?</li><li>What is your ask?</li><li>Social Saturday?</li></ul><h2>X/Twitter</h2><ul><li>Strong Tech Community</li><li>Recruiters / Visibility</li><li>Strengthen Connections</li></ul>",
     "textRight": "<h2>Considerations</h2><ul><li>Stories - people remember the stories.</li><li>Active Listening</li><li>Validate connections in some meaningful way.</li><li>Use meaningful times to reconnect (Christmas).</li><ul>"
   },
   "interview-types--slide": {
@@ -119,7 +121,7 @@
   "job-search--slide": {
     "title": "Job Search",
     "type": "panel-single",
-    "text": "<h2>2-Hour Job Search</h2><ul><li>Small/Mid-Size Companies</li><li>Tight Focus on Domain</li></ul><h2>Thoughts</h2><ul><li>Google Search Pattern</li></ul>"
+    "text": "<h2>2-Hour Job Search</h2><ul><li>Small/Mid-Size Companies</li><li>Tight Focus on Domain</li></ul><h2>Thoughts</h2><ul><li>Google Search Pattern</li></ul><code>site:icims.com | greenhouse.io | jobvite.io | smartrecruiters.com | workable.com | zoho.com | myworkdayjobs.com \"fullstack developer\" OR \"fullstack engineer\" OR \"full stack developer\" OR \"full stack engineer\" AND \"remote\"</code>"
   },
 
   "time-for-questions": {
