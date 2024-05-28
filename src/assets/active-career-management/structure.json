@@ -46,9 +46,10 @@
 
   "history--slide": {
     "title": "History",
-    "type": "panel-single",
-    "text": "<h2>My History</h2><ul><li>25+ Years as a Teacher (Computers)</li><li>13+ Years as a Frontend Developer</li><li>(found) #100Devs Bootcamp</li><li>700+ Coffee Chats</li></ul>Over the years ...<ul><li>\"I did nothing to ACTIVELY manage my career.\"</li></ul>I have come to realize that ...<ul><li>I have an obligation to myself and my family to build a strong network.</li><li>I need to know what companies are good companies (by my standards).</li><li> I need to be prepared for the unexpected.</li></ul>",
-    "notes": "<ul><li>Throughout my career, I did EVERYTHING WRONG.</li><li>I started working with bootcamp students and had to figure out how to help them.</li><li>I had to learn more about myself.</li></ul>This is a different market.<ul><li>Developers NEED to showcase and advocate for their skills.</li><li>Many have never had to do this.</li><li>They do not understand what they NEED to do to stand out ...</li><li>... employers chased them before."
+    "type": "panel-double",
+    "textLeft": "<h2>My History</h2><ul><li>25+ Years as a Teacher (Computers)</li><li>13+ Years as a Frontend Developer</li><li>(found) #100Devs Bootcamp</li><li>700+ Coffee Chats</li></ul>Over the years ...<ul><li>\"I did nothing to ACTIVELY manage my career.\"</li></ul>",
+    "textRight": "<h2>My Realization ...</h2><ul><li>Obligation to myself (and my family) to build a strong network.</li><li>What companies are good companies (by my standards)?</li><li>Who are the first people I will contact?</li><li>Am I prepared for the unexpected?</li></ul>",
+    "notes": "<ul><li>Throughout my career, I did EVERYTHING WRONG.</li><li>I started working with bootcamp students and had to figure out how to help them.</li><li>I had to learn more about myself.</li></ul>This is a different market.<ul><li>Developers NEED to showcase and advocate for their skills.</li><li>Many have never had to do this.</li><li>They do not understand what they NEED to do to stand out ...</li><li>... employers chased them before.</li></ul>"
   },
 
   "career-levels--early-career": {
