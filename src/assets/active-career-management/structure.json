@@ -43,7 +43,7 @@
   "history--slide": {
     "title": "History",
     "type": "panel-single",
-    "text": "<h2>My History</h2><ul><li>25+ Years as a Teacher</li><li>#100Devs Bootcamp</li><li>600+ Coffee Chats</li></ul>Over the years ...<ul><li>\"I did nothing to ACTIVELY manage my career over the years.\"</li></ul>I have come to realize that ...<ul><li>I have an obligation to myself and my family to build a strong network.</li><li>I need to know what companies are good companies (by my standards).</li><li> I need to be prepared for the unexpected.</li></ul>",
+    "text": "<h2>My History</h2><ul><li>25+ Years as a Teacher (Computers)</li><li>13+ Years as a Frontend Developer</li><li>(found) #100Devs Bootcamp</li><li>700+ Coffee Chats</li></ul>Over the years ...<ul><li>\"I did nothing to ACTIVELY manage my career.\"</li></ul>I have come to realize that ...<ul><li>I have an obligation to myself and my family to build a strong network.</li><li>I need to know what companies are good companies (by my standards).</li><li> I need to be prepared for the unexpected.</li></ul>",
     "notes": "<ul><li>Throughout my career, I did EVERYTHING WRONG.</li><li>I started working with bootcamp students and had to figure out how to help them.</li><li>I had to learn more about myself.</li></ul>"
   },
 
@@ -75,8 +75,8 @@
   "linkedin--slide": {
     "title": "LinkedIn",
     "type": "panel-double",
-    "textLeft": "<h2>Sections</h2><ul><li>Banner, Image, and Tagline</li><li>About - Sell yourself</li><li>Featured - You decide</li><li>Activity - weekly (minimum)</li><li>Experience - Industry Standard Terms</li><li>Skills - Endorsed</li><li>Recommendations</li></ul>",
-    "textRight": "<h2>Considerations</h2><ul><li>Social Saturday</li></ul>",
+    "textLeft": "<h2>Sections</h2><ul><li>Banner</li><li>Image</li><li>Tagline</li></ul><ul><li>About - Sell yourself</li><li>Featured - You decide</li><li>Activity - weekly (minimum)</li><li>Experience - Industry Standard Terms</li><li>Skills - Endorsed</li><li>Recommendations</li></ul>",
+    "textRight": "<h2>Considerations</h2><ul><li>Post into Groups (impact)</li><li>Social Saturday</li></ul>",
     "notes": "<ul><li>Banner needs to say, \"I am in technology;\" Reduce the cognitive load.</li><li>Image needs to be clean and bright.</li><li>Tagline is the first thing a recruiter sees.</li><li>About - Above The Fold</li><li>Featured: Resume, Project(s), Portfolio, Articles, Content / Posts (use an image).</li><li>Activity: The algorithm rewards activity; posts, not re-post.</li><li>Recommendations - can be considered a \"red flag\" if not present.</li></ul>"
   },
   "resume-ats--slide": {
@@ -101,9 +101,9 @@
     "notes": "<ul><li>Make sure you have the right focus for your portfolio.</li><li>Have at least two projects that you have ownership of.</li><li>Do you need the resume here? Especially, if you are applying for more than one type of position.</li></ul>"
   },
   "twitter-x--slide": {
-    "title": "X/Twitter",
+    "title": "x/Twitter",
     "type": "panel-double",
-    "textLeft": "<h2>Sections</h2><ul><li>Banner, Image, and Tagline</li><li>Links</li><li>Pinned Article</li></ul>",
+    "textLeft": "<h2>Sections</h2><ul><li>Banner, Image, and Tagline</li><li>Links</li><li>Pinned Article</li></ul><h2>Why?</h2><ul><li>Strong Tech Community</li><li>Recruiters / Visibility</li></ul>",
     "textRight": "<h2>Considerations</h2><ul><li>Are links correct?</li></ul>"
   },
 
