@@ -8,6 +8,8 @@
     "career-levels--mid-career",
     "career-levels--late-career",
 
+    "build-things--slide",
+
     "linkedin--slide",
     "resume-ats--slide",
     "project--slide",
@@ -81,6 +83,14 @@
     "text2": "<h2 class=h2-top>Mid Career</h2><br/>&bull; Social Media<br/><br/>&bull; Right Job<br/><br/>&bull; Right Company<br/><br/>&bull; Connections",
     "text3": "<h2 class=h2-top>Late Career</h2><br/>&bull; Social Media<br/><br/>&bull; Right Job<br/><br/>&bull; Right Company<br/><br/>&bull; Connections",
     "notes": "Social Media:<ul><li>Conferences and Meetups</li><li>Clean up and working network</li></ul>Right Job:<ul><li>Goals</li></ul>Right Company:<ul><li>60 Companies</li><li>Actively maintain</li></ul>Connections:<ul><li>Fellow students</li><li>Past co-workers</li><li>Company peers</li></ul>"
+  },
+
+  "build-things--slide": {
+    "title": "Building Things",
+    "type": "panel-double",
+    "textLeft": "<h2 class=h2-top>Issue</h2>\"Stop telling developers to make projects to get a job. I have never had an employer ask me about a project I built!\"<h2>Reality</h2><ul><li>This applies more to Junior than Senior.</li><li>Allows them to show something of significance.</li><li>Demonstrate proof of skill and impact.</li></ul>",
+    "textRight": "<h2 class=h2-top>Thoughts</h2><ul><li>Can be used to navigate conversations.</li><li>Increase confidence.</li><li>Larger projects is where true learning occurs.</li><li>Stack the deck in your favor.</li></ul>",
+    "notes": "Projects allow you to ...<ul><li>Show something of significance</li><li>Show proof of skill and impact</li><li>Provide talking points</li><li>Increase confidence</li></ul>"
   },
 
   "linkedin--slide": {
