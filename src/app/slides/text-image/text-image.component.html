@@ -2,7 +2,7 @@
   <div class="panel--title">{{ title }}</div>
 
   <div [class]="'panel--content-wrapper orient-' + orientation">
-    <div class="panel--text" [innerHTML]="text"></div>
+    <div class="panel--text" [class]="fontsize" [innerHTML]="text"></div>
     <div class="panel--image">
       <img class="img" [src]="image" [alt]="image" />
     </div>

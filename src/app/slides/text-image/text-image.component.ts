@@ -14,4 +14,5 @@ export class TextImageComponent {
   @Input() orientation: string = 'left';
   @Input() text: string = '';
   @Input() image: string = '';
+  @Input() fontsize: string | undefined = undefined;
 }

@@ -3,8 +3,8 @@
     <div class="panel--title">{{ title }}</div>
 
     <div class="panel--content-wrapper">
-      <div class="panel--text left" [innerHTML]="textLeft"></div>
-      <div class="panel--text right" [innerHTML]="textRight"></div>
+      <div class="panel--text left" [class]="fontsize" [innerHTML]="textLeft"></div>
+      <div class="panel--text right" [class]="fontsize" [innerHTML]="textRight"></div>
     </div>
   } @else {
     <div class="panel--title" data-editing="title" contenteditable>{{ title }}</div>

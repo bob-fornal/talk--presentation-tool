@@ -3,9 +3,9 @@
     <div class="panel--title">{{ title }}</div>
 
     <div class="panel--content-wrapper">
-      <div class="panel--text text1" [innerHTML]="text1"></div>
-      <div class="panel--text text2" [innerHTML]="text2"></div>
-      <div class="panel--text text2" [innerHTML]="text3"></div>
+      <div class="panel--text text1" [class]="fontsize" [innerHTML]="text1"></div>
+      <div class="panel--text text2" [class]="fontsize" [innerHTML]="text2"></div>
+      <div class="panel--text text2" [class]="fontsize" [innerHTML]="text3"></div>
     </div>
   } @else {
     <input data-editing="title" contenteditable [value]="title">

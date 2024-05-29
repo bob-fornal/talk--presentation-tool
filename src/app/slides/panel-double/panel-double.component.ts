@@ -17,6 +17,7 @@ export class PanelDoubleComponent {
   @Input() textLeft: string = '';
   @Input() textRight: string = '';
   @Input() editing: boolean = false;
+  @Input() fontsize: string | undefined = undefined;
 
   @Output() save: EventEmitter<any> = new EventEmitter();
 

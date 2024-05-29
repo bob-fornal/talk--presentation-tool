@@ -26,6 +26,7 @@ export class PanelTripleComponent {
   @Input() text3: string = '';
   @Input() notes: string = '';
   @Input() editing: boolean = false;
+  @Input() fontsize: string | undefined = undefined;
 
   @Output() save: EventEmitter<any> = new EventEmitter();
 

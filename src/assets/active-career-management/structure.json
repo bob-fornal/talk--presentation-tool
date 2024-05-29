@@ -9,11 +9,11 @@
     "career-levels--late-career",
 
     "build-things--slide",
-
-    "linkedin--slide",
-    "resume-ats--slide",
     "project--slide",
     "portfolio--slide",
+    "resume-ats--slide",
+
+    "linkedin--slide",
     "twitter-x--slide",
 
     "connections--slide",
@@ -82,7 +82,7 @@
     "text1": "<h2 class=h2-top>Early Career</h2><br/>&bull; Social Media<br/><br/>&bull; Right Job<br/><br/>&bull; Right Company<br/><br/>&bull; Connections",
     "text2": "<h2 class=h2-top>Mid Career</h2><br/>&bull; Social Media<br/><br/>&bull; Right Job<br/><br/>&bull; Right Company<br/><br/>&bull; Connections",
     "text3": "<h2 class=h2-top>Late Career</h2><br/>&bull; Social Media<br/><br/>&bull; Right Job<br/><br/>&bull; Right Company<br/><br/>&bull; Connections",
-    "notes": "Social Media:<ul><li>Conferences and Meetups</li><li>Clean up and working network</li></ul>Right Job:<ul><li>Goals</li></ul>Right Company:<ul><li>60 Companies</li><li>Actively maintain</li></ul>Connections:<ul><li>Fellow students</li><li>Past co-workers</li><li>Company peers</li></ul>"
+    "notes": "Social Media:<ul><li>Conferences and Meetups</li><li>Clean up and working network</li></ul>Right Job:<ul><li>Goals</li></ul>Right Company:<ul><li>60 Companies</li><li>Actively maintain</li></ul>Connections:<ul><li>Peer Developers</li><li>Peer Management</li><li>Peers that moved</li></ul>"
   },
 
   "build-things--slide": {
@@ -91,21 +91,6 @@
     "textLeft": "<h2 class=h2-top>Issue</h2>\"Stop telling developers to make projects to get a job. I have never had an employer ask me about a project I built!\"<h2>Reality</h2><ul><li>This applies more to Junior than Senior.</li><li>Allows them to show something of significance.</li><li>Demonstrate proof of skill and impact.</li></ul>",
     "textRight": "<h2 class=h2-top>Thoughts</h2><ul><li>Can be used to navigate conversations.</li><li>Increase confidence.</li><li>Larger projects is where true learning occurs.</li><li>Stack the deck in your favor.</li></ul>",
     "notes": "Projects allow you to ...<ul><li>Show something of significance</li><li>Show proof of skill and impact</li><li>Provide talking points</li><li>Increase confidence</li></ul>"
-  },
-
-  "linkedin--slide": {
-    "title": "LinkedIn",
-    "type": "panel-double",
-    "textLeft": "<h2 class=h2-top>Sections</h2><ul><li>Banner</li><li>Image</li><li>Tagline</li></ul><ul><li>About - Sell yourself</li><li>Featured - You decide</li><li>Activity - weekly (minimum)</li><li>Experience - Industry Standard Terms</li><li>Skills - Endorsed</li><li>Recommendations</li></ul>",
-    "textRight": "<h2 class=h2-top>Considerations</h2><ul><li>Post into Groups (impact)</li><li>Social Saturday</li></ul>",
-    "notes": "<ul><li>Banner needs to say, \"I am in technology;\" Reduce the cognitive load.</li><li>Image needs to be clean and bright.</li><li>Tagline is the first thing a recruiter sees.</li><li>About - Above The Fold</li><li>Featured: Resume, Project(s), Portfolio, Articles, Content / Posts (use an image).</li><li>Activity: The algorithm rewards activity; posts, not re-post.</li><li>Recommendations - can be considered a \"red flag\" if not present.</li></ul>"
-  },
-  "resume-ats--slide": {
-    "title": "Resume / ATS",
-    "type": "panel-double",
-    "textLeft": "<h2 class=h2-top>Resume</h2><ul><li>Summary</li><li>Skills</li><li>Employment</li></ul><h2>Considerations</h2><ul><li>Master Resume</li><li>Simpler is better (no photo, ATS ready)</li><li>Broken Links, Bad Spelling, and Grammer</li><li>Regional Differences</li><li>Cover Letter?</li></ul>",
-    "textRight": "<h2 class=h2-top>Applicant Tracking Systems</h2>\"While we are talking about resumes ...\"<h2>Considerations</h2><ul><li>Track EVERYTHING</li><li>Applying Early</li><li>Opimizing Resume Content Sent</li><li>\"The goal of the recruiter is to hire you; not to reject you.\" - Francesco Cuilla</li></ul>",
-    "notes": "Resume<ul><li>Don't lie.</li><li>Summary: Why are you the best person for this job?</li><li>Skills: Just those listed for this job.</li><li>Focus bullets on what was ROI.</li></ul>ATS<ul><li>ATS will group by percentage match of resume to posting;</li><li>then, it will match by time applied - earlier and complete is the best option.</li><li>Track everything: Application, followups, and thank you (exquisite detail).</li></ul>"
   },
   "project--slide": {
     "title": "Project(s)",
@@ -120,6 +105,22 @@
     "textLeft": "<h2 class=h2-top>Sections</h2><ul><li>Hero (with Call To Action)</li><li>Images as a Dev, at Meetups</li><li>Projects and Tech Used</li><li>Resume</li><li>Contact Information</li></ul>",
     "textRight": "<h2 class=h2-top>Considerations</h2><ul><li>Who are we creating this for?</li><li>Developers or Recruiter / Hiring Manager?</li><li>Are resume and links up to date?</li></ul>",
     "notes": "<ul><li>Make sure you have the right focus for your portfolio.</li><li>Have at least two projects that you have ownership of.</li><li>Do you need the resume here? Especially, if you are applying for more than one type of position.</li></ul>"
+  },
+
+  "resume-ats--slide": {
+    "title": "Resume / ATS",
+    "type": "panel-double",
+    "textLeft": "<h2 class=h2-top>Resume</h2><ul><li>Summary</li><li>Skills</li><li>Employment</li></ul><h2>Considerations</h2><ul><li>Master Resume</li><li>Simpler is better (no photo, ATS ready)</li><li>Broken Links, Bad Spelling, and Grammer</li><li>Regional Differences</li><li>Cover Letter?</li></ul>",
+    "textRight": "<h2 class=h2-top>Applicant Tracking Systems</h2>\"While we are talking about resumes ...\"<h2>Considerations</h2><ul><li>Track EVERYTHING</li><li>Applying Early</li><li>Opimizing Resume Content Sent</li><li>\"The goal of the recruiter is to hire you; not to reject you.\" - Francesco Cuilla</li></ul>",
+    "notes": "Resume<ul><li>Don't lie.</li><li>Summary: Why are you the best person for this job?</li><li>Skills: Just those listed for this job.</li><li>Focus bullets on what was ROI.</li></ul>ATS<ul><li>ATS will group by percentage match of resume to posting;</li><li>then, it will match by time applied - earlier and complete is the best option.</li><li>Track everything: Application, followups, and thank you (exquisite detail).</li></ul>"
+  },
+
+  "linkedin--slide": {
+    "title": "LinkedIn",
+    "type": "panel-double",
+    "textLeft": "<h2 class=h2-top>Sections</h2><ul><li>Banner</li><li>Image</li><li>Tagline</li></ul><ul><li>About - Sell yourself</li><li>Featured - You decide</li><li>Activity - weekly (minimum)</li><li>Experience - Industry Standard Terms</li><li>Skills - Endorsed</li><li>Recommendations</li></ul>",
+    "textRight": "<h2 class=h2-top>Considerations</h2><ul><li>Post into Groups (impact)</li><li>Social Saturday</li></ul>",
+    "notes": "<ul><li>Banner needs to say, \"I am in technology;\" Reduce the cognitive load.</li><li>Image needs to be clean and bright.</li><li>Tagline is the first thing a recruiter sees.</li><li>About - Above The Fold</li><li>Featured: Resume, Project(s), Portfolio, Articles, Content / Posts (use an image).</li><li>Activity: The algorithm rewards activity; posts, not re-post.</li><li>Recommendations - can be considered a \"red flag\" if not present.</li></ul>"
   },
   "twitter-x--slide": {
     "title": "x/Twitter",
