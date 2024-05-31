@@ -19,6 +19,7 @@
     "connections--slide",
     "interview-types--slide",
     "job-search--slide",
+    "cold-calling--slide",
     
     "time-for-questions"
   ],
@@ -149,6 +150,13 @@
     "type": "panel-single",
     "text": "<h2 class=h2-top>2-Hour Job Search</h2><ul><li>Small/Mid-Size Companies</li><li>Tight Focus on Domain</li></ul><h2>Thoughts</h2><ul><li>Google Search Pattern</li></ul><div class=indent-color><code>site:icims.com | greenhouse.io | jobvite.io | smartrecruiters.com | workable.com | zoho.com | myworkdayjobs.com \"fullstack developer\" OR \"fullstack engineer\" OR \"full stack developer\" OR \"full stack engineer\" AND \"remote\"</code></div>",
     "notes": "Job Search<ul><li>Company size - large ar not safe.</li><li>Domain - build in that stack.</li></ul>Google Seach Pattern<ul><li>Search within 24 hours, daily.</li></ul>"
+  },
+  "cold-calling--slide": {
+    "title": "Cold Calling",
+    "type": "panel-double",
+    "textLeft": "<h2 class=h2-top>Cold Emailing</h2><ul><li>Powerful marketing tool.</li><li>Effective tool for personal branding.</li><li>Can help you expand your search and potentially uncover new opportunities.</li></ul><h2>Challenges</h2><ul><li>Getting the recipient to open and read the email.</li><li>Crafting a message that is both compelling and personalised.</li><li>Personalisation is key.</li><li>Value proposition.</li><li>Make it easy to read.</li></ul>",
+    "textRight": "<h2 class=h2-top>The Right People</h2><ul><li>Identify the ideal customer.</li><li>Determine their needs and what problems they face.</li></ul><h2>Mastery</h2><ul><li>Follow up to boost response rates.</li><li>Reach out through a different communication channel.</li><li>Balance being pushy with being persistent.</li></ul>",
+    "notes": "Cold emailing is a form of communication ...<ul><li>Reaching out to potential employers, professors, customers, or clients</li><li>Who have not expressed a prior interest in a person.</li></ul>Challenages<ul><li>Capture their attention.</li><li>Focus on how you help them, not what YOU want from them.</li><li>Subject-line: Attention Grabbing (not generic)</li><li>Clear and concise: introduce yourself and explain why you are reaching out.</li><li>What can you offer?</li></ul>"
   },
 
   "time-for-questions": {
