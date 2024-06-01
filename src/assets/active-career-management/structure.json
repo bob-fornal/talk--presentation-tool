@@ -20,6 +20,9 @@
     "interview-types--slide",
     "job-search--slide",
     "cold-calling--slide",
+
+    "networking-01--slide",
+    "networking-02--slide",
     
     "time-for-questions"
   ],
@@ -157,6 +160,17 @@
     "textLeft": "<h2 class=h2-top>Cold Emailing</h2><ul><li>Powerful marketing tool.</li><li>Effective tool for personal branding.</li><li>Can help you expand your search and potentially uncover new opportunities.</li></ul><h2>Challenges</h2><ul><li>Getting the recipient to open and read the email.</li><li>Crafting a message that is both compelling and personalised.</li><li>Personalisation is key.</li><li>Value proposition.</li><li>Make it easy to read.</li></ul>",
     "textRight": "<h2 class=h2-top>The Right People</h2><ul><li>Identify the ideal customer.</li><li>Determine their needs and what problems they face.</li></ul><h2>Mastery</h2><ul><li>Follow up to boost response rates.</li><li>Reach out through a different communication channel.</li><li>Balance being pushy with being persistent.</li></ul>",
     "notes": "Cold emailing is a form of communication ...<ul><li>Reaching out to potential employers, professors, customers, or clients</li><li>Who have not expressed a prior interest in a person.</li></ul>Challenages<ul><li>Capture their attention.</li><li>Focus on how you help them, not what YOU want from them.</li><li>Subject-line: Attention Grabbing (not generic)</li><li>Clear and concise: introduce yourself and explain why you are reaching out.</li><li>What can you offer?</li></ul>"
+  },
+
+  "networking-01--slide": {
+    "title": "Networking",
+    "type": "image-only",
+    "image": "./assets/images/networking.jpeg"
+  },
+  "networking-02--slide": {
+    "title": "Networking",
+    "type": "panel-single",
+    "text": ""
   },
 
   "time-for-questions": {
