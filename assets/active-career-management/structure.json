@@ -101,7 +101,7 @@
   "project--slide": {
     "title": "Project(s)",
     "type": "panel-double",
-    "textLeft": "<h2 class=h2-top>Include</h2><ul><li>Branching</li><li>Wiki Notes (documentation)</li><li>Project Board</li><li>PR Markdown</li><li>Pipeline</li><li>README (documentation)</li><li>Pipeline (live)</li><li>Unit Tests (tested)</li></ul><h2>",
+    "textLeft": "<h2 class=h2-top>Include</h2><ul><li>Branching</li><li>Wiki Notes (documentation)</li><li>Project Board</li><li>PR Markdown</li><li>README (documentation)</li><li>Pipeline (live)</li><li>Unit Tests (tested)</li></ul><h2>",
     "textRight": "<h2 class=h2-top>Types</h2><ul><li>Group</li><li>Personal / Passion</li><li>Exploratory</li></ul><h2>Considerations</h2><ul><li>Build around what you know</li><li>What does a good project look like?</li><li>Broken Links, Bad Spelling, and Grammer</li></ul>",
     "notes": "There are a few types of projects.<ul><li>Group</li><li>Personal / Passion projects allow your care and concern to show through; this should be a solution to a problem you can speak to. Define and work to MVP complete.</li><li>Exploratory</li></ul>"
   },
@@ -191,6 +191,6 @@
     "type": "image-only",
     "background": "transparent",
     "image": "./assets/images/time-for-questions.webp",
-    "notes": "Notes<ul><li>This is a collection of thoughts and ideas.</li><li>You should use what works for you.</li><ul><ol><li>Give Yourself a Fighting Chance (LI)</li><li>Strategize: Have a Plan</li><li>Sell Yourself: Why are you a good fit?</li><li>Show curiosity: Question</li><li>Be Authentic</li></ol>"
+    "notes": "Notes<ul><li>This is a collection of thoughts and ideas.</li><li>You should use what works for you.</li></ul><ol><li>Give Yourself a Fighting Chance (LI)</li><li>Strategize: Have a Plan</li><li>Sell Yourself: Why are you a good fit?</li><li>Show curiosity: Question</li><li>Be Authentic</li></ol>"
   }
 }
