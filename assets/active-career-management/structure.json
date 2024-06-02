@@ -170,8 +170,9 @@
   },
   "networking-02--slide": {
     "title": "Networking",
-    "type": "panel-single",
-    "text": "<h2 class=h2-top>Networking Relationships</h2><ol><li>Thoughtful conversation</li><li>Mutual benefit</li><li>Respect</li></ol>",
+    "type": "panel-double",
+    "textLeft": "<h2 class=h2-top>Relationships</h2><ol><li>Thoughtful conversation</li><li>Mutual benefit</li><li>Respect</li></ol>",
+    "textRight": "<h2 class=h2-top>Location</h2><ul><li>Network in the Right Place</li><li>Conferences - ensure it's not a sales event.</li></ul>",
     "notes": "<ol><li>Thoughtful conversation: You get past small talk, pleasantries and elevator pitches. Instead, you're having in-depth discussions about your industry, your challenges, and your goals.</li><li>Mutual benefit: Both parties see value in the relationship.</li><li>Respect: You admire each other's work and expertise. There's no hidden agenda.</li></ol>"
   },
 
