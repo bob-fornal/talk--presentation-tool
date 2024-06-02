@@ -55,7 +55,7 @@
     "author": "Bob Fornal",
     "bio1": "<img class=bio-logo src=./assets/images/code-squid.webp /><br/><div class=\"bold bio-header\">Entrepreneur</div>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.",
     "bio2": "<img class=bio-logo src=./assets/images/leading-edje.webp /><br/><div class=bold>Senior Solutions Developer</div><div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth.",
-    "notes": ""
+    "notes": "Notes<ul><li>This is a collection of thoughts and ideas.</li><li>You should use what works for you.</li><ul>"
   },
 
   "history--slide": {
@@ -191,6 +191,6 @@
     "type": "image-only",
     "background": "transparent",
     "image": "./assets/images/time-for-questions.webp",
-    "notes": "<ol><li>Give Yourself a Fighting Chance (LI)</li><li>Strategize: Have a Plan</li><li>Sell Yourself: Why are you a good fit?</li><li>Show curiosity: Question</li><li>Be Authentic</li></ol>"
+    "notes": "Notes<ul><li>This is a collection of thoughts and ideas.</li><li>You should use what works for you.</li><ul><ol><li>Give Yourself a Fighting Chance (LI)</li><li>Strategize: Have a Plan</li><li>Sell Yourself: Why are you a good fit?</li><li>Show curiosity: Question</li><li>Be Authentic</li></ol>"
   }
 }
