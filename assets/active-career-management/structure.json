@@ -23,6 +23,8 @@
 
     "networking-01--slide",
     "networking-02--slide",
+
+    "quickly-getting-job--slide",
     
     "time-for-questions"
   ],
@@ -176,11 +178,19 @@
     "notes": "<ol><li>Thoughtful conversation: You get past small talk, pleasantries and elevator pitches. Instead, you're having in-depth discussions about your industry, your challenges, and your goals.</li><li>Mutual benefit: Both parties see value in the relationship.</li><li>Respect: You admire each other's work and expertise. There's no hidden agenda.</li></ol>"
   },
 
+  "quickly-getting-job--slide": {
+    "title": "If I Had To ...",
+    "type": "panel-double",
+    "textLeft": "<h2 class=h2-top>Get a Job as Quickly as Possible</h2><ol><li>Referral: strong network, top 10.</li><li>Domain search: targeting based on experience.</li><li>Cold email: targeting and stalking.</li><li>Traditional: finding jobs and applying.</li></ol>",
+    "textRight": "<h2 class=h2-top>Thoughts</h2><ul><li>They all have benefits and weaknesses.</li><li>They all take work, research, and persistence.</li><li>You need to go the route that's best for you and your circumstances.</li></ul>",
+    "notes": ""
+  },
+
   "time-for-questions": {
     "title": "",
     "type": "image-only",
     "background": "transparent",
     "image": "./assets/images/time-for-questions.webp",
-    "notes": ""
+    "notes": "<ol><li>Give Yourself a Fighting Chance (LI)</li><li>Strategize: Have a Plan</li><li>Sell Yourself: Why are you a good fit?</li><li>Show curiosity: Question</li><li>Be Authentic</li></ol>"
   }
 }
