@@ -165,12 +165,14 @@
   "networking-01--slide": {
     "title": "Networking",
     "type": "image-only",
-    "image": "./assets/images/networking.jpeg"
+    "image": "./assets/images/networking.jpeg",
+    "notes": "Need to network in the right place.<ul><li>Dating: There are lots of single in a bar, but probably not your best bet.</li><li>Conferences - ensure it's not a sales event.</li></ul>"
   },
   "networking-02--slide": {
     "title": "Networking",
     "type": "panel-single",
-    "text": ""
+    "text": "<h2 class=h2-top>Networking Relationships</h2><ol><li>Thoughtful conversation</li><li>Mutual benefit</li><li>Respect</li></ol>",
+    "notes": "<ol><li>Thoughtful conversation: You get past small talk, pleasantries and elevator pitches. Instead, you're having in-depth discussions about your industry, your challenges, and your goals.</li><li>Mutual benefit: Both parties see value in the relationship.</li><li>Respect: You admire each other's work and expertise. There's no hidden agenda.</li></ol>"
   },
 
   "time-for-questions": {
