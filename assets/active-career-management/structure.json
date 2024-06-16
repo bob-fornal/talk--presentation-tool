@@ -37,6 +37,18 @@
     "  color: #69f0ae;",
     "  font-family: Arial, sans-serif;",
     "}",
+    ".dilbert-wrapper {",
+    "  border: 5px solid rgb(105, 240, 174);",
+    "}",
+    ".bronze {",
+    "  color: #FFC48B",
+    "}",
+    ".silver {",
+    "  color: #EEEEEE",
+    "}",
+    ".gold {",
+    "  color: #FFD700",
+    "}",
     ".yellow {",
     "  color: yellow;",
     "}",
@@ -67,27 +79,27 @@
   },
 
   "career-levels--early-career": {
-    "title": "Career Levels: Early-Career",
+    "title": "Career Levels: <span class=bronze>Early-Career</span>",
     "type": "panel-triple",
-    "text1": "<h2 class=h2-top>Early Career</h2><br/>&bull; Social Media<br/><br/>&bull; Right Job<br/><br/>&bull; Right Company<br/><br/>&bull; Connections",
-    "text2": "<h2 class=h2-top>Mid Career</h2><br/>",
-    "text3": "<h2 class=h2-top>Late Career</h2><br/>",
+    "text1": "<h2 class=\"h2-top bronze\">Early-Career</h2><br/><div class=bronze>&bull; Social Media</div><br/><div class=bronze>&bull; Right Job</div><br/><div class=bronze>&bull; Right Company</div><br/><div class=bronze>&bull; Connections</div>",
+    "text2": "<h2 class=\"h2-top silver\">Mid-Career</h2><br/>",
+    "text3": "<h2 class=\"h2-top gold\">Late-Career</h2><br/>",
     "notes": "Breaking these down into broad scopes ...<br/><br/>Social Media (start to learn, professionally):<ul><li>Conferences and Meetups</li><li>LinkedIn & x/Twitter (it's a tool)</li><li>Use #100DaysOfCode to work with the algorithm.</li></ul>Right Job:<ul><li>Goals - define</li></ul>Right Company:<ul><li>60 Companies</li><li>Examine Values</li></ul>Connections (build):<ul><li>Fellow students</li><li>Past co-workers</li><li>Company peers</li></ul>"
   },
   "career-levels--mid-career": {
-    "title": "Career Levels: Mid-Career",
+    "title": "Career Levels:  <span class=silver>Mid-Career</span>",
     "type": "panel-triple",
-    "text1": "<h2 class=h2-top>Early Career</h2><br/>&bull; Social Media<br/><br/>&bull; Right Job<br/><br/>&bull; Right Company<br/><br/>&bull; Connections",
-    "text2": "<h2 class=h2-top>Mid Career</h2><br/>&bull; Social Media<br/><br/>&bull; Right Job<br/><br/>&bull; Right Company<br/><br/>&bull; Connections",
-    "text3": "<h2 class=h2-top>Late Career</h2><br/>",
+    "text1": "<h2 class=\"h2-top bronze\">Early-Career</h2><br/><div class=bronze>&bull; Social Media</div><br/><div class=bronze>&bull; Right Job</div><br/><div class=bronze>&bull; Right Company</div><br/><div class=bronze>&bull; Connections</div>",
+    "text2": "<h2 class=\"h2-top silver\">Mid-Career</h2><br/><div class=silver>&bull; Social Media</div><br/><div class=silver>&bull; Right Job</div><br/><div class=silver>&bull; Right Company</div><br/><div class=silver>&bull; Connections</div>",
+    "text3": "<h2 class=\"h2-top gold\">Late-Career</h2><br/>",
     "notes": "Social media (building and maintaining):<ul><li>Conferences and Meetups</li><li>Maintain activity and details.</li></ul>Right Job (learning):<ul><li>Goals - actively maintain</li></ul>Right Company (learn and apply):<ul><li>60 Companies (should have, adjust based on activity/news)</li><li>Actively maintain</li></ul>Can be more strategic with connections ...<br/><br/>Connections (build and maintain):<ul><li>Peers</li><li>Tech leads</li><li>Immediate manager</li><li>Past peers from school</li></ul>"
   },
   "career-levels--late-career": {
-    "title": "Career Levels: Late-Career",
+    "title": "Career Levels:  <span class=gold>Late-Career</span>",
     "type": "panel-triple",
-    "text1": "<h2 class=h2-top>Early Career</h2><br/>&bull; Social Media<br/><br/>&bull; Right Job<br/><br/>&bull; Right Company<br/><br/>&bull; Connections",
-    "text2": "<h2 class=h2-top>Mid Career</h2><br/>&bull; Social Media<br/><br/>&bull; Right Job<br/><br/>&bull; Right Company<br/><br/>&bull; Connections",
-    "text3": "<h2 class=h2-top>Late Career</h2><br/>&bull; Social Media<br/><br/>&bull; Right Job<br/><br/>&bull; Right Company<br/><br/>&bull; Connections",
+    "text1": "<h2 class=\"h2-top bronze\">Early-Career</h2><br/><div class=bronze>&bull; Social Media</div><br/><div class=bronze>&bull; Right Job</div><br/><div class=bronze>&bull; Right Company</div><br/><div class=bronze>&bull; Connections</div>",
+    "text2": "<h2 class=\"h2-top silver\">Mid-Career</h2><br/><div class=silver>&bull; Social Media</div><br/><div class=silver>&bull; Right Job</div><br/><div class=silver>&bull; Right Company</div><br/><div class=silver>&bull; Connections</div>",
+    "text3": "<h2 class=\"h2-top gold\">Late-Career</h2><br/><div class=gold>&bull; Social Media</div><br/><div class=gold>&bull; Right Job</div><br/><div class=gold>&bull; Right Company</div><br/><div class=gold>&bull; Connections</div>",
     "notes": "This is what prompted this talk; late career with limited understanding of Social Media ...<br/><br/>Social Media (different impact):<ul><li>Conferences and Meetups (speaking and engaging)</li><li>Clean up and working network</li></ul>Right Job:<ul><li>Goals (are we thinging of post-retirement? I LOVE WRITING CODE)</li></ul>Right Company:<ul><li>60 Companies</li><li>Actively maintain</li></ul>Connections:<ul><li>Peer Developers</li><li>Peer Management</li><li>Peers that have moved someplace else</li></ul>"
   },
 
@@ -102,21 +114,21 @@
     "title": "Project(s)",
     "type": "panel-double",
     "textLeft": "<h2 class=h2-top>Include</h2><ul><li>Branching</li><li>Wiki Notes (documentation)</li><li>Project Board</li><li>PR Markdown</li><li>README (documentation)</li><li>Pipeline (live)</li><li>Unit Tests (tested)</li></ul>",
-    "textRight": "<h2 class=h2-top>Types</h2><ul><li>Group</li><li>Personal / Passion</li><li>Exploratory</li></ul><h2>Considerations</h2><ul><li>Build around what you know</li><li>What does a good project look like?</li><li>Broken Links, Bad Spelling, and Grammer</li></ul>",
-    "notes": "Include ...<ul><li>Branching</li><li>Wiki Notes (documentation)</li><li>Project Board</li><li>PR Markdown</li><li>README (documentation)</li><li>Pipeline (live)</li><li>Unit Tests (tested)</li><li>Define and work to MVP complete.</li><li>KILLERS: Broken Links, Bad Spelling, and Grammer</li></ul>Here are a few types of projects.<ul><li>Group</li><li>Personal / Passion projects allow your care and concern to show through; this should be a solution to a problem you can speak to.</li><li>Exploratory</li></ul>Levels:<ul><li>Early (need to learn these business processes)</li><li>Mid (don't stop doing the good business things)</li><li>Late (might have enough based on work experience, might not)</li></ul>"
+    "textRight": "<h2 class=h2-top>Types</h2><ul><li>Group</li><li>Personal / Passion</li><li>Exploratory</li></ul><h2>Considerations</h2><ul><li>Build around what you know</li><li>What does a good project look like?</li></ul><h2>Killers</h2><ul><li>Broken Links</li><li>Bad Spelling</li><li>Grammar</li></ul>",
+    "notes": "Include ...<ul><li>Branching</li><li>Wiki Notes (documentation)</li><li>Project Board</li><li>PR Markdown</li><li>README (documentation)</li><li>Pipeline (live)</li><li>Unit Tests (tested)</li><li>Define and work to MVP complete.</li></ul>Here are a few types of projects.<ul><li>Group</li><li>Personal / Passion projects allow your care and concern to show through; this should be a solution to a problem you can speak to.</li><li>Exploratory</li></ul>Considerations<ul><li>Build around what you know</li><li>What does a good project look like?</li><li>KILLERS: Broken Links, Bad Spelling, and Grammar</li></ul>Levels:<ul><li>Early (need to learn these business processes)</li><li>Mid (don't stop doing the good business things)</li><li>Late (might have enough based on work experience, might not)</li></ul>"
   },
   "portfolio--slide": {
     "title": "Portfolio",
     "type": "panel-double",
     "textLeft": "<h2 class=h2-top>Sections</h2><ul><li>Hero (with Call To Action)</li><li>Images as a Dev, at Meetups</li><li>Projects and Tech Used</li><li>Resume (optional)</li><li>Contact Information</li></ul>",
     "textRight": "<h2 class=h2-top>Considerations</h2><ul><li>Who are we creating this for?</li><li>Developers or Recruiter / Hiring Manager?</li><li>Are resume and links up to date?</li></ul>",
-    "notes": "Portfolio<ul><li>Who are we building this for?</li><li>Other Devs, NO; they are references. Reach the people making a hiring decision.</li><li>Hero/CTA: I am the person you need on that team.</li><li>They need to get to know you - story/photos</li></ul>Thoughts<ul><li>Make sure you have the right focus for your portfolio.</li><li>Have at least two projects that you have ownership of.</li><li>Do you need the resume here? Especially, if you are applying for more than one type of position.</li></ul>Level<ul><li>Early (this can be a project; if not, use of templates is OK)</li><li>Mid (don't neglect it; redesign when in a crunch hurts)</li><li>Late (might need to build, if you want the exposure; build in public)</li></ul>"
+    "notes": "Sections<ul><li>Hero (with Call To Action)</li><li>Images as a Dev, at Meetups</li><li>Projects and Tech Used</li><li>Resume (optional)</li><li>Contact Information</li></ul>Portfolio<ul><li>Who are we building this for?</li><li>Other Devs, NO; they are references. Reach the people making a hiring decision.</li><li>Hero/CTA: I am the person you need on that team.</li><li>They need to get to know you - story/photos</li></ul>Thoughts<ul><li>Make sure you have the right focus for your portfolio.</li><li>Have at least two projects that you have ownership of.</li><li>Do you need the resume here? Especially, if you are applying for more than one type of position.</li></ul>Level<ul><li>Early (this can be a project; if not, use of templates is OK)</li><li>Mid (don't neglect it; redesign when in a crunch hurts)</li><li>Late (might need to build, if you want the exposure; build in public)</li></ul>"
   },
 
   "resume-ats--slide": {
     "title": "Resume / ATS",
     "type": "panel-double",
-    "textLeft": "<h2 class=h2-top>Resume</h2><ul><li>Summary</li><li>Skills</li><li>Employment</li></ul><h2>Considerations</h2><ul><li>Master Resume</li><li>Simpler is better (no photo, ATS ready)</li><li>Broken Links, Bad Spelling, and Grammer</li><li>Regional Differences</li><li>Cover Letter?</li></ul>",
+    "textLeft": "<h2 class=h2-top>Resume</h2><ul><li>Summary</li><li>Skills</li><li>Employment</li></ul><h2>Considerations</h2><ul><li>Master Resume</li><li>Simpler is better (no photo, ATS ready)</li><li>Broken Links, Bad Spelling, and Grammar</li><li>Regional Differences</li><li>Cover Letter?</li></ul>",
     "textRight": "<h2 class=h2-top>Applicant Tracking Systems</h2>\"While we are talking about resumes ...\"<h2>Considerations</h2><ul><li>Track EVERYTHING</li><li>Applying Early</li><li>Opimizing Resume Content Sent</li><li>\"The goal of the recruiter is to hire you; not to reject you.\" - Francesco Cuilla</li></ul>",
     "notes": "Resume<ul><li>There are regional/cultural variances.</li><li>Don't lie: but a solid guess is OK.<li>Can you get numbers before leaving?</li></li><li>Summary: Why are you the best person for this job?</li><li>Skills: Just those listed for this job.</li><li>Focus bullets on what was ROI.</li></ul>Cover Letter<ul><li>If transitioning (late career counts) to explain why.</li></ul>ATS<ul><li>ATS will group by percentage match of resume to posting;</li><li>then, it will match by time applied - earlier and complete is the best option.</li><li>Track everything: Application, followups, and thank you (exquisite detail).</li></ul>Level<ul><li>This is the same at Early, Mid, and Late Career</li></ul>"
   },
@@ -168,6 +180,7 @@
     "title": "Networking",
     "type": "image-only",
     "image": "./assets/images/networking.jpeg",
+    "imageClass": "dilbert-wrapper",
     "notes": "Dilbert<br/><br/>Need to network in the right place.<ul><li>Dating: There are lots of single in a bar, but probably not your best bet.</li><li>Conferences - ensure it's not a sales event.</li></ul>"
   },
   "networking-02--slide": {
@@ -175,7 +188,7 @@
     "type": "panel-double",
     "textLeft": "<h2 class=h2-top>Relationships</h2><ol><li>Thoughtful conversation</li><li>Mutual benefit</li><li>Respect</li></ol>",
     "textRight": "<h2 class=h2-top>Location</h2><ul><li>Network in the Right Place</li><li>Conferences - ensure it's not a sales event.</li></ul>",
-    "notes": "Thoughtful conversation<ul><li>Get past small talk, pleasantries, and elevator pitches.</li><li>Have in-depth discussions about your industry, your challenges, and your goals.</li></ul>Mutual benefit<ul><li>Both parties see value in the relationship.</li></ul>Respect<ul></li>You admire each other's work and expertise.</li><li>There's no hidden agenda.</li></ul>Networking in the right place ...<ul><li>Compare professional networking to dating.</li><li>There are lots of dating opportunities in a bar; rarely partners.</li><li>Network where you are most comfortable - me, college not church.</li></ul>(summarize top three)<br/><br/>Levels<ul><li>Early - these are skills that need development; active participation.</li><li>Mid - these are skills you should be working on within your team.</li><li>Late - don't lose the momentum and experience you've built.</li></ul>"
+    "notes": "Thoughtful conversation<ul><li>Get past small talk, pleasantries, and elevator pitches.</li><li>Have in-depth discussions about your industry, your challenges, and your goals.</li></ul>Mutual benefit<ul><li>Both parties see value in the relationship.</li></ul>Respect<ul><li>You admire each other's work and expertise.</li><li>There's no hidden agenda.</li></ul>Networking in the right place ...<ul><li>Compare professional networking to dating.</li><li>There are lots of dating opportunities in a bar; rarely partners.</li><li>Network where you are most comfortable - me, college not church.</li></ul>(summarize top three)<br/><br/>Levels<ul><li>Early - these are skills that need development; active participation.</li><li>Mid - these are skills you should be working on within your team.</li><li>Late - don't lose the momentum and experience you've built.</li></ul>"
   },
 
   "quickly-getting-job--slide": {
@@ -191,6 +204,7 @@
     "type": "image-only",
     "background": "transparent",
     "image": "./assets/images/time-for-questions.webp",
+    "imageClass": "",
     "notes": "Notes<ul><li>This is a collection of thoughts and ideas.</li><li>You should use what works for you.</li></ul><ol><li>Give Yourself a Fighting Chance (LI)</li><li>Strategize: Have a Plan</li><li>Sell Yourself: Why are you a good fit?</li><li>Show curiosity: Question</li><li>Be Authentic - be YOU, not who you think they want; bumps, bruises, and all.</li></ol>Levels<ul><li>Early, Mid, Late - do these BEFORE you have the strong need, if you can.</li><li>All of our path(s) and requirements vary.</li></ul>"
   }
 }
