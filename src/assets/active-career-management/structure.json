@@ -148,34 +148,34 @@
     "type": "panel-double",
     "textLeft": "<ul class=h2-top><li class=yellow>Informal Interview</li><li>Cultural Fit</li><li>AI - Resume Overview</li><li>Technical - Code Challenge</li><li>Technical - Conversational</li><li>Technical - Take Home, Code Review</li><li>Technical - Project on Portfolio</li></ul>",
     "textRight": "Things to account for, research, and practice:<ul><li>30-second elevator pitch.</li><li>Company Website</li><li>Postings</li><li>Interviewer(s)</li><li>Tech Stack</li><li>Glassdoor</li></ul>Plan out questions.",
-    "notes": "Types<ul><li><span class=yellow>Informal Interview</span> - you initiate</li><li>Cultural Fit</li><li>AI - Resume Overview</li><li>Technical - Code Challenge</li><li>Technical - Conversational</li><li>Technical - Take Home, Code Review</li><li>Technical - Project on Portfolio</li></ul>30-second elevator pitch<ul><li>Remember that it should go beyond the resume and LinkedIn.</li></ul>Company Website<ul><li>People on LinkedIn, Products, Clients, Feedback, News, Articles, and Values.</li></ul>Posting<ul><li>What is the job? Re-read any emails. Check calendar invite.</li></ul>Interviewer(s)<ul><li>LinkedIn, Posts, Articles. STALK THEM.</li></ul>Tech Stack<ul><li>Tools, Libraries, Frameworks (anything on GitHub) - Release Notes and Related Projects.</li><li>Related: React & Redux, Angular & RxJS</li></ul>Glassdoor<ul><li>Interviews, About, People.</li></ul>Levels<ul><li>Early, Mid, and Late - the difference is the depth of connections</li></ul>"
+    "notes": "Types<ul><li><span class=yellow>Informal Interview</span> - you initiate</li><li>Cultural Fit</li><li>AI - Resume Overview</li><li>Technical - Code Challenge</li><li>Technical - Conversational</li><li>Technical - Take Home, Code Review</li><li>Technical - Project on Portfolio</li></ul>30-second elevator pitch<ul><li>Remember that it should go beyond the resume and LinkedIn.</li></ul>Company Website<ul><li>People on LinkedIn, Products, Clients, Feedback, News, Articles, and Values.</li></ul>Posting<ul><li>What is the job? Re-read any emails. Check calendar invite.</li></ul>Interviewer(s)<ul><li>LinkedIn, Posts, Articles. STALK THEM.</li></ul>Tech Stack<ul><li>Tools, Libraries, Frameworks (anything on GitHub) - Release Notes and Related Projects.</li><li>Related: React & Redux, Angular & RxJS</li></ul>Glassdoor<ul><li>Interviews, About, People.</li></ul>Questions<ul><li>ALL questions that come to mind - write it down; showcase interest.</li></ul>Levels<ul><li>Early, Mid, and Late - the difference is the depth of connections</li></ul>"
   },
   "job-search--slide": {
     "title": "Job Search",
     "type": "panel-single",
     "text": "<h2 class=h2-top>2-Hour Job Search</h2><ul><li>Small/Mid-Size Companies</li><li>Tight Focus on Domain</li></ul><h2>Thoughts</h2><ul><li>Google Search Pattern</li></ul><div class=indent-color><code>site:icims.com | greenhouse.io | jobvite.io | smartrecruiters.com | workable.com | zoho.com | myworkdayjobs.com \"fullstack developer\" OR \"fullstack engineer\" OR \"full stack developer\" OR \"full stack engineer\" AND \"remote\"</code></div>",
-    "notes": "Job Search<ul><li>Company size - large ar not safe.</li><li>Domain - build in that stack.</li></ul>Google Seach Pattern<ul><li>Search within 24 hours, daily.</li></ul>"
+    "notes": "Book - 2-Hour Job Search (Amazon)<ul><li>Domain Specific Knowledge</li><li>Target a specifiv industry like Financial.</li></ul>Job Search<ul><li>Company size - large ar not safe.</li><li>Domain - build in that stack.</li></ul>Google Seach Pattern<ul><li>Search boards at the company level (generally more than on paid boards)</li><li>Adjust for job title variants</li><li>Remote or a specific location</li><li>Search within 24 hours, DAILY.</li><li>Target higher levels within the ATS systems.</li></ul>Levels<ul><li>Early, Mid, and Late - no difference; target activity - when you apply.</li></ul>"
   },
   "cold-calling--slide": {
     "title": "Cold Calling",
     "type": "panel-double",
     "textLeft": "<h2 class=h2-top>Cold Emailing</h2><ul><li>Powerful marketing tool.</li><li>Effective tool for personal branding.</li><li>Can help you expand your search and potentially uncover new opportunities.</li></ul><h2>Challenges</h2><ul><li>Getting the recipient to open and read the email.</li><li>Crafting a message that is both compelling and personalised.</li><li>Personalisation is key.</li><li>Value proposition.</li><li>Make it easy to read.</li></ul>",
     "textRight": "<h2 class=h2-top>The Right People</h2><ul><li>Identify the ideal customer.</li><li>Determine their needs and what problems they face.</li></ul><h2>Mastery</h2><ul><li>Follow up to boost response rates.</li><li>Reach out through a different communication channel.</li><li>Balance being pushy with being persistent.</li></ul>",
-    "notes": "Cold emailing is a form of communication ...<ul><li>Reaching out to potential employers, professors, customers, or clients</li><li>Who have not expressed a prior interest in a person.</li></ul>Challenages<ul><li>Capture their attention.</li><li>Focus on how you help them, not what YOU want from them.</li><li>Subject-line: Attention Grabbing (not generic)</li><li>Clear and concise: introduce yourself and explain why you are reaching out.</li><li>What can you offer?</li></ul>"
+    "notes": "Kind of controversial ...<ul><li>Sales: Some people are very good at it.</li><li>Numbers for return/response are LOW.</li><li>If done right, it can be done well.</li></ul>Got this from ...<ul><li>College student reaching out to students, TAs, and professors.</li><li>Other colleges/companies: doing research in her field.</li><li>She crafted a message ... (varied), I'm doing [this] that's related</li><li>How can I add to that?</li><li>Enters the job market with a staggering network.</li></ul>And, more<ul><li>Good morning.</li><li>Good morning, how's it going?</li><li>Not just a single effort.</li></ul>Cold emailing is a form of communication ...<ul><li>Reaching out to potential employers, professors, customers, or clients</li><li>Who have not expressed a prior interest in a person.</li></ul>Challenges<ul><li>Capture their attention.</li><li>Focus on how you help them, not what YOU want from them.</li><li>Subject-line: Attention Grabbing (not generic)</li><li>Clear and concise: introduce yourself and explain why you are reaching out.</li><li>What can you offer?</li></ul>Levels<ul><li>Early - this is definitely something that can benefit from early use.</li><li>Mid - can be of benefit; need to be selective</li><li>Late - this can be of use if you are PLANNING a shift</li></ul>"
   },
 
   "networking-01--slide": {
     "title": "Networking",
     "type": "image-only",
     "image": "./assets/images/networking.jpeg",
-    "notes": "Need to network in the right place.<ul><li>Dating: There are lots of single in a bar, but probably not your best bet.</li><li>Conferences - ensure it's not a sales event.</li></ul>"
+    "notes": "Dilbert<br/><br/>Need to network in the right place.<ul><li>Dating: There are lots of single in a bar, but probably not your best bet.</li><li>Conferences - ensure it's not a sales event.</li></ul>"
   },
   "networking-02--slide": {
     "title": "Networking",
     "type": "panel-double",
     "textLeft": "<h2 class=h2-top>Relationships</h2><ol><li>Thoughtful conversation</li><li>Mutual benefit</li><li>Respect</li></ol>",
     "textRight": "<h2 class=h2-top>Location</h2><ul><li>Network in the Right Place</li><li>Conferences - ensure it's not a sales event.</li></ul>",
-    "notes": "<ol><li>Thoughtful conversation: You get past small talk, pleasantries and elevator pitches. Instead, you're having in-depth discussions about your industry, your challenges, and your goals.</li><li>Mutual benefit: Both parties see value in the relationship.</li><li>Respect: You admire each other's work and expertise. There's no hidden agenda.</li></ol>"
+    "notes": "Thoughtful conversation<ul><li>Get past small talk, pleasantries, and elevator pitches.</li><li>Have in-depth discussions about your industry, your challenges, and your goals.</li></ul>Mutual benefit<ul><li>Both parties see value in the relationship.</li></ul>Respect<ul></li>You admire each other's work and expertise.</li><li>There's no hidden agenda.</li></ul>Networking in the right place ...<ul><li>Compare professional networking to dating.</li><li>There are lots of dating opportunities in a bar; rarely partners.</li><li>Network where you are most comfortable - me, college not church.</li></ul>(summarize top three)<br/><br/>Levels<ul><li>Early - these are skills that need development; active participation.</li><li>Mid - these are skills you should be working on within your team.</li><li>Late - don't lose the momentum and experience you've built.</li></ul>"
   },
 
   "quickly-getting-job--slide": {
@@ -183,7 +183,7 @@
     "type": "panel-double",
     "textLeft": "<h2 class=h2-top>Get a Job as Quickly as Possible</h2><ol><li>Referral: strong network, top 10.</li><li>Domain search: targeting based on experience.</li><li>Cold email: targeting and stalking.</li><li>Traditional: finding jobs and applying.</li></ol>",
     "textRight": "<h2 class=h2-top>Thoughts</h2><ul><li>They all have benefits and weaknesses.</li><li>They all take work, research, and persistence.</li><li>You need to go the route that's best for you and your circumstances.</li></ul>",
-    "notes": ""
+    "notes": "Get a Job as Quickly as Possible<ol><li>Getting a job through referral: strong network, top 10 (can I list them RIGHT NOW).</li><li>Domain search: targeting based on experience + google search.</li><li>Cold email: targeting and stalking - only as good as the time and effort.</li><li>Traditional: finding jobs and applying - this is a valid route at the right company, place, and time.</li></ol>Thoughts<ul><li>They all have benefits and weaknesses.</li><li>They all take work, research, and persistence.</li><li>You need to go the route that's best for you and your circumstances.</li></ul>Levels<ul><li>Early, Mid, Late - do these BEFORE you have the strong need, if you can.</li><li>All of our path(s) and requirements vary.</li></ul>"
   },
 
   "time-for-questions": {
@@ -191,6 +191,6 @@
     "type": "image-only",
     "background": "transparent",
     "image": "./assets/images/time-for-questions.webp",
-    "notes": "Notes<ul><li>This is a collection of thoughts and ideas.</li><li>You should use what works for you.</li></ul><ol><li>Give Yourself a Fighting Chance (LI)</li><li>Strategize: Have a Plan</li><li>Sell Yourself: Why are you a good fit?</li><li>Show curiosity: Question</li><li>Be Authentic</li></ol>"
+    "notes": "Notes<ul><li>This is a collection of thoughts and ideas.</li><li>You should use what works for you.</li></ul><ol><li>Give Yourself a Fighting Chance (LI)</li><li>Strategize: Have a Plan</li><li>Sell Yourself: Why are you a good fit?</li><li>Show curiosity: Question</li><li>Be Authentic</li></ol>Levels<ul><li>Early, Mid, Late - do these BEFORE you have the strong need, if you can.</li><li>All of our path(s) and requirements vary.</li></ul>"
   }
 }

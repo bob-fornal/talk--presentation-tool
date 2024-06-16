@@ -21,7 +21,10 @@
       </div>
     </nav>
 
-    <div class="resize-handle" (mousedown)="startResizing($event)">&nbsp;</div>
+    <div class="resize-handle" (mousedown)="startResizing($event)">
+      <div class="resize-handle--left">&nbsp;</div>
+      <div class="resize-handle--right">&nbsp;</div>
+    </div>
 
     <div class="control-content">
       <div class="fontsizes">

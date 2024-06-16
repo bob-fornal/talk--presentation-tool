@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class SidenavWidthService {
-  readonly minWidth: number = 400;
+  readonly minWidth: number = 300;
   readonly maxWidth: number = 800;
 
   get sidenavWidth(): number {

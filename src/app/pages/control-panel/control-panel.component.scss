@@ -69,10 +69,26 @@
 .resize-handle {
   height: calc(100vh - 7em);
 
-  // background-color: red;
-  background-color: rgb(105, 240, 174);
   margin-left: 2px;
-  width: 10px;
+
+  .resize-handle--right,
+  .resize-handle--left {
+    background-color: rgb(105, 240, 174);
+    display: inline-block;
+    height: 100%;
+    width: 4px;
+  }
+  .resize-handle--right {
+    border-left: 1px dashed black;
+  }
+  
+  &:hover {
+
+    .resize-handle--left,
+    .resize-handle--right {
+      background-color: rgb(93, 159, 235);
+    }
+  }
 
   cursor: ew-resize;
 
@@ -85,10 +101,6 @@
   user-select: none;
 
   transition: background-color 0.2s ease-out, width 0.2s ease-out;
-
-  &:hover {
-    background-color: rgb(93, 159, 235);
-  }
 
   &::after {
     content: "";
