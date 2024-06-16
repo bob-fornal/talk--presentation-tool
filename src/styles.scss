@@ -4,15 +4,16 @@ html, body {
   height: 100%;
 }
 body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-color: #111111;
-
+  --navigation-width: 400px;
   --font--xxs: 0.8em;
   --font--xs: 1em;
   --font--normal: 1.5em;
   --font--xl: 1.8em;
   --font--xxl: 2.2em;
+
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #111111;
 
   .font-xxs {
     font-size: var(--font--xxs) !important;

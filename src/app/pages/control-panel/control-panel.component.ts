@@ -10,6 +10,7 @@ import { BroadcastService } from 'src/app/core/services/broadcast-service.servic
 import { BroadcastMessage } from 'src/app/core/interfaces/broadcast';
 import { StyleService } from 'src/app/core/services/style.service';
 import { Trigger } from 'src/app/core/interfaces/triggers';
+import { SidenavWidthService } from './sidenav-width.service';
 
 @Component({
   selector: 'app-control-panel',
@@ -38,12 +39,19 @@ export class ControlPanelComponent {
   slideKey: string = '';
   selectedFile: string = '';
 
+  resizingEvent = {
+    isResizing: false,
+    startingCursorX: 0,
+    startingWidth: 0,
+  };
+
   constructor(
     private cdr: ChangeDetectorRef,
     private code: CodeService,
     private route: ActivatedRoute,
     private router: Router,
     private service: BroadcastService,
+    public sidenav: SidenavWidthService,
     private style: StyleService,
     private title: Title,
   ) {
@@ -64,6 +72,29 @@ export class ControlPanelComponent {
     this.slideKey = slideKey;
     this.code.getStructure(path);
   };
+
+  @HostListener('window:mousemove', ['$event'])
+  updateSidenavWidth(event: MouseEvent) {
+    if (!this.resizingEvent.isResizing) return;
+
+    const cursorDeltaX = event.clientX - this.resizingEvent.startingCursorX;
+    const newWidth = this.resizingEvent.startingWidth + cursorDeltaX;
+    this.sidenav.setSidenavWidth(newWidth);
+    console.log('update', newWidth);
+  }
+
+  @HostListener('window:mouseup')
+  stopResizing() {
+    this.resizingEvent.isResizing = false;
+  }
+
+  startResizing(event: MouseEvent): void {
+    this.resizingEvent = {
+      isResizing: true,
+      startingCursorX: event.clientX,
+      startingWidth: this.sidenav.sidenavWidth,
+    };
+  }
 
   handleStructure = (structure: Structure): void => {
     this.structure = structure;

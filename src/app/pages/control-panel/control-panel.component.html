@@ -21,6 +21,8 @@
       </div>
     </nav>
 
+    <div class="resize-handle" (mousedown)="startResizing($event)">&nbsp;</div>
+
     <div class="control-content">
       <div class="fontsizes">
         <button mat-flat-button class="btn" (click)="triggerFontsizeChange('font-xxs')">XXS</button>
