@@ -12,4 +12,5 @@ import { Component, Input } from '@angular/core';
 export class ImageOnlyComponent {
   @Input() title: string = '';
   @Input() image: string = '';
+  @Input() imageClass: string = '';
 }

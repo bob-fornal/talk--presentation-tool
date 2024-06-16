@@ -136,7 +136,7 @@ export class ControlPanelComponent {
   getTitle = (key: string, index: number): string => {
     if (index === 0) return '1. Title Slide';
     if (key === 'time-for-questions') return `${ index + 1 }. Questions`;
-    const title = (this.structure[key] as StructureType).title;
+    const title = this.stripHTML((this.structure[key] as StructureType).title);
     return `${ index + 1 }. ${ title.length > 0 ? title : key }`;
   };
 
@@ -177,4 +177,9 @@ export class ControlPanelComponent {
     const message: BroadcastMessage = { type: 'control', payload: { type: 'trigger-fontsize', fontsize } };
     this.service.publish(message);
   };
+
+  stripHTML = (html: string): string => {
+    let doc = new DOMParser().parseFromString(html, 'text/html');
+    return doc.body.textContent || '';
+ }
 }

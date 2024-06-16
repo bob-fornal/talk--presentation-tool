@@ -1,6 +1,6 @@
 <div class="panel-wrapper">
   @if (editing === false) {
-    <div class="panel--title">{{ title }}</div>
+    <div class="panel--title" [innerHTML]="title"></div>
 
     <div class="panel--content-wrapper">
       <div class="panel--text left" [class]="fontsize" [innerHTML]="textLeft"></div>

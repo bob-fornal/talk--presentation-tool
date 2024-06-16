@@ -1,5 +1,5 @@
 <div class="panel-wrapper">
-  <div class="panel--title">{{ title }}</div>
+  <div class="panel--title" [innerHTML]="title"></div>
 
   <div [class]="'panel--content-wrapper orient-' + orientation">
     <div class="panel--text" [class]="fontsize" [innerHTML]="text"></div>

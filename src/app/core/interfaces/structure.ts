@@ -22,6 +22,7 @@ export type StructureType = {
   text2?: string;
   text3?: string;
   image?: string;
+  imageClass?: string;
 
   notes?: string;
   script?: string;

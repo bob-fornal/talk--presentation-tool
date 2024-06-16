@@ -1,9 +1,9 @@
 <div class="panel-wrapper">
-  <div class="panel--title">{{ title }}</div>
+  <div class="panel--title" [innerHTML]="title"></div>
 
   <div class="panel--content-wrapper">
     <div class="panel--image">
-      <img class="img" [src]="image" [alt]="image" />
+      <img class="img" [class]="imageClass" [src]="image" [alt]="image" />
     </div>
   </div>
 </div>
