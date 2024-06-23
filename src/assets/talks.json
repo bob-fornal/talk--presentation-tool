@@ -70,6 +70,7 @@
     {
       "folder": "active-career-management",
       "title": "Active Career Management",
+      "pdf": "https://www.bobs-tech-presentations.com/assets/active-career-management/active-career-management-minified.pdf",
       "tags": [
         "career"
       ]
@@ -104,6 +105,7 @@
     {
       "folder": "what-to-avoid-when-writing-unit-tests--code",
       "title": "What To Avoid When Writing Unit Tests",
+      "pdf": "https://www.bobs-tech-presentations.com/assets/what-to-avoid-when-writing-unit-tests--code/what-to-avoid-when-writing-unit-tests-minified.pdf",
       "tags": [
         "testing",
         "unit-tests"

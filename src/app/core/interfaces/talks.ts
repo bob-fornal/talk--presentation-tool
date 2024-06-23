@@ -3,6 +3,7 @@ import { Tag } from "./tag";
 export interface Talk {
   folder: string;
   title: string;
+  pdf?: string;
   tags: Array<string>;
 }
 

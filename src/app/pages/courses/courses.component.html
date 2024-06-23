@@ -21,6 +21,14 @@
         </button>
         <span class="status" [class.complete]="isComplete(talk)">{{ getStatus(talk) }}</span>
       </div>
+      @if (!!talk.pdf) {
+        <div class="talk-pdf-wrapper">
+          <a class="anchor" [href]="talk.pdf" target="_blank">
+            <span>LINK TO PDF</span>
+            <mat-icon>open_in_new</mat-icon>
+          </a>
+        </div>
+      }
     }
   </div>
 </div>

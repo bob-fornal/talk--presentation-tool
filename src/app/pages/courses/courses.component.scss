@@ -13,6 +13,11 @@
   .talk-wrapper {
     display: flex;
     align-items: center;
+    margin-top: 1em;
+
+    .btn {
+      margin-bottom: 0;
+    }
 
     .status {
 
@@ -22,6 +27,20 @@
       &.complete {
         color: #69f0ae;
       }
+    }
+  }
+
+  .talk-pdf-wrapper {
+    margin-left: 5.25em;
+    margin-top: 0.25em;
+
+    .anchor {
+      --mdc-filled-button-container-color: #69f0ae;
+      color: var(--mdc-filled-button-container-color, transparent);
+      font-weight: bold;
+
+      display: flex;
+      align-items: center;
     }
   }
 }
