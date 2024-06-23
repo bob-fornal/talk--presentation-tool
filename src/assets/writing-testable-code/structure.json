@@ -22,6 +22,8 @@
     "class-does-too-much--warning-signs-002",
     "class-does-too-much--warning-signs-003",
 
+    "context-close-slide",
+
     "time-for-questions"
   ],
 
@@ -46,6 +48,11 @@
 
     ".indented {",
     "  padding-left: 1em;",
+    "}",
+
+    ".code {",
+    "  color: yellow;",
+    "  font-family: Menlo, Monaco, \"Courier New\", monospace;",
     "}"
   ],
   
@@ -61,8 +68,8 @@
   "context-slide": {
     "title": "Writing Testable Code",
     "type": "panel-double",
-    "textLeft": "",
-    "textRight": "<ul><li>Constructor does Real Work</li><li>Collaborators</li><li>Brittle Global State and Singletons</li></ul>"
+    "textLeft": "Embracing testability in your coding practice is not just about catching bugs; it is about fostering a culture of quality and efficiency in your projects.<br/><br/>Testability in code refers to how easily a software system can be tested.<br/><br/>Highly testable code allows for more efficient and effective identification of defects, ensuring higher quality and reliability.<br/><br/>Key characteristics of testable code include ...<ul><li>Modularity, where the code is organized into discrete units</li><li>Clarity, meaning the code is understandable and its purpose is clear</li><li>Independence, where units of code can be tested in isolation without reliance on external systems or states</li></ul>",
+    "textRight": "<ul><li>Constructor does Real Work</li><li>Collaborators</li><li>Brittle Global State and Singletons</li><li>Class does Too Much</li></ul>"
   },
 
   "constructor-does-real-work--warning-signs": {
@@ -166,9 +173,10 @@
   },
   "brittle-global-state-and-singletons--ok": {
     "title": "When is Global State OK?",
-    "type": "panel-single",
-    "text": "There are two cases when global state is tolerable.<br/><ol><li>When the reference is a constant and the object it points to is either primitive or immutable. So const URL = \"http://google.com\"; is OK since there is no way to mutate the value.</li><li>When the information only travels one way. For example a Logger is one big singleton. However our application only writes to logger and never reads from it. More importantly our application does not behave differently based on what is or is not enabled in our logger.</li></ol>",
-    "notes": "<ol><li>Remember, the transitive closure of all objects you are pointing to must be immutable as well since globality is transitive. The String is safe, but replace it with a MyObject, and it gets be risky due to the transitive closure of all state MyObject exposes. You are on thin ice if someone in the future decides to add mutable state to your immutable object and then your innocent code changes into a headache.</li><li>While it is not a problem from test point of view, it is a problem if you want to assert that your application does indeed log important messages. This is because there is no way for the test to replace the Logger with a test-double (I know we can set our own handler for log level, but those are just more of the problems shown above). If you want to test the logger then change the class to dependency inject in the Logger so that you can insert a MockLogger and assert that the correct things were written to the Logger. (As a convenience, Guice automatically knows how to Constructor Inject a configured logger for any class, just add it to the constructor's params and the right one will be passed in.)</li></ol>"
+    "type": "panel-double",
+    "textLeft": "When the reference is a constant and the object it points to is either primitive or immutable.<br/><br/><span class=code>const URL = \"http://google.com\";</span><br/><br/>... is OK since there is no way to mutate the value.",
+    "textRight": "When the information only travels one way.<br/><br/>For example a Logger is one big singleton.<ul><li>However our application only writes to logger and never reads from it.</li><li>More importantly our application does not behave differently based on what is or is not enabled in our logger.</li></ul>",
+    "notes": "There are two cases when global state is tolerable.<br/><ol><li>Remember, the transitive closure of all objects you are pointing to must be immutable as well since globality is transitive. The String is safe, but replace it with a MyObject, and it gets be risky due to the transitive closure of all state MyObject exposes. You are on thin ice if someone in the future decides to add mutable state to your immutable object and then your innocent code changes into a headache.</li><li>While it is not a problem from test point of view, it is a problem if you want to assert that your application does indeed log important messages. This is because there is no way for the test to replace the Logger with a test-double (I know we can set our own handler for log level, but those are just more of the problems shown above). If you want to test the logger then change the class to dependency inject in the Logger so that you can insert a MockLogger and assert that the correct things were written to the Logger. (As a convenience, Guice automatically knows how to Constructor Inject a configured logger for any class, just add it to the constructor's params and the right one will be passed in.)</li></ol>"
   },
 
   "class-does-too-much--warning-signs-001": {
@@ -189,6 +197,14 @@
     "text": "If someone tries to introduce a class that does too much, require them to split it up<br/><ol><li>Identify the individual responsibilities.</li><li>Name each one crisply.</li><li>Extract functionality into a separate class for each responsibility.</li><li>One class may perform the hidden responsibility of mediating between the others.</li><li>Celebrate that now you can test each class in isolation much easier than before.</li></ol>If working with a legacy class that did too much, and you can't fix the whole legacy problem today, you can at least:<br/><ol><li>Sprout a new class with the sole responsibility of the new functionality.</li><li>Extract a class where you are altering existing behavior. As you work on existing functionality, (i.e. adding another conditional) extract a class pulling along that responsibility. This will start to take chunks out of the legacy class, and you will be able to test each chunk in isolation (using Dependency Injection).</li></ol>",
     "notes": "<span class=italic-green>Caveat: Living with the Flaw</span><br/><br/>Some legacy classes are \"beyond the scope of what can be done quickly.\" It may be unreasonable for a reviewer to demand a large, pre-existing problem be fixed in order to make a small change. But it is reasonable to draw a line in the sand and request that the author take steps in the right direction instead of making a bad situation worse. For example, sprout a new class instead of adding another responsibility to an existing, hard to test, object."
   },
+
+  "context-close-slide": {
+    "title": "Writing Testable Code",
+    "type": "panel-double",
+    "textLeft": "Testability is ...<ul><li>Not a standalone feature</li><li>But, a fundamental aspect of good code design</li></ul>Developers need to consider the end-user experience and system requirements right from the start, leading to more robust and maintainable code. It ensures that the code not only meets its functional requirements but is also resilient and adaptable to change.",
+    "textRight": "<ul><li>Constructor does Real Work</li><li>Collaborators</li><li>Brittle Global State and Singletons</li><li>Class does Too Much</li></ul>"
+  },
+
 
   "time-for-questions": {
     "title": "",
