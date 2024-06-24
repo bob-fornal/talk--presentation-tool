@@ -113,6 +113,7 @@
     }, {
       "folder": "writing-testable-code",
       "title": "Writing Testable Code",
+      "pdf": "https://www.bobs-tech-presentations.com/assets/writing-testable-code/writing-testable-code-minified.pdf",
       "tags": [
         "testing"
       ]
