@@ -3,8 +3,10 @@ import { Tag } from "./tag";
 export interface Talk {
   folder: string;
   title: string;
-  pdf?: string;
   tags: Array<string>;
+
+  pdf?: string;
+  pdfActive?: boolean;
 }
 
 export interface Talks {

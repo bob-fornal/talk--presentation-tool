@@ -23,6 +23,11 @@
       </div>
       @if (!!talk.pdf) {
         <div class="talk-pdf-wrapper">
+          @if (talk.pdfActive === true) {
+            <span class="green">&check;</span>
+          } @else {
+            <span class="red">&cross;</span>
+          }
           <a class="anchor" [href]="talk.pdf" target="_blank">
             <span>LINK TO PDF</span>
             <mat-icon>open_in_new</mat-icon>

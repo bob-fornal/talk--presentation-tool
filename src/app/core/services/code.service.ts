@@ -33,6 +33,20 @@ export class CodeService {
     return file;
   };
 
+  checkLink = async (url: string): Promise<boolean> => {
+    const work: any = new URL(url);
+    const hostname = window.location.host;
+    const newUrl: string = url.replace(work.host, hostname).replace('https://', 'http://');
+
+    try {
+      const file = await firstValueFrom(this.http.get(newUrl));
+      return true;
+    } catch (error: any) {
+      console.log('failed', error);
+      return error.status === 200;
+    }
+  }
+
   // retrieve = async (talkIndex: number, section: string, filename: string): Promise<string> => {
   //   const talkFolder: string = this.talks.value[talkIndex].folder;
   //   const codeFolder: string = this.structures[section].folder;

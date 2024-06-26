@@ -96,6 +96,11 @@ export class CoursesComponent implements OnDestroy {
     talks.forEach(async (talk: Talk) => {
       const structure: Structure = await this.code.getStructureImmediate(talk.folder);
       this.talkData[talk.folder] = structure;
+
+      if (talk.hasOwnProperty('pdf') === true && talk.pdf!.length > 0) {
+        talk.pdfActive = await this.code.checkLink(talk.pdf!);
+        console.log(talk.pdf, talk.pdfActive);
+      }
     });
   };
 

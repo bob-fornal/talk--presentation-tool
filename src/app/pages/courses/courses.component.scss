@@ -33,6 +33,15 @@
   .talk-pdf-wrapper {
     margin-left: 5.25em;
     margin-top: 0.25em;
+    display: flex;
+    gap: 0.5em;
+
+    .red {
+      color: red;
+    }
+    .green {
+      color: #69f0ae;
+    }
 
     .anchor {
       --mdc-filled-button-container-color: #69f0ae;
