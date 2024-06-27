@@ -36,7 +36,10 @@ export class CodeService {
   checkLink = async (url: string): Promise<boolean> => {
     const work: any = new URL(url);
     const hostname = window.location.host;
-    const newUrl: string = url.replace(work.host, hostname).replace('https://', 'http://');
+    let newUrl: string = url.replace(work.host, hostname);
+    if (url.includes('localhost') === true) {
+      newUrl = newUrl.replace('https://', 'http://');
+    }
 
     try {
       const file = await firstValueFrom(this.http.get(newUrl));
