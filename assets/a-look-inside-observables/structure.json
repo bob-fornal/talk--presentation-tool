@@ -43,6 +43,9 @@
     "}",
     ".right-table .center {",
     "  text-align: center;",
+    "}",
+    ".indent {",
+    "  margin-bottom: 1em;",
     "}"
   ],
 
@@ -69,8 +72,9 @@
   },
   "essential-concepts--slide": {
     "title": "Essential Concepts",
-    "type": "panel-single",
-    "text": "<div>The essential concepts in RxJS what solve async event management are ...</div><br/><div class=bold>Observable</div><div class=indent>Represents the idea of an invokable collection of future values or events.</div><div class=bold>Observer</div><div class=indent>Is a collection of callbacks that know how to listen to values delivered by the Observable.</div><div class=bold>Subscription</div><div class=indent>Represents the execution of an Observable, is primarily useful for cancelling the execution.</div><div class=bold>Operators</div><div class=indent>Are pure functions that enable a functional programming style of dealing with collections with operations like map, filter, concat, reduce, etc.</div><div class=bold>Subject</div><div class=indent>Is equivalent to an EventEmitter, and the only way of multicasting a value or event to multiple Observers.</div><div class=bold>Schedulers</div><div class=indent>Are centralized dispatchers to control concurrency, allowing us to coordinate when computation happens on e.g. setTimeout or requestAnimationFrame or others.</div>",
+    "type": "panel-double",
+    "textLeft": "<div>The essential concepts in RxJS what solve async event management are ...</div><br/><div class=bold>Observable</div><div class=indent>Represents the idea of an invokable collection of future values or events.</div><div class=bold>Observer</div><div class=indent>Is a collection of callbacks that know how to listen to values delivered by the Observable.</div><div class=bold>Subscription</div><div class=indent>Represents the execution of an Observable, is primarily useful for cancelling the execution.</div>",
+    "textRight": "<br/><br/><div class=bold>Operators</div><div class=indent>Are pure functions that enable a functional programming style of dealing with collections with operations like map, filter, concat, reduce, etc.</div><div class=bold>Subject</div><div class=indent>Is equivalent to an EventEmitter, and the only way of multicasting a value or event to multiple Observers.</div><div class=bold>Schedulers</div><div class=indent>Are centralized dispatchers to control concurrency, allowing us to coordinate when computation happens on e.g. setTimeout or requestAnimationFrame or others.</div>",
     "notes": ""
   },
   "promises-versus-observables--slide": {
