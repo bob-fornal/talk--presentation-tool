@@ -62,6 +62,7 @@
     {
       "folder": "a-look-inside-observables",
       "title": "A Look Inside Observables",
+      "pdf": "https://www.bobs-tech-presentations.com/assets/a-look-inside-observables/alio-minified.pdf",
       "tags": [
         "observables",
         "rxjs"
