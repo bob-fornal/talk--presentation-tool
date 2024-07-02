@@ -9,15 +9,25 @@ import { Talk, Talks } from 'src/app/core/interfaces/talks';
 import { CodeService } from 'src/app/core/services/code.service';
 import { StyleService } from 'src/app/core/services/style.service';
 
-import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
     selector: 'app-courses',
     templateUrl: './courses.component.html',
     styleUrls: ['./courses.component.scss'],
     standalone: true,
-    imports: [CommonModule,NgFor, MatButtonModule, RouterLink, MatIconModule]
+    imports: [
+      CommonModule,
+      
+      RouterLink,
+      NgFor,
+
+      MatButtonModule,
+      MatCheckboxModule,
+      MatIconModule
+    ]
 })
 export class CoursesComponent implements OnDestroy {
   subscription: Subscription;
@@ -29,6 +39,8 @@ export class CoursesComponent implements OnDestroy {
 
   selectedTags: Array<string> = [];
   filteredTalks: Array<Talk> = [];
+
+  showPDF: boolean = false;
 
   constructor(
     private code: CodeService,
