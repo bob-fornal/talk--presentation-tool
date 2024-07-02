@@ -207,7 +207,7 @@
     "title": "",
     "type": "image-only",
     "background": "transparent",
-    "image": "./assets/images/time-for-questions.webp",
+    "image": "./assets/images/time-for-questions--alio-qr.webp",
     "notes": "We've covered ...<ul><li>Promises versus Observables</li><li>Observable</li><li>Subject</li><li>BehaviorSubject</li><li>ReplaySubject</li><li>AsyncSubject</li><li>void Subject></li></ul>"
   }
 }
