@@ -52,6 +52,7 @@
         <image-only
           [title]="page.title"
           [image]="page.image!"
+          [imageClass]="page.imageClass || ''"
           [notes]="page.notes!"
           [editing]="editing"
           (save)="handleDataSave($event)">

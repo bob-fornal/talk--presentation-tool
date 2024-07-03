@@ -41,9 +41,12 @@ export class ImageOnlyComponent {
     const elements: any = document.querySelectorAll('[data-editing]');
     for (let i = 0, len = elements.length; i < len; i++) {
       const item = elements[i];
-      const key = item.dataset.editing;
-      response.ITEMS.push(key);
-      response[key] = item.value;
+      const required = item.dataset.required;
+      if (required === true || (required === false && item.value.length > 0)) {
+        const key = item.dataset.editing;
+        response.ITEMS.push(key);
+        response[key] = item.value;  
+      }
     }
 
     response.ITEMS.push('notes');

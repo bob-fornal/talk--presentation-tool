@@ -212,7 +212,7 @@ export class EditComponent implements OnDestroy {
   };
 
   isOriginal = (slideKey: string): boolean => {
-    console.log(slideKey, this.service.edited[slideKey]);
+    console.log(slideKey, this.service.edited[slideKey] || false);
     return this.service.edited.hasOwnProperty(slideKey) || false;
   };
 }

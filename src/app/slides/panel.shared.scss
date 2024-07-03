@@ -3,6 +3,11 @@
   width: calc(100% - 2em);
   height: calc(100% - 2em);
 
+  ::placeholder {
+    color: #69f0ae;
+    opacity: 0.75;
+  }
+
   .panel--title {
     position: absolute;
     top: 75px;
@@ -28,21 +33,25 @@
     width: 33%;
   }
 
-  [data-editing="image"] {
+  .panel--editable-wrapper {
     display: block;
-    box-sizing: border-box;
-    background-color: rgb(100, 100, 100);
-    border: 1px solid rgb(118, 118, 118);
-    color: #eee;
-    font-weight: normal;
-    font-size: 1em;
-    margin-right: 1em;
-    margin-left: 1em;
-    padding: 1em;
-
     position: absolute;
-    top: -52px;
+    top: 0;
     width: 60%;
+
+    [data-editing] {
+      display: block;
+      box-sizing: border-box;
+      background-color: rgb(100, 100, 100);
+      border: 1px solid rgb(118, 118, 118);
+      color: #eee;
+      font-weight: normal;
+      font-size: 1em;
+      margin-right: 1em;
+      margin-left: 1em;
+      padding: 1em;
+      width: 100%;
+    }
   }
 
   .btn {
