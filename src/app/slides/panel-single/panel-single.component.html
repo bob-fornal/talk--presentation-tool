@@ -1,7 +1,19 @@
 <div class="panel-wrapper">
-  <div class="panel--title" [innerHTML]="title"></div>
+  @if (editing === false) {
+    <div class="panel--title" [innerHTML]="title"></div>
 
-  <div class="panel--content-wrapper">
-    <div class="panel--text" [class]="fontsize" [innerHTML]="text"></div>
-  </div>
+    <div class="panel--content-wrapper">
+      <div class="panel--text" [class]="fontsize" [innerHTML]="text"></div>
+    </div>  
+  } @else {
+    <input data-editing="title" contenteditable [value]="title">
+    <button class="btn save" mat-flat-button color="accent" (click)="saveEvent()">Save</button>
+    <button class="btn cancel" mat-flat-button color="accent" (click)="cancelEvent()">Cancel</button>
+    <button class="btn notes" mat-flat-button color="accent" (click)="editNotes()">Edit Notes</button>
+
+    <div class="panel--content-wrapper">
+      <textarea class="panel--text text" data-editing="text" contenteditable [innerText]="text"></textarea>
+    </div>
+
+  }
 </div>

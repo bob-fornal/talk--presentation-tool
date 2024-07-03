@@ -56,13 +56,13 @@
       </div>
   
       <div class="slide-wrapper" *ngSwitchCase="'panel-single'">
-        <panel-single [title]="page.title" [text]="page.text!" [fontsize]="fontsizeSelected"></panel-single>
+        <panel-single [title]="page.title" [text]="page.text!" [fontsize]="fontsizeSelected" [notes]="page.notes!" [editing]="editing" (save)="handleDataSave($event)"></panel-single>
       </div>
       <div class="slide-wrapper" *ngSwitchCase="'panel-double'">
         <panel-double [title]="page.title" [textLeft]="page.textLeft!" [textRight]="page.textRight!" [editing]="editing" (save)="handleDataSave($event)"></panel-double>
       </div>
       <div class="slide-wrapper" *ngSwitchCase="'panel-triple'">
-        <panel-triple [title]="page.title" [text1]="page.text1!" [text2]="page.text2!" [text3]="page.text3!" [notes]="page.notes!" [editing]="editing" (save)="handleDataSave($event)"></panel-triple>
+        <panel-triple [title]="page.title" [text1]="page.text1!" [text2]="page.text2!" [text3]="page.text3!" [fontsize]="fontsizeSelected" [notes]="page.notes!" [editing]="editing" (save)="handleDataSave($event)"></panel-triple>
       </div>
   
       <div class="slide-wrapper" *ngSwitchCase="'code-editor'">
