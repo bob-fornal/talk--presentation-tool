@@ -67,7 +67,14 @@
         </image-only>
       </div>
       <div class="slide-wrapper" *ngSwitchCase="'text-image'">
-        <text-image [title]="page.title" [orientation]="page.orientation!" [text]="page.text!" [image]="page.image!"></text-image>
+        <image-text
+          [title]="page.title"
+          [orientation]="page.orientation!"
+          [text]="page.text!"
+          [image]="page.image!"
+          [notes]="page.notes!"
+          [editing]="editing"
+          (save)="handleDataSave($event)"></image-text>
       </div>
   
       <div class="slide-wrapper" *ngSwitchCase="'panel-single'">

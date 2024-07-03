@@ -33,6 +33,26 @@
     width: 33%;
   }
 
+  .panel--editable-placed-wrapper {
+    display: block;
+    margin: 0.25em auto 0 auto;
+    width: 60%;
+
+    [data-editing] {
+      display: block;
+      box-sizing: border-box;
+      background-color: #64646480;
+      border: 1px solid rgb(118, 118, 118);
+      color: #eee;
+      font-weight: normal;
+      font-size: 1em;
+      margin-right: 1em;
+      margin-left: 1em;
+      padding: 1em;
+      width: 100%;
+    }
+  }
+
   .panel--editable-wrapper {
     display: block;
     position: absolute;

@@ -17,8 +17,8 @@ import { CodeEditorComponent } from '../../slides/code-editor/code-editor.compon
 import { PanelTripleComponent } from '../../slides/panel-triple/panel-triple.component';
 import { PanelDoubleComponent } from '../../slides/panel-double/panel-double.component';
 import { PanelSingleComponent } from '../../slides/panel-single/panel-single.component';
-import { TextImageComponent } from '../../slides/text-image/text-image.component';
 import { ImageOnlyComponent } from '../../slides/image-only/image-only.component';
+import { ImageTextComponent } from '../../slides/image-text/image-text.component';
 import { Cover02Component } from '../../slides/cover-02/cover.component';
 import { Cover01Component } from '../../slides/cover-01/cover.component';
 import { FontsizeService } from 'src/app/core/services/fontsize.service';
@@ -37,7 +37,7 @@ import { FontsizeService } from 'src/app/core/services/fontsize.service';
         Cover01Component,
         Cover02Component,
         ImageOnlyComponent,
-        TextImageComponent,
+        ImageTextComponent,
         PanelSingleComponent,
         PanelDoubleComponent,
         PanelTripleComponent,

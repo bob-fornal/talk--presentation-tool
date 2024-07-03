@@ -1,0 +1,49 @@
+<div class="panel-wrapper">
+  @if (editing === false) {
+    <div class="panel--title" [innerHTML]="title"></div>
+
+    <div [class]="'panel--content-wrapper orient-' + orientation">
+      <div class="panel--text" [class]="fontsize" [innerHTML]="text"></div>
+      <div class="panel--image">
+        <img class="img" [src]="image" [alt]="image" />
+      </div>
+    </div>
+  } @else {
+    <input
+      type="text"
+      placeholder="Title"
+      data-editing="title"
+      [attr.data-required]="true"
+      [value]="title" />
+    <button class="btn save" mat-flat-button color="accent" (click)="saveEvent()">Save</button>
+    <button class="btn cancel" mat-flat-button color="accent" (click)="cancelEvent()">Cancel</button>
+    <button class="btn notes" mat-flat-button color="accent" (click)="editNotes()">Edit Notes</button>
+
+    <div class="panel--editable-placed-wrapper">
+      <input
+        type="text"
+        placeholder="Orientation (left, right)"
+        data-editing="orientation"
+        [attr.data-required]="true"
+        [value]="orientation" />
+    </div>
+    <div [class]="'panel--content-wrapper orient-' + orientation">
+      <div
+        contenteditable
+        class="panel--text"
+        [class]="fontsize"
+        data-editing="text"
+        [attr.data-required]="true"
+        [innerText]="text"></div>
+      <div class="panel--image">
+        <input
+          type="text"
+          placeholder="Image"
+          data-editing="image"
+          [attr.data-required]="true"
+          [value]="image" />
+        <img class="img" [src]="image" [alt]="image" />
+      </div>
+    </div>
+  }
+</div>
