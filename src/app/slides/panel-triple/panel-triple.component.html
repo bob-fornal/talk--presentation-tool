@@ -8,15 +8,35 @@
       <div class="panel--text text2" [class]="fontsize" [innerHTML]="text3"></div>
     </div>
   } @else {
-    <input data-editing="title" contenteditable [value]="title">
+    <input
+      type="text"
+      placeholder="Title"
+      data-editing="title"
+      [attr.data-required]="true"
+      [value]="title" />
     <button class="btn save" mat-flat-button color="accent" (click)="saveEvent()">Save</button>
     <button class="btn cancel" mat-flat-button color="accent" (click)="cancelEvent()">Cancel</button>
     <button class="btn notes" mat-flat-button color="accent" (click)="editNotes()">Edit Notes</button>
 
     <div class="panel--content-wrapper">
-      <textarea class="panel--text text1" data-editing="text1" contenteditable [innerText]="text1"></textarea>
-      <textarea class="panel--text text2" data-editing="text2" contenteditable [innerText]="text2"></textarea>
-      <textarea class="panel--text text2" data-editing="text3" contenteditable [innerText]="text3"></textarea>
+      <textarea
+        contenteditable
+        class="panel--text text1"
+        data-editing="text1"
+        [attr.data-required]="true"
+        [innerText]="text1"></textarea>
+      <textarea
+        contenteditable
+        class="panel--text text2"
+        data-editing="text2"
+        [attr.data-required]="true"
+        [innerText]="text2"></textarea>
+      <textarea
+        contenteditable
+        class="panel--text text3"
+        data-editing="text3"
+        [attr.data-required]="true"
+        [innerText]="text3"></textarea>
     </div>
   }
 </div>
