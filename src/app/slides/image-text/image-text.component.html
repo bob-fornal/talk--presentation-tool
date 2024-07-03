@@ -1,5 +1,9 @@
+<div class="editing-actions">
+  <button class="btn toggle" mat-flat-button color="accent" (click)="toggleEditing()">{{ toggleView ? 'Edit' : 'View' }}</button>
+</div>
+
 <div class="panel-wrapper">
-  @if (editing === false) {
+  @if (editing === false || toggleView === true) {
     <div class="panel--title" [innerHTML]="title"></div>
 
     <div [class]="'panel--content-wrapper orient-' + orientation">
@@ -36,13 +40,15 @@
         [attr.data-required]="true"
         [innerText]="text"></div>
       <div class="panel--image">
-        <input
-          type="text"
-          placeholder="Image"
-          data-editing="image"
-          [attr.data-required]="true"
-          [value]="image" />
-        <img class="img" [src]="image" [alt]="image" />
+        <div class="panel--editable-image-wrapper">
+          <input
+            type="text"
+            placeholder="Image"
+            data-editing="image"
+            [attr.data-required]="true"
+            [value]="image" />
+          <img class="img" [src]="image" [alt]="image" />
+          </div>
       </div>
     </div>
   }

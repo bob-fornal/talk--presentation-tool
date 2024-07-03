@@ -10,6 +10,7 @@ export abstract class AbstractSlide {
   @Input() notes: string = '';
 
   @Input() editing: boolean = false;
+  public toggleView: boolean = false;
 
   @Output() save: EventEmitter<any> = new EventEmitter();
 
@@ -18,6 +19,10 @@ export abstract class AbstractSlide {
     private route: ActivatedRoute,
     private router: Router
   ) {}
+
+  toggleEditing = (): void => {
+    this.toggleView = !this.toggleView;
+  };
 
   saveEvent = (): void => {
     const response: any = { ACTION: 'save', ITEMS: [] };

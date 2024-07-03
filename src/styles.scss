@@ -105,3 +105,10 @@ body {
 .bio-logo {
   width: 180px;
 }
+
+.editing-actions {
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  width: calc(100% - 2em);
+}

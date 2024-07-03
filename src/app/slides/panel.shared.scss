@@ -53,6 +53,24 @@
     }
   }
 
+  .panel--editable-image-wrapper {
+    display: block;
+
+    [data-editing] {
+      display: block;
+      box-sizing: border-box;
+      background-color: #64646480;
+      border: 1px solid rgb(118, 118, 118);
+      color: #eee;
+      font-weight: normal;
+      font-size: 1em;
+      margin-right: 1em;
+      margin-left: 1em;
+      padding: 1em;
+      width: calc(100% - 2em);
+    }
+  }
+
   .panel--editable-wrapper {
     display: block;
     position: absolute;
