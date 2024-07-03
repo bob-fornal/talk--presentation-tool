@@ -28,6 +28,23 @@
     width: 33%;
   }
 
+  [data-editing="image"] {
+    display: block;
+    box-sizing: border-box;
+    background-color: rgb(100, 100, 100);
+    border: 1px solid rgb(118, 118, 118);
+    color: #eee;
+    font-weight: normal;
+    font-size: 1em;
+    margin-right: 1em;
+    margin-left: 1em;
+    padding: 1em;
+
+    position: absolute;
+    top: -52px;
+    width: 60%;
+  }
+
   .btn {
     margin-right: 1em;
     margin-top: 0.75em;
