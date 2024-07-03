@@ -1,8 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 
 import { MatButtonModule } from '@angular/material/button';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AbstractSlide } from '../abstract.slide';
 
@@ -24,12 +23,4 @@ export class PanelSingleComponent extends AbstractSlide {
   @Input() text: string = '';
 
   @Input() fontsize: string | undefined = undefined;
-
-  constructor(
-    dialog: MatDialog,
-    route: ActivatedRoute,
-    router: Router
-  ) {
-    super(dialog, route, router);
-  }
 }

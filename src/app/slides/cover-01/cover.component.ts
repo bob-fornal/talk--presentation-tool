@@ -1,6 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { NgIf } from '@angular/common';
 
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+
+import { AbstractSlide } from '../abstract.slide';
+
 @Component({
     selector: 'cover-01',
     templateUrl: './cover.component.html',
@@ -9,9 +14,14 @@ import { NgIf } from '@angular/common';
       './cover.component.scss'
     ],
     standalone: true,
-    imports: [NgIf]
+    imports: [
+      NgIf,
+
+      MatButtonModule,
+      MatDialogModule,
+    ],
 })
-export class Cover01Component {
+export class Cover01Component extends AbstractSlide {
   @Input() title: string = '';
   @Input() author: string = '';
   @Input() bio1?: string = '';

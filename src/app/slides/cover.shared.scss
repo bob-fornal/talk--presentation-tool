@@ -3,6 +3,11 @@
   width: calc(100% - 2em);
   height: calc(100% - 2em);
 
+  ::placeholder {
+    color: #69f0ae;
+    opacity: 0.75;
+  }
+
   .cover--title {
     font-size: 2.8rem;
     font-weight: bold;;
@@ -14,5 +19,25 @@
     font-size: 2.0rem;
     font-weight: normal;
     z-index: 100;
+  }
+
+  [data-editing] {
+    display: inline-block;
+    box-sizing: border-box;
+
+    background-color: #64646480;
+    border: 1px solid rgb(118, 118, 118);
+    color: #eee;
+    font-weight: normal;
+    font-size: 1em;
+    padding: 1em;
+  }
+  [data-editing="title"] {
+    margin-right: 1em;
+    margin-left: 1em;
+    width: 33%;
+  }
+  [data-editing="author"] {
+    width: 25%;
   }
 }

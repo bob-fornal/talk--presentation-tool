@@ -1,7 +1,42 @@
 <div class="cover-wrapper">
-  <div class="cover--title" [innerHTML]="title"></div>
-  <div class="cover--author">{{ author }}</div>
-  <div class="cover--bio left" *ngIf="!!bio1 && bio1.length > 0" [innerHTML]="bio1"></div>
-  <div class="cover--bio right" *ngIf="!!bio2 && bio2.length > 0" [innerHTML]="bio2"></div>
-  <div class="cover--lower"></div>
+  @if (editing === false) {
+    <div class="cover--title" [innerHTML]="title"></div>
+    <div class="cover--author">{{ author }}</div>
+    <div class="cover--bio left" *ngIf="!!bio1 && bio1.length > 0" [innerHTML]="bio1"></div>
+    <div class="cover--bio right" *ngIf="!!bio2 && bio2.length > 0" [innerHTML]="bio2"></div>
+    <div class="cover--lower"></div>
+  } @else {
+    <input
+      type="text"
+      placeholder="Title"
+      data-editing="title"
+      [attr.data-required]="true"
+      [value]="title" />
+    <button class="btn save" mat-flat-button color="accent" (click)="saveEvent()">Save</button>
+    <button class="btn cancel" mat-flat-button color="accent" (click)="cancelEvent()">Cancel</button>
+    <button class="btn notes" mat-flat-button color="accent" (click)="editNotes()">Edit Notes</button>
+
+    <input
+      type="text"
+      class="cover--author-position"
+      placeholder="Author"
+      data-editing="author"
+      [attr.data-required]="true"
+      [value]="author" />
+    <div
+      *ngIf="!!bio1 && bio1.length > 0"
+      contenteditable
+      class="cover--bio left"
+      data-editing="bio1"
+      [attr.data-required]="false"
+      [innerText]="bio1"></div>
+    <div
+      *ngIf="!!bio2 && bio2.length > 0"
+      contenteditable
+      class="cover--bio right"
+      data-editing="bio2"
+      [attr.data-required]="false"
+      [innerText]="bio2"></div>
+    <div class="cover--lower"></div>
+  }
 </div>

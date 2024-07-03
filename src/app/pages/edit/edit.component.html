@@ -42,7 +42,15 @@
   <div class="outer-wrapper">
     <ng-container [ngSwitch]="type">
       <div class="slide-wrapper" *ngSwitchCase="'cover-slide-01'">
-        <cover-01 [title]="page.title" [author]="page.author!" [html]="page.html || ''" [bio1]="page.bio1 || undefined" [bio2]="page.bio2 || undefined"></cover-01>
+        <cover-01
+          [title]="page.title"
+          [author]="page.author!"
+          [html]="page.html || ''"
+          [bio1]="page.bio1 || undefined"
+          [bio2]="page.bio2 || undefined"
+          [notes]="page.notes!"
+          [editing]="editing"
+          (save)="handleDataSave($event)"></cover-01>
       </div>
       <div class="slide-wrapper" *ngSwitchCase="'cover-slide-02'">
         <cover-02 [title]="page.title" [author]="page.author!" [html]="page.html || ''"></cover-02>

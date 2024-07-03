@@ -1,8 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 
 import { MatButtonModule } from '@angular/material/button';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AbstractSlide } from '../abstract.slide';
 
@@ -23,12 +22,4 @@ export class ImageOnlyComponent extends AbstractSlide {
   @Input() title: string = '';
   @Input() image: string = '';
   @Input() imageClass: string = '';
-
-  constructor(
-    dialog: MatDialog,
-    route: ActivatedRoute,
-    router: Router
-  ) {
-    super(dialog, route, router);
-  }
 }
