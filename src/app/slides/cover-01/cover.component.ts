@@ -4,6 +4,8 @@ import { NgIf } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 
+import { EditButtonsComponent } from 'src/app/shared/edit-buttons/edit-buttons.component';
+
 import { AbstractSlide } from '../abstract.slide';
 
 @Component({
@@ -19,6 +21,8 @@ import { AbstractSlide } from '../abstract.slide';
 
       MatButtonModule,
       MatDialogModule,
+
+      EditButtonsComponent,
     ],
 })
 export class Cover01Component extends AbstractSlide {

@@ -1,3 +1,11 @@
+<edit-buttons
+  [toggleView]="toggleView"
+  [saveEvent]="saveEvent"
+  [cancelEvent]="cancelEvent"
+  [editNotes]="editNotes"
+  (toggle)="setView($event)">
+</edit-buttons>
+
 <div class="panel-wrapper">
   @if (editing === false) {
     <div class="panel--title" [innerHTML]="title"></div>
@@ -14,10 +22,6 @@
       data-editing="title"
       [attr.data-required]="true"
       [value]="title" />
-    <button class="btn save" mat-flat-button color="accent" (click)="saveEvent()">Save</button>
-    <button class="btn cancel" mat-flat-button color="accent" (click)="cancelEvent()">Cancel</button>
-    <button class="btn notes" mat-flat-button color="accent" (click)="editNotes()">Edit Notes</button>
-
     <div class="panel--content-wrapper">
       <textarea
         contenteditable
