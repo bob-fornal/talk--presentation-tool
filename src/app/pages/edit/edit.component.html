@@ -22,8 +22,21 @@
             [class.not-original]="isOriginal(slide.key)"
             [attr.slide.key]>
           <mat-card-header>
-            <mat-card-title>
-              {{ getSlidePatternTitle(slide.key) }}
+            <mat-card-title class="slide-title">
+              @switch (getSlideIcon(slide.key).type) {
+                @case ('icon') {
+                  <mat-icon class="slide-title-icon">{{ getSlideIcon(slide.key).icon }}</mat-icon>
+                }
+                @case ('svg') {
+                  <!-- <svg>
+                    <use
+                      [attr.href]="'/assets/images/icons/' + getSlideIcon(slide.key).icon + '.svg'">
+                    </use>
+                  </svg> -->
+                  <img class="slide-title-svg" [src]="'/assets/images/icons/' + getSlideIcon(slide.key).icon + '.svg'" />
+                }
+              }
+              <span>{{ getSlidePatternTitle(slide.key) }}</span>
             </mat-card-title>
           </mat-card-header>
           <mat-card-content class="card-body">

@@ -60,6 +60,23 @@
     flex-wrap: wrap;
     gap: 1em;
 
+    .slide-title {
+      display: flex;
+      align-items: center;
+
+      .slide-title-icon {
+        margin-right: 0.25em;
+      }
+      .slide-title-svg {
+        display: inline-block;
+        color: currentColor;
+        filter: invert(77%) sepia(8%) saturate(2437%) hue-rotate(94deg) brightness(114%) contrast(88%);
+        height: 24px;
+        width: 24px;
+        margin-right: 0.25em;
+      }
+    }
+
     .slide-section {
       padding: 1rem;
       background-color: rgba(50, 50, 50, 0.5);

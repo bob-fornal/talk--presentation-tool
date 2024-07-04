@@ -1,0 +1,27 @@
+{
+  "code-editor": {
+    "type": "icon",
+    "icon": "code"
+  },
+  "cover-slide-01": {
+    "type": "icon",
+    "icon": "blinds"
+  },
+  
+  "panel-single": {
+    "type": "svg",
+    "icon": "single"
+  },
+  "panel-double": {
+    "type": "svg",
+    "icon": "double"
+  },
+  "panel-triple": {
+    "type": "svg",
+    "icon": "triple"
+  },
+  "text-image": {
+    "type": "icon",
+    "icon": "compare"
+  }
+}

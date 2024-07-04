@@ -24,6 +24,8 @@ import { Cover02Component } from '../../slides/cover-02/cover.component';
 import { Cover01Component } from '../../slides/cover-01/cover.component';
 import { EditService } from './edit.service';
 
+import slideTypeIcons from '../../core/constants/slide-type-icons.json';
+
 @Component({
     selector: 'edit',
     templateUrl: './edit.component.html',
@@ -50,6 +52,8 @@ import { EditService } from './edit.service';
     ]
 })
 export class EditComponent implements OnDestroy {
+  icons: { [key: string]: { type: string, icon: string } } = slideTypeIcons;
+
   subscriptions: Array<Subscription> = [];
 
   keyStatuses: Array<KeyStatuses> = [];
@@ -150,6 +154,15 @@ export class EditComponent implements OnDestroy {
 
     const style = wrapper.STYLE;
     this.style.add(style.join('\n'));
+  };
+
+  getSlideIcon = (key: string): { type: string; icon: string } => {
+    const type: string = this.getStructureType(key);
+    if (this.icons.hasOwnProperty(type) === true) {
+      return { type: this.icons[type].type, icon: this.icons[type].icon };
+    } else {
+      return { type: 'icon', icon: 'image' };
+    }
   };
 
   getSlidePatternTitle = (key: string): string => {
