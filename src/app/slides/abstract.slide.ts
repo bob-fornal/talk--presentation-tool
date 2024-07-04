@@ -85,4 +85,8 @@ export abstract class AbstractSlide {
     const converted: string = prettify.html(code, options);
     return converted;
   };
+
+  convertCleanedCode = async (code: string): Promise<string> => {
+    return code;
+  };
 }
