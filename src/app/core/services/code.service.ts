@@ -36,8 +36,9 @@ export class CodeService {
   checkLink = async (url: string): Promise<boolean> => {
     const work: any = new URL(url);
     const hostname = window.location.host;
+
     let newUrl: string = url.replace(work.host, hostname);
-    if (url.includes('localhost') === true) {
+    if (hostname === 'localhost:4200') {
       newUrl = newUrl.replace('https://', 'http://');
     }
 
@@ -49,12 +50,4 @@ export class CodeService {
       return error.status === 200;
     }
   }
-
-  // retrieve = async (talkIndex: number, section: string, filename: string): Promise<string> => {
-  //   const talkFolder: string = this.talks.value[talkIndex].folder;
-  //   const codeFolder: string = this.structures[section].folder;
-  //   const file: string = await firstValueFrom(this.http.get(`./assets/${ talkFolder }/${ codeFolder }/${ filename }`, { responseType: 'text' }));
-  //   return file;
-  // };
-
 }

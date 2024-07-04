@@ -28,11 +28,6 @@
                   <mat-icon class="slide-title-icon">{{ getSlideIcon(slide.key).icon }}</mat-icon>
                 }
                 @case ('svg') {
-                  <!-- <svg>
-                    <use
-                      [attr.href]="'/assets/images/icons/' + getSlideIcon(slide.key).icon + '.svg'">
-                    </use>
-                  </svg> -->
                   <img class="slide-title-svg" [src]="'/assets/images/icons/' + getSlideIcon(slide.key).icon + '.svg'" />
                 }
               }

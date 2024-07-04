@@ -1,4 +1,5 @@
 <edit-buttons
+  [editing]="editing"
   [toggleView]="toggleView"
   [saveEvent]="saveEvent"
   [cancelEvent]="cancelEvent"
@@ -7,7 +8,7 @@
 </edit-buttons>
 
 <div class="panel-wrapper">
-  @if (editing === false) {
+  @if (editing === false || toggleView === true) {
     <div class="panel--title" [innerHTML]="title"></div>
 
     <div class="panel--content-wrapper">

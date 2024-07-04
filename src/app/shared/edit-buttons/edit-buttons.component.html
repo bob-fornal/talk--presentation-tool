@@ -1,14 +1,5 @@
-<div class="editing-actions">
+<div class="editing-actions" [class.hidden]="editing === false">
   @if (toggleView === false) {
-    <button
-      mat-mini-fab
-      title="Save"
-      class="btn save"
-      color="accent"
-      (click)="saveEvent()"
-    >
-      <mat-icon>save</mat-icon>
-    </button>
     <button
       mat-mini-fab
       title="Cancel"
@@ -18,6 +9,16 @@
     >
       <mat-icon>cancel</mat-icon>
     </button>
+    <button
+      mat-mini-fab
+      title="Save"
+      class="btn save"
+      color="accent"
+      (click)="saveEvent()"
+    >
+      <mat-icon>save</mat-icon>
+    </button>
+    <div class="vertical-separator"></div>
     <button
       mat-mini-fab
       title="Edit Notes"

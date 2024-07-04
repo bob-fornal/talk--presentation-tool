@@ -113,8 +113,8 @@ export class EditComponent implements OnDestroy {
   };
 
   handleStructure = (structure: Structure): void => {
-    console.log(JSON.parse(JSON.stringify(structure)));
-    console.log(JSON.parse(JSON.stringify(this.service.structure)));
+    // console.log(JSON.parse(JSON.stringify(structure)));
+    // console.log(JSON.parse(JSON.stringify(this.service.structure)));
     if (
       this.service.structure.hasOwnProperty('PROCESSED') === true
       && JSON.stringify(this.service.structure.ORDER) === JSON.stringify(structure.ORDER)
@@ -225,7 +225,6 @@ export class EditComponent implements OnDestroy {
   };
 
   isOriginal = (slideKey: string): boolean => {
-    console.log(slideKey, this.service.edited[slideKey] || false);
     return this.service.edited.hasOwnProperty(slideKey) || false;
   };
 }

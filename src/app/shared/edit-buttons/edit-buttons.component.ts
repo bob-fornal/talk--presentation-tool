@@ -14,6 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './edit-buttons.component.scss'
 })
 export class EditButtonsComponent {
+  @Input() editing: boolean = false;
   @Input() toggleView: boolean = false;
 
   @Input() saveEvent: any;
@@ -23,6 +24,7 @@ export class EditButtonsComponent {
   @Output() toggle: EventEmitter<boolean> = new EventEmitter()
 
   triggerToggleView = (): void => {
+    console.log(this.editing);
     this.toggleView = !this.toggleView;
     this.toggle.emit(this.toggleView);
   };

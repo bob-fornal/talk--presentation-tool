@@ -1,6 +1,8 @@
 import { Directive, EventEmitter, Input, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
+import prettify from 'simply-beautiful';
+
 import { MatDialog } from '@angular/material/dialog';
 
 import { EditNotesDialogComponent } from 'src/app/shared/edit-notes-dialog/edit-notes-dialog.component';
@@ -13,6 +15,8 @@ export abstract class AbstractSlide {
   public toggleView: boolean = false;
 
   @Output() save: EventEmitter<any> = new EventEmitter();
+
+  // unminify = unminify;
 
   constructor(
     private dialog: MatDialog,
@@ -72,4 +76,13 @@ export abstract class AbstractSlide {
     console.log(result, this.notes);
   };
 
+  getCleanCode = (code: string): string => {
+    const options = {
+      indent_size: 2,
+      jslint_happy: true,
+      max_char: 0,
+    };
+    const converted: string = prettify.html(code, options);
+    return converted;
+  };
 }
