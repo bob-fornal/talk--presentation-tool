@@ -20,8 +20,9 @@ export abstract class AbstractSlide {
     private router: Router
   ) {}
 
-  toggleEditing = (): void => {
-    this.toggleView = !this.toggleView;
+  setView = (state: boolean): void => {
+    this.toggleView = state;
+    console.log('setView', state);
   };
 
   saveEvent = (): void => {

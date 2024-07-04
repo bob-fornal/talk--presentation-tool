@@ -110,5 +110,16 @@ body {
   position: fixed;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  top: 1em;
+  left: 1em;
   width: calc(100% - 2em);
+
+  .btn.cancel,
+  .btn.notes,
+  .btn.save,
+  .btn.toggle {
+    --mdc-fab-container-shape: 5px;
+    height: 36px;
+  }
 }

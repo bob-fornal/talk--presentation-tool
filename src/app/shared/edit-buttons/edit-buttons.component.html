@@ -1,0 +1,42 @@
+<div class="editing-actions">
+  @if (toggleView === false) {
+    <button
+      mat-mini-fab
+      title="Save"
+      class="btn save"
+      color="accent"
+      (click)="saveEvent()"
+    >
+      <mat-icon>save</mat-icon>
+    </button>
+    <button
+      mat-mini-fab
+      title="Cancel"
+      class="btn cancel"
+      color="accent"
+      (click)="cancelEvent()"
+    >
+      <mat-icon>cancel</mat-icon>
+    </button>
+    <button
+      mat-mini-fab
+      title="Edit Notes"
+      class="btn notes"
+      color="accent"
+      (click)="editNotes()"
+    >
+      <mat-icon>edit_note</mat-icon>
+    </button>  
+    <div class="vertical-separator"></div>
+  }
+  <button
+    mat-mini-fab
+    title="Toggle View"
+    class="btn toggle"
+    aria-label="Toggle Edit / View of Page"
+    color="accent"
+    (click)="triggerToggleView()"
+  >
+    <mat-icon>{{ toggleView ? 'toggle_on' : 'toggle_off' }}</mat-icon>
+  </button>
+</div>

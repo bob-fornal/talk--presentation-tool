@@ -1,6 +1,10 @@
-<div class="editing-actions">
-  <button class="btn toggle" mat-flat-button color="accent" (click)="toggleEditing()">{{ toggleView ? 'Edit' : 'View' }}</button>
-</div>
+<edit-buttons
+  [toggleView]="toggleView"
+  [saveEvent]="saveEvent"
+  [cancelEvent]="cancelEvent"
+  [editNotes]="editNotes"
+  (toggle)="setView($event)">
+</edit-buttons>
 
 <div class="panel-wrapper">
   @if (editing === false || toggleView === true) {
@@ -19,10 +23,6 @@
       data-editing="title"
       [attr.data-required]="true"
       [value]="title" />
-    <button class="btn save" mat-flat-button color="accent" (click)="saveEvent()">Save</button>
-    <button class="btn cancel" mat-flat-button color="accent" (click)="cancelEvent()">Cancel</button>
-    <button class="btn notes" mat-flat-button color="accent" (click)="editNotes()">Edit Notes</button>
-
     <div class="panel--editable-placed-wrapper">
       <input
         type="text"
