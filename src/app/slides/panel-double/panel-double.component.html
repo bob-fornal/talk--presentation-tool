@@ -12,8 +12,8 @@
     <div class="panel--title" [innerHTML]="title"></div>
 
     <div class="panel--content-wrapper">
-      <div class="panel--text left" [class]="fontsize" [innerHTML]="textLeft"></div>
-      <div class="panel--text right" [class]="fontsize" [innerHTML]="textRight"></div>
+      <div class="panel--text left" [class]="fontsize" [innerHTML]="text1"></div>
+      <div class="panel--text right" [class]="fontsize" [innerHTML]="text2"></div>
     </div>
   } @else {
     <input
@@ -26,15 +26,15 @@
       <div
         contenteditable
         class="panel--text left"
-        data-editing="textLeft"
+        data-editing="text1"
         [attr.data-required]="true"
-        [innerText]="textLeft"></div>
+        [innerText]="getCleanCode(text1)"></div>
       <div
         contenteditable
         class="panel--text right"
-        data-editing="textRight"
+        data-editing="text2"
         [attr.data-required]="true"
-        [innerText]="textRight"></div>
+        [innerText]="getCleanCode(text2)"></div>
     </div>
   }
 </div>

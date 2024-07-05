@@ -25,7 +25,7 @@ import { AbstractSlide } from '../abstract.slide';
 export class ImageTextComponent extends AbstractSlide {
   @Input() title: string = '';
   @Input() orientation: string = 'left';
-  @Input() text: string = '';
+  @Input() text1: string = '';
   @Input() image: string = '';
 
   @Input() fontsize: string | undefined = undefined;

@@ -78,7 +78,7 @@
         <image-text
           [title]="page.title"
           [orientation]="page.orientation!"
-          [text]="page.text!"
+          [text1]="page.text1!"
           [image]="page.image!"
           [notes]="page.notes!"
           [editing]="editing"
@@ -88,7 +88,7 @@
       <div class="slide-wrapper" *ngSwitchCase="'panel-single'">
         <panel-single
           [title]="page.title"
-          [text]="page.text!"
+          [text1]="page.text1!"
           [fontsize]="fontsizeSelected"
           [notes]="page.notes!"
           [editing]="editing"
@@ -98,8 +98,8 @@
       <div class="slide-wrapper" *ngSwitchCase="'panel-double'">
         <panel-double
           [title]="page.title"
-          [textLeft]="page.textLeft!"
-          [textRight]="page.textRight!"
+          [text1]="page.text1!"
+          [text2]="page.text2!"
           [fontsize]="fontsizeSelected"
           [notes]="page.notes!"
           [editing]="editing"

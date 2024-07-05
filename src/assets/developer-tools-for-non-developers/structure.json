@@ -47,7 +47,7 @@
   "docking--slide": {
     "title": "Docking",
     "type": "panel-single",
-    "text": "<div>To open ...</div><ul><li>F12</li><li>RIGHT-CLICK > Inspect</li><li>Menu > More Tools > Dev Tools</li></ul><div>Docking ...</div><ul><li>Undock into separate window</li><li>Dock to left</li><li>Dock to bottom</li><li>Dock to right</li><ul>",
+    "text1": "<div>To open ...</div><ul><li>F12</li><li>RIGHT-CLICK > Inspect</li><li>Menu > More Tools > Dev Tools</li></ul><div>Docking ...</div><ul><li>Undock into separate window</li><li>Dock to left</li><li>Dock to bottom</li><li>Dock to right</li><ul>",
     "notes": "This is about \"docking\" the developer tools. There are several ways to dock; each with it's own use-case."
   },
   "reading-error-messages--slide": {
@@ -173,28 +173,28 @@
   "storage--slide": {
     "title": "Storage",
     "type": "panel-single",
-    "text": "<div class=bold>Application</div><br/><div>LocalStorage</div><div class=indent>localStorage allows for stored key/value paris; the stored data is saved across browser sessions.<br/>Limited to 10MB.</div><br/><div>sessionStorage</div><div class=indent>Data in sessionStorage is cleared when the page session ends.<br/>Limited to 5MB.</div><br/><div>IndexedDB (not IndexDB)</div><div class=indent>IndexedDB is a way to persistently store data inside a user's browser. It is an object-oriented database.<br/>Limited by disk space.</div><br/><div>Cookies</div><div class=indent>Cookies are data, stored in small text files on the computer.<br/>Limited to ~50 to ~180 at 4K.</div>",
+    "text1": "<div class=bold>Application</div><br/><div>LocalStorage</div><div class=indent>localStorage allows for stored key/value paris; the stored data is saved across browser sessions.<br/>Limited to 10MB.</div><br/><div>sessionStorage</div><div class=indent>Data in sessionStorage is cleared when the page session ends.<br/>Limited to 5MB.</div><br/><div>IndexedDB (not IndexDB)</div><div class=indent>IndexedDB is a way to persistently store data inside a user's browser. It is an object-oriented database.<br/>Limited by disk space.</div><br/><div>Cookies</div><div class=indent>Cookies are data, stored in small text files on the computer.<br/>Limited to ~50 to ~180 at 4K.</div>",
     "notes": "Knowing what storage is available and what exists there can be important."
   },
 
   "devices--slide": {
     "title": "Devices",
     "type": "panel-single",
-    "text": "<ul><li>Turning On/Off</li><li>Types of Devices</li><li>Edit ... Add custom device ...</li><ul>",
+    "text1": "<ul><li>Turning On/Off</li><li>Types of Devices</li><li>Edit ... Add custom device ...</li><ul>",
     "notes": "Open Dev Tools and show devices ... turning them on and off."
   },
 
   "targeting--slide": {
     "title": "Targeting",
     "type": "panel-single",
-    "text": "Select an element on the page to inspect.<br/><ul><li>Type</li><li>Class</li><li>Size</li><li>Details</li><li>Accessibility</li></ul>",
+    "text1": "Select an element on the page to inspect.<br/><ul><li>Type</li><li>Class</li><li>Size</li><li>Details</li><li>Accessibility</li></ul>",
     "notes": "Target elements on this page. Showcase how to navigate around."
   },
 
   "styles--slide": {
     "title": "Styles / Styling",
     "type": "panel-single",
-    "text": "<ul><li>Changing color \"type\" (SHIFT + CLICK on the box) - Color Format</li><li>Changing color \"displayed\" (CLICK on the box) - Actual Color</li><ul>",
+    "text1": "<ul><li>Changing color \"type\" (SHIFT + CLICK on the box) - Color Format</li><li>Changing color \"displayed\" (CLICK on the box) - Actual Color</li><ul>",
     "notes": "Open the Dev Tools ...<br/><br/>Change color of this text; identify how to change the \"Color Format\" using SHIFT-CLICK on the color box."
   },
   

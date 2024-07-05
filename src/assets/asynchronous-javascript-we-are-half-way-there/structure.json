@@ -38,14 +38,14 @@
   "asynchronous-patterns--slide": {
     "title": "Asynchronous Patterns",
     "type": "panel-single",
-    "text": "At it's core, JavaScript is a synchronous, blocking, single-threaded language. This means that only one thing can happen at a time.<br/><br/>We use tools, such as ...<ul><li>Callbacks</li><li>Pomises</li><li>Observable</li><li>Signals</li></ul>... to make it behave asynchronously.",
+    "text1": "At it's core, JavaScript is a synchronous, blocking, single-threaded language. This means that only one thing can happen at a time.<br/><br/>We use tools, such as ...<ul><li>Callbacks</li><li>Pomises</li><li>Observable</li><li>Signals</li></ul>... to make it behave asynchronously.",
     "notes": "What we want to do throughout this talk is look at how these patterns are created and used.<br/><br/>Based on this deeper understanding, we can think more logically about the patterns we are creating and using.<br/><br/>I equate this to the difference between a driver, a driver that can change the oil, and a mechanic. Each has an understanding of how a car works, but the mechanic has a depth of understanding that allows him to do much more with a vehicle."
   },
 
   "callbacks--slide": {
     "title": "Callback Pattern",
     "type": "panel-single",
-    "text": "The <span class=bold>Callback Pattern</span> is the key to asynchronous execution,<br/><br/>... and our understanding of how it's handled moving forward.",
+    "text1": "The <span class=bold>Callback Pattern</span> is the key to asynchronous execution,<br/><br/>... and our understanding of how it's handled moving forward.",
     "notes": "Using this mechanism we can build JavaScript applications that make use of external APIs that might be unreliable, or take a comparatively long time to return results, without freezing the application while it's waiting for an API."
   },
   "callbacks--code": {
@@ -69,7 +69,7 @@
   "promise--slide": {
     "title": "Promise Pattern",
     "type": "panel-single",
-    "text": "The <span class=bold>Promise Pattern</span> allows for asynchronous execution of JavaScript code which is aided by external APIs,<br/><br/>... but are often times, confused to be asynchronous themselves.",
+    "text1": "The <span class=bold>Promise Pattern</span> allows for asynchronous execution of JavaScript code which is aided by external APIs,<br/><br/>... but are often times, confused to be asynchronous themselves.",
     "notes": "Using this mechanism we can build JavaScript applications that make use of external APIs that might be unreliable, or take a comparatively long time to return results, without freezing the application while it's waiting for an API."
   },
   "promise--code": {
@@ -115,7 +115,7 @@
   "pubsub--slide": {
     "title": "PubSub Pattern",
     "type": "panel-single",
-    "text": "The <span class=bold>Publish/Subscribe Pattern</span> is a crutial pattern to leverage the understanding of building scalable, maintainable, and responsive applications.<br/><br/>It not only promotes clean code but also enables efficient communication between components.",
+    "text1": "The <span class=bold>Publish/Subscribe Pattern</span> is a crutial pattern to leverage the understanding of building scalable, maintainable, and responsive applications.<br/><br/>It not only promotes clean code but also enables efficient communication between components.",
     "notes": "It helps developers understand the internal functioning of many libraries and frameworks, as the Pub-Sub pattern is often used as a core concept in various programming environments."
   },
   "pubsub--code": {
@@ -139,7 +139,7 @@
   "observable--slide": {
     "title": "PubSub Pattern",
     "type": "panel-single",
-    "text": "The <span class=bold>Observable Pattern</span> is ...",
+    "text1": "The <span class=bold>Observable Pattern</span> is ...",
     "notes": ""
   },
   "observable--code": {

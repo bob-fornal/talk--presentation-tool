@@ -107,7 +107,7 @@ export class CodeEditorComponent implements OnChanges, OnInit {
       
       this.logging.stop();
       clearInterval(this.scriptLoggingInterval);
-    }, 500);
+    }, 100);
   };
 
   editorOptions = {

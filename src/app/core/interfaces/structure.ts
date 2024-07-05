@@ -15,9 +15,6 @@ export type StructureType = {
   panel?: string;
 
   orientation?: string;
-  text?: string;
-  textLeft?: string;
-  textRight?: string;
   text1?: string;
   text2?: string;
   text3?: string;

@@ -24,24 +24,24 @@
       [attr.data-required]="true"
       [value]="title" />
     <div class="panel--content-wrapper">
-      <textarea
+      <div
         contenteditable
         class="panel--text text1"
         data-editing="text1"
         [attr.data-required]="true"
-        [innerText]="text1"></textarea>
-      <textarea
+        [innerText]="getCleanCode(text1)"></div>
+      <div
         contenteditable
         class="panel--text text2"
         data-editing="text2"
         [attr.data-required]="true"
-        [innerText]="text2"></textarea>
-      <textarea
+        [innerText]="getCleanCode(text2)"></div>
+      <div
         contenteditable
         class="panel--text text3"
         data-editing="text3"
         [attr.data-required]="true"
-        [innerText]="text3"></textarea>
+        [innerText]="getCleanCode(text3)"></div>
     </div>
   }
 </div>

@@ -83,6 +83,8 @@ export abstract class AbstractSlide {
       max_char: 0,
     };
     const converted: string = prettify.html(code, options);
+    console.log(code);
+    console.log(converted);
     return converted;
   };
 

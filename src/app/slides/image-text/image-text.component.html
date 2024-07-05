@@ -12,7 +12,7 @@
     <div class="panel--title" [innerHTML]="title"></div>
 
     <div [class]="'panel--content-wrapper orient-' + orientation">
-      <div class="panel--text" [class]="fontsize" [innerHTML]="text"></div>
+      <div class="panel--text" [class]="fontsize" [innerHTML]="text1"></div>
       <div class="panel--image">
         <img class="img" [src]="image" [alt]="image" />
       </div>
@@ -37,9 +37,9 @@
         contenteditable
         class="panel--text"
         [class]="fontsize"
-        data-editing="text"
+        data-editing="text1"
         [attr.data-required]="true"
-        [innerText]="text"></div>
+        [innerText]="getCleanCode(text1)"></div>
       <div class="panel--image">
         <div class="panel--editable-image-wrapper">
           <input

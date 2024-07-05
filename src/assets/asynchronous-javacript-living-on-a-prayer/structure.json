@@ -72,14 +72,14 @@
   "spoiler--slide": {
     "title": "Spoiler",
     "type": "panel-single",
-    "text": "At it's core, JavaScript is a synchronous, blocking, single-threaded language. This means that only one thing can happen at a time.<br/><br/>When people say that JavaScript is an <span class=underline>asynchronous</span> language, what they mean is that you can manipulate JavaScript to behave asynchronously.<br/><br/><div class=bold>Boundaries of Asynchronicity</div><ul><li>User Interactions</li><li>Network IO</li><li>Disk IO</li><li>Inter-Process Communications</li><li>Timers</li></ul>",
+    "text1": "At it's core, JavaScript is a synchronous, blocking, single-threaded language. This means that only one thing can happen at a time.<br/><br/>When people say that JavaScript is an <span class=underline>asynchronous</span> language, what they mean is that you can manipulate JavaScript to behave asynchronously.<br/><br/><div class=bold>Boundaries of Asynchronicity</div><ul><li>User Interactions</li><li>Network IO</li><li>Disk IO</li><li>Inter-Process Communications</li><li>Timers</li></ul>",
     "notes": "Spoiler: At it's core, JavaScript is a synchronous, blocking, single-threaded language.<br/><br/>This means that only one thing can happen at a time.<ul><li>When people say that JavaScript is an <u>asynchronous</u> language,</li><li>what they mean is that you can manipulate JavaScript to behave asynchronously.</li></ul>"
   },
 
   "definitions--slide": {
     "title": "Definitions",
     "type": "panel-single",
-    "text": "<div class=bold>Parallelism</div><div class=indent>Multi-thread processing and scheduling (same time).</div><div class=bold>Asynchronous</div><div class=indent>Single-thread with an event loop.</div><br/><div class=bold>Managed by ...</div><br/><div class=bold>Concurrency</div><div class=indent>Higer-level tasks that can occur within the same time frame.<br/>Code in the queue has some level of control over what happens next with the queue.</div><div class=bold>Contention</div><div class=indent>Multiple things need to occur at the same instant.</div>",
+    "text1": "<div class=bold>Parallelism</div><div class=indent>Multi-thread processing and scheduling (same time).</div><div class=bold>Asynchronous</div><div class=indent>Single-thread with an event loop.</div><br/><div class=bold>Managed by ...</div><br/><div class=bold>Concurrency</div><div class=indent>Higer-level tasks that can occur within the same time frame.<br/>Code in the queue has some level of control over what happens next with the queue.</div><div class=bold>Contention</div><div class=indent>Multiple things need to occur at the same instant.</div>",
     "notes": ""
   },
 
@@ -87,7 +87,7 @@
     "title": "JavaScript Engine Details",
     "type": "text-image",
     "orientation": "left",
-    "text": "These are not a part of the JavaScript Engine; they are included in Browser or NodeJS runtime environment ...<br><ul><li>setTimeout</li><li>Event Loop</li><li>Web APIs</li><li>Message Queue</li><li>Task Queue</li></ul>",
+    "text1": "These are not a part of the JavaScript Engine; they are included in Browser or NodeJS runtime environment ...<br><ul><li>setTimeout</li><li>Event Loop</li><li>Web APIs</li><li>Message Queue</li><li>Task Queue</li></ul>",
     "image": "./assets/images/event-queues.webp",
     "notes": "These are not a part of the JS Engine; Browser or NodeJS runtime environment:<ul><li>setTimeout</li><li></li><li>Event Loop</li><li>Web APIs</li><li>Message Queue</li><li>Task Queue</li></ul>"
   },
@@ -95,20 +95,20 @@
   "callback-hell--slide": {
     "title": "Callback Hell",
     "type": "panel-single",
-    "text": "Callback Hell<br/>... leading to Promise Hell<ul><li>\"Pyramid of Doom\"</li><li>Inversion of Control: \"later\" version has control (when and if called)</li><li>Cannot be Reasoned About</li></ul>Considerations ...<ul><li>Coordination of Data</li><li>Split Callbacks</li><li>Error First</li></ul>",
+    "text1": "Callback Hell<br/>... leading to Promise Hell<ul><li>\"Pyramid of Doom\"</li><li>Inversion of Control: \"later\" version has control (when and if called)</li><li>Cannot be Reasoned About</li></ul>Considerations ...<ul><li>Coordination of Data</li><li>Split Callbacks</li><li>Error First</li></ul>",
     "notes": "\"Pyramid of Doom\":<br/>Symptom of the problems, not the real issue.<br/><br/>Inversion of Control:<ul><li>TRUST POINT when callback is passed ... does it behave as expected.</span></li></ul>REASONable:<ul><li>Temporal Dependency requires nesting; non-linear thinking.</li></ul>Considerations ...<br/><br/>Coordination of Data:<ul><li>At higher level to track data across callbacks.</li></ul>Split Callbacks:<ul><li>Separating out success and errors.</li></ul>Error First:<ul><li>Same trust issues as Split Callback.</li></ul>Promise Hell ...<ul><li>Flow control with bad style.</li><li>Nested promises rather than vertical chaining.</li></ul>"
   },
 
   "overview-001--slide": {
     "title": "Overview (1/2)",
     "type": "panel-single",
-    "text": "Overview<ul><li>Thought Exercise</li><li>Synchronous Code</li><li>Non Asynchronous Code</li><li>Simple Network Code</li><li>Complex Network Code</li><li>ES2015 Simple Promise Code</li><li>ES2015 Complex Promise Code</li></ul>",
+    "text1": "Overview<ul><li>Thought Exercise</li><li>Synchronous Code</li><li>Non Asynchronous Code</li><li>Simple Network Code</li><li>Complex Network Code</li><li>ES2015 Simple Promise Code</li><li>ES2015 Complex Promise Code</li></ul>",
     "notes": "Overview<ul><li>Thought Exercise</li><li>Synchronous Code</li><li>Non Asynchronous Code</li><li>Simple Network Code</li><li>Complex Network Code</li><li>ES2015 Simple Promise Code</li><li>ES2015 Complex Promise Code</li></ul>"
   },
   "overview-002--slide": {
     "title": "Overview (2/2)",
     "type": "panel-single",
-    "text": "Overview (continued)<ul><li>Generator Throttling Code</li><li>User Interaction Code</li><li>Event Listeners</li><li>Web Worker Code</li><li>Timing Code (Race Conditions)</li><li>setTimeout Timer</li><li>ES2017 Async/Await</li></ul>",
+    "text1": "Overview (continued)<ul><li>Generator Throttling Code</li><li>User Interaction Code</li><li>Event Listeners</li><li>Web Worker Code</li><li>Timing Code (Race Conditions)</li><li>setTimeout Timer</li><li>ES2017 Async/Await</li></ul>",
     "notes": "Overview (continued)<ul><li>Generator Throttling Code</li><li>User Interaction Code</li><li>Event Listeners</li><li>Web Worker Code</li><li>Timing Code (Race Conditions)</li><li>setTimeout Timer</li><li>ES2017 Async/Await</li></ul>"
   },
 

@@ -24,8 +24,8 @@ import { AbstractSlide } from '../abstract.slide';
 })
 export class PanelDoubleComponent extends AbstractSlide {
   @Input() title: string = '';
-  @Input() textLeft: string = '';
-  @Input() textRight: string = '';
+  @Input() text1: string = '';
+  @Input() text2: string = '';
 
   @Input() fontsize: string | undefined = undefined;
 }

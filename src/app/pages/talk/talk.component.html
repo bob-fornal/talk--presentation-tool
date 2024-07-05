@@ -11,14 +11,14 @@
       <image-only [title]="page.title" [image]="page.image!" [imageClass]="page.imageClass || ''"></image-only>
     </div>
     <div class="slide-wrapper" *ngSwitchCase="'text-image'">
-      <image-text [title]="page.title" [orientation]="page.orientation!" [text]="page.text!" [fontsize]="fontsizeSelected" [image]="page.image!"></image-text>
+      <image-text [title]="page.title" [orientation]="page.orientation!" [text1]="page.text1!" [fontsize]="fontsizeSelected" [image]="page.image!"></image-text>
     </div>
 
     <div class="slide-wrapper" *ngSwitchCase="'panel-single'">
-      <panel-single [title]="page.title" [text]="page.text!" [fontsize]="fontsizeSelected"></panel-single>
+      <panel-single [title]="page.title" [text1]="page.text1!" [fontsize]="fontsizeSelected"></panel-single>
     </div>
     <div class="slide-wrapper" *ngSwitchCase="'panel-double'">
-      <panel-double [title]="page.title" [textLeft]="page.textLeft!" [textRight]="page.textRight!" [fontsize]="fontsizeSelected"></panel-double>
+      <panel-double [title]="page.title" [text1]="page.text1!" [text2]="page.text2!" [fontsize]="fontsizeSelected"></panel-double>
     </div>
     <div class="slide-wrapper" *ngSwitchCase="'panel-triple'">
       <panel-triple [title]="page.title" [text1]="page.text1!" [text2]="page.text2!" [text3]="page.text3!" [fontsize]="fontsizeSelected" [notes]="page.notes!"></panel-triple>

@@ -12,7 +12,7 @@
     <div class="panel--title" [innerHTML]="title"></div>
 
     <div class="panel--content-wrapper">
-      <div class="panel--text" [class]="fontsize" [innerHTML]="text"></div>
+      <div class="panel--text" [class]="fontsize" [innerHTML]="text1"></div>
     </div>  
   } @else {
     <input
@@ -22,11 +22,12 @@
       [attr.data-required]="true"
       [value]="title" />
     <div class="panel--content-wrapper">
-      <textarea
+      <div
+        contenteditable
         class="panel--text text"
-        data-editing="text"
+        data-editing="text1"
         [attr.data-required]="true"
-        [innerText]="text"></textarea>
+        [innerText]="getCleanCode(text1)"></div>
     </div>
   }
 </div>
