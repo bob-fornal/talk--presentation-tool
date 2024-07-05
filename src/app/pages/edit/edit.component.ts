@@ -26,6 +26,8 @@ import { EditService } from './edit.service';
 
 import slideTypeIcons from '../../core/constants/slide-type-icons.json';
 
+import { saveAs } from 'file-saver';
+
 @Component({
     selector: 'edit',
     templateUrl: './edit.component.html',
@@ -218,7 +220,6 @@ export class EditComponent implements OnDestroy {
   };
 
   handleDataSave = (event: any): void => {
-    console.log(event);
     if (event.ACTION === 'save') {
       const data: any = { ...this.service.structure[event.slideKey] as StructureType };
       const matchStringOrignal: string = JSON.stringify(data);
@@ -240,5 +241,17 @@ export class EditComponent implements OnDestroy {
 
   isNotOriginal = (slideKey: string): boolean => {
     return this.service.edited.hasOwnProperty(slideKey) || false;
+  };
+
+  saveAs = saveAs;
+  saveFile = (): void => {
+    const data: any = { ...this.service.structure, ...this.service.edited };
+    const stringify: string = JSON.stringify(data, null, 2);
+    const blob = new Blob([stringify], { type: 'application/json' });
+
+    this.saveAs(blob, 'structure.json');
+
+    this.service.structure = data;
+    this.service.edited = {};
   };
 }

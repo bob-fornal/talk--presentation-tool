@@ -16,8 +16,6 @@ export abstract class AbstractSlide {
 
   @Output() save: EventEmitter<any> = new EventEmitter();
 
-  // unminify = unminify;
-
   constructor(
     private dialog: MatDialog,
     private route: ActivatedRoute,
@@ -37,12 +35,10 @@ export abstract class AbstractSlide {
       const required: boolean = item.dataset.required === 'true';
       
       const length: number = this.checkItemLength(item);
-      console.log(required, typeof required, length);
       if (required === true || (required === false && length > 0)) {
         const key = item.dataset.editing;
         response.ITEMS.push(key);
         response[key] = this.getItemValue(item);
-        console.log(key, this.getItemValue(item));
       }
     }
 
@@ -65,7 +61,7 @@ export abstract class AbstractSlide {
   };
 
   getItemValue = (item: any): string => {
-    if (item.hasOwnProperty('value') === true) {
+    if (item.value !== undefined) {
       return item.value.trim();
     } else {
       return item.innerText.trim();
@@ -98,11 +94,15 @@ export abstract class AbstractSlide {
 
   getCleanCode = (code: string): string => {
     const options = {
-      indent_size: 2,
+      indent_size: 4,
+      indent_char: ' ',
       jslint_happy: true,
-      max_char: 0,
+      max_char: 254,
+      brace_style: 'expand',
+      unformatted: ['a', 'sub', 'sup', 'b', 'i', 'u']
     };
     const converted: string = prettify.html(code, options);
+    console.log(converted.replace(/ /g, '_'));
     return converted;
   };
 

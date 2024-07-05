@@ -7,7 +7,7 @@
           <button class="btn" title="Home" mat-flat-button routerLink="/">
             <mat-icon>home</mat-icon>
           </button>
-          <button class="btn" title="Save" mat-flat-button color="accent" [disabled]="!dataChanged">
+          <button class="btn" title="Save" mat-flat-button (click)="saveFile()" color="accent" [disabled]="!dataChanged">
             <mat-icon>save</mat-icon>
           </button>
         </div>
