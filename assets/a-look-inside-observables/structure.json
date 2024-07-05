@@ -1,23 +1,19 @@
 {
   "ORDER": [
     "cover-slide-01",
-
     "what-is-rxjs--slide",
     "history--slide",
     "essential-concepts--slide",
     "promises-versus-observables--slide",
     "subject--slide",
-
     "observable--code",
     "subject--code",
     "behavior-subject--code",
     "replay-subject--code",
     "async-subject--code",
     "void-subject--code",
-
     "time-for-questions"
   ],
-
   "STYLE": [
     ".outer-wrapper {",
     "  background: url(\"./assets/images/grid--green.webp\");",
@@ -48,48 +44,46 @@
     "  margin-bottom: 1em;",
     "}"
   ],
-
   "cover-slide-01": {
     "title": "A Look Inside Observables",
     "type": "cover-slide-01",
     "author": "Bob Fornal",
-    "bio1": "<img class=bio-logo src=./assets/images/code-squid.webp /><br/><div class=\"bold bio-header\">Entrepreneur</div>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.",
-    "bio2": "<img class=bio-logo src=./assets/images/leading-edje.webp /><br/><div class=bold>Senior Solutions Developer</div><div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth.",
+    "bio1": "<img class=bio-logo src=\"./assets/images/code-squid.webp\" />\n<br/>\n<div class=\"bold bio-header\">Entrepreneur</div>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.",
+    "bio2": "<img class=bio-logo src=\"./assets/images/leading-edje.webp\" />\n<br/>\n<div class=bold>Senior Solutions Developer</div>\n<div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth.",
     "notes": ""
   },
   "what-is-rxjs--slide": {
     "title": "What is RxJS",
     "type": "panel-single",
-    "text1": "<div>... and what problem does it solve?</div><ul><li>Reactive Extensions - dealing with streams of things.</li><li>Extensions to the JavaScript language around Reactive Programming.</li><li>Reacts to events or signals and contain all state and pass the event to the next step in the chain.</li><ul>",
+    "text1": "<div>... and what problem does it solve?</div>\n<ul>\n    <li>Reactive Extensions - dealing with streams of things.</li>\n    <li>Extensions to the JavaScript language around Reactive Programming.</li>\n    <li>Reacts to events or signals and contain all state and pass the event to the next step in the chain.</li>\n</ul>",
     "notes": ""
   },
   "history--slide": {
     "title": "History",
     "type": "panel-double",
-    "text1": "Callback-Hell<ul><li>Handling multiple requests and accounting for the order-of-response.</li></ul>Promise-Hell<ul><li>Better code-readability with then, catch, finally.</li></ul>Async/Await<ul><li>Improved code-readability, unwraps promises.</li></ul><span class=bold>Observables</span><ul><li>Push/Pull models ...</li><ul>",
-    "text2": "<table class=right-table><tr><th></th><th>SINGLE</th><th>MULTIPLE</th></tr><tr><td class=bold-right>Pull</td><td class=center>Function</td><td class=center>Iterator</td></tr><tr><td class=bold-right>Push</td><td class=center>Promise</td><td class=center>Observable</td></tr></table>",
+    "text1": "Callback-Hell\n<ul>\n    <li>Handling multiple requests and accounting for the order-of-response.</li>\n</ul>Promise-Hell\n<ul>\n    <li>Better code-readability with then, catch, finally.</li>\n</ul>Async/Await\n<ul>\n    <li>Improved code-readability, unwraps promises.</li>\n</ul>\n<span class=bold>Observables</span>\n<ul>\n    <li>Push/Pull models ...</li>\n</ul>",
+    "text2": "<table class=right-table>\n    <tr>\n        <th></th>\n        <th>SINGLE</th>\n        <th>MULTIPLE</th>\n    </tr>\n    <tr>\n        <td class=bold-right>Pull</td>\n        <td class=center>Function</td>\n        <td class=center>Iterator</td>\n    </tr>\n    <tr>\n        <td class=bold-right>Push</td>\n        <td class=center>Promise</td>\n        <td class=center>Observable</td>\n    </tr>\n</table>",
     "notes": "Pull: consumer of data is KING.<ul><li>It determines when it wants data from a producer.</li><li>Think of calling a function which returns a string.</li></ul>Push: producer of data is KING.<ul><li>Producer decides when to send data to the consumer.</li></ul>"
   },
   "essential-concepts--slide": {
     "title": "Essential Concepts",
     "type": "panel-double",
-    "text1": "<div>The essential concepts in RxJS what solve async event management are ...</div><br/><div class=bold>Observable</div><div class=indent>Represents the idea of an invokable collection of future values or events.</div><div class=bold>Observer</div><div class=indent>Is a collection of callbacks that know how to listen to values delivered by the Observable.</div><div class=bold>Subscription</div><div class=indent>Represents the execution of an Observable, is primarily useful for cancelling the execution.</div>",
-    "text2": "<br/><br/><div class=bold>Operators</div><div class=indent>Are pure functions that enable a functional programming style of dealing with collections with operations like map, filter, concat, reduce, etc.</div><div class=bold>Subject</div><div class=indent>Is equivalent to an EventEmitter, and the only way of multicasting a value or event to multiple Observers.</div><div class=bold>Schedulers</div><div class=indent>Are centralized dispatchers to control concurrency, allowing us to coordinate when computation happens on e.g. setTimeout or requestAnimationFrame or others.</div>",
+    "text1": "<div>The essential concepts in RxJS what solve async event management are ...</div>\n<br/>\n<div class=bold>Observable</div>\n<div class=indent>Represents the idea of an invokable collection of future values or events.</div>\n<div class=bold>Observer</div>\n<div class=indent>Is a collection of callbacks that know how to listen to values delivered by the Observable.</div>\n<div class=bold>Subscription</div>\n<div class=indent>Represents the execution of an Observable, is primarily useful for cancelling the execution.</div>",
+    "text2": "<br/>\n<br/>\n<div class=bold>Operators</div>\n<div class=indent>Are pure functions that enable a functional programming style of dealing with collections with operations like map, filter, concat, reduce, etc.</div>\n<div class=bold>Subject</div>\n<div class=indent>Is equivalent to an EventEmitter, and the only way of multicasting a value or event to multiple Observers.</div>\n<div class=bold>Schedulers</div>\n<div class=indent>Are centralized dispatchers to control concurrency, allowing us to coordinate when computation happens on e.g. setTimeout or requestAnimationFrame or others.</div>",
     "notes": ""
   },
   "promises-versus-observables--slide": {
     "title": "Promises versus Observables",
     "type": "panel-single",
-    "text1": "<ul><li>Observables are lazy whereas promises are not.</li><li>Observables handle multiple values unlike promises.</li><li>Observables are cancelable.</li><li>Observables provide many <span class=bold>operators</span>.</li></ul>",
+    "text1": "<ul>\n    <li>Observables are lazy whereas promises are not.</li>\n    <li>Observables handle multiple values unlike promises.</li>\n    <li>Observables are cancelable.</li>\n    <li>Observables provide many\n        <span class=bold>operators</span>.</li>\n</ul>",
     "notes": "Observables are lazy whereas promises are not<br/>This is pretty self-explanatory: observables are lazy, that is we have to subscribe observables to get the results. In the case of promises, they execute immediately.<br/><br/>Observables handle multiple values unlike promises<br/>Promises can only provide a single value whereas observables can give you multiple values.<br/><br/>Observables are cancelable<br/>You can cancel observables by unsubscribing it using the unsubscribe method whereas promises don’t have such a feature.<br/><br/>Observables provide many operators<br/>There are many operators like map, forEach, filter etc. Observables provide these whereas promises does not have any operators in their bucket."
   },
   "subject--slide": {
     "title": "Subject",
     "type": "panel-single",
-    "text1": "<div>An <span class=bold>RxJS Subject</span> is a special type of <span class=bold>Observable</span> that allows values to be multicasted to many Observers. While plain Observables are unicast (each subscribed Observer owns an independent execution of the Observable), Subjects are multicast.</div><ul><li>BehaviorSubject</li><li>ReplaySubject</li><li>AsyncSubject</li><li>void Subject</li></ul>",
+    "text1": "<div>An\n    <span class=bold>RxJS Subject</span>&nbsp;is a special type of\n    <span class=bold>Observable</span>&nbsp;that allows values to be multicasted to many Observers. While plain Observables are unicast (each subscribed Observer owns an independent execution of the Observable), Subjects are multicast.</div>\n<ul>\n    <li>BehaviorSubject</li>\n    <li>ReplaySubject</li>\n    <li>AsyncSubject</li>\n    <li>void Subject</li>\n</ul>",
     "notes": "BehaviorSubject<br/>Has a notion of \"the current value\". It stores the latest value emitted to its consumers, and whenever a new Observer subscribes, it will immediately receive the \"current value\" from the BehaviorSubject.<br/><br/>ReplaySubject<br/>A ReplaySubject is similar to a BehaviorSubject in that it can send old values to new subscribers, but it can also record a part of the Observable execution.<br/><br/>AsyncSubject<br/>The AsyncSubject is a variant where only the last value of the Observable execution is sent to its observers, and only when the execution completes.<br/><br/>Void subject<br/>Sometimes the emitted value doesn't matter as much as the fact that a value was emitted."
   },
-
   "observable--code": {
     "title": "Observable",
     "type": "code-editor",
@@ -112,7 +106,6 @@
     ],
     "notes": "Observable 1<br/>Created with four NEXTs - one after a 1 second timeout, includes complete. The code after consoles before and after, as well as handles next, error, and complete.<br/>RUN THE CODE.<br/><br/>Observable 2<br/>Creasted with four NEXTs - one after a 1 second timeout, no complete. The code after consoles before and after; it simply consoles the data.<br/>RUN THE CODE."
   },
-
   "subject--code": {
     "title": "Subject",
     "type": "code-editor",
@@ -129,7 +122,6 @@
     ],
     "notes": "An RxJS Subject is a special type of Observable that allows values to be multicasted to many Observers. While plain Observables are unicast (each subscribed Observer owns an independent execution of the Observable), Subjects are multicast.<br/><br/>Subject<br/>Here, we've created a Subject, subscribed twice, and triggered data updates (NEXT) twice.<br/>RUN THE CODE."
   },
-
   "behavior-subject--code": {
     "title": "BehaviorSubject",
     "type": "code-editor",
@@ -146,7 +138,6 @@
     ],
     "notes": "BehaviorSubjects are useful for representing \"values over time.\" For instance, an event stream of birthdays is a Subject, but the stream of a person's age would be a BehaviorSubject.<br/><br/>BehaviorSubject<br/>Notice the initial state of the subject.<br/>RUN THE CODE."
   },
-
   "replay-subject--code": {
     "title": "ReplaySubject",
     "type": "code-editor",
@@ -160,7 +151,8 @@
         "title": "Run Code 1",
         "file": "replay-subject-01.js",
         "init": "dtfndDemo4"
-      }, {
+      },
+      {
         "title": "Run Code 2",
         "file": "replay-subject-02.js",
         "init": "dtfndDemo5"
@@ -168,7 +160,6 @@
     ],
     "notes": "A ReplaySubject records multiple values from the Observable execution and replays them to new subscribers.<br/><br/>ReplaySubject<br/>Notice what happens to the various subscriptions as the code runs.<br/>RUN THE CODE."
   },
-
   "async-subject--code": {
     "title": "AsyncSubject",
     "type": "code-editor",
@@ -185,7 +176,6 @@
     ],
     "notes": "The AsyncSubject is a variant where only the last value of the Observable execution is sent to its observers, and only when the execution completes.<br/><br/>AsyncSubject<br/>Notice when the consoles trigger.<br/>RUN THE CODE."
   },
-
   "void-subject--code": {
     "title": "void Subject",
     "type": "code-editor",
@@ -202,7 +192,6 @@
     ],
     "notes": "Sometimes the emitted value doesn't matter as much as the fact that a value was emitted.<br/><br/>Before version 7, the default type of Subject values was any. Subject<any> disables type checking of the emitted values, whereas Subject<void> prevents accidental access to the emitted value. If you want the old behavior, then replace Subject with Subject<any>.<br/><br/>void Subject<br/>This is a means of showing that somthing has occurred.<br/>RUN THE CODE."
   },
-
   "time-for-questions": {
     "title": "",
     "type": "image-only",
