@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
@@ -70,8 +70,19 @@ export class EditComponent implements OnDestroy {
 
   tags: Array<string> = [];
 
+  get dataChanged(): boolean {
+    let changed: boolean = false;
+    for (let slide of this.keyStatuses) {
+      if (this.isNotOriginal(slide.key) === true) {
+        changed = true;
+      }
+    }
+    return changed;
+  };
+
   constructor(
     private code: CodeService,
+    private changeRef: ChangeDetectorRef,
     private route: ActivatedRoute,
     private router: Router,
     private service: EditService,
@@ -207,6 +218,7 @@ export class EditComponent implements OnDestroy {
   };
 
   handleDataSave = (event: any): void => {
+    console.log(event);
     if (event.ACTION === 'save') {
       const data: any = { ...this.service.structure[event.slideKey] as StructureType };
       const matchStringOrignal: string = JSON.stringify(data);
@@ -214,8 +226,10 @@ export class EditComponent implements OnDestroy {
       keys.forEach((key: string) => {
         data[key] = event[key];
       });
+
       const matchStringNew: string = JSON.stringify(data);
       const changed: boolean = matchStringOrignal !== matchStringNew;
+      
       if (changed === true) {
         this.service.edited[event.slideKey] = { ...data };
       } else if (this.service.edited.hasOwnProperty(event.slideKey) === true) {
@@ -224,7 +238,7 @@ export class EditComponent implements OnDestroy {
     }
   };
 
-  isOriginal = (slideKey: string): boolean => {
+  isNotOriginal = (slideKey: string): boolean => {
     return this.service.edited.hasOwnProperty(slideKey) || false;
   };
 }

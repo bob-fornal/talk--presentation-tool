@@ -34,11 +34,15 @@ export abstract class AbstractSlide {
     const elements: any = document.querySelectorAll('[data-editing]');
     for (let i = 0, len = elements.length; i < len; i++) {
       const item = elements[i];
-      const required = item.dataset.required;
-      if (required === true || (required === false && item.value.length > 0)) {
+      const required: boolean = item.dataset.required === 'true';
+      
+      const length: number = this.checkItemLength(item);
+      console.log(required, typeof required, length);
+      if (required === true || (required === false && length > 0)) {
         const key = item.dataset.editing;
         response.ITEMS.push(key);
-        response[key] = item.value;  
+        response[key] = this.getItemValue(item);
+        console.log(key, this.getItemValue(item));
       }
     }
 
@@ -50,6 +54,22 @@ export abstract class AbstractSlide {
 
     const path: string = this.route.snapshot.paramMap.get('folder') || '';
     this.router.navigate(['edit', path]);
+  };
+
+  checkItemLength = (item: any): number => {
+    if (item.hasOwnProperty('value') === true) {
+      return item.value.trim().length;
+    } else {
+      return item.innerText.trim().length;
+    }
+  };
+
+  getItemValue = (item: any): string => {
+    if (item.hasOwnProperty('value') === true) {
+      return item.value.trim();
+    } else {
+      return item.innerText.trim();
+    }
   };
 
   cancelEvent = (): void => {
@@ -83,8 +103,6 @@ export abstract class AbstractSlide {
       max_char: 0,
     };
     const converted: string = prettify.html(code, options);
-    console.log(code);
-    console.log(converted);
     return converted;
   };
 

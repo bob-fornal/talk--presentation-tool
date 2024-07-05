@@ -4,8 +4,11 @@
     <div class="organization">
       <div class="organization-wrapper">
         <div class="home-navigation">
-          <button class="btn" mat-flat-button routerLink="/">
+          <button class="btn" title="Home" mat-flat-button routerLink="/">
             <mat-icon>home</mat-icon>
+          </button>
+          <button class="btn" title="Save" mat-flat-button color="accent" [disabled]="!dataChanged">
+            <mat-icon>save</mat-icon>
           </button>
         </div>
         <div class="wrapper-title">{{ title }}</div>
@@ -19,7 +22,7 @@
           <mat-card
             [class]="editClasses(slide.key)"
             [class.not-included]="slide.included === false"
-            [class.not-original]="isOriginal(slide.key)"
+            [class.not-original]="isNotOriginal(slide.key)"
             [attr.slide.key]>
           <mat-card-header>
             <mat-card-title class="slide-title">
