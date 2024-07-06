@@ -1,38 +1,36 @@
-<div class="panel-wrapper">
-  <div class="panel--title">{{ title }}</div>
+<edit-buttons
+  class="edit-buttons"
+  [editing]="editing"
+  [toggleView]="toggleView"
+  [saveEvent]="saveEvent"
+  [cancelEvent]="cancelEvent"
+  [editNotes]="editNotes"
+  (toggle)="setView($event)">
+</edit-buttons>
 
-  <div class="panel--content-wrapper">
-    <div class="panel--files">
-      <mat-selection-list role="list">
-        <a mat-list-item [routerLink]="" [attr.selected]="file === selected" *ngFor="let file of files;" (click)="fileSelection(file)" class="file">{{ file }}</a>
-      </mat-selection-list>
-      <mat-selection-list role="list">
-        <a mat-list-item [routerLink]="" *ngFor="let trigger of triggers;" (click)="triggerFile(trigger)" class="trigger">{{ trigger.title }}</a>
-      </mat-selection-list>
-    </div>
-    <div class="panel--editor">
-      <nu-monaco-editor class="editor" style="height: 100%;" [(ngModel)]="code" [options]="editorOptions"></nu-monaco-editor>
-    </div>
-    <div #handleScript>
-      <div [attr.src]="filepath"></div>
-    </div>
-  </div>
-
-  <div class="log-wrapper" [class.open]="loggingOpen === true">
-    <div class="handle" (click)="toggleLogging()">
-      @if (loggingOpen === true) {
-        <mat-icon>arrow_right</mat-icon>
-      } @else {
-        <mat-icon>arrow_left</mat-icon>
-      }
-    </div>
-    <div class="panel-container-wrapper" [hidden]="loggingOpen === false">
-      <div id="display-container" class="display-container" [hidden]="!panel"></div>
-
-      <button class="log-clear" mat-flat-button (click)="clearLogging()">Clear Logs</button>
-      <div class="log-container" [class.half]="!!panel">
-        <pre [innerHTML]="logs"></pre>
-      </div>
-    </div>
-  </div>
-</div>
+@if (editing === false || toggleView === true) {
+  <ce-display
+    class="ce-display"
+    [title]="title"
+    [path]="path"
+    [folder]="folder"
+    [files]="files"
+    [triggers]="triggers"
+    [keys]="keys"
+    [panel]="panel">
+  </ce-display>
+} @else {
+  <ce-editor
+    class="ce-editor"
+    [title]="title"
+    [path]="path"
+    [folder]="folder"
+    [files]="files"
+    [triggers]="triggers"
+    [keys]="keys"
+    [panel]="panel"
+    [notes]="notes"
+    [editing]="editing"
+    (save)="save.emit($event)">
+  </ce-editor>
+}

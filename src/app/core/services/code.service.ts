@@ -14,17 +14,17 @@ export class CodeService {
   constructor(private http: HttpClient) {}
 
   init = async (): Promise<void> => {
-    const talks: any = await firstValueFrom(this.http.get('./assets/talks.json'));
+    const talks: any = await firstValueFrom(this.http.get('./assets/talks/talks.json'));
     this.talks.next(talks);
   };
 
   getStructure = async (folder: string): Promise<any> => {
-    const structure: any = await firstValueFrom(this.http.get(`./assets/${ folder }/structure.json`));
+    const structure: any = await firstValueFrom(this.http.get(`./assets/talks/${ folder }/structure.json`));
     this.structure.next(structure);
   };
 
   getStructureImmediate = async (folder: string): Promise<Structure> => {
-    const structure: any = await firstValueFrom(this.http.get(`./assets/${ folder }/structure.json`));
+    const structure: any = await firstValueFrom(this.http.get(`./assets/talks/${ folder }/structure.json`));
     return structure;
   };
 

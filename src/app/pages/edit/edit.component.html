@@ -130,7 +130,11 @@
           [files]="page.files!"
           [triggers]="page.triggers || []"
           [keys]="page.environment_keys || []"
-          [panel]="page.panel"></code-editor>
+          [panel]="page.panel"
+          [notes]="page.notes!"
+          [editing]="editing"
+          (save)="handleDataSave($event)">
+        </code-editor>
       </div>
   
       <div class="slide-wrapper" *ngSwitchDefault="">NONE</div>

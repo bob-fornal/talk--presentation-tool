@@ -17,9 +17,9 @@ export abstract class AbstractSlide {
   @Output() save: EventEmitter<any> = new EventEmitter();
 
   constructor(
-    private dialog: MatDialog,
-    private route: ActivatedRoute,
-    private router: Router
+    public dialog: MatDialog,
+    public route: ActivatedRoute,
+    public router: Router
   ) {}
 
   setView = (state: boolean): void => {
