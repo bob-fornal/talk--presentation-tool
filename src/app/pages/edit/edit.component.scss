@@ -2,6 +2,19 @@
   display: flex;
 }
 
+::ng-deep .mdc-list-item__primary-text {
+  --mat-option-selected-state-label-text-color: yellow;
+}
+::ng-deep .mdc-floating-label {
+  --mdc-filled-text-field-focus-label-text-color: yellow;
+}
+::ng-deep .mat-mdc-select-arrow {
+  --mat-select-focused-arrow-color: yellow;
+}
+::ng-deep .mat-mdc-option-pseudo-checkbox::after {
+  color: yellow !important;
+}
+
 .organization {
   border-right: 2px solid #69f0ae;
   padding: 1rem;
@@ -56,23 +69,55 @@
   overflow-y: auto;
 
   .editor-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
+    width: calc(100% - 1em);
+
+    &.cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;  
+    }
+    &.list {
+      background-color: rgba(100, 100, 100, 0.5);
+
+      .tile {
+        border: 1px solid #69f0ae;
+      }
+
+      .align-left {
+        ::ng-deep .mat-grid-tile-content {
+          padding-left: 1em;
+          justify-content: start;
+        }
+      }
+    }
+
+    .slide-title-svg {
+      display: inline-block;
+      color: currentColor;
+      filter: invert(77%) sepia(8%) saturate(2437%) hue-rotate(94deg) brightness(114%) contrast(88%);
+      height: 24px;
+      width: 24px;
+      margin-right: 0.25em;
+    }
+
+    .cover-slide-01,
+    .cover-slide-02 {
+      background-color: rgb(66, 66, 88);
+    }
+    .image-only,
+    .panel-single,
+    .panel-double {
+      background-color: rgb(88, 66, 66);
+    }
+    .code-editor {
+      background-color: rgb(66, 88, 66);
+    }
 
     .slide-title {
       display: flex;
       align-items: center;
 
       .slide-title-icon {
-        margin-right: 0.25em;
-      }
-      .slide-title-svg {
-        display: inline-block;
-        color: currentColor;
-        filter: invert(77%) sepia(8%) saturate(2437%) hue-rotate(94deg) brightness(114%) contrast(88%);
-        height: 24px;
-        width: 24px;
         margin-right: 0.25em;
       }
     }
@@ -110,19 +155,6 @@
 
       .card-body {
         color: white;
-      }
-
-      &.cover-slide-01,
-      &.cover-slide-01 {
-        background-color: rgb(66, 66, 88);
-      }
-      &.image-only,
-      &.panel-single,
-      &.panel-double {
-        background-color: rgb(88, 66, 66);
-      }
-      &.code-editor {
-        background-color: rgb(66, 88, 66);
       }
 
       .card-actions {

@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
+import { NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 
 import { KeyStatuses } from 'src/app/core/interfaces/key-statuses';
 import { Structure, StructureType } from 'src/app/core/interfaces/structure';
@@ -10,9 +10,11 @@ import { Talk, Talks } from 'src/app/core/interfaces/talks';
 import { CodeService } from 'src/app/core/services/code.service';
 import { StyleService } from 'src/app/core/services/style.service';
 
-import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
 
 import { CodeEditorComponent } from '../../slides/code-editor/code-editor.component';
 import { PanelTripleComponent } from '../../slides/panel-triple/panel-triple.component';
@@ -34,6 +36,7 @@ import { saveAs } from 'file-saver';
     styleUrls: ['./edit.component.scss'],
     standalone: true,
     imports: [
+      NgIf,
       NgSwitch,
       NgSwitchCase,
       NgSwitchDefault,
@@ -50,7 +53,9 @@ import { saveAs } from 'file-saver';
 
       MatButtonModule,
       MatCardModule,
+      MatGridListModule,
       MatIconModule,
+      MatSelectModule,
     ]
 })
 export class EditComponent implements OnDestroy {
@@ -66,6 +71,15 @@ export class EditComponent implements OnDestroy {
   title: string = '';
   type: string = '';
 
+  _displayAs: string = 'cards';
+  get displayAs() {
+    return this._displayAs;
+  }
+  set displayAs(value) {
+    this._displayAs = value;
+    localStorage.setItem('displayAs', value);
+  }
+  displayAsOptions: Array<string> = ['Cards', 'List'];
   editing: boolean = false;
 
   fontsizeSelected: string | undefined;
@@ -84,7 +98,6 @@ export class EditComponent implements OnDestroy {
 
   constructor(
     private code: CodeService,
-    private changeRef: ChangeDetectorRef,
     private route: ActivatedRoute,
     private router: Router,
     private service: EditService,
@@ -101,7 +114,11 @@ export class EditComponent implements OnDestroy {
     });
   }
 
+  displayOptions: Array<string> = ['cards', 'list'];
   init = (): void => {
+    const displayAs: string = localStorage.getItem('displayAs') || 'cards';
+    this.displayAs = displayAs;
+
     const path: string = this.route.snapshot.paramMap.get('folder') || '';
     this.path = path;
     this.code.getStructure(path);
@@ -126,8 +143,6 @@ export class EditComponent implements OnDestroy {
   };
 
   handleStructure = (structure: Structure): void => {
-    // console.log(JSON.parse(JSON.stringify(structure)));
-    // console.log(JSON.parse(JSON.stringify(this.service.structure)));
     if (
       this.service.structure.hasOwnProperty('PROCESSED') === true
       && JSON.stringify(this.service.structure.ORDER) === JSON.stringify(structure.ORDER)
@@ -215,8 +230,7 @@ export class EditComponent implements OnDestroy {
   };
 
   editEvent = (slideKey: string): void => {
-    const url: string = `/edit/${this.path}/${slideKey}`;
-    this.router.navigateByUrl(url);
+    this.router.navigate(['edit', this.path, slideKey]);
   };
 
   handleDataSave = (event: any): void => {

@@ -102,7 +102,6 @@ export abstract class AbstractSlide {
       unformatted: ['a', 'sub', 'sup', 'b', 'i', 'u']
     };
     const converted: string = prettify.html(code, options);
-    console.log(converted.replace(/ /g, '_'));
     return converted;
   };
 

@@ -17,7 +17,15 @@
     </div>
     
     <div class="editor-space">
-      <div class="editor-wrapper">
+      <mat-form-field class="display-as-wrapper">
+        <mat-label>Display As</mat-label>
+        <mat-select [(value)]="displayAs">
+          @for (option of displayAsOptions; track option) {
+            <mat-option [value]="option.toLowerCase()">{{ option }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <div class="editor-wrapper cards" *ngIf="displayAs === 'cards'">
         @for (slide of keyStatuses; track slide;) {
           <mat-card
             [class]="editClasses(slide.key)"
@@ -44,6 +52,32 @@
             <button mat-flat-button color="accent" (click)="editEvent(slide.key)">EDIT</button>
           </mat-card-actions>
         </mat-card>
+        }
+      </div>
+
+      <div class="editor-wrapper list" *ngIf="displayAs === 'list'">
+        @for (slide of keyStatuses; track slide;) {
+          <mat-grid-list cols="12" rowHeight="3em">
+            <mat-grid-tile colspan="1" class="tile" [class]="getStructureType(slide.key)">
+              @switch (getSlideIcon(slide.key).type) {
+                @case ('icon') {
+                  <mat-icon class="slide-title-icon">{{ getSlideIcon(slide.key).icon }}</mat-icon>
+                }
+                @case ('svg') {
+                  <img class="slide-title-svg" [src]="'/assets/images/icons/' + getSlideIcon(slide.key).icon + '.svg'" />
+                }
+              }
+            </mat-grid-tile>
+            <mat-grid-tile colspan="5" class="tile align-left" [class]="getStructureType(slide.key)">
+              {{ getSlidePatternTitle(slide.key) }}
+            </mat-grid-tile>
+            <mat-grid-tile colspan="4" class="tile align-left" [class]="getStructureType(slide.key)">
+              {{ getStructureType(slide.key) }}
+            </mat-grid-tile>
+            <mat-grid-tile colspan="2" class="tile" [class]="getStructureType(slide.key)">
+              <button mat-flat-button color="accent" (click)="editEvent(slide.key)">EDIT</button>
+            </mat-grid-tile>
+          </mat-grid-list>
         }
       </div>
     </div>

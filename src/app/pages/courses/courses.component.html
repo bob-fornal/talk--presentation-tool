@@ -2,17 +2,21 @@
   <h1 class="title">Bob's Talks</h1>
 
   <div class="tags">
-    <mat-checkbox
-      class="checkbox-margin"
-      [checked]="showPDF"
-      (change)="showPDF = !showPDF">
-      Show PDF Links
-    </mat-checkbox>
-    <ng-container *ngFor="let tag of tags; let i = index;">
-      <button [attr.aria-label]="tag.title + ' Tag'" class="btn" mat-flat-button [color]="selectedTag(tag)" (click)="filterTalks(tag)">
-        {{ tag.title }}
-      </button>
-    </ng-container>
+    <div class="functionality-wrapper">
+      <mat-checkbox
+        class="checkbox-margin"
+        [checked]="showPDF"
+        (change)="showPDF = !showPDF">
+        Show PDF Links
+      </mat-checkbox>
+    </div>
+    <div class="tag-list-wrapper">
+      <ng-container *ngFor="let tag of tags; let i = index;">
+        <button [attr.aria-label]="tag.title + ' Tag'" class="btn" mat-flat-button [color]="selectedTag(tag)" (click)="filterTalks(tag)">
+          {{ tag.title }}
+        </button>
+      </ng-container>
+    </div>
   </div>
 
   <div class="talks">

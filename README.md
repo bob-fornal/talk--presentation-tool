@@ -21,31 +21,35 @@ This project was designed to provide a means of doing a presentation with code e
 - [ ] Unit Tests.
 - [x] GitHub Actions Pipeline.
 - [x] BUG: Fix GitHub Page.
-- [x] Angular Upgrade to 17, Standalone Components
-- [x] CSS Cleanup of Duplicate Patterns
+- [x] Angular Upgrade to 17, Standalone Components.
+- [x] CSS Cleanup of Duplicate Patterns.
 
 ### Editing Talk
 
+- [ ] Incorporate a means of generating new talk.
 - [x] Incorporate a means of editing a talk.
-- [ ] Edit Deck Title.
+- [x] Incorporate a means of displaying a LIST of slides.
+- [x] Edit Deck Title.
 - [ ] Edit Global CSS.
-- [/] Edit Slide (Specific to Type)
-- [ ] Add Speaker Notes to Slide Editor
+- [ ] Add means of Disabling Slide.
+- [x] Edit Slide (Specific to Type).
+- [ ] Edit Slide (Code Editor).
 - [ ] Code-Editor (add and remove) triggers.
 - [ ] Add new Slide (before and after Slide).
 - [ ] Reorder Slides (up and down).
 - [ ] Delete Slide with Verification.
-- [ ] Split, indent, and Unsplit content (code adjust).
-- [ ] Copy JSON result.
+- [x] Add Speaker Notes to Slide Editor.
+- [x] Split, indent, and Unsplit content (prettify code).
+- [x] Save JSON result.
 
 ## Multiple Tabs
 
-- [ ] Broadcast Message Service(s) / Parent and Child
-- [ ] Add Speaker Notes to Deck (EDITING)
+- [x] Broadcast Message Service(s) / Parent and Child
+- [x] Add Speaker Notes to Deck (EDITING)
 
 ### Control Slide Deck
 
-- [ ] List of Pages
-- [ ] Next, Previous
-- [ ] Font Size (Zoom)
-- [ ] Determine and Trigger Functionality (code)
+- [x] List of Pages (navigation on page name)
+- [ ] Next, Previous (navigation without name).
+- [x] Font Size (Zoom)
+- [x] Determine and Trigger Functionality (code)

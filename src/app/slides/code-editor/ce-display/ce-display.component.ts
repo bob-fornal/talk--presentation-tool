@@ -154,6 +154,7 @@ export class CeDisplayComponent implements OnChanges, OnInit {
       this.scriptLoaded[trigger.file] = 'loaded';
     }
 
+    // TODO: Is this needed?
     await this.sleep(500);
     const env: { [key: string]: any; } = {};
     for (let i = 0, len = this.keys.length; i < len; i++) {

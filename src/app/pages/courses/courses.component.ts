@@ -111,7 +111,6 @@ export class CoursesComponent implements OnDestroy {
 
       if (talk.hasOwnProperty('pdf') === true && talk.pdf!.length > 0) {
         talk.pdfActive = await this.code.checkLink(talk.pdf!);
-        console.log(talk.pdf, talk.pdfActive);
       }
     });
   };

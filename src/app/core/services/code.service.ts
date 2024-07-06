@@ -46,7 +46,7 @@ export class CodeService {
       const file = await firstValueFrom(this.http.get(newUrl));
       return true;
     } catch (error: any) {
-      console.log('failed', error);
+      // console.log('failed', error);
       return error.status === 200;
     }
   }
