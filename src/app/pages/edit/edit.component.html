@@ -59,6 +59,9 @@
         @for (slide of keyStatuses; track slide;) {
           <mat-grid-list cols="12" rowHeight="3em">
             <mat-grid-tile colspan="1" class="tile" [class]="getStructureType(slide.key)">
+              <button mat-flat-button color="accent" (click)="editEvent(slide.key)">EDIT</button>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="1" class="tile" [class]="getStructureType(slide.key)">
               @switch (getSlideIcon(slide.key).type) {
                 @case ('icon') {
                   <mat-icon class="slide-title-icon">{{ getSlideIcon(slide.key).icon }}</mat-icon>
@@ -68,14 +71,11 @@
                 }
               }
             </mat-grid-tile>
-            <mat-grid-tile colspan="5" class="tile align-left" [class]="getStructureType(slide.key)">
-              {{ getSlidePatternTitle(slide.key) }}
-            </mat-grid-tile>
-            <mat-grid-tile colspan="4" class="tile align-left" [class]="getStructureType(slide.key)">
+            <mat-grid-tile colspan="2" class="tile" [class]="getStructureType(slide.key)">
               {{ getStructureType(slide.key) }}
             </mat-grid-tile>
-            <mat-grid-tile colspan="2" class="tile" [class]="getStructureType(slide.key)">
-              <button mat-flat-button color="accent" (click)="editEvent(slide.key)">EDIT</button>
+            <mat-grid-tile colspan="8" class="tile align-left" [class]="getStructureType(slide.key)">
+              {{ getSlidePatternTitle(slide.key) }}
             </mat-grid-tile>
           </mat-grid-list>
         }
