@@ -62,7 +62,7 @@
     {
       "folder": "a-look-inside-observables",
       "title": "A Look Inside Observables",
-      "pdf": "https://www.bobs-tech-presentations.com/assets/a-look-inside-observables/alio-minified.pdf",
+      "pdf": "https://www.bobs-tech-presentations.com/assets/talks/a-look-inside-observables/alio-minified.pdf",
       "tags": [
         "observables",
         "rxjs"
@@ -71,7 +71,7 @@
     {
       "folder": "active-career-management",
       "title": "Active Career Management",
-      "pdf": "https://www.bobs-tech-presentations.com/assets/active-career-management/active-career-management-minified.pdf",
+      "pdf": "https://www.bobs-tech-presentations.com/assets/talks/active-career-management/active-career-management-minified.pdf",
       "tags": [
         "career"
       ]
@@ -106,7 +106,7 @@
     {
       "folder": "what-to-avoid-when-writing-unit-tests--code",
       "title": "What To Avoid When Writing Unit Tests",
-      "pdf": "https://www.bobs-tech-presentations.com/assets/what-to-avoid-when-writing-unit-tests--code/what-to-avoid-when-writing-unit-tests-minified.pdf",
+      "pdf": "https://www.bobs-tech-presentations.com/assets/talks/what-to-avoid-when-writing-unit-tests--code/what-to-avoid-when-writing-unit-tests-minified.pdf",
       "tags": [
         "testing",
         "unit-tests"
@@ -114,7 +114,7 @@
     }, {
       "folder": "writing-testable-code",
       "title": "Writing Testable Code",
-      "pdf": "https://www.bobs-tech-presentations.com/assets/writing-testable-code/writing-testable-code-minified.pdf",
+      "pdf": "https://www.bobs-tech-presentations.com/assets/talks/writing-testable-code/writing-testable-code-minified.pdf",
       "tags": [
         "testing"
       ]

@@ -1,34 +1,25 @@
 {
   "ORDER": [
     "cover-slide-01",
-
     "history--slide",
-
     "career-levels--early-career",
     "career-levels--mid-career",
     "career-levels--late-career",
-
     "build-things--slide",
     "project--slide",
     "portfolio--slide",
     "resume-ats--slide",
-
     "linkedin--slide",
     "twitter-x--slide",
-
     "connections--slide",
     "interview-types--slide",
     "job-search--slide",
     "cold-calling--slide",
-
     "networking-01--slide",
     "networking-02--slide",
-
     "quickly-getting-job--slide",
-    
     "time-for-questions"
   ],
-
   "STYLE": [
     ".outer-wrapper {",
     "  background: url(\"./assets/images/grid--green.webp\");",
@@ -60,122 +51,114 @@
     "  margin-block-start: 0 !important;",
     "}"
   ],
-
   "cover-slide-01": {
     "title": "Active Career Management",
     "type": "cover-slide-01",
     "author": "Bob Fornal",
-    "bio1": "<img class=bio-logo src=./assets/images/code-squid.webp /><br/><div class=\"bold bio-header\">Entrepreneur</div>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.<br/><br/><div class=bold>https://code-squid.com</div>",
-    "bio2": "<img class=bio-logo src=./assets/images/leading-edje.webp /><br/><div class=bold>Senior Solutions Developer</div><div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth.<br/><br/><div class=bold>https://leadingedje.com</div>",
+    "bio1": "<img class=bio-logo src=./assets/images/code-squid.webp />\n<br/>\n<div class=\"bold bio-header\">Entrepreneur</div>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.\n<br/>\n<br/>\n<div class=bold>https://code-squid.com</div>",
+    "bio2": "<img class=bio-logo src=./assets/images/leading-edje.webp />\n<br/>\n<div class=bold>Senior Solutions Developer</div>\n<div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth.\n<br/>\n<br/>\n<div class=bold>https://leadingedje.com</div>",
     "notes": "Notes<ul><li>This is a collection of thoughts and ideas.</li><li>You should use what works for you.</li><li>Some of these are best practices, some are \"anti-patterns.\"</li><li>There is no guarantee of getting or maintaining a job.</li><li>Take and adapt what works for you.</li></ul>Focus on ...<ul><li>Entering Industry</li><li>Transitioning into Industry</li><li>Transitioning within Industry</li><li>Leaving Industry, Change Track</li></ul>"
   },
-
   "history--slide": {
     "title": "History",
     "type": "panel-double",
-    "text1": "<h2 class=h2-top>My History</h2><ul><li>25+ Years as a Teacher (Computers)</li><li>13+ Years as a Frontend Developer</li><li>(found) #100Devs Bootcamp</li><li>700+ Coffee Chats</li></ul>Over the years ...<ul><li>\"I did nothing to ACTIVELY manage my career.\"</li></ul>",
-    "text2": "<h2 class=h2-top>My Realization ...</h2><ul><li>Obligation to myself (and my family) to build a strong network.</li><li>What companies are good companies (by my standards)?</li><li>Who are the first people I will contact?</li><li>Am I prepared for the unexpected?</li></ul>",
+    "text1": "<h2 class=h2-top>My History</h2>\n<ul>\n    <li>25+ Years as a Teacher (Computers)</li>\n    <li>13+ Years as a Frontend Developer</li>\n    <li>(found) #100Devs Bootcamp</li>\n    <li>700+ Coffee Chats</li>\n</ul>Over the years ...\n<ul>\n    <li>\"I did nothing to ACTIVELY manage my career.\"</li>\n</ul>",
+    "text2": "<h2 class=h2-top>My Realization ...</h2>\n<ul>\n    <li>Obligation to myself (and my family) to build a strong network.</li>\n    <li>What companies are good companies (by my standards)?</li>\n    <li>Who are the first people I will contact?</li>\n    <li>Am I prepared for the unexpected?</li>\n</ul>",
     "notes": "<ul><li>Throughout my career, I did EVERYTHING WRONG.</li><li>I started working with bootcamp students and had to figure out how to help them.</li><li>I had to learn more about myself.</li></ul>This is a different market.<ul><li>Developers NEED to showcase and advocate for their skills.</li><li>Many have never had to do this.</li><li>They do not understand what they NEED to do to stand out ...</li><li>... employers chased them before.</li></ul>Realization<ul><li>Obligation to myself (and my family) to build a strong network.</li><li>What companies are good companies (by my standards)?</li><li>Who are the first people I will contact?</li><li>Am I prepared for the unexpected?</li></ul>"
   },
-
   "career-levels--early-career": {
     "title": "Career Levels: <span class=bronze>Early-Career</span>",
     "type": "panel-triple",
-    "text1": "<h2 class=\"h2-top bronze\">Early-Career</h2><br/><div class=bronze>&bull; Social Media</div><br/><div class=bronze>&bull; Right Job</div><br/><div class=bronze>&bull; Right Company</div><br/><div class=bronze>&bull; Connections</div>",
-    "text2": "<h2 class=\"h2-top silver\">Mid-Career</h2><br/>",
-    "text3": "<h2 class=\"h2-top gold\">Late-Career</h2><br/>",
+    "text1": "<h2 class=\"h2-top bronze\">Early-Career</h2>\n<br/>\n<div class=bronze>&bull; Social Media</div>\n<br/>\n<div class=bronze>&bull; Right Job</div>\n<br/>\n<div class=bronze>&bull; Right Company</div>\n<br/>\n<div class=bronze>&bull; Connections</div>",
+    "text2": "<h2 class=\"h2-top silver\">Mid-Career</h2>\n<br/>",
+    "text3": "<h2 class=\"h2-top gold\">Late-Career</h2>\n<br/>",
     "notes": "Breaking these down into broad scopes ...<br/><br/>Social Media (start to learn, professionally):<ul><li>Conferences and Meetups</li><li>LinkedIn & x/Twitter (it's a tool)</li><li>Use #100DaysOfCode to work with the algorithm.</li></ul>Right Job:<ul><li>Goals - define</li></ul>Right Company:<ul><li>60 Companies</li><li>Examine Values</li></ul>Connections (build):<ul><li>Fellow students</li><li>Past co-workers</li><li>Company peers</li></ul>"
   },
   "career-levels--mid-career": {
     "title": "Career Levels:  <span class=silver>Mid-Career</span>",
     "type": "panel-triple",
-    "text1": "<h2 class=\"h2-top bronze\">Early-Career</h2><br/><div class=bronze>&bull; Social Media</div><br/><div class=bronze>&bull; Right Job</div><br/><div class=bronze>&bull; Right Company</div><br/><div class=bronze>&bull; Connections</div>",
-    "text2": "<h2 class=\"h2-top silver\">Mid-Career</h2><br/><div class=silver>&bull; Social Media</div><br/><div class=silver>&bull; Right Job</div><br/><div class=silver>&bull; Right Company</div><br/><div class=silver>&bull; Connections</div>",
-    "text3": "<h2 class=\"h2-top gold\">Late-Career</h2><br/>",
+    "text1": "<h2 class=\"h2-top bronze\">Early-Career</h2>\n<br/>\n<div class=bronze>&bull; Social Media</div>\n<br/>\n<div class=bronze>&bull; Right Job</div>\n<br/>\n<div class=bronze>&bull; Right Company</div>\n<br/>\n<div class=bronze>&bull; Connections</div>",
+    "text2": "<h2 class=\"h2-top silver\">Mid-Career</h2>\n<br/>\n<div class=silver>&bull; Social Media</div>\n<br/>\n<div class=silver>&bull; Right Job</div>\n<br/>\n<div class=silver>&bull; Right Company</div>\n<br/>\n<div class=silver>&bull; Connections</div>",
+    "text3": "<h2 class=\"h2-top gold\">Late-Career</h2>\n<br/>",
     "notes": "Social media (building and maintaining):<ul><li>Conferences and Meetups</li><li>Maintain activity and details.</li></ul>Right Job (learning):<ul><li>Goals - actively maintain</li></ul>Right Company (learn and apply):<ul><li>60 Companies (should have, adjust based on activity/news)</li><li>Actively maintain</li></ul>Can be more strategic with connections ...<br/><br/>Connections (build and maintain):<ul><li>Peers</li><li>Tech leads</li><li>Immediate manager</li><li>Past peers from school</li></ul>"
   },
   "career-levels--late-career": {
     "title": "Career Levels:  <span class=gold>Late-Career</span>",
     "type": "panel-triple",
-    "text1": "<h2 class=\"h2-top bronze\">Early-Career</h2><br/><div class=bronze>&bull; Social Media</div><br/><div class=bronze>&bull; Right Job</div><br/><div class=bronze>&bull; Right Company</div><br/><div class=bronze>&bull; Connections</div>",
-    "text2": "<h2 class=\"h2-top silver\">Mid-Career</h2><br/><div class=silver>&bull; Social Media</div><br/><div class=silver>&bull; Right Job</div><br/><div class=silver>&bull; Right Company</div><br/><div class=silver>&bull; Connections</div>",
-    "text3": "<h2 class=\"h2-top gold\">Late-Career</h2><br/><div class=gold>&bull; Social Media</div><br/><div class=gold>&bull; Right Job</div><br/><div class=gold>&bull; Right Company</div><br/><div class=gold>&bull; Connections</div>",
+    "text1": "<h2 class=\"h2-top bronze\">Early-Career</h2>\n<br/>\n<div class=bronze>&bull; Social Media</div>\n<br/>\n<div class=bronze>&bull; Right Job</div>\n<br/>\n<div class=bronze>&bull; Right Company</div>\n<br/>\n<div class=bronze>&bull; Connections</div>",
+    "text2": "<h2 class=\"h2-top silver\">Mid-Career</h2>\n<br/>\n<div class=silver>&bull; Social Media</div>\n<br/>\n<div class=silver>&bull; Right Job</div>\n<br/>\n<div class=silver>&bull; Right Company</div>\n<br/>\n<div class=silver>&bull; Connections</div>",
+    "text3": "<h2 class=\"h2-top gold\">Late-Career</h2>\n<br/>\n<div class=gold>&bull; Social Media</div>\n<br/>\n<div class=gold>&bull; Right Job</div>\n<br/>\n<div class=gold>&bull; Right Company</div>\n<br/>\n<div class=gold>&bull; Connections</div>",
     "notes": "This is what prompted this talk; late career with limited understanding of Social Media ...<br/><br/>Social Media (different impact):<ul><li>Conferences and Meetups (speaking and engaging)</li><li>Clean up and working network</li></ul>Right Job:<ul><li>Goals (are we thinging of post-retirement? I LOVE WRITING CODE)</li></ul>Right Company:<ul><li>60 Companies</li><li>Actively maintain</li></ul>Connections:<ul><li>Peer Developers</li><li>Peer Management</li><li>Peers that have moved someplace else</li></ul>"
   },
-
   "build-things--slide": {
     "title": "Building Things",
     "type": "panel-double",
-    "text1": "<h2 class=h2-top>Issue</h2>\"Stop telling developers to make projects to get a job. I have never had an employer ask me about a project I built!\"<h2>Reality</h2><ul><li>This applies more to Junior than Senior.</li><li>Allows them to show something of significance.</li><li>Demonstrate proof of skill and impact.</li></ul>",
-    "text2": "<h2 class=h2-top>Thoughts</h2><ul><li>Can be used to navigate conversations.</li><li>Increase confidence.</li><li>Larger projects is where true learning occurs.</li><li>Stack the deck in your favor.</li></ul>",
+    "text1": "<h2 class=h2-top>Issue</h2>\"Stop telling developers to make projects to get a job. I have never had an employer ask me about a project I built!\"\n<h2>Reality</h2>\n<ul>\n    <li>This applies more to Junior than Senior.</li>\n    <li>Allows them to show something of significance.</li>\n    <li>Demonstrate proof of skill and impact.</li>\n</ul>",
+    "text2": "<h2 class=h2-top>Thoughts</h2>\n<ul>\n    <li>Can be used to navigate conversations.</li>\n    <li>Increase confidence.</li>\n    <li>Larger projects is where true learning occurs.</li>\n    <li>Stack the deck in your favor.</li>\n</ul>",
     "notes": "This mentality of \"not building things\" comes from a mentality where demand was higher.<br/><br/>Projects allow you to ...<ul><li>Show something of significance</li><li>Show proof of skill and impact</li><li>Provide talking points</li><li>Increase confidence</li></ul>Thoughts<ul><li>My repos are mostly small deep-dives, shows learning but not depth</li><li>Stack the deck in your favor</li><li>Talk to work on a project</li></ul>Levels:<ul><li>Early (do this)</li><li>Mid (do this, but how far in)</li><li>Late (can build - if shifting technology, but can also speak to experience)</li><ul>"
   },
   "project--slide": {
     "title": "Project(s)",
     "type": "panel-double",
-    "text1": "<h2 class=h2-top>Include</h2><ul><li>Branching</li><li>Wiki Notes (documentation)</li><li>Project Board</li><li>PR Markdown</li><li>README (documentation)</li><li>Pipeline (live)</li><li>Unit Tests (tested)</li></ul>",
-    "text2": "<h2 class=h2-top>Types</h2><ul><li>Group</li><li>Personal / Passion</li><li>Exploratory</li></ul><h2>Considerations</h2><ul><li>Build around what you know</li><li>What does a good project look like?</li></ul><h2>Killers</h2><ul><li>Broken Links</li><li>Bad Spelling</li><li>Grammar</li></ul>",
+    "text1": "<h2 class=h2-top>Include</h2>\n<ul>\n    <li>Branching</li>\n    <li>Wiki Notes (documentation)</li>\n    <li>Project Board</li>\n    <li>PR Markdown</li>\n    <li>README (documentation)</li>\n    <li>Pipeline (live)</li>\n    <li>Unit Tests (tested)</li>\n</ul>",
+    "text2": "<h2 class=h2-top>Types</h2>\n<ul>\n    <li>Group</li>\n    <li>Personal / Passion</li>\n    <li>Exploratory</li>\n</ul>\n<h2>Considerations</h2>\n<ul>\n    <li>Build around what you know</li>\n    <li>What does a good project look like?</li>\n</ul>\n<h2>Killers</h2>\n<ul>\n    <li>Broken Links</li>\n    <li>Bad Spelling</li>\n    <li>Grammar</li>\n</ul>",
     "notes": "Include ...<ul><li>Branching</li><li>Wiki Notes (documentation)</li><li>Project Board</li><li>PR Markdown</li><li>README (documentation)</li><li>Pipeline (live)</li><li>Unit Tests (tested)</li><li>Define and work to MVP complete.</li></ul>Here are a few types of projects.<ul><li>Group</li><li>Personal / Passion projects allow your care and concern to show through; this should be a solution to a problem you can speak to.</li><li>Exploratory</li></ul>Considerations<ul><li>Build around what you know</li><li>What does a good project look like?</li><li>KILLERS: Broken Links, Bad Spelling, and Grammar</li></ul>Levels:<ul><li>Early (need to learn these business processes)</li><li>Mid (don't stop doing the good business things)</li><li>Late (might have enough based on work experience, might not)</li></ul>"
   },
   "portfolio--slide": {
     "title": "Portfolio",
     "type": "panel-double",
-    "text1": "<h2 class=h2-top>Sections</h2><ul><li>Hero (with Call To Action)</li><li>Images as a Dev, at Meetups</li><li>Projects and Tech Used</li><li>Resume (optional)</li><li>Contact Information</li></ul>",
-    "text2": "<h2 class=h2-top>Considerations</h2><ul><li>Who are we creating this for?</li><li>Developers or Recruiter / Hiring Manager?</li><li>Are resume and links up to date?</li></ul>",
+    "text1": "<h2 class=h2-top>Sections</h2>\n<ul>\n    <li>Hero (with Call To Action)</li>\n    <li>Images as a Dev, at Meetups</li>\n    <li>Projects and Tech Used</li>\n    <li>Resume (optional)</li>\n    <li>Contact Information</li>\n</ul>",
+    "text2": "<h2 class=h2-top>Considerations</h2>\n<ul>\n    <li>Who are we creating this for?</li>\n    <li>Developers or Recruiter / Hiring Manager?</li>\n    <li>Are resume and links up to date?</li>\n</ul>",
     "notes": "Sections<ul><li>Hero (with Call To Action)</li><li>Images as a Dev, at Meetups</li><li>Projects and Tech Used</li><li>Resume (optional)</li><li>Contact Information</li></ul>Portfolio<ul><li>Who are we building this for?</li><li>Other Devs, NO; they are references. Reach the people making a hiring decision.</li><li>Hero/CTA: I am the person you need on that team.</li><li>They need to get to know you - story/photos</li></ul>Thoughts<ul><li>Make sure you have the right focus for your portfolio.</li><li>Have at least two projects that you have ownership of.</li><li>Do you need the resume here? Especially, if you are applying for more than one type of position.</li></ul>Level<ul><li>Early (this can be a project; if not, use of templates is OK)</li><li>Mid (don't neglect it; redesign when in a crunch hurts)</li><li>Late (might need to build, if you want the exposure; build in public)</li></ul>"
   },
-
   "resume-ats--slide": {
     "title": "Resume / ATS",
     "type": "panel-double",
-    "text1": "<h2 class=h2-top>Resume</h2><ul><li>Summary</li><li>Skills</li><li>Employment</li></ul><h2>Considerations</h2><ul><li>Master Resume</li><li>Simpler is better (no photo, ATS ready)</li><li>Broken Links, Bad Spelling, and Grammar</li><li>Regional Differences</li><li>Cover Letter?</li></ul>",
-    "text2": "<h2 class=h2-top>Applicant Tracking Systems</h2>\"While we are talking about resumes ...\"<h2>Considerations</h2><ul><li>Track EVERYTHING</li><li>Applying Early</li><li>Opimizing Resume Content Sent</li><li>\"The goal of the recruiter is to hire you; not to reject you.\" - Francesco Cuilla</li></ul>",
+    "text1": "<h2 class=h2-top>Resume</h2>\n<ul>\n    <li>Summary</li>\n    <li>Skills</li>\n    <li>Employment</li>\n</ul>\n<h2>Considerations</h2>\n<ul>\n    <li>Master Resume</li>\n    <li>Simpler is better (no photo, ATS ready)</li>\n    <li>Broken Links, Bad Spelling, and Grammar</li>\n    <li>Regional Differences</li>\n    <li>Cover Letter?</li>\n</ul>",
+    "text2": "<h2 class=h2-top>Applicant Tracking Systems</h2>\"While we are talking about resumes ...\"\n<h2>Considerations</h2>\n<ul>\n    <li>Track EVERYTHING</li>\n    <li>Applying Early</li>\n    <li>Opimizing Resume Content Sent</li>\n    <li>\"The goal of the recruiter is to hire you; not to reject you.\" - Francesco Cuilla</li>\n</ul>",
     "notes": "Resume<ul><li>There are regional/cultural variances.</li><li>Don't lie: but a solid guess is OK.<li>Can you get numbers before leaving?</li></li><li>Summary: Why are you the best person for this job?</li><li>Skills: Just those listed for this job.</li><li>Focus bullets on what was ROI.</li></ul>Cover Letter<ul><li>If transitioning (late career counts) to explain why.</li></ul>ATS<ul><li>ATS will group by percentage match of resume to posting;</li><li>then, it will match by time applied - earlier and complete is the best option.</li><li>Track everything: Application, followups, and thank you (exquisite detail).</li></ul>Level<ul><li>This is the same at Early, Mid, and Late Career</li></ul>"
   },
-
   "linkedin--slide": {
     "title": "LinkedIn",
     "type": "panel-double",
-    "text1": "<h2 class=h2-top>Sections</h2><ul><li>Banner</li><li>Image</li><li>Tagline</li></ul><ul><li>About - Sell yourself</li><li>Featured - You decide</li><li>Activity - weekly (minimum)</li><li>Experience - Industry Standard Terms</li><li>Skills - Endorsed</li><li>Recommendations</li></ul>",
-    "text2": "<h2 class=h2-top>Considerations</h2><ul><li>Post into Groups (impact)</li><li>Social Saturday</li></ul>",
+    "text1": "<h2 class=h2-top>Sections</h2>\n<ul>\n    <li>Banner</li>\n    <li>Image</li>\n    <li>Tagline</li>\n</ul>\n<ul>\n    <li>About - Sell yourself</li>\n    <li>Featured - You decide</li>\n    <li>Activity - weekly (minimum)</li>\n    <li>Experience - Industry Standard Terms</li>\n    <li>Skills - Endorsed</li>\n    <li>Recommendations</li>\n</ul>",
+    "text2": "<h2 class=h2-top>Considerations</h2>\n<ul>\n    <li>Post into Groups (impact)</li>\n    <li>Social Saturday</li>\n</ul>",
     "notes": "Level<ul><li>At all levels, learn to use LI before it's needed.</li><li>These are common issues at all levels.</li><li>Sell yourself - creating an account with minimum information is bad.</li></ul>Site<ul><li>Banner needs to say, \"I am in technology;\" Reduce the cognitive load.</li><li>Image needs to be clean and bright.</li><li>Tagline is the first thing a recruiter sees.</li><li>About - Above The Fold</li><li>Featured: Resume, Project(s), Portfolio, Articles, Content / Posts (use an image).</li><li>Activity: The algorithm rewards activity (weekly MINIMUM); posts, not re-post.</li><li>Experience; change to Industry Standard Terms</li><li>Recommendations - can be considered a \"red flag\" if not present.</li></ul>Considerations<ul><li>Post into Groups (impact)</li><li>Social Saturday</li></ul>Level (REPEAT)<ul><li>At all levels, learn to use LI before it's needed.</li></li>"
   },
   "twitter-x--slide": {
     "title": "x/Twitter",
     "type": "panel-double",
-    "text1": "<h2 class=h2-top>Sections</h2><ul><li>Banner, Image, and Tagline</li><li>Links</li><li>Pinned Post</li></ul><h2>Why?</h2><ul><li>Strong Tech Community</li><li>Recruiters / Visibility</li></ul>",
-    "text2": "<h2 class=h2-top>Patterns</h2><ul><li>Follow recruiters</li><li>Create a recruiter list</li><li>Retweet good content</li><li>Find the influencers in your industry</li><li>People with common interest or passion</li><li>People in your hometown or current location</li></ul><h2>Considerations</h2><ul><li>Are links correct?</li></ul>",
+    "text1": "<h2 class=h2-top>Sections</h2>\n<ul>\n    <li>Banner, Image, and Tagline</li>\n    <li>Links</li>\n    <li>Pinned Post</li>\n</ul>\n<h2>Why?</h2>\n<ul>\n    <li>Strong Tech Community</li>\n    <li>Recruiters / Visibility</li>\n</ul>",
+    "text2": "<h2 class=h2-top>Patterns</h2>\n<ul>\n    <li>Follow recruiters</li>\n    <li>Create a recruiter list</li>\n    <li>Retweet good content</li>\n    <li>Find the influencers in your industry</li>\n    <li>People with common interest or passion</li>\n    <li>People in your hometown or current location</li>\n</ul>\n<h2>Considerations</h2>\n<ul>\n    <li>Are links correct?</li>\n</ul>",
     "notes": "Level<ul><li>At all levels, learn to use x/Twitter before it's needed.</li><li>These are common issues at all levels.</li><li>An active account (not rockstar) is easier to find than a brand new shiny one.</li></ul>Sections<ul><li>Banner, Image, and Tagline</li><li>Links (verify)</li><li>Pinned Post</li></ul>Is there value in using x/Twitter?<ul><li>YES; Recruiters find people here all the time</li></ul>Patterns<ul><li>Recruiters: The list helps you see what they are sharing more easily.</li><li>RT: People you follow will be grateful.</li></ul>Patterns<ul><li>Follow recruiters</li><li>Create a recruiter list</li><li>Retweet good content</li><li>Find the influencers in your industry</li><li>People with common interest or passion</li><li>People in your hometown or current location</li></ul>"
   },
-
   "connections--slide": {
     "title": "Connections",
     "type": "panel-double",
-    "text1": "<h2 class=h2-top>LinkedIn</h2><ul><li>How to connect?</li><li>What is your ask?</li><li>Social Saturday?</li></ul><h2>x/Twitter</h2><ul><li>Strong Tech Community</li><li>Recruiters / Visibility</li><li>Strengthen Connections</li></ul>",
-    "text2": "<h2 class=h2-top>Considerations</h2><ul><li>Stories - people remember the stories.</li><li>Active Listening</li><li>Validate connections in some meaningful way.</li><li>Use meaningful times to reconnect (Christmas).</li><ul>",
+    "text1": "<h2 class=h2-top>LinkedIn</h2>\n<ul>\n    <li>How to connect?</li>\n    <li>What is your ask?</li>\n    <li>Social Saturday?</li>\n</ul>\n<h2>x/Twitter</h2>\n<ul>\n    <li>Strong Tech Community</li>\n    <li>Recruiters / Visibility</li>\n    <li>Strengthen Connections</li>\n</ul>",
+    "text2": "<h2 class=h2-top>Considerations</h2>\n<ul>\n    <li>Stories - people remember the stories.</li>\n    <li>Active Listening</li>\n    <li>Validate connections in some meaningful way.</li>\n    <li>Use meaningful times to reconnect (Christmas).</li>\n</ul>",
     "notes": "LinkedIn<ul><li>Connecting: Use the activity, become known or actively maintain.</li><li>What is active? Find them.</li><li>Use their feed ...</li><li>What is your ask? Connect and chat?</li><li>Do Social Saturdays have value?</li><li>Who am I supporting? Can I strengthen the connections?</li></ul>x/Twitter<ul><li>There is a string tech community</li><li>It increases your visibility; recruiters</li></ul>Considerations<ul><li>Stories - people remember the stories.</li><li>Active Listening (me taking notes)</li><li>Validate connections in some meaningful way.</li><li>Use meaningful times to reconnect (Christmas).</li></ul>Levels<ul><li>Early (reach out, make connections)</li><li>Mid (be active)</li><li>Late (continue active)</li></ul>"
   },
   "interview-types--slide": {
     "title": "Interview Types",
     "type": "panel-double",
-    "text1": "<ul class=h2-top><li class=yellow>Informal Interview</li><li>Cultural Fit</li><li>AI - Resume Overview</li><li>Technical - Code Challenge</li><li>Technical - Conversational</li><li>Technical - Take Home, Code Review</li><li>Technical - Project on Portfolio</li></ul>",
-    "text2": "Things to account for, research, and practice:<ul><li>30-second elevator pitch.</li><li>Company Website</li><li>Postings</li><li>Interviewer(s)</li><li>Tech Stack</li><li>Glassdoor</li></ul>Plan out questions.",
+    "text1": "<ul class=h2-top>\n    <li class=yellow>Informal Interview</li>\n    <li>Cultural Fit</li>\n    <li>AI - Resume Overview</li>\n    <li>Technical - Code Challenge</li>\n    <li>Technical - Conversational</li>\n    <li>Technical - Take Home, Code Review</li>\n    <li>Technical - Project on Portfolio</li>\n</ul>",
+    "text2": "Things to account for, research, and practice:\n<ul>\n    <li>30-second elevator pitch.</li>\n    <li>Company Website</li>\n    <li>Postings</li>\n    <li>Interviewer(s)</li>\n    <li>Tech Stack</li>\n    <li>Glassdoor</li>\n</ul>Plan out questions.",
     "notes": "Types<ul><li><span class=yellow>Informal Interview</span> - you initiate</li><li>Cultural Fit</li><li>AI - Resume Overview</li><li>Technical - Code Challenge</li><li>Technical - Conversational</li><li>Technical - Take Home, Code Review</li><li>Technical - Project on Portfolio</li></ul>30-second elevator pitch<ul><li>Remember that it should go beyond the resume and LinkedIn.</li></ul>Company Website<ul><li>People on LinkedIn, Products, Clients, Feedback, News, Articles, and Values.</li></ul>Posting<ul><li>What is the job? Re-read any emails. Check calendar invite.</li></ul>Interviewer(s)<ul><li>LinkedIn, Posts, Articles. STALK THEM.</li></ul>Tech Stack<ul><li>Tools, Libraries, Frameworks (anything on GitHub) - Release Notes and Related Projects.</li><li>Related: React & Redux, Angular & RxJS</li></ul>Glassdoor<ul><li>Interviews, About, People.</li></ul>Questions<ul><li>ALL questions that come to mind - write it down; showcase interest.</li></ul>Levels<ul><li>Early, Mid, and Late - the difference is the depth of connections</li></ul>"
   },
   "job-search--slide": {
     "title": "Job Search",
     "type": "panel-single",
-    "text1": "<h2 class=h2-top>2-Hour Job Search</h2><ul><li>Small/Mid-Size Companies</li><li>Tight Focus on Domain</li></ul><h2>Thoughts</h2><ul><li>Google Search Pattern</li></ul><div class=indent-color><code>site:icims.com | greenhouse.io | jobvite.io | smartrecruiters.com | workable.com | zoho.com | myworkdayjobs.com \"fullstack developer\" OR \"fullstack engineer\" OR \"full stack developer\" OR \"full stack engineer\" AND \"remote\"</code></div>",
+    "text1": "<h2 class=h2-top>2-Hour Job Search</h2>\n<ul>\n    <li>Small/Mid-Size Companies</li>\n    <li>Tight Focus on Domain</li>\n</ul>\n<h2>Thoughts</h2>\n<ul>\n    <li>Google Search Pattern</li>\n</ul>\n<div class=indent-color>\n    <code>site:icims.com | greenhouse.io | jobvite.io | smartrecruiters.com | workable.com | zoho.com | myworkdayjobs.com \"fullstack developer\" OR \"fullstack engineer\" OR \"full stack developer\" OR \"full stack engineer\" AND \"remote\"</code>\n</div>",
     "notes": "Book - 2-Hour Job Search (Amazon)<ul><li>Domain Specific Knowledge</li><li>Target a specifiv industry like Financial.</li></ul>Job Search<ul><li>Company size - large ar not safe.</li><li>Domain - build in that stack.</li></ul>Google Seach Pattern<ul><li>Search boards at the company level (generally more than on paid boards)</li><li>Adjust for job title variants</li><li>Remote or a specific location</li><li>Search within 24 hours, DAILY.</li><li>Target higher levels within the ATS systems.</li></ul>Levels<ul><li>Early, Mid, and Late - no difference; target activity - when you apply.</li></ul>"
   },
   "cold-calling--slide": {
     "title": "Cold Calling",
     "type": "panel-double",
-    "text1": "<h2 class=h2-top>Cold Emailing</h2><ul><li>Powerful marketing tool.</li><li>Effective tool for personal branding.</li><li>Can help you expand your search and potentially uncover new opportunities.</li></ul><h2>Challenges</h2><ul><li>Getting the recipient to open and read the email.</li><li>Crafting a message that is both compelling and personalised.</li><li>Personalisation is key.</li><li>Value proposition.</li><li>Make it easy to read.</li></ul>",
-    "text2": "<h2 class=h2-top>The Right People</h2><ul><li>Identify the ideal customer.</li><li>Determine their needs and what problems they face.</li></ul><h2>Mastery</h2><ul><li>Follow up to boost response rates.</li><li>Reach out through a different communication channel.</li><li>Balance being pushy with being persistent.</li></ul>",
+    "text1": "<h2 class=h2-top>Cold Emailing</h2>\n<ul>\n    <li>Powerful marketing tool.</li>\n    <li>Effective tool for personal branding.</li>\n    <li>Can help you expand your search and potentially uncover new opportunities.</li>\n</ul>\n<h2>Challenges</h2>\n<ul>\n    <li>Getting the recipient to open and read the email.</li>\n    <li>Crafting a message that is both compelling and personalised.</li>\n    <li>Personalisation is key.</li>\n    <li>Value proposition.</li>\n    <li>Make it easy to read.</li>\n</ul>",
+    "text2": "<h2 class=h2-top>The Right People</h2>\n<ul>\n    <li>Identify the ideal customer.</li>\n    <li>Determine their needs and what problems they face.</li>\n</ul>\n<h2>Mastery</h2>\n<ul>\n    <li>Follow up to boost response rates.</li>\n    <li>Reach out through a different communication channel.</li>\n    <li>Balance being pushy with being persistent.</li>\n</ul>",
     "notes": "Kind of controversial ...<ul><li>Sales: Some people are very good at it.</li><li>Numbers for return/response are LOW.</li><li>If done right, it can be done well.</li></ul>Got this from ...<ul><li>College student reaching out to students, TAs, and professors.</li><li>Other colleges/companies: doing research in her field.</li><li>She crafted a message ... (varied), I'm doing [this] that's related</li><li>How can I add to that?</li><li>Enters the job market with a staggering network.</li></ul>And, more<ul><li>Good morning.</li><li>Good morning, how's it going?</li><li>Not just a single effort.</li></ul>Cold emailing is a form of communication ...<ul><li>Reaching out to potential employers, professors, customers, or clients</li><li>Who have not expressed a prior interest in a person.</li></ul>Challenges<ul><li>Capture their attention.</li><li>Focus on how you help them, not what YOU want from them.</li><li>Subject-line: Attention Grabbing (not generic)</li><li>Clear and concise: introduce yourself and explain why you are reaching out.</li><li>What can you offer?</li></ul>Levels<ul><li>Early - this is definitely something that can benefit from early use.</li><li>Mid - can be of benefit; need to be selective</li><li>Late - this can be of use if you are PLANNING a shift</li></ul>"
   },
-
   "networking-01--slide": {
     "title": "Networking",
     "type": "image-only",
@@ -186,19 +169,17 @@
   "networking-02--slide": {
     "title": "Networking",
     "type": "panel-double",
-    "text1": "<h2 class=h2-top>Relationships</h2><ol><li>Thoughtful conversation</li><li>Mutual benefit</li><li>Respect</li></ol>",
-    "text2": "<h2 class=h2-top>Location</h2><ul><li>Network in the Right Place</li><li>Conferences - ensure it's not a sales event.</li></ul>",
+    "text1": "<h2 class=h2-top>Relationships</h2>\n<ol>\n    <li>Thoughtful conversation</li>\n    <li>Mutual benefit</li>\n    <li>Respect</li>\n</ol>",
+    "text2": "<h2 class=h2-top>Location</h2>\n<ul>\n    <li>Network in the Right Place</li>\n    <li>Conferences - ensure it's not a sales event.</li>\n</ul>",
     "notes": "Thoughtful conversation<ul><li>Get past small talk, pleasantries, and elevator pitches.</li><li>Have in-depth discussions about your industry, your challenges, and your goals.</li></ul>Mutual benefit<ul><li>Both parties see value in the relationship.</li></ul>Respect<ul><li>You admire each other's work and expertise.</li><li>There's no hidden agenda.</li></ul>Networking in the right place ...<ul><li>Compare professional networking to dating.</li><li>There are lots of dating opportunities in a bar; rarely partners.</li><li>Network where you are most comfortable - me, college not church.</li></ul>(summarize top three)<br/><br/>Levels<ul><li>Early - these are skills that need development; active participation.</li><li>Mid - these are skills you should be working on within your team.</li><li>Late - don't lose the momentum and experience you've built.</li></ul>"
   },
-
   "quickly-getting-job--slide": {
     "title": "If I Had To ...",
     "type": "panel-double",
-    "text1": "<h2 class=h2-top>Get a Job as Quickly as Possible</h2><ol><li>Referral: strong network, top 10.</li><li>Domain search: targeting based on experience.</li><li>Cold email: targeting and stalking.</li><li>Traditional: finding jobs and applying.</li></ol>",
-    "text2": "<h2 class=h2-top>Thoughts</h2><ul><li>They all have benefits and weaknesses.</li><li>They all take work, research, and persistence.</li><li>You need to go the route that's best for you and your circumstances.</li></ul>",
+    "text1": "<h2 class=h2-top>Get a Job as Quickly as Possible</h2>\n<ol>\n    <li>Referral: strong network, top 10.</li>\n    <li>Domain search: targeting based on experience.</li>\n    <li>Cold email: targeting and stalking.</li>\n    <li>Traditional: finding jobs and applying.</li>\n</ol>",
+    "text2": "<h2 class=h2-top>Thoughts</h2>\n<ul>\n    <li>They all have benefits and weaknesses.</li>\n    <li>They all take work, research, and persistence.</li>\n    <li>You need to go the route that's best for you and your circumstances.</li>\n</ul>",
     "notes": "Get a Job as Quickly as Possible<ol><li>Getting a job through referral: strong network, top 10 (can I list them RIGHT NOW).</li><li>Domain search: targeting based on experience + google search.</li><li>Cold email: targeting and stalking - only as good as the time and effort.</li><li>Traditional: finding jobs and applying - this is a valid route at the right company, place, and time.</li></ol>Thoughts<ul><li>They all have benefits and weaknesses.</li><li>They all take work, research, and persistence.</li><li>You need to go the route that's best for you and your circumstances.</li></ul>Levels<ul><li>Early, Mid, Late - do these BEFORE you have the strong need, if you can.</li><li>All of our path(s) and requirements vary.</li></ul>"
   },
-
   "time-for-questions": {
     "title": "",
     "type": "image-only",
