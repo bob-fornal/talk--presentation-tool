@@ -42,7 +42,7 @@
                   <img class="slide-title-svg" [src]="'/assets/images/icons/' + getSlideIcon(slide.key).icon + '.svg'" />
                 }
               }
-              <span>{{ getSlidePatternTitle(slide.key) }}</span>
+              <span [innerHTML]="getSlidePatternTitle(slide.key)"></span>
             </mat-card-title>
           </mat-card-header>
           <mat-card-content class="card-body">
@@ -75,7 +75,7 @@
               {{ getStructureType(slide.key) }}
             </mat-grid-tile>
             <mat-grid-tile colspan="8" class="tile align-left" [class]="getStructureType(slide.key)">
-              {{ getSlidePatternTitle(slide.key) }}
+              <span [innerHTML]="getSlidePatternTitle(slide.key)"></span>
             </mat-grid-tile>
           </mat-grid-list>
         }
