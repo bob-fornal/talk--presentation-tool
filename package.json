@@ -7,6 +7,7 @@
     "start": "ng serve",
     "build": "ng build",
     "build:prod": "ng build --configuration production --base-href https://bob-fornal.github.io/talk--presentation-tool/ --deploy-url https://bob-fornal.github.io/talk--presentation-tool/",
+    "build:sitemap": "ng build --configuration production --output-path dist/client",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
