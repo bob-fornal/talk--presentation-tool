@@ -6,4 +6,58 @@
     data-adjust="adjust-50-percent"
     [attr.data-required]="true"
     [(ngModel)]="title" />
+  
+  <div class="array-wrapper">
+    <div class="array-title">Files to View</div>
+    @for (file of files; track file; let index = $index;) {
+      <div class="array-row">
+        <input
+          type="text"
+          placeholder="Filename to Load"
+          data-array-type="files"
+          data-array-index="index"
+          [attr.data-required]="true"
+          [value]="file" />
+
+        <row-buttons
+          (add)="addRow('files', index, $event)"
+          (remove)="removeRow('files', index)">
+        </row-buttons>
+      </div>
+    }
+  </div>
+
+  <div class="array-wrapper">
+    <div class="array-title">File Triggers</div>
+    @for (trigger of triggers; track trigger; let index = $index;) {
+      <div class="array-row">
+        <input
+          type="text"
+          placeholder="Title of Trigger"
+          data-array-type="triggers.title"
+          data-array-index="index"
+          [attr.data-required]="true"
+          [value]="trigger.title" />
+        <input
+          type="text"
+          placeholder="Function to Trigger"
+          data-array-type="triggers.file"
+          data-array-index="index"
+          [attr.data-required]="true"
+          [value]="trigger.file" />
+        <input
+          type="text"
+          placeholder="Init"
+          data-array-type="triggers.init"
+          data-array-index="index"
+          [attr.data-required]="true"
+          [value]="trigger.init" />
+
+        <row-buttons
+          (add)="addRow('triggers', index, $event)"
+          (remove)="removeRow('triggers', index)">
+        </row-buttons>
+      </div>
+    }
+  </div>
 </div>

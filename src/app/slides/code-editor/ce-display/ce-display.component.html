@@ -4,10 +4,27 @@
   <div class="panel--content-wrapper">
     <div class="panel--files">
       <mat-selection-list role="list">
-        <a mat-list-item [routerLink]="" [attr.selected]="file === selected" *ngFor="let file of files;" (click)="fileSelection(file)" class="file">{{ file }}</a>
+        @for (file of files; track file) {
+          <a
+            mat-list-item
+            class="file"
+            [routerLink]=""
+            [attr.selected]="file === selected"
+            (click)="fileSelection(file)">
+            {{ file }}
+          </a>
+        }
       </mat-selection-list>
       <mat-selection-list role="list">
-        <a mat-list-item [routerLink]="" *ngFor="let trigger of triggers;" (click)="triggerFile(trigger)" class="trigger">{{ trigger.title }}</a>
+        @for (trigger of triggers; track trigger) {
+          <a
+            mat-list-item
+            class="trigger"
+            [routerLink]=""
+            (click)="triggerFile(trigger)">
+            {{ trigger.title }}
+          </a>
+        }
       </mat-selection-list>
     </div>
     <div class="panel--editor">

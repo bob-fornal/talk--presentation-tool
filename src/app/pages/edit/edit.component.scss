@@ -188,6 +188,9 @@
   margin-bottom: 1em;
 
   .button-toggle-option {
+    --mat-standard-button-toggle-selected-state-background-color: #69f0ae;
+    --mat-standard-button-toggle-selected-state-text-color: #000000;
+    
     &:first-of-type {
       padding-left: 1em;
     }

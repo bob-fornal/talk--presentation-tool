@@ -1,0 +1,27 @@
+.array-wrapper {
+  margin: 1em;
+
+  .array-row {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5em;
+  }
+
+  [data-array-type] {
+    --data-handler-width: 25%;
+
+    display: inline-block;
+    box-sizing: border-box;
+
+    background-color: #64646480;
+    border: 1px solid rgb(118, 118, 118);
+    color: #eee;
+    font-weight: normal;
+    font-size: 1em;
+
+    margin-right: 1em;
+    margin-left: 1em;
+    padding: 1em;
+    width: var(--data-handler-width);
+  }
+}

@@ -1,0 +1,26 @@
+<span class="row-button-wrapper">
+  <button
+    mat-mini-fab
+    title="Add Row Above"
+    class="btn save"
+    color="accent"
+    (click)="addRow(-1)">
+    <mat-icon>keyboard_arrow_up</mat-icon>
+  </button>
+  <button
+    mat-mini-fab
+    title="Add Row Below"
+    class="btn save"
+    color="accent"
+    (click)="addRow(1)">
+    <mat-icon>keyboard_arrow_down</mat-icon>
+  </button>
+  <button
+    mat-mini-fab
+    title="Remove Row"
+    class="btn save"
+    color="accent"
+    (click)="removeRow()">
+    <mat-icon>close</mat-icon>
+  </button>
+</span>
