@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
@@ -11,10 +11,10 @@ import { CodeService } from 'src/app/core/services/code.service';
 import { StyleService } from 'src/app/core/services/style.service';
 
 import { MatButtonModule } from '@angular/material/button';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
-import { MatSelectModule } from '@angular/material/select';
 
 import { CodeEditorComponent } from '../../slides/code-editor/code-editor.component';
 import { PanelTripleComponent } from '../../slides/panel-triple/panel-triple.component';
@@ -52,10 +52,10 @@ import { saveAs } from 'file-saver';
       CodeEditorComponent,
 
       MatButtonModule,
+      MatButtonToggleModule,
       MatCardModule,
       MatGridListModule,
       MatIconModule,
-      MatSelectModule,
     ]
 })
 export class EditComponent implements OnDestroy {

@@ -17,14 +17,12 @@
     </div>
     
     <div class="editor-space">
-      <mat-form-field class="display-as-wrapper">
-        <mat-label>Display As</mat-label>
-        <mat-select [(value)]="displayAs">
-          @for (option of displayAsOptions; track option) {
-            <mat-option [value]="option.toLowerCase()">{{ option }}</mat-option>
-          }
-        </mat-select>
-      </mat-form-field>
+      <mat-button-toggle-group [(value)]="displayAs" class="button-toggle-group">
+        @for (option of displayAsOptions; track option) {
+          <mat-button-toggle [value]="option.toLowerCase()" class="button-toggle-option">{{ option }}</mat-button-toggle>
+        }
+      </mat-button-toggle-group>
+
       <div class="editor-wrapper cards" *ngIf="displayAs === 'cards'">
         @for (slide of keyStatuses; track slide;) {
           <mat-card
