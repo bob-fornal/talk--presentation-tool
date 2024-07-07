@@ -1,4 +1,5 @@
 <div class="panel-wrapper">
+  <div class="panel-title">Title</div>
   <input
     type="text"
     placeholder="Title"
@@ -6,7 +7,25 @@
     data-adjust="adjust-50-percent"
     [attr.data-required]="true"
     [(ngModel)]="title" />
-  
+
+  <div class="panel-title">Path</div>
+  <input
+    type="text"
+    placeholder="Path"
+    data-editing="path"
+    data-adjust="adjust-50-percent"
+    [attr.data-required]="true"
+    [(ngModel)]="path" />
+
+  <div class="panel-title">Folder</div>
+  <input
+    type="text"
+    placeholder="Folder"
+    data-editing="folder"
+    data-adjust="adjust-50-percent"
+    [attr.data-required]="true"
+    [(ngModel)]="folder" />
+
   <div class="array-wrapper">
     <div class="array-title">Files to View</div>
     @for (file of files; track file; let index = $index;) {

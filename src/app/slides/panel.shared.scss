@@ -16,7 +16,8 @@
     font-weight: bold;
     font-size: 2.8em;
   }
-
+  [data-editing="folder"],
+  [data-editing="path"],
   [data-editing="title"] {
     --data-handler-width: 33%;
 
