@@ -20,11 +20,10 @@ export abstract class AbstractSlide {
     public dialog: MatDialog,
     public route: ActivatedRoute,
     public router: Router
-  ) {}
+  ) { }
 
   setView = (state: boolean): void => {
     this.toggleView = state;
-    console.log('setView', state);
   };
 
   saveEvent = (): void => {

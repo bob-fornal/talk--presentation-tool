@@ -1,8 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-// import { MatButtonModule } from '@angular/material/button';
-// import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 
 import { Trigger } from 'src/app/core/interfaces/triggers';
@@ -46,7 +44,6 @@ export class CeEditorComponent extends AbstractSlide {
   };
 
   addRow = (attribute: string, index: number): void => {
-    console.log(attribute, index);
     switch (true) {
       case attribute === 'files':
         const filesArray: Array<string> = [...this.files];
@@ -70,7 +67,6 @@ export class CeEditorComponent extends AbstractSlide {
   };
 
   removeRow = (attribute: string, index: number): void => {
-    console.log(attribute, index);
     switch (true) {
       case attribute === 'files':
         const filesArray: Array<string> = [...this.files];
@@ -83,5 +79,9 @@ export class CeEditorComponent extends AbstractSlide {
         this.triggers = newTriggerArray;
         break;
     }
+  };
+
+  stringifyTriggers = (): string => {
+    return JSON.stringify(this.triggers);
   };
 }

@@ -34,7 +34,7 @@
           type="text"
           placeholder="Filename to Load"
           data-array-type="files"
-          data-array-index="index"
+          [attr.data-array-index]="index"
           [attr.data-required]="true"
           [value]="file" />
 
@@ -48,27 +48,28 @@
 
   <div class="array-wrapper">
     <div class="array-title">File Triggers</div>
+    <div [hidden]="true" [attr.data-triggers]="stringifyTriggers()"></div>
     @for (trigger of triggers; track trigger; let index = $index;) {
       <div class="array-row">
         <input
           type="text"
           placeholder="Title of Trigger"
           data-array-type="triggers.title"
-          data-array-index="index"
+          [attr.data-array-index]="index"
           [attr.data-required]="true"
           [value]="trigger.title" />
         <input
           type="text"
           placeholder="Function to Trigger"
           data-array-type="triggers.file"
-          data-array-index="index"
+          [attr.data-array-index]="index"
           [attr.data-required]="true"
           [value]="trigger.file" />
         <input
           type="text"
           placeholder="Init"
           data-array-type="triggers.init"
-          data-array-index="index"
+          [attr.data-array-index]="index"
           [attr.data-required]="true"
           [value]="trigger.init" />
 
