@@ -54,3 +54,8 @@ This project was designed to provide a means of doing a presentation with code e
 - [ ] Next, Previous (navigation without name).
 - [x] Font Size (Zoom)
 - [x] Determine and Trigger Functionality (code)
+
+## Server
+
+- [x] Sitemap Generator
+- [ ] Make it dynamic / access `assets` data

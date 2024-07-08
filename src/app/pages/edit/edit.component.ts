@@ -1,7 +1,7 @@
-import { Component, OnDestroy } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { Subscription } from 'rxjs';
 import { NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
+import { Subscription } from 'rxjs';
 
 import { KeyStatuses } from 'src/app/core/interfaces/key-statuses';
 import { Structure, StructureType } from 'src/app/core/interfaces/structure';
@@ -15,6 +15,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
+
+import { AddSlideComponent } from 'src/app/shared/add-slide/add-slide.component';
 
 import { CodeEditorComponent } from '../../slides/code-editor/code-editor.component';
 import { PanelTripleComponent } from '../../slides/panel-triple/panel-triple.component';
@@ -42,6 +44,8 @@ import { saveAs } from 'file-saver';
       NgSwitchDefault,
       RouterLink,
 
+      AddSlideComponent,
+      
       Cover01Component,
       Cover02Component,
       ImageOnlyComponent,
@@ -58,7 +62,7 @@ import { saveAs } from 'file-saver';
       MatIconModule,
     ]
 })
-export class EditComponent implements OnDestroy {
+export class EditComponent implements OnDestroy, OnInit {
   icons: { [key: string]: { type: string, icon: string } } = slideTypeIcons;
 
   subscriptions: Array<Subscription> = [];
@@ -97,6 +101,7 @@ export class EditComponent implements OnDestroy {
   };
 
   constructor(
+    private cdr: ChangeDetectorRef,
     private code: CodeService,
     private route: ActivatedRoute,
     private router: Router,
@@ -105,6 +110,9 @@ export class EditComponent implements OnDestroy {
   ) {
     this.subscriptions.push(this.code.structure.subscribe(this.handleStructure.bind(this)));
     this.subscriptions.push(this.code.talks.subscribe(this.handleTalks.bind(this)));
+  }
+
+  ngOnInit(): void {
     this.init();
   }
 
@@ -118,6 +126,7 @@ export class EditComponent implements OnDestroy {
   init = (): void => {
     const displayAs: string = localStorage.getItem('displayAs') || 'cards';
     this.displayAs = displayAs;
+    this.cdr.detectChanges();
 
     const path: string = this.route.snapshot.paramMap.get('folder') || '';
     this.path = path;

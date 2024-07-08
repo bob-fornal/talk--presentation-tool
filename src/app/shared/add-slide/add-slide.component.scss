@@ -1,0 +1,18 @@
+.add-slide-wrapper {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.add-slide--block {
+  display: inline-block;
+  height: 3em;
+  width: 1em;
+  cursor: pointer;
+  background-color: rgba(100, 100, 100, 0.5);
+
+  &:hover {
+    background-color: #69f0ae;
+  }
+}

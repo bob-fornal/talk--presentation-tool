@@ -1,0 +1,20 @@
+<h2 mat-dialog-title>New Slide</h2>
+
+<mat-dialog-content class="dialog-content">
+  <div class="full-width adjusted-height">
+    @if (selectedType === null) {
+      <div>Slide Type</div>
+      <mat-list>
+        @for (slideType of slideTypes; track slideType.key;) {
+          <button mat-list-item color="accent" (click)="selectSlide(slideType)">{{ slideType.title }}</button>
+        }
+      </mat-list>  
+    } @else {
+      <div>{{ selectedType.title }}</div>
+    }
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button color="accent" (click)="cancel()">Cancel</button>
+  <button mat-button color="accent" (click)="save()" cdKFocusInitial>Save</button>
+</mat-dialog-actions>
