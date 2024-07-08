@@ -7,8 +7,8 @@ This project was designed to provide a means of doing a presentation with code e
 ## Talks
 
 - [x] A Look Inside Observables
-- [/] Active Career Management
-- [ ] Asynchronous JavaScript: Livin' on a Prayer
+- [x] Active Career Management
+- [/] Asynchronous JavaScript: Livin' on a Prayer
 - [x] Developer Tools for non-Developers
 - [x] What to Avoid When Writing Unit Tests
 - [x] Writing Testable Code
@@ -33,8 +33,9 @@ This project was designed to provide a means of doing a presentation with code e
 - [ ] Edit Global CSS.
 - [ ] Add means of Disabling Slide.
 - [x] Edit Slide (Specific to Type).
-- [ ] Edit Slide (Code Editor).
-- [ ] Code-Editor (add and remove) triggers.
+- [x] Edit Slide (Code Editor).
+- [ ] Edit Slide (Code Editor): Optional fields for Triggers.
+- [x] Code-Editor (add and remove) triggers.
 - [ ] Add new Slide (before and after Slide).
 - [ ] Reorder Slides (up and down).
 - [ ] Delete Slide with Verification.
