@@ -11,6 +11,8 @@ import { AbstractSlide } from '../../abstract.slide';
 
 import { RowButtonsComponent } from 'src/app/shared/row-buttons/row-buttons.component';
 
+type CECKey = keyof CeEditorComponent;
+
 @Component({
   selector: 'ce-editor',
   standalone: true,
@@ -38,10 +40,48 @@ export class CeEditorComponent extends AbstractSlide {
   @Input() keys: Array<string> = [];
   @Input() panel: string | undefined = undefined;
 
-  addRow = (attribute: string, index: number, direction: number): void => {
-    console.log(attribute, index, direction);
+  empty: { [key: string]: any } = {
+    files: '',
+    triggers: { title: '', file: '', init: '' },
   };
+
+  addRow = (attribute: string, index: number): void => {
+    console.log(attribute, index);
+    switch (true) {
+      case attribute === 'files':
+        const filesArray: Array<string> = [...this.files];
+        const newFilesArray: Array<string> = [
+          ...filesArray.slice(0, index),
+          this.empty[attribute],
+          ...filesArray.slice(index),
+        ];
+        this.files = newFilesArray;
+        break;
+      case attribute === 'triggers':
+        const triggersArray: Array<Trigger> = [...this.triggers];
+        const newTriggerArray: Array<Trigger> = [
+          ...triggersArray.slice(0, index),
+          this.empty[attribute],
+          ...triggersArray.slice(index),
+        ];
+        this.triggers = newTriggerArray;
+        break;
+    }
+  };
+
   removeRow = (attribute: string, index: number): void => {
     console.log(attribute, index);
+    switch (true) {
+      case attribute === 'files':
+        const filesArray: Array<string> = [...this.files];
+        const newFilesArray: Array<string> = filesArray.toSpliced(index, 1);
+        this.files = newFilesArray;
+        break;
+      case attribute === 'triggers':
+        const triggersArray: Array<Trigger> = [...this.triggers];
+        const newTriggerArray: Array<Trigger> = triggersArray.toSpliced(index, 1);
+        this.triggers = newTriggerArray;
+        break;
+    }
   };
 }

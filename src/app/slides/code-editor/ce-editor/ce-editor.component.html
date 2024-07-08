@@ -39,7 +39,7 @@
           [value]="file" />
 
         <row-buttons
-          (add)="addRow('files', index, $event)"
+          (add)="addRow('files', index + $event)"
           (remove)="removeRow('files', index)">
         </row-buttons>
       </div>
@@ -73,7 +73,7 @@
           [value]="trigger.init" />
 
         <row-buttons
-          (add)="addRow('triggers', index, $event)"
+          (add)="addRow('triggers', index + $event)"
           (remove)="removeRow('triggers', index)">
         </row-buttons>
       </div>
