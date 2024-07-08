@@ -1,7 +1,7 @@
 <h2 mat-dialog-title>Notes Editor</h2>
 
-<mat-dialog-content>
-  <mat-form-field class="full-width">
+<mat-dialog-content class="dialog-content">
+  <mat-form-field class="full-width adjusted-height">
     <mat-label>Notes</mat-label>
     <textarea #notes matInput placeholder="Add notes" (input)="handleNotesChange(notes.value)">{{ data.notes }}</textarea>
   </mat-form-field>

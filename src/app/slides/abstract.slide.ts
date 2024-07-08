@@ -80,6 +80,8 @@ export abstract class AbstractSlide {
     const notes = this.notes.toString();
     const dialogRef = this.dialog.open(EditNotesDialogComponent, {
       data: { notes },
+      height: '400px',
+      width: '600px',
     });
 
     dialogRef.afterClosed().subscribe(this.handleEditNotesClosed.bind(this));
