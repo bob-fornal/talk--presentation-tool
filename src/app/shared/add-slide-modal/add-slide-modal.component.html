@@ -6,11 +6,34 @@
       <div>Slide Type</div>
       <mat-list>
         @for (slideType of slideTypes; track slideType.key;) {
-          <button mat-list-item color="accent" (click)="selectSlide(slideType)">{{ slideType.title }}</button>
+          <button [class]="slideType.key" mat-list-item color="accent" (click)="selectSlide(slideType)">{{ slideType.title }}</button>
         }
       </mat-list>  
     } @else {
       <div>{{ selectedType.title }}</div>
+      @if (selectedStructure !== null) {
+        <mat-list>
+          @for (key of selectedStructure.ORDER; track key;) {
+            <mat-form-field mat-list-item class="full-width">
+              <mat-label>{{ getStructureTitle(key) }}</mat-label>
+              @switch (getStructureType(key)) {
+                @case ('input') {
+                  <input matInput [(ngModel)]="data[key]" />
+                }
+                @case ('textarea') {
+                  <textarea
+                    matInput
+                    cdkTextareaAutosize
+                    #autosize="cdkTextareaAutosize"
+                    cdkAutosizeMinRows="3"
+                    cdkAutosizeMaxRows="5"
+                    [(ngModel)]="data[key]"></textarea>
+                }
+              }
+            </mat-form-field>
+          }
+        </mat-list>  
+      }
     }
   </div>
 </mat-dialog-content>

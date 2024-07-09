@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000;
 // Define your application's routes
 const routes = [
   '/',
-  '/talk/a-look-inside-observables/cover-slide-01',
+  '/talk/a-look-inside-observables/cover-01',
   '/talk/a-look-inside-observables/what-is-rxjs--slide',
   '/talk/a-look-inside-observables/history--slide',
   '/talk/a-look-inside-observables/essential-concepts--slide',
@@ -20,7 +20,7 @@ const routes = [
   '/talk/a-look-inside-observables/void-subject--code',
   '/talk/a-look-inside-observables/time-for-questions',
 
-  '/talk/active-career-management/cover-slide-01',
+  '/talk/active-career-management/cover-01',
   '/talk/active-career-management/history--slide',
   '/talk/active-career-management/career-levels--early-career',
   '/talk/active-career-management/career-levels--mid-career',
@@ -40,7 +40,7 @@ const routes = [
   '/talk/active-career-management/quickly-getting-job--slide',
   '/talk/active-career-management/time-for-questions',
 
-  '/talk/asynchronous-javacript-living-on-a-prayer/cover-slide-01',
+  '/talk/asynchronous-javacript-living-on-a-prayer/cover-01',
   '/talk/asynchronous-javacript-living-on-a-prayer/spoiler--slide',
   '/talk/asynchronous-javacript-living-on-a-prayer/definitions--slide',
   '/talk/asynchronous-javacript-living-on-a-prayer/javascript-engine-details--slide',
@@ -60,7 +60,7 @@ const routes = [
   '/talk/asynchronous-javacript-living-on-a-prayer/async-await--slide',
   '/talk/asynchronous-javacript-living-on-a-prayer/time-for-questions',
 
-  '/talk/asynchronous-javascript-we-are-half-way-there/cover-slide-01',
+  '/talk/asynchronous-javascript-we-are-half-way-there/cover-01',
   '/talk/asynchronous-javascript-we-are-half-way-there/asynchronous-patterns--slide',
   '/talk/asynchronous-javascript-we-are-half-way-there/callbacks--slide',
   '/talk/asynchronous-javascript-we-are-half-way-there/callbacks--code',
@@ -71,7 +71,7 @@ const routes = [
   '/talk/asynchronous-javascript-we-are-half-way-there/observable--slide',
   '/talk/asynchronous-javascript-we-are-half-way-there/observable--code',
 
-  '/talk/developer-tools-for-non-developers/cover-slide-01',
+  '/talk/developer-tools-for-non-developers/cover-01',
   '/talk/developer-tools-for-non-developers/docking--slide',
   '/talk/developer-tools-for-non-developers/reading-error-messages--slide',
   '/talk/developer-tools-for-non-developers/xhr-versus-preflight--slide',
@@ -86,7 +86,7 @@ const routes = [
   '/talk/developer-tools-for-non-developers/overrides--slide',
   '/talk/developer-tools-for-non-developers/time-for-questions',
 
-  '/talk/what-to-avoid-when-writing-unit-tests--code/cover-slide-01',
+  '/talk/what-to-avoid-when-writing-unit-tests--code/cover-01',
   '/talk/what-to-avoid-when-writing-unit-tests--code/engineers-in-a-bar',
   '/talk/what-to-avoid-when-writing-unit-tests--code/what-are-unit-tests',
   '/talk/what-to-avoid-when-writing-unit-tests--code/talk-details',
@@ -111,7 +111,7 @@ const routes = [
   '/talk/what-to-avoid-when-writing-unit-tests--code/unit-test-recommendations',
   '/talk/what-to-avoid-when-writing-unit-tests--code/time-for-questions',
 
-  '/talk/writing-testable-code/cover-slide-01',
+  '/talk/writing-testable-code/cover-01',
   '/talk/writing-testable-code/context-slide',
   '/talk/writing-testable-code/constructor-does-real-work--warning-signs',
   '/talk/writing-testable-code/constructor-does-real-work--code-examples-001',

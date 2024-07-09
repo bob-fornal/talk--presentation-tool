@@ -123,3 +123,36 @@ body {
     height: 36px;
   }
 }
+
+.mat-mdc-dialog-container {
+  --mdc-dialog-subhead-color: #222222;
+  --mdc-dialog-supporting-text-color: #222222;
+  --mdc-dialog-container-color: #dddddd;
+
+  .mat-mdc-list-item {
+
+    &.image-only,
+    &.image-text {
+      background-color: rgb(66, 66, 66);
+    }
+
+    &.cover-01,
+    &.cover-slide-02 {
+      background-color: rgb(66, 66, 88);
+    }
+
+    &.panel-single,
+    &.panel-double,
+    &.panel-triple {
+      background-color: rgb(88, 66, 66);
+    }
+
+    &.code-editor {
+      background-color: rgb(66, 88, 66);
+    }
+  }
+  .mat-mdc-button:not(:disabled) {
+    color: #000000;
+    background-color: #69f0ae;
+  }
+}

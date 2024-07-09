@@ -35,6 +35,7 @@ This project was designed to provide a means of doing a presentation with code e
 - [x] Edit Slide (Specific to Type).
 - [x] Edit Slide (Code Editor).
 - [ ] Edit Slide (Code Editor): Optional fields for Triggers.
+- [ ] Edit Slide (Code Editor): Simplify Save.
 - [x] Code-Editor (add and remove) triggers.
 - [ ] Add new Slide (before and after Slide).
 - [ ] Reorder Slides (up and down).

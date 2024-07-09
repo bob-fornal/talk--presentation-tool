@@ -100,15 +100,22 @@
       margin-right: 0.25em;
     }
 
-    .cover-slide-01,
+    .image-only,
+    .image-text {
+      background-color: rgb(66, 66, 66);
+    }
+
+    .cover-01,
     .cover-slide-02 {
       background-color: rgb(66, 66, 88);
     }
-    .image-only,
+
     .panel-single,
-    .panel-double {
+    .panel-double,
+    .panel-triple {
       background-color: rgb(88, 66, 66);
     }
+
     .code-editor {
       background-color: rgb(66, 88, 66);
     }
