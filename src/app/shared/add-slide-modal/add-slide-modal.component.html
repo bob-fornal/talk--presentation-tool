@@ -4,13 +4,13 @@
   <div class="full-width adjusted-height">
     @if (selectedType === null) {
       <div>Slide Type</div>
-      <mat-list>
+      <div class="slide-type-selection">
         @for (slideType of slideTypes; track slideType.key;) {
-          <button [class]="slideType.key" mat-list-item color="accent" (click)="selectSlide(slideType)">{{ slideType.title }}</button>
+          <button [class]="slideType.key" mat-flat-button color="accent" (click)="selectSlide(slideType)">{{ slideType.title }}</button>
         }
-      </mat-list>  
+      </div>
     } @else {
-      <div>{{ selectedType.title }}</div>
+      <div class="new-slide-title" [class]="selectedType.key">{{ selectedType.title }}</div>
       @if (selectedStructure !== null) {
         <mat-list>
           @for (key of selectedStructure.ORDER; track key;) {

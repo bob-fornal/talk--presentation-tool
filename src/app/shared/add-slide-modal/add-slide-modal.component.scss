@@ -4,6 +4,16 @@
     width: 100%;
   }
   .adjusted-height {
-    height: 265px;
+    height: calc(600px - 132px);
   }
+
+  .slide-type-selection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+  }
+}
+
+::ng-deep .mat-mdc-dialog-actions {
+  padding: 0 2em;
 }

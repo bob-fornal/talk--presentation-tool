@@ -129,7 +129,17 @@ body {
   --mdc-dialog-supporting-text-color: #222222;
   --mdc-dialog-container-color: #dddddd;
 
-  .mat-mdc-list-item {
+  .new-slide-title {
+    color: #dddddd;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .new-slide-title,
+  .mat-mdc-button-base {
+    --mdc-filled-button-label-text-color: #dddddd;
+
+    font-weight: bold;
 
     &.image-only,
     &.image-text {

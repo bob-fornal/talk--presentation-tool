@@ -23,8 +23,8 @@ export class AddSlideComponent {
 
     const dialogRef = this.dialog.open(AddSlideModalComponent, {
       data: { index: this.index },
-      height: '400px',
-      width: '600px',
+      height: '600px',
+      width: '800px',
     });
 
     dialogRef.afterClosed().subscribe(this.handleDialogClose);

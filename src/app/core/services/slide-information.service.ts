@@ -34,7 +34,7 @@ export class SlideInformationService {
       panel: { title: 'Panel', type: 'input' },
       notes: { ...this.commonPatterns['notes'] },
     },
-    'cove-slide-01': {
+    'cover-01': {
       EMPTY: { title: '', type: 'cover-01', author: '', bio1: '', bio2: '', notes: '' },
       ORDER: ['title', 'author', 'bio1', 'bio2', 'notes'],
       title: { ...this.commonPatterns['title'] },
