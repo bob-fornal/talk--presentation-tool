@@ -79,6 +79,13 @@
     &.list {
       background-color: rgba(100, 100, 100, 0.5);
 
+      .slide-row.not-original {
+
+        .row-tile {
+          background: repeating-linear-gradient(-45deg, rgba(255, 255, 0, 0.4), rgba(255, 255, 0, 0.4) 10px, transparent 10px, transparent 20px);
+        }
+      }
+
       .tile {
         border: 1px solid #69f0ae;
       }

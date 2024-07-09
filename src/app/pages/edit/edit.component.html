@@ -64,24 +64,29 @@
       @if (displayAs === 'list') {
         <div class="editor-wrapper list">
           @for (slide of keyStatuses; track slide;) {
-            <mat-grid-list cols="12" rowHeight="3em">
-              <mat-grid-tile colspan="1" class="tile" [class]="getStructureType(slide.key)">
+            <mat-grid-list
+              cols="12"
+              rowHeight="3em"
+              class="slide-row"
+              [class.not-included]="slide.included === false"
+              [class.not-original]="isNotOriginal(slide.key)">
+              <mat-grid-tile colspan="1" class="row-tile tile" [class]="getStructureType(slide.key)">
                 <button mat-flat-button color="accent" (click)="editEvent(slide.key)">EDIT</button>
               </mat-grid-tile>
-              <mat-grid-tile colspan="1" class="tile" [class]="getStructureType(slide.key)">
+              <mat-grid-tile colspan="1" class="row-tile tile" [class]="getStructureType(slide.key)">
                 @switch (getSlideIcon(slide.key).type) {
                   @case ('icon') {
-                    <mat-icon class="slide-title-icon">{{ getSlideIcon(slide.key).icon }}</mat-icon>
+                    <mat-icon class="row-tile slide-title-icon">{{ getSlideIcon(slide.key).icon }}</mat-icon>
                   }
                   @case ('svg') {
                     <img class="slide-title-svg" [src]="'/assets/images/icons/' + getSlideIcon(slide.key).icon + '.svg'" />
                   }
                 }
               </mat-grid-tile>
-              <mat-grid-tile colspan="2" class="tile" [class]="getStructureType(slide.key)">
+              <mat-grid-tile colspan="2" class="row-tile tile" [class]="getStructureType(slide.key)">
                 {{ getStructureType(slide.key) }}
               </mat-grid-tile>
-              <mat-grid-tile colspan="8" class="tile align-left" [class]="getStructureType(slide.key)">
+              <mat-grid-tile colspan="8" class="row-tile tile align-left" [class]="getStructureType(slide.key)">
                 <span [innerHTML]="getSlidePatternTitle(slide.key)"></span>
               </mat-grid-tile>
             </mat-grid-list>
