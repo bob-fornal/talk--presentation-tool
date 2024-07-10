@@ -8,15 +8,6 @@
     [attr.data-required]="true"
     [(ngModel)]="title" />
 
-  <div class="panel-title">Path</div>
-  <input
-    type="text"
-    placeholder="Path"
-    data-editing="path"
-    data-adjust="adjust-50-percent"
-    [attr.data-required]="true"
-    [(ngModel)]="path" />
-
   <div class="panel-title">Folder</div>
   <input
     type="text"
@@ -28,6 +19,7 @@
 
   <div class="array-wrapper">
     <div class="array-title">Files to View</div>
+    <div [hidden]="true" [attr.data-files]="stringifyFiles()"></div>
     @for (file of files; track file; let index = $index;) {
       <div class="array-row">
         <input

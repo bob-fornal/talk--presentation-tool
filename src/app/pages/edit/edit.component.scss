@@ -196,9 +196,11 @@
 }
 
 .button-toggle-group {
+  --mat-standard-button-toggle-divider-color: #69f0ae;
   --mat-standard-button-toggle-shape: 9999px;
   --mat-standard-button-toggle-height: 2em;
 
+  border: 2px solid var(--mat-standard-button-toggle-divider-color);
   margin-bottom: 1em;
 
   .button-toggle-option {

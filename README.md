@@ -30,12 +30,12 @@ This project was designed to provide a means of doing a presentation with code e
 - [x] Incorporate a means of editing a talk.
 - [x] Incorporate a means of displaying a LIST of slides.
 - [x] Edit Deck Title.
-- [ ] Edit Global CSS.
+- [ ] Edit Deck Global CSS.
 - [ ] Add means of Disabling Slide.
 - [x] Edit Slide (Specific to Type).
 - [x] Edit Slide (Code Editor).
 - [ ] Edit Slide (Code Editor): Optional fields for Triggers.
-- [ ] Edit Slide (Code Editor): Simplify Save.
+- [x] Edit Slide (Code Editor): Simplify Save.
 - [x] Code-Editor (add and remove) triggers.
 - [ ] Add new Slide (before and after Slide).
 - [ ] Reorder Slides (up and down).

@@ -17,8 +17,6 @@ type CECKey = keyof CeEditorComponent;
   imports: [
     FormsModule,
 
-    // MatButtonModule,
-    // MatIconModule,
     MatInputModule,
 
     RowButtonsComponent,
@@ -79,6 +77,10 @@ export class CeEditorComponent extends AbstractSlide {
         this.triggers = newTriggerArray;
         break;
     }
+  };
+
+  stringifyFiles = (): string => {
+    return JSON.stringify(this.files);
   };
 
   stringifyTriggers = (): string => {

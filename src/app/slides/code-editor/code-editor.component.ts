@@ -46,50 +46,15 @@ export class CodeEditorComponent extends AbstractSlide {
       }
     }
 
-    const arrayElements: any = document.querySelectorAll('[data-array-type]');
-    const arrays: Array<any> = Array.from(arrayElements);
-
-    const fileArrayElements = arrays
-      .filter((element: any) => element.dataset.arrayType === 'files')
-      .sort((a: any, b: any) => a.dataset.arrayIndex - b.dataset.arrayIndex);
-
-    response.ITEMS.push('files');
-    response.files = [];
-    for (let i = 0, len = fileArrayElements.length; i < len; i++) {
-      const item = fileArrayElements[i];
-      const required: boolean = item.dataset.required === 'true';
-      
-      const length: number = this.checkItemLength(item);
-      if (required === true || (required === false && length > 0)) {
-        response.files.push(this.getItemValue(item));
-      }
-    }
+    const checkFileElement: any = document.querySelector('[data-files]');
+    const checkFiles: Array<any> = JSON.parse(checkFileElement.dataset.files);
+    response['files'] = checkFiles;
 
     const checkTriggerElement: any = document.querySelector('[data-triggers]');
     const checkTriggers: Array<any> = JSON.parse(checkTriggerElement.dataset.triggers);
+    response['triggers'] = checkTriggers;
 
-    const triggerArrayElements = arrays
-      .filter((element: any) => element.dataset.arrayType.includes('triggers'))
-      .sort((a: any, b: any) => a.dataset.arrayIndex - b.dataset.arrayIndex);
-
-    response.ITEMS.push('triggers');
-    response.triggers = [];
-    for (let i = 0, len = triggerArrayElements.length; i < len; i++) {
-      const item = triggerArrayElements[i];
-      const index = item.dataset.arrayIndex;
-      if (response.triggers[index] === undefined) {
-        response.triggers[index] = { ...checkTriggers[index] };
-      }
-      const required: boolean = item.dataset.required === 'true';
-      
-      const length: number = this.checkItemLength(item);
-      if (required === true || (required === false && length > 0)) {
-        const key = item.dataset.arrayType.split('.')[1];
-        response.triggers[index][key] = this.getItemValue(item);
-      }
-    }
-
-    response.ITEMS.push('notes');
+    response.ITEMS.push('files', 'triggers', 'notes');
     response.notes = this.notes;
     response.slideKey = this.route.snapshot.paramMap.get('slideKey');
     
