@@ -1,27 +1,42 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
 import { AppComponent } from './app.component';
 
-describe('AppComponent', () => {
-  beforeEach(() => TestBed.configureTestingModule({
-    imports: [AppComponent]
-}));
+import { CodeService } from './core/services/code.service';
+import { LoggingService } from './core/services/logging.service';
+
+import { MockCodeService } from './_spec/services/mock-code.service.spec';
+import { MockLoggingService } from './_spec/services/mock-logging.service.spec';
+
+fdescribe('AppComponent', () => {
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+  
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [AppComponent],
+      providers: [
+        { provide: CodeService, useValue: MockCodeService },
+        { provide: LoggingService, useValue: MockLoggingService },
+      ]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+    expect(component).toBeTruthy();
   });
 
-  it(`should have as title 'talk--what-not-to-do-when-writing-unit-tests'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('talk--what-not-to-do-when-writing-unit-tests');
-  });
+  it('expects "init" to initialize code and logging', async () => {
+    spyOn(component['code'], 'init').and.stub();
+    spyOn(component['logging'], 'initLogging').and.stub();
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('talk--what-not-to-do-when-writing-unit-tests app is running!');
+    await component.init();
+    expect(component['code'].init).toHaveBeenCalled();
+    expect(component['logging'].initLogging).toHaveBeenCalled();
   });
 });
