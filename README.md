@@ -23,6 +23,7 @@ This project was designed to provide a means of doing a presentation with code e
 - [x] BUG: Fix GitHub Page.
 - [x] Angular Upgrade to 17, Standalone Components.
 - [x] CSS Cleanup of Duplicate Patterns.
+- [ ] Add Slide Transitions (for presentation)
 
 ### Editing Talk
 
