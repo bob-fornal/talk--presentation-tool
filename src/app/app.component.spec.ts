@@ -8,7 +8,7 @@ import { LoggingService } from './core/services/logging.service';
 import { MockCodeService } from './_spec/services/mock-code.service.spec';
 import { MockLoggingService } from './_spec/services/mock-logging.service.spec';
 
-fdescribe('AppComponent', () => {
+describe('AppComponent', () => {
   let component: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
   

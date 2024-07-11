@@ -2,13 +2,19 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddSlideComponent } from './add-slide.component';
 
+import { MatDialogModule } from '@angular/material/dialog';
+
 describe('AddSlideComponent', () => {
   let component: AddSlideComponent;
   let fixture: ComponentFixture<AddSlideComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AddSlideComponent]
+      imports: [
+        AddSlideComponent,
+
+        MatDialogModule,
+      ],
     })
     .compileComponents();
     

@@ -76,7 +76,7 @@ export class AddSlideModalComponent {
   };
 
   getStructureType = (key: string): string => {
-    console.log(key, (this.selectedStructure as any)[key].type);
+    // console.log(key, (this.selectedStructure as any)[key].type);
     return (this.selectedStructure as any)[key].type;
   }
 }

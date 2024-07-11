@@ -2,13 +2,23 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddSlideModalComponent } from './add-slide-modal.component';
 
+import { MatDialogRef, MatDialogModule, MAT_DIALOG_DATA } from '@angular/material/dialog';
+
 describe('AddSlideModalComponent', () => {
   let component: AddSlideModalComponent;
   let fixture: ComponentFixture<AddSlideModalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AddSlideModalComponent]
+      imports: [
+        AddSlideModalComponent,
+
+        MatDialogModule,
+      ],
+      providers: [
+        { provide: MatDialogRef, useValue: {} },
+        { provide: MAT_DIALOG_DATA, useValue: {} },
+      ]
     })
     .compileComponents();
     

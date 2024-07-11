@@ -58,7 +58,6 @@ export class CodeEditorComponent extends AbstractSlide {
     response.notes = this.notes;
     response.slideKey = this.route.snapshot.paramMap.get('slideKey');
     
-    console.log('response', response);
     this.save.emit(response);
 
     const path: string = this.route.snapshot.paramMap.get('folder') || '';

@@ -90,7 +90,6 @@ export abstract class AbstractSlide {
     if (result === undefined || result.type === 'cancel') return;
 
     this.notes = result.data.notes;
-    console.log(result, this.notes);
   };
 
   getCleanCode = (code: string): string => {

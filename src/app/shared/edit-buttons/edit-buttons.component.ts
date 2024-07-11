@@ -24,7 +24,6 @@ export class EditButtonsComponent {
   @Output() toggle: EventEmitter<boolean> = new EventEmitter()
 
   triggerToggleView = (): void => {
-    console.log(this.editing);
     this.toggleView = !this.toggleView;
     this.toggle.emit(this.toggleView);
   };

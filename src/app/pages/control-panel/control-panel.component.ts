@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, HostListener } from '@angular/core';
+import { ChangeDetectorRef, Component, HostListener, OnDestroy } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -19,7 +19,7 @@ import { SidenavWidthService } from './sidenav-width.service';
   templateUrl: './control-panel.component.html',
   styleUrl: './control-panel.component.scss'
 })
-export class ControlPanelComponent {
+export class ControlPanelComponent implements OnDestroy {
   subscription: Subscription;
 
   @HostListener('document:keydown', ['$event'])
@@ -80,7 +80,6 @@ export class ControlPanelComponent {
     const cursorDeltaX = event.clientX - this.resizingEvent.startingCursorX;
     const newWidth = this.resizingEvent.startingWidth + cursorDeltaX;
     this.sidenav.setSidenavWidth(newWidth);
-    console.log('update', newWidth);
   }
 
   @HostListener('window:mouseup')

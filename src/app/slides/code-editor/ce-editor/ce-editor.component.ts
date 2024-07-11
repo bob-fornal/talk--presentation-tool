@@ -9,8 +9,6 @@ import { AbstractSlide } from '../../abstract.slide';
 
 import { RowButtonsComponent } from 'src/app/shared/row-buttons/row-buttons.component';
 
-type CECKey = keyof CeEditorComponent;
-
 @Component({
   selector: 'ce-editor',
   standalone: true,

@@ -19,8 +19,6 @@ export class SidenavWidthService {
       Math.max(width, this.minWidth),
       this.maxWidth,
     );
-    console.log('max', width, this.sidenavWidth, 'min', Math.max(width, this.sidenavWidth), this.maxWidth);
-    console.log('clampedWidth', clampedWidth);
     document.body.style.setProperty('--navigation-width', `${clampedWidth}px`);
   };
 }

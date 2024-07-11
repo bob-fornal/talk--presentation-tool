@@ -69,14 +69,6 @@ export class CeDisplayComponent implements OnChanges, OnInit {
 
   ngOnChanges() {
     setTimeout(() => {
-      console.log('title', this.title);
-      console.log('path', this.path);
-      console.log('folder', this.folder);
-      console.log('files', this.files);
-      console.log('triggers', this.triggers);
-      console.log('keys', this.keys);
-      console.log('panel', this.panel);
-
       this.fileSelection(this.files[0]);
     }, 100);
   }
