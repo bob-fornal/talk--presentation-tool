@@ -14,15 +14,20 @@ describe('TalkComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [TalkComponent],
-    providers: [
-      { provide: ActivatedRoute, useValue: MockActivatedRoute },
-      { provide: CodeService, useValue: MockCodeService },
-    ]
-});
+      imports: [TalkComponent],
+      providers: [
+        { provide: ActivatedRoute, useValue: MockActivatedRoute },
+        { provide: CodeService, useValue: MockCodeService },
+      ]
+    });
+
     fixture = TestBed.createComponent(TalkComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+  });
+
+  beforeAll(() => {
+    window.onbeforeunload = jasmine.createSpy();
   });
 
   it('should create', () => {

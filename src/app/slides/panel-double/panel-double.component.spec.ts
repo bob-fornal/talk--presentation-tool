@@ -11,14 +11,19 @@ describe('PanelDoubleComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [PanelDoubleComponent],
-    providers: [
-      { provide: ActivatedRoute, useValue: MockActivatedRoute },
-    ]
-});
+      imports: [PanelDoubleComponent],
+      providers: [
+        { provide: ActivatedRoute, useValue: MockActivatedRoute },
+      ]
+    });
+
     fixture = TestBed.createComponent(PanelDoubleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+  });
+
+  beforeAll(() => {
+    window.onbeforeunload = jasmine.createSpy();
   });
 
   it('should create', () => {

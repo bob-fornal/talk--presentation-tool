@@ -21,22 +21,27 @@ describe('CodeEditorComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [
-      CodeEditorComponent,
-      MockCeDisplayComponent,
-      MockCeEditorComponent,
+      imports: [
+        CodeEditorComponent,
+        MockCeDisplayComponent,
+        MockCeEditorComponent,
 
-      MatDialogModule,
-    ],
-    providers: [
-      { provide: ActivatedRoute, useValue: MockActivatedRoute },
-      { provide: CodeService, useValue: MockCodeService },
-      { provide: NU_MONACO_EDITOR_CONFIG, useValue: {} },
-    ]
-});
+        MatDialogModule,
+      ],
+      providers: [
+        { provide: ActivatedRoute, useValue: MockActivatedRoute },
+        { provide: CodeService, useValue: MockCodeService },
+        { provide: NU_MONACO_EDITOR_CONFIG, useValue: {} },
+      ]
+    });
+
     fixture = TestBed.createComponent(CodeEditorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+  });
+
+  beforeAll(() => {
+    window.onbeforeunload = jasmine.createSpy();
   });
 
   it('should create', () => {

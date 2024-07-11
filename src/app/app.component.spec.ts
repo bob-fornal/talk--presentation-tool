@@ -27,6 +27,10 @@ describe('AppComponent', () => {
     fixture.detectChanges();
   });
 
+  beforeAll(() => {
+    window.onbeforeunload = jasmine.createSpy();
+  });
+
   it('should create the app', () => {
     expect(component).toBeTruthy();
   });

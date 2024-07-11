@@ -11,14 +11,19 @@ describe('ImageOnlyComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [ImageOnlyComponent],
-    providers: [
-      { provide: ActivatedRoute, useValue: MockActivatedRoute },
-    ]
-});
+      imports: [ImageOnlyComponent],
+      providers: [
+        { provide: ActivatedRoute, useValue: MockActivatedRoute },
+      ]
+    });
+
     fixture = TestBed.createComponent(ImageOnlyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+  });
+
+  beforeAll(() => {
+    window.onbeforeunload = jasmine.createSpy();
   });
 
   it('should create', () => {

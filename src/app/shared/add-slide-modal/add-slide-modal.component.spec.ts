@@ -27,6 +27,10 @@ describe('AddSlideModalComponent', () => {
     fixture.detectChanges();
   });
 
+  beforeAll(() => {
+    window.onbeforeunload = jasmine.createSpy();
+  });
+
   it('should create', () => {
     expect(component).toBeTruthy();
   });

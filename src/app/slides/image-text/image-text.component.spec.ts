@@ -11,14 +11,19 @@ describe('ImageTextComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [ImageTextComponent],
-    providers: [
-      { provide: ActivatedRoute, useValue: MockActivatedRoute },
-    ]
-});
+      imports: [ImageTextComponent],
+      providers: [
+        { provide: ActivatedRoute, useValue: MockActivatedRoute },
+      ]
+    });
+
     fixture = TestBed.createComponent(ImageTextComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+  });
+
+  beforeAll(() => {
+    window.onbeforeunload = jasmine.createSpy();
   });
 
   it('should create', () => {

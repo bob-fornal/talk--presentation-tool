@@ -11,14 +11,19 @@ describe('Cover01Component', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [Cover01Component],
-    providers: [
-      { provide: ActivatedRoute, useValue: MockActivatedRoute },
-    ]
-});
+      imports: [Cover01Component],
+      providers: [
+        { provide: ActivatedRoute, useValue: MockActivatedRoute },
+      ]
+    });
+    
     fixture = TestBed.createComponent(Cover01Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
+  });
+
+  beforeAll(() => {
+    window.onbeforeunload = jasmine.createSpy();
   });
 
   it('should create', () => {

@@ -14,15 +14,20 @@ describe('EditComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [EditComponent],
-    providers: [
-      { provide: ActivatedRoute, useValue: MockActivatedRoute },
-      { provide: CodeService, useValue: MockCodeService },
-    ]
-});
+      imports: [EditComponent],
+      providers: [
+        { provide: ActivatedRoute, useValue: MockActivatedRoute },
+        { provide: CodeService, useValue: MockCodeService },
+      ]
+    });
+
     fixture = TestBed.createComponent(EditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+  });
+
+  beforeAll(() => {
+    window.onbeforeunload = jasmine.createSpy();
   });
 
   it('should create', () => {

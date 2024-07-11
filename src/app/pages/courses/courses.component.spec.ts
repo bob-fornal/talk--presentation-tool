@@ -11,16 +11,21 @@ describe('CoursesComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [
-      CoursesComponent,
-    ],
-    providers: [
-      { provide: CodeService, useValue: MockCodeService },
-    ]
-});
+      imports: [
+        CoursesComponent,
+      ],
+      providers: [
+        { provide: CodeService, useValue: MockCodeService },
+      ]
+    });
+    
     fixture = TestBed.createComponent(CoursesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+  });
+
+  beforeAll(() => {
+    window.onbeforeunload = jasmine.createSpy();
   });
 
   it('should create', () => {
