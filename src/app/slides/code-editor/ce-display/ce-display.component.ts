@@ -56,6 +56,9 @@ export class CeDisplayComponent implements OnChanges, OnInit {
   loggingOpen: boolean = false;
   logs: string = '';
 
+  setTimeout: any = window.setTimeout;
+  clearInterval: any = window.clearInterval;
+
   constructor(
     private cdr: ChangeDetectorRef,
     private codeService: CodeService,
@@ -68,29 +71,33 @@ export class CeDisplayComponent implements OnChanges, OnInit {
   }
 
   ngOnChanges() {
-    setTimeout(() => {
-      this.fileSelection(this.files[0]);
-    }, 100);
+    this.setTimeout(this.handleFileSelection.bind(this), 100);
   }
 
+  handleFileSelection = () => {
+    this.fileSelection(this.files[0]);
+  };
+
   ngOnInit() {
-    this.external.subscribe((payload: any) => {
-      switch (true) {
-        case payload.type === 'trigger-file':
-          this.fileSelection(payload.file);
-          break;
-        case payload.type === 'trigger-code':
-          this.triggerFile(payload.trigger);
-          break;
-        case payload.type === 'toggle-console':
-          this.toggleLogging();
-          break;
-        case payload.type === 'trigger-clear':
-          this.clearLogging();
-          break;
-      }
-    });
+    this.external.subscribe(this.handleExternal.bind(this));
   }
+
+  handleExternal = (payload: any) => {
+    switch (true) {
+      case payload.type === 'trigger-file':
+        this.fileSelection(payload.file);
+        break;
+      case payload.type === 'trigger-code':
+        this.triggerFile(payload.trigger);
+        break;
+      case payload.type === 'toggle-console':
+        this.toggleLogging();
+        break;
+      case payload.type === 'trigger-clear':
+        this.clearLogging();
+        break;
+    }
+  };
 
   editorOptions = {
     theme: 'vs-dark',
@@ -108,7 +115,7 @@ export class CeDisplayComponent implements OnChanges, OnInit {
   code: string = 'function x() {\n  console.log("Hello world");\n}';
   filepath: string = '';
 
-  sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+  sleep = (ms: number) => new Promise((resolve) => this.setTimeout(resolve, ms));
 
   fileSelection = async (file: string): Promise<void> => {
     this.selected = file;
@@ -129,7 +136,7 @@ export class CeDisplayComponent implements OnChanges, OnInit {
     this.scriptLoggingInterval = setInterval(() => {
       this.scriptIntervalCount++;
       if (this.scriptIntervalCount >= 360000) {
-        clearInterval(this.scriptLoggingInterval);
+        this.clearInterval(this.scriptLoggingInterval);
       }
       this.logs = this.logging.logged;
     }, 500);
@@ -142,21 +149,12 @@ export class CeDisplayComponent implements OnChanges, OnInit {
   
       await this.sleep(100);
       const templateElement = this.handleScript.nativeElement.firstElementChild as HTMLElement;
-      this.replaceDivWithScript(templateElement);
+      this.replaceDivWithScript(templateElement, this.document);
       this.scriptLoaded[trigger.file] = 'loaded';
     }
 
-    // TODO: Is this needed?
-    await this.sleep(500);
-    const env: { [key: string]: any; } = {};
-    for (let i = 0, len = this.keys.length; i < len; i++) {
-      const key: string = this.keys[i];
-      const value: string = (environment as any)[key];
-      env[key] = atob(value);
-    }
-
     try {
-      (window as any)[init](env);
+      (window as any)[init]({});
     } catch (error) {
       console.error(error);
     }
@@ -175,26 +173,25 @@ export class CeDisplayComponent implements OnChanges, OnInit {
   };
 
   handleNavigation = (event: any): void => {
-    if (event.routerEvent instanceof NavigationSkipped) {
-      this.triggerContainerUpdate();
-    }
-    if (event instanceof NavigationEnd) {
+    if (event.routerEvent instanceof NavigationSkipped || event instanceof NavigationEnd) {
       this.triggerContainerUpdate();
     }
   };
 
   triggerContainerUpdate = (): void => {
-    setTimeout(() => {
-      const container = this.document.getElementById('display-container');
-      container!.innerHTML = this.panel === undefined ? '' : this.panel!;
-      
-      this.logging.stop();
-      clearInterval(this.scriptLoggingInterval);
-    }, 100);
+    this.setTimeout(this.handleContainerUpdate.bind(this, this.document), 100);
   };
 
-  replaceDivWithScript = (templateElement: HTMLElement): void => {
-    const script = this.document.createElement('script');
+  handleContainerUpdate = (_document: any) => {
+    const container = _document.getElementById('display-container');
+    container!.innerHTML = this.panel === undefined ? '' : this.panel!;
+    
+    this.logging.stop();
+    this.clearInterval(this.scriptLoggingInterval);
+  };
+
+  replaceDivWithScript = (templateElement: HTMLElement, _document: any): void => {
+    const script = _document.createElement('script');
     this.copyAttributesFromTemplateToScript(templateElement, script);
     this.handleScript.nativeElement.appendChild(script);
   };
