@@ -35,7 +35,7 @@ export class CodeEditorComponent extends AbstractSlide {
     const response: any = this.buildResponse();
     this.save.emit(response);
 
-    const path: string = this.route.snapshot.paramMap.get('folder') || '';
+    const path: string = this.route.snapshot.paramMap.get('folder')!;
     this.router.navigate(['edit', path]);
   };
 
@@ -48,7 +48,7 @@ export class CodeEditorComponent extends AbstractSlide {
     response.notes = this.notes;
     response.slideKey = this.route.snapshot.paramMap.get('slideKey');
 
-    response.ITEMS.push('files', 'triggers', 'notes');
+    response.ITEMS.push('notes');
     return response;
   };
 
@@ -69,7 +69,8 @@ export class CodeEditorComponent extends AbstractSlide {
 
   captureAttribute = (elementType: string, response: any, responseField: string, _document: any): void => {
     const checkFileElement: any = _document.querySelector(elementType);
-    const checkFiles: Array<any> = JSON.parse(checkFileElement.dataset.files);
-    response[responseField] = checkFiles;
+    const checkData: any = JSON.parse(checkFileElement.dataset[responseField]);
+    response[responseField] = checkData;
+    response.ITEMS.push(responseField);
   };
 }

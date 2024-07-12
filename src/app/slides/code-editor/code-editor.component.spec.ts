@@ -57,4 +57,52 @@ describe('CodeEditorComponent', () => {
     expect(component.save.emit).toHaveBeenCalledWith('RESPONSE');
     expect(component.router.navigate).toHaveBeenCalledWith(['edit', 'FOLDER']);
   });
+
+  it('expects "buildResponse" to capture data and return the correct object', () => {
+    spyOn(component, 'captureElements').and.stub();
+    spyOn(component, 'captureAttribute').and.stub();
+    component.notes = 'NOTES';
+    const expected: any = {
+      ACTION: 'save',
+      ITEMS: ['notes'],
+      slideKey: 'SLIDE-KEY',
+      notes: 'NOTES'
+    };
+
+    const response: any = component.buildResponse();
+    expect(component.captureElements).toHaveBeenCalled();
+    expect(component.captureAttribute).toHaveBeenCalledTimes(2);
+    expect(response).toEqual(expected);
+  });
+
+  it('expects "captureElements" to loop over elements and capture those needed', () => {
+    const elementType: string = 'ELEMENT-TYPE';
+    const response: any = { ITEMS: [] };
+    const elements: Array<any> = [
+      { dataset: { required: 'true', editing: 'FIELD1' }, value: 'VALUE1' },
+      { dataset: { required: 'false', editing: 'FIELD2' }, value: 'VALUE2' },
+      { dataset: { required: 'false', editing: 'FIELD3' }, value: '' },
+    ];
+    const _document: any = {
+      querySelectorAll: () => elements,
+    };
+    const expected = { ITEMS: ['FIELD1', 'FIELD2'], FIELD1: 'VALUE1', FIELD2: 'VALUE2' };
+
+    component.captureElements(elementType, response, _document);
+    expect(response).toEqual(expected);
+  });
+
+  it('expects "captureAttribute" to get the attribute data', () => {
+    const elementType: string = 'ELEMENT-TYPE';
+    const response: any = { ITEMS: [] };
+    const responseField: string = 'files'
+    const element: any = { dataset: { files: `["FILE1", "FILE2"]` } };
+    const _document: any = {
+      querySelector: () => element,
+    };
+    const expected = { ITEMS: ['files'], files: ['FILE1', 'FILE2'] };
+
+    component.captureAttribute(elementType, response, responseField, _document);
+    expect(response).toEqual(expected);
+  });
 });
