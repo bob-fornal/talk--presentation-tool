@@ -16,6 +16,9 @@ export abstract class AbstractSlide {
 
   @Output() save: EventEmitter<any> = new EventEmitter();
 
+  document: any = window.document;
+  prettify: any = prettify;
+
   constructor(
     public dialog: MatDialog,
     public route: ActivatedRoute,
@@ -28,7 +31,7 @@ export abstract class AbstractSlide {
 
   saveEvent = (): void => {
     const response: any = { ACTION: 'save', ITEMS: [] };
-    const elements: any = document.querySelectorAll('[data-editing]');
+    const elements: any = this.document.querySelectorAll('[data-editing]');
     for (let i = 0, len = elements.length; i < len; i++) {
       const item = elements[i];
       const required: boolean = item.dataset.required === 'true';
@@ -47,7 +50,7 @@ export abstract class AbstractSlide {
     
     this.save.emit(response);
 
-    const path: string = this.route.snapshot.paramMap.get('folder') || '';
+    const path: string = this.route.snapshot.paramMap.get('folder')!;
     this.router.navigate(['edit', path]);
   };
 
@@ -71,7 +74,7 @@ export abstract class AbstractSlide {
     const response: any = { ACTION: 'cancel' };
     this.save.emit(response);
 
-    const path: string = this.route.snapshot.paramMap.get('folder') || '';
+    const path: string = this.route.snapshot.paramMap.get('folder')!;
     this.router.navigate(['edit', path]);
   };
 
@@ -101,11 +104,11 @@ export abstract class AbstractSlide {
       brace_style: 'expand',
       unformatted: ['a', 'sub', 'sup', 'b', 'i', 'u']
     };
-    const converted: string = prettify.html(code, options);
+    const converted: string = this.prettify.html(code, options);
     return converted;
   };
 
-  convertCleanedCode = async (code: string): Promise<string> => {
+  convertCleanedCode = (code: string): string => {
     return code;
   };
 }
