@@ -47,4 +47,14 @@ describe('CodeEditorComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('expects "saveEvent" to emit a response and navigate to edit/path', () => {
+    spyOn(component, 'buildResponse').and.returnValue('RESPONSE');
+    spyOn(component.save, 'emit').and.stub();
+    spyOn(component.router, 'navigate').and.stub();
+
+    component.saveEvent();
+    expect(component.save.emit).toHaveBeenCalledWith('RESPONSE');
+    expect(component.router.navigate).toHaveBeenCalledWith(['edit', 'FOLDER']);
+  });
 });

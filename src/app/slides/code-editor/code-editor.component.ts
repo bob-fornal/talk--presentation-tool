@@ -32,8 +32,28 @@ export class CodeEditorComponent extends AbstractSlide {
   @Input() external: Subject<any> = new Subject();
 
   override saveEvent = (): void => {
+    const response: any = this.buildResponse();
+    this.save.emit(response);
+
+    const path: string = this.route.snapshot.paramMap.get('folder') || '';
+    this.router.navigate(['edit', path]);
+  };
+
+  buildResponse = (): any => {
     const response: any = { ACTION: 'save', ITEMS: [] };
-    const elements: any = document.querySelectorAll('[data-editing]');
+    this.captureElements('[data-editing]', response, document);
+    this.captureAttribute('[data-files]', response, 'files', document);
+    this.captureAttribute('[data-triggers]', response, 'triggers', document);
+
+    response.notes = this.notes;
+    response.slideKey = this.route.snapshot.paramMap.get('slideKey');
+
+    response.ITEMS.push('files', 'triggers', 'notes');
+    return response;
+  };
+
+  captureElements = (elementType: string, response: any, _document: any): void => {
+    const elements: any = _document.querySelectorAll(elementType);
     for (let i = 0, len = elements.length; i < len; i++) {
       const item = elements[i];
       const required: boolean = item.dataset.required === 'true';
@@ -45,22 +65,11 @@ export class CodeEditorComponent extends AbstractSlide {
         response[key] = this.getItemValue(item);
       }
     }
+  };
 
-    const checkFileElement: any = document.querySelector('[data-files]');
+  captureAttribute = (elementType: string, response: any, responseField: string, _document: any): void => {
+    const checkFileElement: any = _document.querySelector(elementType);
     const checkFiles: Array<any> = JSON.parse(checkFileElement.dataset.files);
-    response['files'] = checkFiles;
-
-    const checkTriggerElement: any = document.querySelector('[data-triggers]');
-    const checkTriggers: Array<any> = JSON.parse(checkTriggerElement.dataset.triggers);
-    response['triggers'] = checkTriggers;
-
-    response.ITEMS.push('files', 'triggers', 'notes');
-    response.notes = this.notes;
-    response.slideKey = this.route.snapshot.paramMap.get('slideKey');
-    
-    this.save.emit(response);
-
-    const path: string = this.route.snapshot.paramMap.get('folder') || '';
-    this.router.navigate(['edit', path]);
+    response[responseField] = checkFiles;
   };
 }
