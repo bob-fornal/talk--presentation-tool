@@ -19,7 +19,7 @@ describe('EditNotesDialogComponent', () => {
         MatDialogModule,
       ],
       providers: [
-        { provide: MatDialogRef, useValue: {} },
+        { provide: MatDialogRef, useValue: { close: () => ({}) } },
         { provide: MAT_DIALOG_DATA, useValue: {} },
       ]
     })
@@ -36,5 +36,29 @@ describe('EditNotesDialogComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('expects "cancel" to close the dialog', () => {
+    spyOn(component.dialogRef, 'close').and.stub();
+
+    component.cancel();
+    expect(component.dialogRef.close).toHaveBeenCalledWith({ type: 'cancel' });
+  });
+
+  it('expects "save" to close the dialog', () => {
+    const data: any = { notes: 'NOTES' };
+    spyOn(component.dialogRef, 'close').and.stub();
+    component.data = data;
+
+    component.save();
+    expect(component.dialogRef.close).toHaveBeenCalledWith({ type: 'save', data });
+  });
+
+  it('expects "handleNotesChange" to set the notes on data', () => {
+    const data: any = 'NOTES';
+    component.data = {};
+
+    component.handleNotesChange(data);
+    expect(component.data).toEqual({ notes: data });
   });
 });
