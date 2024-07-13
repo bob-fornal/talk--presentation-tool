@@ -29,7 +29,6 @@ import { SlideStructure, SlideType } from 'src/app/core/interfaces/slide-types';
   styleUrl: './add-slide-modal.component.scss'
 })
 export class AddSlideModalComponent {
-  private _injector = inject(Injector);
   @ViewChild('autosize') autosize!: CdkTextareaAutosize;
   
   selectedType: SlideType | null = null;
@@ -40,18 +39,6 @@ export class AddSlideModalComponent {
     public dialogRef: MatDialogRef<AddSlideModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
   ) { }
-
-  triggerResize() {
-    // Wait for content to render, then trigger textarea resize.
-    afterNextRender(
-      () => {
-        this.autosize.resizeToFitContent(true);
-      },
-      {
-        injector: this._injector,
-      },
-    );
-  }
 
   get slideTypes(): Array<SlideType> {
     return this.service.slideTypes;
