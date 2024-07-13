@@ -20,8 +20,8 @@ export class RowButtonsComponent {
   addRow = (direction: number): void => {
     this.add.emit(direction);
   };
+
   removeRow = (): void => {
     this.remove.emit();
   };
-
 }

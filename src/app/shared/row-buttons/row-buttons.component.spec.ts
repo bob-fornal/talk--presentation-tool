@@ -24,4 +24,19 @@ describe('RowButtonsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('expects "addRow" to emit', () => {
+    const direction: number = 0;
+    spyOn(component.add, 'emit').and.stub();
+
+    component.addRow(direction);
+    expect(component.add.emit).toHaveBeenCalledWith(direction);
+  });
+
+  it('expects "removeRow" to emit', () => {
+    spyOn(component.remove, 'emit').and.stub();
+
+    component.removeRow();
+    expect(component.remove.emit).toHaveBeenCalledWith();
+  });
 });
