@@ -49,6 +49,7 @@ export class TalkComponent implements OnDestroy {
   subscription: Subscription;
   sendExternal: Subject<any> = new Subject();
 
+  control: boolean = false;
   @HostListener('document:keydown', ['$event'])
     handleKeyboardEvent(event: KeyboardEvent) {
       if (this.control === true) return;
@@ -69,8 +70,6 @@ export class TalkComponent implements OnDestroy {
   page: StructureType = { title: '', type: '' };
   title: string = '';
   type: string = '';
-
-  control: boolean = false;
 
   fontsizeSelected: string | undefined;
 
@@ -95,7 +94,7 @@ export class TalkComponent implements OnDestroy {
   }
 
   init = (): void => {
-    const path: string = this.route.snapshot.paramMap.get('folder') || '';
+    const path: string = this.route.snapshot.paramMap.get('folder')!;
     this.path = path;
     this.code.getStructure(path);
   };
@@ -140,7 +139,7 @@ export class TalkComponent implements OnDestroy {
     if (this.path === '') return;
     if (structure.ORDER.length === 0) return;
 
-    const page = this.route.snapshot.paramMap.get('slideKey') || '';
+    const page = this.route.snapshot.paramMap.get('slideKey')!;
     this.setPage(page, structure);
   };
 
