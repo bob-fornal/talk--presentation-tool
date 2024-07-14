@@ -63,8 +63,6 @@ import { saveAs } from 'file-saver';
 export class EditComponent implements OnDestroy, OnInit {
   icons: { [key: string]: { type: string, icon: string } } = slideTypeIcons;
 
-  subscriptions: Array<Subscription> = [];
-
   keyStatuses: Array<KeyStatuses> = [];
 
   path: string = '';
@@ -106,18 +104,17 @@ export class EditComponent implements OnDestroy, OnInit {
     private service: EditService,
     private style: StyleService
   ) {
-    this.subscriptions.push(this.code.structure.subscribe(this.handleStructure.bind(this)));
-    this.subscriptions.push(this.code.talks.subscribe(this.handleTalks.bind(this)));
+    this.subscriptions.add(this.code.structure.subscribe(this.handleStructure.bind(this)));
+    this.subscriptions.add(this.code.talks.subscribe(this.handleTalks.bind(this)));
   }
 
   ngOnInit(): void {
     this.init();
   }
 
+  private subscriptions: Subscription = new Subscription();
   ngOnDestroy(): void {
-    this.subscriptions.forEach((subscription: Subscription) => {
-      subscription.unsubscribe();
-    });
+    this.subscriptions.unsubscribe();
   }
 
   displayOptions: Array<string> = ['cards', 'list'];

@@ -20,8 +20,6 @@ import { SidenavWidthService } from './sidenav-width.service';
   styleUrl: './control-panel.component.scss'
 })
 export class ControlPanelComponent implements OnDestroy {
-  subscription: Subscription;
-
   @HostListener('document:keydown', ['$event'])
     handleKeyboardEvent(event: KeyboardEvent) {
       if (['ArrowRight', 'ArrowUp'].includes(event.key)) {
@@ -55,13 +53,14 @@ export class ControlPanelComponent implements OnDestroy {
     private style: StyleService,
     private title: Title,
   ) {
-    this.subscription = this.code.structure.subscribe(this.handleStructure.bind(this));
-    this.service.messagesOfType('file-update').subscribe(this.handleFileUpdate.bind(this));
+    this.subscriptions.add(this.code.structure.subscribe(this.handleStructure.bind(this)));
+    this.subscriptions.add(this.service.messagesOfType('file-update').subscribe(this.handleFileUpdate.bind(this)));
     this.init();
   }
 
+  private subscriptions: Subscription = new Subscription();
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this.subscriptions.unsubscribe();
   }
 
   init = (): void => {

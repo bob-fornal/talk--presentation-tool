@@ -30,8 +30,6 @@ import { MatIconModule } from '@angular/material/icon';
     ]
 })
 export class CoursesComponent implements OnDestroy {
-  subscription: Subscription;
-  
   talks: Array<Talk> = [];
   tags: Array<Tag> = [];
 
@@ -47,11 +45,12 @@ export class CoursesComponent implements OnDestroy {
     private router: Router,
     private style: StyleService
   ) {
-    this.subscription = this.code.talks.subscribe(this.handleTalks.bind(this));
+    this.subscriptions.add(this.code.talks.subscribe(this.handleTalks.bind(this)));
   }
 
+  private subscriptions: Subscription = new Subscription();
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this.subscriptions.unsubscribe();
   }
 
   handleTalks = (wrapper: Talks): void => {

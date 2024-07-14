@@ -1,5 +1,6 @@
-import { Directive, EventEmitter, Input, Output } from '@angular/core';
+import { Directive, EventEmitter, Input, OnDestroy, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 import prettify from 'simply-beautiful';
 
@@ -8,7 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { EditNotesDialogComponent } from 'src/app/shared/edit-notes-dialog/edit-notes-dialog.component';
 
 @Directive()
-export abstract class AbstractSlide {
+export abstract class AbstractSlide implements OnDestroy {
   @Input() notes: string = '';
 
   @Input() editing: boolean = false;
@@ -24,6 +25,11 @@ export abstract class AbstractSlide {
     public route: ActivatedRoute,
     public router: Router
   ) { }
+
+  private subscriptions: Subscription = new Subscription();
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
+  }
 
   setView = (state: boolean): void => {
     this.toggleView = state;
@@ -86,7 +92,7 @@ export abstract class AbstractSlide {
       width: '600px',
     });
 
-    dialogRef.afterClosed().subscribe(this.handleEditNotesClosed.bind(this));
+    this.subscriptions.add(dialogRef.afterClosed().subscribe(this.handleEditNotesClosed.bind(this)));
   };
 
   handleEditNotesClosed = (result: any): void => {

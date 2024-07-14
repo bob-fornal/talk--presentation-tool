@@ -46,7 +46,6 @@ import { FontsizeService } from 'src/app/core/services/fontsize.service';
     ],
 })
 export class TalkComponent implements OnDestroy {
-  subscription: Subscription;
   sendExternal: Subject<any> = new Subject();
 
   control: boolean = false;
@@ -83,14 +82,15 @@ export class TalkComponent implements OnDestroy {
     private style: StyleService,
     private zone: NgZone,
   ) {
-    this.subscription = this.code.structure.subscribe(this.handleStructure.bind(this));
-    this.service.messagesOfType('control').subscribe(this.handleControlMessage.bind(this));
-    this.fonts.current.subscribe(this.handleFontsizeChange.bind(this));
+    this.subscriptions.add(this.code.structure.subscribe(this.handleStructure.bind(this)));
+    this.subscriptions.add(this.service.messagesOfType('control').subscribe(this.handleControlMessage.bind(this)));
+    this.subscriptions.add(this.fonts.current.subscribe(this.handleFontsizeChange.bind(this)));
     this.init();
   }
 
+  private subscriptions: Subscription = new Subscription();
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this.subscriptions.unsubscribe();
   }
 
   init = (): void => {

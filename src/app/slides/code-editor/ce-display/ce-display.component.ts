@@ -1,12 +1,10 @@
 import { DOCUMENT, NgFor } from '@angular/common';
-import { ChangeDetectorRef, Component, Inject, Input, OnChanges, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, Inject, Input, OnChanges, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NavigationEnd, NavigationSkipped, Router, RouterLink } from '@angular/router';
-import { Subject } from 'rxjs';
+import { Subject, Subscription } from 'rxjs';
 
 import { NuMonacoEditorComponent } from '@ng-util/monaco-editor';
-
-import { environment } from 'src/environment/environment';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -31,7 +29,6 @@ import { LoggingService } from 'src/app/core/services/logging.service';
     MatButtonModule,
     MatIconModule,
     MatListModule,
-
   ],
   templateUrl: './ce-display.component.html',
   styleUrls: [
@@ -39,7 +36,7 @@ import { LoggingService } from 'src/app/core/services/logging.service';
     './ce-display.component.scss'
   ],
 })
-export class CeDisplayComponent implements OnChanges, OnInit {
+export class CeDisplayComponent implements OnChanges, OnDestroy, OnInit {
   @Input() title: string = '';
   @Input() path: string = '';
   @Input() folder: string = '';
@@ -67,11 +64,16 @@ export class CeDisplayComponent implements OnChanges, OnInit {
     @Inject(DOCUMENT) private document: Document,
     private router: Router
   ) {
-    this.router.events.subscribe(this.handleNavigation);
+    this.subscriptions.add(this.router.events.subscribe(this.handleNavigation));
   }
 
   ngOnChanges() {
     this.setTimeout(this.handleFileSelection.bind(this), 100);
+  }
+
+  private subscriptions: Subscription = new Subscription();
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
   }
 
   handleFileSelection = () => {
@@ -79,7 +81,7 @@ export class CeDisplayComponent implements OnChanges, OnInit {
   };
 
   ngOnInit() {
-    this.external.subscribe(this.handleExternal.bind(this));
+    this.subscriptions.add(this.external.subscribe(this.handleExternal.bind(this)));
   }
 
   handleExternal = (payload: any) => {
@@ -201,5 +203,4 @@ export class CeDisplayComponent implements OnChanges, OnInit {
       script.attributes.setNamedItem(templateElement.attributes[i].cloneNode() as Attr);
     }
   };
-
 }

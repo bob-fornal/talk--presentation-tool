@@ -1,8 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnDestroy } from '@angular/core';
 
 import { MatDialog } from '@angular/material/dialog';
 
 import { AddSlideModalComponent } from '../add-slide-modal/add-slide-modal.component';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'add-slide',
@@ -11,12 +12,18 @@ import { AddSlideModalComponent } from '../add-slide-modal/add-slide-modal.compo
   templateUrl: './add-slide.component.html',
   styleUrl: './add-slide.component.scss'
 })
-export class AddSlideComponent {
+export class AddSlideComponent implements OnDestroy {
   @Input() index: number = -1;
 
   constructor(
     private dialog: MatDialog,
   ) { }
+
+  private subscriptions: Subscription = new Subscription();
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
+  }
+
 
   handleAddSlide = (event: any): void => {
     event.preventDefault();
@@ -27,7 +34,7 @@ export class AddSlideComponent {
       width: '800px',
     });
 
-    dialogRef.afterClosed().subscribe(this.handleDialogClose);
+    this.subscriptions.add(dialogRef.afterClosed().subscribe(this.handleDialogClose));
   };
 
   handleDialogClose = (result: any) => {

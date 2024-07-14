@@ -86,10 +86,7 @@ export class SlideInformationService {
     },
   };
 
-  constructor() { }
-
   getSlideStructure = (key: string): SlideStructure => {
     return this.blankPatterns[key];
   }
-
 }

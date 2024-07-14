@@ -8,9 +8,6 @@ import { CoursesComponent } from './pages/courses/courses.component';
 import { EditComponent } from './pages/edit/edit.component';
 import { TalkComponent } from './pages/talk/talk.component';
 
-import { injectSpeedInsights } from '@vercel/speed-insights';
-injectSpeedInsights();
-
 const routes: Routes = [
   { path: 'talk/:folder/:slideKey', component: TalkComponent, data: { type: 'talk-slide' } },
   { path: 'edit/:folder', component: EditComponent, data: { type: 'edit-talk' } },
