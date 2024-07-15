@@ -15,13 +15,13 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '18'
+        node-version: '22'
 
     - name: Install dependencies
       run: npm install
 
     - name: Build
-      run: npm run build:prod
+      run: npm run build
 
     - name: Deploy
       if: success()
