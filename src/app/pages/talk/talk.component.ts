@@ -116,7 +116,7 @@ export class TalkComponent implements OnDestroy {
     if (structure.ORDER.length === 0) return;
     this.slideIndex = structure.ORDER.indexOf(key);
 
-    const page: StructureType = (this.structure[key] as StructureType);
+    const page: StructureType = (structure[key] as StructureType);
     this.title = page.title;
     this.type = page.type;
     this.page = page;
@@ -125,7 +125,11 @@ export class TalkComponent implements OnDestroy {
     const style = structure.STYLE;
     this.style.add(style.join('\n'));
 
-    this.zone.run(() => this.router.navigate(['talk', this.path, structure.ORDER[this.slideIndex]]));
+    this.zone.run(this.zoneRun.bind(this, key));
+  };
+
+  zoneRun = (key: string): void => {
+    this.router.navigate(['talk', this.path, key]);
   };
 
   home = (): void => {

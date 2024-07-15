@@ -177,4 +177,79 @@ describe('TalkComponent', () => {
     component.handleControlMessage(message);
     expect(component.control).toEqual(false);
   });
+
+  it('expects "getTalkStyle" to get a string', () => {
+    component.structure = { ORDER: [], STYLE: ['style1', 'style2'] };
+    const expected: string = 'style1 style2';
+
+    const result: string = component.getTalkStyle();
+    expect(result).toEqual(expected);
+  });
+
+  it('expects "setPageByRoute" to do nothing if path is empty', () => {
+    const structure: Structure = { ORDER: [], STYLE: [] };
+    component.path = '';
+    spyOn(component, 'setPage').and.stub();
+
+    component.setPageByRoute(structure);
+    expect(component.setPage).not.toHaveBeenCalled();
+  });
+
+  it('expects "setPageByRoute" to do nothing if ORDER is empty', () => {
+    const structure: Structure = { ORDER: [], STYLE: [] };
+    spyOn(component, 'setPage').and.stub();
+
+    component.setPageByRoute(structure);
+    expect(component.setPage).not.toHaveBeenCalled();
+  });
+
+  it('expects "setPageByRoute" to call setPage', () => {
+    const structure: Structure = { ORDER: ['one'], STYLE: [] };
+    spyOn(component, 'setPage').and.stub();
+
+    component.setPageByRoute(structure);
+    expect(component.setPage).toHaveBeenCalledWith('SLIDE-KEY', structure);
+  });
+
+  it('expects "setPage" to do nothing if ORDER is empty', () => {
+    const structure: Structure = { ORDER: [], STYLE: [] };
+    spyOn(component['style'], 'add').and.stub();
+    spyOn(component['zone'], 'run').and.stub();
+
+    component.setPage('key', structure);
+    expect(component['style'].add).not.toHaveBeenCalled();
+    expect(component['zone'].run).not.toHaveBeenCalled();
+  });
+
+  it('expects "setPage" to set page data based on the key', () => {
+    const key: string = 'KEY';
+    const structure: Structure = {
+      ORDER: [key],
+      STYLE: ['style1', 'style2'],
+      KEY: {
+        title: 'TITLE',
+        type: 'TYPE',
+      }
+    };
+    spyOn(component['style'], 'add').and.stub();
+    spyOn(component['zone'], 'run').and.stub();
+
+    component.setPage(key, structure);
+    expect(component.slideIndex).toEqual(0);
+    expect(component.title).toEqual('TITLE');
+    expect(component.type).toEqual('TYPE');
+    expect(component.page).toEqual((structure as any)[key]);
+    expect(component.slideKey).toEqual(key);
+    expect(component['style'].add).toHaveBeenCalledWith('style1\nstyle2');
+    expect(component['zone'].run).toHaveBeenCalledWith(jasmine.any(Function));
+  });
+
+  it('expects "zoneRun" to navigate to talk, path, key', () => {
+    const key: string = 'KEY';
+    component.path = 'PATH';
+    spyOn(component['router'], 'navigate').and.stub();
+
+    component.zoneRun(key);
+    expect(component['router'].navigate).toHaveBeenCalledWith(['talk', 'PATH', 'KEY']);
+  });
 });
