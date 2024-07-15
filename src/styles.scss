@@ -17,18 +17,23 @@ body {
 
   .font-xxs {
     font-size: var(--font--xxs) !important;
+    line-height: calc(var(--font--xxs) * 1.5);
   }
   .font-xs {
     font-size: var(--font--xs) !important;
+    line-height: calc(var(--font--xs) * 1.25);
   }
   .font-normal {
     font-size: var(--font--normal) !important;
+    line-height: calc(var(--font--normal) * 0.75);
   }
   .font-xl {
     font-size: var(--font--xl) !important;
+    line-height: calc(var(--font--xl) * 0.65);
   }
   .font-xxl {
     font-size: var(--font--xxl) !important;
+    line-height: calc(var(--font--xxl) * 0.5);
   }
 }
 
