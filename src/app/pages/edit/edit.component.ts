@@ -23,6 +23,8 @@ import { saveAs } from 'file-saver';
 export class EditComponent implements OnDestroy, OnInit {
   icons: { [key: string]: { type: string, icon: string } } = slideTypeIcons;
 
+  localStorage: any = localStorage;
+
   keyStatuses: Array<KeyStatuses> = [];
 
   path: string = '';
@@ -37,7 +39,7 @@ export class EditComponent implements OnDestroy, OnInit {
   }
   set displayAs(value) {
     this._displayAs = value;
-    localStorage.setItem('displayAs', value);
+    this.localStorage.setItem('displayAs', value);
   }
   displayAsOptions: Array<string> = ['Cards', 'List'];
   editing: boolean = false;
@@ -79,11 +81,11 @@ export class EditComponent implements OnDestroy, OnInit {
 
   displayOptions: Array<string> = ['cards', 'list'];
   init = (): void => {
-    const displayAs: string = localStorage.getItem('displayAs') || 'cards';
+    const displayAs: string = this.localStorage.getItem('displayAs') || 'cards';
     this.displayAs = displayAs;
     this.cdr.detectChanges();
 
-    const path: string = this.route.snapshot.paramMap.get('folder') || '';
+    const path: string = this.route.snapshot.paramMap.get('folder')!;
     this.path = path;
     this.code.getStructure(path);
 
@@ -98,7 +100,6 @@ export class EditComponent implements OnDestroy, OnInit {
         this.tags = [...talk!.tags];
       }
     }
-
   };
 
   handleChange = (event: any): void => {

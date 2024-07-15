@@ -39,4 +39,24 @@ describe('EditComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('expects "get dataChanged" to return true if any slide has changed', () => {
+    component.keyStatuses = [
+      { key: 'key1', included: true },
+    ]
+    spyOn(component, 'isNotOriginal').and.returnValue(true);
+
+    const result: boolean = component.dataChanged;
+    expect(result).toEqual(true);
+  });
+
+  it('expects "get dataChanged" to return false if no slide has changed', () => {
+    component.keyStatuses = [
+      { key: 'key1', included: true },
+    ]
+    spyOn(component, 'isNotOriginal').and.returnValue(false);
+
+    const result: boolean = component.dataChanged;
+    expect(result).toEqual(false);
+  });
 });
