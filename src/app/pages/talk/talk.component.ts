@@ -41,6 +41,8 @@ export class TalkComponent implements OnDestroy {
 
   fontsizeSelected: string | undefined;
 
+  window: any = window;
+
   constructor(
     private cdr: ChangeDetectorRef,
     private code: CodeService,
@@ -163,7 +165,7 @@ export class TalkComponent implements OnDestroy {
   openControlPanel = (): void => {
     this.control = true;
     const url = this.router.createUrlTree(['control-panel', this.path, this.slideKey]);
-    window.open(url.toString(), '_blank');
+    this.window.open(url.toString(), '_blank');
     this.cdr.detectChanges();
   };
 }

@@ -252,4 +252,82 @@ describe('TalkComponent', () => {
     component.zoneRun(key);
     expect(component['router'].navigate).toHaveBeenCalledWith(['talk', 'PATH', 'KEY']);
   });
+
+  it('expects "home" to set the page to index 0', () => {
+    const structure: Structure = { ORDER: ['KEY'], STYLE: [] };
+    component.structure = structure;
+    spyOn(component, 'setPage').and.stub();
+
+    component.home();
+    expect(component.slideIndex).toEqual(0);
+    expect(component.setPage).toHaveBeenCalledWith('KEY', structure);
+  });
+
+  it('expects "next" to do nothing if there is no next slide', () => {
+    const structure: Structure = { ORDER: ['KEY'], STYLE: [] };
+    component.structure = structure;
+    component.slideIndex = 0;
+    spyOn(component, 'setPage').and.stub();
+
+    component.next();
+    expect(component.slideIndex).toEqual(0);
+    expect(component.setPage).not.toHaveBeenCalled();
+  });
+
+  it('expects "next" to shift to the next page', () => {
+    const structure: Structure = { ORDER: ['KEY1', 'KEY2'], STYLE: [] };
+    component.structure = structure;
+    component.slideIndex = 0;
+    spyOn(component, 'setPage').and.stub();
+
+    component.next();
+    expect(component.slideIndex).toEqual(1);
+    expect(component.setPage).toHaveBeenCalledWith('KEY2', structure);
+  });
+
+  it('expects "previous" to do nothing if there is no previous slide', () => {
+    const structure: Structure = { ORDER: ['KEY'], STYLE: [] };
+    component.structure = structure;
+    component.slideIndex = 0;
+    spyOn(component, 'setPage').and.stub();
+
+    component.previous();
+    expect(component.slideIndex).toEqual(0);
+    expect(component.setPage).not.toHaveBeenCalled();
+  });
+
+  it('expects "previous" to shift to the previous page', () => {
+    const structure: Structure = { ORDER: ['KEY1', 'KEY2'], STYLE: [] };
+    component.structure = structure;
+    component.slideIndex = 1;
+    spyOn(component, 'setPage').and.stub();
+
+    component.previous();
+    expect(component.slideIndex).toEqual(0);
+    expect(component.setPage).toHaveBeenCalledWith('KEY1', structure);
+  });
+
+  it('expects "end" to shift to the last slide', () => {
+    const structure: Structure = { ORDER: ['KEY1', 'KEY2', 'KEY3', 'KEY4'], STYLE: [] };
+    component.structure = structure;
+    component.slideIndex = 1;
+    spyOn(component, 'setPage').and.stub();
+
+    component.end();
+    expect(component.slideIndex).toEqual(3);
+    expect(component.setPage).toHaveBeenCalledWith('KEY4', structure);
+  });
+
+  it('expects "openControlPanel" to open a new tab with the correct URL', () => {
+    component.path = 'PATH';
+    component.slideKey = 'KEY';
+    spyOn(component['router'], 'createUrlTree').and.callThrough();
+    spyOn(component.window, 'open').and.stub();
+    spyOn(component['cdr'], 'detectChanges').and.stub();
+
+    component.openControlPanel();
+    expect(component['router'].createUrlTree).toHaveBeenCalledWith(['control-panel', 'PATH', 'KEY']);
+    expect(component.window.open).toHaveBeenCalledWith('/control-panel/PATH/KEY', '_blank');
+    expect(component['cdr'].detectChanges).toHaveBeenCalled();
+  });
 });
