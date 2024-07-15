@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Structure, StructureType } from 'src/app/core/interfaces/structure';
+import { Structure, StructureType } from '../../core/interfaces/structure';
 
 @Injectable({
   providedIn: 'root'

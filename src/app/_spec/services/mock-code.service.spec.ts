@@ -1,7 +1,7 @@
 import { BehaviorSubject } from "rxjs"
 
-import { Structure } from "src/app/core/interfaces/structure";
-import { Talks } from "src/app/core/interfaces/talks"
+import { Structure } from "../../core/interfaces/structure";
+import { Talks } from "../../core/interfaces/talks"
 
 const mockTalks: BehaviorSubject<Talks> = new BehaviorSubject<Talks>({ STYLE: [], TAGS: [], TALKS: []});
 const mockStructure: BehaviorSubject<Structure> = new BehaviorSubject<Structure>({ ORDER: [], STYLE: [] });

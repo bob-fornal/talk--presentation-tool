@@ -1,12 +1,17 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NavigationEnd, NavigationSkipped } from '@angular/router';
 
 import { CeDisplayComponent } from './ce-display.component';
 
-import { NU_MONACO_EDITOR_CONFIG, NuMonacoEditorComponent } from '@ng-util/monaco-editor';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
-import { CodeService } from 'src/app/core/services/code.service';
-import { MockCodeService } from 'src/app/_spec/services/mock-code.service.spec';
+import { NGX_MONACO_EDITOR_CONFIG, EditorComponent } from 'ngx-monaco-editor-v2';
+
+import { CodeService } from '../../../core/services/code.service';
+import { MockCodeService } from '../../../_spec/services/mock-code.service.spec';
 
 describe('CeDisplayComponent', () => {
   let component: CeDisplayComponent;
@@ -14,27 +19,33 @@ describe('CeDisplayComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
+      declarations: [
         CeDisplayComponent,
+      ],
+      imports: [
+        EditorComponent,
 
-        NuMonacoEditorComponent,
+        MatButtonModule,
+        MatIconModule,
+        MatListModule,
       ],
       providers: [
         { provide: CodeService, useValue: MockCodeService },
-        { provide: NU_MONACO_EDITOR_CONFIG, useValue: {} },
-      ]
+        { provide: NGX_MONACO_EDITOR_CONFIG, useValue: {} },
+      ],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA,
+      ],
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(CeDisplayComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-
-    component.setTimeout = (fn: any, timer: any) => fn();
   });
 
-  beforeAll(() => {
-    window.onbeforeunload = jasmine.createSpy();
+  beforeEach(() => {
+    component.setTimeout = (fn: any, timer: any) => fn();
   });
 
   it('should create', () => {

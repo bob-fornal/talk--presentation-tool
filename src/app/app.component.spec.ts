@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 
 import { CodeService } from './core/services/code.service';
@@ -12,23 +12,27 @@ describe('AppComponent', () => {
   let component: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
   
+  beforeAll(() => {
+    window.onbeforeunload = () => jasmine.createSpy();
+  });
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
+      imports: [
+        RouterModule,
+      ],
+      declarations: [
+        AppComponent,
+      ],
       providers: [
         { provide: CodeService, useValue: MockCodeService },
         { provide: LoggingService, useValue: MockLoggingService },
-      ]
-    })
-    .compileComponents();
+      ],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  beforeAll(() => {
-    window.onbeforeunload = jasmine.createSpy();
   });
 
   it('should create the app', () => {

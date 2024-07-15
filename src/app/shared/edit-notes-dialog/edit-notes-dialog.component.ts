@@ -1,22 +1,9 @@
 import { Component, Inject } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
 
-import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-edit-notes-dialog',
-  standalone: true,
-  imports: [
-    MatFormFieldModule,
-    FormsModule,
-
-    MatButtonModule,
-    MatInputModule,
-    MatDialogModule,
-  ],
+  selector: 'edit-notes-dialog',
   templateUrl: './edit-notes-dialog.component.html',
   styleUrl: './edit-notes-dialog.component.scss'
 })

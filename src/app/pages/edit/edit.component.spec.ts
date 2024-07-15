@@ -1,33 +1,39 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatIconModule } from '@angular/material/icon';
+
 import { EditComponent } from './edit.component';
 
 import { ActivatedRoute } from '@angular/router';
-import { MockActivatedRoute } from 'src/app/_spec/mock-activated-route.spec';
+import { MockActivatedRoute } from '../../_spec/mock-activated-route.spec';
 
-import { CodeService } from 'src/app/core/services/code.service';
-import { MockCodeService } from 'src/app/_spec/services/mock-code.service.spec';
+import { CodeService } from '../../core/services/code.service';
+import { MockCodeService } from '../../_spec/services/mock-code.service.spec';
 
 describe('EditComponent', () => {
   let component: EditComponent;
   let fixture: ComponentFixture<EditComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [EditComponent],
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [
+        EditComponent
+      ],
+      imports: [
+        MatButtonToggleModule,
+        MatIconModule,
+      ],
       providers: [
         { provide: ActivatedRoute, useValue: MockActivatedRoute },
         { provide: CodeService, useValue: MockCodeService },
-      ]
-    });
+      ],
+    })
+    .compileComponents();
 
     fixture = TestBed.createComponent(EditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  beforeAll(() => {
-    window.onbeforeunload = jasmine.createSpy();
   });
 
   it('should create', () => {

@@ -1,15 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-
 @Component({
   selector: 'edit-buttons',
-  standalone: true,
-  imports: [
-    MatButtonModule,
-    MatIconModule,
-  ],
   templateUrl: './edit-buttons.component.html',
   styleUrl: './edit-buttons.component.scss'
 })

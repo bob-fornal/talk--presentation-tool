@@ -1,34 +1,18 @@
-import { afterNextRender, Component, inject, Inject, Injector, ViewChild } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { CdkTextareaAutosize, TextFieldModule } from '@angular/cdk/text-field';
+import { Component, Inject, ViewChild } from '@angular/core';
+import { CdkTextareaAutosize } from '@angular/cdk/text-field';
 
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
-import { MatButtonModule } from '@angular/material/button';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatListModule } from '@angular/material/list';
-import { SlideInformationService } from 'src/app/core/services/slide-information.service';
-import { SlideStructure, SlideType } from 'src/app/core/interfaces/slide-types';
+import { SlideStructure, SlideType } from '../../core/interfaces/slide-types';
+
+import { SlideInformationService } from '../../core/services/slide-information.service';
 
 @Component({
-  selector: 'add-slide-modal',
-  standalone: true,
-  imports: [
-    FormsModule,
-    TextFieldModule,
-
-    MatButtonModule,
-    MatDialogModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatListModule
-  ],
-  templateUrl: './add-slide-modal.component.html',
-  styleUrl: './add-slide-modal.component.scss'
+  selector: 'add-slide-dialog',
+  templateUrl: './add-slide-dialog.component.html',
+  styleUrl: './add-slide-dialog.component.scss'
 })
-export class AddSlideModalComponent {
+export class AddSlideDialogComponent {
   @ViewChild('autosize') autosize!: CdkTextareaAutosize;
   
   selectedType: SlideType | null = null;
@@ -36,7 +20,7 @@ export class AddSlideModalComponent {
 
   constructor(
     public service: SlideInformationService,
-    public dialogRef: MatDialogRef<AddSlideModalComponent>,
+    public dialogRef: MatDialogRef<AddSlideDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
   ) { }
 
@@ -66,4 +50,5 @@ export class AddSlideModalComponent {
     // console.log(key, (this.selectedStructure as any)[key].type);
     return (this.selectedStructure as any)[key].type;
   }
+
 }

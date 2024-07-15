@@ -1,10 +1,9 @@
 import { Component, Input, Output } from '@angular/core';
-import { Trigger } from 'src/app/core/interfaces/triggers';
+import { Trigger } from '../../core/interfaces/triggers';
 
 @Component({
   selector: 'ce-editor',
   template: '<h1>ce-editor</h1>',
-  standalone: true,
 })
 export class MockCeEditorComponent {
   @Input() title: string = '';

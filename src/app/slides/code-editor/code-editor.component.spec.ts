@@ -1,47 +1,50 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CodeEditorComponent } from './code-editor.component';
+import { EditButtonsComponent } from '../../shared/edit-buttons/edit-buttons.component';
 
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
 
-import { MockCeDisplayComponent } from 'src/app/_spec/components/mock-ce-display.component.spec';
-import { MockCeEditorComponent } from 'src/app/_spec/components/mock-ce-editor.component.spec';
+import { MockCeDisplayComponent } from '../../_spec/components/mock-ce-display.component.spec';
+import { MockCeEditorComponent } from '../../_spec/components/mock-ce-editor.component.spec';
 
 import { ActivatedRoute } from '@angular/router';
-import { MockActivatedRoute } from 'src/app/_spec/mock-activated-route.spec';
+import { MockActivatedRoute } from '../../_spec/mock-activated-route.spec';
 
-import { CodeService } from 'src/app/core/services/code.service';
-import { MockCodeService } from 'src/app/_spec/services/mock-code.service.spec';
+import { CodeService } from '../../core/services/code.service';
+import { MockCodeService } from '../../_spec/services/mock-code.service.spec';
 
-import { NU_MONACO_EDITOR_CONFIG } from '@ng-util/monaco-editor';
+import { NGX_MONACO_EDITOR_CONFIG } from 'ngx-monaco-editor-v2';
 
 describe('CodeEditorComponent', () => {
   let component: CodeEditorComponent;
   let fixture: ComponentFixture<CodeEditorComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [
         CodeEditorComponent,
+        EditButtonsComponent,
+
         MockCeDisplayComponent,
         MockCeEditorComponent,
-
+      ],
+      imports: [
         MatDialogModule,
+        MatIconModule,
       ],
       providers: [
         { provide: ActivatedRoute, useValue: MockActivatedRoute },
         { provide: CodeService, useValue: MockCodeService },
-        { provide: NU_MONACO_EDITOR_CONFIG, useValue: {} },
-      ]
-    });
+        { provide: NGX_MONACO_EDITOR_CONFIG, useValue: {} },
+      ],
+    })
+    .compileComponents();
 
     fixture = TestBed.createComponent(CodeEditorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  beforeAll(() => {
-    window.onbeforeunload = jasmine.createSpy();
   });
 
   it('should create', () => {

@@ -2,23 +2,28 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EditButtonsComponent } from './edit-buttons.component';
 
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+
 describe('EditButtonsComponent', () => {
   let component: EditButtonsComponent;
   let fixture: ComponentFixture<EditButtonsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [EditButtonsComponent]
+      declarations: [
+        EditButtonsComponent
+      ],
+      imports: [
+        MatButtonModule,
+        MatIconModule,
+      ],
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(EditButtonsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  beforeAll(() => {
-    window.onbeforeunload = jasmine.createSpy();
   });
 
   it('should create', () => {

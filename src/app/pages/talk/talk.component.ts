@@ -1,49 +1,18 @@
 import { ChangeDetectorRef, Component, HostListener, NgZone, OnDestroy } from '@angular/core';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, Subscription } from 'rxjs';
-import { NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 
-import { Structure, StructureType } from 'src/app/core/interfaces/structure';
+import { BroadcastMessage } from '../../core/interfaces/broadcast';
+import { Structure, StructureType } from '../../core/interfaces/structure';
 
-import { BroadcastService } from 'src/app/core/services/broadcast-service.service';
-import { BroadcastMessage } from 'src/app/core/interfaces/broadcast';
-import { CodeService } from 'src/app/core/services/code.service';
-import { StyleService } from 'src/app/core/services/style.service';
-
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-
-import { CodeEditorComponent } from '../../slides/code-editor/code-editor.component';
-import { PanelTripleComponent } from '../../slides/panel-triple/panel-triple.component';
-import { PanelDoubleComponent } from '../../slides/panel-double/panel-double.component';
-import { PanelSingleComponent } from '../../slides/panel-single/panel-single.component';
-import { ImageOnlyComponent } from '../../slides/image-only/image-only.component';
-import { ImageTextComponent } from '../../slides/image-text/image-text.component';
-import { Cover01Component } from '../../slides/cover-01/cover.component';
-import { FontsizeService } from 'src/app/core/services/fontsize.service';
+import { BroadcastService } from '../../core/services/broadcast-service.service';
+import { CodeService } from '../../core/services/code.service';
+import { FontsizeService } from '../../core/services/fontsize.service';
+import { StyleService } from '../../core/services/style.service';
 
 @Component({
-    selector: 'talk',
-    templateUrl: './talk.component.html',
-    styleUrls: ['./talk.component.scss'],
-    standalone: true,
-    imports: [
-        NgSwitch,
-        NgSwitchCase,
-        NgSwitchDefault,
-        RouterLink,
-
-        Cover01Component,
-        ImageOnlyComponent,
-        ImageTextComponent,
-        PanelSingleComponent,
-        PanelDoubleComponent,
-        PanelTripleComponent,
-        CodeEditorComponent,
-
-        MatButtonModule,
-        MatIconModule,
-    ],
+  selector: 'app-talk',
+  templateUrl: './talk.component.html',
 })
 export class TalkComponent implements OnDestroy {
   sendExternal: Subject<any> = new Subject();

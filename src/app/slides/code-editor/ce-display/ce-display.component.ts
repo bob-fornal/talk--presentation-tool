@@ -1,40 +1,22 @@
-import { DOCUMENT, NgFor } from '@angular/common';
+import { DOCUMENT } from '@angular/common';
 import { ChangeDetectorRef, Component, Inject, Input, OnChanges, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { NavigationEnd, NavigationSkipped, Router, RouterLink } from '@angular/router';
+import { NavigationEnd, NavigationSkipped, Router } from '@angular/router';
 import { Subject, Subscription } from 'rxjs';
 
-import { NuMonacoEditorComponent } from '@ng-util/monaco-editor';
+import { BroadcastMessage } from '../../../core/interfaces/broadcast';
+import { Trigger } from '../../../core/interfaces/triggers';
 
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
-
-import { BroadcastMessage } from 'src/app/core/interfaces/broadcast';
-import { Trigger } from 'src/app/core/interfaces/triggers';
-
-import { BroadcastService } from 'src/app/core/services/broadcast-service.service';
-import { CodeService } from 'src/app/core/services/code.service';
-import { LoggingService } from 'src/app/core/services/logging.service';
+import { BroadcastService } from '../../../core/services/broadcast-service.service';
+import { CodeService } from '../../../core/services/code.service';
+import { LoggingService } from '../../../core/services/logging.service';
 
 @Component({
   selector: 'ce-display',
-  standalone: true,
-  imports: [
-    NgFor,
-    RouterLink,
-    NuMonacoEditorComponent,
-    FormsModule,
-
-    MatButtonModule,
-    MatIconModule,
-    MatListModule,
-  ],
   templateUrl: './ce-display.component.html',
   styleUrls: [
     '../../panel.shared.scss',
-    './ce-display.component.scss'
-  ],
+    './ce-display.component.scss',
+  ]
 })
 export class CeDisplayComponent implements OnChanges, OnDestroy, OnInit {
   @Input() title: string = '';
@@ -155,6 +137,7 @@ export class CeDisplayComponent implements OnChanges, OnDestroy, OnInit {
       this.scriptLoaded[trigger.file] = 'loaded';
     }
 
+    await this.sleep(250);
     try {
       (window as any)[init]({});
     } catch (error) {

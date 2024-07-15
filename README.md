@@ -4,6 +4,8 @@
 
 This project was designed to provide a means of doing a presentation with code examples and execution as a part of the presentation.
 
+- [ ] Upgrade to Angular v18 and convert to `app.module.ts` pattern.
+
 ## Talks
 
 - [x] A Look Inside Observables
@@ -61,3 +63,50 @@ This project was designed to provide a means of doing a presentation with code e
 
 - [x] Sitemap Generator
 - [ ] Make it dynamic / access `assets` data
+
+## FUTURE USE-CASES
+
+### Dynamic Loading of Slide Pages
+
+Use Angular Portal to allow dynamic component loading?
+
+```html
+  <!-- Cannot write this in HTML by default; use Portal to inject it -->
+  <alterate-cover [attr.data]="slide['data']"></alternate-cover>
+```
+
+JSON at TOP of `structure.json`. The "key" (`cover`) should be in the `ORDER` array:
+
+```json
+  "COMPONENTS": {
+    "alternate-cover": {
+      "location": "./assets/components/cover-01.js",
+      "fallback": "NONE",
+      "attribute": [
+        { "data-attribute": "data", "use-key": "data" }
+      ]
+    }
+  },
+```
+
+Slide data for `cover` could look like:
+
+```json
+"alternate-cover": {
+  "data": {
+    "title": "Active Career Management",
+    "type": "cover",
+    "author": "Bob Fornal",
+    "text1": "...",
+    "text2": "...",
+  },
+  "notes": "..."
+}
+```
+
+### Investigate JaveScript Load on Code Editor Pages
+
+```html
+  <source [attr.src]="filepath" />
+```
+

@@ -1,24 +1,13 @@
 import { Component, Input } from '@angular/core';
-
-import { Trigger } from 'src/app/core/interfaces/triggers';
-
-import { AbstractSlide } from '../abstract.slide';
-import { EditButtonsComponent } from 'src/app/shared/edit-buttons/edit-buttons.component';
-import { CeDisplayComponent } from './ce-display/ce-display.component';
-import { CeEditorComponent } from './ce-editor/ce-editor.component';
-
 import { Subject } from 'rxjs';
 
+import { AbstractSlide } from '../abstract.slide';
+import { Trigger } from '../../core/interfaces/triggers';
+
 @Component({
-    selector: 'code-editor',
-    templateUrl: './code-editor.component.html',
-    standalone: true,
-    styleUrl: './code-editor.component.scss',
-    imports: [
-      EditButtonsComponent,
-      CeDisplayComponent,
-      CeEditorComponent,
-    ]
+  selector: 'code-editor',
+  templateUrl: './code-editor.component.html',
+  styleUrl: './code-editor.component.scss'
 })
 export class CodeEditorComponent extends AbstractSlide {
   @Input() title: string = '';

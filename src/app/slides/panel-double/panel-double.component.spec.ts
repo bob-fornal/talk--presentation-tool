@@ -2,28 +2,39 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PanelDoubleComponent } from './panel-double.component';
 
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+
+import { EditButtonsComponent } from '../../shared/edit-buttons/edit-buttons.component';
+
 import { ActivatedRoute } from '@angular/router';
-import { MockActivatedRoute } from 'src/app/_spec/mock-activated-route.spec';
+import { MockActivatedRoute } from '../../_spec/mock-activated-route.spec';
 
 describe('PanelDoubleComponent', () => {
   let component: PanelDoubleComponent;
   let fixture: ComponentFixture<PanelDoubleComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [PanelDoubleComponent],
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [
+        PanelDoubleComponent,
+        EditButtonsComponent,
+      ],
+      imports: [
+        MatButtonModule,
+        MatDialogModule,
+        MatIconModule,
+      ],
       providers: [
         { provide: ActivatedRoute, useValue: MockActivatedRoute },
-      ]
-    });
+      ],
+    })
+    .compileComponents();
 
     fixture = TestBed.createComponent(PanelDoubleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  beforeAll(() => {
-    window.onbeforeunload = jasmine.createSpy();
   });
 
   it('should create', () => {

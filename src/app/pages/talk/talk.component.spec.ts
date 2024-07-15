@@ -1,36 +1,42 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+
 import { TalkComponent } from './talk.component';
 
 import { ActivatedRoute } from '@angular/router';
-import { MockActivatedRoute } from 'src/app/_spec/mock-activated-route.spec';
+import { MockActivatedRoute } from '../../_spec/mock-activated-route.spec';
 
-import { CodeService } from 'src/app/core/services/code.service';
-import { MockCodeService } from 'src/app/_spec/services/mock-code.service.spec';
+import { CodeService } from '../../core/services/code.service';
+import { MockCodeService } from '../../_spec/services/mock-code.service.spec';
 
-import { BroadcastMessage } from 'src/app/core/interfaces/broadcast';
-import { Structure } from 'src/app/core/interfaces/structure';
+import { BroadcastMessage } from '../../core/interfaces/broadcast';
+import { Structure } from '../../core/interfaces/structure';
 
 describe('TalkComponent', () => {
   let component: TalkComponent;
   let fixture: ComponentFixture<TalkComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [TalkComponent],
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [
+        TalkComponent,
+      ],
+      imports: [
+        MatButtonModule,
+        MatIconModule,
+      ],
       providers: [
         { provide: ActivatedRoute, useValue: MockActivatedRoute },
         { provide: CodeService, useValue: MockCodeService },
-      ]
-    });
+      ],
+    })
+    .compileComponents();
 
     fixture = TestBed.createComponent(TalkComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  beforeAll(() => {
-    window.onbeforeunload = jasmine.createSpy();
   });
 
   it('should create', () => {

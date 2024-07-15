@@ -1,11 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { Subject } from 'rxjs';
-import { Trigger } from 'src/app/core/interfaces/triggers';
+import { Trigger } from '../../core/interfaces/triggers';
 
 @Component({
   selector: 'ce-display',
   template: '<h1>ce-display</h1>',
-  standalone: true,
 })
 export class MockCeDisplayComponent {
   @Input() title: string = '';

@@ -2,20 +2,19 @@ import { ChangeDetectorRef, Component, HostListener, OnDestroy } from '@angular/
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { Structure, StructureType } from 'src/app/core/interfaces/structure';
-import { CodeService } from 'src/app/core/services/code.service';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { BroadcastService } from 'src/app/core/services/broadcast-service.service';
-import { BroadcastMessage } from 'src/app/core/interfaces/broadcast';
-import { StyleService } from 'src/app/core/services/style.service';
-import { Trigger } from 'src/app/core/interfaces/triggers';
+
+import { BroadcastMessage } from '../../core/interfaces/broadcast';
+import { Structure, StructureType } from '../../core/interfaces/structure';
+import { Trigger } from '../../core/interfaces/triggers';
+
+import { BroadcastService } from '../../core/services/broadcast-service.service';
+import { CodeService } from '../../core/services/code.service';
+import { StyleService } from '../../core/services/style.service';
+
 import { SidenavWidthService } from './sidenav-width.service';
 
 @Component({
-  selector: 'app-control-panel',
-  standalone: true,
-  imports: [MatButtonModule, MatIconModule],
+  selector: 'control-panel',
   templateUrl: './control-panel.component.html',
   styleUrl: './control-panel.component.scss'
 })
@@ -179,5 +178,5 @@ export class ControlPanelComponent implements OnDestroy {
   stripHTML = (html: string): string => {
     let doc = new DOMParser().parseFromString(html, 'text/html');
     return doc.body.textContent || '';
- }
+  };
 }

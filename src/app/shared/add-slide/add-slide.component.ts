@@ -1,14 +1,12 @@
 import { Component, Input, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 import { MatDialog } from '@angular/material/dialog';
 
-import { AddSlideModalComponent } from '../add-slide-modal/add-slide-modal.component';
-import { Subscription } from 'rxjs';
+import { AddSlideDialogComponent } from '../add-slide-dialog/add-slide-dialog.component';
 
 @Component({
   selector: 'add-slide',
-  standalone: true,
-  imports: [],
   templateUrl: './add-slide.component.html',
   styleUrl: './add-slide.component.scss'
 })
@@ -28,7 +26,7 @@ export class AddSlideComponent implements OnDestroy {
   handleAddSlide = (event: any): void => {
     event.preventDefault();
 
-    const dialogRef = this.dialog.open(AddSlideModalComponent, {
+    const dialogRef = this.dialog.open(AddSlideDialogComponent, {
       data: { index: this.index },
       height: '600px',
       width: '800px',

@@ -1,23 +1,22 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { AbstractSlide } from './abstract.slide';
 
 import { MatDialogModule } from '@angular/material/dialog';
 
-import { ActivatedRoute } from '@angular/router';
-import { MockActivatedRoute } from 'src/app/_spec/mock-activated-route.spec';
-import { EditNotesDialogComponent } from '../shared/edit-notes-dialog/edit-notes-dialog.component';
+import { MockActivatedRoute } from '../_spec/mock-activated-route.spec';
+
+import { MockEditNotesDialogComponent } from '../_spec/components/mock-edit-notes-dialog.component.spec';
 
 @Component({
   selector: 'test-component',
   template: '<h1>Test Component</h1>',
-  standalone: true,
-  imports: [
-    MatDialogModule,
-  ]
 })
-class TestComponent extends AbstractSlide {}
+class TestComponent extends AbstractSlide {
+  override component: any = MockEditNotesDialogComponent;
+}
 
 describe('AbstractSlide', () => {
   let component: TestComponent;
@@ -25,9 +24,17 @@ describe('AbstractSlide', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TestComponent],
+      declarations: [
+        TestComponent,
+      ],
+      imports: [
+        MatDialogModule,
+      ],
       providers: [
         { provide: ActivatedRoute, useValue: MockActivatedRoute },
+      ],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA,
       ]
     })
     .compileComponents();
@@ -123,7 +130,7 @@ describe('AbstractSlide', () => {
     spyOn(component.dialog, 'open').and.callThrough();
 
     component.editNotes();
-    expect(component.dialog.open).toHaveBeenCalledWith(EditNotesDialogComponent, {
+    expect(component.dialog.open).toHaveBeenCalledWith(jasmine.any(Function), {
       data: { notes: 'NOTES' },
       height: '400px',
       width: '600px',

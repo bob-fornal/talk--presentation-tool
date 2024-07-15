@@ -1,33 +1,18 @@
-import { CommonModule, NgFor } from '@angular/common';
 import { Component, OnDestroy } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
-import { Structure } from 'src/app/core/interfaces/structure';
-import { Tag } from 'src/app/core/interfaces/tag';
-import { Talk, Talks } from 'src/app/core/interfaces/talks';
-import { CodeService } from 'src/app/core/services/code.service';
-import { StyleService } from 'src/app/core/services/style.service';
+import { Structure } from '../../core/interfaces/structure';
+import { Talk, Talks } from '../../core/interfaces/talks';
+import { Tag } from '../../core/interfaces/tag';
 
-import { MatButtonModule } from '@angular/material/button';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatIconModule } from '@angular/material/icon';
+import { CodeService } from '../../core/services/code.service';
+import { StyleService } from '../../core/services/style.service';
 
 @Component({
-    selector: 'app-courses',
-    templateUrl: './courses.component.html',
-    styleUrls: ['./courses.component.scss'],
-    standalone: true,
-    imports: [
-      CommonModule,
-      
-      RouterLink,
-      NgFor,
-
-      MatButtonModule,
-      MatCheckboxModule,
-      MatIconModule
-    ]
+  selector: 'app-courses',
+  templateUrl: './courses.component.html',
+  styleUrl: './courses.component.scss'
 })
 export class CoursesComponent implements OnDestroy {
   talks: Array<Talk> = [];
@@ -141,4 +126,5 @@ export class CoursesComponent implements OnDestroy {
     if (slides === notes) return 'COMPLETE';
     return `Slides: ${ slides }, Notes: ${ notes }`;
   };
+
 }

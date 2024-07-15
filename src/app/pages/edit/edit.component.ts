@@ -1,64 +1,24 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
-import { KeyStatuses } from 'src/app/core/interfaces/key-statuses';
-import { Structure, StructureType } from 'src/app/core/interfaces/structure';
-import { Talk, Talks } from 'src/app/core/interfaces/talks';
-
-import { CodeService } from 'src/app/core/services/code.service';
-import { StyleService } from 'src/app/core/services/style.service';
-
-import { MatButtonModule } from '@angular/material/button';
-import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import { MatCardModule } from '@angular/material/card';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatIconModule } from '@angular/material/icon';
-
-import { AddSlideComponent } from 'src/app/shared/add-slide/add-slide.component';
-
-import { CodeEditorComponent } from '../../slides/code-editor/code-editor.component';
-import { PanelTripleComponent } from '../../slides/panel-triple/panel-triple.component';
-import { PanelDoubleComponent } from '../../slides/panel-double/panel-double.component';
-import { PanelSingleComponent } from '../../slides/panel-single/panel-single.component';
-import { ImageOnlyComponent } from '../../slides/image-only/image-only.component';
-import { ImageTextComponent } from '../../slides/image-text/image-text.component';
-import { Cover01Component } from '../../slides/cover-01/cover.component';
-import { EditService } from './edit.service';
-
 import slideTypeIcons from '../../core/constants/slide-type-icons.json';
+
+import { KeyStatuses } from '../../core/interfaces/key-statuses';
+import { Structure, StructureType } from '../../core/interfaces/structure';
+import { Talk, Talks } from '../../core/interfaces/talks';
+
+import { CodeService } from '../../core/services/code.service';
+import { StyleService } from '../../core/services/style.service';
+
+import { EditService } from './edit.service';
 
 import { saveAs } from 'file-saver';
 
 @Component({
-    selector: 'edit',
-    templateUrl: './edit.component.html',
-    styleUrls: ['./edit.component.scss'],
-    standalone: true,
-    imports: [
-      NgIf,
-      NgSwitch,
-      NgSwitchCase,
-      NgSwitchDefault,
-      RouterLink,
-
-      AddSlideComponent,
-      
-      Cover01Component,
-      ImageOnlyComponent,
-      ImageTextComponent,
-      PanelSingleComponent,
-      PanelDoubleComponent,
-      PanelTripleComponent,
-      CodeEditorComponent,
-
-      MatButtonModule,
-      MatButtonToggleModule,
-      MatCardModule,
-      MatGridListModule,
-      MatIconModule,
-    ]
+  selector: 'app-edit',
+  templateUrl: './edit.component.html',
+  styleUrl: './edit.component.scss'
 })
 export class EditComponent implements OnDestroy, OnInit {
   icons: { [key: string]: { type: string, icon: string } } = slideTypeIcons;

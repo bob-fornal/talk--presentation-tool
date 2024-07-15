@@ -1,35 +1,46 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
+import { TextFieldModule } from '@angular/cdk/text-field';
+
+import { AddSlideDialogComponent } from './add-slide-dialog.component';
+
+import { MatButtonModule } from '@angular/material/button';
 import { MatDialogRef, MatDialogModule, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
 
-import { AddSlideModalComponent } from './add-slide-modal.component';
+import { SlideStructure, SlideType } from '../../core/interfaces/slide-types';
 
-import { SlideStructure, SlideType } from 'src/app/core/interfaces/slide-types';
-
-describe('AddSlideModalComponent', () => {
-  let component: AddSlideModalComponent;
-  let fixture: ComponentFixture<AddSlideModalComponent>;
+describe('AddSlideDialogComponent', () => {
+  let component: AddSlideDialogComponent;
+  let fixture: ComponentFixture<AddSlideDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      declarations: [
+        AddSlideDialogComponent,
+      ],
       imports: [
-        AddSlideModalComponent,
+        FormsModule,
+        TextFieldModule,
 
+        MatButtonModule,
         MatDialogModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatListModule
       ],
       providers: [
         { provide: MatDialogRef, useValue: { close: () => ({}) } },
         { provide: MAT_DIALOG_DATA, useValue: {} },
-      ]
+      ],
     })
     .compileComponents();
-    
-    fixture = TestBed.createComponent(AddSlideModalComponent);
+
+    fixture = TestBed.createComponent(AddSlideDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  beforeAll(() => {
-    window.onbeforeunload = jasmine.createSpy();
   });
 
   it('should create', () => {

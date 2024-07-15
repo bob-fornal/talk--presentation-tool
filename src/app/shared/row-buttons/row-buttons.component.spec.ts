@@ -2,23 +2,28 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RowButtonsComponent } from './row-buttons.component';
 
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+
 describe('RowButtonsComponent', () => {
   let component: RowButtonsComponent;
   let fixture: ComponentFixture<RowButtonsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RowButtonsComponent]
+      declarations: [
+        RowButtonsComponent,
+      ],
+      imports: [
+        MatButtonModule,
+        MatIconModule,
+      ],
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(RowButtonsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  beforeAll(() => {
-    window.onbeforeunload = jasmine.createSpy();
   });
 
   it('should create', () => {

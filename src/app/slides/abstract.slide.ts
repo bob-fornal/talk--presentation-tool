@@ -6,10 +6,11 @@ import prettify from 'simply-beautiful';
 
 import { MatDialog } from '@angular/material/dialog';
 
-import { EditNotesDialogComponent } from 'src/app/shared/edit-notes-dialog/edit-notes-dialog.component';
+import { EditNotesDialogComponent } from '../shared/edit-notes-dialog/edit-notes-dialog.component';
 
 @Directive()
 export abstract class AbstractSlide implements OnDestroy {
+  @Input() component: any = EditNotesDialogComponent;
   @Input() notes: string = '';
 
   @Input() editing: boolean = false;
@@ -86,7 +87,7 @@ export abstract class AbstractSlide implements OnDestroy {
 
   editNotes = (): void => {
     const notes = this.notes.toString();
-    const dialogRef = this.dialog.open(EditNotesDialogComponent, {
+    const dialogRef = this.dialog.open(this.component, {
       data: { notes },
       height: '400px',
       width: '600px',

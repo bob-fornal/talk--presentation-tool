@@ -1,9 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddSlideComponent } from './add-slide.component';
-import { AddSlideModalComponent } from '../add-slide-modal/add-slide-modal.component';
-
 import { MatDialogModule } from '@angular/material/dialog';
+
+import { AddSlideComponent } from './add-slide.component';
+import { AddSlideDialogComponent } from '../add-slide-dialog/add-slide-dialog.component';
 
 describe('AddSlideComponent', () => {
   let component: AddSlideComponent;
@@ -11,21 +11,19 @@ describe('AddSlideComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
+      declarations: [
         AddSlideComponent,
-
+        AddSlideDialogComponent,
+      ],
+      imports: [
         MatDialogModule,
       ],
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(AddSlideComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  beforeAll(() => {
-    window.onbeforeunload = jasmine.createSpy();
   });
 
   it('should create', () => {
@@ -40,7 +38,7 @@ describe('AddSlideComponent', () => {
     spyOn(component['dialog'], 'open').and.callThrough();
 
     component.handleAddSlide(event);
-    expect(component['dialog'].open).toHaveBeenCalledWith(AddSlideModalComponent, {
+    expect(component['dialog'].open).toHaveBeenCalledWith(AddSlideDialogComponent, {
       data: { index: 100 },
       height: '600px',
       width: '800px',

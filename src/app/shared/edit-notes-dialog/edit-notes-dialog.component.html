@@ -3,7 +3,12 @@
 <mat-dialog-content class="dialog-content">
   <mat-form-field class="full-width adjusted-height">
     <mat-label>Notes</mat-label>
-    <textarea #notes matInput placeholder="Add notes" (input)="handleNotesChange(notes.value)">{{ data.notes }}</textarea>
+    <textarea
+      #notes
+      matInput
+      placeholder="Add notes"
+      (input)="handleNotesChange(notes.value)"
+    >{{ data.notes }}</textarea>
   </mat-form-field>
 </mat-dialog-content>
 

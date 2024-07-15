@@ -1,8 +1,5 @@
 import { BehaviorSubject } from "rxjs"
 
-import { Structure } from "src/app/core/interfaces/structure";
-import { Talks } from "src/app/core/interfaces/talks"
-
 const mockLogged: BehaviorSubject<String> = new BehaviorSubject<String>('');
 
 export const MockLoggingService: any = {
