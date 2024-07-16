@@ -39,11 +39,7 @@ export class CoursesComponent implements OnDestroy {
   }
 
   handleTalks = (wrapper: Talks): void => {
-    const orderedTalks: Array<Talk> = wrapper.TALKS.sort((a: Talk, b: Talk): number => {
-      if (a.title > b.title) return 1;
-      if (b.title > a.title) return -1;
-      return 0;
-    });
+    const orderedTalks: Array<Talk> = wrapper.TALKS.sort(this.handleTalksSort);
 
     this.talks = [...orderedTalks];
     this.filteredTalks = [...orderedTalks];
@@ -55,31 +51,46 @@ export class CoursesComponent implements OnDestroy {
     this.captureTalks(orderedTalks);
   };
 
+  handleTalksSort = (a: Talk, b: Talk): number => {
+    if (a.title > b.title) return 1;
+    if (b.title > a.title) return -1;
+    return 0;
+  }
+
   filterTalks = (tag: Tag): void => {
-    if (this.selectedTags.includes(tag.tag) === true) {
-      const index: number = this.selectedTags.indexOf(tag.tag);
+    this.handleFilterTags(tag);
+    this.handleFilterTalks();
+  };
+
+  handleFilterTags = (item: Tag): void => {
+    if (this.selectedTags.includes(item.tag) === true) {
+      const index: number = this.selectedTags.indexOf(item.tag);
       this.selectedTags.splice(index, 1);
     } else {
-      this.selectedTags.push(tag.tag);
+      this.selectedTags.push(item.tag);
     }
+  };
 
+  handleFilterTalks = (): void => {
     this.filteredTalks = this.talks.filter((talk: Talk) => {
-      if (this.filterTalks.length === 0) return true;
-
-      let isSelected = true;
-      for (let i = 0, len = this.selectedTags.length; i < len; i++) {
-        const selectedTag = this.selectedTags[i];
-        if (talk.tags.includes(selectedTag) === false) {
-          isSelected = false;
-          break;
-        }
-      }
-      return isSelected;
+      if (this.selectedTags.length === 0) return true;
+      return this.isTalkSelected(talk.tags);
     });
   };
 
-  selectedTag = (tag: Tag): string => {
-    if (this.selectedTags.includes(tag.tag) === true) return 'primary';
+  isTalkSelected = (tags: Array<string>): boolean => {
+    let isSelected = true;
+    for (let i = 0, len = this.selectedTags.length; i < len; i++) {
+      if (tags.includes(this.selectedTags[i]) === false) {
+        isSelected = false;
+        break;
+      }
+    }
+    return isSelected;
+  };
+
+  selectedTag = (item: Tag): string => {
+    if (this.selectedTags.includes(item.tag) === true) return 'primary';
     return '';
   };
 
@@ -109,8 +120,7 @@ export class CoursesComponent implements OnDestroy {
       if (talkData[slide].hasOwnProperty('notes') === true) notes++;
     });
 
-    if (slides === notes) return true;
-    return false;
+    return (slides === notes);
   };
 
   getStatus = (talk: Talk): string => {
@@ -123,8 +133,9 @@ export class CoursesComponent implements OnDestroy {
       if (talkData[slide].hasOwnProperty('notes') === true) notes++;
     });
 
-    if (slides === notes) return 'COMPLETE';
-    return `Slides: ${ slides }, Notes: ${ notes }`;
+    return (slides === notes)
+      ? 'COMPLETE'
+      : `Slides: ${ slides }, Notes: ${ notes }`;
   };
 
 }
