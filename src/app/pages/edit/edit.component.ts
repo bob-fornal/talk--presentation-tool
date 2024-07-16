@@ -161,10 +161,8 @@ export class EditComponent implements OnDestroy, OnInit {
   handleTalks = (wrapper: Talks): void => {
     if (this.path !== '') {
       const talk = wrapper.TALKS.find((item: any) => this.path === item.folder);
-      if (talk !== undefined) {
-        this.title = talk!.title;
-        this.tags = [...talk!.tags];  
-      }
+      this.title = talk!.title;
+      this.tags = [...talk!.tags];  
     } else {
       this.talks = wrapper.TALKS;
     }
@@ -183,8 +181,8 @@ export class EditComponent implements OnDestroy, OnInit {
   };
 
   getSlidePatternTitle = (key: string): string => {
-    const title: string = (this.service.structure[key] as StructureType).title;
-    return title !== '' ? title : 'NO TITLE';
+    const title: string = (this.service.structure[key] as StructureType)?.title;
+    return !!title ? title : 'NO TITLE';
   };
 
   getStructureType = (key: string): string => {
@@ -226,12 +224,13 @@ export class EditComponent implements OnDestroy, OnInit {
     if (event.ACTION === 'save') {
       const data: any = { ...this.service.structure[event.slideKey] as StructureType };
       const matchStringOrignal: string = JSON.stringify(data);
+      
       const keys: Array<string> = event.ITEMS;
       keys.forEach((key: string) => {
         data[key] = event[key];
       });
-
       const matchStringNew: string = JSON.stringify(data);
+
       const changed: boolean = matchStringOrignal !== matchStringNew;
       
       if (changed === true) {
