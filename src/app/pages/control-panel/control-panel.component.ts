@@ -77,7 +77,7 @@ export class ControlPanelComponent implements OnDestroy {
 
     const cursorDeltaX = event.clientX - this.resizingEvent.startingCursorX;
     const newWidth = this.resizingEvent.startingWidth + cursorDeltaX;
-    this.sidenav.setSidenavWidth(newWidth);
+    this.sidenav.setSidenavWidth(document, newWidth);
   }
 
   @HostListener('window:mouseup')
