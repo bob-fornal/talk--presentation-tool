@@ -9,6 +9,7 @@ import { MockActivatedRoute } from '../../_spec/mock-activated-route.spec';
 
 import { BroadcastMessage } from '../../core/interfaces/broadcast';
 import { Structure } from '../../core/interfaces/structure';
+import { Trigger } from '../../core/interfaces/triggers';
 
 import { CodeService } from '../../core/services/code.service';
 import { MockCodeService } from '../../_spec/services/mock-code.service.spec';
@@ -229,5 +230,74 @@ describe('ControlPanelComponent', () => {
 
     const result: string = component.getTitle(key, index);
     expect(result).toEqual('21. key');
+  });
+
+  it('expects "changePage" to publish and change page', () => {
+    const key: string = 'KEY';
+    component.structure.ORDER = [key];
+    component.path = 'PATH';
+    spyOn(component['service'], 'publish').and.stub();
+    spyOn(component['router'], 'navigate').and.stub();
+    spyOn(component, 'getDeckSlide').and.stub();
+    const message: BroadcastMessage = { type: 'control', payload: { type: 'navigate', to: key, index: 0 } };
+
+    component.changePage(key);
+    expect(component['service'].publish).toHaveBeenCalledWith(message);
+    expect(component['router'].navigate).toHaveBeenCalledWith(['control-panel', 'PATH', key]);
+    expect(component.slideKey).toEqual(key);
+    expect(component.getDeckSlide).toHaveBeenCalledWith(key);
+  });
+
+  it('expects "triggerConsole" to build and publish a toggle open payload', () => {
+    const type: string = 'toggle-open';
+    let message: BroadcastMessage = { type: 'control', payload: { type: 'toggle-console'} };
+    spyOn(component['service'], 'publish').and.stub();
+
+    component.triggerConsole(type);
+    expect(component['service'].publish).toHaveBeenCalledWith(message);
+  });
+
+  it('expects "triggerConsole" to build and publish a clear payload', () => {
+    const type: string = 'clear';
+    let message: BroadcastMessage = { type: 'control', payload: { type: 'trigger-clear'} };
+    spyOn(component['service'], 'publish').and.stub();
+
+    component.triggerConsole(type);
+    expect(component['service'].publish).toHaveBeenCalledWith(message);
+  });
+
+  it('expects "triggerFileChange" to broadcase the file', () => {
+    const file: string = 'FILE';
+    const message: BroadcastMessage = { type: 'control', payload: { type: 'trigger-file', file } };
+    spyOn(component['service'], 'publish').and.stub();
+
+    component.triggerFileChange(file);
+    expect(component['service'].publish).toHaveBeenCalledWith(message);
+  });
+
+  it('expects "triggerFileSelection" to broadcast the selection', () => {
+    const trigger: Trigger = { title: 'TITLE', file: 'FILE', init: 'INIT' };
+    const message: BroadcastMessage = { type: 'control', payload: { type: 'trigger-code', trigger } };
+    spyOn(component['service'], 'publish').and.stub();
+
+    component.triggerFileSelection(trigger);
+    expect(component['service'].publish).toHaveBeenCalledWith(message);
+  });
+
+  it('expects "triggerFontsizeChange" to broadcast the fontsize change', () => {
+    const fontsize: string = 'FONTSIZE';
+    const message: BroadcastMessage = { type: 'control', payload: { type: 'trigger-fontsize', fontsize } };
+    spyOn(component['service'], 'publish').and.stub();
+
+    component.triggerFontsizeChange(fontsize);
+    expect(component['service'].publish).toHaveBeenCalledWith(message);
+  });
+
+  it('expects "stripHTML" to remove HTML from the string', () => {
+    const html: string = '<div>HTML</div>';
+    const expected: string = 'HTML';
+
+    const result: string = component.stripHTML(html);
+    expect(result).toEqual(expected);
   });
 });
