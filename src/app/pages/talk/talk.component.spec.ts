@@ -43,7 +43,7 @@ describe('TalkComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('expects "control @HostListener" to do nothing if control is true', () => {
+  it('expects "handleKeyboardEvent @HostListener" to do nothing if control is true', () => {
     spyOn(component, 'next').and.stub();
     spyOn(component, 'previous').and.stub();
     const event: KeyboardEvent = new KeyboardEvent('keydown', {
@@ -57,7 +57,7 @@ describe('TalkComponent', () => {
     expect(component.previous).not.toHaveBeenCalled();
   });
 
-  it('expects "control @HostListener" to trigger next on ArrowRight', () => {
+  it('expects "handleKeyboardEvent @HostListener" to trigger next on ArrowRight', () => {
     spyOn(component, 'next').and.stub();
     spyOn(component, 'previous').and.stub();
     const event: KeyboardEvent = new KeyboardEvent('keydown', {
@@ -71,7 +71,7 @@ describe('TalkComponent', () => {
     expect(component.previous).not.toHaveBeenCalled();
   });
 
-  it('expects "control @HostListener" to trigger next on ArrowUp', () => {
+  it('expects "handleKeyboardEvent @HostListener" to trigger next on ArrowUp', () => {
     spyOn(component, 'next').and.stub();
     spyOn(component, 'previous').and.stub();
     const event: KeyboardEvent = new KeyboardEvent('keydown', {
@@ -85,7 +85,7 @@ describe('TalkComponent', () => {
     expect(component.previous).not.toHaveBeenCalled();
   });
 
-  it('expects "control @HostListener" to trigger previous on ArrowLeft', () => {
+  it('expects "handleKeyboardEvent @HostListener" to trigger previous on ArrowLeft', () => {
     spyOn(component, 'next').and.stub();
     spyOn(component, 'previous').and.stub();
     const event: KeyboardEvent = new KeyboardEvent('keydown', {
@@ -99,7 +99,7 @@ describe('TalkComponent', () => {
     expect(component.previous).toHaveBeenCalled();
   });
 
-  it('expects "control @HostListener" to trigger previous on ArrowDown', () => {
+  it('expects "handleKeyboardEvent @HostListener" to trigger previous on ArrowDown', () => {
     spyOn(component, 'next').and.stub();
     spyOn(component, 'previous').and.stub();
     const event: KeyboardEvent = new KeyboardEvent('keydown', {

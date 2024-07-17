@@ -19,14 +19,14 @@ import { SidenavWidthService } from './sidenav-width.service';
   styleUrl: './control-panel.component.scss'
 })
 export class ControlPanelComponent implements OnDestroy {
-  @HostListener('document:keydown', ['$event'])
-    handleKeyboardEvent(event: KeyboardEvent) {
-      if (['ArrowRight', 'ArrowUp'].includes(event.key)) {
-        // this.next();
-      } else if (['ArrowLeft', 'ArrowDown'].includes(event.key)) {
-        // this.previous();
-      }
-    }
+  // @HostListener('document:keydown', ['$event'])
+  //   handleKeyboardEvent(event: KeyboardEvent) {
+  //     if (['ArrowRight', 'ArrowUp'].includes(event.key)) {
+  //       // this.next();
+  //     } else if (['ArrowLeft', 'ArrowDown'].includes(event.key)) {
+  //       // this.previous();
+  //     }
+  //   }
 
   structure: Structure = { ORDER: [], STYLE: [] };
 
@@ -35,6 +35,8 @@ export class ControlPanelComponent implements OnDestroy {
   path: string = '';
   slideKey: string = '';
   selectedFile: string = '';
+
+  window: any = window;
 
   resizingEvent = {
     isResizing: false,
@@ -64,8 +66,9 @@ export class ControlPanelComponent implements OnDestroy {
 
   init = (): void => {
     this.title.setTitle('Presentation Control');
-    const path: string = this.route.snapshot.paramMap.get('folder') || '';
-    const slideKey: string = this.route.snapshot.paramMap.get('slideKey') || '';
+
+    const path: string = this.route.snapshot.paramMap.get('folder')!;
+    const slideKey: string = this.route.snapshot.paramMap.get('slideKey')!;
     this.path = path;
     this.slideKey = slideKey;
     this.code.getStructure(path);
@@ -108,7 +111,7 @@ export class ControlPanelComponent implements OnDestroy {
   close = (): void => {
     const message: BroadcastMessage = { type: 'control', payload: { type: 'close' } };
     this.service.publish(message);
-    window.self.close();
+    this.window.self.close();
   };
 
   getDeckTitle = (structure: Structure): void => {
@@ -144,7 +147,6 @@ export class ControlPanelComponent implements OnDestroy {
     this.router.navigate(['control-panel', this.path, key]);
     this.slideKey = key;
     this.getDeckSlide(key);
-    // this.cdr.detectChanges();
   };
 
   triggerConsole = (type: string): void => {
