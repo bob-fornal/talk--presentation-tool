@@ -6,7 +6,6 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class FontsizeService {
-
   current: BehaviorSubject<string> = new BehaviorSubject<string>('font-normal');
 
   change = (size: string): void => {

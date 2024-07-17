@@ -4,14 +4,14 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class StyleService {
+  document: any = document;
 
   add = (css: string): void => {
-    const head = document.querySelector('head');
-    const style = document.createElement('style');
+    const head = this.document.querySelector('head');
+    const style = this.document.createElement('style');
     style.type = 'text/css';
-    const node = document.createTextNode(css);
+    const node = this.document.createTextNode(css);
     style.appendChild(node);
     head?.appendChild(style);
   };
-
 }

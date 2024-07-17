@@ -7,6 +7,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class LoggingService {
+  window: any = window;
 
   logged: string = '';
   logged$: BehaviorSubject<string> = new BehaviorSubject<string>('');
@@ -17,8 +18,11 @@ export class LoggingService {
 
   active: boolean = false;
 
+  initialized: boolean = false;
   initLogging = (): void => {
+    if (this.initialized === true) return;
     this.replace.forEach((item) => this.fixLogging(item));
+    this.initialized = true;
   };
 
   start = (): void => {
@@ -35,8 +39,8 @@ export class LoggingService {
   };
 
   fixLogging = (name: any): void => {
-    this.old[name] = globalThis.console[name];
-    globalThis.console[name] = (...args) => {
+    this.old[name] = this.window.console[name];
+    this.window.console[name] = (...args) => {
       if (name === 'warn' && args[0] === 'WARNING: sanitizing HTML stripped some content, see https://g.co/ng/security#xss') return;
       this.old[name].apply(undefined, args);
 
@@ -59,9 +63,7 @@ export class LoggingService {
           content = JSON.stringify(arg.stack).replaceAll('\\n', '<br/>').replaceAll('"', '');
           break;
         case isObject:
-          content = JSON.stringify(arg, null, 2)
-            .replace(' ', '&nbsp;')
-            .replace('\n', '<br/>');;
+          content = JSON.stringify(arg, null, 2).replace(' ', '&nbsp;').replace('\n', '<br/>');
           break;
         default:
           content = arg;
