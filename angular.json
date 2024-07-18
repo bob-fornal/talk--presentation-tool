@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "tech-presenter-2": {
+    "talk--presentation-tool": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -80,10 +80,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "tech-presenter-2:build:production"
+              "buildTarget": "talk--presentation-tool:build:production"
             },
             "development": {
-              "buildTarget": "tech-presenter-2:build:development"
+              "buildTarget": "talk--presentation-tool:build:development"
             }
           },
           "defaultConfiguration": "development"

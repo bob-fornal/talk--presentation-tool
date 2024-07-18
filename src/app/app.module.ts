@@ -89,8 +89,10 @@ import { TalkComponent } from './pages/talk/talk.component';
     MonacoEditorModule.forRoot(),
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent,
+  ],
 })
 export class AppModule { }
