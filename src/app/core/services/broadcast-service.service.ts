@@ -24,8 +24,12 @@ export class BroadcastService {
   initialize() {
     const name: string = this.details.detailChangeChannel;
     this.broadcastChannel = new BroadcastChannel(name);
-    this.broadcastChannel.onmessage = (message: any) => this.onMessage.next(message.data);
+    this.broadcastChannel.onmessage = this.handleMessage.bind(this);
   }
+
+  handleMessage = (message: any) => {
+    this.onMessage.next(message.data);
+  };
 
   publish(message: BroadcastMessage): void {
     this.broadcastChannel.postMessage(message);
