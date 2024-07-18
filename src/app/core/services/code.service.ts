@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, firstValueFrom } from 'rxjs';
-import { Talks } from '../interfaces/talks';
+
 import { Structure } from '../interfaces/structure';
+import { Talks } from '../interfaces/talks';
 
 @Injectable({
   providedIn: 'root'
@@ -19,12 +20,12 @@ export class CodeService {
   };
 
   getStructure = async (folder: string): Promise<any> => {
-    const structure: any = await firstValueFrom(this.http.get(`./assets/talks/${ folder }/structure.json`));
+    const structure: Structure = (await firstValueFrom(this.http.get(`./assets/talks/${ folder }/structure.json`)) as Structure);
     this.structure.next(structure);
   };
 
   getStructureImmediate = async (folder: string): Promise<Structure> => {
-    const structure: any = await firstValueFrom(this.http.get(`./assets/talks/${ folder }/structure.json`));
+    const structure: Structure = (await firstValueFrom(this.http.get(`./assets/talks/${ folder }/structure.json`)) as Structure);
     return structure;
   };
 
@@ -36,18 +37,21 @@ export class CodeService {
   checkLink = async (url: string): Promise<boolean> => {
     const work: any = new URL(url);
     const hostname = window.location.host;
-
-    let newUrl: string = url.replace(work.host, hostname);
-    if (hostname === 'localhost:4200') {
-      newUrl = newUrl.replace('https://', 'http://');
-    }
+    const workingUrl: string = this.processUrl(url, work.host, hostname);
 
     try {
-      const file = await firstValueFrom(this.http.get(newUrl));
+      const file = await firstValueFrom(this.http.get(workingUrl));
       return true;
-    } catch (error: any) {
-      // console.log('failed', error);
-      return error.status === 200;
+    } catch (issue: any) {
+      return issue.status === 200;
     }
-  }
+  };
+
+  processUrl = (url: string, host: string, hostname: string): string => {
+    let workingUrl: string = url.replace(host, hostname);
+    if (hostname === 'localhost:4200') {
+      workingUrl = workingUrl.replace('https://', 'http://');
+    }
+    return workingUrl;
+  };
 }
