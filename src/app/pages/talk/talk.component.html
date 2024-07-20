@@ -33,6 +33,10 @@
         [external]="sendExternal"></code-editor>
     </div>
 
+    <ng-container *ngSwitchCase="'external'">
+      <div id="web-component-container"></div>
+    </ng-container>
+
     <div class="slide-wrapper" *ngSwitchDefault="">NONE</div>
   </ng-container>
 

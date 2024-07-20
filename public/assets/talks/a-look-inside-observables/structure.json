@@ -44,6 +44,20 @@
     "  margin-bottom: 1em;",
     "}"
   ],
+  "external-cover": {
+    "type": "external",
+    "tag": "slide-cover",
+    "location": "/assets/slides/slide-cover/slide-cover.js",
+    "data": {
+      "title": "Bob's Larger Slide Cover",
+      "author": "Bob Fornal",
+      "background": "/assets/images/grid--green.webp",
+      "image1": "/assets/images/code-squid.webp",
+      "image2": "/assets/images/leading-edje.webp",
+      "text1": "<div class=bold>Entrepreneur</div>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.",
+      "text2": "<div class=bold>Senior Solutions Developer</div><div class=bold>Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth."
+    }
+  },
   "cover-01": {
     "title": "A Look Inside Observables",
     "type": "cover-01",
