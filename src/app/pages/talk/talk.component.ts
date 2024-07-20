@@ -76,8 +76,6 @@ export class TalkComponent implements OnDestroy {
   loadWebComponents = (): void => {
   };
 
-  document: any = document;
-  setTimeout: any = setTimeout;
   handleWebComponent = async (): Promise<void> => {
     const component: WebComponent = {
       tag: this.page.tag!,
@@ -91,17 +89,7 @@ export class TalkComponent implements OnDestroy {
       await this.webComponentService.loadComponent(component);
     } catch (error) {
       // do nothing
-    } finally {
-      // this.setTimeout(this.handleWebComponentLoad.bind(this), 20);
     }
-  };
-
-  handleWebComponentLoad = (): void => {
-    const content: any = JSON.stringify(this.page.data);
-    const container: any = this.document.querySelector('#web-component-container');
-    const element: any = this.document.createElement(this.page.tag);
-    element.setAttribute('content', content);
-    container.appendChild(element);
   };
 
   handleFontsizeChange = (font: string): void => {

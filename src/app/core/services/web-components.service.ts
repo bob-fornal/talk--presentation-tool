@@ -20,8 +20,10 @@ export class WebComponentsService {
   };
 
   private handleScriptLoad = (resolve: any, reject: any) => {
-    if (this.loadingItem === null) return;
-    const loading: WebComponent = this.loadingItem;
+    if (this.loadingItem === null) {
+      reject({ script: 'UNKNOWN', loaded: false, status: 'No component listed.' });
+    };
+    const loading: WebComponent = this.loadingItem!;
 
     if (this.loaded[`script:${loading.tag}`] === true) {
       resolve({ script: loading.tag, loaded: true, status: 'Already loaded.' });
@@ -45,27 +47,43 @@ export class WebComponentsService {
     return new Promise(this.handleComponentLoad.bind(this));
   };
 
-  private handleComponentLoad = (resolve: any, reject: any) => {
-    if (this.loadingItem === null) return;
-    this.sleep(20);
-    const loading: WebComponent = this.loadingItem;
+  private handleComponentLoad = async (resolve: any, reject: any) => {
+    if (this.loadingItem === null) {
+      reject({ script: 'UNKNOWN', loaded: false, status: 'No component listed.' });
+    };
 
-    const container: any = this.document.querySelector('#web-component-container');
+    const loading: WebComponent = this.loadingItem!;
+ 
     const template: any = this.document.querySelector('#web-component-template');
     const content: any = JSON.stringify(loading.data);
+
+    const container = await this.getContainer();
 
     if (this.loaded[`component:${loading.tag}`] === true) {
       const oldElement: any = this.document.querySelector(`[data-key="${loading.key}"]`);
       const oldClone = oldElement.cloneNode(true);
+
       container.appendChild(oldClone);
       resolve({ component: loading.tag, loaded: true, status: 'Already loaded.' });
     } else {
       const element: any = this.document.createElement(loading.tag);
       element.setAttribute('content', content);
       element.setAttribute('data-key', loading.key);
+
       template.appendChild(element);
-      container.appendChild(element);
+      const newClone = element.cloneNode(true);
+      container.appendChild(newClone);
+
+      this.loaded[`component:${loading.tag}`] = true;
       resolve({ component: loading.tag, loaded: true, status: 'Loaded.' });
     }
+  };
+
+  private getContainer = async (): Promise<any> => {
+    const container: any = this.document.querySelector('#web-component-container');
+    if (container !== null) return container;
+
+    await this.sleep(20);
+    return this.getContainer();
   };
 }

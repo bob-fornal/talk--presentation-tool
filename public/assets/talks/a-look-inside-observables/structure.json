@@ -1,4 +1,7 @@
 {
+  "test": [
+    "external-cover"
+  ],
   "ORDER": [
     "cover-01",
     "what-is-rxjs--slide",
