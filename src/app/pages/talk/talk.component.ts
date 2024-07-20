@@ -4,11 +4,13 @@ import { Subject, Subscription } from 'rxjs';
 
 import { BroadcastMessage } from '../../core/interfaces/broadcast';
 import { Structure, StructureType } from '../../core/interfaces/structure';
+import { WebComponent } from '../../core/interfaces/web-components';
 
 import { BroadcastService } from '../../core/services/broadcast-service.service';
 import { CodeService } from '../../core/services/code.service';
 import { FontsizeService } from '../../core/services/fontsize.service';
 import { StyleService } from '../../core/services/style.service';
+import { WebComponentsService } from '../../core/services/web-components.service';
 
 @Component({
   selector: 'app-talk',
@@ -51,6 +53,7 @@ export class TalkComponent implements OnDestroy {
     private router: Router,
     private service: BroadcastService,
     private style: StyleService,
+    private webComponentService: WebComponentsService,
     private zone: NgZone,
   ) {
     this.subscriptions.add(this.code.structure.subscribe(this.handleStructure.bind(this)));
@@ -68,6 +71,30 @@ export class TalkComponent implements OnDestroy {
     const path: string = this.route.snapshot.paramMap.get('folder')!;
     this.path = path;
     this.code.getStructure(path);
+  };
+
+  loadWebComponents = (): void => {
+  };
+
+  document: any = document;
+  setTimeout: any = setTimeout;
+  handleWebComponent = async (): Promise<void> => {
+    const component: WebComponent = { tag: this.page.tag!, location: this.page.location! };
+    try {
+      await this.webComponentService.load(component);
+    } catch (error) {
+      // do nothing
+    } finally {
+      this.setTimeout(this.handleWebComponentLoad.bind(this), 20);
+    }
+  };
+
+  handleWebComponentLoad = (): void => {
+    const content: any = JSON.stringify(this.page.data);
+    const container: any = this.document.querySelector('#web-component-container');
+    const element: any = this.document.createElement(this.page.tag);
+    element.setAttribute('content', content);
+    container.appendChild(element);
   };
 
   handleFontsizeChange = (font: string): void => {
@@ -128,6 +155,10 @@ export class TalkComponent implements OnDestroy {
     this.style.add(style.join('\n'));
 
     this.zone.run(this.zoneRun.bind(this, key));
+
+    if (this.type === 'external') {
+      this.handleWebComponent();
+    }
   };
 
   zoneRun = (key: string): void => {

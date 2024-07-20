@@ -14,6 +14,10 @@ export type StructureType = {
   html?: string;
   panel?: string;
 
+  tag?: string;
+  location?: string;
+  data?: string;
+
   orientation?: string;
   text1?: string;
   text2?: string;
