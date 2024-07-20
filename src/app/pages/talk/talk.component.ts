@@ -79,13 +79,20 @@ export class TalkComponent implements OnDestroy {
   document: any = document;
   setTimeout: any = setTimeout;
   handleWebComponent = async (): Promise<void> => {
-    const component: WebComponent = { tag: this.page.tag!, location: this.page.location! };
+    const component: WebComponent = {
+      tag: this.page.tag!,
+      location: this.page.location!,
+      key: this.slideKey,
+      data: this.page.data
+    };
+
     try {
-      await this.webComponentService.load(component);
+      const codeStatus: any = await this.webComponentService.loadCode(component);
+      await this.webComponentService.loadComponent(component);
     } catch (error) {
       // do nothing
     } finally {
-      this.setTimeout(this.handleWebComponentLoad.bind(this), 20);
+      // this.setTimeout(this.handleWebComponentLoad.bind(this), 20);
     }
   };
 
