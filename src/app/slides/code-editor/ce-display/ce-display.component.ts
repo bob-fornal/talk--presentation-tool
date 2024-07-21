@@ -40,7 +40,7 @@ export class CeDisplayComponent implements OnChanges, OnDestroy, OnInit {
 
   constructor(
     private cdr: ChangeDetectorRef,
-    private codeService: CodeService,
+    private code: CodeService,
     private service: BroadcastService,
     public logging: LoggingService,
     @Inject(DOCUMENT) private document: Document,
@@ -96,23 +96,20 @@ export class CeDisplayComponent implements OnChanges, OnDestroy, OnInit {
       enabled: false,
     },
   };
-  code: string = 'function x() {\n  console.log("Hello world");\n}';
+  script: string = 'function x() {\n  console.log("Hello world");\n}';
   filepath: string = '';
-
-  sleep = (ms: number) => new Promise((resolve) => this.setTimeout(resolve, ms));
 
   fileSelection = async (file: string): Promise<void> => {
     this.selected = file;
     const fileAndPath: string = `./assets/talks/${ this.path }/${ this.folder }/${ file }`;
-    const code: string = await this.codeService.getCode(fileAndPath);
-    this.code = code;
+    const code: string = await this.code.getCode(fileAndPath);
+    this.script = code;
     this.cdr.detectChanges();
 
     const message: BroadcastMessage = { type: 'file-update', payload: { file } };
     this.service.publish(message);
   };
 
-  scriptLoaded: { [key: string]: string } = {};
   scriptIntervalCount: number = 0;
   scriptLoggingInterval: any;
   triggerFile = async (trigger: Trigger): Promise<void> => {
@@ -125,26 +122,18 @@ export class CeDisplayComponent implements OnChanges, OnDestroy, OnInit {
       this.logs = this.logging.logged;
     }, 500);
 
-    await this.sleep(100);
-    const init: string = trigger.init;
-    if (this.scriptLoaded[trigger.file] === undefined) {
-      const fileAndPath: string = `./assets/talks/${ this.path }/${ this.folder }/${ trigger.file }`;
-      this.filepath = fileAndPath;
-  
-      await this.sleep(100);
-      const templateElement = this.handleScript.nativeElement.firstElementChild as HTMLElement;
-      this.replaceDivWithScript(templateElement, this.document);
-      this.scriptLoaded[trigger.file] = 'loaded';
-    }
+    const fileAndPath: string = `./assets/talks/${ this.path }/${ this.folder }/${ trigger.file }`;
+    await this.code.loadScript({ tag: trigger.file, type: 'text/javascript', location: fileAndPath });
 
-    await this.sleep(250);
+    const init: string = trigger.init;
+    await this.code.sleep(100);
     try {
       (window as any)[init]({});
     } catch (error) {
       console.error(error);
     }
 
-    await this.sleep(trigger.closeTime || 100);
+    await this.code.sleep(trigger.closeTime || 100);
     this.loggingOpen = true;
   };
 

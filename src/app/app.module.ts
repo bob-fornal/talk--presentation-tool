@@ -31,6 +31,8 @@ import { EditButtonsComponent } from './shared/edit-buttons/edit-buttons.compone
 import { EditNotesDialogComponent } from './shared/edit-notes-dialog/edit-notes-dialog.component';
 import { RowButtonsComponent } from './shared/row-buttons/row-buttons.component';
 
+import { AddSlideComponent } from './shared/add-slide/add-slide.component';
+import { AddSlideDialogComponent } from './shared/add-slide-dialog/add-slide-dialog.component';
 import { CeDisplayComponent } from './slides/code-editor/ce-display/ce-display.component';
 import { CodeEditorComponent } from './slides/code-editor/code-editor.component';
 import { CeEditorComponent } from './slides/code-editor/ce-editor/ce-editor.component';
@@ -40,8 +42,6 @@ import { ImageTextComponent } from './slides/image-text/image-text.component';
 import { PanelDoubleComponent } from './slides/panel-double/panel-double.component';
 import { PanelSingleComponent } from './slides/panel-single/panel-single.component';
 import { PanelTripleComponent } from './slides/panel-triple/panel-triple.component';
-import { AddSlideComponent } from './shared/add-slide/add-slide.component';
-import { AddSlideDialogComponent } from './shared/add-slide-dialog/add-slide-dialog.component';
 import { TalkComponent } from './pages/talk/talk.component';
 
 @NgModule({

@@ -5,6 +5,7 @@ export interface LoadedScript {
 export interface WebComponent {
   tag: string;
   location: string;
+  type: 'module' | 'text/javascript';
 
   key?: string;
   data?: string;

@@ -10,7 +10,6 @@ import { BroadcastService } from '../../core/services/broadcast-service.service'
 import { CodeService } from '../../core/services/code.service';
 import { FontsizeService } from '../../core/services/fontsize.service';
 import { StyleService } from '../../core/services/style.service';
-import { WebComponentsService } from '../../core/services/web-components.service';
 
 @Component({
   selector: 'app-talk',
@@ -53,7 +52,6 @@ export class TalkComponent implements OnDestroy {
     private router: Router,
     private service: BroadcastService,
     private style: StyleService,
-    private webComponentService: WebComponentsService,
     private zone: NgZone,
   ) {
     this.subscriptions.add(this.code.structure.subscribe(this.handleStructure.bind(this)));
@@ -79,14 +77,15 @@ export class TalkComponent implements OnDestroy {
   handleWebComponent = async (): Promise<void> => {
     const component: WebComponent = {
       tag: this.page.tag!,
+      type: 'module',
       location: this.page.location!,
       key: this.slideKey,
       data: this.page.data
     };
 
     try {
-      const codeStatus: any = await this.webComponentService.loadCode(component);
-      await this.webComponentService.loadComponent(component);
+      const codeStatus: any = await this.code.loadScript(component);
+      await this.code.loadComponent(component);
     } catch (error) {
       // do nothing
     }
