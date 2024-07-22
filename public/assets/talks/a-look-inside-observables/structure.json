@@ -3,6 +3,7 @@
     "external-cover"
   ],
   "ORDER": [
+    "external-cover",
     "cover-01",
     "what-is-rxjs--slide",
     "history--slide",
@@ -50,10 +51,9 @@
   "external-cover": {
     "type": "external",
     "tag": "slide-cover",
-    "location": "/assets/slides/slide-cover/slide-cover.js",
+    "location": "/assets/slide-components/slide-cover.js",
     "data": {
-      "title": "Bob's Larger Slide Cover",
-      "author": "Bob Fornal",
+      "title": "<span>A Look Inside Observables</span><br/><span class=\"smaller align-right\">Bob Fornal</span>",
       "background": "/assets/images/grid--green.webp",
       "image1": "/assets/images/code-squid.webp",
       "image2": "/assets/images/leading-edje.webp",
