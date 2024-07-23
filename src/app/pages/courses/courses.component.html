@@ -25,7 +25,7 @@
         <button [attr.aria-label]="'Edit ' + talk.title + ' Talk'" class="btn" mat-flat-button color="primary" [routerLink]="'/edit/' + talk.folder">
           <mat-icon>edit</mat-icon>
         </button>
-        <button [attr.aria-label]="talk.title + ' Presentation'" class="btn" mat-flat-button color="accent" (click)="clickTalkEvent(talk)">
+        <button [attr.aria-label]="talk.title + ' Presentation'" class="btn" mat-flat-button [color]="getColor(talk)" (click)="clickTalkEvent(talk)">
           <span>{{ i + 1 }}.</span>&nbsp;
           {{ talk.title }}
         </button>

@@ -5,6 +5,7 @@ export interface Talk {
   title: string;
   tags: Array<string>;
 
+  highlight?: boolean;
   pdf?: string;
   pdfActive?: boolean;
 }

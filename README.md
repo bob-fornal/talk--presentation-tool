@@ -4,7 +4,7 @@
 
 This project was designed to provide a means of doing a presentation with code examples and execution as a part of the presentation.
 
-- [ ] Upgrade to Angular v18 and convert to `app.module.ts` pattern.
+- [x] Upgrade to Angular v18 and convert to `app.module.ts` pattern.
 
 ## Talks
 
@@ -20,7 +20,7 @@ This project was designed to provide a means of doing a presentation with code e
 - [x] Incorporate Monaco Editor.
 - [x] Incorporate means of injecting JavaScript and being able to trigger via function call.
 - [x] Include RxJS Tooling for Code Examples / CDN [](https://rxjs.dev/guide/importing#cdn).
-- [ ] Unit Tests.
+- [/] Unit Tests.
 - [x] GitHub Actions Pipeline.
 - [x] BUG: Fix GitHub Page.
 - [x] Angular Upgrade to 17, Standalone Components.

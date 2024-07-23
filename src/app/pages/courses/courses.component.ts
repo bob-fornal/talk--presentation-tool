@@ -138,4 +138,8 @@ export class CoursesComponent implements OnDestroy {
       : `Slides: ${ slides }, Notes: ${ notes }`;
   };
 
+  getColor = (talk: Talk): string => {
+    if (talk.hasOwnProperty('highlight') && talk.highlight === true) return 'blue';
+    return 'accent';
+  };
 }
