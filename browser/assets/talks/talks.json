@@ -38,6 +38,10 @@
       "title": "Observables"
     },
     {
+      "tag": "project-testing",
+      "title": "Project Testing"
+    },
+    {
       "tag": "rxjs",
       "title": "RxJS"
     },
@@ -117,6 +121,13 @@
       "pdf": "https://www.bobs-tech-presentations.com/assets/talks/writing-testable-code/writing-testable-code-minified.pdf",
       "tags": [
         "testing"
+      ]
+    }, {
+      "folder": "project-testing",
+      "title": "[Project Testing]",
+      "highlight": true,
+      "tags": [
+        "project-testing"
       ]
     }
   ]
