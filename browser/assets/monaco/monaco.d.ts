@@ -4323,6 +4323,10 @@ declare namespace monaco.editor {
          * Font size of section headers. Defaults to 9.
          */
         sectionHeaderFontSize?: number;
+        /**
+         * Spacing between the section header characters (in CSS px). Defaults to 1.
+         */
+        sectionHeaderLetterSpacing?: number;
     }
 
     /**
@@ -5392,12 +5396,21 @@ declare namespace monaco.editor {
          * The position preference for the overlay widget.
          */
         preference: OverlayWidgetPositionPreference | IOverlayWidgetPositionCoordinates | null;
+        /**
+         * When set, stacks with other overlay widgets with the same preference,
+         * in an order determined by the ordinal value.
+         */
+        stackOridinal?: number;
     }
 
     /**
      * An overlay widgets renders on top of the text.
      */
     export interface IOverlayWidget {
+        /**
+         * Event fired when the widget layout changes.
+         */
+        onDidLayout?: IEvent<void>;
         /**
          * Render this overlay widget in a location where it could overflow the editor's view dom node.
          */
@@ -5823,6 +5836,18 @@ declare namespace monaco.editor {
          * @event
          */
         readonly onDidChangeHiddenAreas: IEvent<void>;
+        /**
+         * Some editor operations fire multiple events at once.
+         * To allow users to react to multiple events fired by a single operation,
+         * the editor fires a begin update before the operation and an end update after the operation.
+         * Whenever the editor fires `onBeginUpdate`, it will also fire `onEndUpdate` once the operation finishes.
+         * Note that not all operations are bracketed by `onBeginUpdate` and `onEndUpdate`.
+        */
+        readonly onBeginUpdate: IEvent<void>;
+        /**
+         * Fires after the editor completes the operation it fired `onBeginUpdate` for.
+        */
+        readonly onEndUpdate: IEvent<void>;
         /**
          * Saves current view state of the editor in a serializable object.
          */
@@ -6869,9 +6894,9 @@ declare namespace monaco.languages {
 
     export interface HoverVerbosityRequest<THover = Hover> {
         /**
-         * Whether to increase or decrease the hover's verbosity
+         * The delta by which to increase/decrease the hover verbosity level
          */
-        action: HoverVerbosityAction;
+        verbosityDelta: number;
         /**
          * The previous hover for the same position
          */
@@ -7400,7 +7425,7 @@ declare namespace monaco.languages {
      * A provider that can provide document highlights across multiple documents.
      */
     export interface MultiDocumentHighlightProvider {
-        selector: LanguageFilter;
+        readonly selector: LanguageSelector;
         /**
          * Provide a Map of Uri --> document highlights, like all occurrences of a variable or
          * all exit-points of a function.
@@ -9032,9 +9057,10 @@ declare namespace monaco.languages.typescript {
         length: number | undefined;
         messageText: string | DiagnosticMessageChain;
     }
-    interface EmitOutput {
+    export interface EmitOutput {
         outputFiles: OutputFile[];
         emitSkipped: boolean;
+        diagnostics?: Diagnostic[];
     }
     interface OutputFile {
         name: string;
@@ -9264,7 +9290,7 @@ declare namespace monaco.languages.typescript {
          * Get transpiled output for the given file.
          * @returns `typescript.EmitOutput`
          */
-        getEmitOutput(fileName: string): Promise<EmitOutput>;
+        getEmitOutput(fileName: string, emitOnlyDtsFiles?: boolean, forceDtsEmit?: boolean): Promise<EmitOutput>;
         /**
          * Get possible code fixes at the given position in the file.
          * @param formatOptions `typescript.FormatCodeOptions`
