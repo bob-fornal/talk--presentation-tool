@@ -1,7 +1,7 @@
 import { DOCUMENT } from '@angular/common';
-import { ChangeDetectorRef, Component, Inject, Input, OnChanges, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, Inject, Input, OnChanges, OnDestroy, ViewChild } from '@angular/core';
 import { NavigationEnd, NavigationSkipped, Router } from '@angular/router';
-import { Subject, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 
 import { BroadcastMessage } from '../../../core/interfaces/broadcast';
 import { Trigger } from '../../../core/interfaces/triggers';
@@ -18,7 +18,7 @@ import { LoggingService } from '../../../core/services/logging.service';
     './ce-display.component.scss',
   ]
 })
-export class CeDisplayComponent implements OnChanges, OnDestroy, OnInit {
+export class CeDisplayComponent implements OnChanges, OnDestroy {
   @Input() title: string = '';
   @Input() path: string = '';
   @Input() folder: string = '';
@@ -26,8 +26,6 @@ export class CeDisplayComponent implements OnChanges, OnDestroy, OnInit {
   @Input() triggers: Array<Trigger> = [];
   @Input() keys: Array<string> = [];
   @Input() panel: string | undefined = undefined;
-
-  @Input() external: Subject<any> = new Subject();
 
   @ViewChild('handleScript') handleScript: any;
 
@@ -47,6 +45,7 @@ export class CeDisplayComponent implements OnChanges, OnDestroy, OnInit {
     private router: Router
   ) {
     this.subscriptions.add(this.router.events.subscribe(this.handleNavigation));
+    this.subscriptions.add(this.service.messagesOfType('control').subscribe(this.handleExternal.bind(this)));
   }
 
   ngOnChanges() {
@@ -62,11 +61,9 @@ export class CeDisplayComponent implements OnChanges, OnDestroy, OnInit {
     this.fileSelection(this.files[0]);
   };
 
-  ngOnInit() {
-    this.subscriptions.add(this.external.subscribe(this.handleExternal.bind(this)));
-  }
+  handleExternal = (wrapper: any) => {
+    const payload: any = wrapper.payload;
 
-  handleExternal = (payload: any) => {
     switch (true) {
       case payload.type === 'trigger-file':
         this.fileSelection(payload.file);
