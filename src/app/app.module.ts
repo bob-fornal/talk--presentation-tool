@@ -10,6 +10,8 @@ import { RouterLink } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
+import { QrCodeModule } from 'ng-qrcode';
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatCardModule } from '@angular/material/card';
@@ -43,6 +45,7 @@ import { PanelDoubleComponent } from './slides/panel-double/panel-double.compone
 import { PanelSingleComponent } from './slides/panel-single/panel-single.component';
 import { PanelTripleComponent } from './slides/panel-triple/panel-triple.component';
 import { TalkComponent } from './pages/talk/talk.component';
+import { TrackPollingComponent } from './slides/track-polling/track-polling.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +69,7 @@ import { TalkComponent } from './pages/talk/talk.component';
     AddSlideComponent,
     AddSlideDialogComponent,
     TalkComponent,
+    TrackPollingComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,6 +78,8 @@ import { TalkComponent } from './pages/talk/talk.component';
     RouterLink,
     FormsModule,
     HttpClientModule,
+
+    QrCodeModule,
 
     MatButtonModule,
     MatButtonToggleModule,

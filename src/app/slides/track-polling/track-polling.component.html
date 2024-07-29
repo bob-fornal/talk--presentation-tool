@@ -1,0 +1,11 @@
+<div class="panel-wrapper">
+  <div class="panel--title" [innerHTML]="title"></div>
+
+  <div class="panel--content-wrapper orient-left">
+    <div class="panel--text" [class]="fontsize" [innerHTML]="text1"></div>
+    <div class="panel--image">
+      <qr-code class="img" [value]="pollingPage" size="400" errorCorrectionLevel="M" centerImageSrc="/assets/images/code-squid.webp" />
+    </div>
+  </div>
+
+</div>

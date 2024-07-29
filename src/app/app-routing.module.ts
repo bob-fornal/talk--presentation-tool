@@ -5,8 +5,10 @@ import { ControlPanelComponent } from './pages/control-panel/control-panel.compo
 import { CoursesComponent } from './pages/courses/courses.component';
 import { EditComponent } from './pages/edit/edit.component';
 import { TalkComponent } from './pages/talk/talk.component';
+import { PollingComponent } from './pages/polling/polling.component';
 
 const routes: Routes = [
+  { path: 'polling/:folder/:slideKey', component: PollingComponent, data: { type: 'talk-slide' } },
   { path: 'talk/:folder/:slideKey', component: TalkComponent, data: { type: 'talk-slide' } },
   { path: 'edit/:folder', component: EditComponent, data: { type: 'edit-talk' } },
   { path: 'edit/:folder/:slideKey', component: EditComponent, data: { type: 'edit-slide'} },
