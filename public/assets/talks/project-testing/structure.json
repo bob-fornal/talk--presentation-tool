@@ -29,6 +29,28 @@
     }
   },
   "track-polling--slide": {
-    "type": "track-polling"
+    "type": "track-polling",
+    "title": "Polling Tracker",
+    "data": {
+      "question": "Would you choose?",
+      "answers": [
+        {
+          "answer": "A. This is the first choice.",
+          "key": "a"
+        },
+        {
+          "answer": "B. This is the second choice.",
+          "key": "b"
+        },
+        {
+          "answer": "C. This is the third choice.",
+          "key": "c"
+        },
+        {
+          "answer": "D. This is the fourth choice.",
+          "key": "d"
+        }
+      ]
+    }
   }
 }

@@ -34,7 +34,7 @@
     </div>
 
     <div class="slide-wrapper" *ngSwitchCase="'track-polling'">
-      <track-polling></track-polling>
+      <track-polling [title]="page.title" [data]="page.data!"></track-polling>
     </div>
 
     <ng-container *ngSwitchCase="'external'">

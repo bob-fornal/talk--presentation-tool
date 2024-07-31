@@ -1,4 +1,20 @@
 .outer-wrapper {
-  background-color: #333;
+  --mdc-filled-button-container-color: #69f0ae;
+  --mdc-filled-button-label-text-color: black;
+
+  background-color: hsl(0, 0%, 20%);
   color: #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .question-title {
+    margin-bottom: 1em;;
+  }
+
+  .btn {
+    color: var(--mdc-filled-button-label-text-color);
+    background-color: var(--mdc-filled-button-container-color);
+  }
 }

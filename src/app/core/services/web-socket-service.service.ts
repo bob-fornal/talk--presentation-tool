@@ -1,0 +1,55 @@
+import { Injectable } from '@angular/core';
+
+import { BehaviorSubject } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class WebSocketService {
+  // private url: string = 'ws://localhost:3000/websocket';
+  private url: string = 'wss://talk-node-server.onrender.com/websocket';
+  private project: string = 'project:tech-presentation-tool';
+
+  private ws: any;
+
+  private _count: any = {};
+  public count$: BehaviorSubject<any> = new BehaviorSubject<any>({});
+
+  constructor() {
+    this.ws = new WebSocket(this.url);
+    this.ws.onmessage = this.handleOnMessage.bind(this);
+    this.ws.onopen = this.handleOnOpen.bind(this);
+    this.ws.onerror = this.handleOnError.bind(this);
+    this.ws.onclose = this.handleOnClose.bind(this);
+  }
+
+  private handleOnMessage(event: MessageEvent<any>): void {
+    const data: any = JSON.parse(event.data);
+    if (data.type === 'sending-answer') {
+      const key: string = data.payload.key;
+      if (this._count.hasOwnProperty(key) === true) {
+        this._count[key]++;
+      } else {
+        this._count[key] = 1;
+      }
+      this.count$.next(this._count);
+    }
+  };
+
+  private handleOnOpen(): void {
+    console.log('opened');
+  };
+
+  private handleOnError(error: any): void {
+    console.log(error);
+  };
+
+  private handleOnClose(): void {
+    console.log('closed');
+  }
+
+  public sendMessage = (message: any): void => {
+    message.project = this.project;
+    this.ws.send(JSON.stringify(message));
+  };
+}

@@ -2,9 +2,17 @@
   <div class="panel--title" [innerHTML]="title"></div>
 
   <div class="panel--content-wrapper orient-left">
-    <div class="panel--text" [class]="fontsize" [innerHTML]="text1"></div>
+    <div class="panel--text" [class]="fontsize">
+      <div class="panel--text-title">{{ data.question }}</div>
+      @for (item of data.answers; track item) {
+        <div class="panel--answer-block">
+          <span class="panel--answer-block--answer">{{ item.answer }}</span>
+          <span class="panel--answer-block--counter" [style]="getWidth(item.key)"></span>
+          <span class="panel--answer-block--count">{{ getItemCount(item.key) }}</span>
+        </div>
+      }
+    </div>
     <div class="panel--image">
-      <!-- <a [href]="pollingPage">Test</a> -->
       <qr-code class="img" [value]="pollingPage" size="400" errorCorrectionLevel="M" centerImageSrc="/assets/images/code-squid.webp" />
     </div>
   </div>

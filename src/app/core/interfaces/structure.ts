@@ -16,7 +16,7 @@ export type StructureType = {
 
   tag?: string;
   location?: string;
-  data?: string;
+  data?: any;
 
   orientation?: string;
   text1?: string;
