@@ -1,4 +1,5 @@
 {
+  "KEEP-ALIVE": true,
   "EXTERNAL": [
     "api-service"
   ],
