@@ -49,6 +49,7 @@
             "scripts": [],
             "allowedCommonJsDependencies": [
               "file-saver",
+              "ng-qr-code",
               "simply-beautiful"
             ]
           },
