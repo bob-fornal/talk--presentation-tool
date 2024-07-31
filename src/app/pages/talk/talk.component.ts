@@ -68,6 +68,9 @@ export class TalkComponent implements OnDestroy {
   private subscriptions: Subscription = new Subscription();
   ngOnDestroy(): void {
     this.subscriptions.unsubscribe();
+    this.keepAlive = false;
+    this.triggerKeepAlive();
+    this.socketService.closeService();
   }
 
   init = (): void => {

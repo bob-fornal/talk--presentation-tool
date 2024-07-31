@@ -55,6 +55,11 @@ export class WebSocketService {
     this.ws.send(JSON.stringify(message));
   };
 
+  public closeService = (): void => {
+    this.ws.close();
+    this.ws = null;
+  };
+
   public pingNodeServer = async (): Promise<boolean> => {
     const url: string = (this.useLocal === true)
       ? 'http://localhost:3000/'
