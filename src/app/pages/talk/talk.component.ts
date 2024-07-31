@@ -10,6 +10,7 @@ import { BroadcastService } from '../../core/services/broadcast-service.service'
 import { CodeService } from '../../core/services/code.service';
 import { FontsizeService } from '../../core/services/fontsize.service';
 import { StyleService } from '../../core/services/style.service';
+import { WebSocketService } from '../../core/services/web-socket-service.service';
 
 @Component({
   selector: 'app-talk',
@@ -31,6 +32,7 @@ export class TalkComponent implements OnDestroy {
     }
 
   structure: Structure = { ORDER: [], STYLE: [] };
+  keepAlive: boolean = false;
 
   slideIndex: number = 0;
 
@@ -43,6 +45,8 @@ export class TalkComponent implements OnDestroy {
   fontsizeSelected: string | undefined;
 
   window: any = window;
+  setInterval: any = setInterval;
+  clearInterval: any = clearInterval;
 
   constructor(
     private cdr: ChangeDetectorRef,
@@ -51,6 +55,7 @@ export class TalkComponent implements OnDestroy {
     private route: ActivatedRoute,
     private router: Router,
     private service: BroadcastService,
+    private socketService: WebSocketService,
     private style: StyleService,
     private zone: NgZone,
   ) {
@@ -98,6 +103,7 @@ export class TalkComponent implements OnDestroy {
   handleStructure = (structure: Structure): void => {
     this.structure = structure;
     this.setPageByRoute(structure);
+    this.handleKeepAlive(structure);
   };
 
   handleControlMessage = (message: BroadcastMessage): void => {
@@ -153,6 +159,26 @@ export class TalkComponent implements OnDestroy {
     if (this.type === 'external') {
       this.handleWebComponent();
     }
+  };
+
+  interval: number = -1;
+  handleKeepAlive = (structure: Structure): void => {
+    if (structure.hasOwnProperty('KEEP-ALIVE') === false) {
+      this.keepAlive = false;
+      return;
+    };
+
+    this.keepAlive = structure['KEEP-ALIVE'] as boolean;
+    this.interval = this.setInterval(this.triggerKeepAlive.bind(this), 29000);
+    this.triggerKeepAlive();
+  };
+
+  triggerKeepAlive = (): void => {
+    if (this.keepAlive === false) {
+      this.clearInterval(this.interval);
+      return;
+    }
+    this.socketService.pingNodeServer();
   };
 
   zoneRun = (key: string): void => {

@@ -6,8 +6,10 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class WebSocketService {
-  // private url: string = 'ws://localhost:3000/websocket';
-  private url: string = 'wss://talk-node-server.onrender.com/websocket';
+  private useLocal: boolean = false;
+  private url: string = (this.useLocal === true)
+    ? 'ws://localhost:3000/websocket'
+    : 'wss://talk-node-server.onrender.com/websocket';
   private project: string = 'project:tech-presentation-tool';
 
   private ws: any;
@@ -51,5 +53,14 @@ export class WebSocketService {
   public sendMessage = (message: any): void => {
     message.project = this.project;
     this.ws.send(JSON.stringify(message));
+  };
+
+  public pingNodeServer = async (): Promise<boolean> => {
+    const url: string = (this.useLocal === true)
+      ? 'http://localhost:3000/'
+      : 'https://talk-node-server.onrender.com';
+    const result: any = await fetch(url, { method: 'HEAD' });
+    console.log('ping status', result.status === 200);
+    return result.status === 200;
   };
 }
