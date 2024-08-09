@@ -1,9 +1,7 @@
 {
-  "test": [
-    "external-cover"
-  ],
   "ORDER": [
     "cover-01",
+    "conference--slide--beer-city-code",
     "what-is-rxjs--slide",
     "history--slide",
     "essential-concepts--slide",
@@ -47,19 +45,7 @@
     "  margin-bottom: 1em;",
     "}"
   ],
-  "external-cover": {
-    "type": "external",
-    "tag": "slide-cover",
-    "location": "/assets/slide-components/slide-cover.js",
-    "data": {
-      "title": "<span>A Look Inside Observables</span><br/><span class=\"smaller align-right\">Bob Fornal</span>",
-      "background": "/assets/images/grid--green.webp",
-      "image1": "/assets/images/code-squid.webp",
-      "image2": "/assets/images/leading-edje.webp",
-      "text1": "<div class=bold>Entrepreneur</div>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.",
-      "text2": "<div class=bold>Senior Solutions Developer</div><div class=bold>Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth."
-    }
-  },
+
   "cover-01": {
     "title": "A Look Inside Observables",
     "type": "cover-01",
@@ -67,6 +53,13 @@
     "bio1": "<img class=bio-logo src=\"./assets/images/code-squid.webp\" />\n<br/>\n<div class=\"bold bio-header\">Entrepreneur</div>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.",
     "bio2": "<img class=bio-logo src=\"./assets/images/leading-edje.webp\" />\n<br/>\n<div class=bold>Senior Solutions Developer</div>\n<div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth.",
     "notes": ""
+  },
+  "conference--slide--beer-city-code": {
+    "title": "",
+    "type": "image-only",
+    "background": "transparent",
+    "image": "./assets/images/sponsors--2024-beer-city-code.png",
+    "notes": "Sponsors"
   },
   "what-is-rxjs--slide": {
     "title": "What is RxJS",

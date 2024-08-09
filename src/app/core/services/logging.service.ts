@@ -13,8 +13,8 @@ export class LoggingService {
   logged$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
   old: any = {};
-  replace: Array<string> = ['info'];
-  // replace: Array<string> = ['log', 'debug', 'warn', 'error', 'info'];
+  // replace: Array<string> = ['info'];
+  replace: Array<string> = ['log', 'debug', 'warn', 'error', 'info'];
 
   active: boolean = false;
 
