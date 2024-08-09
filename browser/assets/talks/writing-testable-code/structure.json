@@ -3,6 +3,7 @@
     "cover-01",
 
     "context-slide",
+    "personal-code--old-patterns",
 
     "constructor-does-real-work--warning-signs",
     "constructor-does-real-work--code-examples-001",
@@ -71,6 +72,18 @@
     "text1": "Embrace TESTABILITY ...<ul><li>Not just catching bugs.</li><li>Foster <span class=italic-green>a culture of quality and efficiency.</span></li><li>How easily software in a system can be tested.</li></ul>Highly testable code allows for ...<ul><li>More efficient and effective identification of defects.</li><li>Ensuring higher quality and reliability.</li></ul>Key characteristics of testable code include ...<ul><li><span class=bold-green>Modularity</span>: Code is organized into discrete units.</li><li><span class=bold-green>Clarity</span>: Code is understandable and its purpose is clear.</li><li><span class=bold-green>Independence</span>: Units of code can be tested in isolation without reliance on external systems or states.</li></ul>",
     "text2": "Major Talk Sections<ul><li>Constructor does Real Work</li><li>Collaborators</li><li>Brittle Global State and Singletons</li><li>Class does Too Much</li></ul>",
     "notes": "Embrace testability in code ...<ul><li>More than just catching bugs.</li><li>It's about fostering <span class=italic-green>a culture of quality and efficiency in projects.</span></li><li>How easily a software system can be tested.</li></ul>Highly testable code allows for ...<ul><li>More efficient and effective identification of defects.</li><li>Ensuring higher quality and reliability.</li></ul>Key characteristics of testable code include ...<ul><li><span class=bold-green>Modularity</span>: Code is organized into discrete units.</li><li><span class=bold-green>Clarity</span>: Code is understandable and its purpose is clear</li><li><span class=bold-green>Independence</span>: Units of code can be tested in isolation without reliance on external systems or state.s</li></ul>Major Talk Sections<ul><li>Constructor does Real Work</li><li>Collaborators</li><li>Brittle Global State and Singletons</li><li>Class does Too Much</li></ul>"
+  },
+
+  "personal-code--old-patterns": {
+    "title": "Personal Examples",
+    "type": "code-editor",
+    "folder": "code-personal",
+    "files": [
+      "original.ts",
+      "refactor.ts",
+      "redesign.ts"
+    ],
+    "notes": ""
   },
 
   "constructor-does-real-work--warning-signs": {

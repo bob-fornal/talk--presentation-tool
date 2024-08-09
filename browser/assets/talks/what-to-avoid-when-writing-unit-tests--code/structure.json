@@ -1,7 +1,7 @@
 {
   "ORDER": [
     "cover-01",
-    "conference--slide",
+    "conference--slide--beer-city-code",
     "engineers-in-a-bar",
     "what-are-unit-tests",
     "talk-details",
@@ -54,11 +54,18 @@
     "bio2": "<img class=bio-logo src=./assets/images/leading-edje.webp /><br/><div class=bold>Senior Solutions Developer</div><div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth.",
     "notes": "Good Unit Tests are a critical part of the development process and vital to the lifecycle of the code-under-test.<br/><br/>Previous employer ...<br/><ul><li>No tests, there wasn't enough time.</li><li>Flaky code.</li><li>Didn't stand the test of time.</li></ul>Another ...<br/<><ul><li>Script language story</li></li>180,000 lines of code with 97% Unit Test Coverage</li><li>Unit Tests in-depth.</li><li>Used TDD when bugs found before release.</li><li>3 Bug Cards in 365-days, two were missed requirement issues.</li></ul>Others ...<br/><ul><li>2,000+ Unit Tests against Promises (JavaScript) that passed, even when the tests should have failed.</li><li>No or limited Unit Testing because of monolithic code (3-6,000 line functions).</li></ul>Let me reiterate,<br/>Good Unit Tests are a critical part of the development process and vital to the lifecycle of the code-under-test."
   },
-  "conference--slide": {
+  "conference--slide--beer-city-code": {
     "title": "",
     "type": "image-only",
     "background": "transparent",
-    "image": "./assets/images/cincy-deliver-2024-sponsors.png",
+    "image": "./assets/images/sponsors--2024-beer-city-code.png",
+    "notes": "Sponsors"
+  },
+  "conference--slide--cincy-deliver": {
+    "title": "",
+    "type": "image-only",
+    "background": "transparent",
+    "image": "./assets/images/sponsors--2024-cincy-deliver.png",
     "notes": "Sponsors"
   },
   "cover-slide-02": {
