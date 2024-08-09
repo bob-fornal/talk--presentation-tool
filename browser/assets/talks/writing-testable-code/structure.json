@@ -83,7 +83,7 @@
       "refactor.ts",
       "redesign.ts"
     ],
-    "notes": ""
+    "notes": "This is code I wrote for an Azure Node Serverless Function. The original pattern was based off of several recent articles and posts I found. The pattern worked - it's amazingly hard to test. My efforts mirror what's seen in the refactor code; it's not maintainable although it is testable. Then, I got thinking about the modern tooling available and went down an amazing rabbit hole into using JavaScript's fetch command."
   },
 
   "constructor-does-real-work--warning-signs": {
