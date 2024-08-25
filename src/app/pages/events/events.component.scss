@@ -8,6 +8,12 @@
   width: calc(100% - 24px);
   overflow: auto;
 
+  .functionality {
+    position: absolute;
+    left: 4.5em;
+    top: 1em;
+  }
+
   .main-title {
     text-align: center;
     font-weight: bold;
