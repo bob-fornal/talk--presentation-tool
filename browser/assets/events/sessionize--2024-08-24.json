@@ -1,0 +1,383 @@
+{
+  "speaker": {
+    "firstName": "Bob",
+    "lastName": "Fornal",
+    "tagline": "Senior Developer with a passion for learning, testing, mentoring, speaking and personal growth. Blessed husband and proud father of two.",
+    "bio": "My focus is on front-end development: JavaScript, CSS, SVG, Angular, React, React-Native, Vue, and Ionic. I commonly speak about Quality Engineering, Best Practices, and Front-End Technologies.\r\n\r\nOwner of Code Squid, LLC.\r\nSenior Solutions Developer II (Front-End) at Leading EDJE, Inc.\r\n\r\n\"Learning from my mistakes over the decades, I feel that I have become a solid programmer.\" -- Me",
+    "speakerProfileUrl": "https://sessionize.com/bob-fornal",
+    "photoUrl": "https://sessionize.com/image/632f-200o200o2-swttbpmdquw6kZMmcRb7bc.jpg",
+    "photoLargeUrl": "https://sessionize.com/image/4a51-1000o1000o1-swttbpmdquw6kZMmcRb7bc.jpg"
+  },
+  "sessions": [
+    {
+      "id": 60008,
+      "title": "So, You Want to Speak at a Conference",
+      "description": "Do you feel ready to speak at a conference like [CONFERENCE HERE] Conference, but aren't quite sure how to start? Are you curious about presenting, but aren't really sure what it takes? Have you submitted talks that aren’t getting accepted and want some feedback on your proposals?\r\n\r\nIf any of this rings true, then this workshop is for you!\r\n\r\nDuring this workshop you will practice picking a topic, building an outline to refine your ideas, developing an abstract, and selecting a title that represents your talk and draws interest! You will also be exposed to tips from an experienced presenter on creating a slide deck, utilizing the sometimes forgotten about Notes section, and crafting your biography with examples of both good and bad content.",
+      "sessionUrl": "https://sessionize.com/s/bob-fornal/so-you-want-to-speak-at-a-conference/60008",
+      "languageCode": "en",
+      "language": "English"
+    },
+    {
+      "id": 39824,
+      "title": "Let's Talk About Front-End Build Tools",
+      "description": "First, let's examine a custom-built site build tool. Then, we'll move to Angular, Vue, and React and examine their build tools. Finally, we'll look at the build tools themselves and how they can be customized as they are fit into CI/CD pipelines.",
+      "sessionUrl": "https://sessionize.com/s/bob-fornal/lets-talk-about-front-end-build-tools/39824",
+      "languageCode": "en",
+      "language": "English"
+    },
+    {
+      "id": 39825,
+      "title": "Let's Compare Angular, Vue, React, and Vanilla JavaScript",
+      "description": "Starting with a simple project design we will look at the various design considerations in several categories (initialization, components, services, event handling, build tooling, and testing) to compare and contrast the various strengths and weaknesses of Vanilla JavaScript, Angular, Vue, and React.",
+      "sessionUrl": "https://sessionize.com/s/bob-fornal/lets-compare-angular-vue-react-and-vanilla-javascr/39825",
+      "languageCode": "en",
+      "language": "English"
+    },
+    {
+      "id": 25527,
+      "title": "What to Avoid When Writing Unit Tests",
+      "description": "“These tests should never have been written. They provide no or little value.” -ME\r\n\r\nTesting code has been described as an \"art form.\" It is, but it should not be. There are many good patterns that should be followed when writing tests. There is even a lifecycle of tests that should be paid some attention. There are also many BAD patterns that developers should be aware of so that they can be avoided (or cleaned up).\r\n\r\nThis session will provide a series of examples of bad front-end tests and how to write them correctly.\r\n\r\n* Tests Should Not Be \"Well-Factored\"\r\n* Keep The Reader In The Test\r\n* Violate The DRY Principle\r\n* Testing Too Much\r\n* Duplication Of Code Logic\r\n* Bad Test Double\r\n* Testing The Mock\r\n* False Positives\r\n* Testing Private Functionality Directly\r\n* Excessive Setup",
+      "sessionUrl": "https://sessionize.com/s/bob-fornal/what-to-avoid-when-writing-unit-tests/25527",
+      "languageCode": "en",
+      "language": "English"
+    },
+    {
+      "id": 22652,
+      "title": "Asynchronous JavaScript: Livin' On A Prayer",
+      "description": "There is a unique world where Single-Threaded JavaScript manages to be much more. JavaScript interacts with its environment in ways that allow it to handle Asynchronous activities. Using several detailed code examples, we will examine these examples in a unique way to show how these interactions truly work.\r\n\r\nThis talk has been also called, \"JavaScript Enjoys Your Tears\" and \"Lip Sync To The Async\". If you are an experienced developer or new to the field, there is something in this presentation for you.\r\n\r\nThis session takes a look at how JavaScript manages Asynchronous events and some of the ways developer decisions may work for, or against them.\r\n\r\nThis discussion will examine the ways that JavaScript coordinates and manages events using several coding examples and we can determine which are the good, the bad, and ... the ugly.",
+      "sessionUrl": "https://sessionize.com/s/bob-fornal/asynchronous-javascript-livin-on-a-prayer/22652",
+      "languageCode": "en",
+      "language": "English"
+    },
+    {
+      "id": 54411,
+      "title": "A Whirlwind Tour of SASS",
+      "description": "Syntactically Awesome StyleSheets. Let's take a look at how SASS can ramp up CSS through specific hands-on exercises. The exercises will focus on building a basic page with dark mode available. This pre-compiler will cover the use of variables, nesting, partials, modules, mixins, inheritance, and operators (using the SCSS syntax).",
+      "sessionUrl": "https://sessionize.com/s/bob-fornal/a-whirlwind-tour-of-sass/54411",
+      "languageCode": "en",
+      "language": "English"
+    },
+    {
+      "id": 53153,
+      "title": "Asynchronous JavaScript: We're Half Way There",
+      "description": "Single-Threaded JavaScript is a unique world that manages to be and do so much more. In this presentation we will dig deeper into Promises, Async/Await, Observables, and Signals. Using several detailed code examples, we will examine code in a unique way to show how these tools truly work.\r\n\r\nIf you are an experienced developer or new to the field, there is something in this presentation for you.\r\n\r\nThis session takes a look at how the tools and patterns for Asynchronous activity in JavaScript improves our processes for handing data and events making developer's lives less complicated.",
+      "sessionUrl": "https://sessionize.com/s/bob-fornal/asynchronous-javascript-were-half-way-there/53153",
+      "languageCode": "en",
+      "language": "English"
+    },
+    {
+      "id": 51477,
+      "title": "A Look Inside Observables",
+      "description": "RxJS Observables are one of the more complicated topics I've learned over the past few years. This is something I struggled to understand fully for a few years.\r\n\r\nObservables provide support for passing messages between parts of an application. They are a technique for event handling, asynchronous programming, and handling multiple values.\r\n\r\nIn this talk, we will examine what Observables are and how Observables can be implemented in a clean, testable manner using code examples to dig into the fine details.",
+      "sessionUrl": "https://sessionize.com/s/bob-fornal/a-look-inside-observables/51477",
+      "languageCode": "en",
+      "language": "English"
+    },
+    {
+      "id": 47269,
+      "title": "Katas with a Programmer's Brain",
+      "description": "Let's explore what Katas are. How do they apply to programming? What can code katas do for a beginner developer, for an experienced developer? In this talk, we'll examine several code kata sites, code that can be generated as solutions, and how these solutions can help us improve our skill effectively over time.",
+      "sessionUrl": "https://sessionize.com/s/bob-fornal/katas-with-a-programmers-brain/47269",
+      "languageCode": "en",
+      "language": "English"
+    },
+    {
+      "id": 47129,
+      "title": "Thinking with a Programmer's Brain",
+      "description": "I got a question via private message. The original question was ... What do you think can help me think like a programmer apart from working on various examples over time?\r\n\r\nHere are the core areas that are important to get that \"programmer's brain.\"",
+      "sessionUrl": "https://sessionize.com/s/bob-fornal/thinking-with-a-programmers-brain/47129",
+      "languageCode": "en",
+      "language": "English"
+    },
+    {
+      "id": 103552,
+      "title": "Node Test Runner Workshop",
+      "description": "How do you test Node.js applications? The Node.js Test Runner is a stable, modern, fast, and doesn't require additional libraries. But understanding and using it well can be tricky. Attendees will learn how to use Node.js test runner to its full potential. You will see how it compares to other tools, how to set it up, and how to run your tests effectively. During the workshop you will get comfortable with filtering, native assertions, running parallel tests, using CLI, and much more. We will also talk about working with TypeScript, custom reporting, and code coverage.",
+      "sessionUrl": "https://sessionize.com/s/bob-fornal/node-test-runner-workshop/103552",
+      "languageCode": "en",
+      "language": "English"
+    },
+    {
+      "id": 97923,
+      "title": "From Zero to Hero: The Fundamentals of JavaScript Web Components",
+      "description": "Web Components are a powerful way to build components and libraries allowing us to maintain consistency across applications.\r\n\r\nThere are several ways to build Web Components; each with its strengths and weaknesses. Component libraries can be wrapped to provide a consistent design pattern, component tools (like Lit) can be used to create components or libraries, and for the true geeks among us, we can create pure JavaScript components. Pure JavaScript components provide an insight into all Web Components; a glimpse into what drives the Internet.\r\n\r\nThis deep dive will provide the attendee with a solid understanding of the underlying technologies. We will also discuss the pros and cons behind the other ways to create custom Web Components.",
+      "sessionUrl": "https://sessionize.com/s/bob-fornal/from-zero-to-hero-the-fundamentals-of-javascript-w/97923",
+      "languageCode": "en",
+      "language": "English"
+    },
+    {
+      "id": 96857,
+      "title": "Patterns Unpatterned: The Wit and Wisdom of JavaScript",
+      "description": "In the intricate world of JavaScript, design patterns serve as a blueprint for solving recurring challenges in software design. But are these patterns inherently complex, or does their intricacy serve a purpose?\r\n\r\nLet's delve into several of the more common patterns; examine the code used, why they exist, and what problems do they solve? \r\n\r\nFurthermore, we'll broaden our horizon by investigating 'proto-patterns' and 'anti-patterns' -- the lesser-known cousins with their unique roles in the tapestry of JavaScript design.\r\n\r\nThe following patterns will be featured at the heart of our discussion:\r\n\r\n* Constructor\r\n* Module (Closure)\r\n* Revealing Module\r\n* Factory Method\r\n* Prototype\r\n* Singleton\r\n* Observer\r\n\r\nThrough this session, we aim to unravel the complexity and showcase their pivotal role in crafting elegant and maintainable code.",
+      "sessionUrl": "https://sessionize.com/s/bob-fornal/patterns-unpatterned-the-wit-and-wisdom-of-javascr/96857",
+      "languageCode": "en",
+      "language": "English"
+    },
+    {
+      "id": 96856,
+      "title": "Building Bridges: AI Integration with JavaScript Streams",
+      "description": "Let's take a look at JavaScript streams and their use in Artificial Intelligence and Machine Learning, particularly with LLMs.\r\n\r\nThrough this session, we will embark on a journey through the fundamentals of JavaScript Streams with practical examples, exploring their role in facilitating efficient data handling. Presenting data from these systems to the user can be challenging; let's see how we can reduce friction for the end user. This talk will look at leveraging the synergy between AI and JavaScript for building next-generation applications.\r\n\r\nThis talk will present several code examples that showcase the use of JavaScript streams to consume LLM data rather than the traditional API request/response pattern or integrating WebSockets into the backend and frontend to provide a more useable interface.",
+      "sessionUrl": "https://sessionize.com/s/bob-fornal/building-bridges-ai-integration-with-javascript-st/96856",
+      "languageCode": "en",
+      "language": "English"
+    },
+    {
+      "id": 94558,
+      "title": "Angular: Two Worlds in One - Module or Standalone?",
+      "description": "Having seen the value of the Angular Module-System, I was unsure of the Standalone Component System. Having built applications in both, I can see some value in each of the approaches.\r\n\r\nRealize that these two ways of doing things can be integrated.\r\n\r\nLet's discuss the possible upsides and downsides of each. The correct approach or approaches are not as clear as they seem.",
+      "sessionUrl": "https://sessionize.com/s/bob-fornal/angular-two-worlds-in-one-module-or-standalone/94558",
+      "languageCode": "en",
+      "language": "English"
+    },
+    {
+      "id": 88173,
+      "title": "Always Drink Upstream from The Herd",
+      "description": "Active Career Management: As we know, finding jobs is challenging at best. Let's talk about finding the right job, the right company, and ways to stand out within a crowd of developers. These are thoughts and ideas that have been hardened through Coffee Chats with hundreds bootcamp and college students over several years.\r\n\r\nHow does all of this impact individuals that are new to the development industry? What are some of the challenges that those of us with decades in the industry will have?\r\n\r\nThis talk is for the new or transitioning developer; experienced developers should consider it, as well.",
+      "sessionUrl": "https://sessionize.com/s/bob-fornal/always-drink-upstream-from-the-herd/88173",
+      "languageCode": "en",
+      "language": "English"
+    },
+    {
+      "id": 87201,
+      "title": "Writing Testable Code",
+      "description": "Writing code that can be tested is not an art form. It takes thought and consideration to keep our code in the best possible shape.\r\n\r\nLet's take a look at the warning signs with code examples that can make our code harder to test.\r\n\r\n* Does your constructor do too much work?\r\n* Are you using collaborator objects?\r\n* Do you have global state or singletons?\r\n* Do your classes do too much?\r\n\r\nCome and see what can be done to improve upon or fix these issues.",
+      "sessionUrl": "https://sessionize.com/s/bob-fornal/writing-testable-code/87201",
+      "languageCode": "en",
+      "language": "English"
+    },
+    {
+      "id": 78032,
+      "title": "Frontend Diagnostics for the non-Frontend",
+      "description": "This talk has come about from various interactions I've had with Quality Engineers, Tech Leads, and UI/UX Designers. I find that there is a lot they are missing to be able to help with identifying and tracking issues in a system. In particular, I've seen times when there are intermittent issues and all we get is \"it's broke.\"\r\n\r\nWe will cover the browser Developer Tools: Console (errors), Network, managing data, Sources (code), Application Storage, Devices, Targeting Elements and Styles.\r\n\r\nIf you have ever tried to tell a developer what an issue is and in frustration said,\"it's just broke,\" then this talk is for you. When this talk is over, you will have a much deeper understanding of what you can do to help determine where an issue is and get better information to the developers to target that issue.",
+      "sessionUrl": "https://sessionize.com/s/bob-fornal/frontend-diagnostics-for-the-non-frontend/78032",
+      "languageCode": "en",
+      "language": "English"
+    },
+    {
+      "id": 75602,
+      "title": "Designing Effective Unit Tests for React",
+      "description": "React has great tools for Unit Testing component. This doesn’t mean testing is easy. There are still a lot of questions you have to figure out for yourself: How many component tests should you write vs end-to-end tests or lower-level unit tests? How can you test a certain line of code that is tricky to test? And what in the world are you supposed to do about that persistent act() warning?\r\n\r\nIn this workshop we’ll introduce Unit Testing with React, along with a mental model for how to think about designing your components and tests. This mental model will help you see how to test each bit of logic, whether or not to mock dependencies, and will help improve the design of your components. You’ll walk away with the tools, techniques, and principles you need to implement low-cost, high-value component tests.\r\n\r\nTable of contents\r\n\r\n- The different kinds of React application tests, and where component tests fit in.\r\n- A mental model for thinking about the inputs and outputs of the components you test.\r\n- Options for selecting DOM elements to verify and interact with them.\r\n- The value of mocks and why they shouldn’t be avoided.\r\n- The challenges with asynchrony in RTL tests and how to handle them.\r\n\r\nPrerequisites\r\n\r\n- Familiarity with building applications with React.\r\n- Basic experience writing automated tests with Jest or another unit testing framework.",
+      "sessionUrl": "https://sessionize.com/s/bob-fornal/designing-effective-unit-tests-for-react/75602",
+      "languageCode": "en",
+      "language": "English"
+    },
+    {
+      "id": 67790,
+      "title": "Let's MacGyver some Data",
+      "description": "First, we will delve into some seldom used Excel functionality to generate large JSON data sets from existing data. Then, we will massage that data into something usable with VS Code and Regular Expressions. We will look at several examples of this pairing (VS Code and RegEx).\r\n\r\nThis unusual toolset will provide some practical tools to make work processes more efficient. These tools will be used more frequently than you would guess on the job.",
+      "sessionUrl": "https://sessionize.com/s/bob-fornal/lets-macgyver-some-data/67790",
+      "languageCode": "en",
+      "language": "English"
+    },
+    {
+      "id": 64089,
+      "title": "Is ChatGPT the next Wikipedia?",
+      "description": "FROM WIKIPEDIA: Wikipedia is not a reliable source for citations elsewhere on Wikipedia. As a user-generated source, it can be edited by anyone at any time, and any information it contains at a particular time could be vandalism, a work in progress, or simply incorrect.\r\n\r\nChatGPT ...\r\n\r\nAre the AI-Overlords taking over? Maybe not.\r\nIs my job in danger from tools like ChatGPT? Not anytime soon.\r\n\r\nIn this talk, let's cover what ChatGPT can and can't do. We'll take a look at some real examples of code generated and the ideas they sparked. In particular, we'll discuss the benefits that can be gained if it is used appropriately to assist with testing.",
+      "sessionUrl": "https://sessionize.com/s/bob-fornal/is-chatgpt-the-next-wikipedia/64089",
+      "languageCode": "en",
+      "language": "English"
+    },
+    {
+      "id": 63766,
+      "title": "Component vs Class Level Unit Testing",
+      "description": "React tests at the component level. Angular tests at the class level. Who is right?\r\n\r\nIn this talk, we will cover what these two types of testing cover and the pros and cons of each strategy. We will examine code that clearly shows the benefits of each of these patterns and discuss ways this will impact your projects.",
+      "sessionUrl": "https://sessionize.com/s/bob-fornal/component-vs-class-level-unit-testing/63766",
+      "languageCode": "en",
+      "language": "English"
+    }
+  ],
+  "events": [
+    {
+      "id": 1009621,
+      "name": "Cincy Deliver",
+      "eventStartDate": "2024-07-26T00:00:00Z",
+      "eventEndDate": "2024-07-26T00:00:00Z",
+      "location": "Cincinnati, Ohio, United States",
+      "website": "https://www.cincydeliver.org/"
+    },
+    {
+      "id": 14525,
+      "name": "Scenic City Summit 2024",
+      "eventStartDate": "2024-06-28T00:00:00",
+      "eventEndDate": "2024-06-28T00:00:00",
+      "location": "Chattanooga, Tennessee, United States",
+      "website": "http://www.sceniccitysummit.com"
+    },
+    {
+      "id": 1010699,
+      "name": "QA or the Highway",
+      "eventStartDate": "2024-06-21T00:00:00Z",
+      "eventEndDate": "2024-06-21T00:00:00Z",
+      "location": "Columbus, Ohio, United States",
+      "website": "https://www.qaorthehwy.com/"
+    },
+    {
+      "id": 11913,
+      "name": "CodeMash 2024",
+      "eventStartDate": "2024-01-09T00:00:00",
+      "eventEndDate": "2024-01-12T00:00:00",
+      "location": "Sandusky, Ohio, United States",
+      "website": "https://www.codemash.org"
+    },
+    {
+      "id": 10497,
+      "name": "Momentum 2023",
+      "eventStartDate": "2023-10-19T00:00:00",
+      "eventEndDate": "2023-10-19T00:00:00",
+      "location": "Cincinnati, Ohio, United States",
+      "website": "https://momentumdevcon.com"
+    },
+    {
+      "id": 10650,
+      "name": "JavaScript & Friends 2023",
+      "eventStartDate": "2023-08-25T00:00:00",
+      "eventEndDate": "2023-08-25T00:00:00",
+      "location": "Columbus, Ohio, United States",
+      "website": "https://www.javascriptandfriends.com/"
+    },
+    {
+      "id": 10211,
+      "name": "Scenic City Summit 2023",
+      "eventStartDate": "2023-06-02T00:00:00",
+      "eventEndDate": "2023-06-02T00:00:00",
+      "location": "Chattanooga, Tennessee, United States",
+      "website": "http://www.sceniccitysummit.com"
+    },
+    {
+      "id": 10591,
+      "name": "SciFiDevConMayTheFourthEvent 2023",
+      "eventStartDate": "2023-05-01T00:00:00",
+      "eventEndDate": "2023-05-31T00:00:00",
+      "location": null,
+      "website": "https://www.scifidevcon.com/"
+    },
+    {
+      "id": 9055,
+      "name": "CodeMash 2023",
+      "eventStartDate": "2023-01-10T00:00:00",
+      "eventEndDate": "2023-01-13T00:00:00",
+      "location": "Sandusky, Ohio, United States",
+      "website": "https://www.codemash.org"
+    },
+    {
+      "id": 1006198,
+      "name": "CodeMash 2023",
+      "eventStartDate": "2023-01-10T00:00:00Z",
+      "eventEndDate": "2023-01-13T00:00:00Z",
+      "location": "Sandusky, Ohio, United States",
+      "website": "https://www.codemash.org/"
+    },
+    {
+      "id": 7762,
+      "name": "Code PaLOUsa 2022",
+      "eventStartDate": "2022-08-17T00:00:00",
+      "eventEndDate": "2022-08-19T00:00:00",
+      "location": "Louisville, Kentucky, United States",
+      "website": "https://www.codepalousa.com"
+    },
+    {
+      "id": 7297,
+      "name": "JavaScript & Friends Conference 2022",
+      "eventStartDate": "2022-07-29T00:00:00",
+      "eventEndDate": "2022-07-29T00:00:00",
+      "location": "Columbus, Ohio, United States",
+      "website": "https://www.javascriptandfriends.com/"
+    },
+    {
+      "id": 7151,
+      "name": "Stir Trek 2022",
+      "eventStartDate": "2022-05-06T00:00:00",
+      "eventEndDate": "2022-05-06T00:00:00",
+      "location": "Columbus, Ohio, United States",
+      "website": "https://stirtrek.com"
+    },
+    {
+      "id": 6344,
+      "name": "CodeMash 2022",
+      "eventStartDate": "2022-01-11T00:00:00",
+      "eventEndDate": "2022-01-14T00:00:00",
+      "location": "Sandusky, Ohio, United States",
+      "website": "https://www.codemash.org"
+    },
+    {
+      "id": 6411,
+      "name": "Festive Tech Calendar 2021",
+      "eventStartDate": "2021-12-01T00:00:00",
+      "eventEndDate": "2021-12-31T00:00:00",
+      "location": null,
+      "website": "https://festivetechcalendar.azurewebsites.net/"
+    },
+    {
+      "id": 5941,
+      "name": "Javascript & Friends Conference 2021",
+      "eventStartDate": "2021-08-19T00:00:00",
+      "eventEndDate": "2021-08-20T00:00:00",
+      "location": "Columbus, Ohio, United States",
+      "website": "https://www.javascriptandfriends.com/"
+    },
+    {
+      "id": 3386,
+      "name": "JavaScript and Friends Conference",
+      "eventStartDate": "2020-08-13T00:00:00",
+      "eventEndDate": "2020-08-14T00:00:00",
+      "location": "Columbus, Ohio, United States",
+      "website": "https://www.javascriptandfriends.com/"
+    },
+    {
+      "id": 1003402,
+      "name": "Crafting Testable JavaScript (SEMjs)",
+      "eventStartDate": "2020-06-08T00:00:00Z",
+      "eventEndDate": "2020-06-08T00:00:00Z",
+      "location": null,
+      "website": "https://www.meetup.com/SEM-JS/events/271068061/feedback/?_xtd=gatlbWFpbF9jbGlja9oAJDgzM2RhNDRlLTkzNTMtNGM5NS1hMmQwLTFlZDNiYzdhMzBjZg&_af=event&_af_eid=271068061"
+    },
+    {
+      "id": 1002956,
+      "name": "JavaScript & Friends (Online Meetup)",
+      "eventStartDate": "2020-03-17T00:00:00Z",
+      "eventEndDate": "2020-03-17T00:00:00Z",
+      "location": "Columbus, Ohio, United States",
+      "website": null
+    },
+    {
+      "id": 1002726,
+      "name": "QA or the Highway",
+      "eventStartDate": "2020-02-25T00:00:00Z",
+      "eventEndDate": "2020-02-25T00:00:00Z",
+      "location": "Columbus, Ohio, United States",
+      "website": "https://www.qaorthehwy.com/"
+    },
+    {
+      "id": 2160,
+      "name": "CodeMash 2020",
+      "eventStartDate": "2020-01-06T00:00:00",
+      "eventEndDate": "2020-01-10T00:00:00",
+      "location": "Sandusky, Ohio, United States",
+      "website": "https://www.codemash.org"
+    },
+    {
+      "id": 1247,
+      "name": "JavaScript and Friends Conference",
+      "eventStartDate": "2019-08-02T00:00:00",
+      "eventEndDate": "2019-08-02T00:00:00",
+      "location": "Columbus, Ohio, United States",
+      "website": "https://www.javascriptandfriends.com"
+    },
+    {
+      "id": 1002048,
+      "name": "Columbus JavaScript Usergroup",
+      "eventStartDate": "2019-07-17T00:00:00Z",
+      "eventEndDate": "2019-07-17T00:00:00Z",
+      "location": "Columbus, Ohio, United States",
+      "website": "http://columbusjs.org/07-17-2019/bob-fornal-single-threaded-and-asynchronous-js.html"
+    },
+    {
+      "id": 1002085,
+      "name": "JavaScript & Friends (Angular Meetup)",
+      "eventStartDate": "2019-06-20T00:00:00Z",
+      "eventEndDate": "2019-06-20T00:00:00Z",
+      "location": "Columbus, Ohio, United States",
+      "website": null
+    }
+  ]
+}

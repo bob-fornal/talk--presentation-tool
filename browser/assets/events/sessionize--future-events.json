@@ -1,0 +1,20 @@
+{
+  "events": [
+    {
+      "id": -1,
+      "name": "Momentum 2024",
+      "eventStartDate": "2024-10-17T00:00:00Z",
+      "eventEndDate": "2024-10-17T00:00:00Z",
+      "location": "Cincinnati, Ohio, United States",
+      "website": "https://momentumdevcon.com/"
+    },
+    {
+      "id": -1,
+      "name": "TechBash 2024",
+      "eventStartDate": "2024-09-24T00:00:00Z",
+      "eventEndDate": "2024-09-27T00:00:00Z",
+      "location": "Mount Pocono, Pennsylvania, United States",
+      "website": "https://www.techbash.com/"
+    }
+  ]
+}
