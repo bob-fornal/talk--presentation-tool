@@ -80,6 +80,6 @@ export class EventsComponent implements OnDestroy, OnInit {
   };
 
   getPastOffset = (index: number): number => {
-    return index + this.pastEvents.length + 1;
+    return index + this.pastEvents.length;
   };
 }

@@ -49,6 +49,7 @@ import { TrackPollingComponent } from './slides/track-polling/track-polling.comp
 import { EventsComponent } from './pages/events/events.component';
 import { BiographyComponent } from './features/biography/biography.component';
 import { SectionComponent } from './features/section/section.component';
+import { ConferenceComponent } from './features/conference/conference.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { SectionComponent } from './features/section/section.component';
     EventsComponent,
     BiographyComponent,
     SectionComponent,
+    ConferenceComponent,
   ],
   imports: [
     BrowserModule,

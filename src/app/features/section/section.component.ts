@@ -9,6 +9,7 @@ export class SectionComponent {
   @Input() index: number = 0;
   @Input() last?: boolean = false;
   @Input() circleOnly?: boolean = false;
+  @Input() biography?: boolean = false;
 
   isLeft = (): boolean => {
     return (this.index % 2) === 0;

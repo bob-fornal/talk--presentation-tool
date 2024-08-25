@@ -50,4 +50,15 @@
       }
     }
   }
+
+  .image {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    height: 100%;
+    
+    .img {
+      border-radius: 1em;
+    }
+  }
 }

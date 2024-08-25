@@ -1,0 +1,12 @@
+.conference-outer-wrapper {
+  display: inline-block;
+
+  .conference-inner-wrapper {
+    display: inline-block;
+    text-align: left;
+  }
+
+  .conference-title {
+    font-weight: bold;
+  }
+}

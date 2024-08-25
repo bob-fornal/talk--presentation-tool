@@ -1,0 +1,11 @@
+<div class="conference-outer-wrapper">
+  <div class="conference-inner-wrapper">
+    @if (data.website !== null) {
+      <a class="anchor" [href]="data.website" target="_blank">{{ data.name }}</a>
+    } @else {
+      <div class="conference-title">{{data.name}}</div>
+    }
+    <div class="conference-detail">{{dateAdjust(data.eventStartDate, data.eventEndDate)}}</div>
+    <div class="conference-detail">{{data.location}}</div>
+  </div>
+</div>

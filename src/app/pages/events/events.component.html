@@ -18,8 +18,11 @@
     } @else {
       <div class="content active">
         <div class="content-title">Biography Information</div>
-        <content-section [index]="0" [last]="true">
-          <content-biography [speaker]="speaker" />
+        <content-section [biography]="true" [last]="true">
+          <div class="image" image>
+            <img class="img" [src]="speaker.photoUrl" />
+          </div>
+          <content-biography content [speaker]="speaker" />
         </content-section>
       </div>
     }
@@ -42,8 +45,8 @@
       <div class="content active">
         <div class="content-title">Future Events</div>
         @for(event of futureEvents; track event; let index = $index; let last = $last) {
-          <content-section [index]="index + 1" [last]="last">
-            {{event.name}}
+          <content-section [index]="index" [last]="last">
+            <content-conference [data]="event"></content-conference>
           </content-section>
         }
       </div>
@@ -67,8 +70,8 @@
       <div class="content active">
         <div class="content-title">Past Events</div>
         @for(event of pastEvents; track event; let index = $index; let last = $last) {
-          <content-section [index]="index + 1" [last]="last">
-            {{event.name}}
+          <content-section [index]="getPastOffset(index)" [last]="last">
+            <content-conference [data]="event"></content-conference>
           </content-section>
         }
       </div>

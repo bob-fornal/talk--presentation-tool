@@ -1,26 +1,46 @@
 <div class="center-section-wrapper">
-  @if (circleOnly === false) {
-    <div class="content-left">
-      @if (isLeft() === true) {
-        <ng-template [ngTemplateOutlet]="NgContent"></ng-template>
-      }
-    </div>
-    <div class="content-center">
-      <div class="content-circle"></div>
-      <div class="content-line"></div>
-      @if (last === true) {
-        <div class="content-circle--last"></div>
-      }
-    </div>
-    <div class="content-right">
-      @if (isLeft() === false) {
-        <ng-template [ngTemplateOutlet]="NgContent"></ng-template>
-      }
-    </div>
-  } @else {
-    <div class="content-all">
-      <div class="content-circle"></div>
-    </div>
+  @switch (true) {
+    @case (circleOnly === false && biography === false) {
+      <div class="content-left">
+        @if (isLeft() === true) {
+          <ng-template [ngTemplateOutlet]="NgContent"></ng-template>
+        }
+      </div>
+      <div class="content-center">
+        <div class="content-circle"></div>
+        <div class="content-line"></div>
+        @if (last === true) {
+          <div class="content-circle--last"></div>
+        }
+      </div>
+      <div class="content-right">
+        @if (isLeft() === false) {
+          <ng-template [ngTemplateOutlet]="NgContent"></ng-template>
+        }
+      </div>
+    }
+
+    @case (circleOnly === true) {
+      <div class="content-all">
+        <div class="content-circle"></div>
+      </div>
+    }
+
+    @case (biography === true) {
+      <div class="content-left">
+        <ng-content select="[image]"></ng-content>
+      </div>
+      <div class="content-center">
+        <div class="content-circle"></div>
+        <div class="content-line"></div>
+        @if (last === true) {
+          <div class="content-circle--last"></div>
+        }
+      </div>
+      <div class="content-right">
+        <ng-content select="[content]"></ng-content>
+      </div>
+    }
   }
 </div>
 

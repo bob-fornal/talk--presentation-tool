@@ -1,4 +1,11 @@
 .biography-wrapper {
   color: #69f0ae;
-  font-family: Arial, sans-serif;  
+  font-family: Arial, sans-serif;
+
+  .anchor,
+  .tagline,
+  .bio {
+    margin-bottom: 1em;
+    white-space: pre-wrap;
+  }
 }
