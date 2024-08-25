@@ -1,0 +1,77 @@
+<div class="outer-wrapper">
+  <h1 class="main-title">Bob Fornal</h1>
+  <h2 class="main-sub-title">Conference Information</h2>
+
+  <div class="section speaker">
+    <div class="action" (click)="toggleSpeaker($event)">
+      @if (speakerActive === false) {
+        <span>+</span>
+      } @else {
+        <span>-</span>
+      }
+    </div>
+    @if (speakerActive === false) {
+      <div class="content">
+        <div class="content-title">Biography Information</div>
+        <content-section [circleOnly]="true" />
+      </div>
+    } @else {
+      <div class="content active">
+        <div class="content-title">Biography Information</div>
+        <content-section [index]="0" [last]="true">
+          <content-biography [speaker]="speaker" />
+        </content-section>
+      </div>
+    }
+  </div>
+
+  <div class="section future-events">
+    <div class="action" (click)="toggleFutureEvents($event)">
+      @if (futureEventsActive === false) {
+        <span>+</span>
+      } @else {
+        <span>-</span>
+      }
+    </div>
+    @if (futureEventsActive === false) {
+      <div class="content">
+        <div class="content-title">Future Events</div>
+        <content-section [circleOnly]="true" />
+      </div>
+    } @else {
+      <div class="content active">
+        <div class="content-title">Future Events</div>
+        @for(event of futureEvents; track event; let index = $index; let last = $last) {
+          <content-section [index]="index + 1" [last]="last">
+            {{event.name}}
+          </content-section>
+        }
+      </div>
+    }
+  </div>
+
+  <div class="section past-events">
+    <div class="action" (click)="togglePastEvents($event)">
+      @if (pastEventsActive === false) {
+        <span>+</span>
+      } @else {
+        <span>-</span>
+      }
+    </div>
+    @if (pastEventsActive === false) {
+      <div class="content">
+        <div class="content-title">Past Events</div>
+        <content-section [circleOnly]="true" />
+      </div>
+    } @else {
+      <div class="content active">
+        <div class="content-title">Past Events</div>
+        @for(event of pastEvents; track event; let index = $index; let last = $last) {
+          <content-section [index]="index + 1" [last]="last">
+            {{event.name}}
+          </content-section>
+        }
+      </div>
+    }
+  </div>
+</div>

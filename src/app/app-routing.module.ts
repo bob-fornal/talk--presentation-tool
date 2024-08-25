@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ControlPanelComponent } from './pages/control-panel/control-panel.component';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { EditComponent } from './pages/edit/edit.component';
+import { EventsComponent } from './pages/events/events.component';
 import { TalkComponent } from './pages/talk/talk.component';
 import { PollingComponent } from './pages/polling/polling.component';
 
@@ -16,7 +17,9 @@ const routes: Routes = [
   { path: 'control-panel/:folder/:slideKey', component: ControlPanelComponent },
   { path: 'courses', component: CoursesComponent },
 
-  { path: '', redirectTo: '/courses', pathMatch: 'full' }
+  { path: 'events', component: EventsComponent },
+
+  { path: '', redirectTo: '/events', pathMatch: 'full' }
 ];
 
 @NgModule({

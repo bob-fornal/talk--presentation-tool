@@ -46,6 +46,9 @@ import { PanelSingleComponent } from './slides/panel-single/panel-single.compone
 import { PanelTripleComponent } from './slides/panel-triple/panel-triple.component';
 import { TalkComponent } from './pages/talk/talk.component';
 import { TrackPollingComponent } from './slides/track-polling/track-polling.component';
+import { EventsComponent } from './pages/events/events.component';
+import { BiographyComponent } from './features/biography/biography.component';
+import { SectionComponent } from './features/section/section.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +73,9 @@ import { TrackPollingComponent } from './slides/track-polling/track-polling.comp
     AddSlideDialogComponent,
     TalkComponent,
     TrackPollingComponent,
+    EventsComponent,
+    BiographyComponent,
+    SectionComponent,
   ],
   imports: [
     BrowserModule,
