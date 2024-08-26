@@ -1,6 +1,6 @@
 <div class="center-section-wrapper">
   @switch (true) {
-    @case (circleOnly === false && biography === false) {
+    @case (circleOnly === false && biography === false && dual === false) {
       <div class="content-left">
         @if (isLeft() === true) {
           <ng-template [ngTemplateOutlet]="NgContent"></ng-template>
@@ -39,6 +39,22 @@
       </div>
       <div class="content-right">
         <ng-content select="[content]"></ng-content>
+      </div>
+    }
+
+    @case (dual === true) {
+      <div class="content-left">
+        <ng-content select="[left]"></ng-content>
+      </div>
+      <div class="content-center">
+        <div class="content-circle"></div>
+        <div class="content-line"></div>
+        @if (last === true) {
+          <div class="content-circle--last"></div>
+        }
+      </div>
+      <div class="content-right">
+        <ng-content select="[right]"></ng-content>
       </div>
     }
   }

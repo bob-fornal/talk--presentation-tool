@@ -1,0 +1,54 @@
+[
+  {
+    "id": 14362,
+    "name": "Beer City Code",
+    "location": "Grand Rapids, Michigan, United States",
+    "website": "https://beercitycode.com"
+  },
+  {
+    "id": 1009621,
+    "name": "Cincy Deliver",
+    "location": "Cincinnati, Ohio, United States",
+    "website": "https://www.cincydeliver.org/"
+  },
+  {
+    "id": 14525,
+    "name": "Scenic City Summit",
+    "location": "Chattanooga, Tennessee, United States",
+    "website": "http://www.sceniccitysummit.com"
+  },
+  {
+    "id": 1010699,
+    "name": "QA or the Highway",
+    "location": "Columbus, Ohio, United States",
+    "website": "https://www.qaorthehwy.com/",
+    "notes": "Board: Guest on Board (1 year)"
+  },
+  {
+    "id": 11913,
+    "name": "CodeMash",
+    "location": "Sandusky, Ohio, United States",
+    "website": "https://www.codemash.org",
+    "callForSpeakers": {
+      "start": "2024-08-15T00:00:00",
+      "end": "2024-08-30T00:00:00",  
+      "website": "https://codemash.org/call-speakers/"
+    },
+    "callforVolunteers": {
+      "start": "2024-09-23T00:00:00"
+    },
+    "notes": "Committees: Speaker Selection, DE&I, and Safety"
+  },
+  {
+    "id": 10497,
+    "name": "Momentum",
+    "location": "Cincinnati, Ohio, United States",
+    "website": "https://momentumdevcon.com"
+  },
+  {
+    "id": 7151,
+    "name": "Stir Trek",
+    "location": "Columbus, Ohio, United States",
+    "website": "https://stirtrek.com"
+  }
+]

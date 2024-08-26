@@ -12,6 +12,7 @@ import { EventsService } from '../../core/services/events.service';
 export class EventsComponent implements OnDestroy, OnInit {
   speakerActive: boolean = false;
 
+  activeEventsActive: boolean = false;
   futureEventsActive: boolean = true;
   pastEventsActive: boolean = false;
 
@@ -27,6 +28,7 @@ export class EventsComponent implements OnDestroy, OnInit {
     photoLargeUrl: '',
   };
 
+  activeEvents: Array<any> = [];
   futureEvents: Array<SessionEvent> = [];
   pastEvents: Array<SessionEvent> = [];
 
@@ -40,6 +42,7 @@ export class EventsComponent implements OnDestroy, OnInit {
   ) {
     this.subscriptions.add(this.eventService.speaker.subscribe(this.handleSpeaker.bind(this)));
 
+    this.subscriptions.add(this.eventService.activeEvents.subscribe(this.handleActiveEvents.bind(this)));
     this.subscriptions.add(this.eventService.pastEvents.subscribe(this.handlePastEvents.bind(this)));
     this.subscriptions.add(this.eventService.futureEvents.subscribe(this.handleFutureEvents.bind(this)));
 
@@ -58,7 +61,7 @@ export class EventsComponent implements OnDestroy, OnInit {
     this.subscriptions.unsubscribe();
   }
 
-  private handleSpeaker(data: Speaker) {
+  private handleSpeaker(data: Speaker): void {
     this.speaker = data;
   }
 
@@ -70,10 +73,29 @@ export class EventsComponent implements OnDestroy, OnInit {
     this.pastSessions = data;
   }
 
-  private handlePastEvents(data: any) {
+  private handleActiveEvents(data: Array<any>): void {
+    data.sort((a: any, b: any) => {
+      if (a.name < b.name) return -1;
+      if (a.name > b.name) return 1;
+      return 0;
+    });
+    const split: Array<any> = [];
+    for (let i = 0, len = data.length; i < len; i = i + 2) {
+      const element: { left: any, right?: any } = { left: data[i] };
+      if (i + 1 !== data.length) {
+        element.right = data[i + 1];
+      } else {
+        element.right = null;
+      }
+      split.push(element);
+    }
+    this.activeEvents = [...split];
+  }
+
+  private handlePastEvents(data: any): void {
     this.pastEvents = data;
   }
-  private handleFutureEvents(data: any) {
+  private handleFutureEvents(data: any): void {
     this.futureEvents = data;
   }
 
@@ -83,6 +105,10 @@ export class EventsComponent implements OnDestroy, OnInit {
 
   public toggleSpeaker = (event: any): void => {
     this.speakerActive = !this.speakerActive;
+  };
+
+  public toggleActiveEvents = (event: any): void => {
+    this.activeEventsActive = !this.activeEventsActive;
   };
 
   public toggleFutureEvents = (event: any): void => {

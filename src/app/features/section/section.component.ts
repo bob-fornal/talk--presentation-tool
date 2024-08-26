@@ -10,6 +10,7 @@ export class SectionComponent {
   @Input() last?: boolean = false;
   @Input() circleOnly?: boolean = false;
   @Input() biography?: boolean = false;
+  @Input() dual?: boolean = false;
 
   isLeft = (): boolean => {
     return (this.index % 2) === 0;

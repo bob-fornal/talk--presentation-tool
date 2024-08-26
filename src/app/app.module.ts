@@ -50,6 +50,7 @@ import { EventsComponent } from './pages/events/events.component';
 import { BiographyComponent } from './features/biography/biography.component';
 import { SectionComponent } from './features/section/section.component';
 import { ConferenceComponent } from './features/conference/conference.component';
+import { ActiveEventComponent } from './features/active-event/active-event.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +79,7 @@ import { ConferenceComponent } from './features/conference/conference.component'
     BiographyComponent,
     SectionComponent,
     ConferenceComponent,
+    ActiveEventComponent,
   ],
   imports: [
     BrowserModule,

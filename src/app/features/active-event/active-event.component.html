@@ -1,0 +1,21 @@
+<div class="active-event-outer-wrapper">
+  <div class="active-event-inner-wrapper">
+    <div class="active-event-title">
+      @if (hasUrl() === true) {
+        <a class="anchor" [href]="activeEvent.website" target="_blank">{{activeEvent.name}}</a>
+      } @else {
+        <span>{{activeEvent.name}}</span>
+      }
+    </div>
+    <div class="active-event-location">{{activeEvent.location}}</div>
+    @if (hasAttribute('callForSpeakers') === true) {
+      <div class="active-event-call-for-speakers">Call For Speakers: {{getDateRange('callForSpeakers')}}</div>
+    }
+    @if (hasAttribute('callforVolunteers') === true) {
+      <div class="active-event-call-for-volunteers">Call For Volunteers: {{getDateStart('callforVolunteers')}}</div>
+    }
+    @if (hasAttribute('notes') === true) {
+      <div class="active-event-notes">{{activeEvent.notes}}</div>
+    }
+  </div>
+</div>

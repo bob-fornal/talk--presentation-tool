@@ -80,4 +80,32 @@
       </div>
     }
   </div>
+
+  <div class="section active-events">
+    <div class="action" (click)="toggleActiveEvents($event)">
+      @if (activeEventsActive === false) {
+        <span>+</span>
+      } @else {
+        <span>-</span>
+      }
+    </div>
+    @if (activeEventsActive === false) {
+      <div class="content">
+        <div class="content-title">Active Events</div>
+        <content-section [circleOnly]="true" />
+      </div>
+    } @else {
+      <div class="content active">
+        <div class="content-title">Active Events</div>
+        @for (twoEvents of activeEvents; track twoEvents; let last = $last) {
+          <content-section [last]="last" [dual]="true">
+            <active-event [activeEvent]="twoEvents.left" left></active-event>
+            @if (twoEvents.right !== null) {
+              <active-event [activeEvent]="twoEvents.right" right></active-event>
+            }
+          </content-section>
+        }
+      </div>
+    }
+  </div>
 </div>

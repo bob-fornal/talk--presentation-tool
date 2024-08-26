@@ -1,0 +1,14 @@
+.active-event-outer-wrapper {
+  display: inline-block;
+  padding: 1em;
+  background-color: rgba(100, 100, 100, 0.25);
+
+  .active-event-inner-wrapper {
+    display: inline-block;
+    text-align: left;
+  }
+
+  .active-event-title {
+    font-weight: bold;
+  }
+}

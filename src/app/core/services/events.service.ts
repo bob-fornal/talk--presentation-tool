@@ -20,11 +20,13 @@ export class EventsService {
     photoLargeUrl: '',
   });
 
+  public activeEvents: BehaviorSubject<Array<any>> = new BehaviorSubject<Array<any>>([]);
   public pastEvents: BehaviorSubject<Array<SessionEvent>> = new BehaviorSubject<Array<SessionEvent>>([]);
   public futureEvents: BehaviorSubject<Array<SessionEvent>> = new BehaviorSubject<Array<SessionEvent>>([]);
 
   public sessions: BehaviorSubject<Array<Session>> = new BehaviorSubject<Array<Session>>([]);
   public pastSessions: BehaviorSubject<Array<Session>> = new BehaviorSubject<Array<Session>>([]);
+
   public joinTable: BehaviorSubject<JoinTable> = new BehaviorSubject<JoinTable>({});
 
   constructor(private http: HttpClient) {}
@@ -43,5 +45,9 @@ export class EventsService {
     const joinTable: JoinTable
       = await firstValueFrom(this.http.get('./assets/events/sessionize--join-table.json') as Observable<JoinTable>);
     this.joinTable.next(joinTable);
+
+    const activeEvents: Array<any>
+      = await firstValueFrom(this.http.get('./assets/events/sessionize--active-events.json') as Observable<Array<any>>);
+    this.activeEvents.next(activeEvents);
   };
 }
