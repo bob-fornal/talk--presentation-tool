@@ -40,11 +40,10 @@ export class ConferenceComponent {
   };
 
   dateAdjust = (startDate: string, endDate: string): string => {
-    const format: string = 'DD MMM YYYY'
-    const convertedStartDate: Date = new Date(startDate);
+    const convertedStartDate: Date = new Date(startDate.replace('Z', ''));
     if (startDate === endDate) return this.generateDate(convertedStartDate);
 
-    const convertedEndDate: Date = new Date(endDate);
+    const convertedEndDate: Date = new Date(endDate.replace('Z', ''));
     return `${this.generateDate(convertedStartDate)} - ${this.generateDate(convertedEndDate)}`;
   };
 

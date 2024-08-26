@@ -3,32 +3,32 @@
     {
       "id": -4,
       "name": "QA or the Highway",
-      "eventStartDate": "2025-06-28T00:00:00Z",
-      "eventEndDate": "2025-06-28T00:00:00Z",
+      "eventStartDate": "2025-06-27T00:00:00Z",
+      "eventEndDate": "2025-06-27T00:00:00Z",
       "location": "Columbus, Ohio, United States",
       "website": "https://www.qaorthehwy.com/"
     },
     {
       "id": -3,
       "name": "CodeMash 2025",
-      "eventStartDate": "2025-01-15T00:00:00Z",
-      "eventEndDate": "2025-01-18T00:00:00Z",
+      "eventStartDate": "2025-01-14T00:00:00Z",
+      "eventEndDate": "2025-01-17T00:00:00Z",
       "location": "Sandusky, Ohio, United States",
       "website": "https://codemash.org/"
     },
     {
       "id": -2,
       "name": "Momentum 2024",
-      "eventStartDate": "2024-10-18T00:00:00Z",
-      "eventEndDate": "2024-10-18T00:00:00Z",
+      "eventStartDate": "2024-10-17T00:00:00Z",
+      "eventEndDate": "2024-10-17T00:00:00Z",
       "location": "Cincinnati, Ohio, United States",
       "website": "https://momentumdevcon.com/"
     },
     {
       "id": -1,
       "name": "TechBash 2024",
-      "eventStartDate": "2024-09-25T00:00:00Z",
-      "eventEndDate": "2024-09-28T00:00:00Z",
+      "eventStartDate": "2024-09-24T00:00:00Z",
+      "eventEndDate": "2024-09-24T00:00:00Z",
       "location": "Mount Pocono, Pennsylvania, United States",
       "website": "https://www.techbash.com/"
     }
@@ -53,7 +53,23 @@
     {
       "id": -3,
       "title": "TypeScript Features You Can Use Immediately",
-      "description": "Whether it’s demystifying function overloading or breaking referential transparency, we'll discuss many obscure and useful features in TypeScript.",
+      "description": "Whether it's demystifying function overloading or breaking referential transparency, we'll discuss many obscure and useful features in TypeScript.",
+      "sessionUrl": null,
+      "languageCode": "en",
+      "language": "English"
+    },
+    {
+      "id": -4,
+      "title": "Crafting Testable JavaScript",
+      "description": "How confident can we be that untested code is free of bugs? Tested code increases confidence that a project is free of bugs.\n\nGood unit tests ... test only one method. Good unit tests should not rely on other methods being called or used and should have only a single assertion.\n\nGood integration tests ... verify that the parts can work together. Good integration tests strike a great balance on the trade-off between confidence and speed/expense.\n\n* Less than 50% code coverage on a project is a red flag.\n* Between 60% and 80% code coverage is the sweet spot.\n* Anything over 80% is gravy.\n\nWhat is testable code? What is a good unit test? Is there code we can watch for that can indicate potential issues that will make testing difficult? These questions and more will be covered in this presentation.",
+      "sessionUrl": null,
+      "languageCode": "en",
+      "language": "English"
+    },
+    {
+      "id": -5,
+      "title": "Offline First with Progressive Web Applications",
+      "description": "",
       "sessionUrl": null,
       "languageCode": "en",
       "language": "English"
