@@ -1,20 +1,62 @@
 {
   "events": [
     {
-      "id": -1,
+      "id": -4,
+      "name": "QA or the Highway",
+      "eventStartDate": "2025-06-28T00:00:00Z",
+      "eventEndDate": "2025-06-26T00:00:00Z",
+      "location": "Columbus, Ohio, United States",
+      "website": "https://www.qaorthehwy.com/"
+    },
+    {
+      "id": -3,
+      "name": "CodeMash 2025",
+      "eventStartDate": "2025-01-15T00:00:00Z",
+      "eventEndDate": "2025-01-18T00:00:00Z",
+      "location": "Sandusky, Ohio, United States",
+      "website": "https://codemash.org/"
+    },
+    {
+      "id": -2,
       "name": "Momentum 2024",
-      "eventStartDate": "2024-10-17T00:00:00Z",
-      "eventEndDate": "2024-10-17T00:00:00Z",
+      "eventStartDate": "2024-10-18T00:00:00Z",
+      "eventEndDate": "2024-10-18T00:00:00Z",
       "location": "Cincinnati, Ohio, United States",
       "website": "https://momentumdevcon.com/"
     },
     {
       "id": -1,
       "name": "TechBash 2024",
-      "eventStartDate": "2024-09-24T00:00:00Z",
-      "eventEndDate": "2024-09-27T00:00:00Z",
+      "eventStartDate": "2024-09-25T00:00:00Z",
+      "eventEndDate": "2024-09-28T00:00:00Z",
       "location": "Mount Pocono, Pennsylvania, United States",
       "website": "https://www.techbash.com/"
+    }
+  ],
+  "sessions": [
+    {
+      "id": -1,
+      "title": "Back To The Future",
+      "description": "Become a proponent of the KISS method.\n\nBefore the proliferation of JavaScript frameworks and other tooling, sites were planned and organized around the concept of pages built and served by the back-end. We also optimized these sites to account for the low bandwidth and slow computers available at the time.\n\nHave you ever noticed how frequently old things become new again: remakes of music, movies, and bell bottom pants (for starters)?\n\nWeb design is coming full circle: In this talk, we will examine some of these older design patterns. We'll take a look at why we used them and how they are becoming relevant again today. We will examine the impact of tooling on JavaScript performance as well as what this means when developing a Progressive Web Application.",
+      "sessionUrl": null,
+      "languageCode": "en",
+      "language": "English"
+    },
+    {
+      "id": -2,
+      "title": "A Lifecycle Of Code Under Test",
+      "description": "When thinking about tests against code, have you \"done enough?\" How do you know that the code is covered appropriately, that odd bugs aren't going to crop up? Did you cover all the use cases and what if someone changes the code down-the-road?\n\nThis session is about the unit and integration tests that a developer writes to test their code immediately, not about higher level tests that are written by a QA individual or department.\n\nThis session will examine the code and tests holistically against the various lifecycle stages of code and how the testing needs to adjust:\n\n* Define Inputs and Outputs\n* Write Initial Test Coverage\n* Handling Bug Coverage\n* Refactoring\n* Abstraction\n* Future Work (how are tests affected?)",
+      "sessionUrl": null,
+      "languageCode": "en",
+      "language": "English"
+    },
+    {
+      "id": -3,
+      "title": "TypeScript Features You Can Use Immediately",
+      "description": "Whether it’s demystifying function overloading or breaking referential transparency, we'll discuss many obscure and useful features in TypeScript.",
+      "sessionUrl": null,
+      "languageCode": "en",
+      "language": "English"
     }
   ]
 }

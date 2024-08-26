@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, firstValueFrom, Observable } from 'rxjs';
 
-import { EventData, Session, SessionEvent, Speaker } from '../interfaces/events';
+import { EventData, JoinTable, Session, SessionEvent, Speaker } from '../interfaces/events';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +24,8 @@ export class EventsService {
   public futureEvents: BehaviorSubject<Array<SessionEvent>> = new BehaviorSubject<Array<SessionEvent>>([]);
 
   public sessions: BehaviorSubject<Array<Session>> = new BehaviorSubject<Array<Session>>([]);
+  public pastSessions: BehaviorSubject<Array<Session>> = new BehaviorSubject<Array<Session>>([]);
+  public joinTable: BehaviorSubject<JoinTable> = new BehaviorSubject<JoinTable>({});
 
   constructor(private http: HttpClient) {}
 
@@ -33,8 +35,13 @@ export class EventsService {
     this.sessions.next(sessions);
     this.pastEvents.next(events);
 
-    const { events: futureEvents }: { events: Array<SessionEvent>}
-      = await firstValueFrom(this.http.get('./assets/events/sessionize--future-events.json') as Observable<{ events: Array<SessionEvent> }>);
+    const { events: futureEvents, sessions: pastSessions }: { events: Array<SessionEvent>, sessions: Array<Session> }
+      = await firstValueFrom(this.http.get('./assets/events/sessionize--future-events.json') as Observable<{ events: Array<SessionEvent>, sessions: Array<Session> }>);
     this.futureEvents.next(futureEvents);
+    this.pastSessions.next(pastSessions);
+
+    const joinTable: JoinTable
+      = await firstValueFrom(this.http.get('./assets/events/sessionize--join-table.json') as Observable<JoinTable>);
+    this.joinTable.next(joinTable);
   };
 }

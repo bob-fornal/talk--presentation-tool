@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { SessionEvent } from '../../core/interfaces/events';
+import { Session, SessionEvent } from '../../core/interfaces/events';
 
 @Component({
   selector: 'content-conference',
@@ -15,6 +15,22 @@ export class ConferenceComponent {
     location: '',
     website: '',
   };
+  @Input() sessions: Array<Session> = [];
+
+  get includedSessions(): Array<Session> {
+    const sessions: Array<Session> = [];
+    for (let i = 0, len = this.sessions.length; i < len; i++) {
+      if (this.data.joinData!.includes(this.sessions[i].id) === true) {
+        sessions.push(this.sessions[i]);
+      }
+    }
+    sessions.sort((a: Session, b: Session) => {
+      if (a.title < b.title) return -1;
+      if (a.title > b.title) return 1;
+      return 0;
+    });
+    return sessions;
+  }
 
   shortLength: number = 50;
   shortener = (site: string): string => {

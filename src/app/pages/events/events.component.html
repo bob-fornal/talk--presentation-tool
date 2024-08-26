@@ -49,7 +49,7 @@
         <div class="content-title">Future Events</div>
         @for(event of futureEvents; track event; let index = $index; let last = $last) {
           <content-section [index]="index" [last]="last">
-            <content-conference [data]="event"></content-conference>
+            <content-conference [data]="getData(event)" [sessions]="getSessions(event.id)"></content-conference>
           </content-section>
         }
       </div>
@@ -74,7 +74,7 @@
         <div class="content-title">Past Events</div>
         @for(event of pastEvents; track event; let index = $index; let last = $last) {
           <content-section [index]="getPastOffset(index)" [last]="last">
-            <content-conference [data]="event"></content-conference>
+            <content-conference [data]="getData(event)" [sessions]="getSessions(event.id)"></content-conference>
           </content-section>
         }
       </div>

@@ -22,6 +22,11 @@ export interface SessionEvent {
   eventEndDate: string;
   location: string;
   website: string;
+  joinData?: Array<number>;
+}
+
+export interface JoinTable {
+  [key: string]: Array<number>;
 }
 
 export interface EventData {

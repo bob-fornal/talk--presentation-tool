@@ -6,6 +6,19 @@
       <div class="conference-title">{{data.name}}</div>
     }
     <div class="conference-detail">{{dateAdjust(data.eventStartDate, data.eventEndDate)}}</div>
-    <div class="conference-detail">{{data.location}}</div>
+    <div class="conference-detail last">{{data.location}}</div>
+    @if (data.joinData!.length > 0) {
+      <ul class="conference-sessions">
+        @for (session of includedSessions; track session) {
+          <li>
+            @if (session.sessionUrl !== null) {
+              <a class="anchor" [href]="session.sessionUrl">{{session.title}}</a>
+            } @else {
+              <div class="conference-non-anchor">{{session.title}}</div>
+            }
+          </li>
+        }
+      </ul>
+    }
   </div>
 </div>

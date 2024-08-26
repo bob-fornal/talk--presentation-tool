@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { Session, SessionEvent, Speaker } from '../../core/interfaces/events';
+import { JoinTable, Session, SessionEvent, Speaker } from '../../core/interfaces/events';
 import { EventsService } from '../../core/services/events.service';
 
 @Component({
@@ -31,6 +31,9 @@ export class EventsComponent implements OnDestroy, OnInit {
   pastEvents: Array<SessionEvent> = [];
 
   sessions: Array<Session> = [];
+  pastSessions: Array<Session> = [];
+
+  joinTable: JoinTable = {};
 
   constructor(
     private eventService: EventsService
@@ -41,6 +44,9 @@ export class EventsComponent implements OnDestroy, OnInit {
     this.subscriptions.add(this.eventService.futureEvents.subscribe(this.handleFutureEvents.bind(this)));
 
     this.subscriptions.add(this.eventService.sessions.subscribe(this.handleSessions.bind(this)));
+    this.subscriptions.add(this.eventService.pastSessions.subscribe(this.handlePastSessions.bind(this)));
+
+    this.subscriptions.add(this.eventService.joinTable.subscribe(this.handleJoinTable.bind(this)));
   }
 
   ngOnInit() {
@@ -60,11 +66,19 @@ export class EventsComponent implements OnDestroy, OnInit {
     this.sessions = data;
   }
 
+  private handlePastSessions(data: Array<Session>): void {
+    this.pastSessions = data;
+  }
+
   private handlePastEvents(data: any) {
     this.pastEvents = data;
   }
   private handleFutureEvents(data: any) {
     this.futureEvents = data;
+  }
+
+  private handleJoinTable(data: JoinTable): void {
+    this.joinTable = data;
   }
 
   public toggleSpeaker = (event: any): void => {
@@ -79,7 +93,29 @@ export class EventsComponent implements OnDestroy, OnInit {
     this.pastEventsActive = !this.pastEventsActive;
   };
 
+  getData = (event: SessionEvent): SessionEvent => {
+    const sessionEvent: SessionEvent = {
+      ...event,
+      joinData: this.getJoinData(event.id),
+    };
+    return sessionEvent;
+  };
+
   getPastOffset = (index: number): number => {
-    return index + this.pastEvents.length;
+    return index + this.futureEvents.length;
+  };
+
+  private getJoinData = (eventId: number): Array<number> => {
+    if (this.joinTable.hasOwnProperty(eventId.toString()) === false) return [];
+    return this.joinTable[eventId.toString()];
+  };
+
+  getSessions(eventId: number): Array<Session> {
+    const allSessions: Array<Session> = [ ...this.sessions, ...this.pastSessions ];
+    const joinData: Array<number> = this.getJoinData(eventId);
+    const usedSessions: Array<Session> = allSessions.filter((session: Session) => {
+      return joinData.includes(session.id);
+    });
+    return usedSessions;
   };
 }
