@@ -188,6 +188,14 @@
   ],
   "events": [
     {
+      "id": 14362,
+      "name": "Beer City Code 2024",
+      "eventStartDate": "2024-08-02T00:00:00",
+      "eventEndDate": "2024-08-03T00:00:00",
+      "location": "Grand Rapids, Michigan, United States",
+      "website": "https://beercitycode.com"
+    },
+    {
       "id": 1009621,
       "name": "Cincy Deliver",
       "eventStartDate": "2024-07-26T00:00:00Z",
@@ -258,14 +266,6 @@
       "eventEndDate": "2023-01-13T00:00:00",
       "location": "Sandusky, Ohio, United States",
       "website": "https://www.codemash.org"
-    },
-    {
-      "id": 1006198,
-      "name": "CodeMash 2023",
-      "eventStartDate": "2023-01-10T00:00:00Z",
-      "eventEndDate": "2023-01-13T00:00:00Z",
-      "location": "Sandusky, Ohio, United States",
-      "website": "https://www.codemash.org/"
     },
     {
       "id": 7762,
