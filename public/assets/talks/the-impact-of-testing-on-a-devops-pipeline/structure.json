@@ -1,0 +1,151 @@
+{
+  "ORDER": [
+    "cover-01",
+
+    "devops-testing--loop",
+    "what-is-devops",
+    "what-is-the-agile-model",
+
+    "devops-testing--strategy",
+    "devops-testing--implementation",
+    "devops-testing--pros-and-cons",
+    "devops-testing--best-practices",
+    "devops-testing--where",
+
+    "time-for-questions"
+  ],
+
+  "STYLE": [
+    ".outer-wrapper {",
+    "  background: url(\"./assets/images/grid--green.webp\");",
+    "  background-repeat: no-repeat;",
+    "  background-size: cover;",
+    "  color: #69f0ae;",
+    "  font-family: Arial, sans-serif;",
+    "}",
+    ".italic {",
+    "  font-style: italic;",
+    "}",
+    ".italic-green {",
+    "  font-style: italic;",
+    "  font-weight: bold;",
+    "  color: #69f0ae;",
+    "}",
+    ".bold-green {",
+    "  font-weight: bold;",
+    "  color: #69f0ae;",
+    "}",
+    ".indented {",
+    "  padding-left: 1em;",
+    "}",
+    ".code {",
+    "  color: yellow;",
+    "  font-family: Menlo, Monaco, \"Courier New\", monospace;",
+    "}",
+    ".table {",
+    "  width: 100%;",
+    "  border-collapse: collapse;",
+    "}",
+    ".table th, td {",
+    "  border: 1px solid white;",
+    "  padding: 0.5em;",
+    "}",
+    ".table tbody tr:nth-child(odd) {",
+    "  background-color: #960f5133;",
+    "  font-size: 0.8em;",
+    "}",
+    ".table tbody tr:nth-child(even) {",
+    "  background-color: #69f0ae33;",
+    "  font-size: 0.8em;",
+    "}",
+    ".table-ul {",
+    "  margin: 0;",
+    "}",
+    ".center {",
+    "  text-align: center;",
+    "}",
+    ".img[src='./assets/images/testing-pyramid.png'],",
+    ".img[src='./assets/images/dev-ops-loop.svg'],",
+    ".img[src='./assets/images/can-we-test-here.svg'] {",
+    "  background-color: #0f0f0faf;",
+    "  max-width: 100% !important;",
+    "}",
+    ".panel--image:has(.img[src='./assets/images/testing-pyramid.png']) {",
+    "  background-color: white;",
+    "  height: 100%;",
+    "  display: flex !important;",
+    "  align-items: center;",
+    "}",
+    ".img[src='./assets/images/testing-pyramid.png'] {",
+    "  border: none !important;",
+    "}"
+  ],
+  
+  "cover-01": {
+    "title": "The Imact of Testing on a DevOps Pipeline",
+    "type": "cover-01",
+    "author": "Bob Fornal",
+    "bio1": "<img class=bio-logo src=./assets/images/code-squid.webp /><br/><div class=\"bold bio-header\">Entrepreneur</div>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.",
+    "bio2": "<img class=bio-logo src=./assets/images/leading-edje.webp /><br/><div class=bold>Senior Solutions Developer</div><div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth."
+  },
+
+  "devops-testing--loop": {
+    "title": "",
+    "type": "image-only",
+    "background": "transparent",
+    "image": "./assets/images/dev-ops-loop.svg"
+  },
+  "what-is-devops": {
+    "title": "What is Devops?",
+    "type": "panel-double",
+    "text1": "<ul><li><span class=bold>Goal</span>: To build better, faster and more responsive software</li><li><span class=bold>By</span>: Bringing Development and Operations teams together.</li></ul><ul><li>DevOps is a <span class=bold>cultural shift</span> to remove the barriers between Developers and Operations,</li><li>... for <span class=bold>shorter and more frequent</span> software deliveries,</li><li>... and to respond well to changing business requirements.</li></ul>",
+    "text2": "<div>In order to deliver high-quality applications, the DevOps cultural shift depends on continuously optimizing:</div><ul><li>Workflow</li><li>Architecture</li><li>infrastructure</li></ul>",
+    "notes": "<ul><li>DevOps is all about streamlining and automating your entire software delivery lifecycle.</li><li>It starts with adopting the agile best practice of CI, where developers check code into a shared repository several times a day.</li><li>Each check-in is then verified by an automated build, allowing teams to detect errors and conflicts as soon as possible.</li><li>Automation frameworks and CI tools such as Jenkins and Bamboo are also used to build, test and deploy applications automatically when requirements change in order to speed up the release process.</li><ul>"
+  },
+  "what-is-the-agile-model": {
+    "title": "What is the Agile Model?",
+    "type": "panel-double",
+    "text1": "<div>Software developed with the Agile Model adheres to the following four basic priorities:</div><ol><li>Individuals and interactions over processes and tools;</li><li><span class=bold>Working software</span> over comprehensive documentation;</li><li>Customer collaboration over contract negotiation; and</li><li>Responding to change over following a plan.</li></ol>",
+    "text2": "<div>In Agile development:</div><ul><li>A <span class=bold>test-first approach</span> is used, rather than a test-at-the-end approach, when developing.</li><li>Code is developed and tested in small increments of functionality.</li></ul>"
+  },
+
+  "devops-testing--strategy": {
+    "title": "DevOps Testing Strategy",
+    "type": "panel-double",
+    "text1": "<div>Basic Agile Testing and Development Methodology:</div><div>(and the aim of most DevOps projects)</div><ul><li>To automate as many manual processes as possible.</li><li>Equal responsibility for quality and success of product/project.</li><li>The whole team (including developers, testers and operations people) test.</li><li>Testing is done continuously; early, often, and even after applications are in production.</li></ul>",
+    "text2": "<div>Roadblocks</div><ul><li>Handoffs from Development Team to a QA Team</li><li>Required signoff; bureaucratic approval.</li><li>Slow, error-prone manual processes.</li><li>Poor-quality, big-bang rollouts that fail in production.</li></ul>"
+  },
+  "devops-testing--implementation": {
+    "title": "Implementation of DevOps Continuous Testing",
+    "type": "panel-single",
+    "text1": "<table class=table><thead><tr><th>Activity</th><th>Detail</th></thead><tbody><tr><td class=center><div class=bold>Continuous Testing</div><div>(<span class=bold>shift-left testing</span>)</div></td><td><div>A key element of a successful DevOps testing strategy for pipelines.</div><ul class=table-ul><li>Performed earlier in the software lifecycle,</li><li>With the goal of increasing quality,</li><li>Shortening long test cycles,</li><li>Reducing the possibility of software defects making their way into production code.</li></ul></td></tr><tr><td class=center><div class=bold>Continuous Development</div></td><td><div>The first stage in implementing a Continuous Delivery DevOps pipeline.</div><ul class=table-ul><li>Developers write Unit Tests for each piece of code they write (prefer TDD).</li><li>New featues are checked into a central code base, built, and tested.</li></ul></td></tr><tr><td class=center><div class=bold>Continuous Integration</div></td><td><div>The use a version control system and integrate work frequently in the same location (main branch).</div><ul class=table-ul><li>Each change is tested in order to detect any integration errors as quickly as possible.</li><li>The build happens automatically rather than when a developer triggers the process manually.</li><li>Once an application passes all required tests, it's then released into production.</li></ul></td></tr></tbody></table>"
+  },
+  "devops-testing--pros-and-cons": {
+    "title": "Pros and Cons of DevOps Continuous Testing",
+    "type": "panel-double",
+    "text1": "<div class=bold>Pros</div><ul><li>Delivery of new functionality to users within minutes whenever it's needed</li><li>Instant feedback that, in turn, allows rapid response to customer demand.</li></ul>",
+    "text2": "<div class=bold>Cons</div><ul><li>Risk of releasing buggy software into production faster.</li><li>Alienate users and cause your company to lose customers.</li></ul>"
+  },
+  "devops-testing--best-practices": {
+    "title": "Best Practices for DevOps Continuous Testing",
+    "type": "image-text",
+    "orientation": "left",
+    "text1": "<div>Automate as Many Tests as You Can</div><div>(Continuous Testing means testing early and often.)</div><ul><li>Use test automation to eliminate much of the risk that comes with CI and to get quick feedback on application quality.</li><li>This allows teams to easily test every new code iteration and reduces the opportunity for team members to add errors.</li></ul><div>Use Pair Testing; Pair Programming</div><div>(on non-autmated tests)</div><ul><li>Knowledge Transfer is an efficient way to train new members and maintain DevOps pipeline velocity.</li><li>One does the testing and the other analyzes or reviews the test results.</li><li>It is useful in breaking down communication barriers.</li></ul>",
+    "image": "./assets/images/testing-pyramid.png"
+  },
+
+  "devops-testing--where": {
+    "title": "",
+    "type": "image-only",
+    "background": "transparent",
+    "image": "./assets/images/can-we-test-here.svg"
+  },
+
+  "time-for-questions": {
+    "title": "",
+    "type": "image-only",
+    "background": "transparent",
+    "image": "./assets/images/time-for-questions.webp",
+    "notes": ""
+  }
+}

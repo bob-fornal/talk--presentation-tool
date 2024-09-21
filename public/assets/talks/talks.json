@@ -14,6 +14,10 @@
   ],
   "TAGS": [
     {
+      "tag": "angular",
+      "title": "Angular"
+    },
+    {
       "tag": "asynchronous",
       "title": "Asynchronous"
     },
@@ -26,20 +30,28 @@
       "title": "Career"
     },
     {
-      "tag": "javascript",
-      "title": "JavaScript"
+      "tag": "devops",
+      "title": "DevOps"
     },
     {
-      "tag": "promises",
-      "title": "Promises"
+      "tag": "javascript",
+      "title": "JavaScript"
     },
     {
       "tag": "observables",
       "title": "Observables"
     },
     {
+      "tag": "promises",
+      "title": "Promises"
+    },
+    {
       "tag": "project-testing",
       "title": "Project Testing"
+    },
+    {
+      "tag": "react",
+      "title": "React"
     },
     {
       "tag": "rxjs",
@@ -60,6 +72,10 @@
     {
       "tag": "unit-tests",
       "title": "Unit Tests"
+    },
+    {
+      "tag": "vue",
+      "title": "Vue"
     }
   ],
   "TALKS": [
@@ -105,6 +121,24 @@
       "title": "Developer Tools for non-Developers",
       "tags": [
         "tools"
+      ]
+    },
+    {
+      "folder": "lets-compare-angular-vuew-react-and-vanilla-javascript",
+      "title": "Let's Compare Angular, Vue, React, and Vanilla JavaScript",
+      "tags": [
+        "angular",
+        "react",
+        "vue",
+        "javascript"
+      ]
+    },
+    {
+      "folder": "the-impact-of-testing-on-a-devops-pipeline",
+      "title": "The Impact of Testing on a DevOps Pipeline",
+      "tags": [
+        "devops",
+        "testing"
       ]
     },
     {
