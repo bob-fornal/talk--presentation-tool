@@ -25,6 +25,7 @@
 
     "context-close-slide",
 
+    "sponsors",
     "time-for-questions"
   ],
 
@@ -221,6 +222,13 @@
     "notes": "Testability is ...<ul><li>Not a standalone feature</li><li>But, a fundamental aspect of good code design</li></ul>Developers need to consider the end-user experience and system requirements right from the start, leading to more robust and maintainable code. It ensures that the code not only meets its functional requirements but is also resilient and adaptable to change.<br/><br/>We've covered ...<ul><li>Constructor does Real Work</li><li>Collaborators</li><li>Brittle Global State and Singletons</li><li>Class does Too Much</li></ul>"
   },
 
+  "sponsors": {
+    "title": "",
+    "type": "image-only",
+    "background": "transparent",
+    "image": "./assets/images/Thank-You-TechBash-2024-Sponsors.jpeg",
+    "notes": ""
+  },
 
   "time-for-questions": {
     "title": "",
