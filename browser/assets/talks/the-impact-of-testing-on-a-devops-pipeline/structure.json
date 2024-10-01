@@ -111,7 +111,8 @@
     "type": "cover-01",
     "author": "Bob Fornal",
     "bio1": "<img class=bio-logo src=./assets/images/code-squid.webp /><br/><div class=\"bold bio-header\">Entrepreneur</div>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.",
-    "bio2": "<img class=bio-logo src=./assets/images/leading-edje.webp /><br/><div class=bold>Senior Solutions Developer</div><div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth."
+    "bio2": "<img class=bio-logo src=./assets/images/leading-edje.webp /><br/><div class=bold>Senior Solutions Developer</div><div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth.",
+    "notes": "I've recently been working on \"fullstack\" Azure DevOps (using Terraform) with Function App, database, and frontend code."
   },
 
   "what-is-devops": {
@@ -127,24 +128,28 @@
     "type": "image-text",
     "orientation": "left",
     "text1": "<div>Software developed with the Agile Model adheres to the following four basic priorities:</div><ol><li>Individuals and interactions over processes and tools;</li><li><span class=bold-green>Working software</span> over comprehensive documentation;</li><li>Customer collaboration over contract negotiation; and</li><li><span class=bold-green>Responding to change</span> over following a plan.</li></ol> <div>In Agile development:</div><ul><li>A <span class=bold-green>test-first approach</span> is used, rather than a test-at-the-end approach, when developing.</li><li>Code is developed <span class=bold-green>and tested</span> in small increments of functionality.</li></ul>",
-    "image": "./assets/images/agile-methodology.webp"
+    "image": "./assets/images/agile-methodology.webp",
+    "notes": "Agile is a way of focusing on people and interactions, working software, and responding to change. Agile uses a test-first approach against small sets of functional code."
   },
 
   "devops-testing--what-is": {
     "title": "What is DevOps Testing?",
     "type": "panel-double",
     "text1": "<div><span class=bold-green>Testing is done by the whole team</span> (not just designated testers or quality assurance professionals).</div> <ul><li>Shared responsibility for attaining the highest quality.</li><li>Equal responsibility for the success of the project.</li></ul>",
-    "text2": "<div>Unit and Component Testing written by developers using <span class=bold-green>Test-Driven Development</span> (TDD).</div><ul><li>TDD helps think through the desired behavior.</li></ul> <div>Collaboration: QA, devs, and non-technical / business ...</div> <ul><li>Using tools like <span class=bold-green>Cucumber (GIVEN, WHEN, THEN format)</span>.</li></ul>"
+    "text2": "<div>Unit and Component Testing written by developers using <span class=bold-green>Test-Driven Development</span> (TDD).</div><ul><li>TDD helps think through the desired behavior.</li></ul> <div>Collaboration: QA, devs, and non-technical / business ...</div> <ul><li>Using tools like <span class=bold-green>Cucumber (GIVEN, WHEN, THEN format)</span>.</li></ul>",
+    "notes": "The WHOLE set of testing throughout the DevOps cycle. It is also about the responsibility to create something of the highest quality."
   },
   "devops-testing--what-does-it-mean--1": {
     "title": "What does DevOps Testing mean? (1/2)",
     "type": "panel-single",
-    "text1": "<table class=table> <thead><tr><th>Activity</th><th>Detail</th></thead> <tbody> <tr><td class=center><div class=bold>Early Detection of Defects</div></td><td><ul><li>Automated tests are run as soon as code changes are committed, providing immediate feedback to developers.</li><li>This early detection helps prevent the accumulation of defects, reducing the time and effort required to address issues later in the development cycle.</li></ul></td></tr> <tr><td class=center><div class=bold>Faster Release Cycles</div></td><td><ul><li>Accelerate software delivery, ensure high-quality digital experiences across diverse platforms, and meet evolving customer demands.</li></ul></td></tr> </tbody> </table>"
+    "text1": "<table class=table> <thead><tr><th>Activity</th><th>Detail</th></thead> <tbody> <tr><td class=center><div class=bold>Early Detection of Defects</div></td><td><ul><li>Automated tests are run as soon as code changes are committed, providing immediate feedback to developers.</li><li>This early detection helps prevent the accumulation of defects, reducing the time and effort required to address issues later in the development cycle.</li></ul></td></tr> <tr><td class=center><div class=bold>Faster Release Cycles</div></td><td><ul><li>Accelerate software delivery, ensure high-quality digital experiences across diverse platforms, and meet evolving customer demands.</li></ul></td></tr> </tbody> </table>",
+    "notes": "<ul><li>Early detection of defects.</li><li>Faster release cycles.</li></ul>"
   },
   "devops-testing--what-does-it-mean--2": {
     "title": "What does DevOps Testing mean? (2/2)",
     "type": "panel-single",
-    "text1": "<table class=table> <thead><tr><th>Activity</th><th>Detail</th></thead> <tbody> <tr><td class=center><div class=bold>Improved Collaboration</div></td><td><ul><li>Collaboration between development and operations teams.</li><li>Automated testing provides a common framework for both teams to work within, promoting shared responsibility for quality.</li></td></tr>  <tr><td class=center><div class=bold>Enhanced Test Coverage</div></td><td><ul><li>Leverages automation to achieve extensive test coverage. Automated tests can cover a wide range of scenarios, including unit tests, integration tests, and end-to-end tests.</li><li>This comprehensive test coverage ensures that all aspects of the application are thoroughly validated, reducing the risk of undetected issues in production.</li></ul></td></tr> </tbody> </table>"
+    "text1": "<table class=table> <thead><tr><th>Activity</th><th>Detail</th></thead> <tbody> <tr><td class=center><div class=bold>Improved Collaboration</div></td><td><ul><li>Collaboration between development and operations teams.</li><li>Automated testing provides a common framework for both teams to work within, promoting shared responsibility for quality.</li></td></tr>  <tr><td class=center><div class=bold>Enhanced Test Coverage</div></td><td><ul><li>Leverages automation to achieve extensive test coverage. Automated tests can cover a wide range of scenarios, including unit tests, integration tests, and end-to-end tests.</li><li>This comprehensive test coverage ensures that all aspects of the application are thoroughly validated, reducing the risk of undetected issues in production.</li></ul></td></tr> </tbody> </table>",
+    "notes": "<ul><li>Improved collaboration (dev and ops)</li><li>Enhanced Test Coverage</li></ul>"
   },
 
   "devops-testing--strategy": {
