@@ -33,6 +33,8 @@
     "testing-private-functionality-directly--code",
 
     "unit-test-recommendations",
+
+    "sponsors",
     "time-for-questions"
   ],
 
@@ -260,6 +262,14 @@
     "type": "panel-single",
     "text1": "<ol><li>Unit Tests should be Readable.</li><li>One Assert per Test Method.</li><li>Avoid Test Interdependence.</li><li>Keep it Short, Sweet, and Visible.</li><li>Add them to the Build.</li><ol>",
     "notes": "I get asked about the first one often.<br/><ul><li>Even in my tests, I assert more than once.</li><li>I recommend checking to see if the functionality can be refactored to allow for ONE TEST per METHOD.</li></ul>Test Order shouldn't matter.<br/>Unit Tests absolutely should be a part of the pipeline."
+  },
+
+  "sponsors": {
+    "title": "",
+    "type": "image-only",
+    "background": "transparent",
+    "image": "./assets/images/Thank-You-TechBash-2024-Sponsors.jpeg",
+    "notes": ""
   },
 
   "time-for-questions": {
