@@ -1,7 +1,6 @@
 {
   "ORDER": [
     "cover-01",
-    "conference--slide--beer-city-code",
     "engineers-in-a-bar",
     "what-are-unit-tests",
     "talk-details",
@@ -34,7 +33,6 @@
 
     "unit-test-recommendations",
 
-    "sponsors",
     "time-for-questions"
   ],
 
@@ -61,13 +59,6 @@
     "type": "image-only",
     "background": "transparent",
     "image": "./assets/images/sponsors--2024-beer-city-code.png",
-    "notes": "Sponsors"
-  },
-  "conference--slide--cincy-deliver": {
-    "title": "",
-    "type": "image-only",
-    "background": "transparent",
-    "image": "./assets/images/sponsors--2024-cincy-deliver.png",
     "notes": "Sponsors"
   },
   "cover-slide-02": {
@@ -268,7 +259,7 @@
     "title": "",
     "type": "image-only",
     "background": "transparent",
-    "image": "./assets/images/Thank-You-TechBash-2024-Sponsors.jpeg",
+    "image": "./assets/images/sponsors--2024-techbash.jpeg",
     "notes": ""
   },
 
