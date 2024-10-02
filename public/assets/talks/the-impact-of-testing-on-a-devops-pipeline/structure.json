@@ -133,71 +133,75 @@
   },
 
   "devops-testing--what-is": {
-    "title": "What is DevOps Testing?",
+    "title": "What is DevOps Continuous Testing?",
     "type": "panel-double",
     "text1": "<div><span class=bold-green>Testing is done by the whole team</span> (not just designated testers or quality assurance professionals).</div> <ul><li>Shared responsibility for attaining the highest quality.</li><li>Equal responsibility for the success of the project.</li></ul>",
     "text2": "<div>Unit and Component Testing written by developers using <span class=bold-green>Test-Driven Development</span> (TDD).</div><ul><li>TDD helps think through the desired behavior.</li></ul> <div>Collaboration: QA, devs, and non-technical / business ...</div> <ul><li>Using tools like <span class=bold-green>Cucumber (GIVEN, WHEN, THEN format)</span>.</li></ul>",
     "notes": "The WHOLE set of testing throughout the DevOps cycle. It is also about the responsibility to create something of the highest quality."
   },
   "devops-testing--what-does-it-mean--1": {
-    "title": "What does DevOps Testing mean? (1/2)",
+    "title": "DevOps Continuous Testing: What does it mean? (1/2)",
     "type": "panel-single",
     "text1": "<table class=table> <thead><tr><th>Activity</th><th>Detail</th></thead> <tbody> <tr><td class=center><div class=bold>Early Detection of Defects</div></td><td><ul><li>Automated tests are run as soon as code changes are committed, providing immediate feedback to developers.</li><li>This early detection helps prevent the accumulation of defects, reducing the time and effort required to address issues later in the development cycle.</li></ul></td></tr> <tr><td class=center><div class=bold>Faster Release Cycles</div></td><td><ul><li>Accelerate software delivery, ensure high-quality digital experiences across diverse platforms, and meet evolving customer demands.</li></ul></td></tr> </tbody> </table>",
     "notes": "<ul><li>Early detection of defects.</li><li>Faster release cycles.</li></ul>"
   },
   "devops-testing--what-does-it-mean--2": {
-    "title": "What does DevOps Testing mean? (2/2)",
+    "title": "DevOps Continuous Testing: What does it mean? (2/2)",
     "type": "panel-single",
     "text1": "<table class=table> <thead><tr><th>Activity</th><th>Detail</th></thead> <tbody> <tr><td class=center><div class=bold>Improved Collaboration</div></td><td><ul><li>Collaboration between development and operations teams.</li><li>Automated testing provides a common framework for both teams to work within, promoting shared responsibility for quality.</li></td></tr>  <tr><td class=center><div class=bold>Enhanced Test Coverage</div></td><td><ul><li>Leverages automation to achieve extensive test coverage. Automated tests can cover a wide range of scenarios, including unit tests, integration tests, and end-to-end tests.</li><li>This comprehensive test coverage ensures that all aspects of the application are thoroughly validated, reducing the risk of undetected issues in production.</li></ul></td></tr> </tbody> </table>",
     "notes": "<ul><li>Improved collaboration (dev and ops)</li><li>Enhanced Test Coverage</li></ul>"
   },
 
   "devops-testing--strategy": {
-    "title": "DevOps Testing Strategy",
+    "title": "DevOps Continuous Testing: Strategy",
     "type": "panel-double",
     "text1": "<div>Basic Agile Testing and Development Methodology:</div><div>(and the aim of most DevOps projects)</div> <ul><li>Automate manual processes.</li><li>Equal responsibility.</li><li>The whole team tests.</li><li>Testing is done continuously: <span class=bold-green>Early, Often, and After</span>.</li></ul>",
     "text2": "<div class=bold>Roadblocks</div><ul><li>Handoffs (e.g. from Development Team to a QA Team).</li><li>Required signoff; bureaucratic approval.</li><li>Slow, error-prone manual processes and checks.</li><li>Poor-quality, big-bang rollouts that fail in production.</li></ul>",
-    "notes": "<div>Agile Testing and Development> <ul><li>To automate as many manual processes as possible.</li><li>Equal responsibility for quality and success of product/project.</li><li>The whole team (including developers, testers and operations people) test.</li><li>Testing is done continuously; early, often, and even after applications are in production.</li></ul>"
+    "notes": "<div>Agile Testing and Development</div> <ul><li>To automate as many manual processes as possible.</li><li>Equal responsibility for quality and success of product/project.</li><li>The whole team (including developers, testers and operations people) test.</li><li>Testing is done continuously; early, often, and even after applications are in production.</li></ul> <div class=bold>Roadblocks</div>"
   },
   "devops-testing--implementation": {
-    "title": "Implementation of DevOps Continuous Testing",
+    "title": "DevOps Continuous Testing: Implementation",
     "type": "panel-single",
-    "text1": "<table class=table><thead><tr><th>Activity</th><th>Detail</th></thead> <tbody><tr><td class=center><div class=bold>Continuous Testing</div><div>(<span class=bold>shift-left testing</span>)</div></td><td><div>A key element of a successful DevOps testing strategy for pipelines.</div><ul class=table-ul><li>Performed earlier in the software lifecycle,</li><li>With the goal of increasing quality,</li><li>Shortening long test cycles,</li><li>Reducing the possibility of software defects making their way into production code.</li></ul></td></tr><tr><td class=center><div class=bold>Continuous Development</div></td><td><div>The first stage in implementing a Continuous Delivery DevOps pipeline.</div><ul class=table-ul><li>Developers write Unit Tests for each piece of code they write (prefer TDD).</li><li>New featues are checked into a central code base, built, and tested.</li></ul></td></tr><tr><td class=center><div class=bold>Continuous Integration</div></td><td><div>The use a version control system and integrate work frequently in the same location (main branch).</div><ul class=table-ul><li>Each change is tested in order to detect any integration errors as quickly as possible.</li><li>The build happens automatically rather than when a developer triggers the process manually.</li><li>Once an application passes all required tests, it's then released into production.</li></ul></td></tr></tbody></table>"
+    "text1": "<table class=table><thead><tr><th>Activity</th><th>Detail</th></thead> <tbody><tr><td class=center><div class=bold>Continuous Testing</div><div>(<span class=bold>shift-left testing</span>)</div></td><td><div>A key element of a successful DevOps Continuous Testing strategy for pipelines.</div><ul class=table-ul><li>Performed earlier in the software lifecycle,</li><li>With the goal of increasing quality,</li><li>Shortening long test cycles,</li><li>Reducing the possibility of software defects making their way into production code.</li></ul></td></tr><tr><td class=center><div class=bold>Continuous Development</div></td><td><div>The first stage in implementing a Continuous Delivery DevOps pipeline.</div><ul class=table-ul><li>Developers write Unit Tests for each piece of code they write (prefer TDD).</li><li>New features are checked into a central code base, built, and tested.</li></ul></td></tr><tr><td class=center><div class=bold>Continuous Integration</div></td><td><div>The use a version control system and integrate work frequently in the same location (main branch).</div><ul class=table-ul><li>Each change is tested in order to detect any integration errors as quickly as possible.</li><li>The build happens automatically rather than when a developer triggers the process manually.</li><li>Once an application passes all required tests, it's then released into production.</li></ul></td></tr></tbody></table>",
+    "notes": "<ul><li>Continuous Testing (Shift-Left Testing)</li><li>Continuous Development</li><li>Continuous Integration</li></ul>"
   },
   "devops-testing--pros": {
-    "title": "Pros of DevOps Continuous Testing",
+    "title": "DevOps Continuous Testing: Pros",
     "type": "panel-single",
-    "text1": "<table class=table> <thead><tr><th>Activity</th><th>Detail</th></thead> <tbody> <tr><td class=center><div class=bold>Quick Delivery</div></td><td><ul><li>New functionality to users within minutes</li></ul></td></tr> <tr><td class=center>Fast Feedback<div class=bold></div></td><td><ul><li>Instant feedback that, in turn, allows rapid response to customer demand.</li></ul></td></tr>  <tr><td class=center><div class=bold>Handling Risk</div></td><td><ul><li>Risk-based Testing: Identifying the highest-risk areas of a software application and focusing testing efforts on those areas.</li></i>This approach helps to ensure that the most critical areas of the application are thoroughly tested.</li><li>Reduces testing time and effort in areas that are less important.</li></ul></td></tr> </tbody> </table>"
+    "text1": "<table class=table> <thead><tr><th>Activity</th><th>Detail</th></thead> <tbody> <tr><td class=center><div class=bold>Quick Delivery</div></td><td><ul><li>New functionality to users within minutes</li></ul></td></tr> <tr><td class=center>Fast Feedback<div class=bold></div></td><td><ul><li>Instant feedback that, in turn, allows rapid response to customer demand.</li></ul></td></tr>  <tr><td class=center><div class=bold>Handling Risk</div></td><td><ul><li>Risk-based Testing: Identifying the highest-risk areas of a software application and focusing testing efforts on those areas.</li></i>This approach helps to ensure that the most critical areas of the application are thoroughly tested.</li><li>Reduces testing time and effort in areas that are less important.</li></ul></td></tr> </tbody> </table>",
+    "notes": "<ul><li>Quick Delivery</li><li>Fast Feedback</li><li>Handling Risk</li></ul>"
   },
   "devops-testing--cons": {
-    "title": "Cons of DevOps Continuous Testing",
+    "title": "DevOps Continuous Testing: Cons",
     "type": "panel-single",
-    "text1": "<table class=table><thead><tr><th>Activity</th><th>Detail</th></thead> <tbody> <tr><td class=center><div class=bold>Bugs in Production</div></td><td><ul><li>Risk of releasing buggy software into production faster.</li></ul></td></tr> <tr><td class=center><div class=bold>Loss of Customers</div></td><td><ul><li>Alienate users and cause your company to lose customers.</li></ul></td></tr> <tr><td class=center><div class=bold>Tech Limitations</div></td><td><ul><li>TA 2022 Mabl report found that 53% of respondents indicated that technology limitations were holding back their testing strategies.</li></td></tr> <tr><td class=center><div class=bold>Budget Constraints</div></td><td><ul><li>1-in-3 aspiring DevOps teams reported budget as their most pressing obstacle.</li></ul></td></tr> </tbody> </table>"
+    "text1": "<table class=table><thead><tr><th>Activity</th><th>Detail</th></thead> <tbody> <tr><td class=center><div class=bold>Bugs in Production</div></td><td><ul><li>Risk of releasing buggy software into production faster.</li></ul></td></tr> <tr><td class=center><div class=bold>Loss of Customers</div></td><td><ul><li>Alienate users and cause your company to lose customers.</li></ul></td></tr> <tr><td class=center><div class=bold>Tech Limitations</div></td><td><ul><li>TA 2022 Mabl report found that 53% of respondents indicated that technology limitations were holding back their testing strategies.</li></td></tr> <tr><td class=center><div class=bold>Budget Constraints</div></td><td><ul><li>1-in-3 aspiring DevOps teams reported budget as their most pressing obstacle.</li></ul></td></tr> </tbody> </table>",
+    "notes": "<ul><li>Bugs in Production</li><li>Loss of Customers</li><li>Tech Limitations</li><li>Budget Constraints</li></ul>"
   },
 
   "devops-testing--where": {
     "title": "",
     "type": "image-only",
     "background": "transparent",
-    "image": "./assets/images/can-we-test-here.svg"
+    "image": "./assets/images/can-we-test-here.svg",
+    "notes": "Continuous testing should be integrated all throughout the system to ensure proper coverage."
   },
   "devops-testing--methodologies--1": {
-    "title": "Methodologies in DevOps Testing (1/3)",
+    "title": "DevOps Continuous Testing: Methodologies (1/3)",
     "type": "panel-single",
-    "text1": "<table class=table> <thead> <tr><th>Activity</th><th>Detail</th></tr> </thead> <tbody> <tr><td class=center><div class=bold>Shift-Left Testing</div></td><td><ul><li>Prioritizing early software and system testing in the software development life cycle (SDLC) to minimize debugging challenges later in the process.</li></ul></td></tr> <tr><td class=center><div class=bold>Shift-Right Testing</div></td><td><ul><li>Emphasizing testing towards the end of the SDLC to enhance user experience, overall performance, failure tolerance, and functionality.</li></ul></td></tr> <tr><td class=center><div class=bold>Smoke Tests</div></td><td><ul><li>Initial, cursory screenings (manual or automated) for glaring flaws in software, offering a swift and cost-effective solution for eliminating gross errors.</li></ul></td></tr> <tr><td class=center><div class=bold>Unit & Component Testing</div></td><td><ul><li>Ideal for small-scale stress, load, volume, or memory leak checks in early developmental stages to identify potential degradations.</li></ul></td></tr> </tbody> </table>"
+    "text1": "<table class=table> <thead> <tr><th>Activity</th><th>Detail</th></tr> </thead> <tbody> <tr><td class=center><div class=bold>Shift-Left Testing</div></td><td><ul><li>Prioritizing early software and system testing in the Software Development Life Cycle (SDLC) to minimize debugging challenges later in the process.</li></ul></td></tr> <tr><td class=center><div class=bold>Shift-Right Testing</div></td><td><ul><li>Emphasizing testing towards the end of the SDLC to enhance user experience, overall performance, failure tolerance, and functionality.</li></ul></td></tr> <tr><td class=center><div class=bold>Smoke Tests</div></td><td><ul><li>Initial, cursory screenings (manual or automated) for glaring flaws in software, offering a swift and cost-effective solution for eliminating gross errors.</li></ul></td></tr> <tr><td class=center><div class=bold>Unit & Component Testing</div></td><td><ul><li>Ideal for small-scale stress, load, volume, or memory leak checks in early developmental stages to identify potential degradations.</li></ul></td></tr> </tbody> </table>"
   },
   "devops-testing--methodologies--2": {
-    "title": "Methodologies in DevOps Testing (2/3)",
+    "title": "DevOps Continuous Testing: Methodologies (2/3)",
     "type": "panel-single",
     "text1": "<table class=table> <thead> <tr><th>Activity</th><th>Detail</th></tr> </thead> <tbody> <tr><td class=center><div class=bold>Integration & Message Testing</div></td><td><ul><li>Checking errors when software modules collaborate, with continuous testing in DevOps virtualizing missing dependencies to assess end-to-end processes and scenarios.</li></ul></td></tr> <tr><td class=center><div class=bold>Performance Testing</div></td><td><ul><li>Assessing application software performance, with integrated system testing required to evaluate overall solution performance, accounting for hardware and middleware in the final production environment.</li></ul></td></tr> <tr><td class=center><div class=bold>Functional Testing</div></td><td><ul><li>Verifying if the user experience aligns with expectations and if functional workflows are executed across the software system as needed.</li></ul></td></tr> </tbody> </table>"
   },
   "devops-testing--methodologies--3": {
-    "title": "Methodologies in DevOps Testing (3/3)",
+    "title": "DevOps Continuous Testing: Methodologies (3/3)",
     "type": "panel-single",
     "text1": "<table class=table> <thead> <tr><th>Activity</th><th>Detail</th></tr> </thead> <tbody> <tr><td class=center><div class=bold>Regresstion Testing</div></td><td><ul><li>Ensuring no changes in performance, functionality, or dependencies after correcting errors in dependent software, maintaining system performance.</li></ul></td></tr> <tr><td class=center><div class=bold>User-Acceptance Testing</div></td><td><ul><li>Also known as application or end-user testing, assessing the application in real-world situations by a subset of intended users.</li></ul></td></tr> </tbody> </table>"
   },
   "devops-testing--best-practices": {
-    "title": "Best Practices for DevOps Continuous Testing",
+    "title": "DevOps Continuous Testing: Best Practices",
     "type": "image-text",
     "orientation": "right",
     "text1": "<div class=bold>Automate as Many Tests as You Can</div><ul><li>Continuous Testing means testing early and often.</li><li>Eliminate much of the risk that comes with CI/CD.</li><li>Get quick feedback on application quality.</li><li>Reduces the opportunity for new errors.</li></ul><div class=bold>Use Pair Testing & Pair Programming</div><ul><li>On non-automated tests.</li><li>Knowledge Transfer is an efficient way to train new members and maintain velocity.</li><li>One tests; the other analyzes or reviews the results.</li><li>Useful in breaking down communication barriers.</li></ul>",

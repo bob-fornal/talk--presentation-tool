@@ -24,6 +24,7 @@ export class CoursesComponent implements OnDestroy {
   filteredTalks: Array<Talk> = [];
 
   showPDF: boolean = false;
+  showTags: boolean = false;
 
   constructor(
     private code: CodeService,
@@ -134,12 +135,17 @@ export class CoursesComponent implements OnDestroy {
     });
 
     return (slides === notes)
-      ? 'COMPLETE'
+      ? `COMPLETE: ${ slides } Slides`
       : `Slides: ${ slides }, Notes: ${ notes }`;
   };
 
   getColor = (talk: Talk): string => {
     if (talk.hasOwnProperty('highlight') && talk.highlight === true) return 'blue';
     return 'accent';
+  };
+
+  getTagTitle = (tag: string): string => {
+    const found: any = this.tags.find((item: any) => item.tag === tag);
+    return found.title;
   };
 }

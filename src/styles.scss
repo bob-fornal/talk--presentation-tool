@@ -98,10 +98,13 @@ body {
   border-radius: 0.5vh;
   font-size: 1.5vh;
   height: 4vh;
-  margin-right: 1vw;
-  margin-bottom: 1vw;
   min-width: 1vw;
   padding: 0 1vw;
+
+  &.padded {
+    margin-right: 1vw;
+    margin-bottom: 1vw;  
+  }
 
   .mat-icon {
     margin: 0 !important;

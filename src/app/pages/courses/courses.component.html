@@ -12,23 +12,29 @@
         (change)="showPDF = !showPDF">
         Show PDF Links
       </mat-checkbox>
+      <mat-checkbox
+        class="checkbox-margin"
+        [checked]="showTags"
+        (change)="showTags = !showTags">
+        Show Talk Tags
+      </mat-checkbox>
     </div>
     <div class="tag-list-wrapper">
-      <ng-container *ngFor="let tag of tags; let i = index;">
+      @for (tag of tags; track tag; let i = $index;) {
         <button [attr.aria-label]="tag.title + ' Tag'" class="btn" mat-flat-button [color]="selectedTag(tag)" (click)="filterTalks(tag)">
           {{ tag.title }}
         </button>
-      </ng-container>
+      }
     </div>
   </div>
 
   <div class="talks">
     @for (talk of filteredTalks; track talk; let i = $index;) {
       <div class="talk-wrapper">
-        <button [attr.aria-label]="'Edit ' + talk.title + ' Talk'" class="btn" mat-flat-button color="primary" [routerLink]="'/edit/' + talk.folder">
+        <button [attr.aria-label]="'Edit ' + talk.title + ' Talk'" class="btn padded" mat-flat-button color="primary" [routerLink]="'/edit/' + talk.folder">
           <mat-icon>edit</mat-icon>
         </button>
-        <button [attr.aria-label]="talk.title + ' Presentation'" class="btn" mat-flat-button [color]="getColor(talk)" (click)="clickTalkEvent(talk)">
+        <button [attr.aria-label]="talk.title + ' Presentation'" class="btn padded" mat-flat-button [color]="getColor(talk)" (click)="clickTalkEvent(talk)">
           <span>{{ i + 1 }}.</span>&nbsp;
           {{ talk.title }}
         </button>
@@ -45,6 +51,13 @@
             <span>LINK TO PDF</span>
             <mat-icon>open_in_new</mat-icon>
           </a>
+        </div>
+      }
+      @if (showTags === true) {
+        <div class="talk-tags-wrapper">
+          @for (talkTag of talk.tags; track talkTag) {
+            <span class="button-like">{{ getTagTitle(talkTag) }}</span>
+          }
         </div>
       }
     }

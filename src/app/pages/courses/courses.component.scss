@@ -12,6 +12,7 @@
     align-items: flex-start;
     flex-wrap: wrap;
     margin-bottom: 1em;
+    gap: 1em;
   
     .checkbox-margin {
       margin: 0 12px;
@@ -56,6 +57,32 @@
     }
     .green {
       color: #69f0ae;
+    }
+  }
+
+  .talk-tags-wrapper {
+    margin-left: 5.25em;
+    margin-top: 0.25em;
+    display: flex;
+    gap: 0.5em;
+
+    .button-like {
+      background-color: var(--mdc-filled-button-container-color);
+      color: var(--mdc-filled-button-label-text-color);;
+
+      border: none;
+      padding: 0.5rem 1rem;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      margin: 4px 2px;
+      border-radius: 1rem;
+
+      font-family: var(--mdc-filled-button-label-text-font, var(--mat-app-label-large-font));
+      font-size: var(--mdc-filled-button-label-text-size, var(--mat-app-label-large-size));
+      letter-spacing: var(--mdc-filled-button-label-text-tracking, var(--mat-app-label-large-tracking));
+      text-transform: var(--mdc-filled-button-label-text-transform);
+      font-weight: var(--mdc-filled-button-label-text-weight, var(--mat-app-label-large-weight));
     }
   }
 }

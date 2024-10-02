@@ -30,6 +30,10 @@
       "title": "Career"
     },
     {
+      "tag": "cloud",
+      "title": "Cloud"
+    },
+    {
       "tag": "devops",
       "title": "DevOps"
     },
@@ -137,6 +141,7 @@
       "folder": "the-impact-of-testing-on-a-devops-pipeline",
       "title": "The Impact of Testing on a DevOps Pipeline",
       "tags": [
+        "cloud",
         "devops",
         "testing"
       ]

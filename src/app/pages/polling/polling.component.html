@@ -2,7 +2,7 @@
   <div class="question-title">{{ question }}</div>
   @for (item of answers; track item) {
     <div class="panel--answer-block">
-      <button class="btn" mat-flat-button color="primary" (click)="selectAnswer(item.key)">
+      <button class="btn padded" mat-flat-button color="primary" (click)="selectAnswer(item.key)">
         {{ item.answer }}
       </button>
     </div>
