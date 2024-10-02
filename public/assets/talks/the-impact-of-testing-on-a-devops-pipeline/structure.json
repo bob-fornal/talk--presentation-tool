@@ -95,14 +95,15 @@
     "    padding: 10% !important;",
     "  }",
     "}",
-    ".panel--image:has(.img[src='./assets/images/testing-pyramid.png']) {",
+    ".panel--image:has(.img[src='./assets/images/agile-best-practices.svg']) {",
     "  background-color: white;",
     "  height: 100%;",
     "  display: flex !important;",
     "  align-items: center;",
     "}",
-    ".img[src='./assets/images/testing-pyramid.png'] {",
+    ".img[src='./assets/images/agile-best-practices.svg'] {",
     "  border: none !important;",
+    "  background-color: transparent !important;",
     "}"
   ],
   
@@ -205,7 +206,7 @@
     "type": "image-text",
     "orientation": "right",
     "text1": "<div class=bold>Automate as Many Tests as You Can</div><ul><li>Continuous Testing means testing early and often.</li><li>Eliminate much of the risk that comes with CI/CD.</li><li>Get quick feedback on application quality.</li><li>Reduces the opportunity for new errors.</li></ul><div class=bold>Use Pair Testing & Pair Programming</div><ul><li>On non-automated tests.</li><li>Knowledge Transfer is an efficient way to train new members and maintain velocity.</li><li>One tests; the other analyzes or reviews the results.</li><li>Useful in breaking down communication barriers.</li></ul>",
-    "image": "./assets/images/testing-pyramid.png"
+    "image": "./assets/images/agile-best-practices.svg"
   },
 
   "time-for-questions": {
