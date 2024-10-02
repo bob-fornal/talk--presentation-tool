@@ -56,6 +56,7 @@ export class WebSocketService {
   };
 
   public closeService = (): void => {
+    if (this.ws === null) return;
     this.ws.close();
     this.ws = null;
   };
