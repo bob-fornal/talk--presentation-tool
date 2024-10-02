@@ -1,65 +1,67 @@
 <div class="outer-wrapper">
-  <div class="functionality">
-    <a class="anchor" href="/events">EVENTS</a>
-  </div>
-  <h1 class="title">Bob's Talks</h1>
-
-  <div class="tags">
-    <div class="functionality-wrapper">
-      <mat-checkbox
-        class="checkbox-margin"
-        [checked]="showPDF"
-        (change)="showPDF = !showPDF">
-        Show PDF Links
-      </mat-checkbox>
-      <mat-checkbox
-        class="checkbox-margin"
-        [checked]="showTags"
-        (change)="showTags = !showTags">
-        Show Talk Tags
-      </mat-checkbox>
+  <div class="inner-wrapper">
+    <div class="functionality">
+      <a class="anchor" href="/events">EVENTS</a>
     </div>
-    <div class="tag-list-wrapper">
-      @for (tag of tags; track tag; let i = $index;) {
-        <button [attr.aria-label]="tag.title + ' Tag'" class="btn" mat-flat-button [color]="selectedTag(tag)" (click)="filterTalks(tag)">
-          {{ tag.title }}
-        </button>
-      }
-    </div>
-  </div>
+    <h1 class="title">Bob's Talks</h1>
 
-  <div class="talks">
-    @for (talk of filteredTalks; track talk; let i = $index;) {
-      <div class="talk-wrapper">
-        <button [attr.aria-label]="'Edit ' + talk.title + ' Talk'" class="btn padded" mat-flat-button color="primary" [routerLink]="'/edit/' + talk.folder">
-          <mat-icon>edit</mat-icon>
-        </button>
-        <button [attr.aria-label]="talk.title + ' Presentation'" class="btn padded" mat-flat-button [color]="getColor(talk)" (click)="clickTalkEvent(talk)">
-          <span>{{ i + 1 }}.</span>&nbsp;
-          {{ talk.title }}
-        </button>
-        <span class="status" [class.complete]="isComplete(talk)">{{ getStatus(talk) }}</span>
+    <div class="tags">
+      <div class="functionality-wrapper">
+        <mat-checkbox
+          class="checkbox-margin"
+          [checked]="showPDF"
+          (change)="showPDF = !showPDF">
+          Show PDF Links
+        </mat-checkbox>
+        <mat-checkbox
+          class="checkbox-margin"
+          [checked]="showTags"
+          (change)="showTags = !showTags">
+          Show Talk Tags
+        </mat-checkbox>
       </div>
-      @if (showPDF === true && !!talk.pdf) {
-        <div class="talk-pdf-wrapper">
-          @if (talk.pdfActive === true) {
-            <span class="green">&check;</span>
-          } @else {
-            <span class="red">&cross;</span>
-          }
-          <a class="anchor" [href]="talk.pdf" target="_blank">
-            <span>LINK TO PDF</span>
-            <mat-icon>open_in_new</mat-icon>
-          </a>
+      <div class="tag-list-wrapper">
+        @for (tag of tags; track tag; let i = $index;) {
+          <button [attr.aria-label]="tag.title + ' Tag'" class="btn" mat-flat-button [color]="selectedTag(tag)" (click)="filterTalks(tag)">
+            {{ tag.title }}
+          </button>
+        }
+      </div>
+    </div>
+
+    <div class="talks">
+      @for (talk of filteredTalks; track talk; let i = $index;) {
+        <div class="talk-wrapper">
+          <button [attr.aria-label]="'Edit ' + talk.title + ' Talk'" class="btn padded" mat-flat-button color="primary" [routerLink]="'/edit/' + talk.folder">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button [attr.aria-label]="talk.title + ' Presentation'" class="btn padded" mat-flat-button [color]="getColor(talk)" (click)="clickTalkEvent(talk)">
+            <span>{{ i + 1 }}.</span>&nbsp;
+            {{ talk.title }}
+          </button>
+          <span class="status" [class.complete]="isComplete(talk)">{{ getStatus(talk) }}</span>
         </div>
+        @if (showPDF === true && !!talk.pdf) {
+          <div class="talk-pdf-wrapper">
+            @if (talk.pdfActive === true) {
+              <span class="green">&check;</span>
+            } @else {
+              <span class="red">&cross;</span>
+            }
+            <a class="anchor" [href]="talk.pdf" target="_blank">
+              <span>LINK TO PDF</span>
+              <mat-icon>open_in_new</mat-icon>
+            </a>
+          </div>
+        }
+        @if (showTags === true) {
+          <div class="talk-tags-wrapper">
+            @for (talkTag of talk.tags; track talkTag) {
+              <span class="button-like">{{ getTagTitle(talkTag) }}</span>
+            }
+          </div>
+        }
       }
-      @if (showTags === true) {
-        <div class="talk-tags-wrapper">
-          @for (talkTag of talk.tags; track talkTag) {
-            <span class="button-like">{{ getTagTitle(talkTag) }}</span>
-          }
-        </div>
-      }
-    }
+    </div>
   </div>
 </div>

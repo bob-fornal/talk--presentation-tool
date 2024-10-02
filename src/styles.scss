@@ -51,8 +51,13 @@ body {
   position: fixed;
   left: 0;
   top: 0;
-  width: 100vw;
-  height: 100vh;
+  width: calc(100vw - 2rem);
+  height: calc(100vh - 2rem);
+  overflow-y: scroll;
+
+  .inner-wrapper {
+    margin-bottom: 8em;
+  }
 
   font-size: 16px;
 
