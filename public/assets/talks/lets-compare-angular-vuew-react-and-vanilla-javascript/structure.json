@@ -69,7 +69,7 @@
     "}",
     ".upper-right {",
     "  position: fixed;",
-    "  right: -4em;",
+    "  right: -5em;",
     "  top: -4em;",
     "}",
     ".lower-right-1 {",
@@ -114,8 +114,25 @@
 
   "angular-details--1": {
     "title": "Angular Details (1/2)",
-    "type": "panel-single",
-    "text1": "<img class=upper-right src=assets/images/framework.png /><table class=table><thead><tr><th>Area</th><th>Notes</th></tr></thead><tbody><tr><td class=center>Documentation</td><td><ul class=table-ul><li>Based on John Papa's AngularJS Documentation.</li><li>Strong documentation on \"why;\" <span class=bold-green>OPINIONATED</span>.</li><li>Versioning back to v2</li></ul></td></tr><tr><td class=center>Community</td><td><ul class=table-ul><li>Smaller than Vue, then React.</li><li>Strong corporate support (Google).</li></ul></td></tr><tr><td class=center>Installation</td><td><ul class=table-ul><li><span class=code>ng</span> CLI (with <span class=code>ng new</span>); solid structure.</li></ul></td></tr><tr><td class=center>Build Tools</td><td><ul class=table-ul><li><span class=code>ng build</span>.</li><li>Uses Webpack to bundle code, assets, and dependencies into optimized files for deployment.</li><li><span class=code>ng [new|generate|serve|build|test|lint]</span>.</li></ul></td></tr></tbody></table>"
+    "type": "panel-single-table",
+    "table": [
+      [
+        "Area <img class=upper-right src=assets/images/framework.png />",
+        "Notes"
+      ], [
+        "<div class=bold>Documentation</div>",
+        "<ul class=table-ul><li>Based on John Papa's AngularJS Documentation.</li><li>Strong documentation on \"why;\" <span class=bold-green>OPINIONATED</span>.</li><li>Versioning back to v2.</li></ul>"
+      ], [
+        "<div class=bold>Community</div>",
+        "<ul class=table-ul><li>Smaller than Vue, then React.</li><li>Strong corporate support (Google).</li></ul>"
+      ], [
+        "<div class=bold>Installation</div>",
+        "<ul class=table-ul><li><span class=code>ng</span> CLI (with <span class=code>ng new</span>); solid structure.</li></ul>"
+      ], [
+        "<div class=bold>Build Tools</div>",
+        "<ul class=table-ul><li><span class=code>ng build</span>.</li><li>Uses Webpack to bundle code, assets, and dependencies into optimized files for deployment.</li><li><span class=code>ng [new|generate|serve|build|test|lint]</span>.</li></ul>"
+      ]
+    ]
   },
   "angular-details--2": {
     "title": "Angular Details (2/2)",

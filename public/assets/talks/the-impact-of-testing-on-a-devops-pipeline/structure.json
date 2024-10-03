@@ -127,10 +127,10 @@
         "Detail"
       ], [
         "<div class=bold>Early Detection of Defects</div>",
-        "<ul><li>Automated tests are run as soon as code changes are committed, providing immediate feedback to developers.</li><li>This early detection helps prevent the accumulation of defects, reducing the time and effort required to address issues later in the development cycle.</li></ul>"
+        "<ul class=table-ul><li>Automated tests are run as soon as code changes are committed, providing immediate feedback to developers.</li><li>This early detection helps prevent the accumulation of defects, reducing the time and effort required to address issues later in the development cycle.</li></ul>"
       ], [
         "<div class=bold>Faster Release Cycles</div>",
-        "<ul><li>Accelerate software delivery, ensure high-quality digital experiences across diverse platforms, and meet evolving customer demands.</li></ul>"
+        "<ul class=table-ul><li>Accelerate software delivery, ensure high-quality digital experiences across diverse platforms, and meet evolving customer demands.</li></ul>"
       ]
     ],
     "notes": "<ul><li>Early detection of defects.</li><li>Faster release cycles.</li></ul>"
@@ -144,10 +144,10 @@
         "Detail"
       ], [
         "<div class=bold>Improved Collaboration</div>",
-        "<ul><li>Collaboration between development and operations teams.</li><li>Automated testing provides a common framework for both teams to work within, promoting shared responsibility for quality.</li></ul>"
+        "<ul class=table-ul><li>Collaboration between development and operations teams.</li><li>Automated testing provides a common framework for both teams to work within, promoting shared responsibility for quality.</li></ul>"
       ], [
         "<div class=bold>Enhanced Test Coverage</div>",
-        "<ul><li>Leverages automation to achieve extensive test coverage. Automated tests can cover a wide range of scenarios, including unit tests, integration tests, and end-to-end tests.</li><li>This comprehensive test coverage ensures that all aspects of the application are thoroughly validated, reducing the risk of undetected issues in production.</li></ul>"
+        "<ul class=table-ul><li>Leverages automation to achieve extensive test coverage. Automated tests can cover a wide range of scenarios, including unit tests, integration tests, and end-to-end tests.</li><li>This comprehensive test coverage ensures that all aspects of the application are thoroughly validated, reducing the risk of undetected issues in production.</li></ul>"
       ]
     ],
     "notes": "<ul><li>Improved collaboration (dev and ops)</li><li>Enhanced Test Coverage</li></ul>"
@@ -189,13 +189,13 @@
         "Detail"
       ], [
         "<div class=bold>Quick Delivery</div>",
-        "<ul><li>New functionality to users within minutes</li></ul>"
+        "<ul class=table-ul><li>New functionality to users within minutes</li></ul>"
       ], [
         "<div class=bold>Fast Feedback</div>",
-        "<ul><li>Instant feedback that, in turn, allows rapid response to customer demand.</li></ul>"
+        "<ul class=table-ul><li>Instant feedback that, in turn, allows rapid response to customer demand.</li></ul>"
       ], [
         "<div class=bold>Handling Risk</div>",
-        "<ul><li>Risk-based Testing: Identifying the highest-risk areas of a software application and focusing testing efforts on those areas.</li></i>This approach helps to ensure that the most critical areas of the application are thoroughly tested.</li><li>Reduces testing time and effort in areas that are less important.</li></ul>"
+        "<ul class=table-ul><li>Risk-based Testing: Identifying the highest-risk areas of a software application and focusing testing efforts on those areas.</li></i>This approach helps to ensure that the most critical areas of the application are thoroughly tested.</li><li>Reduces testing time and effort in areas that are less important.</li></ul>"
       ]
     ],
     "notes": "<ul><li>Quick Delivery</li><li>Fast Feedback</li><li>Handling Risk</li></ul>"
@@ -209,16 +209,16 @@
         "Detail"
       ], [
         "<div class=bold>Bugs in Production</div>",
-        "<ul><li>Risk of releasing buggy software into production faster.</li></ul>"
+        "<ul class=table-ul><li>Risk of releasing buggy software into production faster.</li></ul>"
       ], [
         "<div class=bold>Loss of Customers</div>",
-        "<ul><li>Alienate users and cause your company to lose customers.</li></ul>"
+        "<ul class=table-ul><li>Alienate users and cause your company to lose customers.</li></ul>"
       ], [
         "<div class=bold>Tech Limitations</div>",
-        "<ul><li>TA 2022 Mabl report found that 53% of respondents indicated that technology limitations were holding back their testing strategies.</li></ul>"
+        "<ul class=table-ul><li>TA 2022 Mabl report found that 53% of respondents indicated that technology limitations were holding back their testing strategies.</li></ul>"
       ], [
         "<div class=bold>Budget Constraints</div>",
-        "<ul><li>1-in-3 aspiring DevOps teams reported budget as their most pressing obstacle.</li></ul>"
+        "<ul class=table-ul><li>1-in-3 aspiring DevOps teams reported budget as their most pressing obstacle.</li></ul>"
       ]
     ],
     "notes": "<ul><li>Bugs in Production</li><li>Loss of Customers</li><li>Tech Limitations</li><li>Budget Constraints</li></ul>"
@@ -240,16 +240,16 @@
         "Detail"
       ], [
         "<div class=bold>Shift-Left Testing</div>",
-        "<ul><li>Prioritizing early software and system testing in the Software Development Life Cycle (SDLC) to minimize debugging challenges later in the process.</li></ul>"
+        "<ul class=table-ul><li>Prioritizing early software and system testing in the Software Development Life Cycle (SDLC) to minimize debugging challenges later in the process.</li></ul>"
       ], [
         "<div class=bold>Shift-Right Testing</div>",
-        "<ul><li>Emphasizing testing towards the end of the SDLC to enhance user experience, overall performance, failure tolerance, and functionality.</li></ul>"
+        "<ul class=table-ul><li>Emphasizing testing towards the end of the SDLC to enhance user experience, overall performance, failure tolerance, and functionality.</li></ul>"
       ], [
         "<div class=bold>Smoke Tests</div>",
-        "<ul><li>Initial, cursory screenings (manual or automated) for glaring flaws in software, offering a swift and cost-effective solution for eliminating gross errors.</li></ul>"
+        "<ul class=table-ul><li>Initial, cursory screenings (manual or automated) for glaring flaws in software, offering a swift and cost-effective solution for eliminating gross errors.</li></ul>"
       ], [
         "<div class=bold>Unit & Component Testing</div>",
-        "<ul><li>Ideal for small-scale stress, load, volume, or memory leak checks in early developmental stages to identify potential degradations.</li></ul>"
+        "<ul class=table-ul><li>Ideal for small-scale stress, load, volume, or memory leak checks in early developmental stages to identify potential degradations.</li></ul>"
       ]
     ]
   },
@@ -262,13 +262,13 @@
         "Detail"
       ], [
         "<div class=bold>Integration & Message Testing</div>",
-        "<ul><li>Checking errors when software modules collaborate, with continuous testing in DevOps virtualizing missing dependencies to assess end-to-end processes and scenarios.</li></ul>"
+        "<ul class=table-ul><li>Checking errors when software modules collaborate, with continuous testing in DevOps virtualizing missing dependencies to assess end-to-end processes and scenarios.</li></ul>"
       ], [
         "<div class=bold>Performance Testing</div>",
-        "<ul><li>Assessing application software performance, with integrated system testing required to evaluate overall solution performance, accounting for hardware and middleware in the final production environment.</li></ul>"
+        "<ul class=table-ul><li>Assessing application software performance, with integrated system testing required to evaluate overall solution performance, accounting for hardware and middleware in the final production environment.</li></ul>"
       ], [
         "<div class=bold>Functional Testing</div>",
-        "<ul><li>Verifying if the user experience aligns with expectations and if functional workflows are executed across the software system as needed.</li></ul>"
+        "<ul class=table-ul><li>Verifying if the user experience aligns with expectations and if functional workflows are executed across the software system as needed.</li></ul>"
       ]
     ]
   },
@@ -281,10 +281,10 @@
         "Detail"
       ], [
         "<div class=bold>Regresstion Testing</div>",
-        "<ul><li>Ensuring no changes in performance, functionality, or dependencies after correcting errors in dependent software, maintaining system performance.</li></ul>"
+        "<ul class=table-ul><li>Ensuring no changes in performance, functionality, or dependencies after correcting errors in dependent software, maintaining system performance.</li></ul>"
       ], [
         "<div class=bold>User-Acceptance Testing</div>",
-        "<ul><li>Also known as application or end-user testing, assessing the application in real-world situations by a subset of intended users.</li></ul>"
+        "<ul class=table-ul><li>Also known as application or end-user testing, assessing the application in real-world situations by a subset of intended users.</li></ul>"
       ]
     ]
   },
