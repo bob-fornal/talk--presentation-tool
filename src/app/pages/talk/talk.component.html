@@ -5,20 +5,24 @@
     </div>
 
     <div class="slide-wrapper" *ngSwitchCase="'image-only'">
-      <image-only [title]="page.title" [image]="page.image!" [imageClass]="page.imageClass || ''"></image-only>
+      <image-only [title]="page.title" [image]="page.image!" [imageClass]="page.imageClass || ''" />
     </div>
     <div class="slide-wrapper" *ngSwitchCase="'image-text'">
-      <image-text [title]="page.title" [orientation]="page.orientation!" [text1]="page.text1!" [fontsize]="fontsizeSelected" [image]="page.image!"></image-text>
+      <image-text [title]="page.title" [orientation]="page.orientation!" [text1]="page.text1!" [fontsize]="fontsizeSelected" [image]="page.image!" />
     </div>
 
     <div class="slide-wrapper" *ngSwitchCase="'panel-single'">
-      <panel-single [title]="page.title" [text1]="page.text1!" [fontsize]="fontsizeSelected"></panel-single>
+      <panel-single [title]="page.title" [text1]="page.text1!" [fontsize]="fontsizeSelected" />
     </div>
     <div class="slide-wrapper" *ngSwitchCase="'panel-double'">
-      <panel-double [title]="page.title" [text1]="page.text1!" [text2]="page.text2!" [fontsize]="fontsizeSelected"></panel-double>
+      <panel-double [title]="page.title" [text1]="page.text1!" [text2]="page.text2!" [fontsize]="fontsizeSelected" />
     </div>
     <div class="slide-wrapper" *ngSwitchCase="'panel-triple'">
-      <panel-triple [title]="page.title" [text1]="page.text1!" [text2]="page.text2!" [text3]="page.text3!" [fontsize]="fontsizeSelected" [notes]="page.notes!"></panel-triple>
+      <panel-triple [title]="page.title" [text1]="page.text1!" [text2]="page.text2!" [text3]="page.text3!" [fontsize]="fontsizeSelected" [notes]="page.notes!" />
+    </div>
+
+    <div class="slide-wrapper" *ngSwitchCase="'panel-single-table'">
+      <panel-single-table [title]="page.title" [table]="page.table!" [fontsize]="fontsizeSelected" />
     </div>
 
     <div class="slide-wrapper" *ngSwitchCase="'code-editor'">
@@ -30,11 +34,11 @@
         [triggers]="page.triggers || []"
         [keys]="page.environment_keys || []"
         [panel]="page.panel"
-        [external]="sendExternal"></code-editor>
+        [external]="sendExternal" />
     </div>
 
     <div class="slide-wrapper" *ngSwitchCase="'track-polling'">
-      <track-polling [title]="page.title" [data]="page.data!"></track-polling>
+      <track-polling [title]="page.title" [data]="page.data!" />
     </div>
 
     <ng-container *ngSwitchCase="'external'">

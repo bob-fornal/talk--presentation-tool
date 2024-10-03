@@ -1,0 +1,29 @@
+.panel-wrapper {
+
+  .panel--text {
+    width: 100%;
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+    .table th, td {
+      border: 1px solid white;
+      padding: 0.5em;
+    }
+    .table tbody tr:nth-child(odd) {
+      background-color: #960f5133;
+      font-size: 0.8em;
+    }
+    .table tbody tr:nth-child(even) {
+      background-color: #69f0ae33;
+      font-size: 0.8em;
+    }
+    .table-ul {
+      margin: 0;
+    }
+    .center {
+      text-align: center;
+    }
+  }
+}

@@ -51,6 +51,7 @@ import { BiographyComponent } from './features/biography/biography.component';
 import { SectionComponent } from './features/section/section.component';
 import { ConferenceComponent } from './features/conference/conference.component';
 import { ActiveEventComponent } from './features/active-event/active-event.component';
+import { PanelSingleTableComponent } from './slides/panel-single-table/panel-single-table.component';
 
 @NgModule({
   declarations: [
@@ -80,6 +81,7 @@ import { ActiveEventComponent } from './features/active-event/active-event.compo
     SectionComponent,
     ConferenceComponent,
     ActiveEventComponent,
+    PanelSingleTableComponent,
   ],
   imports: [
     BrowserModule,

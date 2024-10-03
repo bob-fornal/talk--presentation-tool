@@ -19,6 +19,7 @@ export type StructureType = {
   data?: any;
 
   orientation?: string;
+  table?: Array<Array<string>>;
   text1?: string;
   text2?: string;
   text3?: string;

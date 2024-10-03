@@ -142,14 +142,36 @@
   },
   "devops-testing--what-does-it-mean--1": {
     "title": "DevOps Continuous Testing: What does it mean? (1/2)",
-    "type": "panel-single",
-    "text1": "<table class=table> <thead><tr><th>Activity</th><th>Detail</th></thead> <tbody> <tr><td class=center><div class=bold>Early Detection of Defects</div></td><td><ul><li>Automated tests are run as soon as code changes are committed, providing immediate feedback to developers.</li><li>This early detection helps prevent the accumulation of defects, reducing the time and effort required to address issues later in the development cycle.</li></ul></td></tr> <tr><td class=center><div class=bold>Faster Release Cycles</div></td><td><ul><li>Accelerate software delivery, ensure high-quality digital experiences across diverse platforms, and meet evolving customer demands.</li></ul></td></tr> </tbody> </table>",
+    "type": "panel-single-table",
+    "table": [
+      [
+        "Activity",
+        "Detail"
+      ], [
+        "<div class=bold>Early Detection of Defects</div>",
+        "<ul><li>Automated tests are run as soon as code changes are committed, providing immediate feedback to developers.</li><li>This early detection helps prevent the accumulation of defects, reducing the time and effort required to address issues later in the development cycle.</li></ul>"
+      ], [
+        "<div class=bold>Faster Release Cycles</div>",
+        "<ul><li>Accelerate software delivery, ensure high-quality digital experiences across diverse platforms, and meet evolving customer demands.</li></ul>"
+      ]
+    ],
     "notes": "<ul><li>Early detection of defects.</li><li>Faster release cycles.</li></ul>"
   },
   "devops-testing--what-does-it-mean--2": {
     "title": "DevOps Continuous Testing: What does it mean? (2/2)",
-    "type": "panel-single",
-    "text1": "<table class=table> <thead><tr><th>Activity</th><th>Detail</th></thead> <tbody> <tr><td class=center><div class=bold>Improved Collaboration</div></td><td><ul><li>Collaboration between development and operations teams.</li><li>Automated testing provides a common framework for both teams to work within, promoting shared responsibility for quality.</li></td></tr>  <tr><td class=center><div class=bold>Enhanced Test Coverage</div></td><td><ul><li>Leverages automation to achieve extensive test coverage. Automated tests can cover a wide range of scenarios, including unit tests, integration tests, and end-to-end tests.</li><li>This comprehensive test coverage ensures that all aspects of the application are thoroughly validated, reducing the risk of undetected issues in production.</li></ul></td></tr> </tbody> </table>",
+    "type": "panel-single-table",
+    "table": [
+      [
+        "Activity",
+        "Detail"
+      ], [
+        "<div class=bold>Improved Collaboration</div>",
+        "<ul><li>Collaboration between development and operations teams.</li><li>Automated testing provides a common framework for both teams to work within, promoting shared responsibility for quality.</li></ul>"
+      ], [
+        "<div class=bold>Enhanced Test Coverage</div>",
+        "<ul><li>Leverages automation to achieve extensive test coverage. Automated tests can cover a wide range of scenarios, including unit tests, integration tests, and end-to-end tests.</li><li>This comprehensive test coverage ensures that all aspects of the application are thoroughly validated, reducing the risk of undetected issues in production.</li></ul>"
+      ]
+    ],
     "notes": "<ul><li>Improved collaboration (dev and ops)</li><li>Enhanced Test Coverage</li></ul>"
   },
 

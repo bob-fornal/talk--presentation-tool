@@ -1,0 +1,45 @@
+<edit-buttons
+  [editing]="editing"
+  [toggleView]="toggleView"
+  [saveEvent]="saveEvent"
+  [cancelEvent]="cancelEvent"
+  [editNotes]="editNotes"
+  (toggle)="setView($event)">
+</edit-buttons>
+
+<div class="panel-wrapper">
+  @if (editing === false || toggleView === true) {
+    <div class="panel--title" [innerHTML]="title"></div>
+
+    <div class="panel--content-wrapper">
+      <div class="panel--text" [class]="fontsize">
+        <table class="table">
+          <thead>
+            @for (header of getHeaderRow(); track $index) {
+              <th [innerHTML]="header"></th>
+            }
+          </thead>
+          <tbody>
+            @for (row of getBodyRows(); track $index; let first = $first) {
+              <tr>
+                @for (column of row; track $index; let first = $first) {
+                  <td [class.center]="first" [innerHTML]="column"></td>
+                }
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>  
+  } @else {
+    <input
+      type="text"
+      placeholder="Title"
+      data-editing="title"
+      [attr.data-required]="true"
+      [value]="title" />
+    <div class="panel--content-wrapper">
+      <!-- TODO: Editing -->
+    </div>
+  }
+</div>
