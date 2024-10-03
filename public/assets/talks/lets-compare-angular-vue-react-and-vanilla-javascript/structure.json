@@ -88,7 +88,7 @@
     "type": "image-only",
     "background": "transparent",
     "image": "./assets/images/why-stick-men.svg",
-    "notes": ""
+    "notes": "Why? I'm here to present the various libraries and frameworks in a way that decisions can be made.<br/><br/>Why are you here? (audience interaction)"
   },
 
   "what-to-compare": {
