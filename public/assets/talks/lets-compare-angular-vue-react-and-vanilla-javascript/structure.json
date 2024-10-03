@@ -9,8 +9,10 @@
     "angular-details--2",
     "vue-details--1",
     "vue-details--2",
-    "react-details",
-    "javascript-details",
+    "react-details--1",
+    "react-details--2",
+    "javascript-details--1",
+    "javascript-details--2",
 
     "general-comparison",
     "implementation-comparison",
@@ -189,8 +191,8 @@
     ]
   },
 
-  "react-details": {
-    "title": "React Details",
+  "react-details--1": {
+    "title": "React Details (1/2)",
     "type": "panel-single-table",
     "table": [
       [
@@ -208,6 +210,16 @@
       ], [
         "<div class=bold>Build Tools</div>",
         "<ul class=table-ul><li>React \"lets you focus on code, not build tools.\"</li></ul>"
+      ]
+    ]
+  },
+  "react-details--2": {
+    "title": "React Details (2/2)",
+    "type": "panel-single-table",
+    "table": [
+      [
+        "Area <img class=upper-right src=assets/images/library.png />",
+        "Notes"
       ], [
         "<div class=bold>Tooling</div>",
         "<ul class=table-ul><li>Web Component Patterns.</li></ul>"
@@ -221,8 +233,8 @@
     ]
   },
 
-  "javascript-details": {
-    "title": "JavaScript Details",
+  "javascript-details--1": {
+    "title": "JavaScript Details (1/2)",
     "type": "panel-single-table",
     "table": [
       [
@@ -240,6 +252,17 @@
       ], [
         "<div class=bold>Build Tools</div>",
         "<ul class=table-ul><li>UNNECESSARY.</li></ul>"
+      ]
+    ],
+    "notes": "The phrase, \"you don't know what you don't know.\" - story: requirement for a range slider, found one, made changes, first commit to another repository. Had unknowingly modified a Web Component. More opportunities in ways to build things."
+  },
+  "javascript-details--2": {
+    "title": "JavaScript Details (2/2)",
+    "type": "panel-single-table",
+    "table": [
+      [
+        "Area",
+        "Notes"
       ], [
         "<div class=bold>Tooling</div>",
         "<ul class=table-ul><li>Web Components: Foundational.</li></ul>"
