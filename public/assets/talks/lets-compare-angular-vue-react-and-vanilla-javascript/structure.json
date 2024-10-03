@@ -1,0 +1,403 @@
+{
+  "ORDER": [
+    "cover-01",
+    "big-why",
+    "what-to-compare",
+    "framework-vs-structure",
+
+    "angular-details--1",
+    "angular-details--2",
+    "vue-details--1",
+    "vue-details--2",
+    "react-details",
+    "javascript-details",
+
+    "general-comparison",
+    "implementation-comparison",
+    "build-code-comparison",
+
+    "time-for-questions"
+  ],
+
+  "STYLE": [
+    ".outer-wrapper {",
+    "  background: url(\"./assets/images/grid--green.webp\");",
+    "  background-repeat: no-repeat;",
+    "  background-size: cover;",
+    "  color: #69f0ae;",
+    "  font-family: Arial, sans-serif;",
+    "}",
+    ".italic {",
+    "  font-style: italic;",
+    "}",
+    ".italic-green {",
+    "  font-style: italic;",
+    "  font-weight: bold;",
+    "  color: #69f0ae;",
+    "}",
+    ".bold-green {",
+    "  font-weight: bold;",
+    "  color: #69f0ae;",
+    "}",
+    ".indented {",
+    "  padding-left: 1em;",
+    "}",
+    ".code {",
+    "  color: yellow;",
+    "  font-family: Menlo, Monaco, \"Courier New\", monospace;",
+    "}",
+    ".center {",
+    "  text-align: center;",
+    "}",
+    ".upper-right {",
+    "  position: fixed;",
+    "  right: -5em;",
+    "  top: -4em;",
+    "}",
+    ".lower-right-1 {",
+    "  position: absolute;",
+    "  right: 1em;",
+    "  top: 16em;",
+    "}",
+    ".lower-right-2 {",
+    "  position: absolute;",
+    "  right: 1em;",
+    "  top: 20em;",
+    "}",
+    "image-only .img[src='./assets/images/framework-vs-library.png'] {",
+    "  border: 3px solid #69f0ae;",
+    "}",
+    "image-only .panel--image:has(.img[src='./assets/images/why-stick-men.svg']) {",
+    "  background-color: #ffffffdd;",
+    "}"
+  ],
+  
+  "cover-01": {
+    "title": "Let's Compare Angular, Vue, React, and Vanilla JavaScript",
+    "type": "cover-01",
+    "author": "Bob Fornal",
+    "bio1": "<img class=bio-logo src=./assets/images/code-squid.webp /><br/><div class=\"bold bio-header\">Entrepreneur</div>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.",
+    "bio2": "<img class=bio-logo src=./assets/images/leading-edje.webp /><br/><div class=bold>Senior Solutions Developer</div><div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth.",
+    "notes": "Starting with a simple project design we will look at the various design considerations in several categories (initialization, components, services, event handling, build tooling, and testing) to compare and contrast the various strengths and weaknesses of Vanilla JavaScript, Angular, Vue, and React."
+  },
+
+  "big-why": {
+    "title": "",
+    "type": "image-only",
+    "background": "transparent",
+    "image": "./assets/images/why-stick-men.svg",
+    "notes": ""
+  },
+
+  "what-to-compare": {
+    "title": "What (and How) Are We Comparing?",
+    "type": "panel-triple",
+    "text1": "<h1>What?</h1><ul><li>Documentation</li><li>Community</li><li>Installation</li><li>Build Tools</li><li>Tooling</li><li>Release Cycle</li><li>Testing</li></ul>",
+    "text2": "<h1>How?</h1><ul><li>Details (by Type)</li><li>Overall Comparison</li><li>Implementation (Project Size)</li></ul>",
+    "text3": "<img class=lower-right-1 src=assets/images/library.png /><img class=lower-right-2 src=assets/images/framework.png /><h1>Library</h1><ul><li>Set of reusable functions.</li></ul><h1>Framework</h1><ul><li>Set of code that dictates project architecture.</li><li>Provide standard way to build and test applications.</li></ul>",
+    "notes": ""
+  },
+  "framework-vs-structure": {
+    "title": "",
+    "type": "image-only",
+    "background": "transparent",
+    "image": "./assets/images/framework-vs-library.png",
+    "notes": "Framework versus Library"
+  },
+
+  "angular-details--1": {
+    "title": "Angular Details (1/2)",
+    "type": "panel-single-table",
+    "table": [
+      [
+        "Area <img class=upper-right src=assets/images/framework.png />",
+        "Notes"
+      ], [
+        "<div class=bold>Documentation</div>",
+        "<ul class=table-ul><li>Based on John Papa's AngularJS Documentation.</li><li>Strong documentation on \"why;\" <span class=bold-green>OPINIONATED</span>.</li><li>Versioning back to v2.</li></ul>"
+      ], [
+        "<div class=bold>Community</div>",
+        "<ul class=table-ul><li>Smaller than Vue, then React.</li><li>Strong corporate support (Google).</li></ul>"
+      ], [
+        "<div class=bold>Installation</div>",
+        "<ul class=table-ul><li><span class=code>ng</span> CLI (with <span class=code>ng new</span>); solid structure.</li></ul>"
+      ], [
+        "<div class=bold>Build Tools</div>",
+        "<ul class=table-ul><li><span class=code>ng build</span>.</li><li>Uses Webpack to bundle code, assets, and dependencies into optimized files for deployment.</li><li><span class=code>ng [new|generate|serve|build|test|lint]</span>.</li></ul>"
+      ]
+    ]
+  },
+  "angular-details--2": {
+    "title": "Angular Details (2/2)",
+    "type": "panel-single-table",
+    "table": [
+      [
+        "Area <img class=upper-right src=assets/images/framework.png />",
+        "Notes"
+      ], [
+        "<div class=bold>Tooling</div>",
+        "<ul class=table-ul><li>Library Creation: (to extend Angular functionality).</li></ul>"
+      ], [
+        "<div class=bold>Release Cycles</div>",
+        "<ul class=table-ul><li>A regular release schedule, allowing for planning and coordination of updates.</li><li>Major: every 6 months (May and Nov), Minor: 1-3 for each major release, and Patch Release: almost weekly.</li><li>Deprecation: Marked deprecated; deprecation phase lasts two major versions (minimum).</li></ul>"
+      ], [
+        "<div class=bold>Testing</div>",
+        "<ul class=table-ul><li>Test structure installed with each <span class=code>ng generate</span> command.</li><li>Karma (test runner), Jasmine (testing framework), and Protractor (end-to-end testing).</li></ul>"
+      ]
+    ]
+  },
+  
+  "vue-details--1": {
+    "title": "Vue Details (1/2)",
+    "type": "panel-single-table",
+    "table": [
+      [
+        "Area <img class=upper-right src=assets/images/framework-library.png />",
+        "Notes"
+      ], [
+        "<div class=bold>Documentation</div>",
+        "<ul class=table-ul><li>Only v2 and v3.</li><li>Solid documentation for beginner to advanced.</li></ul>"
+      ], [
+        "<div class=bold>Community</div>",
+        "<ul class=table-ul><li>Strong community of passionate developers.</li></ul>"
+      ], [
+        "<div class=bold>Installation</div>",
+        "<ul class=table-ul><li><span class=code>npm create vue@latest</span></li></ul>"
+      ], [
+        "<div class=bold>Build Tools</div>",
+        "<ul class=table-ul><li>Vue CLI (average)</li></ul>"
+      ]
+    ]
+  },
+  "vue-details--2": {
+    "title": "Vue Details (2/2)",
+    "type": "panel-single-table",
+    "table": [
+      [
+        "Area <img class=upper-right src=assets/images/framework-library.png />",
+        "Notes"
+      ], [
+        "<div class=bold>Tooling</div>",
+        "<ul class=table-ul><li>Lightweight <span class=bold>library</span> to add interactivity to a website or enhance specific parts of an application.</li><li><span class=bold>Framework</span> to build a complete web application.</li><li>Web Component Patterns.</li></ul>"
+      ], [
+        "<div class=bold>Release Cycles</div>",
+        "<ul class=table-ul><li>Limited corporate support means that supporting tools and libraries take time to catch up.</li></ul>"
+      ], [
+        "<div class=bold>Testing</div>",
+        "<ul class=table-ul><li>(Unit Tests) Recommends: Vitest; optionally: Jest</li><li>(Component Tests) Recommends: Vitest; optionally: Cypress</li><li>(E2E) Recommends: Playwright or Cypress; optionally: Nightwatch or WebdriverIO</li></ul>"
+      ]
+    ]
+  },
+
+  "react-details": {
+    "title": "React Details",
+    "type": "panel-single-table",
+    "table": [
+      [
+        "Area <img class=upper-right src=assets/images/library.png />",
+        "Notes"
+      ], [
+        "<div class=bold>Documentation</div>",
+        "<ul class=table-ul><li>Solid Documentation</li></ul>"
+      ], [
+        "<div class=bold>Community</div>",
+        "<ul class=table-ul><li>Strong corporate support (Facebook); translated into bootcamp use and lots of developer experience.</li></ul>"
+      ], [
+        "<div class=bold>Installation</div>",
+        "<ul class=table-ul><li>Next.js, Remix, Gatsby, Expo, (Next.js App Router); legacy: Create React App</li><li>Many options for installation; each is a different opinion.</li></ul>"
+      ], [
+        "<div class=bold>Build Tools</div>",
+        "<ul class=table-ul><li>React \"lets you focus on code, not build tools.\"</li></ul>"
+      ], [
+        "<div class=bold>Tooling</div>",
+        "<ul class=table-ul><li>Web Component Patterns.</li></ul>"
+      ], [
+        "<div class=bold>Release Cycles</div>",
+        "<ul class=table-ul><li>No set timeframe.</li><li>Strong plan for Stable Releases, Breaking Changes, Latest, Canary, and Experimental.</li></ul>"
+      ], [
+        "<div class=bold>Testing</div>",
+        "<ul class=table-ul><li>Recommended Tools: Jest and React Testing Library.</li></ul>"
+      ]
+    ]
+  },
+
+  "javascript-details": {
+    "title": "JavaScript Details",
+    "type": "panel-single-table",
+    "table": [
+      [
+        "Area",
+        "Notes"
+      ], [
+        "<div class=bold>Documentation</div>",
+        "<ul class=table-ul><li>MDN: thorough documentation.</li><li>http://vanilla-js.com/</li></ul>"
+      ], [
+        "<div class=bold>Community</div>",
+        "<ul class=table-ul><li>Who doesn't use JavaScript?</li></ul>"
+      ], [
+        "<div class=bold>Installation</div>",
+        "<ul class=table-ul><li>UNNECESSARY.</li></ul>"
+      ], [
+        "<div class=bold>Build Tools</div>",
+        "<ul class=table-ul><li>UNNECESSARY.</li></ul>"
+      ], [
+        "<div class=bold>Tooling</div>",
+        "<ul class=table-ul><li>Web Components: Foundational.</li></ul>"
+      ], [
+        "<div class=bold>Release Cycles</div>",
+        "<ul class=table-ul><li>Language specification (ECMAScript) and browser implementation and adoption.</li><li>ECMAScript: annual while browsers are independent and release on a rolling basis.</li></ul>"
+      ], [
+        "<div class=bold>Testing</div>",
+        "<ul class=table-ul><li>Can use Jest, Jasmine, or others.</li></ul>"
+      ]
+    ],
+    "notes": "The phrase, \"you don't know what you don't know.\" - story: requirement for a range slider, found one, made changes, first commit to another repository. Had unknowingly modified a Web Component. More opportunities in ways to build things."
+  },
+
+  "general-comparison": {
+    "title": "General Comparison",
+    "type": "panel-single-table",
+    "table": [
+      [
+        "Area",
+        "Angular",
+        "Vue",
+        "React",
+        "JavaScript"
+      ], [
+        "<div class=bold>Documentation</div>",
+        "",
+        "",
+        "",
+        ""
+      ], [
+        "<div class=bold>Community</div>",
+        "",
+        "",
+        "",
+        ""
+      ], [
+        "<div class=bold>Installation</div>",
+        "",
+        "",
+        "",
+        ""
+      ], [
+        "<div class=bold>Build Tools</div>",
+        "",
+        "",
+        "",
+        ""
+      ], [
+        "<div class=bold>Tooling</div>",
+        "",
+        "",
+        "",
+        ""
+      ], [
+        "<div class=bold>Release Cycles</div>",
+        "",
+        "",
+        "",
+        ""
+      ], [
+        "<div class=bold>Testing</div>",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "notes": ""
+  },
+  "implementation-comparison": {
+    "title": "Implementation Comparison",
+    "type": "panel-single-table",
+    "table": [
+      [
+        "Area",
+        "Angular",
+        "Vue",
+        "React",
+        "JavaScript"
+      ], [
+        "<div class=bold>Enterprise</div>",
+        "",
+        "",
+        "",
+        ""
+      ], [
+        "<div class=bold>Mid-Sized</div>",
+        "",
+        "",
+        "",
+        ""
+      ], [
+        "<div class=bold>Small Team</div>",
+        "",
+        "",
+        "",
+        ""
+      ], [
+        "<div class=bold>Hackathon</div>",
+        "",
+        "",
+        "",
+        ""
+      ], [
+        "<div class=bold>Individual</div>",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "notes": ""
+  },
+  "build-code-comparison": {
+    "title": "Build / Code Comparison",
+    "type": "panel-single-table",
+    "table": [
+      [
+        "Area",
+        "Angular",
+        "Vue",
+        "React",
+        "JavaScript"
+      ], [
+        "<div class=bold>Build Size</div>",
+        "",
+        "",
+        "",
+        ""
+      ], [
+        "<div class=bold>Lighthouse Score</div>",
+        "",
+        "",
+        "",
+        ""
+      ], [
+        "<div class=bold>Developer Tooling</div>",
+        "",
+        "",
+        "",
+        ""
+      ], [
+        "<div class=bold>Full Stack</div>",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "notes": ""
+  },
+
+  "time-for-questions": {
+    "title": "",
+    "type": "image-only",
+    "background": "transparent",
+    "image": "./assets/images/time-for-questions.webp",
+    "notes": ""
+  }
+}
