@@ -32,7 +32,7 @@ export class EventsService {
   constructor(private http: HttpClient) {}
 
   public getBaseData = async (): Promise<any> => {
-    const { speaker, sessions, events }: EventData = await firstValueFrom(this.http.get('./assets/events/sessionize--2024-08-24.json') as Observable<EventData>);
+    const { speaker, sessions, events }: EventData = await firstValueFrom(this.http.get('./assets/events/sessionize--2024-10-09.json') as Observable<EventData>);
     this.speaker.next(speaker);
     this.sessions.next(sessions);
     this.pastEvents.next(events);

@@ -50,5 +50,17 @@
     "name": "Stir Trek",
     "location": "Columbus, Ohio, United States",
     "website": "https://stirtrek.com"
+  },
+  {
+    "id": -1,
+    "name": "TechBash",
+    "location": "Pocono Manor, Pennsylvania",
+    "website": "https://techbash.com/",
+    "callForSpeakers": {
+      "start": "2024-01-29T00:00:00",
+      "end": "2024-03-08T00:00:00",  
+      "website": "https://sessionize.com/techbash-2024/"
+    },
+    "notes": "Cover part of room costs as speaker"
   }
 ]
