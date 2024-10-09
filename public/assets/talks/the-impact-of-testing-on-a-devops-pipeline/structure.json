@@ -6,8 +6,7 @@
     "what-is-the-agile-model",
 
     "devops-testing--what-is",
-    "devops-testing--what-does-it-mean--1",
-    "devops-testing--what-does-it-mean--2",
+    "devops-testing--what-does-it-mean",
 
     "devops-testing--strategy",
     "devops-testing--implementation",
@@ -108,18 +107,19 @@
     "orientation": "left",
     "text1": "<div>Software developed with the Agile Model adheres to the following four basic priorities:</div><ol><li>Individuals and interactions over processes and tools;</li><li><span class=bold-green>Working software</span> over comprehensive documentation;</li><li>Customer collaboration over contract negotiation; and</li><li><span class=bold-green>Responding to change</span> over following a plan.</li></ol> <div>In Agile development:</div><ul><li>A <span class=bold-green>test-first approach</span> is used, rather than a test-at-the-end approach, when developing.</li><li>Code is developed <span class=bold-green>and tested</span> in small increments of functionality.</li></ul>",
     "image": "./assets/images/agile-methodology.webp",
-    "notes": "Agile is a way of focusing on people and interactions, working software, and responding to change. Agile uses a test-first approach against small sets of functional code."
+    "notes": "<ul><li>Agile is a way of focusing on people and interactions, working software, and responding to change.</li><li>Agile uses a test-first approach against small sets of functional code.</li></ul>"
   },
 
   "devops-testing--what-is": {
-    "title": "What is DevOps Continuous Testing?",
+    "title": "What is Continuous Testing?",
     "type": "panel-double",
     "text1": "<div><span class=bold-green>Testing is done by the whole team</span> (not just designated testers or quality assurance professionals).</div> <ul><li>Shared responsibility for attaining the highest quality.</li><li>Equal responsibility for the success of the project.</li></ul>",
-    "text2": "<div>Unit and Component Testing written by developers using <span class=bold-green>Test-Driven Development</span> (TDD).</div><ul><li>TDD helps think through the desired behavior.</li></ul> <div>Collaboration: QA, devs, and non-technical / business ...</div> <ul><li>Using tools like <span class=bold-green>Cucumber (GIVEN, WHEN, THEN format)</span>.</li></ul>",
-    "notes": "The WHOLE set of testing throughout the DevOps cycle. It is also about the responsibility to create something of the highest quality."
+    "text2": "<div>Unit and Component Testing ...</div><ul><li>Written by developers.</li><li>Using <span class=bold-green>Test-Driven Development</span> (TDD)</li><li>TDD helps think through the desired behavior.</li></ul> <div>Collaboration ...</div> <ul><li>QA, devs, and non-technical / business.</li><li>Using tools like <span class=bold-green>Cucumber (GIVEN, WHEN, THEN format)</span>.</li></ul>",
+    "notes": "<ul><li>The WHOLE set of testing throughout the DevOps cycle.</li><li>It is also about the responsibility to create something of the highest quality.</li></ul>"
   },
-  "devops-testing--what-does-it-mean--1": {
-    "title": "DevOps Continuous Testing: What does it mean? (1/2)",
+
+  "devops-testing--what-does-it-mean": {
+    "title": "DevOps Continuous Testing: What does it mean?",
     "type": "panel-single-table",
     "table": [
       [
@@ -131,26 +131,15 @@
       ], [
         "<div class=bold>Faster Release Cycles</div>",
         "<ul class=table-ul><li>Accelerate software delivery, ensure high-quality digital experiences across diverse platforms, and meet evolving customer demands.</li></ul>"
-      ]
-    ],
-    "notes": "<ul><li>Early detection of defects.</li><li>Faster release cycles.</li></ul>"
-  },
-  "devops-testing--what-does-it-mean--2": {
-    "title": "DevOps Continuous Testing: What does it mean? (2/2)",
-    "type": "panel-single-table",
-    "table": [
-      [
-        "Activity",
-        "Detail"
       ], [
         "<div class=bold>Improved Collaboration</div>",
         "<ul class=table-ul><li>Collaboration between development and operations teams.</li><li>Automated testing provides a common framework for both teams to work within, promoting shared responsibility for quality.</li></ul>"
       ], [
         "<div class=bold>Enhanced Test Coverage</div>",
-        "<ul class=table-ul><li>Leverages automation to achieve extensive test coverage. Automated tests can cover a wide range of scenarios, including unit tests, integration tests, and end-to-end tests.</li><li>This comprehensive test coverage ensures that all aspects of the application are thoroughly validated, reducing the risk of undetected issues in production.</li></ul>"
+        "<ul class=table-ul><li>Leverages automation to achieve extensive test coverage over a wide range of scenarios.</li><li>Ensuring all aspects of the application are thoroughly validated, reducing the risk of undetected issues in production.</li></ul>"
       ]
     ],
-    "notes": "<ul><li>Improved collaboration (dev and ops)</li><li>Enhanced Test Coverage</li></ul>"
+    "notes": "<ul><li>Early detection of defects.</li><li>Faster release cycles.</li><li>Improved collaboration (dev and ops)</li><li>Enhanced Test Coverage: including unit tests, integration tests, and end-to-end tests</li></ul>"
   },
 
   "devops-testing--strategy": {
@@ -225,11 +214,11 @@
   },
 
   "devops-testing--where": {
-    "title": "",
+    "title": "DevOps Testing: Where?",
     "type": "image-only",
     "background": "transparent",
     "image": "./assets/images/can-we-test-here.svg",
-    "notes": "Continuous testing should be integrated all throughout the system to ensure proper coverage."
+    "notes": "<ul><li>Where does Continuous Testing occur?</li><li>Continuous Testing should be integrated all throughout the system to ensure proper coverage.</li></ul>"
   },
   "devops-testing--methodologies--1": {
     "title": "DevOps Continuous Testing: Methodologies (1/3)",
@@ -251,7 +240,8 @@
         "<div class=bold>Unit & Component Testing</div>",
         "<ul class=table-ul><li>Ideal for small-scale stress, load, volume, or memory leak checks in early developmental stages to identify potential degradations.</li></ul>"
       ]
-    ]
+    ],
+    "notes": "<ul><li>Shift-Left Testing: Earlier in Software Life Cycle</li><li>Shift-Right Testing: End of the Software Life Cycle; user experience, performance, failt tolerance, functionality.</li><li>Smoke Tests: Cursory on critcal paths.</li><li>Unit & Component Testing: Small-scale stress testing.</li></ul>"
   },
   "devops-testing--methodologies--2": {
     "title": "DevOps Continuous Testing: Methodologies (2/3)",
@@ -270,7 +260,8 @@
         "<div class=bold>Functional Testing</div>",
         "<ul class=table-ul><li>Verifying if the user experience aligns with expectations and if functional workflows are executed across the software system as needed.</li></ul>"
       ]
-    ]
+    ],
+    "notes": "<ul><li>Integration & Message Testing: Collaboration over scenarios and processes.</li><li>Performance Testing: Overall solution performance.</li><li>Functional Testing: Experience versus expectations.</li></ul>"
   },
   "devops-testing--methodologies--3": {
     "title": "DevOps Continuous Testing: Methodologies (3/3)",
@@ -286,21 +277,23 @@
         "<div class=bold>User-Acceptance Testing</div>",
         "<ul class=table-ul><li>Also known as application or end-user testing, assessing the application in real-world situations by a subset of intended users.</li></ul>"
       ]
-    ]
+    ],
+    "notes": "<ul><li>Regression Testing: Stable performance, functionality and dependencies over time.</li><li>User-Acceptance Testing: Real world situations by a subset of real users.</li></ul>"
   },
   "devops-testing--best-practices": {
     "title": "DevOps Continuous Testing: Best Practices",
     "type": "image-text",
     "orientation": "right",
     "text1": "<div class=bold>Automate as Many Tests as You Can</div><ul><li>Continuous Testing means testing early and often.</li><li>Eliminate much of the risk that comes with CI/CD.</li><li>Get quick feedback on application quality.</li><li>Reduces the opportunity for new errors.</li></ul><div class=bold>Use Pair Testing & Pair Programming</div><ul><li>On non-automated tests.</li><li>Knowledge Transfer is an efficient way to train new members and maintain velocity.</li><li>One tests; the other analyzes or reviews the results.</li><li>Useful in breaking down communication barriers.</li></ul>",
-    "image": "./assets/images/agile-best-practices.svg"
+    "image": "./assets/images/agile-best-practices.svg",
+    "notes": "<ol><li>Test early and often.</li><li>Eliminate risk with CI/CD.</li><li>Quick feedback on quality.</li><li>Reduce opportunity for new errors.</li></ol><div>Pair Testing / Programming</div><ul><li>Tests that are challenging to automate.</li><li>Knowledge transfer.</li><li>Test versus analyze.</li><li>Break down communication barriers.</li></ul>"
   },
 
   "time-for-questions": {
     "title": "",
     "type": "image-only",
     "background": "transparent",
-    "image": "./assets/images/time-for-questions.webp",
+    "image": "./assets/images/time-for-questions--iotdevops-qr.png",
     "notes": ""
   }
 }
