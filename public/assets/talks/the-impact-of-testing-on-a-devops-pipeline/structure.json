@@ -2,6 +2,7 @@
   "ORDER": [
     "cover-01",
 
+    "the-big-question",
     "what-is-devops",
     "what-is-the-agile-model",
 
@@ -91,6 +92,13 @@
     "bio1": "<img class=bio-logo src=./assets/images/code-squid.webp /><br/><div class=\"bold bio-header\">Entrepreneur</div>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.",
     "bio2": "<img class=bio-logo src=./assets/images/leading-edje.webp /><br/><div class=bold>Senior Solutions Developer</div><div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth.",
     "notes": "I've recently been working on \"fullstack\" Azure DevOps (using Terraform) with Function App, database, and frontend code."
+  },
+
+  "the-big-question": {
+    "title": "The BIG Question",
+    "type": "panel-single",
+    "text1": "<div><span class=bold>What I didn't ask (right away)?</span> How do we test IaC?</div><ul><li><span class=code>terraform validate</span> - syntax of code.</li><li><span class=code>tfsec</span> - linting: validate for errors, deprecated syntax, and security checks.</li><li><span class=code>terraform plan</span> - dry run and/or unit testing.</li><li><span class=bold>Terratest</span> - deploying in a test environment to test results.</li><li>Azure Resource Graph REST API - integration tests against actual infrastructure.</li></ul>",
+    "notes": "This was a question I heard and didn't account for when writing this talk."
   },
 
   "what-is-devops": {

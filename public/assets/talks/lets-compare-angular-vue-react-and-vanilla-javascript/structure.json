@@ -71,11 +71,31 @@
     "}",
     "image-only .panel--image:has(.img[src='./assets/images/why-stick-men.svg']) {",
     "  background-color: #ffffffdd;",
+    "}",
+    ".bold-center-green {",
+    "  font-weight: bold;",
+    "  color: #69f0ae;",
+    "  text-align: center;",
+    "}",
+    ".bold-center-yellow {",
+    "  font-weight: bold;",
+    "  color: yellow;",
+    "  text-align: center;",
+    "}",
+    ".bold-center-white {",
+    "  font-weight: bold;",
+    "  color: white;",
+    "  text-align: center;",
+    "}",
+    ".bold-center-red {",
+    "  font-weight: bold;",
+    "  color: red;",
+    "  text-align: center;",
     "}"
   ],
   
   "cover-01": {
-    "title": "Let's Compare Angular, Vue, React, and Vanilla JavaScript",
+    "title": "Cage Match: Angular, Vue, React, and Vanilla JavaScript",
     "type": "cover-01",
     "author": "Bob Fornal",
     "bio1": "<img class=bio-logo src=./assets/images/code-squid.webp /><br/><div class=\"bold bio-header\">Entrepreneur</div>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.",
@@ -289,46 +309,46 @@
         "JavaScript"
       ], [
         "<div class=bold>Documentation</div>",
-        "",
-        "",
-        "",
-        ""
+        "<div class=bold-center-green>SOLID</span>",
+        "<div class=bold-center-yellow>OK</span>",
+        "<div class=bold-center-green>SOLID</span>",
+        "<div class=bold-center-green>SOLID</span>"
       ], [
         "<div class=bold>Community</div>",
-        "",
-        "",
-        "",
-        ""
+        "<div class=bold-center-yellow>OK</span>",
+        "<div class=bold-center-green>SOLID</span>",
+        "<div class=bold-center-green>SOLID</span>",
+        "<div class=bold-center-green>SOLID</span>"
       ], [
         "<div class=bold>Installation</div>",
-        "",
-        "",
-        "",
-        ""
+        "<div class=bold-center-yellow>OK</span>",
+        "<div class=bold-center-yellow>OK</span>",
+        "<div class=bold-center-yellow>OK</span>",
+        "<div class=bold-center-white>n/a</span>"
       ], [
         "<div class=bold>Build Tools</div>",
-        "",
-        "",
-        "",
-        ""
+        "<div class=bold-center-green>SOLID</span>",
+        "<div class=bold-center-yellow>OK</span>",
+        "<div class=bold-center-green>SOLID</span>",
+        "<div class=bold-center-white>n/a</span>"
       ], [
         "<div class=bold>Tooling</div>",
-        "",
-        "",
-        "",
-        ""
+        "<div class=bold-center-green>SOLID</span>",
+        "<div class=bold-center-yellow>OK</span>",
+        "<div class=bold-center-green>SOLID</span>",
+        "<div class=bold-center-yellow>OK</span>"
       ], [
         "<div class=bold>Release Cycles</div>",
-        "",
-        "",
-        "",
-        ""
+        "<div class=bold-center-green>SOLID</span>",
+        "<div class=bold-center-red>POOR</span>",
+        "<div class=bold-center-yellow>OK</span>",
+        "<div class=bold-center-green>SOLID</span>"
       ], [
         "<div class=bold>Testing</div>",
-        "",
-        "",
-        "",
-        ""
+        "<div class=bold-center-yellow>OK</span>",
+        "<div class=bold-center-yellow>OK</span>",
+        "<div class=bold-center-yellow>OK</span>",
+        "<div class=bold-center-yellow>OK</span>"
       ]
     ],
     "notes": ""
@@ -345,34 +365,34 @@
         "JavaScript"
       ], [
         "<div class=bold>Enterprise</div>",
-        "",
-        "",
-        "",
-        ""
+        "<div class=bold-center-green>SOLID</span>",
+        "<div class=bold-center-red>POOR</span>",
+        "<div class=bold-center-yellow>OK</span>",
+        "<div class=bold-center-red>POOR</span>"
       ], [
         "<div class=bold>Mid-Sized</div>",
-        "",
-        "",
-        "",
-        ""
+        "<div class=bold-center-green>SOLID</span>",
+        "<div class=bold-center-yellow>OK</span>",
+        "<div class=bold-center-yellow>OK</span>",
+        "<div class=bold-center-red>POOR</span>"
       ], [
         "<div class=bold>Small Team</div>",
-        "",
-        "",
-        "",
-        ""
+        "<div class=bold-center-yellow>OK</span>",
+        "<div class=bold-center-green>SOLID</span>",
+        "<div class=bold-center-green>SOLID</span>",
+        "<div class=bold-center-yellow>OK</span>"
       ], [
         "<div class=bold>Hackathon</div>",
-        "",
-        "",
-        "",
-        ""
+        "<div class=bold-center-red>POOR</span>",
+        "<div class=bold-center-red>POOR</span>",
+        "<div class=bold-center-red>POOR</span>",
+        "<div class=bold-center-green>SOLID</span>"
       ], [
         "<div class=bold>Individual</div>",
-        "",
-        "",
-        "",
-        ""
+        "<div class=bold-center-green>SOLID</span>",
+        "<div class=bold-center-green>SOLID</span>",
+        "<div class=bold-center-green>SOLID</span>",
+        "<div class=bold-center-green>SOLID</span>"
       ]
     ],
     "notes": ""
