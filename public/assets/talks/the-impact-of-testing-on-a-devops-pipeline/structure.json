@@ -2,7 +2,6 @@
   "ORDER": [
     "cover-01",
 
-    "the-big-question",
     "what-is-devops",
     "what-is-the-agile-model",
 
@@ -15,6 +14,9 @@
     "devops-testing--cons",
 
     "devops-testing--where",
+    "the-big-question",
+    "the-netflix-question",
+
     "devops-testing--methodologies--1",
     "devops-testing--methodologies--2",
     "devops-testing--methodologies--3",
@@ -92,13 +94,6 @@
     "bio1": "<img class=bio-logo src=./assets/images/code-squid.webp /><br/><div class=\"bold bio-header\">Entrepreneur</div>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.",
     "bio2": "<img class=bio-logo src=./assets/images/leading-edje.webp /><br/><div class=bold>Senior Solutions Developer</div><div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth.",
     "notes": "I've recently been working on \"fullstack\" Azure DevOps (using Terraform) with Function App, database, and frontend code."
-  },
-
-  "the-big-question": {
-    "title": "The BIG Question",
-    "type": "panel-single",
-    "text1": "<div><span class=bold>What I didn't ask (right away)?</span> How do we test IaC?</div><ul><li><span class=code>terraform validate</span> - syntax of code.</li><li><span class=code>tfsec</span> - linting: validate for errors, deprecated syntax, and security checks.</li><li><span class=code>terraform plan</span> - dry run and/or unit testing.</li><li><span class=bold>Terratest</span> - deploying in a test environment to test results.</li><li>Azure Resource Graph REST API - integration tests against actual infrastructure.</li></ul>",
-    "notes": "This was a question I heard and didn't account for when writing this talk."
   },
 
   "what-is-devops": {
@@ -228,6 +223,21 @@
     "image": "./assets/images/can-we-test-here.svg",
     "notes": "<ul><li>Where does Continuous Testing occur?</li><li>Continuous Testing should be integrated all throughout the system to ensure proper coverage.</li></ul>"
   },
+  "the-big-question": {
+    "title": "The BIG Question",
+    "type": "panel-single",
+    "text1": "<div><span class=bold>What I didn't ask (right away)?</span></div><div>(How do we test IaC?)</div> <ul><li><span class=code>terraform validate</span> - syntax of code.</li><li><span class=code>tfsec</span> - linting: validate for errors, deprecated syntax, and security checks.</li><li><span class=code>terraform plan</span> - dry run and/or unit testing.</li><li><span class=bold>Terratest</span> - deploying in a test environment to test results.</li><li>Azure Resource Graph REST API - integration tests against actual infrastructure.</li></ul>",
+    "notes": "This was a question I heard and didn't account for when writing this talk."
+  },
+  "the-netflix-question": {
+    "title": "The NETFLIX Question",
+    "type": "panel-double",
+    "text1": "<div><span class=bold>Now does Netflix release so quickly?</div><ul><li><span class=bold-green>214 Million Subscribers</span>.</li><li><span class=bold-green>190 Countries</span>.</li></ul><ol><li>Moved to the Cloud (AWS).</li><li>Netflix's Chaos Monkey and the Simian Army.</li><li>Azure Resource Graph REST API - integration tests against actual infrastructure.</li><li>Every engineer has full access to the production environment.</li></ul>",
+    "text2": "<div class=bold>Chaos Monkey</div><br/><div class=indent>A script that runs continuously in all environments, randomly killing production instances and services in the architecture.</div><br/><div class=bold>Simian Army</div> <ul><li>Lateny Monkey (false delays)</li><li>Conformity Monkey (watches for failure of best practices)</li><li>Doctor Monkey (unhealthy instances)</li><li>Janitor Monkey (discards unused instances)</li><li>Security Monkey (eliminates identified security violations)</li><li>10-18 Monkey (localization)</li><li>Chaos Gorilla (Zone-level failure)</li></ul>",
+    "notes": "<ol><li>2008 - database corruption; couldn't ship DVDs for three days. The migration to AWS took seven years.</li><li>Wanted to be prepared for any unseen errors that could cause them equivalent or worse damage in the future. Chaos Monkey and the Simian Army.</ol>"
+  },
+
+
   "devops-testing--methodologies--1": {
     "title": "DevOps Continuous Testing: Methodologies (1/3)",
     "type": "panel-single-table",
@@ -292,7 +302,7 @@
     "title": "DevOps Continuous Testing: Best Practices",
     "type": "image-text",
     "orientation": "right",
-    "text1": "<div class=bold>Automate as Many Tests as You Can</div><ul><li>Continuous Testing means testing early and often.</li><li>Eliminate much of the risk that comes with CI/CD.</li><li>Get quick feedback on application quality.</li><li>Reduces the opportunity for new errors.</li></ul><div class=bold>Use Pair Testing & Pair Programming</div><ul><li>On non-automated tests.</li><li>Knowledge Transfer is an efficient way to train new members and maintain velocity.</li><li>One tests; the other analyzes or reviews the results.</li><li>Useful in breaking down communication barriers.</li></ul>",
+    "text1": "<div class=bold>Automate as Many Tests as You Can</div><ul><li>Continuous Testing means testing early, often, and after.</li><li>Eliminate much of the risk that comes with CI/CD.</li><li>Get quick feedback on application quality.</li><li>Reduces the opportunity for new errors.</li></ul><div class=bold>Use Pair Testing & Pair Programming</div><ul><li>On non-automated tests.</li><li>Knowledge Transfer is an efficient way to train new members and maintain velocity.</li><li>One tests; the other analyzes or reviews the results.</li><li>Useful in breaking down communication barriers.</li></ul>",
     "image": "./assets/images/agile-best-practices.svg",
     "notes": "<ol><li>Test early and often.</li><li>Eliminate risk with CI/CD.</li><li>Quick feedback on quality.</li><li>Reduce opportunity for new errors.</li></ol><div>Pair Testing / Programming</div><ul><li>Tests that are challenging to automate.</li><li>Knowledge transfer.</li><li>Test versus analyze.</li><li>Break down communication barriers.</li></ul>"
   },
