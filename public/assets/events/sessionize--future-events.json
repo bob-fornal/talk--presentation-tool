@@ -23,22 +23,6 @@
       "eventEndDate": "2024-12-06T00:00:00",
       "location": "Dallas, Texas, United States",
       "website": null
-    },
-    {
-      "id": 15344,
-      "name": "Momentum 2024",
-      "eventStartDate": "2024-10-17T00:00:00Z",
-      "eventEndDate": "2024-10-17T00:00:00Z",
-      "location": "Cincinnati, Ohio, United States",
-      "website": "https://momentumdevcon.com/"
-    },
-    {
-      "id": 16618,
-      "name": "Columbus Intro to Devops Conference",
-      "eventStartDate": "2024-10-12T00:00:00",
-      "eventEndDate": "2024-10-12T00:00:00",
-      "location": "Columbus, Ohio, United States",
-      "website": "https://www.eventbrite.com/e/the-columbus-into-to-devops-conference-tickets-997176992227?aff=oddtdtcreator"
     }
   ],
   "sessions": [

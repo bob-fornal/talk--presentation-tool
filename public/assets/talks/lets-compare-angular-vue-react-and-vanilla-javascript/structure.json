@@ -95,12 +95,12 @@
   ],
   
   "cover-01": {
-    "title": "Cage Match: Angular, Vue, React, and Vanilla JavaScript",
+    "title": "War Games (Into the Thunderdome)",
     "type": "cover-01",
     "author": "Bob Fornal",
     "bio1": "<img class=bio-logo src=./assets/images/code-squid.webp /><br/><div class=\"bold bio-header\">Entrepreneur</div>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.",
     "bio2": "<img class=bio-logo src=./assets/images/leading-edje.webp /><br/><div class=bold>Senior Solutions Developer</div><div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth.",
-    "notes": "Starting with a simple project design we will look at the various design considerations in several categories (initialization, components, services, event handling, build tooling, and testing) to compare and contrast the various strengths and weaknesses of Vanilla JavaScript, Angular, Vue, and React."
+    "notes": "<div>Angular, React, Vue, and JavaScript.</div><br/> <div>Starting with a simple project design we will look at the various design considerations in several categories (initialization, components, services, event handling, build tooling, and testing) to compare and contrast the various strengths and weaknesses of Vanilla JavaScript, Angular, Vue, and React.</div>"
   },
 
   "big-why": {
@@ -108,7 +108,7 @@
     "type": "image-only",
     "background": "transparent",
     "image": "./assets/images/why-stick-men.svg",
-    "notes": "Why? I'm here to present the various libraries and frameworks in a way that decisions can be made.<br/><br/>Why are you here? (audience interaction)"
+    "notes": "<div>Why? I'm here to present the various libraries and frameworks in a way that decisions can be made.</div><br/> <div>Why are you here? (audience interaction).</div>"
   },
 
   "what-to-compare": {
@@ -117,7 +117,7 @@
     "text1": "<h1>What?</h1><ul><li>Documentation</li><li>Community</li><li>Installation</li><li>Build Tools</li><li>Tooling</li><li>Release Cycle</li><li>Testing</li></ul>",
     "text2": "<h1>How?</h1><ul><li>Details (by Type)</li><li>Overall Comparison</li><li>Implementation (Project Size)</li></ul>",
     "text3": "<img class=lower-right-1 src=assets/images/library.png /><img class=lower-right-2 src=assets/images/framework.png /><h1>Library</h1><ul><li>Set of reusable functions.</li></ul><h1>Framework</h1><ul><li>Set of code that dictates project architecture.</li><li>Provide standard way to build and test applications.</li></ul>",
-    "notes": ""
+    "notes": "<div>We're covering Documentation, Community, Installation, Build Tools, Tooling, Release Cycles, and Testing.</div><br/> <div>We'll cover these details by type, look at an overall comparison, and implementation (what type of project).</div><br/> <div>A Library is a set of reusable functions.</div><div>A Framework is a set of code that dictates architecture (opinionated) and provides a standard way to build and test an application.</div>"
   },
   "framework-vs-structure": {
     "title": "",
@@ -147,7 +147,8 @@
         "<div class=bold>Build Tools</div>",
         "<ul class=table-ul><li><span class=code>ng build</span>.</li><li>Uses Webpack to bundle code, assets, and dependencies into optimized files for deployment.</li><li><span class=code>ng [new|generate|serve|build|test|lint]</span>.</li></ul>"
       ]
-    ]
+    ],
+    "notes": "<div>Angular</div> <ul><li>Documentation: Based on John Papa's AngularJs Documentation; it's strongly opinionated. There is historical docs.</li> <li>Community: Smallest with Google corporate support.</li> <li>Installation: ng cli (solid tool).</li> <li>Build Tools: ng build; uses Webpack to bundle code, assets, and dependencies (optimizes for deployment).</li></ul>"
   },
   "angular-details--2": {
     "title": "Angular Details (2/2)",
@@ -409,28 +410,28 @@
         "JavaScript"
       ], [
         "<div class=bold>Build Size</div>",
-        "",
-        "",
-        "",
-        ""
+        "<div class=bold-center-yellow>OK</span>",
+        "<div class=bold-center-green>SOLID</span>",
+        "<div class=bold-center-green>SOLID</span>",
+        "<div class=bold-center-green>SOLID</span>"
       ], [
         "<div class=bold>Lighthouse Score</div>",
-        "",
-        "",
-        "",
-        ""
+        "<div class=bold-center-green>SOLID</span>",
+        "<div class=bold-center-green>SOLID</span>",
+        "<div class=bold-center-green>SOLID</span>",
+        "<div class=bold-center-green>SOLID</span>"
       ], [
         "<div class=bold>Developer Tooling</div>",
-        "",
-        "",
-        "",
-        ""
+        "<div class=bold-center-green>SOLID</span>",
+        "<div class=bold-center-green>SOLID</span>",
+        "<div class=bold-center-green>SOLID</span>",
+        "<div class=bold-center-yellow>OK</span>"
       ], [
         "<div class=bold>Full Stack</div>",
-        "",
-        "",
-        "",
-        ""
+        "<div class=bold-center-green>SOLID</span>",
+        "<div class=bold-center-green>SOLID</span>",
+        "<div class=bold-center-green>SOLID</span>",
+        "<div class=bold-center-yellow>OK</span>"
       ]
     ],
     "notes": ""
