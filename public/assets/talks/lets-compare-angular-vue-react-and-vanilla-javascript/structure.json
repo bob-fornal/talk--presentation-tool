@@ -167,7 +167,8 @@
         "<div class=bold>Testing</div>",
         "<ul class=table-ul><li>Test structure installed with each <span class=code>ng generate</span> command.</li><li>Karma (test runner), Jasmine (testing framework), and Protractor (end-to-end testing).</li></ul>"
       ]
-    ]
+    ],
+    "notes": "<ul><li>Tooling: Library creation (extends ANGULAR functionality).</li> <li>Release Cycles: Regular 6-month cadence.</li> <li>Testing: installed with every component (baked in)."
   },
   
   "vue-details--1": {
