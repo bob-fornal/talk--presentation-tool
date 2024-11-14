@@ -128,16 +128,6 @@
       ]
     },
     {
-      "folder": "lets-compare-angular-vue-react-and-vanilla-javascript",
-      "title": "War Games (Into the Thunderdome)",
-      "tags": [
-        "angular",
-        "react",
-        "vue",
-        "javascript"
-      ]
-    },
-    {
       "folder": "the-impact-of-testing-on-a-devops-pipeline",
       "title": "The Impact of Testing on a DevOps Pipeline",
       "pdf": "https://www.bobs-tech-presentations.com/assets/talks/the-impact-of-testing-on-a-devops-pipeline/the-impact-of-testing-on-a-devops-pipeline-compressed.pdf",
@@ -145,6 +135,17 @@
         "cloud",
         "devops",
         "testing"
+      ]
+    },
+    {
+      "folder": "war-games--into-the-thunderdome",
+      "title": "War Games (Into the Thunderdome)",
+      "pdf": "https://www.bobs-tech-presentations.com/assets/talks/war-games--into-the-thunderdome/war-games--into-the-thunderdome--compressed.pdf",
+      "tags": [
+        "angular",
+        "react",
+        "vue",
+        "javascript"
       ]
     },
     {
