@@ -1,6 +1,14 @@
 {
   "events": [
     {
+      "id": "-5",
+      "name": "Momentum 2025",
+      "eventStartDate": "2025-10-16T00:00:00Z",
+      "eventEndDate": "2025-10-16T00:00:00Z",
+      "location": "Cincinnati, Ohio, United States",
+      "website": "https://momentumdevcon.com"  
+    },
+    {
       "id": -4,
       "name": "QA or the Highway",
       "eventStartDate": "2025-06-27T00:00:00Z",
