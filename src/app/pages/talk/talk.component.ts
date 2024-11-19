@@ -38,9 +38,10 @@ export class TalkComponent implements OnDestroy {
 
   path: string = '';
   slideKey: string = '';
-  page: StructureType = { title: '', type: '' };
+  page: StructureType = { title: '', type: '', visibility: true };
   title: string = '';
   type: string = '';
+  visibility: boolean = true;
 
   fontsizeSelected: string | undefined;
 
@@ -153,7 +154,8 @@ export class TalkComponent implements OnDestroy {
     this.type = page.type;
     this.page = page;
     this.slideKey = key;
-
+    this.visibility = page.visibility ?? true; 
+    
     const style = structure.STYLE;
     this.style.add(style.join('\n'));
 
