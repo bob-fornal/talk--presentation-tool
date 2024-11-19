@@ -41,7 +41,6 @@ export class TalkComponent implements OnDestroy {
   page: StructureType = { title: '', type: '', visibility: true };
   title: string = '';
   type: string = '';
-  visibility: boolean = true;
 
   fontsizeSelected: string | undefined;
 
@@ -154,7 +153,6 @@ export class TalkComponent implements OnDestroy {
     this.type = page.type;
     this.page = page;
     this.slideKey = key;
-    this.visibility = page.visibility ?? true; 
     
     const style = structure.STYLE;
     this.style.add(style.join('\n'));
@@ -209,7 +207,17 @@ export class TalkComponent implements OnDestroy {
     
     this.slideIndex--;
     const page: string = this.structure.ORDER[this.slideIndex];
+
+    //Check for visibility of slide
+    const currpage: StructureType = (this.structure[page] as StructureType);
+    currpage['visibility'] = currpage['visibility'] ?? true; 
+
+    if (currpage['visibility']== false){
+      this.previous();
+    }
+    else{
     this.setPage(page, this.structure);
+    }
   };
 
   end = (): void => {
