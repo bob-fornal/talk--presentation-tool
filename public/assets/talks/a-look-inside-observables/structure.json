@@ -59,7 +59,8 @@
     "type": "image-only",
     "background": "transparent",
     "image": "./assets/images/sponsors--2024-beer-city-code.png",
-    "notes": "Sponsors"
+    "notes": "Sponsors",
+    "visibility": false
   },
   "what-is-rxjs--slide": {
     "title": "What is RxJS",
