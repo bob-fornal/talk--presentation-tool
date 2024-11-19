@@ -199,17 +199,7 @@ export class TalkComponent implements OnDestroy {
 
     this.slideIndex++;
     const page: string = this.structure.ORDER[this.slideIndex];
-
-    //Check for visibility of slide
-    const currpage: StructureType = (this.structure[page] as StructureType);
-    currpage['visibility'] = currpage['visibility'] ?? true; 
-
-    if (currpage['visibility']== false){
-      this.next(); //Skip this page and display the next page if visibility is false
-    }
-    else{
-    this.setPage(page, this.structure); // Show the requested page
-    }
+    this.setPage(page, this.structure);
   };
 
   previous = (): void => {
@@ -217,17 +207,7 @@ export class TalkComponent implements OnDestroy {
     
     this.slideIndex--;
     const page: string = this.structure.ORDER[this.slideIndex];
-
-    //Check for visibility of slide
-    const currpage: StructureType = (this.structure[page] as StructureType);
-    currpage['visibility'] = currpage['visibility'] ?? true; 
-
-    if (currpage['visibility']== false){
-      this.previous(); //Skip this page and display the previous page if visibility is false
-    }
-    else{
-    this.setPage(page, this.structure); // Show the requested page
-    }
+    this.setPage(page, this.structure);
   };
 
   end = (): void => {
