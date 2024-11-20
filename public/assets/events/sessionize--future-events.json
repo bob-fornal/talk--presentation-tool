@@ -1,6 +1,14 @@
 {
   "events": [
     {
+      "id": "-6",
+      "name": "TechBash 2025",
+      "eventStartDate": "2025-11-04T00:00:00Z",
+      "eventEndDate": "2025-11-07T00:00:00Z",
+      "location": "Kalahari Resorts, Pocono Manor, Pennsylvania, United States",
+      "website": "https://techbash.com/"
+    },
+    {
       "id": "-5",
       "name": "Momentum 2025",
       "eventStartDate": "2025-10-16T00:00:00Z",
