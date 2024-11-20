@@ -38,7 +38,7 @@ export class TalkComponent implements OnDestroy {
 
   path: string = '';
   slideKey: string = '';
-  page: StructureType = { title: '', type: '', visibility: true };
+  page: StructureType = { title: '', type: '' };
   title: string = '';
   type: string = '';
 
