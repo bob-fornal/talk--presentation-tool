@@ -31,7 +31,32 @@ export class CodeService {
 
   getStructure = async (folder: string): Promise<any> => {
     const structure: Structure = (await firstValueFrom(this.http.get(`./assets/talks/${ folder }/structure.json`)) as Structure);
-    this.structure.next(structure);
+    
+    //Create a copy structure that will be finally passed
+    var tempstruct: Structure ={ ORDER: [], STYLE: [] };
+
+    //Traverse through the object
+    for(let i in structure){  
+
+      //Fetch the value variable (Either array or object) and traverse
+      let j:any = structure[i];
+
+      //Check for visibility
+      if (j['visibility'] == false){
+        try{
+          //If visibility is false, remove from the ORDER array and don't add in tempstruct 
+          tempstruct['ORDER'] = tempstruct['ORDER'].filter(item => item !== i);
+        }
+        catch(p){
+          console.error("Error in code service file", p); //Unlikely to ever occur
+        }
+      }
+      else{
+        //If visibility is true or undefined, add the key and value to tempstruct
+        tempstruct[i] = j;
+      }
+    }
+    this.structure.next(tempstruct);
   };
 
   getStructureImmediate = async (folder: string): Promise<Structure> => {

@@ -10,7 +10,6 @@ export type StructureType = {
   author?: string;
   bio1?: string;
   bio2?: string;
-  visibility?: boolean;
 
   html?: string;
   panel?: string;
