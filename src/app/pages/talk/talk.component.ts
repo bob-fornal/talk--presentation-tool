@@ -153,7 +153,7 @@ export class TalkComponent implements OnDestroy {
     this.type = page.type;
     this.page = page;
     this.slideKey = key;
-    
+
     const style = structure.STYLE;
     this.style.add(style.join('\n'));
 
