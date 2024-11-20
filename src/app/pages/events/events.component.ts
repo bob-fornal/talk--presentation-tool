@@ -13,7 +13,7 @@ export class EventsComponent implements OnDestroy, OnInit {
   speakerActive: boolean = false;
 
   activeEventsActive: boolean = false;
-  futureEventsActive: boolean = true;
+  futureEventsActive: boolean = false;
   pastEventsActive: boolean = false;
 
   sessionsAction: boolean = false;
