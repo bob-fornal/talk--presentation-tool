@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, firstValueFrom } from 'rxjs';
 
 import { LoadedScript, WebComponent } from '../interfaces/web-components';
-import { Structure } from '../interfaces/structure';
+import { Structure, StructureType } from '../interfaces/structure';
 import { Talks } from '../interfaces/talks';
 
 @Injectable({
@@ -31,22 +31,17 @@ export class CodeService {
 
   getStructure = async (folder: string): Promise<any> => {
     const structure: Structure = (await firstValueFrom(this.http.get(`./assets/talks/${ folder }/structure.json`)) as Structure);
-    var tempstruct: Structure ={ ORDER: [], STYLE: [] };
-    for(let i in structure){  
-      let j:any = structure[i];
-      if (j['visibility'] == false){
-        try{
-          tempstruct['ORDER'] = tempstruct['ORDER'].filter(item => item !== i);
-        }
-        catch(p){
-          console.error("Error in code service file", p);
-        }
+    const tempStructure: Structure = { ORDER: [], STYLE: structure.STYLE };
+
+    structure.ORDER.forEach((key: string) => {
+      const objValue: StructureType = (structure[key] as StructureType);
+      if (objValue.hasOwnProperty('visibility') === false || objValue.visibility === true) {
+        tempStructure.ORDER.push(key);
+        tempStructure[key] = structure[key];
       }
-      else{
-        tempstruct[i] = j;
-      }
-    }
-    this.structure.next(tempstruct);
+    });
+    
+    this.structure.next(tempStructure);
   };
 
   getStructureImmediate = async (folder: string): Promise<Structure> => {
