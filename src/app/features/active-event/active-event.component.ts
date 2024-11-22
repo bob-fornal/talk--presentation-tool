@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './active-event.component.scss'
 })
 export class ActiveEventComponent {
-  @Input() activeEvent: any;
+  @Input() activeEvent: any = {};
 
   hasUrl = (): boolean => {
     return this.activeEvent.hasOwnProperty('website') === true

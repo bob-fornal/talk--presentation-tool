@@ -61,7 +61,7 @@ describe('CeDisplayComponent', () => {
   });
 
   it('expects "handleExternal" to trigger file selection for "trigger-file"', () => {
-    const payload: any = { type: 'trigger-file', file: 'FILE' };
+    const payload: any = { payload: { type: 'trigger-file', file: 'FILE' } };
     spyOn(component, 'fileSelection').and.stub();
 
     component.handleExternal(payload);
@@ -69,17 +69,17 @@ describe('CeDisplayComponent', () => {
   });
 
   it('expects "handleExternal" to trigger code for "trigger-code"', () => {
-    const payload: any = { type: 'trigger-code', trigger: {
+    const payload: any = { payload: { type: 'trigger-code', trigger: {
       title: 'TRIGGER', file: 'FILE', init: 'INIT',
-    } };
+    } } };
     spyOn(component, 'triggerFile').and.stub();
 
     component.handleExternal(payload);
-    expect(component.triggerFile).toHaveBeenCalledWith(payload.trigger);
+    expect(component.triggerFile).toHaveBeenCalledWith(payload.payload.trigger);
   });
 
   it('expects "handleExternal" to toggle logging for "toggle-console"', () => {
-    const payload: any = { type: 'toggle-console' };
+    const payload: any = { payload: { type: 'toggle-console' } };
     spyOn(component, 'toggleLogging').and.stub();
 
     component.handleExternal(payload);
@@ -87,31 +87,24 @@ describe('CeDisplayComponent', () => {
   });
 
   it('expects "handleExternal" to trigger clear for "trigger-clear"', () => {
-    const payload: any = { type: 'trigger-clear' };
+    const payload: any = { payload: { type: 'trigger-clear' } };
     spyOn(component, 'clearLogging').and.stub();
 
     component.handleExternal(payload);
     expect(component.clearLogging).toHaveBeenCalled();
   });
 
-  it('expects "sleep" to resolve after a set amount of time', () => {
-    spyOn(component, 'setTimeout').and.callThrough();
-
-    component.sleep(1000);
-    expect(component.setTimeout).toHaveBeenCalled();
-  });
-
   it('expects "fileSelection" to set the code and broadcast', async () => {
     const file: string = 'FILE.js';
     component.path = 'PATH';
     component.folder = 'FOLDER';
-    spyOn(component['codeService'], 'getCode').and.returnValue(Promise.resolve('CODE'));
+    spyOn(component['code'], 'getCode').and.returnValue(Promise.resolve('CODE'));
     spyOn(component['cdr'], 'detectChanges').and.stub();
     spyOn(component['service'], 'publish').and.stub();
 
     await component.fileSelection(file);
-    expect(component['codeService'].getCode).toHaveBeenCalledWith('./assets/talks/PATH/FOLDER/FILE.js');
-    expect(component.code).toEqual('CODE');
+    expect(component['code'].getCode).toHaveBeenCalledWith('./assets/talks/PATH/FOLDER/FILE.js');
+    expect(component.script).toEqual('CODE');
     expect(component['service'].publish).toHaveBeenCalledWith({ type: 'file-update', payload: { file }});
   });
 

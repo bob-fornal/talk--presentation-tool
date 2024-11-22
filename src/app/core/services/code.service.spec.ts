@@ -1,5 +1,9 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpClientModule } from '@angular/common/http';
+import {
+  HttpClientModule,
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 import { CodeService } from './code.service';
 import { of } from 'rxjs';
@@ -10,9 +14,12 @@ describe('CodeService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
-        HttpClientModule,
-      ]
+      // imports: [
+      //   HttpClientModule,
+      // ],
+      providers: [
+        provideHttpClient(withInterceptorsFromDi()),
+      ],
     });
     service = TestBed.inject(CodeService);
   });

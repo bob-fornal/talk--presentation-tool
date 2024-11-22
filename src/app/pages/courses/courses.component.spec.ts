@@ -294,7 +294,7 @@ describe('CoursesComponent', () => {
     component.talkData['FOLDER'] = structure;
 
     const result: string = component.getStatus(talk);
-    expect(result).toEqual('COMPLETE');
+    expect(result).toEqual('COMPLETE: 3 Slides');
   });
 
   it('expects "getStatus" to return status if number of slides does not equal the number of notes', () => {

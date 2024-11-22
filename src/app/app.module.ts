@@ -1,5 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import {
+  // HttpClientModule,
+  provideHttpClient,
+  withFetch,
+} from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -89,7 +93,7 @@ import { PanelSingleTableComponent } from './slides/panel-single-table/panel-sin
     AppRoutingModule,
     RouterLink,
     FormsModule,
-    HttpClientModule,
+    // HttpClientModule,
 
     QrCodeModule,
 
@@ -108,6 +112,7 @@ import { PanelSingleTableComponent } from './slides/panel-single-table/panel-sin
   ],
   providers: [
     provideAnimationsAsync(),
+    provideHttpClient(withFetch())
   ],
   bootstrap: [
     AppComponent,

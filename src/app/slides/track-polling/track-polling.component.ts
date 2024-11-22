@@ -37,10 +37,10 @@ export class TrackPollingComponent extends AbstractSlide implements OnInit {
   ngOnInit(): void {
     const origin: string = 'https://www.bobs-tech-presentations.com';
     const page: string = 'polling';
-    const folder: string = this.route.snapshot.params['folder'];
-    const slideKey: string = this.route.snapshot.params['slideKey'];
+    const folder: string = this.route.snapshot.paramMap.get('folder')!;
+    const slideKey: string = this.route.snapshot.paramMap.get('slideKey')!;
 
-    const pollingPage: string = `${origin}/${page}/${folder}/${slideKey}`
+    const pollingPage: string = `${origin}/${page}/${folder}/${slideKey}`;
     this.pollingPage = pollingPage;
   }
 
