@@ -94,24 +94,17 @@ describe('CeDisplayComponent', () => {
     expect(component.clearLogging).toHaveBeenCalled();
   });
 
-  it('expects "sleep" to resolve after a set amount of time', () => {
-    spyOn(component, 'setTimeout').and.callThrough();
-
-    component.sleep(1000);
-    expect(component.setTimeout).toHaveBeenCalled();
-  });
-
   it('expects "fileSelection" to set the code and broadcast', async () => {
     const file: string = 'FILE.js';
     component.path = 'PATH';
     component.folder = 'FOLDER';
-    spyOn(component['codeService'], 'getCode').and.returnValue(Promise.resolve('CODE'));
+    spyOn(component['code'], 'getCode').and.returnValue(Promise.resolve('CODE'));
     spyOn(component['cdr'], 'detectChanges').and.stub();
     spyOn(component['service'], 'publish').and.stub();
 
     await component.fileSelection(file);
-    expect(component['codeService'].getCode).toHaveBeenCalledWith('./assets/talks/PATH/FOLDER/FILE.js');
-    expect(component.code).toEqual('CODE');
+    expect(component['code'].getCode).toHaveBeenCalledWith('./assets/talks/PATH/FOLDER/FILE.js');
+    expect(component.script).toEqual('CODE');
     expect(component['service'].publish).toHaveBeenCalledWith({ type: 'file-update', payload: { file }});
   });
 
