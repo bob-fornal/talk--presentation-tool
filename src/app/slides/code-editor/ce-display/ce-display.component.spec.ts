@@ -61,7 +61,7 @@ describe('CeDisplayComponent', () => {
   });
 
   it('expects "handleExternal" to trigger file selection for "trigger-file"', () => {
-    const payload: any = { type: 'trigger-file', file: 'FILE' };
+    const payload: any = { payload: { type: 'trigger-file', file: 'FILE' } };
     spyOn(component, 'fileSelection').and.stub();
 
     component.handleExternal(payload);
@@ -69,17 +69,17 @@ describe('CeDisplayComponent', () => {
   });
 
   it('expects "handleExternal" to trigger code for "trigger-code"', () => {
-    const payload: any = { type: 'trigger-code', trigger: {
+    const payload: any = { payload: { type: 'trigger-code', trigger: {
       title: 'TRIGGER', file: 'FILE', init: 'INIT',
-    } };
+    } } };
     spyOn(component, 'triggerFile').and.stub();
 
     component.handleExternal(payload);
-    expect(component.triggerFile).toHaveBeenCalledWith(payload.trigger);
+    expect(component.triggerFile).toHaveBeenCalledWith(payload.payload.trigger);
   });
 
   it('expects "handleExternal" to toggle logging for "toggle-console"', () => {
-    const payload: any = { type: 'toggle-console' };
+    const payload: any = { payload: { type: 'toggle-console' } };
     spyOn(component, 'toggleLogging').and.stub();
 
     component.handleExternal(payload);
@@ -87,7 +87,7 @@ describe('CeDisplayComponent', () => {
   });
 
   it('expects "handleExternal" to trigger clear for "trigger-clear"', () => {
-    const payload: any = { type: 'trigger-clear' };
+    const payload: any = { payload: { type: 'trigger-clear' } };
     spyOn(component, 'clearLogging').and.stub();
 
     component.handleExternal(payload);
