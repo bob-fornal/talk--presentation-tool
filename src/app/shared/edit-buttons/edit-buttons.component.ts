@@ -13,7 +13,7 @@ export class EditButtonsComponent {
   @Input() cancelEvent: any;
   @Input() editNotes: any;
 
-  @Output() toggle: EventEmitter<boolean> = new EventEmitter()
+  @Output() toggle: EventEmitter<boolean> = new EventEmitter();
 
   triggerToggleView = (): void => {
     this.toggleView = !this.toggleView;
