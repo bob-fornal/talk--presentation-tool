@@ -7,7 +7,7 @@
     }
     <div class="conference-detail">{{dateAdjust(data.eventStartDate, data.eventEndDate)}}</div>
     <div class="conference-detail last">{{data.location}}</div>
-    @if (data.joinData!.length > 0) {
+    @if (data.hasOwnProperty('joinData') && data.joinData!.length > 0) {
       <ul class="conference-sessions">
         @for (session of includedSessions; track session) {
           <li>
