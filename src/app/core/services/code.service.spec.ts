@@ -47,11 +47,32 @@ describe('CodeService', () => {
     expect(service.structure.next).toHaveBeenCalledWith(talk);
   });
 
+  it('expects visibilty flagged key to be discarded', async () =>{
+    const folder: string = 'FOLDER';
+    const paramTalk: Structure = {
+      ORDER: ['one', 'two'],
+      STYLE: [],
+      "one": { title: 'one' , type: "cover", visibility: false},
+      "two": { title: 'two', type: "slide"}
+    };
+    const resultTalk: Structure = { 
+      ORDER: ["two"],  STYLE: [],  
+      'two': { title: 'two',  type: 'slide'}
+    };
+
+    spyOn(service['http'], 'get').and.returnValue(of(paramTalk));
+    await service.getStructure(folder);
+
+    service.structure.subscribe((structure) => {
+    expect(structure).toEqual(resultTalk);
+    });
+
+  });
+
   it('expects "getStructureImmediate" to set a talk structure', async () => {
     const folder: string = 'FOLDER';
     const talk: Structure = { ORDER: [], STYLE: [] };
     spyOn(service['http'], 'get').and.returnValue(of(talk));
-
     const result: Structure = await service.getStructureImmediate(folder);
     expect(result).toEqual(talk);
   });
