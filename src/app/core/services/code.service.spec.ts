@@ -73,6 +73,7 @@ describe('CodeService', () => {
     const folder: string = 'FOLDER';
     const talk: Structure = { ORDER: [], STYLE: [] };
     spyOn(service['http'], 'get').and.returnValue(of(talk));
+    
     const result: Structure = await service.getStructureImmediate(folder);
     expect(result).toEqual(talk);
   });
