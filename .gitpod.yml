@@ -7,15 +7,4 @@ image:
   file: .gitpod.Dockerfile
 tasks:
   - init: npm install && npm run build
-    command: npm run start
-  - command: npm run test
-ports:
-  - port: 5900
-    onOpen: ignore
-  - port: 6080 
-    onOpen: ignore
-  - port: 4200
-    onOpen: open-browser
-  - port: 9876
-    onOpen: open-browser
 
