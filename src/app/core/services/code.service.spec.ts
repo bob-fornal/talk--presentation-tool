@@ -50,18 +50,19 @@ describe('CodeService', () => {
   it('expects "getStructure" to filter out slides according to visibility', async () =>{
     const folder: string = 'FOLDER';
     const paramTalk: Structure = {
-      ORDER: ['one', 'two'], STYLE: [],
+      ORDER: ['one', 'two', 'three'], STYLE: [],
       "one": { title: 'one' , type: "cover", visibility: false},
-      "two": { title: 'two', type: "slide"}};
+      "two": { title: 'two', type: "slide"},
+      "three": { title: 'three', type: "slide", visibility: true}};
     const resultTalk: Structure = { 
-      ORDER: ["two"],  STYLE: [],  
-      'two': { title: 'two',  type: 'slide'}};
+      ORDER: ['two', 'three'],  STYLE: [],  
+      "two": { title: 'two',  type: 'slide'},
+      "three": { title: 'three', type: "slide", visibility: true}};
     spyOn(service['http'], 'get').and.returnValue(of(paramTalk));
+    spyOn(service.structure, 'next').and.stub();
     
     await service.getStructure(folder);
-    service.structure.subscribe((structure) => {
-    expect(structure).toEqual(resultTalk);
-    });
+    expect(service.structure.next).toHaveBeenCalledWith(resultTalk);
   });
 
   it('expects "getStructureImmediate" to set a talk structure', async () => {
