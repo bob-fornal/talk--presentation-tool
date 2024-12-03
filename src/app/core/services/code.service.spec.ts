@@ -57,8 +57,8 @@ describe('CodeService', () => {
       ORDER: ["two"],  STYLE: [],  
       'two': { title: 'two',  type: 'slide'}};
     spyOn(service['http'], 'get').and.returnValue(of(paramTalk));
+    
     await service.getStructure(folder);
-
     service.structure.subscribe((structure) => {
     expect(structure).toEqual(resultTalk);
     });
