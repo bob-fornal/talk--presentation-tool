@@ -64,6 +64,11 @@ This project was designed to provide a means of doing a presentation with code e
 - [x] Sitemap Generator
 - [ ] Make it dynamic / access `assets` data
 
+## Pipeline
+
+- [x] Adding PR Template
+- [x] Adding Pipeline Checks to Merge to Main
+
 ## FUTURE USE-CASES
 
 ### Dynamic Loading of Slide Pages
