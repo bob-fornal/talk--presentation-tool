@@ -289,7 +289,7 @@
         "Activity",
         "Detail"
       ], [
-        "<div class=bold>Regresstion Testing</div>",
+        "<div class=bold>Regression Testing</div>",
         "<ul class=table-ul><li>Ensuring no changes in performance, functionality, or dependencies after correcting errors in dependent software, maintaining system performance.</li></ul>"
       ], [
         "<div class=bold>User-Acceptance Testing</div>",
