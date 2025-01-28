@@ -7,7 +7,8 @@ import { AbstractSlide } from '../../abstract.slide';
 @Component({
   selector: 'ce-editor',
   templateUrl: './ce-editor.component.html',
-  styleUrl: './ce-editor.component.scss'
+  styleUrl: './ce-editor.component.scss',
+  standalone: false,
 })
 export class CeEditorComponent extends AbstractSlide {
   @Input() title: string = '';

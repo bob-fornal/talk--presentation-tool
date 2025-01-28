@@ -5,7 +5,8 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 @Component({
   selector: 'edit-notes-dialog',
   templateUrl: './edit-notes-dialog.component.html',
-  styleUrl: './edit-notes-dialog.component.scss'
+  styleUrl: './edit-notes-dialog.component.scss',
+  standalone: false,
 })
 export class EditNotesDialogComponent {
 

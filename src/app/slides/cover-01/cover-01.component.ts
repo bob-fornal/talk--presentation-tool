@@ -9,6 +9,7 @@ import { AbstractSlide } from '../abstract.slide';
     '../cover.shared.scss',
     './cover-01.component.scss'
   ],
+  standalone: false,
 })
 export class Cover01Component extends AbstractSlide {
   @Input() title: string = '';

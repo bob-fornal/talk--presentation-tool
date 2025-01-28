@@ -16,7 +16,8 @@ import { LoggingService } from '../../../core/services/logging.service';
   styleUrls: [
     '../../panel.shared.scss',
     './ce-display.component.scss',
-  ]
+  ],
+  standalone: false,
 })
 export class CeDisplayComponent implements OnChanges, OnDestroy {
   @Input() title: string = '';

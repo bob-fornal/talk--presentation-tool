@@ -3,7 +3,8 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'active-event',
   templateUrl: './active-event.component.html',
-  styleUrl: './active-event.component.scss'
+  styleUrl: './active-event.component.scss',
+  standalone: false,
 })
 export class ActiveEventComponent {
   @Input() activeEvent: any = {};

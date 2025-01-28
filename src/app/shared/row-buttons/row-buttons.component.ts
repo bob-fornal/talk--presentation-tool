@@ -3,7 +3,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
 @Component({
   selector: 'row-buttons',
   templateUrl: './row-buttons.component.html',
-  styleUrl: './row-buttons.component.scss'
+  styleUrl: './row-buttons.component.scss',
+  standalone: false,
 })
 export class RowButtonsComponent {
   @Output() add: EventEmitter<number> = new EventEmitter();

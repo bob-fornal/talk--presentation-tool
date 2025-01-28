@@ -5,7 +5,8 @@ import { Speaker } from '../../core/interfaces/events';
 @Component({
   selector: 'content-biography',
   templateUrl: './biography.component.html',
-  styleUrl: './biography.component.scss'
+  styleUrl: './biography.component.scss',
+  standalone: false,
 })
 export class BiographyComponent {
   @Input() speaker: Speaker = {

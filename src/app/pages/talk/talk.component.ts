@@ -15,6 +15,7 @@ import { WebSocketService } from '../../core/services/web-socket-service.service
 @Component({
   selector: 'app-talk',
   templateUrl: './talk.component.html',
+  standalone: false,
 })
 export class TalkComponent implements OnDestroy {
   sendExternal: Subject<any> = new Subject();

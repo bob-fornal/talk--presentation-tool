@@ -3,7 +3,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 @Component({
   selector: 'edit-buttons',
   templateUrl: './edit-buttons.component.html',
-  styleUrl: './edit-buttons.component.scss'
+  styleUrl: './edit-buttons.component.scss',
+  standalone: false,
 })
 export class EditButtonsComponent {
   @Input() editing: boolean = false;

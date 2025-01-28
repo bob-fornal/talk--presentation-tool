@@ -10,7 +10,8 @@ import { WebSocketService } from '../../core/services/web-socket-service.service
 @Component({
   selector: 'app-polling',
   templateUrl: './polling.component.html',
-  styleUrl: './polling.component.scss'
+  styleUrl: './polling.component.scss',
+  standalone: false,
 })
 export class PollingComponent {
   structure: Structure = { ORDER: [], STYLE: [] };

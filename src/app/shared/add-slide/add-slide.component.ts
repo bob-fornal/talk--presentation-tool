@@ -8,7 +8,8 @@ import { AddSlideDialogComponent } from '../add-slide-dialog/add-slide-dialog.co
 @Component({
   selector: 'add-slide',
   templateUrl: './add-slide.component.html',
-  styleUrl: './add-slide.component.scss'
+  styleUrl: './add-slide.component.scss',
+  standalone: false,
 })
 export class AddSlideComponent implements OnDestroy {
   @Input() index: number = -1;

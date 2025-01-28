@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'qr-code',
   template: '<div>qr-code</div>',
+  standalone: false,
 })
 export class MockQrCodeComponent {
   @Input() class: string = '';

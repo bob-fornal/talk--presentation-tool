@@ -13,6 +13,7 @@ import { MockEditNotesDialogComponent } from '../_spec/components/mock-edit-note
 @Component({
   selector: 'test-component',
   template: '<h1>Test Component</h1>',
+  standalone: false,
 })
 class TestComponent extends AbstractSlide {
   override component: any = MockEditNotesDialogComponent;

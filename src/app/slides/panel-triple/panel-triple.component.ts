@@ -8,6 +8,7 @@ import { AbstractSlide } from '../abstract.slide';
     '../panel.shared.scss',
     './panel-triple.component.scss'
   ],
+  standalone: false,
 })
 export class PanelTripleComponent extends AbstractSlide {
   @Input() title: string = '';
