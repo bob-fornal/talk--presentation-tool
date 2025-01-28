@@ -4,6 +4,7 @@ import { Trigger } from '../../core/interfaces/triggers';
 @Component({
   selector: 'ce-display',
   template: '<h1>ce-display</h1>',
+  standalone: false,
 })
 export class MockCeDisplayComponent {
   @Input() title: string = '';

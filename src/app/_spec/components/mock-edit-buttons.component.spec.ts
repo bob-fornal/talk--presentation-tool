@@ -3,6 +3,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 @Component({
   selector: 'edit-buttons',
   template: '<div>edit-buttons</div>',
+  standalone: false,
 })
 export class MockEditButtonsComponent {
   @Input() editing: string = '';
