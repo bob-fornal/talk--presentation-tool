@@ -7,7 +7,8 @@ import { Trigger } from '../../core/interfaces/triggers';
 @Component({
   selector: 'code-editor',
   templateUrl: './code-editor.component.html',
-  styleUrl: './code-editor.component.scss'
+  styleUrl: './code-editor.component.scss',
+  standalone: false,
 })
 export class CodeEditorComponent extends AbstractSlide {
   @Input() title: string = '';

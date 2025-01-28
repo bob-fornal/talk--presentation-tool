@@ -7,7 +7,8 @@ import { EventsService } from '../../core/services/events.service';
 @Component({
   selector: 'app-events',
   templateUrl: './events.component.html',
-  styleUrl: './events.component.scss'
+  styleUrl: './events.component.scss',
+  standalone: false,
 })
 export class EventsComponent implements OnDestroy, OnInit {
   speakerActive: boolean = false;

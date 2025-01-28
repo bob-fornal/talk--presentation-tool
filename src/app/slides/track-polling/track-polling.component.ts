@@ -12,7 +12,8 @@ import { WebSocketService } from '../../core/services/web-socket-service.service
   styleUrls: [
     '../panel.shared.scss',
     './track-polling.component.scss',
-  ]
+  ],
+  standalone: false,
 })
 export class TrackPollingComponent extends AbstractSlide implements OnInit {
   @Input() title: string = '';

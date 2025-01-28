@@ -4,7 +4,8 @@ import { Session, SessionEvent } from '../../core/interfaces/events';
 @Component({
   selector: 'content-conference',
   templateUrl: './conference.component.html',
-  styleUrl: './conference.component.scss'
+  styleUrl: './conference.component.scss',
+  standalone: false,
 })
 export class ConferenceComponent {
   @Input() data: SessionEvent = {

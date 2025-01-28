@@ -9,6 +9,7 @@ import { AbstractSlide } from '../abstract.slide';
     '../panel.shared.scss',
     './image-only.component.scss'
   ],
+  standalone: false,
 })
 export class ImageOnlyComponent extends AbstractSlide  {
   @Input() title: string = '';

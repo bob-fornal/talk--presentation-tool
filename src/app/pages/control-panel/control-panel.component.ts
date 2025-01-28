@@ -16,7 +16,8 @@ import { SidenavWidthService } from './sidenav-width.service';
 @Component({
   selector: 'control-panel',
   templateUrl: './control-panel.component.html',
-  styleUrl: './control-panel.component.scss'
+  styleUrl: './control-panel.component.scss',
+  standalone: false,
 })
 export class ControlPanelComponent implements OnDestroy {
   // @HostListener('document:keydown', ['$event'])

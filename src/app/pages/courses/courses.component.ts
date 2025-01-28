@@ -12,7 +12,8 @@ import { StyleService } from '../../core/services/style.service';
 @Component({
   selector: 'app-courses',
   templateUrl: './courses.component.html',
-  styleUrl: './courses.component.scss'
+  styleUrl: './courses.component.scss',
+  standalone: false,
 })
 export class CoursesComponent implements OnDestroy {
   talks: Array<Talk> = [];

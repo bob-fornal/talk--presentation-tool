@@ -10,7 +10,8 @@ import { SlideInformationService } from '../../core/services/slide-information.s
 @Component({
   selector: 'add-slide-dialog',
   templateUrl: './add-slide-dialog.component.html',
-  styleUrl: './add-slide-dialog.component.scss'
+  styleUrl: './add-slide-dialog.component.scss',
+  standalone: false,
 })
 export class AddSlideDialogComponent {
   @ViewChild('autosize') autosize!: CdkTextareaAutosize;

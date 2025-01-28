@@ -18,7 +18,8 @@ import { saveAs } from 'file-saver';
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
-  styleUrl: './edit.component.scss'
+  styleUrl: './edit.component.scss',
+  standalone: false,
 })
 export class EditComponent implements OnDestroy, OnInit {
   icons: { [key: string]: { type: string, icon: string } } = slideTypeIcons;

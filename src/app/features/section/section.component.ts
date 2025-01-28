@@ -3,7 +3,8 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'content-section',
   templateUrl: './section.component.html',
-  styleUrl: './section.component.scss'
+  styleUrl: './section.component.scss',
+  standalone: false,
 })
 export class SectionComponent {
   @Input() index: number = 0;
