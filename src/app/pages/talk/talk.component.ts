@@ -38,6 +38,7 @@ export class TalkComponent implements OnDestroy {
   slideIndex: number = 0;
 
   path: string = '';
+  template: string = '';
   slideKey: string = '';
   page: StructureType = { title: '', type: '' };
   title: string = '';
@@ -76,7 +77,10 @@ export class TalkComponent implements OnDestroy {
 
   init = (): void => {
     const path: string = this.route.snapshot.paramMap.get('folder')!;
+    const template: string = this.route.snapshot.paramMap.get('template')!;
+    
     this.path = path;
+    this.template = template;
     this.code.getStructure(path);
   };
 
@@ -155,8 +159,7 @@ export class TalkComponent implements OnDestroy {
     this.page = page;
     this.slideKey = key;
 
-    const style = structure.STYLE;
-    this.style.add(style.join('\n'));
+    this.setMergedStyle(structure.STYLE);
 
     this.zone.run(this.zoneRun.bind(this, key));
 
@@ -164,6 +167,28 @@ export class TalkComponent implements OnDestroy {
       this.handleWebComponent();
     }
   };
+
+  setMergedStyle(structureStyle: Array<string>) {
+    const globalAdjustments = this.code.templates.value[this.template].ADJUSTMENT;
+    let style: string = structureStyle.join('\n');
+    globalAdjustments.forEach((adjust: string) => {
+      const [key, value] = adjust.split(': ');
+      const [parent, child] = key.split('/');
+      const parentIndex: number = style.indexOf(parent);
+      const childIndex: number = style.indexOf(child, parentIndex + 1);
+      const colonIndex: number = style.indexOf(':', childIndex + 1);
+      const semicolonIndex: number = style.indexOf(';', colonIndex + 1);
+      style = style.substring(0, colonIndex + 2) + ' ' + value + style.substring(semicolonIndex + 1,);
+    });
+    
+    if (this.code.templates.value[this.template].hasOwnProperty('STYLE')) {
+      const globalStyle: string = this.code.templates.value[this.template].STYLE!.join('\n');
+      style += '\n' + globalStyle;
+    }
+    console.log(style);
+
+    this.style.add(style);
+  }
 
   interval: number = -1;
   handleKeepAlive = (structure: Structure): void => {
@@ -186,7 +211,7 @@ export class TalkComponent implements OnDestroy {
   };
 
   zoneRun = (key: string): void => {
-    this.router.navigate(['talk', this.path, key]);
+    this.router.navigate(['talk', this.path, this.template, key]);
   };
 
   home = (): void => {

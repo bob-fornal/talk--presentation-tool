@@ -5,6 +5,7 @@ import { BehaviorSubject, firstValueFrom } from 'rxjs';
 import { LoadedScript, WebComponent } from '../interfaces/web-components';
 import { Structure, StructureType } from '../interfaces/structure';
 import { Talks } from '../interfaces/talks';
+import { TemplateType } from '../interfaces/template-type';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,8 @@ export class CodeService {
   talks: BehaviorSubject<Talks> = new BehaviorSubject<Talks>({ STYLE: [], TAGS: [], TALKS: []});
   structure: BehaviorSubject<Structure> = new BehaviorSubject<Structure>({ ORDER: [], STYLE: [] });
 
+  templates: BehaviorSubject<{ [key:string]: TemplateType }> = new BehaviorSubject<{ [key:string]: TemplateType }>({});
+
   constructor(private http: HttpClient) {}
 
   sleep = (ms: number) => new Promise((resolve) => this.setTimeout(resolve, ms));
@@ -27,17 +30,26 @@ export class CodeService {
   init = async (): Promise<void> => {
     const talks: any = await firstValueFrom(this.http.get('./assets/talks/talks.json'));
     this.talks.next(talks);
+    
+    const templates: any = await firstValueFrom(this.http.get('./assets/talks/GLOBAL/configuration.json'));
+    this.templates.next(templates);
   };
 
   getStructure = async (folder: string): Promise<any> => {
     const structure: Structure = (await firstValueFrom(this.http.get(`./assets/talks/${ folder }/structure.json`)) as Structure);
+    const global: { [key: string]: StructureType } = (await firstValueFrom(this.http.get('./assets/talks/GLOBAL/slides.json')) as { [key: string]: StructureType });
     const tempStructure: Structure = { ORDER: [], STYLE: structure.STYLE };
 
     structure.ORDER.forEach((key: string) => {
       const objValue: StructureType = (structure[key] as StructureType);
       if (objValue.hasOwnProperty('visibility') === false || objValue.visibility === true) {
         tempStructure.ORDER.push(key);
-        tempStructure[key] = structure[key];
+        if ((structure[key] as StructureType).type.startsWith('GLOBAL/') === false) {
+          tempStructure[key] = structure[key];
+        } else {
+          const globalKey: string = (structure[key] as StructureType).type.replace('GLOBAL/', '');
+          tempStructure[key] = { ...global[globalKey] };
+        }
       }
     });
     

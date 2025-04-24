@@ -1,0 +1,29 @@
+{
+  "DEFAULT": {
+    "title": "Dark (DEFAULT)",
+    "key": "DEFAULT",
+    "ADJUSTMENT": [
+      ".outer-wrapper/background: url(\"./assets/images/--bg-grid--green.webp\");",
+      ".outer-wrapper/color: #69f0ae;"
+    ]
+  },
+  "light": {
+    "title": "Light w/ Hexagons",
+    "key": "light",
+    "ADJUSTMENT": [
+      ".outer-wrapper/background: url(\"./assets/images/--bg-pale--off-white.webp\");",
+      ".outer-wrapper/color: #62b03d;"
+    ],
+    "STYLE": [
+      ".cover-wrapper {",
+      "  .cover--lower {",
+      "    background-color: transparent !important;",
+      "    border-top: 8px solid #62b03d !important;",
+      "  }",
+      "  .cover--bio.left {",
+      "    left: 12em !important;",
+      "  }",
+      "}"
+    ]
+  }
+}

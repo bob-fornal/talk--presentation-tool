@@ -22,7 +22,7 @@
   ],
   "STYLE": [
     ".outer-wrapper {",
-    "  background: url(\"./assets/images/grid--green.webp\");",
+    "  background: url(\"./assets/images/--bg-grid--green.webp\");",
     "  background-repeat: no-repeat;",
     "  background-size: cover;",
     "  color: #69f0ae;",

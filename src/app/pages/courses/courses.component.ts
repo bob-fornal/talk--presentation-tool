@@ -8,6 +8,7 @@ import { Tag } from '../../core/interfaces/tag';
 
 import { CodeService } from '../../core/services/code.service';
 import { StyleService } from '../../core/services/style.service';
+import { TemplateType } from '../../core/interfaces/template-type';
 
 @Component({
   selector: 'app-courses',
@@ -27,12 +28,17 @@ export class CoursesComponent implements OnDestroy {
   showPDF: boolean = false;
   showTags: boolean = false;
 
+  templates: { [key:string]: TemplateType } = {};
+  selectedTemplateKey: string = 'DEFAULT';
+  templateList: Array<TemplateType> = [];
+
   constructor(
     private code: CodeService,
     private router: Router,
     private style: StyleService
   ) {
     this.subscriptions.add(this.code.talks.subscribe(this.handleTalks.bind(this)));
+    this.subscriptions.add(this.code.templates.subscribe(this.handleTemplates.bind(this)));
   }
 
   private subscriptions: Subscription = new Subscription();
@@ -51,6 +57,18 @@ export class CoursesComponent implements OnDestroy {
     this.style.add(style.join('\n'));
 
     this.captureTalks(orderedTalks);
+  };
+
+  handleTemplates = (templates: { [key:string]: TemplateType }): void => {
+    this.templates = templates;
+    this.selectedTemplateKey = 'DEFAULT';
+    
+    const list: Array<string> = Object.keys(templates);
+    this.templateList = [];
+    list.forEach((key: string) => {
+      this.templateList.push(templates[key]);
+    });
+    console.log({ templates, list: this.templateList });
   };
 
   handleTalksSort = (a: Talk, b: Talk): number => {
@@ -98,7 +116,7 @@ export class CoursesComponent implements OnDestroy {
 
   clickTalkEvent = async (talk: Talk): Promise<void> => {
     const structure: Structure = await this.code.getStructureImmediate(talk.folder);
-    this.router.navigate(['talk', talk.folder, structure.ORDER[0]]);
+    this.router.navigate(['talk', talk.folder, this.selectedTemplateKey, structure.ORDER[0]]);
   };
 
   captureTalks = async (talks: Array<Talk>): Promise<void> => {
