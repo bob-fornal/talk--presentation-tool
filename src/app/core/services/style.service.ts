@@ -22,7 +22,7 @@ export class StyleService {
       style.setAttribute('data-type', 'PRIMARY-CSS');
       style.appendChild(node);
       head?.appendChild(style);
-      } else {
+    } else {
       exists.replaceChildren(node);
     }
   };
