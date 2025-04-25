@@ -72,6 +72,11 @@ body {
   }
 
   .navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+
     position: fixed;
     bottom: 2vh;
     right: 2vw;
@@ -110,9 +115,12 @@ body {
   min-width: 1vw;
   padding: 0 1vw;
 
+  &.padded-right {
+    margin-right: 1vw;
+  }
   &.padded {
     margin-right: 1vw;
-    margin-bottom: 1vw;  
+    margin-bottom: 1vw;
   }
 
   .mat-icon {
@@ -191,4 +199,13 @@ body {
     color: #000000;
     background-color: #69f0ae;
   }
+}
+
+
+.width-100-percent {
+  max-width: 100% !important;
+}
+.shift-up-and-right {
+  margin-left: 18em;
+  margin-top: -10em;
 }

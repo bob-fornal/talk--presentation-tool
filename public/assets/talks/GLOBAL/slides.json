@@ -4,7 +4,7 @@
     "type": "image-only",
     "background": "transparent",
     "image": "./assets/images/--edje-about.webp",
-    "imageClass": "width-100-percent",
+    "imageClass": "width-100-percent shift-up-and-right",
     "notes": "Leading EDJE, Inc."
   },
 

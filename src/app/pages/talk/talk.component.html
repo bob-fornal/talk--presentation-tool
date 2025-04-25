@@ -50,25 +50,25 @@
 
     <nav class="navigation">
       @if (control === false) {
-        <button class="btn padded" mat-flat-button routerLink="/courses">
+        <button class="btn padded-right" mat-flat-button routerLink="/courses">
           <mat-icon>home</mat-icon>
         </button>
-        <button class="btn padded" mat-flat-button (click)="home()">
+        <button class="btn padded-right" mat-flat-button (click)="home()">
           <mat-icon>first_page</mat-icon>
         </button>
-        <button class="btn padded" mat-flat-button (click)="previous()">
+        <button class="btn padded-right" mat-flat-button (click)="previous()">
           <mat-icon>navigate_before</mat-icon>
         </button>
-        <button class="btn padded" mat-flat-button (click)="next()">
+        <button class="btn padded-right" mat-flat-button (click)="next()">
           <mat-icon>navigate_next</mat-icon>
         </button>
-        <button class="btn padded" mat-flat-button (click)="end()">
+        <button class="btn padded-right" mat-flat-button (click)="end()">
           <mat-icon>last_page</mat-icon>
         </button>
       }
       <span class="position"><span>{{ slideIndex + 1}}</span> / <span>{{ structure.ORDER.length }}</span></span>
       @if (control === false) {
-        <button class="btn padded" mat-flat-button (click)="openControlPanel()">
+        <button class="btn padded-right" mat-flat-button (click)="openControlPanel()">
           <img src="./assets/images/remote.svg">
         </button>
       }

@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
@@ -16,7 +16,7 @@ import { TemplateType } from '../../core/interfaces/template-type';
   styleUrl: './courses.component.scss',
   standalone: false,
 })
-export class CoursesComponent implements OnDestroy {
+export class CoursesComponent implements OnDestroy, OnInit {
   talks: Array<Talk> = [];
   tags: Array<Tag> = [];
 
@@ -29,13 +29,14 @@ export class CoursesComponent implements OnDestroy {
   showTags: boolean = false;
 
   templates: { [key:string]: TemplateType } = {};
-  selectedTemplateKey: string = 'DEFAULT';
+  selectedTemplateKey: string = '';
   templateList: Array<TemplateType> = [];
 
   constructor(
+    private changeDetectorRef: ChangeDetectorRef,
     private code: CodeService,
     private router: Router,
-    private style: StyleService
+    private style: StyleService,
   ) {
     this.subscriptions.add(this.code.talks.subscribe(this.handleTalks.bind(this)));
     this.subscriptions.add(this.code.templates.subscribe(this.handleTemplates.bind(this)));
@@ -44,6 +45,12 @@ export class CoursesComponent implements OnDestroy {
   private subscriptions: Subscription = new Subscription();
   ngOnDestroy(): void {
     this.subscriptions.unsubscribe();
+  }
+
+  ngOnInit(): void {
+    this.selectedTemplateKey = this.style.getTemplate();
+    this.changeDetectorRef.detectChanges();
+    console.log(this.selectedTemplateKey);
   }
 
   handleTalks = (wrapper: Talks): void => {
@@ -61,14 +68,16 @@ export class CoursesComponent implements OnDestroy {
 
   handleTemplates = (templates: { [key:string]: TemplateType }): void => {
     this.templates = templates;
-    this.selectedTemplateKey = 'DEFAULT';
     
     const list: Array<string> = Object.keys(templates);
     this.templateList = [];
     list.forEach((key: string) => {
       this.templateList.push(templates[key]);
     });
-    console.log({ templates, list: this.templateList });
+  };
+
+  onTemplateChange = (event: any): void => {
+    this.style.setTemplate(event);
   };
 
   handleTalksSort = (a: Talk, b: Talk): number => {

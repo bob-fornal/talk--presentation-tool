@@ -44,9 +44,6 @@
     "}",
     ".indent {",
     "  margin-bottom: 1em;",
-    "}",
-    ".width-100-percent {",
-    "  max-width: 100% !important;",
     "}"
   ],
 

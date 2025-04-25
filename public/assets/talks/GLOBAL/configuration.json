@@ -23,6 +23,17 @@
       "  .cover--bio.left {",
       "    left: 12em !important;",
       "  }",
+      "}",
+      ".navigation {",
+      "  .position {",
+      "    color: white;",
+      "  }",
+      "}",
+      ".panel-wrapper {",
+      "  .panel--text {",
+      "    background-color: rgba(100, 100, 100, 0.1) !important;",
+      "    color: inherit !important;",
+      "  }",
       "}"
     ]
   }
