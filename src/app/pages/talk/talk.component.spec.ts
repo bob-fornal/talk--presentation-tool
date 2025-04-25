@@ -231,6 +231,7 @@ describe('TalkComponent', () => {
         type: 'TYPE',
       }
     };
+    spyOn(component, 'setMergedStyle').and.stub();
     spyOn(component['style'], 'add').and.stub();
     spyOn(component['zone'], 'run').and.stub();
 
@@ -240,17 +241,17 @@ describe('TalkComponent', () => {
     expect(component.type).toEqual('TYPE');
     expect(component.page).toEqual((structure as any)[key]);
     expect(component.slideKey).toEqual(key);
-    expect(component['style'].add).toHaveBeenCalledWith('style1\nstyle2');
     expect(component['zone'].run).toHaveBeenCalledWith(jasmine.any(Function));
   });
 
   it('expects "zoneRun" to navigate to talk, path, key', () => {
     const key: string = 'KEY';
     component.path = 'PATH';
+    component.template = 'TEMPLATE';
     spyOn(component['router'], 'navigate').and.stub();
 
     component.zoneRun(key);
-    expect(component['router'].navigate).toHaveBeenCalledWith(['talk', 'PATH', 'KEY']);
+    expect(component['router'].navigate).toHaveBeenCalledWith(['talk', 'PATH', 'TEMPLATE', 'KEY']);
   });
 
   it('expects "home" to set the page to index 0', () => {

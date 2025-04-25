@@ -14,17 +14,24 @@ describe('StyleService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('expects "add" to append a styel string', () => {
+  it('expects "add" to append a style string', () => {
     const css: string = 'CSS';
     let headNode;
     let styleNode;
+    let attribute;
     const head: any = {
+      querySelector: (node: string) => {
+        return null;
+      },
       appendChild: (node: any) => {
         headNode = node;
       },
     };
     const style: any = {
       type: '',
+      setAttribute: (key: string, value: string) => {
+        attribute = { [key]: value };
+      },
       appendChild: (node: any) => {
         styleNode = node;
       },
