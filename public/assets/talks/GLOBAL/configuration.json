@@ -34,6 +34,30 @@
       "    background-color: rgba(100, 100, 100, 0.1) !important;",
       "    color: inherit !important;",
       "  }",
+      "}",
+
+      ".code-editor-wrapper {",
+      "  position: relative;",
+      "  top: -4em;",
+      "}",
+
+      ".bronze {",
+      "  color: #8a4400 !important;",
+      "}",
+      ".silver {",
+      "  color: #838383 !important;",
+      "}",
+      ".gold {",
+      "  color: #8c7600 !important;",
+      "}",
+      ".bold-green, .bold-center-green, .italic-green {",
+      "  color: #095f35 !important;",
+      "}",
+      ".indent-color, .yellow, .code, .bold-center-yellow {",
+      "  color: #8c8c00 !important;",
+      "}",
+      ".bold-center-white {",
+      "  color: black;",
       "}"
     ]
   }

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
@@ -50,7 +50,6 @@ export class CoursesComponent implements OnDestroy, OnInit {
   ngOnInit(): void {
     this.selectedTemplateKey = this.style.getTemplate();
     this.changeDetectorRef.detectChanges();
-    console.log(this.selectedTemplateKey);
   }
 
   handleTalks = (wrapper: Talks): void => {
