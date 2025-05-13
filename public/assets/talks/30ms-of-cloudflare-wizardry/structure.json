@@ -1,14 +1,45 @@
 {
   "ORDER": [
-    "cover-01"
+    "cover-01",
+    "why-are-we-here"
   ],
-  "STYLE": [],
+  "STYLE": [
+    ".outer-wrapper {",
+    "  background: url(\"./assets/images/grid--green.webp\");",
+    "  background-repeat: no-repeat;",
+    "  background-size: cover;",
+    "  color: #69f0ae;",
+    "  font-family: Arial, sans-serif;",
+    "}",
+    ".cover-wrapper .cover--bio {",
+    "  width: 42em !important;",
+    "}",
+    ".cover--bio .bio-logo {",
+    "  margin-bottom: 1em;",
+    "}",
+    ".right-align {",
+    "  display: flex;",
+    "  flex-direction: column;",
+    "  align-items: end;",
+    "}",
+    ".left-align {",
+    "  display: flex;",
+    "  flex-direction: column;",
+    "  align-items: start;",
+    "}"
+  ],
 
   "cover-01": {
     "title": "30ms of Cloudflare Wizardry with Code and Coffee: TLDR;",
     "type": "cover-01",
     "author": "Bob Fornal & Lwin Maung",
-    "bio1": "<div class=bold>Bob Fornal</div>\n<div class=bold>Senior Solutions Developer</div>\n<div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth.",
-    "bio2": "<div class=bold>Lwin Maung</div>\n<div class=bold>Microsoft MVP | Managing Director</div>\n<div class=\"bold bio-header\">Accolade Solutions</div>Full stack polyglot development consultant with passion for creating IoT, mobile, web, and cloud products with a flair for user experience and user interface design."
+    "bio1": "<div class=right-align> <img class=bio-logo src=\"./assets/images/bob-top-hat.webp\" /> <div class=bold>Senior Solutions Developer II, Leading EDJE, Inc.</div> <div>Passionate about learning, testing, mentoring, speaking, and personal growth.</div> </div>",
+    "bio2": "<div class=left-align> <img class=bio-logo src=\"./assets/images/lwin.webp\" /> <div class=bold>Microsoft MVP | Managing Director, Accolade Solutions</div> <div>Full stack polyglot development consultant with passion for creating IoT, mobile, web, and cloud products with a flair for user experience and user interface design.</div> </div>"
+  },
+  "why-are-we-here": {
+    "title": "We are here ...",
+    "type": "panel-double",
+    "text1": "<div class=bold>Lwin & Bob</div> <ul> <li>Found common excitement.</li> </ul> <div> <span class=bold>Super Script</span>: <span>Built a tool for managing ...</span> </div> <ul> <li>Redirects</li> <li>Split-tests</li> <li>Dynamic Content</li> </ul> <div>This script handles millions of Worker Script hits per day.",
+    "text2": "<div class=bold>Cloudflare</div><ul> <li>Worker Scripts</li> <li>Key Vaults</li> <li>D1 Database</li> </ul>"
   }
 }
