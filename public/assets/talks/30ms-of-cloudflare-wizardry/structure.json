@@ -1,0 +1,14 @@
+{
+  "ORDER": [
+    "cover-01"
+  ],
+  "STYLE": [],
+
+  "cover-01": {
+    "title": "30ms of Cloudflare Wizardry with Code and Coffee: TLDR;",
+    "type": "cover-01",
+    "author": "Bob Fornal & Lwin Maung",
+    "bio1": "<div class=bold>Bob Fornal</div>\n<div class=bold>Senior Solutions Developer</div>\n<div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth.",
+    "bio2": "<div class=bold>Lwin Maung</div>\n<div class=bold>Microsoft MVP | Managing Director</div>\n<div class=\"bold bio-header\">Accolade Solutions</div>Full stack polyglot development consultant with passion for creating IoT, mobile, web, and cloud products with a flair for user experience and user interface design."
+  }
+}
