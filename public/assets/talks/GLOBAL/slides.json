@@ -8,6 +8,15 @@
     "notes": "Leading EDJE, Inc."
   },
 
+  "edje-about--centered": {
+    "title": "",
+    "type": "image-only",
+    "background": "transparent",
+    "image": "./assets/images/--edje-about.webp",
+    "imageClass": "width-100-percent",
+    "notes": "Leading EDJE, Inc."
+  },
+
   "conference--beer-city-code": {
     "title": "",
     "type": "image-only",

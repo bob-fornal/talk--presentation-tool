@@ -1,9 +1,15 @@
 {
   "ORDER": [
     "cover-01",
+    "edje-about",
     "why-are-we-here",
-    "the-demo",
+    "leaf-use-case",
 
+    "worker-script-notes",
+    "key-vault-notes",
+
+    "the-demo",
+    "demo-overview",
     "demo-step-01",
     "demo-step-02",
     "demo-step-03",
@@ -11,7 +17,8 @@
     "demo-step-05a",
     "demo-step-05b",
     "demo-step-06",
-    "demo-step-07"
+    "demo-step-07",
+    "demo-overview"
   ],
   "STYLE": [
     ".outer-wrapper {",
@@ -40,6 +47,13 @@
     ".green {",
     "  color: #69f0ae;",
     "}",
+    ".orange {",
+    "  color: #f0c369;",
+    "}",
+    ".code {",
+    "  color: yellow;",
+    "  font-family: Menlo, Monaco, \"Courier New\", monospace;",
+    "}",
     ".center {",
     "  display: flex;",
     "  flex-direction: column;",
@@ -54,6 +68,16 @@
     ".match-height {",
     "  max-height: 100%;",
     "  max-width: 100%;",
+    "}",
+    ".fit-width {",
+    "  width: 100%;",
+    "}",
+    ".panel--image:has(.talk-overview) {",
+    "  background-color: rgba(207, 228, 255, 0.85);",
+    "}",
+    ".talk-overview {",
+    "  max-width: 100% !important;",
+    "  max-height: 100% !important;",
     "}"
   ],
 
@@ -64,20 +88,49 @@
     "bio1": "<div class=right-align> <img class=bio-logo src=\"./assets/images/bob-top-hat.webp\" /> <div class=bold>Senior Solutions Developer II, Leading EDJE, Inc.</div> <div>Passionate about learning, testing, mentoring, speaking, and personal growth.</div> </div>",
     "bio2": "<div class=left-align> <img class=bio-logo src=\"./assets/images/lwin.webp\" /> <div class=bold>Microsoft MVP | Managing Director, Accolade Solutions</div> <div>Full stack polyglot development consultant with passion for creating IoT, mobile, web, and cloud products with a flair for user experience and user interface design.</div> </div>"
   },
-  "why-are-we-here": {
-    "title": "We are here ...",
-    "type": "panel-double",
-    "text1": "<div class=bold>Lwin & Bob</div> <ul> <li>Found common excitement.</li> </ul> <div> <span class=bold>Super Script</span>: <span>Built a tool for managing ...</span> </div> <ul> <li>Redirects</li> <li>Split-tests</li> <li>Dynamic Content</li> </ul> <div>This script handles millions of Worker Script hits per day.",
-    "text2": "<div class=bold>Cloudflare</div><ul> <li>Worker Scripts</li> <li>Key Vaults</li> <li>D1 Database</li> </ul>"
+  "edje-about": {
+    "title": "",
+    "type": "GLOBAL/edje-about--centered",
+    "visibility": true
   },
+  "why-are-we-here": {
+    "title": "We Are Here ...",
+    "type": "panel-double",
+    "text1": "<div class=green>Lwin & Bob</div> <ul> <li>Found common excitement.</li> </ul> <img class=fit-width src=\"./assets/images/cloudflare-talk-hits-per-day.webp\" /> ",
+    "text2": "<div class=green>Cloudflare</div><ul> <li>Worker Scripts</li> <li>Key Vaults</li> <li>D1 Database</li> </ul> <div> <span class=green>Super Script</span>: <span>Built a tool for managing ...</span> </div> <ul> <li>Redirects</li> <li>Split-tests</li> <li>Dynamic Content</li> </ul> <div>This script handles millions of Worker Script hits per day."
+  },
+  "leaf-use-case": {
+    "title": "Our Use Case",
+    "type": "panel-single",
+    "text1": "<div class=green>Non-Functional Requirements ...</div> <ul> <li><span class=orange>Sub-60ms</span> change in page responsiveness (achieved ~36ms).</li> </ul> <div class=green>Functional Requirements ...</div> <ul> <li>Maintain Cookie for source IP.</li> <li><span class=orange>Redirects</span> moved to central location (previously, separate WP manged lists).</li> <li><span class=orange>Split-Tests</span> (2-6 destinations, percent driven).</li> <li><span class=orange>Single-Param</span> page manipulations.</li> <li><span class=orange>Multi-Param</span> page manipulations (phone numbers tied to marketing campaign via URL params).</li> <li>(future) <span class=orange>One-Armed Bandit Split-Testing</span></li> </ul> <div class=green>Outcomes ...</div> <ul> <li>Increased revenue: <span class=orange>$1.5M USD/week</span>.</li> <li><span class=orange>Faster response</span> to Testing Results.</li> <li>Better <span class=orange>campaign management</span>.</li> <li><span class=orange>Fixes in PROD faster</span>, pending future code fixes.</li> </ul>"
+  },
+
+  "worker-script-notes": {
+    "title": "Worker Scripts",
+    "type": "panel-double",
+    "text1": "<div class=green>Thoughts ...</div> <ul> <li>Think \"man-in-the-middle.\"</li> <li>Cannot be a dynamic page (i.e. SPA: Angular, React, Vue - SSR is fine).</li> </ul> <div class=green>Findings ...</div> <ul> <li>60-second cache.</li> <li>Connect: Routes, DB, KV, Secrets (and more).</li> <li>Free 100,000 requests/day (paid, no limit).</li> <li>Module Pattern (<span class=code>import/export</span>, multiple files).</li> <li><span class=code>ctx.waitUntil</span> (extend lifetime of worker).</li> <li>Cron Jobs.</li> </ul>",
+    "text2": "<div class=green>Use-cases ...</div> <ul> <li>Manipulate DOM Elements.</li> <li>Add Cookies.</li> <li>Reroute/Redirect (301 & 302 Status Codes).</li> <li>API, keep in mind cache-buster, cores, paging.</li> <li>Access to Domain, Path, and Parameters.</li> </ul> <div class=green>Deployment</div> <ul> <li>GitHub Actions (build process).</li> <li>Connect to Github via Settings (was able to not build).</li> </ul>"
+  },
+  "key-vault-notes": {
+    "title": "Key Vaults",
+    "type": "panel-double",
+    "text1": "<div class=green>Findings ...</div> <ul> <li>Low Latency, Edge Compute.</li> <li>1,200 RW/5-minutes (have to rethink large number of writes).</li> </ul> <div class=green>Data ...</div> <ul> <li><span class=code>key</span> (512B)</li> <li><span class=code>value</span> (5MB)</li> <li><span class=code>metadata</span> (1kB)</li> </ul>",
+    "text2": "<div class=green>Use-cases ...</div> <ul> <li>Writing using a \"named route.\"</li> <li>Lookup <span class=code>{ [domain]: [KV-name] }</span>.</li> <li>Use <span class=code>env[kv-name].get(...)</span>.</li> </ul>"
+  },
+
   "the-demo": {
     "title": "Live Demo",
     "type": "panel-double",
     "text1": "<div class=center><br/> <div class=bold-larger>https://cloudflaretalk.com</div><br/> <div><img src=\"./assets/images/cloudflare-talk-qr-code.webp\" /></div> <br/><div class=bold-larger>https://cloudflaretalk.com</div></div>",
-    "text2": "<div>We will be examining...</div> <ul><li>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ul>",
+    "text2": "<div>We will be examining...</div> <ol><li>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ol>",
     "notes": "<a href=\"https://www.cloudflaretalk.com/talk-admin\">https://www.cloudflaretalk.com/talk-admin</a>"
   },
-
+  "demo-overview": {
+    "title": "",
+    "type": "image-only",
+    "image": "./assets/images/cloudflare-talk-overview.svg",
+    "imageClass": "talk-overview"
+  },
   "demo-step-01": {
     "title": "Registering a User",
     "type": "panel-double",
