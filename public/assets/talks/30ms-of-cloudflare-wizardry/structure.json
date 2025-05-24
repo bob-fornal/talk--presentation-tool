@@ -1,7 +1,13 @@
 {
   "ORDER": [
     "cover-01",
-    "why-are-we-here"
+    "why-are-we-here",
+    "the-demo",
+
+    "demo-step-01",
+    "demo-step-02",
+    "demo-step-03",
+    "demo-step-04"
   ],
   "STYLE": [
     ".outer-wrapper {",
@@ -26,6 +32,24 @@
     "  display: flex;",
     "  flex-direction: column;",
     "  align-items: start;",
+    "}",
+    ".green {",
+    "  color: #69f0ae;",
+    "}",
+    ".center {",
+    "  display: flex;",
+    "  flex-direction: column;",
+    "  align-items: center;",
+    "  height: 100%;",
+    "}",
+    ".bold-larger {",
+    "  color: #69f0ae;",
+    "  font-weight: bold;",
+    "  font-size: larger;",
+    "}",
+    ".match-height {",
+    "  max-height: 100%;",
+    "  max-width: 100%;",
     "}"
   ],
 
@@ -41,5 +65,37 @@
     "type": "panel-double",
     "text1": "<div class=bold>Lwin & Bob</div> <ul> <li>Found common excitement.</li> </ul> <div> <span class=bold>Super Script</span>: <span>Built a tool for managing ...</span> </div> <ul> <li>Redirects</li> <li>Split-tests</li> <li>Dynamic Content</li> </ul> <div>This script handles millions of Worker Script hits per day.",
     "text2": "<div class=bold>Cloudflare</div><ul> <li>Worker Scripts</li> <li>Key Vaults</li> <li>D1 Database</li> </ul>"
+  },
+  "the-demo": {
+    "title": "Live Demo",
+    "type": "panel-double",
+    "text1": "<div class=center><br/> <div class=bold-larger>https://cloudflaretalk.com</div><br/> <div><img src=\"./assets/images/cloudflare-talk-qr-code.webp\" /></div> <br/><div class=bold-larger>https://cloudflaretalk.com</div></div>",
+    "text2": "<div>We will be examining...</div> <ul><li>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ul>",
+    "notes": "https://www.cloudflaretalk.com/talk-admin"
+  },
+
+  "demo-step-01": {
+    "title": "Registering a User",
+    "type": "panel-double",
+    "text1": "<div>Step 01 ...</div> <ul><li class=green>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ul>",
+    "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-01.webp\" /></div>"
+  },
+  "demo-step-02": {
+    "title": "View Empty Page",
+    "type": "panel-double",
+    "text1": "<div>Step 02 ...</div> <ul><li>Registering a User (uses API, KV, DB)</li> <li class=green>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ul>",
+    "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-02.webp\" /></div>"
+  },
+  "demo-step-03": {
+    "title": "View User Page",
+    "type": "panel-double",
+    "text1": "<div>Step 03 ...</div> <ul><li>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li class=green>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ul>",
+    "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-03.webp\" /></div>"
+  },
+  "demo-step-04": {
+    "title": "List of Registered Users (Refresh)",
+    "type": "panel-double",
+    "text1": "<div>Step 04 ...</div> <ul><li>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li class=green>Refresh (uses API & Selection for Split Test)</li> <li>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ul>",
+    "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-04.webp\" /></div>"
   }
 }
