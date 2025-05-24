@@ -2,13 +2,16 @@ import { BehaviorSubject } from "rxjs"
 
 import { Structure } from "../../core/interfaces/structure";
 import { Talks } from "../../core/interfaces/talks"
+import { TemplateType } from "../../core/interfaces/template-type";
 
-const mockTalks: BehaviorSubject<Talks> = new BehaviorSubject<Talks>({ STYLE: [], TAGS: [], TALKS: []});
 const mockStructure: BehaviorSubject<Structure> = new BehaviorSubject<Structure>({ ORDER: [], STYLE: [] });
+const mockTalks: BehaviorSubject<Talks> = new BehaviorSubject<Talks>({ STYLE: [], TAGS: [], TALKS: []});
+const MockTemplates: BehaviorSubject<{ [key:string]: TemplateType }> = new BehaviorSubject<{ [key:string]: TemplateType }>({});
 
 export const MockCodeService: any = {
-  talks: mockTalks,
   structure: mockStructure,
+  talks: mockTalks,
+  templates: MockTemplates,
 
   init: async () => ({}),
   getStructure: async (folder: string) => ({}),

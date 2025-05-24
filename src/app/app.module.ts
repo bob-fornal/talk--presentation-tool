@@ -26,6 +26,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list'
+import { MatSelectModule } from '@angular/material/select';
 
 import { MonacoEditorModule } from 'ngx-monaco-editor-v2';
 
@@ -107,6 +108,7 @@ import { PanelSingleTableComponent } from './slides/panel-single-table/panel-sin
     MatIconModule,
     MatInputModule,
     MatListModule,
+    MatSelectModule,
 
     MonacoEditorModule.forRoot(),
   ],

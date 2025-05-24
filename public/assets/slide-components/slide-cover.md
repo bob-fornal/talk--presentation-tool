@@ -17,7 +17,7 @@ This is the implementation of this code.
     "location": "/assets/slides/slide-cover/slide-cover.js",
     "data": {
       "title": "<span>A Look Inside Observables</span><br/><span class=\"smaller align-right\">Bob Fornal</span>",
-      "background": "/assets/images/grid--green.webp",
+      "background": "/assets/images/--bg-grid--green.webp",
       "image1": "/assets/images/code-squid.webp",
       "image2": "/assets/images/leading-edje.webp",
       "text1": "<div class=bold>Entrepreneur</div>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.",
