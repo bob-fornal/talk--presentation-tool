@@ -1,0 +1,64 @@
+{
+  "DEFAULT": {
+    "title": "Dark (DEFAULT)",
+    "key": "DEFAULT",
+    "ADJUSTMENT": [
+      ".outer-wrapper/background: url(\"./assets/images/--bg-grid--green.webp\");",
+      ".outer-wrapper/color: #69f0ae;"
+    ]
+  },
+  "light": {
+    "title": "Light w/ Hexagons",
+    "key": "light",
+    "ADJUSTMENT": [
+      ".outer-wrapper/background: url(\"./assets/images/--bg-pale--off-white.webp\");",
+      ".outer-wrapper/color: #62b03d;"
+    ],
+    "STYLE": [
+      ".cover-wrapper {",
+      "  .cover--lower {",
+      "    background-color: transparent !important;",
+      "    border-top: 8px solid #62b03d !important;",
+      "  }",
+      "  .cover--bio.left {",
+      "    left: 12em !important;",
+      "  }",
+      "}",
+      ".navigation {",
+      "  .position {",
+      "    color: white;",
+      "  }",
+      "}",
+      ".panel-wrapper {",
+      "  .panel--text {",
+      "    background-color: rgba(100, 100, 100, 0.1) !important;",
+      "    color: inherit !important;",
+      "  }",
+      "}",
+
+      ".code-editor-wrapper {",
+      "  position: relative;",
+      "  top: -4em;",
+      "}",
+
+      ".bronze {",
+      "  color: #8a4400 !important;",
+      "}",
+      ".silver {",
+      "  color: #838383 !important;",
+      "}",
+      ".gold {",
+      "  color: #8c7600 !important;",
+      "}",
+      ".bold-green, .bold-center-green, .italic-green {",
+      "  color: #095f35 !important;",
+      "}",
+      ".indent-color, .yellow, .code, .bold-center-yellow {",
+      "  color: #8c8c00 !important;",
+      "}",
+      ".bold-center-white {",
+      "  color: black;",
+      "}"
+    ]
+  }
+}

@@ -1,6 +1,7 @@
 {
   "ORDER": [
     "cover-01",
+    "edje-about",
     "conference--slide--beer-city-code",
     "what-is-rxjs--slide",
     "history--slide",
@@ -17,7 +18,7 @@
   ],
   "STYLE": [
     ".outer-wrapper {",
-    "  background: url(\"./assets/images/grid--green.webp\");",
+    "  background: url(\"./assets/images/--bg-grid--green.webp\");",
     "  background-repeat: no-repeat;",
     "  background-size: cover;",
     "  color: #69f0ae;",
@@ -54,12 +55,13 @@
     "bio2": "<img class=bio-logo src=\"./assets/images/leading-edje.webp\" />\n<br/>\n<div class=bold>Senior Solutions Developer</div>\n<div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth.",
     "notes": ""
   },
+  "edje-about": {
+    "title": "",
+    "type": "GLOBAL/edje-about"
+  },
   "conference--slide--beer-city-code": {
     "title": "",
-    "type": "image-only",
-    "background": "transparent",
-    "image": "./assets/images/sponsors--2024-beer-city-code.png",
-    "notes": "Sponsors",
+    "type": "GLOBAL/conference--beer-city-code",
     "visibility": false
   },
   "what-is-rxjs--slide": {

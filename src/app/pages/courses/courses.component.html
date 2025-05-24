@@ -19,6 +19,11 @@
           (change)="showTags = !showTags">
           Show Talk Tags
         </mat-checkbox>
+        <select class="select-functionality" [(ngModel)]="selectedTemplateKey" (ngModelChange)="onTemplateChange($event)">
+          @for (template of templateList; track template;) {
+            <option [value]="template.key">{{ template.title }}</option>
+          }
+        </select>
       </div>
       <div class="tag-list-wrapper">
         @for (tag of tags; track tag; let i = $index;) {
