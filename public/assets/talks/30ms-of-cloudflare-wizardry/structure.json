@@ -7,7 +7,11 @@
     "demo-step-01",
     "demo-step-02",
     "demo-step-03",
-    "demo-step-04"
+    "demo-step-04",
+    "demo-step-05a",
+    "demo-step-05b",
+    "demo-step-06",
+    "demo-step-07"
   ],
   "STYLE": [
     ".outer-wrapper {",
@@ -71,31 +75,55 @@
     "type": "panel-double",
     "text1": "<div class=center><br/> <div class=bold-larger>https://cloudflaretalk.com</div><br/> <div><img src=\"./assets/images/cloudflare-talk-qr-code.webp\" /></div> <br/><div class=bold-larger>https://cloudflaretalk.com</div></div>",
     "text2": "<div>We will be examining...</div> <ul><li>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ul>",
-    "notes": "https://www.cloudflaretalk.com/talk-admin"
+    "notes": "<a href=\"https://www.cloudflaretalk.com/talk-admin\">https://www.cloudflaretalk.com/talk-admin</a>"
   },
 
   "demo-step-01": {
     "title": "Registering a User",
     "type": "panel-double",
-    "text1": "<div>Step 01 ...</div> <ul><li class=green>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ul>",
+    "text1": "<div>Step 01 ...</div> <ol><li class=green>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ol>",
     "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-01.webp\" /></div>"
   },
   "demo-step-02": {
     "title": "View Empty Page",
     "type": "panel-double",
-    "text1": "<div>Step 02 ...</div> <ul><li>Registering a User (uses API, KV, DB)</li> <li class=green>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ul>",
+    "text1": "<div>Step 02 ...</div> <ol><li>Registering a User (uses API, KV, DB)</li> <li class=green>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ol>",
     "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-02.webp\" /></div>"
   },
   "demo-step-03": {
     "title": "View User Page",
     "type": "panel-double",
-    "text1": "<div>Step 03 ...</div> <ul><li>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li class=green>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ul>",
+    "text1": "<div>Step 03 ...</div> <ol><li>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li class=green>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ol>",
     "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-03.webp\" /></div>"
   },
   "demo-step-04": {
     "title": "List of Registered Users (Refresh)",
     "type": "panel-double",
-    "text1": "<div>Step 04 ...</div> <ul><li>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li class=green>Refresh (uses API & Selection for Split Test)</li> <li>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ul>",
+    "text1": "<div>Step 04 ...</div> <ol><li>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li class=green>Refresh (uses API & Selection for Split Test)</li> <li>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ol>",
     "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-04.webp\" /></div>"
+  },
+  "demo-step-05a": {
+    "title": "Attached Cookie (screen)",
+    "type": "panel-double",
+    "text1": "<div>Step 05 ...</div> <ol><li>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li class=green>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ol>",
+    "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-05a.webp\" /></div>"
+  },
+  "demo-step-05b": {
+    "title": "Attached Cookie (dev tools)",
+    "type": "panel-double",
+    "text1": "<div>Step 05 ...</div> <ol><li>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li class=green>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ol>",
+    "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-05b.webp\" /></div>"
+  },
+  "demo-step-06": {
+    "title": "Redirect",
+    "type": "panel-double",
+    "text1": "<div>Step 06 ...</div> <ol><li>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li>Cookie (attached, uses DB)</li> <li class=green>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ol>",
+    "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-06.webp\" /></div>"
+  },
+  "demo-step-07": {
+    "title": "Redirect",
+    "type": "panel-double",
+    "text1": "<div>Step 07 ...</div> <ol><li>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li class=green>Split-Test (to selected pages, uses KV)</li></ol>",
+    "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-07.webp\" /></div>"
   }
 }
