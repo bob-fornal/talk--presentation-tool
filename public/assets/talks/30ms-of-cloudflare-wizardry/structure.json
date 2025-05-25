@@ -101,7 +101,8 @@
     "type": "cover-01",
     "author": "Bob Fornal & Lwin Maung",
     "bio1": "<div class=right-align> <img class=bio-logo src=\"./assets/images/bob-top-hat.webp\" /> <div class=bold>Senior Solutions Developer II, Leading EDJE, Inc.</div> <div>Passionate about learning, testing, mentoring, speaking, and personal growth.</div> </div>",
-    "bio2": "<div class=left-align> <img class=bio-logo src=\"./assets/images/lwin.webp\" /> <div class=bold>Microsoft MVP | Managing Director, Accolade Solutions</div> <div>Full stack polyglot development consultant with passion for creating IoT, mobile, web, and cloud products with a flair for user experience and user interface design.</div> </div>"
+    "bio2": "<div class=left-align> <img class=bio-logo src=\"./assets/images/lwin.webp\" /> <div class=bold>Microsoft MVP | Managing Director, Accolade Solutions</div> <div>Full stack polyglot development consultant with passion for creating IoT, mobile, web, and cloud products with a flair for user experience and user interface design.</div> </div>",
+    "notes": "This talk came about because I (Bob) broke production. <br/><br/> At a conference I (Bob) saw a reported error and tried to diagnose it in our Cloudflare Super Script. <br/><br/> I (He) found the issue and clicked Deploy on the way out the door. <br/><br/> 30ms later, things started to fail and this talk was born."
   },
   "edje-about": {
     "title": "",
@@ -112,12 +113,14 @@
     "title": "We Are Here ...",
     "type": "panel-double",
     "text1": "<div class=green>Lwin & Bob</div> <ul> <li>Found common excitement.</li> </ul> <img class=fit-width src=\"./assets/images/cloudflare-talk-hits-per-day.webp\" /> ",
-    "text2": "<div class=green>Cloudflare</div><ul> <li>Worker Scripts</li> <li>Key Vaults</li> <li>D1 Database</li> </ul> <div> <span class=green>Super Script</span>: <span>Built a tool for managing ...</span> </div> <ul> <li>Redirects</li> <li>Split-tests</li> <li>Dynamic Content</li> </ul> <div>This script handles millions of Worker Script hits per day."
+    "text2": "<div class=green>Cloudflare</div><ul> <li>Worker Scripts</li> <li>Key Vaults</li> <li>D1 Database</li> </ul> <div> <span class=green>Super Script</span>: <span>Built a tool for managing ...</span> </div> <ul> <li>Redirects</li> <li>Split-tests</li> <li>Dynamic Content</li> </ul> <div>This script handles millions of Worker Script hits per day.",
+    "notes": "<ul> <li>For our client, we had to build tooling to allow for consolidation of redirects, split tests, and content transformation based on path and URL parameters.</li> <li>The decision to use Cloudflare made for us; it was the right decision.</li> <li>These captures show 3M requests (average is 4M) at an average of 36ms!</li> </ul>"
   },
   "leaf-use-case": {
     "title": "Our Use Case",
     "type": "panel-single",
-    "text1": "<div class=green>Non-Functional Requirements ...</div> <ul> <li><span class=orange>Sub-60ms</span> change in page responsiveness (achieved ~36ms).</li> </ul> <div class=green>Functional Requirements ...</div> <ul> <li>Maintain Cookie for source IP.</li> <li><span class=orange>Redirects</span> moved to central location (previously, separate WP manged lists).</li> <li><span class=orange>Split-Tests</span> (2-6 destinations, percent driven).</li> <li><span class=orange>Single-Param</span> page manipulations.</li> <li><span class=orange>Multi-Param</span> page manipulations (phone numbers tied to marketing campaign via URL params).</li> <li>(future) <span class=orange>One-Armed Bandit Split-Testing</span></li> </ul> <div class=green>Outcomes ...</div> <ul> <li>Increased revenue: <span class=orange>$1.5M USD/week</span>.</li> <li><span class=orange>Faster response</span> to Testing Results.</li> <li>Better <span class=orange>campaign management</span>.</li> <li><span class=orange>Fixes in PROD faster</span>, pending future code fixes.</li> </ul>"
+    "text1": "<div class=green>Non-Functional Requirements ...</div> <ul> <li><span class=orange>Sub-60ms</span> change in page responsiveness (achieved ~36ms).</li> </ul> <div class=green>Functional Requirements ...</div> <ul> <li>Maintain Cookie for source IP.</li> <li><span class=orange>Redirects</span> moved to central location (previously, separate WP manged lists).</li> <li><span class=orange>Split-Tests</span> (2-6 destinations, percent driven).</li> <li><span class=orange>Single-Param</span> page manipulations.</li> <li><span class=orange>Multi-Param</span> page manipulations (phone numbers tied to marketing campaign via URL params).</li> <li>(future) <span class=orange>One-Armed Bandit Split-Testing</span></li> </ul> <div class=green>Outcomes ...</div> <ul> <li>Increased revenue: <span class=orange>$1.5M USD/week</span>.</li> <li><span class=orange>Faster response</span> to Testing Results.</li> <li>Better <span class=orange>campaign management</span>.</li> <li><span class=orange>Fixes in PROD faster</span>, pending future code fixes.</li> </ul>",
+    "notes": "The first round of testing on the tool showed an increase of 120ms in Time-to-First-Pixel. <br/> This was unacceptable, we had to keep it to sub-60ms."
   },
 
   "worker-script-notes": {
