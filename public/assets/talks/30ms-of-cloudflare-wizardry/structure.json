@@ -7,18 +7,30 @@
 
     "worker-script-notes",
     "key-vault-notes",
+    "database-d1-notes",
+
+    "cloudflare-architecture",
 
     "the-demo",
-    "demo-overview",
+    "demo-overview-1",
     "demo-step-01",
+    "api-code-01",
     "demo-step-02",
     "demo-step-03",
+    "transformation-code",
     "demo-step-04",
+    "api-code-02",
     "demo-step-05a",
+    "cookie-code",
     "demo-step-05b",
     "demo-step-06",
+    "redirect-code",
     "demo-step-07",
-    "demo-overview"
+    "split-test-code",
+    "demo-overview-2",
+
+    "summary-and-best-practices",
+    "time-for-questions"
   ],
   "STYLE": [
     ".outer-wrapper {",
@@ -78,6 +90,9 @@
     ".talk-overview {",
     "  max-width: 100% !important;",
     "  max-height: 100% !important;",
+    "}",
+    "td.center {",
+    "  text-align: left !important;",
     "}"
   ],
 
@@ -109,13 +124,39 @@
     "title": "Worker Scripts",
     "type": "panel-double",
     "text1": "<div class=green>Thoughts ...</div> <ul> <li>Think \"man-in-the-middle.\"</li> <li>Cannot be a dynamic page (i.e. SPA: Angular, React, Vue - SSR is fine).</li> </ul> <div class=green>Findings ...</div> <ul> <li>60-second cache.</li> <li>Connect: Routes, DB, KV, Secrets (and more).</li> <li>Free 100,000 requests/day (paid, no limit).</li> <li>Module Pattern (<span class=code>import/export</span>, multiple files).</li> <li><span class=code>ctx.waitUntil</span> (extend lifetime of worker).</li> <li>Cron Jobs.</li> </ul>",
-    "text2": "<div class=green>Use-cases ...</div> <ul> <li>Manipulate DOM Elements.</li> <li>Add Cookies.</li> <li>Reroute/Redirect (301 & 302 Status Codes).</li> <li>API, keep in mind cache-buster, cores, paging.</li> <li>Access to Domain, Path, and Parameters.</li> </ul> <div class=green>Deployment</div> <ul> <li>GitHub Actions (build process).</li> <li>Connect to Github via Settings (was able to not build).</li> </ul>"
+    "text2": "<div class=green>Use-cases ...</div> <ul> <li>Manipulate DOM Elements.</li> <li>Add Cookies.</li> <li>Reroute/Redirect (301 & 302 Status Codes).</li> <li>API, keep in mind cache-buster, CORS, paging.</li> <li>Access to Domain, Path, and Parameters.</li> </ul> <div class=green>Deployment</div> <ul> <li>GitHub Actions (build process).</li> <li>Connect to Github via Settings (was able to not build).</li> </ul>"
   },
   "key-vault-notes": {
     "title": "Key Vaults",
     "type": "panel-double",
     "text1": "<div class=green>Findings ...</div> <ul> <li>Low Latency, Edge Compute.</li> <li>1,200 RW/5-minutes (have to rethink large number of writes).</li> </ul> <div class=green>Data ...</div> <ul> <li><span class=code>key</span> (512B)</li> <li><span class=code>value</span> (5MB)</li> <li><span class=code>metadata</span> (1kB)</li> </ul>",
     "text2": "<div class=green>Use-cases ...</div> <ul> <li>Writing using a \"named route.\"</li> <li>Lookup <span class=code>{ [domain]: [KV-name] }</span>.</li> <li>Use <span class=code>env[kv-name].get(...)</span>.</li> </ul>"
+  },
+  "database-d1-notes": {
+    "title": "D1 Databases",
+    "type": "panel-double",
+    "text1": "<div class=orange>D1 is Cloudflare's managed, serverless database with SQLite's SQL semantics, built-in disaster recovery, and Worker and HTTP API access.</div> <br/> <div class=green>Findings ...</div> <ul> <li>500 MB (free), 10GB (paid)</li> <li>100 Columns/Table, Unlimited Rows</li> </ul>",
+    "text2": ""
+  },
+
+  "cloudflare-architecture": {
+    "title": "Cloudflare Architecture",
+    "type": "panel-single-table",
+    "table": [
+      ["", "Rehost", "Replatform", "Refactor/Build"],
+      [
+        "<div class=green>App Components</div> <ul> <li>Frontend</li> <li>Data storage</li> <li>Backend</li> </ul>",
+        "",
+        "<ul> <li>Optimize content.</li> <li>Data at the edge.</li> </ul>",
+        "<ul> <li>Fullstack apps and programmable platforms.</li> <li>Data storage with low-latency availability.</li> </ul>"
+      ],
+      [
+        "<div class=green>App Infrastructure</div> <ul> <li>Servers</li> <li>Delivery</li> <li>Security</li> <li>Observability</li> <li>AI Capabilities</li> </ul>",
+        "<ul> <li>Video & image transformation</li> <li>Load balancing</li> <li>Global DNS resolution</li> <li>Protection: bots, DDoS, & zero-day attacks</li> <li>Compliance visibility</li> <ul>",
+        "<ul> <li>Dynamic traffic management</li> <li>Stop threats, malicious component, API attacks, & AI bots</li> <li>Extend compliance visibility</li> <ul>",
+        "<ul> <li>Serverless development platform</li> <li>AI image generation at the edge</li> <li>Secure privileged access to dev infrastructure</li> <li>Extend visibility across workloads</li> <li>AI interference at edge</li> <li>Secure and moderate LLM content</li> <ul>"
+      ]
+    ]
   },
 
   "the-demo": {
@@ -125,7 +166,7 @@
     "text2": "<div>We will be examining...</div> <ol><li>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ol>",
     "notes": "<a href=\"https://www.cloudflaretalk.com/talk-admin\">https://www.cloudflaretalk.com/talk-admin</a>"
   },
-  "demo-overview": {
+  "demo-overview-1": {
     "title": "",
     "type": "image-only",
     "image": "./assets/images/cloudflare-talk-overview.svg",
@@ -136,6 +177,17 @@
     "type": "panel-double",
     "text1": "<div>Step 01 ...</div> <ol><li class=green>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ol>",
     "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-01.webp\" /></div>"
+  },
+  "api-code-01": {
+    "title": "API Code",
+    "type": "code-editor",
+    "folder": "api",
+    "files": [
+      "worker.js",
+      "auth.js",
+      "functionality_core.js",
+      "functionality_track.js"
+    ]
   },
   "demo-step-02": {
     "title": "View Empty Page",
@@ -149,17 +201,45 @@
     "text1": "<div>Step 03 ...</div> <ol><li>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li class=green>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ol>",
     "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-03.webp\" /></div>"
   },
+  "transformation-code": {
+    "title": "Transformation Code",
+    "type": "code-editor",
+    "folder": "transformation",
+    "files": [
+      "worker.js",
+      "functionality_classes.js"
+    ]
+  },
   "demo-step-04": {
     "title": "List of Registered Users (Refresh)",
     "type": "panel-double",
     "text1": "<div>Step 04 ...</div> <ol><li>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li class=green>Refresh (uses API & Selection for Split Test)</li> <li>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ol>",
     "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-04.webp\" /></div>"
   },
+  "api-code-02": {
+    "title": "API Code",
+    "type": "code-editor",
+    "folder": "api",
+    "files": [
+      "worker.js",
+      "auth.js",
+      "functionality_core.js",
+      "functionality_track.js"
+    ]
+  },
   "demo-step-05a": {
     "title": "Attached Cookie (screen)",
     "type": "panel-double",
     "text1": "<div>Step 05 ...</div> <ol><li>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li class=green>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ol>",
     "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-05a.webp\" /></div>"
+  },
+  "cookie-code": {
+    "title": "Cookie Code",
+    "type": "code-editor",
+    "folder": "cookie",
+    "files": [
+      "worker.js"
+    ]
   },
   "demo-step-05b": {
     "title": "Attached Cookie (dev tools)",
@@ -173,10 +253,49 @@
     "text1": "<div>Step 06 ...</div> <ol><li>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li>Cookie (attached, uses DB)</li> <li class=green>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ol>",
     "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-06.webp\" /></div>"
   },
+  "redirect-code": {
+    "title": "Redirect Code",
+    "type": "code-editor",
+    "folder": "redirect",
+    "files": [
+      "worker.js",
+      "functionality_core.js"
+    ]
+  },
   "demo-step-07": {
     "title": "Redirect",
     "type": "panel-double",
     "text1": "<div>Step 07 ...</div> <ol><li>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li class=green>Split-Test (to selected pages, uses KV)</li></ol>",
     "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-07.webp\" /></div>"
+  },
+  "split-test-code": {
+    "title": "Split-Test Code",
+    "type": "code-editor",
+    "folder": "split-test",
+    "files": [
+      "worker.js",
+      "functionality_core.js"
+    ]
+  },
+  "demo-overview-2": {
+    "title": "",
+    "type": "image-only",
+    "image": "./assets/images/cloudflare-talk-overview.svg",
+    "imageClass": "talk-overview"
+  },
+
+  "summary-and-best-practices": {
+    "title": "Summary & Best Practices",
+    "type": "panel-double",
+    "text1": "<div class=green>Summary</div> <ul> <li>Cannot be <span class=orange>client-side</span> application.</li> <li>Manipulate DOM Elements.</li> <li>Add Cookies.</li> <li>Reroute/Redirect (<span class=orange>301 & 302 Status Codes</span>).</li> <li><span class=orange>API</span>: keep in mind cache-buster, CORS, paging.</li> <li>Access to Domain, Path, and Parameters.</li> <li>GitHub Actions (build process) <span class=orange>VERSUS</span> Github via Settings (was able to not build).</li> </ul>",
+    "text2": "<div class=green>Best Practices</div> <ul> <li>DEV Environment: Ensure it has paid access.</li> <li>Watch KV Read/Write Limits (use bulk where possible).</li> <li>Build processes add code (impacts run time).</li> <li>Cache-bust the 60-second cache.</li> <li>Use the module pattern (<span class=code>import/export</span>)</li> <li>Use the extended worker lifetime (<span class=code>ctx.waitUntil</span>)</li> </ul>"
+  },
+
+  "time-for-questions": {
+    "title": "",
+    "type": "image-only",
+    "background": "transparent",
+    "image": "./assets/images/time-for-questions.webp",
+    "notes": ""
   }
 }
