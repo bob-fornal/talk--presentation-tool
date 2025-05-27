@@ -32,6 +32,6 @@ export class StyleService {
   };
 
   getTemplate = (): string => {
-    return this.storage.getItem('template');
+    return this.storage.getItem('template') || 'DEFAULT';
   };
 }
