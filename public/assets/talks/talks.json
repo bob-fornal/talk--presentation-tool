@@ -89,8 +89,9 @@
     {
       "folder": "30ms-of-cloudflare-wizardry",
       "title": "30ms of Cloudflare Wizardry with Code and Coffee: TLDR;",
+      "pdf": "https://www.bobs-tech-presentations.com/assets/talks/30ms-of-cloudflare-wizardry/30ms-cloudflare-minified.pdf",
       "tags": [
-        "cloudflare"
+        "cloudflare", "demo"
       ]
     },
     {

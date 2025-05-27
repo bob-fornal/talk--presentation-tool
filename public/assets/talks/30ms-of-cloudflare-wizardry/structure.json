@@ -21,8 +21,8 @@
     "demo-step-04",
     "api-code-02",
     "demo-step-05a",
-    "cookie-code",
     "demo-step-05b",
+    "cookie-code",
     "demo-step-06",
     "redirect-code",
     "demo-step-07",
@@ -119,47 +119,51 @@
   "leaf-use-case": {
     "title": "Our Use Case",
     "type": "panel-single",
-    "text1": "<div class=green>Non-Functional Requirements ...</div> <ul> <li><span class=orange>Sub-60ms</span> change in page responsiveness (achieved ~36ms).</li> </ul> <div class=green>Functional Requirements ...</div> <ul> <li>Maintain Cookie for source IP.</li> <li><span class=orange>Redirects</span> moved to central location (previously, separate WP manged lists).</li> <li><span class=orange>Split-Tests</span> (2-6 destinations, percent driven).</li> <li><span class=orange>Single-Param</span> page manipulations.</li> <li><span class=orange>Multi-Param</span> page manipulations (phone numbers tied to marketing campaign via URL params).</li> <li>(future) <span class=orange>One-Armed Bandit Split-Testing</span></li> </ul> <div class=green>Outcomes ...</div> <ul> <li>Increased revenue: <span class=orange>$1.5M USD/week</span>.</li> <li><span class=orange>Faster response</span> to Testing Results.</li> <li>Better <span class=orange>campaign management</span>.</li> <li><span class=orange>Fixes in PROD faster</span>, pending future code fixes.</li> </ul>",
-    "notes": "The first round of testing on the tool showed an increase of 120ms in Time-to-First-Pixel. <br/> This was unacceptable, we had to keep it to sub-60ms."
+    "text1": "<div class=green>Non-Functional Requirements ...</div> <ul> <li><span class=orange>Sub-60ms</span> change in page responsiveness (achieved ~36ms).</li> </ul> <div class=green>Functional Requirements ...</div> <ul> <li>Maintain Cookie for source IP.</li> <li><span class=orange>Redirects</span> moved to central location (previously, separate WP manged lists).</li> <li><span class=orange>Split-Tests</span> (2-6 destinations, percent driven).</li> <li><span class=orange>Single-Param</span> page manipulations.</li> <li><span class=orange>Multi-Param</span> page manipulations (phone numbers tied to marketing campaign via URL params).</li> <li>(future) <span class=orange>One-Armed Bandit Split-Testing</span></li> </ul> <div class=green>Outcomes ...</div> <ul> <li>Increased revenue: <span class=orange>$1.5M USD/week</span>.</li> <li><span class=orange>Faster response</span> to Testing Results.</li> <li>Better <span class=orange>campaign management</span>.</li> <li><span class=orange>Fixes to PROD faster</span>, pending future code fixes.</li> </ul>",
+    "notes": "<ul> <li>The first round of testing on the tool showed an increase of 120ms in Time-to-First-Pixel.</li> <li>This was unacceptable, we had to keep it to sub-60ms.</li> </ul> <div>Requirements</div> <ul> <li>Cookie: source IP</li> <li>Redirects</li> <li>Split-Tests</li> <li>Single-Param: page manipulations.</li> <li>Multi-Param: page manipulations (phone numbers)</li> <li>(future) One-Armed Bandit Split-Testing</li> </ul> <div>Outcomes</div> <ul> <li>Increased revenue: $1.5M USD/week</li> <li>Faster response to Testing Results</li> <li>Better campaign management</li> <li>Fixes to PROD faster, pending future code fixes</li> </ul>"
   },
 
   "worker-script-notes": {
     "title": "Worker Scripts",
     "type": "panel-double",
     "text1": "<div class=green>Thoughts ...</div> <ul> <li>Think \"man-in-the-middle.\"</li> <li>Cannot be a dynamic page (i.e. SPA: Angular, React, Vue - SSR is fine).</li> </ul> <div class=green>Findings ...</div> <ul> <li>60-second cache.</li> <li>Connect: Routes, DB, KV, Secrets (and more).</li> <li>Free 100,000 requests/day (paid, no limit).</li> <li>Module Pattern (<span class=code>import/export</span>, multiple files).</li> <li><span class=code>ctx.waitUntil</span> (extend lifetime of worker).</li> <li>Cron Jobs.</li> </ul>",
-    "text2": "<div class=green>Use-cases ...</div> <ul> <li>Manipulate DOM Elements.</li> <li>Add Cookies.</li> <li>Reroute/Redirect (301 & 302 Status Codes).</li> <li>API, keep in mind cache-buster, CORS, paging.</li> <li>Access to Domain, Path, and Parameters.</li> </ul> <div class=green>Deployment</div> <ul> <li>GitHub Actions (build process).</li> <li>Connect to Github via Settings (was able to not build).</li> </ul>"
+    "text2": "<div class=green>Use-cases ...</div> <ul> <li>Manipulate DOM Elements.</li> <li>Add Cookies.</li> <li>Reroute/Redirect (301 & 302 Status Codes).</li> <li>API, keep in mind cache-buster, CORS, paging.</li> <li>Access to Domain, Path, and Parameters.</li> </ul> <div class=green>Deployment</div> <ul> <li>GitHub Actions (build process).</li> <li>Connect to Github via Settings (was able to not build).</li> </ul>",
+    "notes": "<div>Think \"Man-in-the-middle,\" a request comes in ...</div> <ul> <li>Return something completely different</li> <li>Get reply & return</li> <li>Get reply, modify, & return</li> </ul> <div>Findings ...</div> <ul> <li>60-second cache.</li> <li>Connect: Routes, DB, KV, Secrets (and more).</li> <li>Free 100,000 requests/day (paid, no limit).</li> <li>Module Pattern (<span class=code>import/export</span>, multiple files).</li> <li><span class=code>ctx.waitUntil</span> (extend lifetime of worker).</li> <li>Cron Jobs.</li> </ul> <div>Use-cases ...</div> <ul> <li>Manipulate DOM Elements.</li> <li>Add Cookies.</li> <li>Reroute/Redirect (301 & 302 Status Codes).</li> <li>API, keep in mind cache-buster, CORS, paging.</li> <li>Access to Domain, Path, and Parameters.</li> </ul> <div>Deployment</div> <ul> <li>GitHub Actions (build process).</li> <li>Connect to Github via Settings (was able to not build).</li> </ul>"
   },
   "key-vault-notes": {
     "title": "Key Vaults",
     "type": "panel-double",
-    "text1": "<div class=green>Findings ...</div> <ul> <li>Low Latency, Edge Compute.</li> <li>1,200 RW/5-minutes (have to rethink large number of writes).</li> </ul> <div class=green>Data ...</div> <ul> <li><span class=code>key</span> (512B)</li> <li><span class=code>value</span> (5MB)</li> <li><span class=code>metadata</span> (1kB)</li> </ul>",
-    "text2": "<div class=green>Use-cases ...</div> <ul> <li>Writing using a \"named route.\"</li> <li>Lookup <span class=code>{ [domain]: [KV-name] }</span>.</li> <li>Use <span class=code>env[kv-name].get(...)</span>.</li> </ul>"
+    "text1": "<div class=green>Findings ...</div> <ul> <li>Low Latency, Edge Compute.</li> <li>1,200 rw/5-minutes (have to rethink large number of writes).</li> </ul> <div class=green>Data ...</div> <ul> <li><span class=code>key</span> (512B)</li> <li><span class=code>value</span> (5MB)</li> <li><span class=code>metadata</span> (1kB)</li> </ul>",
+    "text2": "<div class=green>Use-cases ...</div> <ul> <li>Writing using a \"named route.\"</li> <li>Lookup <span class=code>{ [domain]: [KV-name] }</span>.</li> <li>Use <span class=code>env[kv-name].get(...)</span>.</li> </ul>",
+    "notes": "<div>Findings ...</div> <ul> <li>Low Latency, Edge Compute.</li> <li>1,200 rw/5-minutes (have to rethink large number of writes).</li> </ul> <div>Data ...</div> <ul> <li><span class=code>key</span> (512B)</li> <li><span class=code>value</span> (5MB)</li> <li><span class=code>metadata</span> (1kB)</li> </ul> <div>Use-cases ...</div> <ul> <li>Writing using a \"named route.\"</li> <li>Lookup <span class=code>{ [domain]: [KV-name] }</span>.</li> <li>Use <span class=code>env[kv-name].get(...)</span>.</li> </ul>"
   },
   "database-d1-notes": {
     "title": "D1 Databases",
     "type": "panel-double",
     "text1": "<div class=orange>D1 is Cloudflare's managed, serverless database with SQLite's SQL semantics, built-in disaster recovery, and Worker and HTTP API access.</div> <br/> <div class=green>Findings ...</div> <ul> <li>500 MB (free), 10GB (paid)</li> <li>100 Columns/Table, Unlimited Rows</li> </ul>",
-    "text2": ""
+    "text2": "",
+    "notes": "<div>D1 is Cloudflare's managed, serverless database with SQLite's SQL semantics, built-in disaster recovery, and Worker and HTTP API access.</div> <br/> <div>Findings ...</div> <ul> <li>500 MB (free), 10GB (paid)</li> <li>100 Columns/Table, Unlimited Rows</li> </ul>"
   },
 
   "cloudflare-architecture": {
     "title": "Cloudflare Architecture",
     "type": "panel-single-table",
     "table": [
-      ["", "Rehost", "Replatform", "Refactor/Build"],
+      ["<div class=green>Application</div>", "Rehost", "Replatform", "Refactor/Build"],
       [
-        "<div class=green>App Components</div> <ul> <li>Frontend</li> <li>Data storage</li> <li>Backend</li> </ul>",
+        "<div class=green>Components</div> <ul> <li>Frontend</li> <li>Data storage</li> <li>Backend</li> </ul>",
         "",
         "<ul> <li>Optimize content.</li> <li>Data at the edge.</li> </ul>",
         "<ul> <li>Fullstack apps and programmable platforms.</li> <li>Data storage with low-latency availability.</li> </ul>"
       ],
       [
-        "<div class=green>App Infrastructure</div> <ul> <li>Servers</li> <li>Delivery</li> <li>Security</li> <li>Observability</li> <li>AI Capabilities</li> </ul>",
-        "<ul> <li>Video & image transformation</li> <li>Load balancing</li> <li>Global DNS resolution</li> <li>Protection: bots, DDoS, & zero-day attacks</li> <li>Compliance visibility</li> <ul>",
-        "<ul> <li>Dynamic traffic management</li> <li>Stop threats, malicious component, API attacks, & AI bots</li> <li>Extend compliance visibility</li> <ul>",
-        "<ul> <li>Serverless development platform</li> <li>AI image generation at the edge</li> <li>Secure privileged access to dev infrastructure</li> <li>Extend visibility across workloads</li> <li>AI interference at edge</li> <li>Secure and moderate LLM content</li> <ul>"
+        "<div class=green>Infrastructure</div> <ul> <li>Servers</li> <li>Delivery</li> <li>Security</li> <li>Observability</li> <li>AI Capabilities</li> </ul>",
+        "<ul> <li>Video & image transformation</li> <li>Load balancing</li> <li>Global DNS resolution</li> <li>Protection: bots, DDoS, & zero-day attacks</li> <li>Compliance visibility</li> </ul>",
+        "<ul> <li>Dynamic traffic management</li> <li>Stop threats, malicious component, API attacks, & AI bots</li> <li>Extend compliance visibility</li> </ul>",
+        "<ul> <li>Serverless development platform</li> <li>AI image generation at the edge</li> <li>Secure privileged access to dev infrastructure</li> <li>Extend visibility across workloads</li> <li>AI interference at edge</li> <li>Secure and moderate LLM content</li> </ul>"
       ]
-    ]
+    ],
+    "notes": "<div>Rehosting; application infrastructure is in place:</div> <ul> <li>Video & image transformation</li> <li>Load balancing</li> <li>Global DNS resolution</li> <li>Protection: bots, DDoS, & zero-day attacks</li> <li>Compliance visibility</li> </ul> <div>Replatform; component & infrastrcture:</div> <ul> <li>Optimize content.</li> <li>Data at the edge.</li> </ul> <ul> <li>Dynamic traffic management</li> <li>Stop threats, malicious component, API attacks, & AI bots</li> <li>Extend compliance visibility</li> </ul> <div>Refactor or New Build:</div> <ul> <li>Fullstack apps and programmable platforms.</li> <li>Data storage with low-latency availability.</li> </ul> <ul> <li>Serverless development platform</li> <li>AI image generation at the edge</li> <li>Secure privileged access to dev infrastructure</li> <li>Extend visibility across workloads</li> <li>AI interference at edge</li> <li>Secure and moderate LLM content</li> </ul>"
   },
 
   "the-demo": {
@@ -167,19 +171,21 @@
     "type": "panel-double",
     "text1": "<div class=center><br/> <div class=bold-larger>https://cloudflaretalk.com</div><br/> <div><img src=\"./assets/images/cloudflare-talk-qr-code.webp\" /></div> <br/><div class=bold-larger>https://cloudflaretalk.com</div></div>",
     "text2": "<div>We will be examining...</div> <ol><li>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ol>",
-    "notes": "<a href=\"https://www.cloudflaretalk.com/talk-admin\">https://www.cloudflaretalk.com/talk-admin</a>"
+    "notes": "<a class=green href=\"https://www.cloudflaretalk.com/talk-admin\">https://www.cloudflaretalk.com/talk-admin</a> <hr/> <div>We will be examining...</div> <ol><li>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ol>"
   },
   "demo-overview-1": {
     "title": "",
     "type": "image-only",
     "image": "./assets/images/cloudflare-talk-overview.svg",
-    "imageClass": "talk-overview"
+    "imageClass": "talk-overview",
+    "notes": "<div>Here, we see how our application interacts with Cloudflare (Worker Scripts, Key Vaults, & D1 Databases. We will be ...</div> <ul> <li>Registering a user</li> <li>Viewing the page based on the user ID (showing it empty, as well)</li> <li>Testing redirect & split-tests</li> <li>Seeing the data from the applied cookie</li> </ul>"
   },
   "demo-step-01": {
     "title": "Registering a User",
     "type": "panel-double",
     "text1": "<div>Step 01 ...</div> <ol><li class=green>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ol>",
-    "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-01.webp\" /></div>"
+    "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-01.webp\" /></div>",
+    "notes": "<div>Register a User</div> <ul> <li>Following the link will bring you to a registration page.</li> <li>When you submit, it saves the data in both the KV and the D1 DB.</li> <li>The JavaScript saves the data via <span class=code>fetch</span></li> <li>A simple user ID is stored in session storage</li> </ul>"
   },
   "api-code-01": {
     "title": "API Code",
@@ -190,19 +196,23 @@
       "auth.js",
       "functionality_core.js",
       "functionality_track.js"
-    ]
+    ],
+    "notes": "This is the API code that shows how we interact with the KV and D1 DB.",
+    "visibility": false
   },
   "demo-step-02": {
     "title": "View Empty Page",
     "type": "panel-double",
     "text1": "<div>Step 02 ...</div> <ol><li>Registering a User (uses API, KV, DB)</li> <li class=green>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ol>",
-    "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-02.webp\" /></div>"
+    "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-02.webp\" /></div>",
+    "notes": "Here, the focus is on the elements in YELLOW - they are what will be targeted when a valid ID is in the parameters. In the code, EMPTY is an ID that does not transform the HTML."
   },
   "demo-step-03": {
     "title": "View User Page",
     "type": "panel-double",
     "text1": "<div>Step 03 ...</div> <ol><li>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li class=green>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ol>",
-    "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-03.webp\" /></div>"
+    "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-03.webp\" /></div>",
+    "notes": "If you are properly registered, you should see this when you click the button that \"was\" Register. Notice how all of the content is changed."
   },
   "transformation-code": {
     "title": "Transformation Code",
@@ -211,13 +221,16 @@
     "files": [
       "worker.js",
       "functionality_classes.js"
-    ]
+    ],
+    "notes": "This is the transformation code used to change the contents of an HTML page.",
+    "visibility": false
   },
   "demo-step-04": {
     "title": "List of Registered Users (Refresh)",
     "type": "panel-double",
     "text1": "<div>Step 04 ...</div> <ol><li>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li class=green>Refresh (uses API & Selection for Split Test)</li> <li>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ol>",
-    "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-04.webp\" /></div>"
+    "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-04.webp\" /></div>",
+    "notes": "<ul> <li>Clicking either Refresh button should list all users that have registered in the last 24-hours.</li> <li>Note that the code identifies you and has select buttons everywhere else.</li> <li>The system will allow you to select TWO data sets.</li> <li>Once the second is selected, the data is stored in the KV via the API we looked at earlier.</li> <li>This data will be used for the Split Test portion of the demo.</li> <li>You cannot select again.</li> </ul>"
   },
   "api-code-02": {
     "title": "API Code",
@@ -228,13 +241,23 @@
       "auth.js",
       "functionality_core.js",
       "functionality_track.js"
-    ]
+    ],
+    "notes": "This is the API code again and we can see how the selected data is stored in the KV.",
+    "visibility": false
   },
   "demo-step-05a": {
     "title": "Attached Cookie (screen)",
     "type": "panel-double",
     "text1": "<div>Step 05 ...</div> <ol><li>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li class=green>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ol>",
-    "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-05a.webp\" /></div>"
+    "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-05a.webp\" /></div>",
+    "notes": "When you click the Cookie button, you see information on the screen that was attached via cookie within Cloudflare. <br/><br/> If you are not on mobile, you can inspect and view the data within the cookie. We're showing that next."
+  },
+  "demo-step-05b": {
+    "title": "Attached Cookie (dev tools)",
+    "type": "panel-double",
+    "text1": "<div>Step 05 ...</div> <ol><li>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li class=green>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ol>",
+    "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-05b.webp\" /></div>",
+    "notes": "Here's the CloudflareDemo cookie and it's contents."
   },
   "cookie-code": {
     "title": "Cookie Code",
@@ -242,19 +265,16 @@
     "folder": "cookie",
     "files": [
       "worker.js"
-    ]
-  },
-  "demo-step-05b": {
-    "title": "Attached Cookie (dev tools)",
-    "type": "panel-double",
-    "text1": "<div>Step 05 ...</div> <ol><li>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li class=green>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ol>",
-    "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-05b.webp\" /></div>"
+    ],
+    "notes": "This is the code in Cloudflare that attaches the cookie.",
+    "visibility": false
   },
   "demo-step-06": {
     "title": "Redirect",
     "type": "panel-double",
     "text1": "<div>Step 06 ...</div> <ol><li>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li>Cookie (attached, uses DB)</li> <li class=green>Redirect (page to user's page, uses KV)</li> <li>Split-Test (to selected pages, uses KV)</li></ol>",
-    "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-06.webp\" /></div>"
+    "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-06.webp\" /></div>",
+    "notes": "<ul> <li>Redirect is turned off by default and you will see a screen like this.</li> <li>The code is checking a value stored in the Key Vaults, and if it is not set the redirect simply goes to the pages/page URL.</li> <li>When active, it uses the user ID passed in the parameters to go to your \"page.\"</ul> <div>... let's turn it on and see the redirect work!</div>"
   },
   "redirect-code": {
     "title": "Redirect Code",
@@ -263,13 +283,16 @@
     "files": [
       "worker.js",
       "functionality_core.js"
-    ]
+    ],
+    "notes": "This is the code in Cloudflare that handles the direct using the user ID from the parameters.",
+    "visibility": false
   },
   "demo-step-07": {
-    "title": "Redirect",
+    "title": "Split-Test",
     "type": "panel-double",
     "text1": "<div>Step 07 ...</div> <ol><li>Registering a User (uses API, KV, DB)</li> <li>Empty Page (structure)</li> <li>User Page (uses DB)</li> <li>Refresh (uses API & Selection for Split Test)</li> <li>Cookie (attached, uses DB)</li> <li>Redirect (page to user's page, uses KV)</li> <li class=green>Split-Test (to selected pages, uses KV)</li></ol>",
-    "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-07.webp\" /></div>"
+    "text2": "<div class=center><img class=match-height src=\"./assets/images/cloudflare-talk-step-07.webp\" /></div>",
+    "notes": "<ul> <li>Split-Test is turned off by default and you will see a screen like this.</li> <li>The code is checking a value stored in the Key Vaults, and if it is not set the split-test simply goes to the pages/page URL.</li> <li>When active, it uses the data previously stored in a KV that matches the user ID and does a 50/50 split against the selected user IDs</ul> <div>... let's turn it on and see the split-test work!</div>"
   },
   "split-test-code": {
     "title": "Split-Test Code",
@@ -278,27 +301,31 @@
     "files": [
       "worker.js",
       "functionality_core.js"
-    ]
+    ],
+    "notes": "This is the code in Cloudflare that handles the split-testing using the user ID from the parameters.",
+    "visibility": false
   },
   "demo-overview-2": {
     "title": "",
     "type": "image-only",
     "image": "./assets/images/cloudflare-talk-overview.svg",
-    "imageClass": "talk-overview"
+    "imageClass": "talk-overview",
+    "notes": "<div>Let's take a second look at how our application interacts with Cloudflare (Worker Scripts, Key Vaults, & D1 Databases. We saw ...</div> <ul> <li>Registering a user</li> <li>Viewing the page based on the user ID (showing it empty, as well)</li> <li>Testing redirect & split-tests</li> <li>Seeing the data from the applied cookie</li> </ul>"
   },
 
   "summary-and-best-practices": {
     "title": "Summary & Best Practices",
     "type": "panel-double",
     "text1": "<div class=green>Summary</div> <ul> <li>Cannot be <span class=orange>client-side</span> application.</li> <li>Manipulate DOM Elements.</li> <li>Add Cookies.</li> <li>Reroute/Redirect (<span class=orange>301 & 302 Status Codes</span>).</li> <li><span class=orange>API</span>: keep in mind cache-buster, CORS, paging.</li> <li>Access to Domain, Path, and Parameters.</li> <li>GitHub Actions (build process) <span class=orange>VERSUS</span> Github via Settings (was able to not build).</li> </ul>",
-    "text2": "<div class=green>Best Practices</div> <ul> <li>DEV Environment: Ensure it has paid access.</li> <li>Watch KV Read/Write Limits (use bulk where possible).</li> <li>Build processes add code (impacts run time).</li> <li>Cache-bust the 60-second cache.</li> <li>Use the module pattern (<span class=code>import/export</span>)</li> <li>Use the extended worker lifetime (<span class=code>ctx.waitUntil</span>)</li> </ul>"
+    "text2": "<div class=green>Best Practices</div> <ul> <li>DEV Environment: Ensure it has paid access.</li> <li>Watch KV Read/Write Limits (use bulk where possible).</li> <li>Build processes add code (impacts run time).</li> <li>Cache-bust the 60-second cache.</li> <li>Use the module pattern (<span class=code>import/export</span>)</li> <li>Use the extended worker lifetime (<span class=code>ctx.waitUntil</span>)</li> </ul>",
+    "notes": "<div>Summary</div> <ul> <li>Cannot be a SPA (single-page application); client-side application.</li> <li>Manipulate DOM Elements.</li> <li>Add Cookies.</li> <li>Reroute/Redirect (301 & 302 Status Codes).</li> <li>API: keep in mind cache-buster, CORS, paging.</li> <li>Access to Domain, Path, and Parameters.</li> <li>GitHub Actions (build process) VERSUS Github via Settings (was able to not build).</li> </ul> <div>Best Practices</div> <ul> <li>DEV Environment: Ensure it has paid access.</li> <li>Watch KV Read/Write Limits (use bulk where possible).</li> <li>Build processes add code (impacts run time).</li> <li>Cache-bust the 60-second cache.</li> <li>Use the module pattern (import/export)</li> <li>Use the extended worker lifetime (ctx.waitUntil)</li> </ul>"
   },
 
   "time-for-questions": {
     "title": "",
     "type": "image-only",
     "background": "transparent",
-    "image": "./assets/images/time-for-questions.webp",
+    "image": "./assets/images/time-for-questions--30ms-qr.webp",
     "notes": ""
   }
 }
