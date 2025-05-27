@@ -5,7 +5,16 @@
     "background": "transparent",
     "image": "./assets/images/--edje-about.webp",
     "imageClass": "width-100-percent shift-up-and-right",
-    "notes": "Leading EDJE, Inc."
+    "notes": "At Leading EDJE, we believe technology is the most powerful tool for transforming businesses and unlocking human potential. <br/><br/> As strategists, innovators, and partners, we don't just solve problems — we craft bespoke solutions that positively disrupt your business."
+  },
+
+  "edje-about--centered": {
+    "title": "",
+    "type": "image-only",
+    "background": "transparent",
+    "image": "./assets/images/--edje-about.webp",
+    "imageClass": "width-100-percent",
+    "notes": "At Leading EDJE, we believe technology is the most powerful tool for transforming businesses and unlocking human potential. <br/><br/> As strategists, innovators, and partners, we don't just solve problems — we craft bespoke solutions that positively disrupt your business."
   },
 
   "conference--beer-city-code": {

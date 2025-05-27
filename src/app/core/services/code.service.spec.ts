@@ -1,13 +1,12 @@
-import { TestBed } from '@angular/core/testing';
+import { fakeAsync, TestBed, tick } from '@angular/core/testing';
 import {
-  HttpClientModule,
   provideHttpClient,
   withInterceptorsFromDi,
 } from '@angular/common/http';
 
 import { CodeService } from './code.service';
 import { of } from 'rxjs';
-import { Structure } from '../interfaces/structure';
+import { Structure, StructureType } from '../interfaces/structure';
 
 describe('CodeService', () => {
   let service: CodeService;
@@ -27,6 +26,14 @@ describe('CodeService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('expects "sleep" to resolve at time', fakeAsync(() => {
+    spyOn((service as any), 'setTimeout').and.callThrough();
+
+    service.sleep(100);
+    tick(110);
+    expect(service['setTimeout']).toHaveBeenCalledWith(jasmine.any(Function), 100);
+  }));
 
   it('expects "init" to get and set the talk data', async () => {
     const talks: any = { STYLE: [], TAGS: [], TALKS: [] };
@@ -50,15 +57,41 @@ describe('CodeService', () => {
   it('expects "getStructure" to filter out slides according to visibility', async () =>{
     const folder: string = 'FOLDER';
     const paramTalk: Structure = {
-      ORDER: ['one', 'two', 'three'], STYLE: [],
+      ORDER: ['edje-about', 'one', 'two', 'three'], STYLE: [],
       "one": { title: 'one' , type: "cover", visibility: false},
       "two": { title: 'two', type: "slide"},
-      "three": { title: 'three', type: "slide", visibility: true}};
+      "three": { title: 'three', type: "slide", visibility: true},
+      'edje-about': { title: '', type: 'GLOBAL/edje-about' },
+    };
+    const globalTalk: { [key: string]: StructureType } = {
+      'edje-about': {
+        title: '',
+        type: 'image-only',
+        image: './assets/images/--edje-about.webp',
+        imageClass: 'width-100-percent shift-up-and-right',
+        notes: 'Leading EDJE, Inc.',
+      },
+    };
     const resultTalk: Structure = { 
-      ORDER: ['two', 'three'],  STYLE: [],  
+      ORDER: ['edje-about', 'two', 'three'],  STYLE: [],  
       "two": { title: 'two',  type: 'slide'},
-      "three": { title: 'three', type: "slide", visibility: true}};
-    spyOn(service['http'], 'get').and.returnValue(of(paramTalk));
+      "three": { title: 'three', type: "slide", visibility: true},
+      "edje-about": {
+        title: '',
+        type: 'image-only',
+        image: './assets/images/--edje-about.webp',
+        imageClass: 'width-100-percent shift-up-and-right',
+        notes: 'Leading EDJE, Inc.',
+      },
+    };
+    spyOn(service['http'], 'get').and.callFake((url: string): any => {
+      switch (url) {
+        case './assets/talks/FOLDER/structure.json':
+          return of(paramTalk);
+        case './assets/talks/GLOBAL/slides.json':
+          return of(globalTalk);
+      }
+    });
     spyOn(service.structure, 'next').and.stub();
     
     await service.getStructure(folder);
@@ -122,4 +155,6 @@ describe('CodeService', () => {
     const result: string = service.processUrl(url, host, hostname);
     expect(result).toEqual('http://localhost:4200/name=bob')
   });
+
+  
 });
