@@ -37,8 +37,16 @@
       "title": "Cloudflare"
     },
     {
+      "tag": "demo",
+      "title": "Demo"
+    },
+    {
       "tag": "devops",
       "title": "DevOps"
+    },
+    {
+      "tag": "gherkin",
+      "title": "Gherkin"
     },
     {
       "tag": "javascript",
@@ -136,6 +144,13 @@
       "title": "Developer Tools for non-Developers",
       "tags": [
         "tools"
+      ]
+    },
+    {
+      "folder": "case-against-gherkin",
+      "title": "Gherkin: Friend or Foe? Re-Evaluating Its Role in Modern Development",
+      "tags": [
+        "gherkin"
       ]
     },
     {

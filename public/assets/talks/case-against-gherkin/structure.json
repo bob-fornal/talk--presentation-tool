@@ -1,0 +1,60 @@
+{
+  "ORDER": [
+    "cover-01",
+    "edje-about",
+
+    "gherkin-definition"
+  ],
+  "STYLE": [
+    ".outer-wrapper {",
+    "  background: url(\"./assets/images/grid--green.webp\");",
+    "  background-repeat: no-repeat;",
+    "  background-size: cover;",
+    "  color: #69f0ae;",
+    "  font-family: Arial, sans-serif;",
+    "}",
+    ".cover-wrapper .cover--bio {",
+    "  width: 42em !important;",
+    "}",
+    ".cover--bio .bio-logo {",
+    "  margin-bottom: 1em;",
+    "}",
+    ".right-align {",
+    "  display: flex;",
+    "  flex-direction: column;",
+    "  align-items: end;",
+    "}",
+    ".left-align {",
+    "  display: flex;",
+    "  flex-direction: column;",
+    "  align-items: start;",
+    "}",
+    ".green {",
+    "  color: #69f0ae;",
+    "}",
+    ".orange {",
+    "  color: #f0c369;",
+    "}",
+    ".code {",
+    "  color: yellow;",
+    "  font-family: Menlo, Monaco, \"Courier New\", monospace;",
+    "}"
+  ],
+  "cover-01": {
+    "title": "Gherkin: Friend or Foe? Re-Evaluating Its Role in Modern Development",
+    "type": "cover-01",
+    "author": "Bob Fornal",
+    "bio1": "<img class=bio-logo src=./assets/images/code-squid.webp />\n<br/>\n<div class=\"bold bio-header\">Entrepreneur</div>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.\n<br/>\n<br/>\n<div class=bold>https://code-squid.com</div>",
+    "bio2": "<img class=bio-logo src=./assets/images/leading-edje.webp />\n<br/>\n<div class=bold>Senior Solutions Developer</div>\n<div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth.\n<br/>\n<br/>\n<div class=bold>https://leadingedje.com</div>"
+  },
+  "edje-about": {
+    "title": "",
+    "type": "GLOBAL/edje-about--centered",
+    "visibility": true
+  },
+  "gherkin-definition": {
+    "title": "What is Gherkin",
+    "type": "panel-single",
+    "text1": "<div><span class=orange>Gherkin</span> is a structured, human-readable language used in software development, particularly within the context of <span class=orange>Behavior-Driven Development (BDD)</span>. <ul> <li>It is designed to express test scenarios and user stories in a way that's clear, concise, and understandable by both technical and non-technical stakeholders.</li> <li>Gherkin uses keywords like \"Given,\" \"When,\" \"Then,\" \"And,\" and \"But\" to describe the context, actions, and expected results of a scenario.</li> </ul> <div>In essence, <span class=orange>Gherkin</span> bridges the gap between business requirements and technical implementation by providing a common language for expressing and documenting software behavior.</div>"
+  }
+}
