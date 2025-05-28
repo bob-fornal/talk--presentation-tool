@@ -100,7 +100,7 @@
     "title": "30ms of Cloudflare Wizardry with Code and Coffee: TLDR;",
     "type": "cover-01",
     "author": "Bob Fornal & Lwin Maung",
-    "bio1": "<div class=right-align> <img class=bio-logo src=\"./assets/images/bob-top-hat.webp\" /> <div class=bold>Senior Solutions Developer II, Leading EDJE, Inc.</div> <div>Passionate about learning, testing, mentoring, speaking, and personal growth.</div> </div>",
+    "bio1": "<div class=right-align> <img class=bio-logo src=\"./assets/images/bob-top-hat-bw.webp\" /> <div class=bold>Senior Solutions Developer II, Leading EDJE, Inc.</div> <div>Passionate about learning, testing, mentoring, speaking, and personal growth.</div> </div>",
     "bio2": "<div class=left-align> <img class=bio-logo src=\"./assets/images/lwin.webp\" /> <div class=bold>Microsoft MVP | Managing Director, Accolade Solutions</div> <div>Full stack polyglot development consultant with passion for creating IoT, mobile, web, and cloud products with a flair for user experience and user interface design.</div> </div>",
     "notes": "This talk came about because I (Bob) broke production. <br/><br/> At a conference I (Bob) saw a reported error and tried to diagnose it in our Cloudflare Super Script. <br/><br/> I (He) found the issue and clicked Deploy on the way out the door. <br/><br/> 30ms later, things started to fail and this talk was born."
   },

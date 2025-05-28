@@ -1,5 +1,6 @@
 .control-wrapper {
-  padding: 1rem;
+  padding: 1rem 1rem 0 1rem;
+  height: calc(100vh - 1rem);
 
   .control-inner-wrapper {
     display: flex;
@@ -20,7 +21,7 @@
 .control-title {
   color: #69f0ae;
   font-family: Arial, sans-serif;
-  font-size: 2.8rem;
+  font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 1rem;
   position: relative;
@@ -35,7 +36,7 @@
 .control-navigation--outer {
   background-color: rgb(88, 88, 88);
   padding: 1rem;
-  height: calc(100vh - 9rem);
+  height: calc(100vh - 6.25rem);
   display: inline-block;
   width: var(--navigation-width);
   overflow-y: scroll;
@@ -67,8 +68,8 @@
 }
 
 .resize-handle {
-  height: calc(100vh - 7em);
-
+  height: calc(100vh - 3.75em);
+  position: relative;
   margin-left: 2px;
 
   .resize-handle--right,
@@ -77,11 +78,12 @@
     display: inline-block;
     height: 100%;
     width: 4px;
+    top: 0;
   }
   .resize-handle--right {
     border-left: 1px dashed black;
   }
-  
+
   &:hover {
 
     .resize-handle--left,
@@ -107,11 +109,11 @@
     display: block;
   
     height: 100%;
-  
     width: 24px;
   
     position: absolute;
     right: -12px;
+    top: 0;
     z-index: 1;
   }
 }
