@@ -5,7 +5,16 @@
 
     "gherkin-definition-01",
     "gherkin-definition-02",
-    "gherkin-pros-01"
+    "gherkin-pros-01",
+    "gherkin-cons-01",
+
+    "code-first-automation-01a",
+    "code-first-automation-01b",
+    "code-first-automation-02a",
+    "code-first-automation-02b",
+    "code-first-automation-03",
+
+    "gherkin-alternatives-01"
   ],
   "STYLE": [
     ".outer-wrapper {",
@@ -107,7 +116,64 @@
   "gherkin-pros-01": {
     "title": "Gherkin: Pros",
     "type": "panel-double",
-    "text1": "",
-    "text2": "<div class=level-one> <span class=color-purple>Feature</span><span class=code-white>:</span> <span class=code-red>Effective Use of Gherkin in Automated Testing</span> (<span class=code-white>continued</span>) </div> <div class=level-two><span class=code-purple>Scenario</span><span class=code-white>:</span> <span class=code-red>Identifying potential pitfalls of Gherkin</span> </div> <div class=level-three> <span class=code-orange>Given</span> <span class=code-white>some implementations of Gherkin can sabotage the development process</span> </div> <div class=level-three> <span class=code-orange>When</span> <span class=code-white>there are unclear feature descriptions</span> </div> <div class=level-three> <span class=code-orange>And</span> <span class=code-white>scenarios become overly complex</span> </div> <div class=level-three> <span class=code-orange>And</span> <span class=code-white>there is misalignment between tests and actual business requirements</span> </div> <div class=level-three> <span class=code-orange>Then</span> <span class=code-white>Gherkin can hinder automated testing and development progress</span> </div>"
+    "text1": "<div class=green>Benefits of using Gherkin:</div> <ul> <li><span class=orange>Improved communication</span>: Gherkin enables better collaboration between different stakeholders.</li> <li><span class=orange>Clear documentation</span>: Gherkin specifications serve as documentation for the software's behavior.</li> <li><span class=orange>Increased efficiency</span>: Automated tests based on Gherkin specifications can be run quickly and consistently.</li> <li><span class=orange>Easier to understand</span>: The plain English syntax makes it easier for non-technical people to understand the software's functionality.</span></li> </ul>",
+    "text2": "<div class=level-one> <span class=color-purple>Feature</span><span class=code-white>:</span> <span class=code-red>Effective Use of Gherkin in Automated Testing</span> (<span class=code-white>continued</span>) </div> <div class=level-two><span class=code-purple>Scenario</span><span class=code-white>:</span> <span class=code-red>Identifying potential pitfalls of Gherkin</span> </div> <div class=level-three> <span class=code-orange>Given</span> <span class=code-white>some implementations of Gherkin can sabotage the development process</span> </div> <div class=level-three> <span class=code-orange>When</span> <span class=code-white>there are unclear feature descriptions</span> </div> <div class=level-three> <span class=code-orange>And</span> <span class=code-white>scenarios become overly complex</span> </div> <div class=level-three> <span class=code-orange>And</span> <span class=code-white>there is misalignment between tests and actual business requirements</span> </div> <div class=level-three> <span class=code-orange>Then</span> <span class=code-white>Gherkin can hinder automated testing and development progress</span> </div>",
+    "notes": "<div class=green>Benefits of using Gherkin:</div> <ul> <li><span class=orange>Improved communication</span>: Gherkin enables better collaboration between different stakeholders.</li> <li><span class=orange>Clear documentation</span>: Gherkin specifications serve as documentation for the software's behavior.</li> <li><span class=orange>Increased efficiency</span>: Automated tests based on Gherkin specifications can be run quickly and consistently.</li> <li><span class=orange>Easier to understand</span>: The plain English syntax makes it easier for non-technical people to understand the software's functionality.</span></li> </ul> <div>Gherkin is a powerful tool for defining and documenting software behavior in a way that is understandable, collaborative, and automatable.</div> <hr/> <div>The idea behind Gherkin makes sense: define acceptance criteria in a readable format to improve collaboration between business and technical teams. In theory, these scenarios should bridge the gap between requirements and automation.</div>"
+  },
+  "gherkin-cons-01": {
+    "title": "Gherkin: Cons",
+    "type": "panel-double",
+    "text1": "<div class=green>Pitfalls of Gherkin</div> <ol> <li><span class=orange>Extra Layer of Complexity</span>: Need to create feature files that then need to be linked to step definitions.</li> <li><span class=orange>Two Truths</span>: The scenarios often don't lend themselves well to automation. Some steps need more thought and detail to become effective automation tests. </li> <li><span class=orange>Harder to Read Tests</span>: As feature files grow, the scenarios become more generic. Tests become a tangled mess of steps and lose clarity.</li> <li><span class=orange>Slower Test Execution</span>: An extra execution layer simply makes tests run slower.</li> <li><span class=orange>Over-Specification</span>: In an attempt to cover every angle, teams end up adding way too much detail to the scenarios.</li> </ol>",
+    "text2": "<div class=level-one> <span class=color-purple>Feature</span><span class=code-white>:</span> <span class=code-red>Effective Use of Gherkin in Automated Testing</span> (<span class=code-white>continued</span>) </div> <div class=level-two><span class=code-purple>Scenario</span><span class=code-white>:</span> <span class=code-red>Using Gherkin properly</span> </div> <div class=level-three> <span class=code-orange>Given</span> <span class=code-white>there are common mistakes in implementing Gherkin</span> </div> <div class=level-three> <span class=code-orange>When</span> <span class=code-white>strategies are put in place to mitigate issues</span> </div> <div class=level-three> <span class=code-orange>Then</span> <span class=code-white>Gherkin can be used effectively to support and enhance testing processes</span> </div> <div class=level-three> <span class=code-orange>And</span> <span class=code-white>development efforts can become more efficient</span> </div>",
+    "notes": "<div>plenty of teams start out with good intentions, embedding Gherkin scenarios into user stories and automation suites. But that's usually where it ends. Non-technical <span class=orange>stakeholders rarely engage</span> with the feature files, so Gherkin just becomes an <span class=orange>extra layer of abstraction and maintenance</div>.</div> <ol> <li>Extra Layer of Complexity: Do these tests meet acceptance criteria? Left maintaining both the feature files and the test code.</li> <li>Two Truths:, the business version of the scenarios and the technical team's version.</li> <li>Harder to Read Tests: The overall value of the tests is reduced.</li> <li>The code is first interpreted (feature files), adding overhead. This seriously slows down feedback loops. Without proper optimization, execution slows down.</li> <li>This not only adds confusion but also makes maintenance a nightmare.</li> <ol>"
+  },
+  "code-first-automation-01a": {
+    "title": "Consider: Code First Automation",
+    "type": "panel-double",
+    "text1": "<div>A code-first approach to test automation ...</div> <ol> <li><span class=orange>Efficiency & Speed</span>: One of the biggest advantages of a code-first approach is efficiency.</li> </ol>",
+    "text2": "<div class=level-one> <span class=color-purple>Feature</span><span class=code-white>:</span> <span class=code-red>Effective Use of Gherkin in Automated Testing</span> (<span class=code-white>continued</span>) </div> <div class=level-two><span class=code-purple>Scenario</span><span class=code-white>:</span> <span class=code-red>Gaining practical insights into Gherkin usage</span> </div> <div class=level-three> <span class=code-orange>Given</span> <span class=code-white>attendees are seeking practical tips for using Gherkin</span> </div> <div class=level-three> <span class=code-orange>When</span> <span class=code-white>they are provided with recommended practices for optimizing Gherkin</span> </div> <div class=level-three> <span class=code-orange>Then</span> <span class=code-white>they can ensure Gherkin is a powerful tool to aid in the development process</span> </div>",
+    "notes": "<div>A code-first approach to test automation has clear advantages. With code-first, you're writing tests directly in the programming language that the application is built in, giving you much more flexibility and control over your tests.</div> <ol> <li>You bypass the need for Gherkin's extra abstraction layers and directly automate tests using the programming language of your application. This results in faster execution times because there's no interpretation or mapping between the test steps and the code.</li> </ol>"
+  },
+  "code-first-automation-01b": {
+    "title": "Simple Login Testing",
+    "type": "code-editor",
+    "folder": "gherkin-01",
+    "files": [
+      "login.feature",
+      "login.js",
+      "code-first.js"
+    ]
+  },
+  "code-first-automation-02a": {
+    "title": "Consider: Code First Automation",
+    "type": "panel-double",
+    "text1": "<div>A code-first approach to test automation ...</div> <ol> <li><span class=orange>Efficiency & Speed</span>: One of the biggest advantages of a code-first approach is efficiency.</li> <li><span class=orange>More Suitable for API Testing</span>: Cleaner, more direct, and faster.</li> </ol>",
+    "text2": "<div class=level-one> <span class=color-purple>Feature</span><span class=code-white>:</span> <span class=code-red>Effective Use of Gherkin in Automated Testing</span> (<span class=code-white>continued</span>) </div> <div class=level-two><span class=code-purple>Scenario</span><span class=code-white>:</span> <span class=code-red>Gaining practical insights into Gherkin usage</span> </div> <div class=level-three> <span class=code-orange>Given</span> <span class=code-white>attendees are seeking practical tips for using Gherkin</span> </div> <div class=level-three> <span class=code-orange>When</span> <span class=code-white>they are provided with recommended practices for optimizing Gherkin</span> </div> <div class=level-three> <span class=code-orange>Then</span> <span class=code-white>they can ensure Gherkin is a powerful tool to aid in the development process</span> </div>",
+    "notes": "<ol> <li>Gherkin lends itself for being focused on isolated business rules. Small test cases that provide value.</li> <li>The entire notion of deciding who the end user is in the situation where we're wanting to test integrations between systems can cause confusion. This can then introduce unnecessary complexity and doesn't add any real value.</li> </ol> <ul> <li>There's no need to translate test steps from feature files to step definitions, no extra parsing, and debugging is far easier.</li> <li>You can immediately see that it is still simple to follow.</li> <li>It will execute faster, it is cleaner and more direct.</li> <li>There is no need to add the glue for the step definitions.</li> </ul>"
+  },
+  "code-first-automation-02b": {
+    "title": "Simple API Testing",
+    "type": "code-editor",
+    "folder": "gherkin-02",
+    "files": [
+      "api.feature",
+      "api.js",
+      "code-first.js"
+    ]
+  },
+  "code-first-automation-03": {
+    "title": "Consider: Code First Automation",
+    "type": "panel-double",
+    "text1": "<div>A code-first approach to test automation ...</div> <ol> <li><span class=orange>Efficiency & Speed</span>: One of the biggest advantages of a code-first approach is efficiency.</li> <li><span class=orange>More Suitable for API Testing</span>: Cleaner, more direct, and faster.</li> <li><span class=orange>Easier Debugging & Failure Analysis</span>: Identifying the failing step in the Feature File is the first action to debug where a failure might be. Only then can you begin start to isolate and identify what the root cause might be.</li> </ol>",
+    "text2": "<div class=level-one> <span class=color-purple>Feature</span><span class=code-white>:</span> <span class=code-red>Effective Use of Gherkin in Automated Testing</span> (<span class=code-white>continued</span>) </div> <div class=level-two><span class=code-purple>Scenario</span><span class=code-white>:</span> <span class=code-red>Gaining practical insights into Gherkin usage</span> </div> <div class=level-three> <span class=code-orange>Given</span> <span class=code-white>attendees are seeking practical tips for using Gherkin</span> </div> <div class=level-three> <span class=code-orange>When</span> <span class=code-white>they are provided with recommended practices for optimizing Gherkin</span> </div> <div class=level-three> <span class=code-orange>Then</span> <span class=code-white>they can ensure Gherkin is a powerful tool to aid in the development process</span> </div>",
+    "notes": "<ul> <li>With the code-first approach, as the test is written directly into the programming language, this makes failure analysis much more straightforward.</li> <li>The error messages will be clear and tied directly to the test logic, without having to trace through the multiple layers of feature files and step definitions.</li> </ul>"
+  },
+
+  "gherkin-alternatives-01": {
+    "title": "Lightweight Test Documentation",
+    "type": "panel-double",
+    "text1": "<div class=green>Current ...</div> <ul> <li>Clunky user stories that get built by business</li> <li>Eventually they are passed to the team for refinement</li> </ul> <div class=green>Possible ...</div> <ul> <li>Effective test notes should be added to the story</li> <li>As opposed to Gherkin Scenarios</li> </ul>",
+    "text2": "<div class=orange>Valid Login</div> <ul> <li>Verify that a registered user can login with valid credentials</li> <li>Expand test coverage to include different user types (i.e. admin, user, read-only)</li> <li>Use existing credentials from test.ts for consistency</li> <li>Test against multiple devices, browsers, and screens</li> </ul> <div class=orange>Invalid Password Handling</div> <ul> <li>Verify that an appropriate error message displays when the user enters an incorrect password</li> <li>(consider) Mock the authentication endpoint to always return an error response</li> </ul> <div class=orange>API-Level Testing</div> <ul> <li>Isolate the auth endpoint and create API tests to validate login behavior under various conditions</li> </ul>",
+    "notes": "<div class=green>Current ...</div> <ul> <li>Clunky user stories that get built by business</li> <li>Eventually they are passed to the team for refinement</li> </ul> <div class=green>Possible ...</div> <ul> <li>Effective test notes should be added to the story</li> <li>As opposed to Gherkin Scenarios</li> </ul> <div class=orange>Valid Login</div> <ul> <li>Verify that a registered user can login with valid credentials</li> <li>Expand test coverage to include different user types (i.e. admin, user, read-only)</li> <li>Use existing credentials from test.ts for consistency</li> <li>Test against multiple devices, browsers, and screens</li> </ul> <div class=orange>Invalid Password Handling</div> <ul> <li>Verify that an appropriate error message displays when the user enters an incorrect password</li> <li>(consider) Mock the authentication endpoint to always return an error response</li> </ul> <div class=orange>API-Level Testing</div> <ul> <li>Isolate the auth endpoint and create API tests to validate login behavior under various conditions</li> </ul> <div>These notes are primarily meant for whichever tester picks it up. If Gherkin scenarios were used as the means for what tests should be written, this information might be lost.</div> <br/><br/> <div>This method allows developers, testers, and product owners to contribute meaningfully in a way that fits their expertise. Developers can provide insight into test data and mocking strategies, while testers can refine coverage based on system behaviours.</div>"
   }
 }
