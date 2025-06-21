@@ -5,6 +5,7 @@
 
     "gherkin-definition-01",
     "gherkin-definition-02",
+    "gherkin-definition-03a",
     "gherkin-pros-01",
     "gherkin-cons-01",
 
@@ -14,7 +15,10 @@
     "code-first-automation-02b",
     "code-first-automation-03",
 
-    "gherkin-alternatives-01"
+    "gherkin-alternatives-01",
+    "gherkin-definition-03b",
+    "gherkin-definition-04",
+    "time-for-questions"
   ],
   "STYLE": [
     ".outer-wrapper {",
@@ -85,6 +89,16 @@
     "}",
     ".code-yellow {",
     "  color: #98d379;",
+    "}",
+    ".match-height {",
+    "  max-height: 100%;",
+    "  max-width: 100%;",
+    "}",
+    ".center {",
+    "  display: flex;",
+    "  flex-direction: column;",
+    "  align-items: center;",
+    "  height: 100%;",
     "}"
   ],
   "cover-01": {
@@ -111,6 +125,48 @@
     "type": "panel-double",
     "text1": "<div class=green>Definition</div> <ul> <li>Structured Language</li> <li>Human Readable</li> <li>Used in BDD</li> <li>Linked to Automation</li> </ul> <div class=green>Benefits</div> <ul> <li>Improved Communication</li> <li>Clear documentation</li> <li>Increased efficiency</li> <li>Easier to understand</li> </ul>",
     "text2": "<div class=level-one> <span class=color-purple>Feature</span><span class=code-white>:</span> <span class=code-red>Effective Use of Gherkin in Automated Testing</span> (<span class=code-white>continued</span>) </div>  </div> <div class=level-two> <span class=code-purple>Scenario</span><span class=code-white>:</span> <span class=code-red>Understanding the dual nature of Gherkin in development</span> </div> <div class=level-three> <span class=code-orange>Given</span> <span class=code-white>Gherkin uses structured keywords such as <span class=code-yellow>\"Feature\"</span>, <span class=code-yellow>\"Scenario\"</span>, <span class=code-yellow>\"Given\"</span>, <span class=code-yellow>\"When\"</span>, <span class=code-yellow>\"Then\"</span>, <span class=code-yellow>\"And\"</span>, and <span class=code-yellow>\"But\"</span> </span> </div> <div class=level-three> <span class=code-orange>When</span> <span class=code-white>it is used well, it enhances communication and collaboration</span> </div> <div class=level-three> <span class=code-orange>Then</span> <span class=code-white>it improves the readability and understanding of software specifications</span> </div>"
+  },
+  "gherkin-definition-03a": {
+    "title": "When is Gherkin Used",
+    "type": "panel-single-table",
+    "table": [
+      [
+        "<div class=green>Card Type</div>",
+        "Gherkin Use",
+        "Impact"
+      ],
+      [
+        "<div class=green>Epics</div>",
+        "NO",
+        ""
+      ],
+      [
+        "<div class=green>Stories</div>",
+        "<div class=bold>Behavior Driven Development</div>",
+        "Too General"
+      ],
+      [
+        "<div class=green>Tasks</div>",
+        "(often)",
+        "Specific"
+      ],
+      [
+        "<div class=green>Sub-Tasks</div>",
+        "(often)",
+        "Too Specific (or not used)"
+      ],
+      [
+        "<div class=green>Bugs</div>",
+        "(somtimes)",
+        "<div class=bold>Good Fit</div>"
+      ],
+      [
+        "<div class=green>Custom</div>",
+        "?",
+        "?"
+      ]
+    ],
+    "notes": ""
   },
 
   "gherkin-pros-01": {
@@ -175,5 +231,70 @@
     "text1": "<div class=green>Current ...</div> <ul> <li>Clunky user stories that get built by business</li> <li>Eventually they are passed to the team for refinement</li> </ul> <div class=green>Possible ...</div> <ul> <li>Effective test notes should be added to the story</li> <li>As opposed to Gherkin Scenarios</li> </ul>",
     "text2": "<div class=orange>Valid Login</div> <ul> <li>Verify that a registered user can login with valid credentials</li> <li>Expand test coverage to include different user types (i.e. admin, user, read-only)</li> <li>Use existing credentials from test.ts for consistency</li> <li>Test against multiple devices, browsers, and screens</li> </ul> <div class=orange>Invalid Password Handling</div> <ul> <li>Verify that an appropriate error message displays when the user enters an incorrect password</li> <li>(consider) Mock the authentication endpoint to always return an error response</li> </ul> <div class=orange>API-Level Testing</div> <ul> <li>Isolate the auth endpoint and create API tests to validate login behavior under various conditions</li> </ul>",
     "notes": "<div class=green>Current ...</div> <ul> <li>Clunky user stories that get built by business</li> <li>Eventually they are passed to the team for refinement</li> </ul> <div class=green>Possible ...</div> <ul> <li>Effective test notes should be added to the story</li> <li>As opposed to Gherkin Scenarios</li> </ul> <div class=orange>Valid Login</div> <ul> <li>Verify that a registered user can login with valid credentials</li> <li>Expand test coverage to include different user types (i.e. admin, user, read-only)</li> <li>Use existing credentials from test.ts for consistency</li> <li>Test against multiple devices, browsers, and screens</li> </ul> <div class=orange>Invalid Password Handling</div> <ul> <li>Verify that an appropriate error message displays when the user enters an incorrect password</li> <li>(consider) Mock the authentication endpoint to always return an error response</li> </ul> <div class=orange>API-Level Testing</div> <ul> <li>Isolate the auth endpoint and create API tests to validate login behavior under various conditions</li> </ul> <div>These notes are primarily meant for whichever tester picks it up. If Gherkin scenarios were used as the means for what tests should be written, this information might be lost.</div> <br/><br/> <div>This method allows developers, testers, and product owners to contribute meaningfully in a way that fits their expertise. Developers can provide insight into test data and mocking strategies, while testers can refine coverage based on system behaviours.</div>"
+  },
+
+  "gherkin-definition-03b": {
+    "title": "When is Gherkin Used",
+    "type": "panel-single-table",
+    "table": [
+      [
+        "<div class=green>Card Type</div>",
+        "Gherkin First",
+        "Impact",
+        "Alternative"
+      ],
+      [
+        "<div class=green>Epics</div>",
+        "NO",
+        "",
+        ""
+      ],
+      [
+        "<div class=green>Stories</div>",
+        "<div class=bold>Behavior Driven Development</div>",
+        "Too General",
+        "Effective Test Notes"
+      ],
+      [
+        "<div class=green>Tasks</div>",
+        "(often)",
+        "Specific",
+        "Effective Code First and Test Notes"
+      ],
+      [
+        "<div class=green>Sub-Tasks</div>",
+        "(often)",
+        "Too Specific (or not used)",
+        "Effective Code First and Test Notes"
+      ],
+      [
+        "<div class=green>Bugs</div>",
+        "(somtimes)",
+        "<div class=bold>Good Fit</div>",
+        "<div class=bold>Gherkin</div>"
+      ],
+      [
+        "<div class=green>Custom</div>",
+        "?",
+        "?",
+        "?"
+      ]
+    ],
+    "notes": ""
+  },
+  "gherkin-definition-04": {
+    "title": "How is Gherkin Used",
+    "type": "panel-double",
+    "text1": "<div class=green>Organization uses ...</div> <ul> <li>Behavior-Driven Development (BDD)</li> <li>Story Test-Driven Development (Feature, SDD)</li> <li>Test-Driven Development (TDD)</li> <li>Acceptance Test-Driven Development (ATDD)</li> </ul> <div class=green>Gherkin implementations ...</div> <ul> <li>Not used or used minimally.</li> <li>Used correctly (unicorn).</li> <li>Tripping hazard (everywhere).</li> </ul> <div class=green>Developer Notes and Test Documentation ...</div> <ul> <li>Often shoved into Comments.</li> <li>Occasionally added by 3-Amigos</li> </ul>",
+    "text2": "<div class=center><img class=match-height src=\"./assets/images/tripping-unicorn.webp\" /></div>",
+    "notes": ""
+  },
+
+  "time-for-questions": {
+    "title": "",
+    "type": "image-only",
+    "background": "transparent",
+    "image": "./assets/images/time-for-questions.webp",
+    "notes": ""
   }
 }
