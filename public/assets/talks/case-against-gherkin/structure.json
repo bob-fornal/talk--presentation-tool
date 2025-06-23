@@ -287,7 +287,7 @@
     "type": "panel-double",
     "text1": "<div class=green>Organization uses ...</div> <ul> <li>Behavior-Driven Development (BDD)</li> <li>Story Test-Driven Development (Feature, SDD)</li> <li>Test-Driven Development (TDD)</li> <li>Acceptance Test-Driven Development (ATDD)</li> </ul> <div class=green>Gherkin implementations ...</div> <ul> <li>Not used or used minimally.</li> <li>Used correctly (unicorn).</li> <li>Tripping hazard (everywhere).</li> </ul> <div class=green>Developer Notes and Test Documentation ...</div> <ul> <li>Often shoved into Comments.</li> <li>Occasionally added by 3-Amigos</li> </ul>",
     "text2": "<div class=center><img class=match-height src=\"./assets/images/tripping-unicorn.webp\" /></div>",
-    "notes": ""
+    "notes": "Playwright is a new tool out - I'm able to write Automated Tests using patterns I learned writing Unit and Integration Tests. Does this really need and additional layer of abstraction? To me, it's easy to read and understand as code."
   },
 
   "time-for-questions": {
