@@ -2,19 +2,16 @@
   "ORDER": [
     "cover-01",
     "edje-about",
-
     "gherkin-definition-01",
     "gherkin-definition-02",
     "gherkin-definition-03a",
     "gherkin-pros-01",
     "gherkin-cons-01",
-
     "code-first-automation-01a",
     "code-first-automation-01b",
     "code-first-automation-02a",
     "code-first-automation-02b",
     "code-first-automation-03",
-
     "gherkin-alternatives-01",
     "gherkin-definition-03b",
     "gherkin-definition-04",
@@ -115,13 +112,13 @@
   },
 
   "gherkin-definition-01": {
-    "title": "What is Gherkin",
+    "title": "What is Gherkin?",
     "type": "panel-double",
-    "text1": "<div><span class=orange>Gherkin</span> is a structured, human-readable language used in software development, particularly within the context of <span class=orange>Behavior-Driven Development (BDD)</span>. <ul> <li>It is designed to express <span class=orange>test scenarios</span> and <span class=orange>user stories</span> in a way that's clear, concise, and understandable by both technical and non-technical stakeholders.</li> <li>It uses keywords like <span class=code-yellow>\"Given\"</span>, <span class=code-yellow>\"When\"</span>, <span class=code-yellow>\"Then\"</span>, <span class=code-yellow>\"And\"</span>, and <span class=code-yellow>\"But\"</span> to describe the context, actions, and expected results of a scenario.</li> </ul> <div>In essence, <span class=orange>Gherkin</span> ...</div> <ul> <li>Bridges the gap between business requirements and technical implementation.</li> <li>It provides a common language for expressing and documenting software behavior.</li> </ul>",
+    "text1": "<div><span class=orange>Gherkin</span> is a structured, human-readable language used in software development, particularly within the context of <span class=orange>Behavior-Driven Development (BDD)</span>. <ul> <li>It is designed to express <span class=orange>test scenarios</span> and <span class=orange>user stories</span> in a way that's clear, concise, and understandable by both technical and non-technical stakeholders.</li> <li>It uses keywords like <span class=code-yellow>Given</span>, <span class=code-yellow>When</span>, <span class=code-yellow>Then</span>, <span class=code-yellow>And</span>, and <span class=code-yellow>But</span> to describe the context, actions, and expected results of a scenario.</li> </ul> <div>In essence, <span class=orange>Gherkin</span> ...</div> <ul> <li>Bridges the gap between business requirements and technical implementation.</li> <li>It provides a common language for expressing and documenting software behavior.</li> </ul>",
     "text2": "<div class=level-one> <span class=code-purple>Feature</span><span class=code-white>:</span> <span class=code-red>Effective Use of Gherkin in Automated Testing</span> </div> <div class=level-two> <span class=code-purple>Background</span><span class=code-white>:</span> </div> <div class=level-three> <span class=code-orange>Given</span> <span class=code-white>Gherkin is a domain-specific language used for behavior-driven development (BDD)</span> </div> <div class=level-three> <span class=code-orange>And</span> <span class=code-white>it is intended to bridge communication between technical and non-technical stakeholders</span>"
   },
   "gherkin-definition-02": {
-    "title": "What is Gherkin",
+    "title": "What is Gherkin?",
     "type": "panel-double",
     "text1": "<div class=green>Definition</div> <ul> <li>Structured Language</li> <li>Human Readable</li> <li>Used in BDD</li> <li>Linked to Automation</li> </ul> <div class=green>Benefits</div> <ul> <li>Improved Communication</li> <li>Clear documentation</li> <li>Increased efficiency</li> <li>Easier to understand</li> </ul>",
     "text2": "<div class=level-one> <span class=color-purple>Feature</span><span class=code-white>:</span> <span class=code-red>Effective Use of Gherkin in Automated Testing</span> (<span class=code-white>continued</span>) </div>  </div> <div class=level-two> <span class=code-purple>Scenario</span><span class=code-white>:</span> <span class=code-red>Understanding the dual nature of Gherkin in development</span> </div> <div class=level-three> <span class=code-orange>Given</span> <span class=code-white>Gherkin uses structured keywords such as <span class=code-yellow>\"Feature\"</span>, <span class=code-yellow>\"Scenario\"</span>, <span class=code-yellow>\"Given\"</span>, <span class=code-yellow>\"When\"</span>, <span class=code-yellow>\"Then\"</span>, <span class=code-yellow>\"And\"</span>, and <span class=code-yellow>\"But\"</span> </span> </div> <div class=level-three> <span class=code-orange>When</span> <span class=code-white>it is used well, it enhances communication and collaboration</span> </div> <div class=level-three> <span class=code-orange>Then</span> <span class=code-white>it improves the readability and understanding of software specifications</span> </div>"
