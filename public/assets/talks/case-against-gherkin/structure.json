@@ -126,7 +126,7 @@
     "notes": "<div class=green>Definition</div> <ul> <li>Structured Language</li> <li>Human Readable</li> <li>Used in BDD</li> <li>Linked to Automation</li> </ul> <div class=green>Benefits</div> <ul> <li>Improved Communication</li> <li>Clear documentation</li> <li>Increased efficiency</li> <li>Easier to understand</li> </ul>"
   },
   "gherkin-definition-03a": {
-    "title": "When is Gherkin Used",
+    "title": "When is Gherkin Used?",
     "type": "panel-single-table",
     "table": [
       [
@@ -235,7 +235,7 @@
   },
 
   "gherkin-definition-03b": {
-    "title": "When is Gherkin Used",
+    "title": "When is Gherkin Used?",
     "type": "panel-single-table",
     "table": [
       [
@@ -284,7 +284,7 @@
     "notes": "<div>Here are the Gherkin alternatives that can be used effectively.</div> <ul> <li>Card Type: <span class=green>EPIC</span>: <span class=orange>No real alternative; doesn't use Gherkin.</span></li> <li>Card Type: <span class=green>STORY</span>: <span class=orange>Effective Test Notes</span></li> <li>Card Type: <span class=green>TASK</span>: <span class=orange>Effective Code First and Test Notes</span></li> <li>Card Type: <span class=green>SUB-TASKS</span>: <span class=orange>Effective Code First and Test Notes</span></li> <li>Card Type: <span class=green>BUGS</span>: <span class=orange>Use Gherkin</span></li> <li>Card Type: <span class=green>CUSTOM</span>: <span class=orange>?</span></li> </ul>"
   },
   "gherkin-definition-04": {
-    "title": "How is Gherkin Used",
+    "title": "How is Gherkin Used?",
     "type": "panel-double",
     "text1": "<div class=green>Organization uses ...</div> <ul> <li>Behavior-Driven Development (BDD)</li> <li>Story Test-Driven Development (Feature, SDD)</li> <li>Test-Driven Development (TDD)</li> <li>Acceptance Test-Driven Development (ATDD)</li> </ul> <div class=green>Gherkin implementations ...</div> <ul> <li>Not used or used minimally.</li> <li>Used correctly (unicorn).</li> <li>Tripping hazard (everywhere).</li> </ul> <div class=green>Developer Notes and Test Documentation ...</div> <ul> <li>Often shoved into Comments.</li> <li>Occasionally added by 3-Amigos</li> </ul>",
     "text2": "<div class=center><img class=match-height src=\"./assets/images/tripping-unicorn.webp\" /></div>",
