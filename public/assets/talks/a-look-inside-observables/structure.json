@@ -2,7 +2,6 @@
   "ORDER": [
     "cover-01",
     "edje-about",
-    "conference--slide--beer-city-code",
     "what-is-rxjs--slide",
     "history--slide",
     "essential-concepts--slide",
@@ -57,12 +56,9 @@
   },
   "edje-about": {
     "title": "",
-    "type": "GLOBAL/edje-about"
-  },
-  "conference--slide--beer-city-code": {
-    "title": "",
-    "type": "GLOBAL/conference--beer-city-code",
-    "visibility": false
+    "type": "GLOBAL/edje-about--centered",
+    "visibility": true,
+    "notes": ""
   },
   "what-is-rxjs--slide": {
     "title": "What is RxJS",

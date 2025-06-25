@@ -95,6 +95,12 @@
     "bio2": "<img class=bio-logo src=./assets/images/leading-edje.webp /><br/><div class=bold>Senior Solutions Developer</div><div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth.",
     "notes": "I've recently been working on \"fullstack\" Azure DevOps (using Terraform) with Function App, database, and frontend code."
   },
+  "edje-about": {
+    "title": "",
+    "type": "GLOBAL/edje-about--centered",
+    "visibility": true,
+    "notes": ""
+  },
 
   "what-is-devops": {
     "title": "What is Devops?",
