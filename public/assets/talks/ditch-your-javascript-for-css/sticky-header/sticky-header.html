@@ -1,0 +1,23 @@
+<style>
+  .navigation {
+    position: sticky;
+    top: 0;
+    z-index: 100; /* ensure it's on top of other content */
+  }
+
+  .content {
+    height: 1500px;
+    padding-top: 50px; /* space below the sticky header */
+  }
+</style>
+
+<body>
+  <div class="sticky-header">
+    <h1>My Sticky Header</h1>
+  </div>
+  <div class="content">
+    <p>This is some long content that will scroll.</p>
+    <p>Scroll down to see the sticky header in action.</p>
+    <!-- More content here -->
+  </div>
+</body>

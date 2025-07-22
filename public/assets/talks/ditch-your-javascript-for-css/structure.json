@@ -1,0 +1,208 @@
+{
+  "ORDER": [
+    "cover-01",
+    "edje-about",
+    "why-ditch-javascript",
+
+    "code-conditional-logic-no-content",
+    "code-janky-mobile-buttons",
+    "code-equal-height-elements",
+    "code-sticky-header",
+    "code-dark-mode",
+    "code-tooltip",
+
+    "why-keep-javascript",
+    "time-for-questions"
+  ],
+  "STYLE": [
+    ".outer-wrapper {",
+    "  background: url(\"./assets/images/grid--green.webp\");",
+    "  background-repeat: no-repeat;",
+    "  background-size: cover;",
+    "  color: #69f0ae;",
+    "  font-family: Arial, sans-serif;",
+    "}",
+    ".cover-wrapper .cover--bio {",
+    "  width: 42em !important;",
+    "}",
+    ".cover--bio .bio-logo {",
+    "  margin-bottom: 1em;",
+    "}",
+    ".right-align {",
+    "  display: flex;",
+    "  flex-direction: column;",
+    "  align-items: end;",
+    "}",
+    ".left-align {",
+    "  display: flex;",
+    "  flex-direction: column;",
+    "  align-items: start;",
+    "}",
+    ".green {",
+    "  color: #69f0ae;",
+    "}",
+    ".orange {",
+    "  color: #d19966;",
+    "}",
+    ".yellow {",
+    "  color: #ffff00;",
+    "}",
+    ".green-bold {",
+    "  color: #69f0ae;",
+    "  font-weight: bold;",
+    "  font-size: 1.2em;",
+    "}",
+    ".orange {",
+    "  color: #f0c369;",
+    "}",
+    ".code {",
+    "  color: yellow;",
+    "  font-family: Menlo, Monaco, \"Courier New\", monospace;",
+    "}",
+    ".level-one {",
+    "  margin: 0;",
+    "  text-indent: -1em;",
+    "  padding-left: 1em;",
+    "  font-family: Menlo, Monaco, \"Courier New\", monospace;",
+    "  font-size: 0.8em;",
+    "}",
+    ".level-two {",
+    "  margin: 1em 0 0 1em;",
+    "  text-indent: -1em;",
+    "  padding-left: 1em;",
+    "  font-family: Menlo, Monaco, \"Courier New\", monospace;",
+    "  font-size: 0.8em;",
+    "}",
+    ".level-three {",
+    "  margin: 0 0 0 2em;",
+    "  text-indent: -1em;",
+    "  padding-left: 1em;",
+    "  font-family: Menlo, Monaco, \"Courier New\", monospace;",
+    "  font-size: 0.8em;",
+    "}",
+    ".code-purple {",
+    "  color: #d678ed;",
+    "}",
+    ".code-red {",
+    "  color: #e9636c;",
+    "}",
+    ".code-orange {",
+    "  color: #d19966;",
+    "}",
+    ".code-white {",
+    "  color: #dde1ef;",
+    "}",
+    ".code-yellow {",
+    "  color: #98d379;",
+    "}",
+    ".match-height {",
+    "  max-height: 100%;",
+    "  max-width: 100%;",
+    "}",
+    ".center {",
+    "  display: flex;",
+    "  flex-direction: column;",
+    "  align-items: center;",
+    "  height: 100%;",
+    "}",
+    ".gap {",
+    "  margin-top: 1em;",
+    "  padding: 0.5em 1em;",
+    "  background-color: #ffffff22;",
+    "}"
+  ],
+  "cover-01": {
+    "title": "Ditch Your JavaScript For CSS!",
+    "type": "cover-01",
+    "author": "Bob Fornal",
+    "bio1": "<img class=bio-logo src=./assets/images/code-squid.webp />\n<br/>\n<div class=\"bold bio-header\">Entrepreneur</div>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.\n<br/>\n<br/>\n<div class=bold>https://code-squid.com</div>",
+    "bio2": "<img class=bio-logo src=./assets/images/leading-edje.webp />\n<br/>\n<div class=bold>Senior Solutions Developer</div>\n<div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth.\n<br/>\n<br/>\n<div class=bold>https://leadingedje.com</div>"
+  },
+  "edje-about": {
+    "title": "",
+    "type": "GLOBAL/edje-about--centered",
+    "visibility": true
+  },
+  "why-ditch-javascript": {
+    "title": "Why did I start ditching JavaScript? Performance",
+    "type": "panel-double",
+    "text1": "<div class=green-bold>CSS</div> <div class=gap>Browsers are <span class=yellow>highly optimized to parse and render CSS</span>, <span class=orange>leveraging native rendering engines</span> and often <span class=orange>offloading CSS animations to the GPU</span>, leading to smoother performance and reduced strain on the main thread.</div> <div class=gap>CSS is <span class=yellow>declarative</span>, meaning you describe the desired end state, and the browser handles the transitions. This <span class=orange>allows for efficient pre-calculation and optimization</span>.</div> <div class=gap>CSS typically <span class=yellow>does not block the main thread</span> during rendering, allowing for a more responsive user experience, especially during page load.</div>",
+    "text2": "<div class=green-bold>JavaScript</div> <div class=gap>Main thread; <span class=orange>can lead to performance bottlenecks</span> if complex calculations or frequent DOM manipulations are involved, potentially causing jank or stuttering.</div> <div class=gap>While offering immense flexibility for complex, dynamic animations and interactions, this dynamism comes with the <span class=orange>overhead of runtime calculations and potential layout recalculations</span>.</div> <div class=gap>Achieving optimal performance with JavaScript animations often requires <span class=orange>careful implementation</span>, including techniques like <span class=code>requestAnimationFrame</span> to synchronize with browser repaint cycles and avoid unnecessary work.</div>",
+    "notes": "CSS - optimization, GPU; declarative, pre-calculation; less blocking - threads. JavaScript - main thread, bottlenecks; overhead of calculations and (re)calculation; optimal performance requires careful implementation."
+  },
+
+  "code-conditional-logic-no-content": {
+    "title": "Conditional Logic for No Content",
+    "type": "code-editor",
+    "folder": "conditional-logic-no-content",
+    "files": [
+      "react.jsx",
+      "angular.html",
+      "no-content.html"
+    ]
+  },
+  "code-janky-mobile-buttons": {
+    "title": "Janky Buttons on Mobile",
+    "type": "code-editor",
+    "folder": "janky-buttons",
+    "files": [
+      "janky-buttons.js",
+      "non-janky.css"
+    ]
+  },
+  "code-equal-height-elements": {
+    "title": "Elements of Equal Height",
+    "type": "code-editor",
+    "folder": "equal-height-elements",
+    "files": [
+      "equal-height.js",
+      "equal-height.css"
+    ]
+  },
+  "code-sticky-header": {
+    "title": "Sticky Headers",
+    "type": "code-editor",
+    "folder": "sticky-header",
+    "files": [
+      "sticky-header.js",
+      "sticky-header.html"
+    ]
+  },
+  "code-dark-mode": {
+    "title": "Dark Mode",
+    "type": "code-editor",
+    "folder": "dark-mode",
+    "files": [
+      "old-dark-mode.css",
+      "old-dark-mode.js",
+      "alternate-dark-mode.css",
+      "new-dark-mode.html",
+      "softer-dark-mode.html"
+    ]
+  },
+  "code-tooltip": {
+    "title": "Tooltip",
+    "type": "code-editor",
+    "folder": "tooltip",
+    "files": [
+      "old-tooltip.html",
+      "new-tooltip.html"
+    ]
+  },
+
+  "why-keep-javascript": {
+    "title": "Should I keep JavaScript? Maybe",
+    "type": "panel-double",
+    "text1": "<div class=green-bold>JavaScript</div> <div class=gap>For <span class=yellow>highly interactive elements</span>, <span class=yellow>game-like experiences</span>, or <span class=yellow>animations requiring intricate logic, user input, or data manipulation</span>, JavaScript offers the necessary control and flexibility.</div> <div class=gap>The <span class=yellow>Web Animations API</span> provides a more performant way to create JavaScript-based animations, allowing for greater control while leveraging browser optimizations.</div> <div class=gap>When animations need to be tightly integrated with other browser APIs or data sources, JavaScript is the natural choice.</div>",
+    "text2": "<div class=green-bold>Summary</div> <div class=gap>For simple or intermediate transitions, visual effects, and static layout changes, CSS is generally the more performant and efficient choice.</div> <div class=gap>For complex, dynamic animations or interactions requiring intricate logic and control, JavaScript becomes necessary, but careful implementation is crucial for optimal performance.</div> <div class=gap>The <span class=yellow>\"rule of least power\"</span> suggests using the simplest technology capable of achieving the desired outcome, often favoring CSS when possible.</div>",
+    "notes": "<div>I'm not saying to stop using JavaScript. JavaScript is amazing for complex interactions, state management, and actual application logic.</div> <br/> <div>For visual things, layout, or animations - CSS has grown up. It's better at many things than our JavaScript solutions.</div>"
+  },
+
+  "time-for-questions": {
+    "title": "",
+    "type": "image-only",
+    "background": "transparent",
+    "image": "./assets/images/time-for-questions.webp",
+    "notes": ""
+  }
+}

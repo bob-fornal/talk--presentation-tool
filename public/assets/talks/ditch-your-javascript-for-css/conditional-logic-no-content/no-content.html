@@ -1,0 +1,22 @@
+<style>
+  .handle-no-data {
+    &:not(:only-child) {
+      display: none;
+    }
+    &:only-child {
+      display: flex;
+    }
+  }
+</style>
+
+<h2>No Data Showing</h2>
+<ul>
+  <li class="handle-no-data">Nothing to show.</li>
+  <!-- <li>Data here</li> -->
+</ul>
+
+<h2>Data Showing</h2>
+<ul>
+  <li class="handle-no-data">Nothing to show.</li>
+  <li>Data here</li>
+</ul>
