@@ -1,0 +1,56 @@
+import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+
+@Component({
+  selector: 'app-ditch-your-javascript-for-css',
+  standalone: false,
+  
+  templateUrl: './ditch-your-javascript-for-css.component.html',
+  styleUrl: './ditch-your-javascript-for-css.component.scss'
+})
+export class DitchYourJavascriptForCssComponent implements OnInit {
+  constructor(
+    private titleService: Title,
+  ) {}
+
+  ngOnInit() {
+    this.titleService.setTitle('Demo Page');
+    setTimeout(this.handleJS.bind(this), 1000);
+  }
+
+  handleJS() {
+    // connect up accordians
+    let details = document.querySelectorAll('.accordion details');
+
+    details.forEach(function (d: any, index) {
+      d.onclick = () => {
+        details.forEach(function(c, i) {
+          index === i ?'':c.removeAttribute('open');
+        });
+      };
+    });
+
+    // demo: janky buttons
+    const button: any = document.querySelector('#jankyButton')!;
+    console.log(button);
+    // Buttons “janky” on mobile
+    const jankyButton = document
+    button.addEventListener('mouseenter', () => {
+      button.style.transform = 'scale(1.1)';
+      button.style.backgroundColor = '#0055bb';
+    });
+
+    button.addEventListener('mouseleave', () => {
+      button.style.transform = 'scale(1)';
+      button.style.backgroundColor = '#0077ff';
+    });
+  }
+
+  show(element: any) {
+    element.style.display = "block";
+  }
+
+  hide(element: any) {
+    element.style.display = "";
+  }
+}
