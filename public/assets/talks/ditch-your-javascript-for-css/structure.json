@@ -2,7 +2,12 @@
   "ORDER": [
     "cover-01",
     "edje-about",
-    "why-ditch-javascript",
+    "why-ditch-javascript-01",
+    "why-ditch-javascript-02",
+    "why-ditch-javascript-03",
+    "why-ditch-javascript-04",
+    "why-ditch-javascript-05",
+    "why-ditch-javascript-06",
 
     "code-conditional-logic-no-content",
     "code-janky-mobile-buttons",
@@ -124,7 +129,42 @@
     "type": "GLOBAL/edje-about--centered",
     "visibility": true
   },
-  "why-ditch-javascript": {
+  "why-ditch-javascript-01": {
+    "title": "Why did I start ditching JavaScript?",
+    "type": "panel-double",
+    "text1": "<div class=green-bold>JavaScript</div> <div class=gap>Main thread; <span class=orange>can lead to performance bottlenecks</span> if complex calculations or frequent DOM manipulations are involved, potentially causing jank or stuttering.</div>",
+    "text2": "<div class=green-bold>CSS</div>",
+    "notes": "CSS - optimization, GPU; declarative, pre-calculation; less blocking - threads. JavaScript - main thread, bottlenecks; overhead of calculations and (re)calculation; optimal performance requires careful implementation."
+  },
+  "why-ditch-javascript-02": {
+    "title": "Why did I start ditching JavaScript?",
+    "type": "panel-double",
+    "text1": "<div class=green-bold>JavaScript</div> <div class=gap>Main thread; <span class=orange>can lead to performance bottlenecks</span> if complex calculations or frequent DOM manipulations are involved, potentially causing jank or stuttering.</div> <div class=gap>While offering immense flexibility for complex, dynamic animations and interactions, this dynamism comes with the <span class=orange>overhead of runtime calculations and potential layout recalculations</span>.</div>",
+    "text2": "<div class=green-bold>CSS</div>",
+    "notes": "CSS - optimization, GPU; declarative, pre-calculation; less blocking - threads. JavaScript - main thread, bottlenecks; overhead of calculations and (re)calculation; optimal performance requires careful implementation."
+  },
+  "why-ditch-javascript-03": {
+    "title": "Why did I start ditching JavaScript?",
+    "type": "panel-double",
+    "text1": "<div class=green-bold>JavaScript</div> <div class=gap>Main thread; <span class=orange>can lead to performance bottlenecks</span> if complex calculations or frequent DOM manipulations are involved, potentially causing jank or stuttering.</div> <div class=gap>While offering immense flexibility for complex, dynamic animations and interactions, this dynamism comes with the <span class=orange>overhead of runtime calculations and potential layout recalculations</span>.</div> <div class=gap>Achieving optimal performance with JavaScript animations often requires <span class=orange>careful implementation</span>, including techniques like <span class=code>requestAnimationFrame</span> to synchronize with browser repaint cycles and avoid unnecessary work.</div>",
+    "text2": "<div class=green-bold>CSS</div>",
+    "notes": "CSS - optimization, GPU; declarative, pre-calculation; less blocking - threads. JavaScript - main thread, bottlenecks; overhead of calculations and (re)calculation; optimal performance requires careful implementation."
+  },
+  "why-ditch-javascript-04": {
+    "title": "Why did I start ditching JavaScript?",
+    "type": "panel-double",
+    "text1": "<div class=green-bold>JavaScript</div> <div class=gap>Main thread; <span class=orange>can lead to performance bottlenecks</span> if complex calculations or frequent DOM manipulations are involved, potentially causing jank or stuttering.</div> <div class=gap>While offering immense flexibility for complex, dynamic animations and interactions, this dynamism comes with the <span class=orange>overhead of runtime calculations and potential layout recalculations</span>.</div> <div class=gap>Achieving optimal performance with JavaScript animations often requires <span class=orange>careful implementation</span>, including techniques like <span class=code>requestAnimationFrame</span> to synchronize with browser repaint cycles and avoid unnecessary work.</div>",
+    "text2": "<div class=green-bold>CSS</div> <div class=gap>Browsers are <span class=yellow>highly optimized to parse and render CSS</span>, <span class=orange>leveraging native rendering engines</span> and often <span class=orange>offloading CSS animations to the GPU</span>, leading to smoother performance and reduced strain on the main thread.</div>",
+    "notes": "CSS - optimization, GPU; declarative, pre-calculation; less blocking - threads. JavaScript - main thread, bottlenecks; overhead of calculations and (re)calculation; optimal performance requires careful implementation."
+  },
+  "why-ditch-javascript-05": {
+    "title": "Why did I start ditching JavaScript?",
+    "type": "panel-double",
+    "text1": "<div class=green-bold>JavaScript</div> <div class=gap>Main thread; <span class=orange>can lead to performance bottlenecks</span> if complex calculations or frequent DOM manipulations are involved, potentially causing jank or stuttering.</div> <div class=gap>While offering immense flexibility for complex, dynamic animations and interactions, this dynamism comes with the <span class=orange>overhead of runtime calculations and potential layout recalculations</span>.</div> <div class=gap>Achieving optimal performance with JavaScript animations often requires <span class=orange>careful implementation</span>, including techniques like <span class=code>requestAnimationFrame</span> to synchronize with browser repaint cycles and avoid unnecessary work.</div>",
+    "text2": "<div class=green-bold>CSS</div> <div class=gap>Browsers are <span class=yellow>highly optimized to parse and render CSS</span>, <span class=orange>leveraging native rendering engines</span> and often <span class=orange>offloading CSS animations to the GPU</span>, leading to smoother performance and reduced strain on the main thread.</div> <div class=gap>CSS is <span class=yellow>declarative</span>, meaning you describe the desired end state, and the browser handles the transitions. This <span class=orange>allows for efficient pre-calculation and optimization</span>.</div>",
+    "notes": "CSS - optimization, GPU; declarative, pre-calculation; less blocking - threads. JavaScript - main thread, bottlenecks; overhead of calculations and (re)calculation; optimal performance requires careful implementation."
+  },
+  "why-ditch-javascript-06": {
     "title": "Why did I start ditching JavaScript? Performance",
     "type": "panel-double",
     "text1": "<div class=green-bold>JavaScript</div> <div class=gap>Main thread; <span class=orange>can lead to performance bottlenecks</span> if complex calculations or frequent DOM manipulations are involved, potentially causing jank or stuttering.</div> <div class=gap>While offering immense flexibility for complex, dynamic animations and interactions, this dynamism comes with the <span class=orange>overhead of runtime calculations and potential layout recalculations</span>.</div> <div class=gap>Achieving optimal performance with JavaScript animations often requires <span class=orange>careful implementation</span>, including techniques like <span class=code>requestAnimationFrame</span> to synchronize with browser repaint cycles and avoid unnecessary work.</div>",
@@ -165,6 +205,7 @@
     "type": "code-editor",
     "folder": "sticky-header",
     "files": [
+      "old-sticky-header.html",
       "old-sticky-header.js",
       "new-sticky-header.html"
     ]

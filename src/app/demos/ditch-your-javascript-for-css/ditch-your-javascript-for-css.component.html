@@ -120,10 +120,158 @@
 
   <details>
     <summary>Sticky Headers</summary>
+    <div>
+      <style>
+        .sticky-header-outer-wrapper {
+          display: flex;
+          gap: 1em;
+          justify-content: center;
+        }
+        .sticky-header-relative-wrapper {
+          position: relative;
+          height: 300px;
+          width: 45%;
+          background-color: yellow;
+        }
+        .sticky-header-inner-wrapper {
+          overflow-y: scroll;
+          padding: 1em;
+          box-sizing: border-box;
+          height: 100%;
+        }
+
+        .sticky-header-inner-wrapper.old {
+          .header {
+            padding: 10px;
+            background-color: #f0f0f0;
+            transition: all 0.3s ease;
+          }
+
+          .sticky {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: calc(100% - 1.75em);
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+          }
+
+          .sticky + .content {
+            padding-top: 1em;
+          }
+        }
+      </style>
+      <div class="sticky-header-outer-wrapper">
+        <div class="sticky-header-relative-wrapper">
+          <div class="sticky-header-inner-wrapper old">
+            <h2 class="header">Old Sticky Header</h2>
+            <div class="content">
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+            </div>
+          </div>
+        </div>
+
+        <style>
+          .sticky-header-inner-wrapper.new {
+            .header {
+              position: sticky;
+              top: 0;
+              z-index: 100;
+
+              padding: 10px;
+              background-color: #f0f0f0dd;
+            }
+
+            .content {
+              padding-top: 1em;
+            }
+          }
+        </style>
+        <div class="sticky-header-relative-wrapper">
+          <div class="sticky-header-inner-wrapper new">
+            <h2 class="header">New Sticky Header</h2>
+            <div class="content">
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </details>
 
   <details>
     <summary>Dark Mode</summary>
+    <div>
+      <style>
+        .demo-old-dark-mode {
+          display: flex;
+          gap: 1em;
+        }
+        .demo-old-dark-mode-card {
+          width: 200px;
+          height: 100px;
+          background-color: yellow;
+          color: #000;
+          padding: 1em;
+          box-sizing: border-box;
+
+          &.dark {
+            background-color: #000;
+            color: yellow;
+          }
+        }
+      </style>
+      <h2>Old Dark Mode</h2>
+      <div class="demo-old-dark-mode">
+        <div class="demo-old-dark-mode-card light">Light</div>
+        <div class="demo-old-dark-mode-card dark">Dark</div>
+      </div>
+
+      <style>
+        .demo-new-dark-mode {
+          display: flex;
+          gap: 1em;
+
+        --demo-new-dark-mode--background-color: yellow;
+        --demo-new-dark-mode--color: #000;
+        @media (prefers-color-scheme: dark) {
+          --demo-new-dark-mode--background-color: #000;
+          --demo-new-dark-mode--color: yellow;
+        }
+        }
+        .demo-new-dark-mode-card {
+          width: 200px;
+          height: 100px;
+          background-color: var(--demo-new-dark-mode--background-color);
+          color: var(--demo-new-dark-mode--color);
+          padding: 1em;
+          box-sizing: border-box;
+        }
+      </style>
+      <h2>New Dark Mode</h2>
+      <div class="demo-new-dark-mode">
+        <div class="demo-new-dark-mode-card">System Light or Dark</div>
+      </div>
+    </div>
   </details>
 
   <details>

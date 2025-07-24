@@ -64,6 +64,19 @@ export class DitchYourJavascriptForCssComponent implements OnInit {
       card.style.height = '5em';
       maxHeight = Math.max(maxHeight, card.offsetHeight);
     });
+
+    // demo: sticky header
+    const oldHeader: any = document.querySelector('.old.sticky-header-inner-wrapper');
+    oldHeader.addEventListener('scroll', function() {
+      const header: any = oldHeader.querySelector('.header');
+      const stickyThreshold = 16; // Adjust as needed
+
+      if (oldHeader.scrollTop > stickyThreshold) {
+        header.classList.add('sticky');
+      } else {
+        header.classList.remove('sticky');
+      }
+    });
   }
 
   show(element: any) {

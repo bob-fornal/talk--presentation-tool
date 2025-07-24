@@ -1,0 +1,26 @@
+<style>
+  .header {
+    padding: 10px;
+    background-color: #f0f0f0;
+    transition: all 0.3s ease;
+  }
+
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .sticky + .content {
+    padding-top: 1em;
+  }
+</style>
+
+<div class="header">HEADER</div>
+<div class="content">
+  Content
+  <!-- Long enough to force scroll -->
+</div>

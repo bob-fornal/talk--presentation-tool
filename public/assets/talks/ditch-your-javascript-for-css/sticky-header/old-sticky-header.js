@@ -1,19 +1,10 @@
-let lastScroll = 0;
-let sticking = false;
-window.addEventListener('scroll', () => {
-  if (!sticking) {
-    window.requestAnimationFrame(() => {
-      const currentScroll = window.scrollY;
+window.addEventListener('scroll', function() {
+  const header = document.querySelector('header');
+  const stickyThreshold = 200; // Adjust as needed
 
-      if (currentScroll > lastScroll && currentScroll > 50) {
-        header.classList.add('navigation-hidden');
-      } else {
-        header.classList.remove('navigation–hidden');
-      }
-
-      lastScroll = currentScroll;
-      sticking = false;
-    });
-    sticking = true;
+  if (window.scrollY > stickyThreshold) {
+    header.classList.add('sticky');
+  } else {
+    header.classList.remove('sticky');
   }
-}, { passive: true });
+});
