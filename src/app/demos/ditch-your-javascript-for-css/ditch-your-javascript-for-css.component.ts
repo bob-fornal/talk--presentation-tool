@@ -1,6 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
+function debounce(func: any, delay: any) {
+  let timeoutId: any;
+
+  return function(...args: any) {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      func.apply(null, args);
+    }, delay);
+  };
+}
+
+
 @Component({
   selector: 'app-ditch-your-javascript-for-css',
   standalone: false,
@@ -43,6 +55,14 @@ export class DitchYourJavascriptForCssComponent implements OnInit {
     button.addEventListener('mouseleave', () => {
       button.style.transform = 'scale(1)';
       button.style.backgroundColor = '#0077ff';
+    });
+
+    // demo: equal height
+    const cards = document.querySelectorAll('.demo-old-height-card');
+    let maxHeight = 0;
+    cards.forEach((card: any) => {
+      card.style.height = '5em';
+      maxHeight = Math.max(maxHeight, card.offsetHeight);
     });
   }
 

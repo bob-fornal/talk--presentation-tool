@@ -156,8 +156,8 @@
     "type": "code-editor",
     "folder": "equal-height-elements",
     "files": [
-      "equal-height.js",
-      "equal-height.css"
+      "old-equal-height.js",
+      "new-equal-height.css"
     ]
   },
   "code-sticky-header": {
@@ -165,8 +165,8 @@
     "type": "code-editor",
     "folder": "sticky-header",
     "files": [
-      "sticky-header.js",
-      "sticky-header.html"
+      "old-sticky-header.js",
+      "new-sticky-header.html"
     ]
   },
   "code-dark-mode": {
