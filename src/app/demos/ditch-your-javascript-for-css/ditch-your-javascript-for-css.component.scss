@@ -58,12 +58,12 @@ summary {
   font-size: 20px;
   font-family: sans-serif;
   font-weight: bold;
-  color: #fff;
-  background: #0B486B;
+  color: #ddd;
+  background: #607069;
   cursor: pointer;
   position: relative;
   transition: .3s;
-  text-indent: 0px;
+  text-indent: 1rem;
 }
 summary::marker {
   content: "";
@@ -81,10 +81,14 @@ summary::before {
   transition: .3s;
 }
 details[open] summary::before {
+  background:
+   conic-gradient(from 90deg at 26% 26%, #0000 90deg, #333 0) 
+    100% 100%/58% 58%;
   transform: rotate(45deg);
 }
 details[open] summary {
   border-radius: 5px 5px 0 0;
-  background: #0b6b40;
-  text-indent: 1rem;
+  background: #69f0ae;
+  color: #000;
+  text-indent: 1.5rem;
 }
