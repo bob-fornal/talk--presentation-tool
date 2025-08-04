@@ -13,10 +13,16 @@
     "code-janky-mobile-buttons",
     "code-equal-height-elements",
     "code-sticky-header",
+    "code-scroll-follows",
     "code-dark-mode",
     "code-tooltip",
 
-    "why-keep-javascript",
+    "why-keep-javascript-01",
+    "why-keep-javascript-02",
+    "why-keep-javascript-03",
+    "why-keep-javascript-04",
+    "why-keep-javascript-05",
+    "why-keep-javascript-06",
     "time-for-questions"
   ],
   "STYLE": [
@@ -130,42 +136,42 @@
     "visibility": true
   },
   "why-ditch-javascript-01": {
-    "title": "Why did I start ditching JavaScript?",
+    "title": "I ditched JavaScript!",
     "type": "panel-double",
     "text1": "<div class=green-bold>JavaScript</div> <div class=gap>Main thread; <span class=orange>can lead to performance bottlenecks</span> if complex calculations or frequent DOM manipulations are involved, potentially causing jank or stuttering.</div>",
     "text2": "<div class=green-bold>CSS</div>",
     "notes": "CSS - optimization, GPU; declarative, pre-calculation; less blocking - threads. JavaScript - main thread, bottlenecks; overhead of calculations and (re)calculation; optimal performance requires careful implementation."
   },
   "why-ditch-javascript-02": {
-    "title": "Why did I start ditching JavaScript?",
+    "title": "I ditched JavaScript!",
     "type": "panel-double",
     "text1": "<div class=green-bold>JavaScript</div> <div class=gap>Main thread; <span class=orange>can lead to performance bottlenecks</span> if complex calculations or frequent DOM manipulations are involved, potentially causing jank or stuttering.</div> <div class=gap>While offering immense flexibility for complex, dynamic animations and interactions, this dynamism comes with the <span class=orange>overhead of runtime calculations and potential layout recalculations</span>.</div>",
     "text2": "<div class=green-bold>CSS</div>",
     "notes": "CSS - optimization, GPU; declarative, pre-calculation; less blocking - threads. JavaScript - main thread, bottlenecks; overhead of calculations and (re)calculation; optimal performance requires careful implementation."
   },
   "why-ditch-javascript-03": {
-    "title": "Why did I start ditching JavaScript?",
+    "title": "I ditched JavaScript!",
     "type": "panel-double",
     "text1": "<div class=green-bold>JavaScript</div> <div class=gap>Main thread; <span class=orange>can lead to performance bottlenecks</span> if complex calculations or frequent DOM manipulations are involved, potentially causing jank or stuttering.</div> <div class=gap>While offering immense flexibility for complex, dynamic animations and interactions, this dynamism comes with the <span class=orange>overhead of runtime calculations and potential layout recalculations</span>.</div> <div class=gap>Achieving optimal performance with JavaScript animations often requires <span class=orange>careful implementation</span>, including techniques like <span class=code>requestAnimationFrame</span> to synchronize with browser repaint cycles and avoid unnecessary work.</div>",
     "text2": "<div class=green-bold>CSS</div>",
     "notes": "CSS - optimization, GPU; declarative, pre-calculation; less blocking - threads. JavaScript - main thread, bottlenecks; overhead of calculations and (re)calculation; optimal performance requires careful implementation."
   },
   "why-ditch-javascript-04": {
-    "title": "Why did I start ditching JavaScript?",
+    "title": "I ditched JavaScript!",
     "type": "panel-double",
     "text1": "<div class=green-bold>JavaScript</div> <div class=gap>Main thread; <span class=orange>can lead to performance bottlenecks</span> if complex calculations or frequent DOM manipulations are involved, potentially causing jank or stuttering.</div> <div class=gap>While offering immense flexibility for complex, dynamic animations and interactions, this dynamism comes with the <span class=orange>overhead of runtime calculations and potential layout recalculations</span>.</div> <div class=gap>Achieving optimal performance with JavaScript animations often requires <span class=orange>careful implementation</span>, including techniques like <span class=code>requestAnimationFrame</span> to synchronize with browser repaint cycles and avoid unnecessary work.</div>",
     "text2": "<div class=green-bold>CSS</div> <div class=gap>Browsers are <span class=yellow>highly optimized to parse and render CSS</span>, <span class=orange>leveraging native rendering engines</span> and often <span class=orange>offloading CSS animations to the GPU</span>, leading to smoother performance and reduced strain on the main thread.</div>",
     "notes": "CSS - optimization, GPU; declarative, pre-calculation; less blocking - threads. JavaScript - main thread, bottlenecks; overhead of calculations and (re)calculation; optimal performance requires careful implementation."
   },
   "why-ditch-javascript-05": {
-    "title": "Why did I start ditching JavaScript?",
+    "title": "I ditched JavaScript!",
     "type": "panel-double",
     "text1": "<div class=green-bold>JavaScript</div> <div class=gap>Main thread; <span class=orange>can lead to performance bottlenecks</span> if complex calculations or frequent DOM manipulations are involved, potentially causing jank or stuttering.</div> <div class=gap>While offering immense flexibility for complex, dynamic animations and interactions, this dynamism comes with the <span class=orange>overhead of runtime calculations and potential layout recalculations</span>.</div> <div class=gap>Achieving optimal performance with JavaScript animations often requires <span class=orange>careful implementation</span>, including techniques like <span class=code>requestAnimationFrame</span> to synchronize with browser repaint cycles and avoid unnecessary work.</div>",
     "text2": "<div class=green-bold>CSS</div> <div class=gap>Browsers are <span class=yellow>highly optimized to parse and render CSS</span>, <span class=orange>leveraging native rendering engines</span> and often <span class=orange>offloading CSS animations to the GPU</span>, leading to smoother performance and reduced strain on the main thread.</div> <div class=gap>CSS is <span class=yellow>declarative</span>, meaning you describe the desired end state, and the browser handles the transitions. This <span class=orange>allows for efficient pre-calculation and optimization</span>.</div>",
     "notes": "CSS - optimization, GPU; declarative, pre-calculation; less blocking - threads. JavaScript - main thread, bottlenecks; overhead of calculations and (re)calculation; optimal performance requires careful implementation."
   },
   "why-ditch-javascript-06": {
-    "title": "Why did I start ditching JavaScript? Performance",
+    "title": "I ditched JavaScript for Performance!",
     "type": "panel-double",
     "text1": "<div class=green-bold>JavaScript</div> <div class=gap>Main thread; <span class=orange>can lead to performance bottlenecks</span> if complex calculations or frequent DOM manipulations are involved, potentially causing jank or stuttering.</div> <div class=gap>While offering immense flexibility for complex, dynamic animations and interactions, this dynamism comes with the <span class=orange>overhead of runtime calculations and potential layout recalculations</span>.</div> <div class=gap>Achieving optimal performance with JavaScript animations often requires <span class=orange>careful implementation</span>, including techniques like <span class=code>requestAnimationFrame</span> to synchronize with browser repaint cycles and avoid unnecessary work.</div>",
     "text2": "<div class=green-bold>CSS</div> <div class=gap>Browsers are <span class=yellow>highly optimized to parse and render CSS</span>, <span class=orange>leveraging native rendering engines</span> and often <span class=orange>offloading CSS animations to the GPU</span>, leading to smoother performance and reduced strain on the main thread.</div> <div class=gap>CSS is <span class=yellow>declarative</span>, meaning you describe the desired end state, and the browser handles the transitions. This <span class=orange>allows for efficient pre-calculation and optimization</span>.</div> <div class=gap>CSS typically <span class=yellow>does not block the main thread</span> during rendering, allowing for a more responsive user experience, especially during page load.</div>",
@@ -210,6 +216,15 @@
       "new-sticky-header.html"
     ]
   },
+  "code-scroll-follows": {
+    "title": "(janky) Scroll Follows",
+    "type": "code-editor",
+    "folder": "scroll-follows",
+    "files": [
+      "scroll-follows.js",
+      "new-scroll-follows.css"
+    ]
+  },
   "code-dark-mode": {
     "title": "Dark Mode",
     "type": "code-editor",
@@ -232,11 +247,41 @@
     ]
   },
 
-  "why-keep-javascript": {
+  "why-keep-javascript-01": {
+    "title": "Should I keep JavaScript? Yes?",
+    "type": "panel-double",
+    "text1": "<div class=green-bold>JavaScript</div> <div class=gap>For <span class=orange>highly interactive elements</span>, <span class=orange>game-like experiences</span>, or <span class=orange>animations requiring intricate logic, user input, or data manipulation</span>, JavaScript offers the necessary control and flexibility.</div>",
+    "text2": "<div class=green-bold>Summary</div>"
+  },
+  "why-keep-javascript-02": {
+    "title": "Should I keep JavaScript? Yes?",
+    "type": "panel-double",
+    "text1": "<div class=green-bold>JavaScript</div> <div class=gap>For <span class=orange>highly interactive elements</span>, <span class=orange>game-like experiences</span>, or <span class=orange>animations requiring intricate logic, user input, or data manipulation</span>, JavaScript offers the necessary control and flexibility.</div> <div class=gap>The <span class=orange>Web Animations API</span> provides a more performant way to create JavaScript-based animations, allowing for greater control while leveraging browser optimizations.</div>",
+    "text2": "<div class=green-bold>Summary</div>"
+  },
+  "why-keep-javascript-03": {
+    "title": "Should I keep JavaScript? Yes?",
+    "type": "panel-double",
+    "text1": "<div class=green-bold>JavaScript</div> <div class=gap>For <span class=orange>highly interactive elements</span>, <span class=orange>game-like experiences</span>, or <span class=orange>animations requiring intricate logic, user input, or data manipulation</span>, JavaScript offers the necessary control and flexibility.</div> <div class=gap>The <span class=orange>Web Animations API</span> provides a more performant way to create JavaScript-based animations, allowing for greater control while leveraging browser optimizations.</div> <div class=gap>When animations need to be tightly integrated with other browser APIs or data sources, JavaScript is the natural choice.</div>",
+    "text2": "<div class=green-bold>Summary</div>"
+  },
+  "why-keep-javascript-04": {
+    "title": "Should I keep JavaScript? No?",
+    "type": "panel-double",
+    "text1": "<div class=green-bold>JavaScript</div> <div class=gap>For <span class=orange>highly interactive elements</span>, <span class=orange>game-like experiences</span>, or <span class=orange>animations requiring intricate logic, user input, or data manipulation</span>, JavaScript offers the necessary control and flexibility.</div> <div class=gap>The <span class=orange>Web Animations API</span> provides a more performant way to create JavaScript-based animations, allowing for greater control while leveraging browser optimizations.</div> <div class=gap>When animations need to be tightly integrated with other browser APIs or data sources, JavaScript is the natural choice.</div>",
+    "text2": "<div class=green-bold>Summary</div> <div class=gap>For simple or intermediate transitions, visual effects, and static layout changes, CSS is generally the more performant and efficient choice.</div>"
+  },
+  "why-keep-javascript-05": {
+    "title": "Should I keep JavaScript? No?",
+    "type": "panel-double",
+    "text1": "<div class=green-bold>JavaScript</div> <div class=gap>For <span class=orange>highly interactive elements</span>, <span class=orange>game-like experiences</span>, or <span class=orange>animations requiring intricate logic, user input, or data manipulation</span>, JavaScript offers the necessary control and flexibility.</div> <div class=gap>The <span class=orange>Web Animations API</span> provides a more performant way to create JavaScript-based animations, allowing for greater control while leveraging browser optimizations.</div> <div class=gap>When animations need to be tightly integrated with other browser APIs or data sources, JavaScript is the natural choice.</div>",
+    "text2": "<div class=green-bold>Summary</div> <div class=gap>For simple or intermediate transitions, visual effects, and static layout changes, CSS is generally the more performant and efficient choice.</div> <div class=gap>For complex, dynamic animations or interactions requiring intricate logic and control, JavaScript becomes necessary, but careful implementation is crucial for optimal performance.</div>"
+  },
+  "why-keep-javascript-06": {
     "title": "Should I keep JavaScript? Maybe",
     "type": "panel-double",
-    "text1": "<div class=green-bold>JavaScript</div> <div class=gap>For <span class=yellow>highly interactive elements</span>, <span class=yellow>game-like experiences</span>, or <span class=yellow>animations requiring intricate logic, user input, or data manipulation</span>, JavaScript offers the necessary control and flexibility.</div> <div class=gap>The <span class=yellow>Web Animations API</span> provides a more performant way to create JavaScript-based animations, allowing for greater control while leveraging browser optimizations.</div> <div class=gap>When animations need to be tightly integrated with other browser APIs or data sources, JavaScript is the natural choice.</div>",
-    "text2": "<div class=green-bold>Summary</div> <div class=gap>For simple or intermediate transitions, visual effects, and static layout changes, CSS is generally the more performant and efficient choice.</div> <div class=gap>For complex, dynamic animations or interactions requiring intricate logic and control, JavaScript becomes necessary, but careful implementation is crucial for optimal performance.</div> <div class=gap>The <span class=yellow>\"rule of least power\"</span> suggests using the simplest technology capable of achieving the desired outcome, often favoring CSS when possible.</div>",
+    "text1": "<div class=green-bold>JavaScript</div> <div class=gap>For <span class=orange>highly interactive elements</span>, <span class=orange>game-like experiences</span>, or <span class=orange>animations requiring intricate logic, user input, or data manipulation</span>, JavaScript offers the necessary control and flexibility.</div> <div class=gap>The <span class=orange>Web Animations API</span> provides a more performant way to create JavaScript-based animations, allowing for greater control while leveraging browser optimizations.</div> <div class=gap>When animations need to be tightly integrated with other browser APIs or data sources, JavaScript is the natural choice.</div>",
+    "text2": "<div class=green-bold>Summary</div> <div class=gap>For simple or intermediate transitions, visual effects, and static layout changes, CSS is generally the more performant and efficient choice.</div> <div class=gap>For complex, dynamic animations or interactions requiring intricate logic and control, JavaScript becomes necessary, but careful implementation is crucial for optimal performance.</div> <div class=gap>The <span class=orange>\"rule of least power\"</span> suggests using the simplest technology capable of achieving the desired outcome, often favoring CSS when possible.</div>",
     "notes": "<div>I'm not saying to stop using JavaScript. JavaScript is amazing for complex interactions, state management, and actual application logic.</div> <br/> <div>For visual things, layout, or animations - CSS has grown up. It's better at many things than our JavaScript solutions.</div>"
   },
 
@@ -244,7 +289,7 @@
     "title": "",
     "type": "image-only",
     "background": "transparent",
-    "image": "./assets/images/time-for-questions.webp",
+    "image": "./assets/images/time-for-questions--dyjfc-qr.webp",
     "notes": ""
   }
 }

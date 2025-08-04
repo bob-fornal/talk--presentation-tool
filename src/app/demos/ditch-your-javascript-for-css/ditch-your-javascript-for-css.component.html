@@ -219,6 +219,67 @@
   </details>
 
   <details name="ditch">
+    <summary>(janky) Scroll Follows</summary>
+    <div>
+      <a href="https://mawcg.org/ham-pi/" target="_blank">EXAMPLE</a>
+      <br/>
+      <style>
+        .scroll-follows-container {
+          position: relative;
+        }
+        .scroll-follows-wrapper {
+          height: 10em;
+          background-color: yellow;
+          overflow-y: scroll;
+
+          .scroll-follows-content {
+            height: 30em;
+
+            .scroll-follows-fixed-element {
+              position: absolute;
+              top: calc(calc(10em - 3em) / 2);
+              left: 1em;
+              padding: 1em;
+              background-color: #eeeeeeee;
+            }
+
+            .scroll-follows-offset {
+              padding-left: 12em;
+            }
+          }
+        }
+      </style>
+      <div class="scroll-follows-container">
+        <div class="scroll-follows-wrapper">
+          <div class="scroll-follows-content">
+            <div class="scroll-follows-fixed-element">FIXED ELEMENT</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details name="ditch">
     <summary>Dark Mode</summary>
     <div>
       <style>
