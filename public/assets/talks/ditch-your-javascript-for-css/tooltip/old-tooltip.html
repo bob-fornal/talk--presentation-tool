@@ -1,0 +1,47 @@
+<script>
+  function show(elem) {
+    elem.style.display = "block";
+  }
+
+  function hide(elem) {
+    elem.style.display = "";
+  }
+</script>
+
+<style>
+  .name {
+    float: left;
+    margin: 100px;
+    border: 1px solid black;
+  }
+
+  .tooltip {
+    position: absolute;
+    margin: 5px;
+    width: 200px;
+    height: 50px;
+    border: 1px solid black;
+    display: none;
+  }
+</style>
+
+<div class="name" onmouseover="show(tooltip1)" onmouseout="hide(tooltip1)">
+  NAME
+  <div class="tooltip" id="tooltip1">
+    PROFILE DETAILS
+  </div>
+</div>
+
+<div class="name" onmouseover="show(tooltip2)" onmouseout="hide(tooltip2)">
+  NAME 2
+  <div class="tooltip" id="tooltip2">
+    PROFILE DETAILS 2
+  </div>
+</div>
+
+<div class="name" onmouseover="show(tooltip3)" onmouseout="hide(tooltip3)">
+  NAME 3
+  <div class="tooltip" id="tooltip3">
+    PROFILE DETAILS 3
+  </div>
+</div>

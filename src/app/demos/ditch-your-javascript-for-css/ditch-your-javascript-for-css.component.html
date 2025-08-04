@@ -1,0 +1,430 @@
+<h1>DEMO: Ditch Your JavaScript For CSS!</h1>
+
+<div class="demo-functionality">
+  <a href="javascript:void(0)" onclick="location.reload();">REFRESH</a>
+  <a href="/talk/ditch-your-javascript-for-css/DEFAULT/cover-01">Back to Talk</a>
+</div>
+
+<hr/>
+
+<div class="accordian">
+  <details name="ditch">
+    <summary>Conditional Logic for No Content</summary>
+    <div>
+      <style>
+        .handle-no-data {
+          &:not(:only-child) {
+            display: none;
+          }
+          &:only-child {
+            display: flex;
+          }
+        }
+      </style>
+
+      <h2>No Data Showing</h2>
+      <ul>
+        <li class="handle-no-data">Nothing to show.</li>
+        <!-- <li>Data here</li>-->
+      </ul>
+
+      <h2>Data Showing</h2>
+      <ul>
+        <li class="handle-no-data">Nothing to show.</li>
+        <li>Data here</li>
+      </ul>
+    </div>
+  </details>
+
+  <details name="ditch">
+    <summary>Janky Buttons on Mobile</summary>
+    <div>
+      <style>
+        .btn {
+          margin: 1em;
+          padding: 0.5em 1em;
+        }
+        .button {
+          background-color: #0077ff;
+          transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .button:hover {
+          transform: scale(1.1);
+          background-color: #0055bb;
+        }
+      </style>
+      <button class="btn" id="jankyButton">Janky Button</button>
+      <button class="btn button">Non-Janky Button</button>
+    </div>
+  </details>
+
+  <details name="ditch">
+    <summary>Elements of Equal Height</summary>
+    <div>
+      <style>
+        .demo-old-height {
+          display: flex;
+          gap: 1em;
+          margin-bottom: 1em;
+          padding: 0 1em;
+        }
+        .demo-old-height-card {
+          display: inline-block;
+          background-color: yellow;
+          padding: 1em;
+          flex-grow: 1;
+        }
+      </style>
+      <h2>Old Equal Height</h2>
+      <div class="demo-old-height">
+        <div class="demo-old-height-card">
+          Line 1<br/>
+          Line 2<br/>
+          Line 3
+        </div>
+        <div class="demo-old-height-card">
+          Line 1
+        </div>
+      </div>
+
+      <style>
+        .demo-new-height {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 1rem;
+          padding: 0 1em;
+          margin-bottom: 1em;
+        }
+
+        .demo-new-height-card {
+          display: inline-block;
+          background-color: palegreen;
+          padding: 1em;
+          height: 3em;
+        }
+      </style>
+      <h2>New Equal Height</h2>
+      <div class="demo-new-height">
+        <div class="demo-new-height-card">
+          Line 1<br/>
+          Line 2<br/>
+          Line 3
+        </div>
+        <div class="demo-new-height-card">
+          Line 1
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details name="ditch">
+    <summary>Sticky Headers</summary>
+    <div>
+      <style>
+        .sticky-header-outer-wrapper {
+          display: flex;
+          gap: 1em;
+          justify-content: center;
+        }
+        .sticky-header-relative-wrapper {
+          position: relative;
+          height: 300px;
+          width: 45%;
+          background-color: yellow;
+        }
+        .sticky-header-inner-wrapper {
+          overflow-y: scroll;
+          padding: 1em;
+          box-sizing: border-box;
+          height: 100%;
+        }
+
+        .sticky-header-inner-wrapper.old {
+          .header {
+            padding: 10px;
+            background-color: #f0f0f0;
+            transition: all 0.3s ease;
+          }
+
+          .sticky {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: calc(100% - 1.75em);
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+          }
+
+          .sticky + .content {
+            padding-top: 1em;
+          }
+        }
+      </style>
+      <div class="sticky-header-outer-wrapper">
+        <div class="sticky-header-relative-wrapper">
+          <div class="sticky-header-inner-wrapper old">
+            <h2 class="header">Old Sticky Header</h2>
+            <div class="content">
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+            </div>
+          </div>
+        </div>
+
+        <style>
+          .sticky-header-inner-wrapper.new {
+            .header {
+              position: sticky;
+              top: 0;
+              z-index: 100;
+
+              padding: 10px;
+              background-color: #f0f0f0dd;
+            }
+
+            .content {
+              padding-top: 1em;
+            }
+          }
+        </style>
+        <div class="sticky-header-relative-wrapper">
+          <div class="sticky-header-inner-wrapper new">
+            <h2 class="header">New Sticky Header</h2>
+            <div class="content">
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details name="ditch">
+    <summary>(janky) Scroll Follows</summary>
+    <div>
+      <a href="https://mawcg.org/ham-pi/" target="_blank">EXAMPLE</a>
+      <br/>
+      <style>
+        .scroll-follows-container {
+          position: relative;
+        }
+        .scroll-follows-wrapper {
+          height: 10em;
+          background-color: yellow;
+          overflow-y: scroll;
+
+          .scroll-follows-content {
+            height: 30em;
+
+            .scroll-follows-fixed-element {
+              position: absolute;
+              top: calc(calc(10em - 3em) / 2);
+              left: 1em;
+              padding: 1em;
+              background-color: #eeeeeeee;
+            }
+
+            .scroll-follows-offset {
+              padding-left: 12em;
+            }
+          }
+        }
+      </style>
+      <div class="scroll-follows-container">
+        <div class="scroll-follows-wrapper">
+          <div class="scroll-follows-content">
+            <div class="scroll-follows-fixed-element">FIXED ELEMENT</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+            <div class="scroll-follows-offset">Content</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details name="ditch">
+    <summary>Dark Mode</summary>
+    <div>
+      <style>
+        .demo-old-dark-mode {
+          display: flex;
+          gap: 1em;
+        }
+        .demo-old-dark-mode-card {
+          width: 200px;
+          height: 100px;
+          background-color: yellow;
+          color: #000;
+          padding: 1em;
+          box-sizing: border-box;
+
+          &.dark {
+            background-color: #000;
+            color: yellow;
+          }
+        }
+      </style>
+      <h2>Old Dark Mode</h2>
+      <div class="demo-old-dark-mode">
+        <div class="demo-old-dark-mode-card light">Light</div>
+        <div class="demo-old-dark-mode-card dark">Dark</div>
+      </div>
+
+      <style>
+        .demo-new-dark-mode {
+          display: flex;
+          gap: 1em;
+
+        --demo-new-dark-mode--background-color: yellow;
+        --demo-new-dark-mode--color: #000;
+        @media (prefers-color-scheme: dark) {
+          --demo-new-dark-mode--background-color: #000;
+          --demo-new-dark-mode--color: yellow;
+        }
+        }
+        .demo-new-dark-mode-card {
+          width: 200px;
+          height: 100px;
+          background-color: var(--demo-new-dark-mode--background-color);
+          color: var(--demo-new-dark-mode--color);
+          padding: 1em;
+          box-sizing: border-box;
+        }
+      </style>
+      <h2>New Dark Mode</h2>
+      <div class="demo-new-dark-mode">
+        <div class="demo-new-dark-mode-card">System Light or Dark</div>
+      </div>
+    </div>
+  </details>
+
+  <details name="ditch">
+    <summary>Tooltip</summary>
+    <div>
+      <style>
+        .demo-old-tooltip {
+          display: flex;
+          gap: 1em;
+          margin-bottom: 1em;
+        }
+        .name {
+          border: 1px solid black;
+        }
+
+        .tooltip {
+          background-color: yellow;
+          position: absolute;
+          margin: 5px;
+          width: 200px;
+          height: 50px;
+          border: 1px solid black;
+          display: none;
+          z-index: 100;
+        }
+      </style>
+
+      <h2>Old Method (mouseover / mouseout)</h2>
+      <div class="demo-old-tooltip">
+        <div class="name" (mouseover)="show(tooltip1)" (mouseout)="hide(tooltip1)">
+          NAME
+          <div class="tooltip" #tooltip1>
+            PROFILE DETAILS
+          </div>
+        </div>
+
+        <div class="name" (mouseover)="show(tooltip2)" (mouseout)="hide(tooltip2)">
+          NAME 2
+          <div class="tooltip" #tooltip2>
+            PROFILE DETAILS 2
+          </div>
+        </div>
+
+        <div class="name" (mouseover)="show(tooltip3)" (mouseout)="hide(tooltip3)">
+          NAME 3
+          <div class="tooltip" #tooltip3>
+            PROFILE DETAILS 3
+          </div>
+        </div>
+      </div>
+
+      <h2>New Method (CSS Only)</h2>
+      <style>
+        .demo-new-tooltip {
+          position: relative;
+          margin-bottom: 1em;
+        }
+        [role="tooltip"],
+        .hide-tooltip.hide-tooltip.hide-tooltip + [role="tooltip"] {
+          visibility: hidden;
+          position: absolute;
+          top: 2rem;
+          left: 2rem;
+          background: yellow;
+          color: black;
+          border: 1px solid black;
+        }
+        [aria-describedby]:hover,
+        [aria-describedby]:focus {
+          position: relative;
+        }
+        [aria-describedby]:hover + [role="tooltip"],
+        [aria-describedby]:focus + [role="tooltip"] {
+          visibility: visible;
+        }
+      </style>
+
+      <div class="demo-new-tooltip">
+        <label for="password">Password:</label>
+        <input aria-describedby="passwordrules" id="password" type="password" />
+        <div role="tooltip" id="passwordrules">
+          <p>Password Rules:</p>
+          <ul>
+            <li>Minimum of 8 characters</li>
+            <li>
+              Include at least one lowercase letter, one uppercase letter, one number
+              and one special character
+            </li>
+            <li>Unique to this website</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </details>
+</div>

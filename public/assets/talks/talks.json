@@ -37,6 +37,10 @@
       "title": "Cloudflare"
     },
     {
+      "tag": "css",
+      "title": "CSS"
+    },
+    {
       "tag": "demo",
       "title": "Demo"
     },
@@ -152,6 +156,15 @@
       "pdf": "https://www.bobs-tech-presentations.com/assets/talks/case-against-gherkin/case-against-gherkin.pdf",
       "tags": [
         "gherkin"
+      ]
+    },
+    {
+      "folder": "ditch-your-javascript-for-css",
+      "title": "Ditch Your JavaScript For CSS!",
+      "pdf": "https://www.bobs-tech-presentations.com/assets/talks/ditch-your-javascript-for-css/ditch-your-javascript-for-css.pdf",
+      "tags": [
+        "css",
+        "javascript"
       ]
     },
     {

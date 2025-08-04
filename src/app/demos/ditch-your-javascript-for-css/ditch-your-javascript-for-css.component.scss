@@ -1,0 +1,94 @@
+:host {
+  position: fixed;
+  box-sizing: border-box;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+
+  background-color: #111111;
+  background: url("/assets/images/--bg-grid--green.webp");
+  color: #eee;
+  padding: 2em 4em;
+  font-size: 1.4em;
+
+  h1 {
+    font-weight: bold;
+    font-size: 1.8em;
+    color: #69f0ae;
+  }
+
+  .demo-functionality {
+    padding: 1em;
+    display: flex;
+    gap: 1em;
+
+    a {
+      color: #bb86fc;
+
+      &:visited {
+        color: #9966eb;
+      }
+      &:hover {
+        color: yellow;
+      }
+    }
+  }
+}
+
+.accordian {
+  width: 100%;
+  margin-top: 2em;
+}
+
+details {
+  margin: 5px;
+  font-size: 18px;
+}
+details > * {
+  padding: .75rem;
+}
+details > div {
+  background: #ddd;
+  color: #222;
+  border-radius: 0 0 5px 5px;
+}
+summary {
+  border-radius: 5px;
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #ddd;
+  background: #607069;
+  cursor: pointer;
+  position: relative;
+  transition: .3s;
+  text-indent: 1rem;
+}
+summary::marker {
+  content: "";
+}
+summary::before {
+  content:"";
+  position:absolute;
+  inset: .75rem;
+  left: auto;
+  aspect-ratio: 1;
+  background: 
+   conic-gradient(from 90deg at 26% 26%, #0000 90deg, #fff 0) 
+    100% 100%/58% 58%;
+  clip-path: inset(1px);
+  transition: .3s;
+}
+details[open] summary::before {
+  background:
+   conic-gradient(from 90deg at 26% 26%, #0000 90deg, #333 0) 
+    100% 100%/58% 58%;
+  transform: rotate(45deg);
+}
+details[open] summary {
+  border-radius: 5px 5px 0 0;
+  background: #69f0ae;
+  color: #000;
+  text-indent: 1.5rem;
+}

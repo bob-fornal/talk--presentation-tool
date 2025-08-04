@@ -58,6 +58,8 @@ import { ConferenceComponent } from './features/conference/conference.component'
 import { ActiveEventComponent } from './features/active-event/active-event.component';
 import { PanelSingleTableComponent } from './slides/panel-single-table/panel-single-table.component';
 
+import { DitchYourJavascriptForCssComponent } from './demos/ditch-your-javascript-for-css/ditch-your-javascript-for-css.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -87,6 +89,7 @@ import { PanelSingleTableComponent } from './slides/panel-single-table/panel-sin
     ConferenceComponent,
     ActiveEventComponent,
     PanelSingleTableComponent,
+    DitchYourJavascriptForCssComponent,
   ],
   imports: [
     BrowserModule,
