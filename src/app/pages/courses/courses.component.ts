@@ -58,12 +58,25 @@ export class CoursesComponent implements OnDestroy, OnInit {
     this.talks = [...orderedTalks];
     this.filteredTalks = [...orderedTalks];
     this.tags = wrapper.TAGS;
+    this.tags = this.tags.map((tag: any) => {
+      return this.getTagWeight(tag, orderedTalks);
+    });
 
     const style = wrapper.STYLE;
     this.style.add(style.join('\n'));
 
     this.captureTalks(orderedTalks);
   };
+
+  getTagWeight(item: any, talks: Array<Talk>) {
+    let weight: number = 0;
+    talks.forEach((talk: Talk) => {
+      if (talk.tags.includes(item.tag) === true) {
+        weight = weight + 1;
+      }
+    });
+    return { ...item, weight };
+  }
 
   handleTemplates = (templates: { [key:string]: TemplateType }): void => {
     this.templates = templates;

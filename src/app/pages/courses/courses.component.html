@@ -71,7 +71,13 @@
       <div class="tags">
         <div class="tag-list-wrapper">
           @for (tag of tags; track tag; let i = $index;) {
-            <button [attr.aria-label]="tag.title + ' Tag'" class="btn" mat-flat-button [color]="selectedTag(tag)" (click)="filterTalks(tag)">
+            <button
+              [attr.aria-label]="tag.title + ' Tag'"
+              class="btn" mat-flat-button
+              [attr.data-weight]="tag.weight"
+              [color]="selectedTag(tag)"
+              (click)="filterTalks(tag)"
+            >
               {{ tag.title }}
             </button>
           }
