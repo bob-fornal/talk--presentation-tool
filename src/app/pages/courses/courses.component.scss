@@ -4,17 +4,37 @@
   top: 1em;
 }
 
+.functionality-wrapper {
+  margin-left: 1.75em;
+
+  .select-functionality {
+    margin-left: 1em;
+    padding: 0.25em 1em;
+  }
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1em;
+
+  .tags {
+    flex-grow: 1;
+    width: 30%;
+  }
+  .talks {
+    flex-grow: 10;
+    width: calc(70% - 1em);
+  }
+}
+
 .tags {
   margin: 0 1em;
-
-  .functionality-wrapper {
-    margin-bottom: 1em;
-
-    .select-functionality {
-      margin-left: 1em;
-      padding: 0.25em 1em;
-    }
-  }
+  padding: 1em;
+  border-radius: 0.5em;
+  background-color: #69f0ae22;
+  box-sizing: border-box;
 
   .tag-list-wrapper {
     display: flex;
