@@ -75,7 +75,7 @@
               [attr.aria-label]="tag.title + ' Tag'"
               class="btn" mat-flat-button
               [attr.data-weight]="tag.weight"
-              [color]="selectedTag(tag)"
+              [attr.data-selected]="selectedTag(tag)"
               (click)="filterTalks(tag)"
             >
               {{ tag.title }}

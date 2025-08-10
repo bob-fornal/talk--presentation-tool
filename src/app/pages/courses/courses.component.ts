@@ -130,9 +130,8 @@ export class CoursesComponent implements OnDestroy, OnInit {
     return isSelected;
   };
 
-  selectedTag = (item: Tag): string => {
-    if (this.selectedTags.includes(item.tag) === true) return 'primary';
-    return '';
+  selectedTag = (item: Tag): boolean => {
+    return this.selectedTags.includes(item.tag) === true;
   };
 
   clickTalkEvent = async (talk: Talk): Promise<void> => {
