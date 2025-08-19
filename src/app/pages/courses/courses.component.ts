@@ -20,6 +20,7 @@ export class CoursesComponent implements OnDestroy, OnInit {
   talks: Array<Talk> = [];
   tags: Array<Tag> = [];
 
+  talkDisplayType: string = '';
   talkData: { [key: string]: any } = {};
 
   selectedTags: Array<string> = [];
@@ -49,8 +50,19 @@ export class CoursesComponent implements OnDestroy, OnInit {
 
   ngOnInit(): void {
     this.selectedTemplateKey = this.style.getTemplate();
+    this.talkDisplayType = this.getTalkDisplayType();
     this.changeDetectorRef.detectChanges();
   }
+
+  getTalkDisplayType = (): string => {
+    const item = localStorage.getItem('talk-display-type');
+    console.log(item);
+    return item === null ? '' : item;
+  };
+
+  onDisplayTypeChange = (type: string): void => {
+    localStorage.setItem('talk-display-type', type);
+  };
 
   handleTalks = (wrapper: Talks): void => {
     const orderedTalks: Array<Talk> = wrapper.TALKS.sort(this.handleTalksSort);
@@ -178,9 +190,12 @@ export class CoursesComponent implements OnDestroy, OnInit {
       : `Slides: ${ slides }, Notes: ${ notes }`;
   };
 
+  isHighlighted = (talk: Talk): boolean => {
+    return talk.hasOwnProperty('highlight') && talk.highlight === true;
+  }
+
   getColor = (talk: Talk): string => {
-    if (talk.hasOwnProperty('highlight') && talk.highlight === true) return 'blue';
-    return 'accent';
+    return this.isHighlighted(talk) ? 'blue' : 'accent';
   };
 
   getTagTitle = (tag: string): string => {

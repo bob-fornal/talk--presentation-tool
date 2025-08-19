@@ -33,8 +33,11 @@
   margin: 0 1em;
   padding: 1em;
   border-radius: 0.5em;
-  background-color: #69f0ae22;
+  background-color: rgba(105, 240, 174, 0.1);
+  backdrop-filter: blur(3px);
+
   box-sizing: border-box;
+  width: 40%;
 
   .tag-list-wrapper {
     display: flex;
@@ -82,11 +85,94 @@
   }
 }
 
+.talks-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin: 1em;
+  width: 58%;
+
+  .talk-card-wrapper {
+    padding: 1em;
+    border-radius: 1em;
+    backdrop-filter: blur(3px);
+    width: 28%;
+
+    &:not(.highlighted) {
+      background-color: rgba(105, 240, 174, 0.09);
+    }
+    &.highlighted {
+      background-color: rgba(31, 123, 162, 0.2);
+    }
+
+    .card-title {
+      color: white;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    .card-functionality {
+      display: flex;
+      gap: 1em;
+      margin-top: 0.5em;
+      padding: 0.5em 0;
+      border-top: 1px solid white;
+      border-bottom: 1px solid white;
+    }
+
+    .btn .mat-icon {
+      height: auto;
+      width: auto;
+      font-size: 1.5em;
+    }
+  }
+
+  .talk-cards-tags-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.25em 0.25em;
+    margin: 0.5em;
+
+    .button-like {
+      background-color: var(--mdc-filled-button-container-color);
+      color: var(--mdc-filled-button-label-text-color);;
+
+      border: none;
+      padding: 0.25rem 0.5rem;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 0.25rem;
+
+      font-family: var(--mdc-filled-button-label-text-font, var(--mat-app-label-large-font));
+      font-size: var(--mdc-filled-button-label-text-size, var(--mat-app-label-large-size));
+      letter-spacing: var(--mdc-filled-button-label-text-tracking, var(--mat-app-label-large-tracking));
+      text-transform: var(--mdc-filled-button-label-text-transform);
+      font-weight: var(--mdc-filled-button-label-text-weight, var(--mat-app-label-large-weight));
+    }
+  }
+
+  .talk-card-pdf-wrapper {
+    display: flex;
+    gap: 0.5em;
+    margin: 0.5em;
+
+    .red {
+      color: red;
+    }
+    .green {
+      color: #69f0ae;
+    }
+  }
+}
+
 .talks {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin: 0 1em;
+  width: 58%;
 
   .talk-wrapper {
     display: flex;
