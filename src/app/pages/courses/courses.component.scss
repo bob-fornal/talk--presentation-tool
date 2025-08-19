@@ -97,7 +97,7 @@
     padding: 1em;
     border-radius: 1em;
     backdrop-filter: blur(3px);
-    width: 28%;
+    width: 29%;
 
     &:not(.highlighted) {
       background-color: rgba(105, 240, 174, 0.09);
@@ -107,7 +107,7 @@
     }
 
     .card-title {
-      color: white;
+      color: yellow;
       font-weight: bold;
       font-size: 1.2em;
     }

@@ -70,12 +70,6 @@
                 </div>
 
                 <div class="card-content">
-                  <div class="talk-cards-tags-wrapper">
-                    @for (talkTag of talk.tags; track talkTag) {
-                      <span class="button-like">{{ getTagTitle(talkTag) }}</span>
-                    }
-                  </div>
-
                   <div class="talk-card-pdf-wrapper">
                     @if (talk.pdfActive === true) {
                       <span class="green">&check;</span>
@@ -86,6 +80,12 @@
                       <span>LINK TO PDF</span>
                       <mat-icon>open_in_new</mat-icon>
                     </a>
+                  </div>
+
+                  <div class="talk-cards-tags-wrapper">
+                    @for (talkTag of talk.tags; track talkTag) {
+                      <span class="button-like">{{ getTagTitle(talkTag) }}</span>
+                    }
                   </div>
                 </div>
               </div>
