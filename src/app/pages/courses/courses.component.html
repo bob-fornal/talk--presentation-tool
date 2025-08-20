@@ -71,6 +71,12 @@
                 </div>
 
                 <div class="card-content">
+                  <div class="talk-card-status status"
+                    [class.complete]="isComplete(talk)"
+                  >
+                    {{ getStatus(talk) }}
+                </div>
+
                   <div class="talk-card-pdf-wrapper">
                     @if (talk.pdfActive === true) {
                       <span class="green">&check;</span>

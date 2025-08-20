@@ -166,12 +166,42 @@
     }
   }
 
+  .talk-card-status {
+    padding: 0.75em 0.5em 0.5em 0.5em;
+    border-bottom: 1px solid #777;
+
+    &.status {
+
+      &:not(.complete) {
+        color: antiquewhite;
+      }
+      &.complete {
+        color: #69f0ae;
+      }
+    }
+
+  }
+
+  .talk-card-pdf-wrapper {
+    display: flex;
+    gap: 0.5em;
+    padding: 0.5em;
+    border-bottom: 1px solid #777;
+
+    .red {
+      color: red;
+    }
+    .green {
+      color: #69f0ae;
+    }
+  }
+
   .talk-cards-tags-wrapper {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 0.25em 0.25em;
-    margin: 0.5em;
+    padding: 0.75em 0.5em 0.5em 0.5em;
 
     .button-like {
       background-color: var(--mdc-filled-button-container-color);
@@ -189,19 +219,6 @@
       letter-spacing: var(--mdc-filled-button-label-text-tracking, var(--mat-app-label-large-tracking));
       text-transform: var(--mdc-filled-button-label-text-transform);
       font-weight: var(--mdc-filled-button-label-text-weight, var(--mat-app-label-large-weight));
-    }
-  }
-
-  .talk-card-pdf-wrapper {
-    display: flex;
-    gap: 0.5em;
-    margin: 0.5em;
-
-    .red {
-      color: red;
-    }
-    .green {
-      color: #69f0ae;
     }
   }
 }
