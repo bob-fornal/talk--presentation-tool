@@ -50,14 +50,6 @@
 
                 <div class="card-functionality">
                   <button
-                    [attr.aria-label]="'Edit ' + talk.title + ' Talk'"
-                    class="btn"
-                    mat-flat-button
-                    color="primary"
-                    [routerLink]="'/edit/' + talk.folder">
-                    <mat-icon>edit</mat-icon>
-                  </button>
-                  <button
                     [attr.data-session-button]="talk.title + ' Presentation'"
                     [attr.aria-label]="talk.title + ' Presentation'"
                     class="btn"
@@ -66,6 +58,15 @@
                     (click)="clickTalkEvent(talk)"
                     >
                     <mat-icon>monitor</mat-icon>
+                  </button>
+
+                  <button
+                    [attr.aria-label]="'Edit ' + talk.title + ' Talk'"
+                    class="btn"
+                    mat-flat-button
+                    color="primary"
+                    [routerLink]="'/edit/' + talk.folder">
+                    <mat-icon>edit</mat-icon>
                   </button>
                 </div>
 
