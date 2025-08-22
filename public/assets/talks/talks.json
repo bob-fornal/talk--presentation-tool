@@ -53,6 +53,10 @@
       "title": "Gherkin"
     },
     {
+      "tag": "hackathon",
+      "title": "Hackathon"
+    },
+    {
       "tag": "javascript",
       "title": "JavaScript"
     },
@@ -146,6 +150,13 @@
         "observables",
         "promises",
         "signals"
+      ]
+    }, {
+      "folder": "cloudflare-for-hackathons",
+      "title": "Cloudflare for Hackathons",
+      "tags": [
+        "cloudflare",
+        "hackathon"
       ]
     }, {
       "folder": "developer-tools-for-non-developers",

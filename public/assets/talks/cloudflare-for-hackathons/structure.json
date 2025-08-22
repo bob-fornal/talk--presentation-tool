@@ -1,0 +1,143 @@
+{
+  "ORDER": [
+    "cover-01",
+    "edje-about",
+    "why-are-we-here",
+
+    "overview",
+
+    "worker-script-notes",
+    "key-vault-notes",
+    "database-d1-notes",
+
+    "summary-and-best-practices",
+    "time-for-questions"
+  ],
+  "STYLE": [
+    ".outer-wrapper {",
+    "  background: url(\"./assets/images/grid--green.webp\");",
+    "  background-repeat: no-repeat;",
+    "  background-size: cover;",
+    "  color: #69f0ae;",
+    "  font-family: Arial, sans-serif;",
+    "}",
+    ".cover-wrapper .cover--bio {",
+    "  width: 42em !important;",
+    "}",
+    ".cover--bio .bio-logo {",
+    "  margin-bottom: 1em;",
+    "}",
+    ".right-align {",
+    "  display: flex;",
+    "  flex-direction: column;",
+    "  align-items: end;",
+    "}",
+    ".left-align {",
+    "  display: flex;",
+    "  flex-direction: column;",
+    "  align-items: start;",
+    "}",
+    ".green {",
+    "  color: #69f0ae;",
+    "}",
+    ".orange {",
+    "  color: #f0c369;",
+    "}",
+    ".code {",
+    "  color: yellow;",
+    "  font-family: Menlo, Monaco, \"Courier New\", monospace;",
+    "}",
+    ".center {",
+    "  display: flex;",
+    "  flex-direction: column;",
+    "  align-items: center;",
+    "  height: 100%;",
+    "}",
+    ".bold-larger {",
+    "  color: #69f0ae;",
+    "  font-weight: bold;",
+    "  font-size: larger;",
+    "}",
+    ".match-height {",
+    "  max-height: 100%;",
+    "  max-width: 100%;",
+    "}",
+    ".fit-width {",
+    "  width: 100%;",
+    "}",
+    ".panel--image:has(.talk-overview) {",
+    "  background-color: rgba(207, 228, 255, 0.85);",
+    "}",
+    ".talk-overview {",
+    "  max-width: 100% !important;",
+    "  max-height: 100% !important;",
+    "}",
+    "td.center {",
+    "  text-align: left !important;",
+    "}"
+  ],
+
+  "cover-01": {
+    "title": "Cloudflare for Hackathons",
+    "type": "cover-01",
+    "author": "Bob Fornal & Lwin Maung",
+    "bio1": "<div class=right-align> <img class=bio-logo src=\"./assets/images/bob-top-hat-bw.webp\" /> <div class=bold>Senior Solutions Developer II, Leading EDJE, Inc.</div> <div>Passionate about learning, testing, mentoring, speaking, and personal growth.</div> </div>",
+    "bio2": "<div class=left-align> <img class=bio-logo src=\"./assets/images/lwin.webp\" /> <div class=bold>Microsoft MVP | Managing Director, Accolade Solutions</div> <div>Full stack polyglot development consultant with passion for creating IoT, mobile, web, and cloud products with a flair for user experience and user interface design.</div> </div>",
+    "notes": "This talk came about because I (Bob) broke production. <br/><br/> At a conference I (Bob) saw a reported error and tried to diagnose it in our Cloudflare Super Script. <br/><br/> I (He) found the issue and clicked Deploy on the way out the door. <br/><br/> 30ms later, things started to fail and this talk was born."
+  },
+  "edje-about": {
+    "title": "",
+    "type": "GLOBAL/edje-about--centered",
+    "visibility": true
+  },
+  "why-are-we-here": {
+    "title": "We Are Here ...",
+    "type": "panel-double",
+    "text1": "<div class=green>Lwin & Bob</div> <ul> <li>Found common excitement.</li> </ul> <img class=fit-width src=\"./assets/images/cloudflare-talk-hits-per-day.webp\" /> ",
+    "text2": "<div class=green>Cloudflare</div><ul> <li>Worker Scripts</li> <li>Key Vaults</li> <li>D1 Database</li> </ul> <div> <span class=green>Super Script</span>: <span>Built a tool for managing ...</span> </div> <ul> <li>Redirects</li> <li>Split-tests</li> <li>Dynamic Content</li> </ul> <div>This script handles millions of Worker Script hits per day.",
+    "notes": "<ul> <li>For our client, we had to build tooling to allow for consolidation of redirects, split tests, and content transformation based on path and URL parameters.</li> <li>The decision to use Cloudflare made for us; it was the right decision.</li> <li>These captures show 3M requests (average is 4M) at an average of 36ms!</li> </ul>"
+  },
+
+  "overview": {
+    "title": "Overview",
+    "type": "panel-single",
+    "text1": "<ol> <li>Accounts (with Users)</li> <li>Domains</li> <li>Pricing</li> <li>Worker Scripts (APIs, CRON Jobs, Environment Variables, Secrets)</li> <li>Key Vaults (fast document database)</li> <li>D1 Database (SQLite)</li> <li>Pages (repository or upload; frameworks)</li> <li>Image Storage (transformations)</li> </ol>"
+  },
+
+  "worker-script-notes": {
+    "title": "Worker Scripts",
+    "type": "panel-double",
+    "text1": "<div class=green>Think \"API.\" ...</div> <ul> <li>JavaScript</li> <li>TypeScript</li> <li>Python</li> <li>Rust</li> </ul> <div class=green>Findings ...</div> <ul> <li>60-second cache.</li> <li>Connect: Routes, DB, KV, Secrets (and more).</li> <li>Free 100,000 requests/day (paid, no limit).</li> <li>Module Pattern (<span class=code>import/export</span>, multiple files).</li> <li><span class=code>ctx.waitUntil</span> (extend lifetime of worker).</li> <li>Cron Jobs.</li> </ul>",
+    "text2": "<div class=green>Keep in mind ...</div> <ul> <li>Cache-buster, CORS, paging.</li> </ul> <div class=green>Deployment</div> <ul> <li>GitHub Actions (build process).</li> <li>Connect to Github via Settings (was able to not build).</li> </ul>"
+  },
+  "key-vault-notes": {
+    "title": "Key Vaults",
+    "type": "panel-double",
+    "text1": "<div class=green>Findings ...</div> <ul> <li>Low Latency, Edge Compute.</li> <li>1,200 rw/5-minutes (have to rethink large number of writes).</li> </ul> <div class=green>Data ...</div> <ul> <li><span class=code>key</span> (512B)</li> <li><span class=code>value</span> (5MB)</li> <li><span class=code>metadata</span> (1kB)</li> </ul>",
+    "text2": "<div class=green>Keep in mind ...</div> <ul> <li>...</li> </ul>",
+    "notes": "<div>Findings ...</div> <ul> <li>Low Latency, Edge Compute.</li> <li>1,200 rw/5-minutes (have to rethink large number of writes).</li> </ul> <div>Data ...</div> <ul> <li><span class=code>key</span> (512B)</li> <li><span class=code>value</span> (5MB)</li> <li><span class=code>metadata</span> (1kB)</li> </ul>"
+  },
+  "database-d1-notes": {
+    "title": "D1 Databases",
+    "type": "panel-double",
+    "text1": "<div class=orange>D1 is Cloudflare's managed, serverless database with SQLite's SQL semantics, built-in disaster recovery, and Worker and HTTP API access.</div> <br/> <div class=green>Findings ...</div> <ul> <li>500 MB (free), 10GB (paid)</li> <li>100 Columns/Table, Unlimited Rows</li> </ul>",
+    "text2": "",
+    "notes": "<div>D1 is Cloudflare's managed, serverless database with SQLite's SQL semantics, built-in disaster recovery, and Worker and HTTP API access.</div> <br/> <div>Findings ...</div> <ul> <li>500 MB (free), 10GB (paid)</li> <li>100 Columns/Table, Unlimited Rows</li> </ul>"
+  },
+
+  "summary-and-best-practices": {
+    "title": "Summary & Best Practices",
+    "type": "panel-double",
+    "text1": "<div class=green>Summary</div> <ul> <li>Cannot be <span class=orange>client-side</span> application.</li> <li>Manipulate DOM Elements.</li> <li>Add Cookies.</li> <li>Reroute/Redirect (<span class=orange>301 & 302 Status Codes</span>).</li> <li><span class=orange>API</span>: keep in mind cache-buster, CORS, paging.</li> <li>Access to Domain, Path, and Parameters.</li> <li>GitHub Actions (build process) <span class=orange>VERSUS</span> Github via Settings (was able to not build).</li> </ul>",
+    "text2": "<div class=green>Best Practices</div> <ul> <li>DEV Environment: Ensure it has paid access.</li> <li>Watch KV Read/Write Limits (use bulk where possible).</li> <li>Build processes add code (impacts run time).</li> <li>Cache-bust the 60-second cache.</li> <li>Use the module pattern (<span class=code>import/export</span>)</li> <li>Use the extended worker lifetime (<span class=code>ctx.waitUntil</span>)</li> </ul>",
+    "notes": "<div>Summary</div> <ul> <li>Cannot be a SPA (single-page application); client-side application.</li> <li>Manipulate DOM Elements.</li> <li>Add Cookies.</li> <li>Reroute/Redirect (301 & 302 Status Codes).</li> <li>API: keep in mind cache-buster, CORS, paging.</li> <li>Access to Domain, Path, and Parameters.</li> <li>GitHub Actions (build process) VERSUS Github via Settings (was able to not build).</li> </ul> <div>Best Practices</div> <ul> <li>DEV Environment: Ensure it has paid access.</li> <li>Watch KV Read/Write Limits (use bulk where possible).</li> <li>Build processes add code (impacts run time).</li> <li>Cache-bust the 60-second cache.</li> <li>Use the module pattern (import/export)</li> <li>Use the extended worker lifetime (ctx.waitUntil)</li> </ul>"
+  },
+
+  "time-for-questions": {
+    "title": "",
+    "type": "image-only",
+    "background": "transparent",
+    "image": "./assets/images/time-for-questions--30ms-qr.webp",
+    "notes": ""
+  }
+}
