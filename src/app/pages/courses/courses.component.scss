@@ -4,27 +4,221 @@
   top: 1em;
 }
 
-.tags {
-  margin: 0 1em;
+.functionality-wrapper {
+  margin-left: 1.75em;
 
-  .functionality-wrapper {
-    margin-bottom: 1em;
-
-    .select-functionality {
-      margin-left: 1em;
-      padding: 0.25em 1em;
-    }
+  .select-functionality {
+    margin-left: 1em;
+    padding: 0.25em 1em;
   }
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1em;
+
+  .tags {
+    flex-grow: 1;
+    width: 35%;
+  }
+  .talks {
+    flex-grow: 10;
+    width: calc(65% - 1em);
+  }
+}
+
+.tags {
+  margin: 1em 1em 0 0;
+  padding: 1.8em 1.5em 2em 1.5em;
+  border-radius: 1em;
+  background-color: rgba(105, 240, 174, 0.1);
+  backdrop-filter: blur(3px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 16px rgba(31, 38, 135, 0.2), inset 0 2px 10px rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  width: 40%;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1em;
+    backdrop-filter: blur(1px);
+    box-shadow: inset -5px -4px 0px -6px rgba(255, 255, 255, 1),
+                inset 0px -5px 0px -4px rgba(255, 255, 255, 1);
+    opacity: 0.6;
+    z-index: -1;
+    filter: blur(1px) drop-shadow(10px 4px 6px black) brightness(115%);
+  }
+
 
   .tag-list-wrapper {
     display: flex;
-    align-items: flex-start;
     flex-wrap: wrap;
-    margin-bottom: 1em;
+    align-items: center;
+    justify-content: center;
     gap: 1em;
   
     .checkbox-margin {
       margin: 0 12px;
+    }
+
+    .btn[data-weight="1"] { --size: 3; }
+    .btn[data-weight="2"] { --size: 5; }
+    .btn[data-weight="3"] { --size: 7; }
+    .btn[data-weight="4"] { --size: 9; }
+    .btn[data-weight="5"] { --size: 11; }
+    .btn[data-weight="6"] { --size: 13; }
+    .btn[data-weight="7"] { --size: 15; }
+    .btn[data-weight="8"] { --size: 17; }
+    .btn[data-weight="9"] { --size: 19; }
+
+    .btn:nth-child(1n+1) { --bg-color: #3B82F6; --fg-color: #fff; --select-color: #fff }
+    .btn:nth-child(2n+1) { --bg-color: #10B981; --fg-color: #fff; --select-color: #fff }
+    .btn:nth-child(3n+1) { --bg-color: #F97316; --fg-color: #fff; --select-color: #fff }
+    .btn:nth-child(4n+1) { --bg-color: #64748B; --fg-color: #fff; --select-color: #fff }
+    .btn:nth-child(5n+1) { --bg-color: #FACC15; --fg-color: #000; --select-color: #fff }
+    .btn:nth-child(6n+1) { --bg-color: #8B5CF6; --fg-color: #fff; --select-color: #fff }
+    .btn:nth-child(7n+1) { --bg-color: #EC4899; --fg-color: #fff; --select-color: #fff }
+    .btn:nth-child(8n+1) { --bg-color: #0891B2; --fg-color: #fff; --select-color: #fff }
+    .btn:nth-child(9n+1) { --bg-color: #556677; --fg-color: #fff; --select-color: #fff }
+    .btn:nth-child(10n+1) { --bg-color: #F1F5F9; --fg-color: #000; --select-color: #F97316 }
+
+    .btn {
+      --size: 4;
+      --mdc-filled-button-container-height: calc(calc(var(--size) / 2) * 0.125em + 1.5em);
+      font-size: calc(var(--size) * 0.25rem + 0.5rem);
+      --mdc-filled-button-container-color: var(--bg-color);
+      --mdc-filled-button-label-text-color: var(--fg-color);
+
+      &[data-selected="true"] {
+        border: 3px solid var(--select-color);
+      }
+    }
+  }
+}
+
+.talks-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin: 1em;
+  width: 58%;
+
+  .talk-card-wrapper {
+    padding: 1.8em 1.5em 1em 1.5em;
+    border-radius: 1em;
+    backdrop-filter: blur(3px) saturate(180%);
+    width: 32%;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 16px rgba(31, 38, 135, 0.2), inset 0 2px 10px rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 1em;
+      backdrop-filter: blur(1px);
+      box-shadow: inset -5px -4px 0px -6px rgba(255, 255, 255, 1),
+                  inset 0px -5px 0px -4px rgba(255, 255, 255, 1);
+      opacity: 0.6;
+      z-index: -1;
+      filter: blur(1px) drop-shadow(10px 4px 6px black) brightness(115%);
+    }
+
+    &:not(.highlighted) {
+      background-color: rgba(105, 240, 174, 0.09);
+    }
+    &.highlighted {
+      background-color: rgba(31, 123, 162, 0.2);
+    }
+
+    .card-title {
+      color: yellow;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    .card-functionality {
+      display: flex;
+      gap: 1em;
+      margin-top: 0.5em;
+      padding: 0.5em 0;
+      border-top: 1px solid white;
+      border-bottom: 1px solid white;
+    }
+
+    .btn .mat-icon {
+      height: auto;
+      width: auto;
+      font-size: 1.5em;
+    }
+  }
+
+  .talk-card-status {
+    padding: 0.75em 0.5em 0.5em 0.5em;
+    border-bottom: 1px solid #777;
+
+    &.status {
+
+      &:not(.complete) {
+        color: antiquewhite;
+      }
+      &.complete {
+        color: #69f0ae;
+      }
+    }
+
+  }
+
+  .talk-card-pdf-wrapper {
+    display: flex;
+    gap: 0.5em;
+    padding: 0.5em;
+    border-bottom: 1px solid #777;
+
+    .red {
+      color: red;
+    }
+    .green {
+      color: #69f0ae;
+    }
+  }
+
+  .talk-cards-tags-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.25em 0.25em;
+    padding: 0.75em 0.5em 0.5em 0.5em;
+
+    .button-like {
+      background-color: var(--mdc-filled-button-container-color);
+      color: var(--mdc-filled-button-label-text-color);;
+
+      border: none;
+      padding: 0.25rem 0.5rem;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 0.25rem;
+
+      font-family: var(--mdc-filled-button-label-text-font, var(--mat-app-label-large-font));
+      font-size: var(--mdc-filled-button-label-text-size, var(--mat-app-label-large-size));
+      letter-spacing: var(--mdc-filled-button-label-text-tracking, var(--mat-app-label-large-tracking));
+      text-transform: var(--mdc-filled-button-label-text-transform);
+      font-weight: var(--mdc-filled-button-label-text-weight, var(--mat-app-label-large-weight));
     }
   }
 }
@@ -34,6 +228,7 @@
   flex-direction: column;
   align-items: flex-start;
   margin: 0 1em;
+  width: 58%;
 
   .talk-wrapper {
     display: flex;

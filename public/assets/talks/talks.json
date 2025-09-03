@@ -53,6 +53,10 @@
       "title": "Gherkin"
     },
     {
+      "tag": "hackathon",
+      "title": "Hackathon"
+    },
+    {
       "tag": "javascript",
       "title": "JavaScript"
     },
@@ -103,7 +107,8 @@
       "title": "30ms of Cloudflare Wizardry with Code and Coffee: TLDR;",
       "pdf": "https://www.bobs-tech-presentations.com/assets/talks/30ms-of-cloudflare-wizardry/30ms-cloudflare-minified.pdf",
       "tags": [
-        "cloudflare", "demo"
+        "cloudflare",
+        "demo"
       ]
     },
     {
@@ -111,6 +116,7 @@
       "title": "A Look Inside Observables",
       "pdf": "https://www.bobs-tech-presentations.com/assets/talks/a-look-inside-observables/alio-minified.pdf",
       "tags": [
+        "angular",
         "observables",
         "rxjs"
       ]
@@ -129,6 +135,7 @@
       "tags": [
         "asynchronous",
         "callbacks",
+        "demo",
         "javascript",
         "promises"
       ]
@@ -138,10 +145,18 @@
       "tags": [
         "asynchronous",
         "callbacks",
+        "demo",
         "javascript",
         "observables",
         "promises",
         "signals"
+      ]
+    }, {
+      "folder": "cloudflare-for-hackathons",
+      "title": "Cloudflare for Hackathons",
+      "tags": [
+        "cloudflare",
+        "hackathon"
       ]
     }, {
       "folder": "developer-tools-for-non-developers",
@@ -155,7 +170,8 @@
       "title": "Gherkin: Friend or Foe? Re-Evaluating Its Role in Modern Development",
       "pdf": "https://www.bobs-tech-presentations.com/assets/talks/case-against-gherkin/case-against-gherkin.pdf",
       "tags": [
-        "gherkin"
+        "gherkin",
+        "testing"
       ]
     },
     {
@@ -164,7 +180,16 @@
       "pdf": "https://www.bobs-tech-presentations.com/assets/talks/ditch-your-javascript-for-css/ditch-your-javascript-for-css.pdf",
       "tags": [
         "css",
+        "demo",
         "javascript"
+      ]
+    },
+    {
+      "folder": "non-automated-automated-testing",
+      "title": "Non-Automated Automated Testing",
+      "tags": [
+        "devops",
+        "testing"
       ]
     },
     {
@@ -201,7 +226,8 @@
       "title": "Writing Testable Code",
       "pdf": "https://www.bobs-tech-presentations.com/assets/talks/writing-testable-code/writing-testable-code-minified.pdf",
       "tags": [
-        "testing"
+        "testing",
+        "unit-tests"
       ]
     }, {
       "folder": "project-testing",

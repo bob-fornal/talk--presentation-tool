@@ -23,7 +23,7 @@ const routes: Routes = [
 
   { path: 'events', component: EventsComponent },
 
-  { path: '', redirectTo: '/events', pathMatch: 'full' }
+  { path: '', redirectTo: '/courses', pathMatch: 'full' }
 ];
 
 @NgModule({

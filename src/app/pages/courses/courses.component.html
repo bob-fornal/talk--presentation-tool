@@ -5,75 +5,166 @@
     </div>
     <h1 class="title">Bob's Talks</h1>
 
-    <div class="tags">
-      <div class="functionality-wrapper">
-        <mat-checkbox
-          class="checkbox-margin"
-          [checked]="showPDF"
-          (change)="showPDF = !showPDF">
-          Show PDF Links
-        </mat-checkbox>
-        <mat-checkbox
-          class="checkbox-margin"
-          [checked]="showTags"
-          (change)="showTags = !showTags">
-          Show Talk Tags
-        </mat-checkbox>
-        <select class="select-functionality" [(ngModel)]="selectedTemplateKey" (ngModelChange)="onTemplateChange($event)">
-          @for (template of templateList; track template;) {
-            <option [value]="template.key">{{ template.title }}</option>
-          }
-        </select>
-      </div>
-      <div class="tag-list-wrapper">
-        @for (tag of tags; track tag; let i = $index;) {
-          <button [attr.aria-label]="tag.title + ' Tag'" class="btn" mat-flat-button [color]="selectedTag(tag)" (click)="filterTalks(tag)">
-            {{ tag.title }}
-          </button>
+    <div class="functionality-wrapper">
+      <mat-checkbox
+        class="checkbox-margin"
+        [checked]="showPDF"
+        (change)="showPDF = !showPDF">
+        Show PDF Links
+      </mat-checkbox>
+      <mat-checkbox
+        class="checkbox-margin"
+        [checked]="showTags"
+        (change)="showTags = !showTags">
+        Show Talk Tags
+      </mat-checkbox>
+      <select
+        class="select-functionality"
+        [(ngModel)]="selectedTemplateKey"
+        (ngModelChange)="onTemplateChange($event)"
+      >
+        @for (template of templateList; track template;) {
+          <option [value]="template.key">{{ template.title }}</option>
         }
-      </div>
+      </select>
+      <select
+        class="select-functionality"
+        [(ngModel)]="talkDisplayType"
+        (ngModelChange)="onDisplayTypeChange($event)"
+      >
+        <option value="">List</option>
+        <option value="talk-cards">Cards</option>
+      </select>
     </div>
 
-    <div class="talks">
-      @for (talk of filteredTalks; track talk; let i = $index;) {
-        <div class="talk-wrapper">
-          <button [attr.aria-label]="'Edit ' + talk.title + ' Talk'" class="btn padded" mat-flat-button color="primary" [routerLink]="'/edit/' + talk.folder">
-            <mat-icon>edit</mat-icon>
-          </button>
-          <button
-            [attr.data-session-button]="talk.title + ' Presentation'"
-            [attr.aria-label]="talk.title + ' Presentation'"
-            class="btn padded"
-            mat-flat-button
-            [color]="getColor(talk)"
-            (click)="clickTalkEvent(talk)"
-            >
-            <span>{{ i + 1 }}.</span>&nbsp;
-            {{ talk.title }}
-          </button>
-          <span class="status" [class.complete]="isComplete(talk)">{{ getStatus(talk) }}</span>
-        </div>
-        @if (showPDF === true && !!talk.pdf) {
-          <div class="talk-pdf-wrapper">
-            @if (talk.pdfActive === true) {
-              <span class="green">&check;</span>
-            } @else {
-              <span class="red">&cross;</span>
+    <div class="content-wrapper">
+      @switch (talkDisplayType) {
+        @case ("talk-cards") {
+          <div class="talks-cards">
+            @for (talk of filteredTalks; track talk; let i = $index) {
+              <div
+                class="talk-card-wrapper"
+                [class.highlighted]="isHighlighted(talk)"
+              >
+                <div class="card-title">{{ talk.title }}</div>
+
+                <div class="card-functionality">
+                  <button
+                    [attr.data-session-button]="talk.title + ' Presentation'"
+                    [attr.aria-label]="talk.title + ' Presentation'"
+                    class="btn"
+                    mat-flat-button
+                    [color]="getColor(talk)"
+                    (click)="clickTalkEvent(talk)"
+                    >
+                    <mat-icon>monitor</mat-icon>
+                  </button>
+
+                  <button
+                    [attr.aria-label]="'Edit ' + talk.title + ' Talk'"
+                    class="btn"
+                    mat-flat-button
+                    color="primary"
+                    [routerLink]="'/edit/' + talk.folder">
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                </div>
+
+                <div class="card-content">
+                  <div class="talk-card-status status"
+                    [class.complete]="isComplete(talk)"
+                  >
+                    {{ getStatus(talk) }}
+                </div>
+
+                  <div class="talk-card-pdf-wrapper">
+                    @if (talk.pdfActive === true) {
+                      <span class="green">&check;</span>
+                    } @else {
+                      <span class="red">&cross;</span>
+                    }
+                    <a class="anchor" [href]="talk.pdf" target="_blank">
+                      <span>LINK TO PDF</span>
+                      <mat-icon>open_in_new</mat-icon>
+                    </a>
+                  </div>
+
+                  <div class="talk-cards-tags-wrapper">
+                    @for (talkTag of talk.tags; track talkTag) {
+                      <span class="button-like">{{ getTagTitle(talkTag) }}</span>
+                    }
+                  </div>
+                </div>
+              </div>
             }
-            <a class="anchor" [href]="talk.pdf" target="_blank">
-              <span>LINK TO PDF</span>
-              <mat-icon>open_in_new</mat-icon>
-            </a>
           </div>
         }
-        @if (showTags === true) {
-          <div class="talk-tags-wrapper">
-            @for (talkTag of talk.tags; track talkTag) {
-              <span class="button-like">{{ getTagTitle(talkTag) }}</span>
+        @default {
+          <div class="talks">
+            @for (talk of filteredTalks; track talk; let i = $index;) {
+              <div class="talk-wrapper">
+                <button
+                  [attr.aria-label]="'Edit ' + talk.title + ' Talk'"
+                  class="btn padded"
+                  mat-flat-button
+                  color="primary"
+                  [routerLink]="'/edit/' + talk.folder">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button
+                  [attr.data-session-button]="talk.title + ' Presentation'"
+                  [attr.aria-label]="talk.title + ' Presentation'"
+                  class="btn padded"
+                  mat-flat-button
+                  [color]="getColor(talk)"
+                  (click)="clickTalkEvent(talk)"
+                  >
+                  <span>{{ i + 1 }}.</span>&nbsp;
+                  {{ talk.title }}
+                </button>
+                <span class="status" [class.complete]="isComplete(talk)">{{ getStatus(talk) }}</span>
+              </div>
+              @if (showPDF === true && !!talk.pdf) {
+                <div class="talk-pdf-wrapper">
+                  @if (talk.pdfActive === true) {
+                    <span class="green">&check;</span>
+                  } @else {
+                    <span class="red">&cross;</span>
+                  }
+                  <a class="anchor" [href]="talk.pdf" target="_blank">
+                    <span>LINK TO PDF</span>
+                    <mat-icon>open_in_new</mat-icon>
+                  </a>
+                </div>
+              }
+              @if (showTags === true) {
+                <div class="talk-tags-wrapper">
+                  @for (talkTag of talk.tags; track talkTag) {
+                    <span class="button-like">{{ getTagTitle(talkTag) }}</span>
+                  }
+                </div>
+              }
             }
           </div>
         }
       }
+
+      <div class="tags">
+        <div class="tag-list-wrapper">
+          @for (tag of tags; track tag; let i = $index;) {
+            <button
+              [attr.aria-label]="tag.title + ' Tag'"
+              class="btn" mat-flat-button
+              [attr.data-weight]="tag.weight"
+              [attr.data-selected]="selectedTag(tag)"
+              (click)="filterTalks(tag)"
+            >
+              {{ tag.title }}
+            </button>
+          }
+        </div>
+      </div>
     </div>
+
   </div>
 </div>
