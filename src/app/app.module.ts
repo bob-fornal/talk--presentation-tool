@@ -44,6 +44,7 @@ import { CeDisplayComponent } from './slides/code-editor/ce-display/ce-display.c
 import { CodeEditorComponent } from './slides/code-editor/code-editor.component';
 import { CeEditorComponent } from './slides/code-editor/ce-editor/ce-editor.component';
 import { Cover01Component } from './slides/cover-01/cover-01.component';
+import { ImageDoubleComponent } from './slides/image-double/image-double.component';
 import { ImageOnlyComponent } from './slides/image-only/image-only.component';
 import { ImageTextComponent } from './slides/image-text/image-text.component';
 import { PanelDoubleComponent } from './slides/panel-double/panel-double.component';
@@ -73,6 +74,7 @@ import { DitchYourJavascriptForCssComponent } from './demos/ditch-your-javascrip
     EditButtonsComponent,
     EditComponent,
     EditNotesDialogComponent,
+    ImageDoubleComponent,
     ImageOnlyComponent,
     ImageTextComponent,
     PanelDoubleComponent,

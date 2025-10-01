@@ -4,6 +4,9 @@
       <cover-01 [title]="page.title" [author]="page.author!" [html]="page.html || ''" [bio1]="page.bio1 || undefined" [bio2]="page.bio2 || undefined"></cover-01>
     </div>
 
+    <div class="slide-wrapper" *ngSwitchCase="'image-double'">
+      <image-double [title]="page.title" [image1]="page.image1!" [image2]="page.image2!" />
+    </div>
     <div class="slide-wrapper" *ngSwitchCase="'image-only'">
       <image-only [title]="page.title" [image]="page.image!" [imageClass]="page.imageClass || ''" />
     </div>

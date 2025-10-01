@@ -1,0 +1,33 @@
+{
+  "SMOKE_ONLY": true,
+  "MAX_DIFF_PIXEL_RATIO": 0.05,
+
+  "DOMAINS": [
+    { "url": "https://www.bob-fornal.com", "active": true },
+    { "url": "https://www.test-site.com", "active": true }
+  ],
+
+  "https://www.bob-fornal.com":  {
+    "smoke": [
+      "/",
+      "/company/careers/",
+      "/contact/",
+      "/discover/"
+    ],
+    "detailed": [
+      "/something-else/?bob=is-weird"
+    ]
+  },
+  "https://www.test-site.com": {
+    "smoke": [
+      "/",
+      "/terms-of-use/",
+      "/finance-terms/",
+      "/purchase/pricing/",
+      "/purchase/warranty/",
+      "/register/"
+    ],
+    "detailed": [
+    ]
+  }
+}

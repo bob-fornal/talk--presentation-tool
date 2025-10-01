@@ -5,6 +5,16 @@
 
     "what-is-manual-testing",
     "what-is-automated-testing",
+    "what-is-non-automated-automated-testing--01",
+    "what-is-non-automated-automated-testing--02",
+
+    "workflow-original",
+    "workflow-automation-original",
+    "workflow-automation-pipelines",
+
+    "what-is-non-automated-automated-testing--03",
+
+    "points-of-failure",
 
     "time-for-questions"
   ],
@@ -131,6 +141,53 @@
     "orientation": "left",
     "text1": "<div class=green-bold>Automated Testing</div> <div class=div-wrapper>A software testing methodology that utilizes specialized tools and scripts to execute test cases and compare <span class=yellow>actual results against expected outcomes</span>, with <span class=yellow>minimal or no human intervention</span> during the execution phase. This contrasts with <span class=orange>manual testing</span>, where human testers manually interact with the software to identify defects.</div> <div class=orange-bold>Core Principles:</div> <ul> <li>Test Script Creation</li> <li>Automated Execution</li> <li>Results Analysis</li> </ul> <ul> <li>Unit Tests</li> <li>Integration Tests</li> <li>End-to-End Tests</li> </ul>",
     "image": "./assets/images/cars-automation.jpg"
+  },
+  "what-is-non-automated-automated-testing--01": {
+    "title": "What is Non-Automated Automated Testing?",
+    "type": "panel-double",
+    "text1": "<div class=green-bold>Non-Automated Automated Testing</div> <div class=div-wrapper>This is a term that I started using when a production deployment went sideways for an \"odd reason.\"</div> <div class=orange-bold>Production deployments often use hybrid approaches:</div> <ul> <li>Automated tests run to verify key functionality.</li> <li>Humans perform contextual verification/checks that automation cannot fully capture.</li> </ul>",
+    "text2": "<div class=green-bold>Definition:</div> <div class=div-wrapper>Automated test tools (or scripts) are used to initiate and carry out predefined checks in <span class=yellow>the live production environment</span>.</div> <div class=div-wrapper>The execution is complemented by manual steps that cannot be fully automated:</div> <ul> <li>Triggering jobs.</li> <li>Validating test data</li> <li>Interpreting results.</li> <li>Performing exploratory checks.</li> </ul>"
+  },
+  "what-is-non-automated-automated-testing--02": {
+    "title": "What is Non-Automated Automated Testing?",
+    "type": "panel-double",
+    "text1": "<div class=green-bold>Non-Automated Automated Testing</div> <div class=div-wrapper>This is a term that I started using when a production deployment went sideways for an \"odd reason.\"</div> <div class=orange-bold>Production deployments often use hybrid approaches:</div> <ul> <li>Automated tests run to verify key functionality.</li> <li>Humans perform contextual verification/checks that automation cannot fully capture.</li> </ul>",
+    "text2": "<div class=green-bold>Automation Ensures:</div> <div class=div-wrapper>Consistent, repeatable coverage of <span class=green>known requirements</span>, while human testers provide <span class=yellow>contextual judgment</span>, <span>visual validation</span>, and <span class=yellow>decision-making</span> before, during, or after the automated tests are run.</div> <div class=div-wrapper>The combined approach aims to <span class=green>quickly detect production issues</span> and <span class=yellow>confirm deployment success</span> while <span class=yellow>accounting for real-world conditions</span> automation alone may miss.</div>"
+  },
+
+  "workflow-original": {
+    "title": "Functional VRT",
+    "type": "code-editor",
+    "folder": "original-vrt-code",
+    "files": [
+      "smoke-tests.spec.ts",
+      "smoke-tests.json"
+    ]
+  },
+  "workflow-automation-original": {
+    "title": "Functional VRT",
+    "type": "image-only",
+    "image": "./assets/images/vrt-original.png"
+  },
+  "workflow-automation-pipelines": {
+    "title": "Functional Pipeline & VRT",
+    "type": "image-only",
+    "image": "./assets/images/vrt-pipelines.png"
+  },
+
+  "what-is-non-automated-automated-testing--03": {
+    "title": "Why use Non-Automated Automated Testing?",
+    "type": "panel-double",
+    "text1": "<div class=green-bold>Concise Definition</div> <div class=div-wrapper>Non-automated automated testing (in production) is a <span class=yellow>hybrid testing approach</span> where automated tools execute predefined test actions <span class=yellow>against a live deployment</span>, but human testers <span class=green>manually initiate</span>, <span class=green>observe</span>, <span class=green>interpret</span>, and <span class=green>supplement these actions</span> with additional checks to <span class=yellow>validate real-world behavior</span> before finalizing the release as successful.</div>",
+    "text2": "<div class=green-bold>Why use it?</div> <ul> <li>Automation is fast and repeatable, but blind to qualitative, visual, and contextual nuances.</li> <li>Manual testing is adaptable and insightful, especially when production data or environments behave differently than staging.</li> <li>In production deployments, risk tolerance is low, so blending automation with human oversight reduces false negatives and false positives.</li> </ul>"
+  },
+
+  "points-of-failure": {
+    "title": "Common Risks & Failure",
+    "type": "image-text",
+    "orientation": "left",
+    "text1": "<ol> <li>Human dependency & Variability: Missed defects, slower execution, unpredictable quality sign-offs.</li> <li>Misinterpretation of automated results: false positives or negatives.</li> <li>Automation drift: false sense of coverage; critical paths go untested.</li> <li>Critical-path blind spots: Undetected defects in the most important user flows.</li> </ol>",
+    "image": "./assets/images/points-of-failure.jpg"
   },
 
   "time-for-questions": {
