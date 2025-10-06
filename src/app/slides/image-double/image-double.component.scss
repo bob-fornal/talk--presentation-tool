@@ -1,0 +1,19 @@
+
+.panel-wrapper {
+
+  .panel--content-wrapper {
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .panel--image {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 48%;
+  }
+  .panel--image .img {
+    background-color: #0f0f0f;
+    border: 2px solid #0f0f0f;
+    width: 100%;
+  }
+}

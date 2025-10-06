@@ -5,6 +5,16 @@
 
     "what-is-manual-testing",
     "what-is-automated-testing",
+    "what-is-non-automated-automated-testing--01",
+    "what-is-non-automated-automated-testing--02",
+
+    "workflow-original",
+    "workflow-automation-original",
+    "workflow-automation-pipelines",
+
+    "what-is-non-automated-automated-testing--03",
+
+    "points-of-failure",
 
     "time-for-questions"
   ],
@@ -110,12 +120,14 @@
     "type": "cover-01",
     "author": "Bob Fornal",
     "bio1": "<img class=bio-logo src=./assets/images/code-squid.webp />\n<br/>\n<div class=\"bold bio-header\">Entrepreneur</div>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.\n<br/>\n<br/>\n<div class=bold>https://code-squid.com</div>",
-    "bio2": "<img class=bio-logo src=./assets/images/leading-edje.webp />\n<br/>\n<div class=bold>Senior Solutions Developer</div>\n<div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth.\n<br/>\n<br/>\n<div class=bold>https://leadingedje.com</div>"
+    "bio2": "<img class=bio-logo src=./assets/images/leading-edje.webp />\n<br/>\n<div class=bold>Senior Solutions Developer</div>\n<div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth.\n<br/>\n<br/>\n<div class=bold>https://leadingedje.com</div>",
+    "notes": ""
   },
   "edje-about": {
     "title": "",
     "type": "GLOBAL/edje-about--centered",
-    "visibility": true
+    "visibility": true,
+    "notes": ""
   },
 
   "what-is-manual-testing": {
@@ -123,21 +135,77 @@
     "type": "image-text",
     "orientation": "left",
     "text1": "<div class=green-bold>Manual Testing</div> <div class=div-wrapper>The process of testing software applications by hand, <span class=yellow>without the use of automated tools</span>. Testers manually execute test cases, simulating how an end-user would interact with the software, and <span class=yellow>verify the results against expected outcomes</span>. This method is crucial for identifying defects and ensuring software quality before release.</div> <div class=orange-bold>Key Aspects:</div> <ul> <li>No Automation</li> <li>Exploratory Testing</li> <li>Usability Testing</li> <li>Regression Testing</li> <li>Versatility</li> </ul>",
-    "image": "./assets/images/cars-manual.jpg"
+    "image": "./assets/images/cars-manual.jpg",
+    "notes": "<div class=green-bold>Manual Testing</div> <ul> <li>Testing software witout automated tools</li> <li>Simulate the end user</li> <li>Verify results against an expected outcome</li> <li>No code needs changed</li> </ul>"
   },
   "what-is-automated-testing": {
     "title": "What is Automated Testing?",
     "type": "image-text",
     "orientation": "left",
     "text1": "<div class=green-bold>Automated Testing</div> <div class=div-wrapper>A software testing methodology that utilizes specialized tools and scripts to execute test cases and compare <span class=yellow>actual results against expected outcomes</span>, with <span class=yellow>minimal or no human intervention</span> during the execution phase. This contrasts with <span class=orange>manual testing</span>, where human testers manually interact with the software to identify defects.</div> <div class=orange-bold>Core Principles:</div> <ul> <li>Test Script Creation</li> <li>Automated Execution</li> <li>Results Analysis</li> </ul> <ul> <li>Unit Tests</li> <li>Integration Tests</li> <li>End-to-End Tests</li> </ul>",
-    "image": "./assets/images/cars-automation.jpg"
+    "image": "./assets/images/cars-automation.jpg",
+    "notes": "<div class=green-bold>Automated Testing</div> <ul> <li>Specialized software and scripts</li> <li>Executes specific test cases</li> <li>Results analysis by a person</li> <li>Levels: Unit Tests, Integration Tests, End-to-End Tests, ...</li> </ul>"
+  },
+  "what-is-non-automated-automated-testing--01": {
+    "title": "What is Non-Automated Automated Testing?",
+    "type": "panel-double",
+    "text1": "<div class=green-bold>Non-Automated Automated Testing</div> <div class=div-wrapper>This is a term that I started using when a production deployment went sideways for an \"odd reason.\"</div> <div class=orange-bold>Production deployments often use hybrid approaches:</div> <ul> <li>Automated tests run to verify key functionality.</li> <li>Humans perform contextual verification/checks that automation cannot fully capture.</li> </ul>",
+    "text2": "<div class=green-bold>Definition:</div> <div class=div-wrapper>Automated test tools (or scripts) are used to initiate and carry out predefined checks in <span class=yellow>the live production environment</span>.</div> <div class=div-wrapper>The execution is complemented by manual steps that cannot be fully automated:</div> <ul> <li>Triggering jobs.</li> <li>Validating test data</li> <li>Interpreting results.</li> <li>Performing exploratory checks.</li> </ul>",
+    "notes": "<div class=green-bold>Non-Automated Automated Testing</div> <ul> <li>Prod deployment went sideways</li> <li>Pre and Post Automation with a heavy amount of \"human contextual verification that automation\" cannot fully capture</li> <li>\"Automated test tools (or scripts) are used to initiate and carry out predefined checks in the live production environment.\""
+  },
+  "what-is-non-automated-automated-testing--02": {
+    "title": "What is Non-Automated Automated Testing?",
+    "type": "panel-double",
+    "text1": "<div class=green-bold>Non-Automated Automated Testing</div> <div class=div-wrapper>This is a term that I started using when a production deployment went sideways for an \"odd reason.\"</div> <div class=orange-bold>Production deployments often use hybrid approaches:</div> <ul> <li>Automated tests run to verify key functionality.</li> <li>Humans perform contextual verification/checks that automation cannot fully capture.</li> </ul>",
+    "text2": "<div class=green-bold>Automation Ensures:</div> <div class=div-wrapper>Consistent, repeatable coverage of <span class=green>known requirements</span>, while human testers provide <span class=yellow>contextual judgment</span>, <span>visual validation</span>, and <span class=yellow>decision-making</span> before, during, or after the automated tests are run.</div> <div class=div-wrapper>The combined approach aims to <span class=green>quickly detect production issues</span> and <span class=yellow>confirm deployment success</span> while <span class=yellow>accounting for real-world conditions</span> automation alone may miss.</div>",
+    "notes": "<ul> <li>Consistent, repeatable coverage of known requirements,</li> <li>while human testers provide contextual judgment, visual validation, and decision-making</li> <li>before, during, or after the automated tests are run.</li> </ul> <div>The combined approach aims to ...</div> <ul> <li>Quickly detect production issues and</li> <li>confirm deployment success while</li> <li>accounting for real-world conditions automation alone may miss.</li> </ul>"
+  },
+
+  "workflow-original": {
+    "title": "Functional VRT",
+    "type": "code-editor",
+    "folder": "original-vrt-code",
+    "files": [
+      "smoke-tests.spec.ts",
+      "smoke-tests.json"
+    ],
+    "notes": "This is my 39-line solution."
+  },
+  "workflow-automation-original": {
+    "title": "Functional VRT",
+    "type": "image-only",
+    "image": "./assets/images/vrt-original.png",
+    "notes": "<div>As I originally implemented the non-automated automted tests ...</div> <ol> <li>Run the scan with no images stored. It stored the images for later use.</li> <li>DEPLOY: Run the scan with images in place. Images that are over the threshold are marked and can be reviewed.</li> <ul> <div>This all runs on a single machine (one user)."
+  },
+  "workflow-automation-pipelines": {
+    "title": "Functional Pipeline & VRT",
+    "type": "image-only",
+    "image": "./assets/images/vrt-pipelines.png",
+    "notes": "<div>More automation for the non-automated automted tests ...</div> <ol> <li>Run the scan with no images stored (on ADO; cron - 8 pm daily). It stored the images for later use (by Zipping them up and storing them in a bucket).</li> <li>DEPLOY: Run the scan (manual trigger in ADO) with images in place (pull images from the bucket). Images that are over the threshold are marked and can be reviewed.</li> <ul> <div>This all runs through a pipeline and has a link and page at the end of the cycle for \"team-level review\"."
+  },
+
+  "what-is-non-automated-automated-testing--03": {
+    "title": "Why use Non-Automated Automated Testing?",
+    "type": "panel-double",
+    "text1": "<div class=green-bold>Concise Definition</div> <div class=div-wrapper>Non-automated automated testing (in production) is a <span class=yellow>hybrid testing approach</span> where automated tools execute predefined test actions <span class=yellow>against a live deployment</span>, but human testers <span class=green>manually initiate</span>, <span class=green>observe</span>, <span class=green>interpret</span>, and <span class=green>supplement these actions</span> with additional checks to <span class=yellow>validate real-world behavior</span> before finalizing the release as successful.</div>",
+    "text2": "<div class=green-bold>Why use it?</div> <ul> <li>Automation is fast and repeatable, but blind to qualitative, visual, and contextual nuances.</li> <li>Manual testing is adaptable and insightful, especially when production data or environments behave differently than staging.</li> <li>In production deployments, risk tolerance is low, so blending automation with human oversight reduces false negatives and false positives.</li> </ul>",
+    "notes": "<div class=green-bold>Why use it?</div> <ul> <li>Automation is fast and repeatable, but blind to qualitative, visual, and contextual nuances.</li> <li>Manual testing is adaptable and insightful, especially when production data or environments behave differently than staging.</li> <li>In production deployments, risk tolerance is low, so blending automation with human oversight reduces false negatives and false positives.</li> </ul>"
+  },
+
+  "points-of-failure": {
+    "title": "Common Risks & Failure",
+    "type": "image-text",
+    "orientation": "left",
+    "text1": "<ol> <li>Human dependency & Variability: Missed defects, slower execution, unpredictable quality sign-offs.</li> <li>Misinterpretation of automated results: false positives or negatives.</li> <li>Automation drift: false sense of coverage; critical paths go untested.</li> <li>Critical-path blind spots: Undetected defects in the most important user flows.</li> </ol>",
+    "image": "./assets/images/points-of-failure.jpg",
+    "notes": "<div class=green-bold>Risk & Failure</div> <ol> <li>Human dependency & Variability: Missed defects, slower execution, unpredictable quality sign-offs.</li> <li>Misinterpretation of automated results: false positives or negatives.</li> <li>Automation drift: false sense of coverage; critical paths go untested.</li> <li>Critical-path blind spots: Undetected defects in the most important user flows.</li> </ul>"
   },
 
   "time-for-questions": {
     "title": "",
     "type": "image-only",
     "background": "transparent",
-    "image": "./assets/images/time-for-questions.webp",
+    "image": "./assets/images/time-for-questions--naat-qr.webp",
     "notes": ""
   }
 }
