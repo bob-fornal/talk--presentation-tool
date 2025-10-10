@@ -19,20 +19,6 @@
     bottom: calc(60% + 1.6rem);
   }
 
-  .cover--bio {
-    position: absolute;
-    top: calc(40% + 3rem);
-    width: 40vw;
-    z-index: 100;
-    font-size: 1.5rem;
-
-    &.left {
-      left: 4rem;
-    }
-    &.right {
-      right: 4rem;
-    }
-  }
   .cover--lower {
     position: absolute;
     left: 0;
@@ -42,5 +28,18 @@
     background-color: rgba(100, 100, 100, 0.5);
     border-top: 8px solid #69f0ae;
     z-index: 10;
+
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    padding: 0 4em;
+    box-sizing: border-box;
+
+    .cover--bio {
+      margin-top: 3em;
+      z-index: 100;
+      font-size: 1.5rem;
+      width: calc(50% - 5.5em);
+    }
   }
 }

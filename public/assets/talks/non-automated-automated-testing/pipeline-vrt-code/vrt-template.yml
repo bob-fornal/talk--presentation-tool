@@ -1,0 +1,376 @@
+parameters:
+  - name: domainName
+    type: string
+  - name: displayName
+    type: string
+  - name: CI_WORKERS
+    type: number
+  - name: CI_COOKIE
+    type: boolean
+  - name: selectedTestType
+    type: string
+  - name: fulldomainName
+    type: string
+
+jobs:
+- job: RunTests_${{ parameters.domainName }}
+  displayName: '${{ parameters.displayName }} VRT'
+  
+  variables:
+  - group: VRT
+  - name: containerName
+    value: 'vrt-results'
+  - name: resultFolder
+    value: 'playwright-report'
+  - name: baselineImages
+    value: 'tests/smoke-tests.spec.ts-snapshots'
+  - name: zipFileName
+    value: 'baseline.zip'
+  - name: blobPrefix
+    value: 'baseline'
+  - name: CI_WORKERS
+    value:  ${{ parameters.CI_WORKERS }}
+  - name: CI
+    value: true
+  - name: CI_COOKIE
+    value: ${{ parameters.CI_COOKIE }}
+
+  pool:
+    vmImage: 'ubuntu-latest'
+
+  steps:
+    - checkout: self
+
+    - script: |
+        curl -o baseline.zip "https://stuatlhsmktsitescus.blob.core.windows.net/vrt-results/baseline/${{ parameters.displayName }}/baseline.zip"
+        #unzip -o baseline.zip -d $(baselineDir)
+        unzip -o baseline.zip 
+      displayName: 'Download and unzip baseline'
+
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '18.x'
+      displayName: 'Install Node.js'
+
+    - script: |
+        npm ci
+      displayName: 'Install dependencies'
+    
+    - script: |
+        npx playwright install --with-deps --only-shell
+      displayName: 'Install Browsers'
+
+    - script: |
+        cd tests
+        printf "%s\n" "{" >> "smoke-tests.json"
+        printf "  \"MAX_DIFF_PIXEL_RATIO\": %s,\n" "0.05" >> "smoke-tests.json"
+        printf "  \"DOMAIN\": \"%s\",\n" "${{ parameters.fulldomainName }}" >> "smoke-tests.json"
+        printf "  \"DATA\": [\n" >> "smoke-tests.json"
+        cat "test-data/${{ parameters.domainName}}-smoke.txt" >> "smoke-tests.json"
+        if [ "${{ parameters.selectedTestType }}" = "detailed" ] ; then
+          cat "test-data/${{ parameters.domainName}}-detailed.txt" >> "smoke-tests.json"
+        fi
+        printf "  ]\n" >> "smoke-tests.json"
+        printf "%s\n" "}" >> "smoke-tests.json"
+        cd ..
+      displayName: 'Create Data Set'
+
+    - script: |
+        npx playwright test || true
+      displayName: 'Run Playwright Tests for ${{ parameters.displayName }}'
+
+    - script: |
+        TIMESTAMP=$(date +'%Y-%m-%d')
+        MONTHONLY=$(date +'%Y-%m')
+        DEST_DIR="${{ parameters.displayName }}/history/${MONTHONLY}/${TIMESTAMP}--playwright-report"
+        echo "##vso[task.setvariable variable=uploadPath]$DEST_DIR"
+      displayName: 'Generate timestamped history path'
+
+    - script: |
+        echo "Uploading results to blob storage..."
+        az storage blob upload-batch \
+          --connection-string "$AZURE_STORAGE_CONNECTION_STRING" \
+          --destination "$(containerName)/$(uploadPath)" \
+          --source "$(resultFolder)" \
+          --overwrite
+      env:
+        AZURE_STORAGE_CONNECTION_STRING: $(AZURE_STORAGE_CONNECTION_STRING)
+      displayName: 'Upload results to Azure [Historical]'
+
+# TODO:
+#  pull historical timestamp file to correct location history/history.txt
+#  append timestamp
+
+    - script: |
+        cd $(resultFolder)
+        mkdir history
+        cd history
+        touch history.txt
+        curl history.txt "https://stuatlhsmktsitescus.blob.core.windows.net/vrt-results/baseline/${{ parameters.displayName }}/history/history.txt"
+        echo "Current working directory:"
+        pwd
+        echo "Contents of current directory:"
+        ls -la
+        printf "%s\n" "$(date +'%Y-%m')/$(date +'%Y-%m-%d')--playwright-report" >> "history.txt"
+        cd ../..
+        echo "Current working directory:"
+        pwd
+        
+      displayName: 'Write Historical TimeStamp'
+
+    - script: |
+        echo "Uploading results to blob storage..."
+        az storage blob upload-batch \
+          --connection-string "$AZURE_STORAGE_CONNECTION_STRING" \
+          --destination "$(containerName)/${{ parameters.displayName }}" \
+          --source "$(resultFolder)" \
+          --overwrite
+      env:
+        AZURE_STORAGE_CONNECTION_STRING: $(AZURE_STORAGE_CONNECTION_STRING)
+      displayName: 'Upload results to Azure'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ==========================
+
+# trigger:
+# - master
+
+# pool:
+#   vmImage: 'ubuntu-latest'
+
+# parameters:
+#   - name: testType
+#     displayName: Select test type
+#     type: string
+#     default: smoke
+#     values:
+#       - smoke
+#       - detailed
+#   - name: checkCookies
+#     displayName: 'Check for Cookie Banner'
+#     type: boolean
+#     default: false
+#   - name: domainTested
+#     displayName: Select domain
+#     type: string
+#     default: ALL
+#     values:
+#     - ALL
+#     - leafhome.com
+#     - leaffilter.com
+#     - leaffilter.ca
+#     - leafhomewatersolutions.com
+#     - leafhomewatersolutions.ca
+#     - leafhomesaftysolutions.com
+#     - leafhomegarageflooring.com
+    
+
+
+# variables:
+#   - group: VRT
+#   - name: containerName
+#     value: 'vrt-results'
+#   - name: resultFolder
+#     value: 'playwright-report'
+#   - name: zipFileName
+#     value: 'baseline.zip'
+#   - name: blobPrefix
+#     value: 'baseline'
+#   - name: CI_WORKERS
+#     value:  2
+#   - name: CI
+#     value: true
+#   - name: selectedTestType
+#     value: ${{ parameters.testType }}
+#   - name: CI_COOKIE
+#     value: ${{ parameters.checkCookies }}
+#   - name: baselineBlobURL
+#     value: 'https://stuatlhsmktsitescus.blob.core.windows.net/vrt-results/baseline/baseline.zip'
+
+
+# steps:
+# - task: NodeTool@0
+#   inputs:
+#     versionSpec: '18.x'
+#   displayName: 'Install Node.js'
+
+# - script: |
+#     curl -o baseline.zip "$(baselineBlobURL)"
+#     #unzip -o baseline.zip -d $(baselineDir)
+#     unzip -o baseline.zip 
+#   displayName: 'Download and unzip baseline'
+
+# - script: |
+#     npm ci
+#     npx playwright install --with-deps
+#   displayName: 'Install dependencies'
+
+# - script: |
+#     npx playwright test || true
+#   displayName: 'Run Playwright Tests'
+
+# - script: |
+#     TIMESTAMP=$(date +'%Y-%m-%d')
+#     DEST_DIR="history/${TIMESTAMP}--playwright-report"
+#     echo "##vso[task.setvariable variable=uploadPath]$DEST_DIR"
+#   displayName: 'Generate timestamped upload path'
+
+# - script: |
+#     echo "Uploading results to blob storage..."
+#     az storage blob upload-batch \
+#       --connection-string "$AZURE_STORAGE_CONNECTION_STRING" \
+#       --destination "$(containerName)/$(uploadPath)" \
+#       --source "$(resultFolder)" \
+#       --overwrite
+#   env:
+#     AZURE_STORAGE_CONNECTION_STRING: $(AZURE_STORAGE_CONNECTION_STRING)
+#   displayName: 'Upload results to Azure [Historical]'
+
+
+# - script: |
+#     echo "Uploading results to blob storage..."
+#     az storage blob upload-batch \
+#       --connection-string "$AZURE_STORAGE_CONNECTION_STRING" \
+#       --destination "$(containerName)" \
+#       --source "$(resultFolder)" \
+#       --overwrite
+#   env:
+#     AZURE_STORAGE_CONNECTION_STRING: $(AZURE_STORAGE_CONNECTION_STRING)
+#   displayName: 'Upload results to Azure'
+
+
+# # - script: |
+# #     mkdir artifacts
+# #     zip -r artifacts/$(zipFileName) $(resultFolder)
+# #   displayName: 'Zip test results'
+
+# # - script: |
+# #     echo "Uploading $(zipFileName) to blob storage..."
+# #     az storage blob upload \
+# #       --connection-string "$AZURE_STORAGE_CONNECTION_STRING" \
+# #       --container-name $(containerName) \
+# #       --name "baseline/$(zipFileName)" \
+# #       --file "artifacts/"$(zipFileName) \
+# #       --overwrite
+# #   env:
+# #     AZURE_STORAGE_CONNECTION_STRING: $(AZURE_STORAGE_CONNECTION_STRING)
+# #   displayName: 'Upload zip to Azure'
+
+# # - script: |
+# #     echo "Uploading results to blob storage..."
+# #     az storage blob upload-batch \
+# #       --connection-string "$AZURE_STORAGE_CONNECTION_STRING" \
+# #       --destination "$(containerName)" \
+# #       --source "$(resultFolder)" \
+# #       --destination-path "baseline" \
+# #       --overwrite
+# #   env:
+# #     AZURE_STORAGE_CONNECTION_STRING: $(AZURE_STORAGE_CONNECTION_STRING)
+# #   displayName: 'Upload results to Azure'
+
+
+
+# # trigger:
+# # - main
+
+# # pool:
+# #   vmImage: 'ubuntu-latest'
+
+# # parameters:
+# #   - name: testType
+# #     displayName: Select test type
+# #     type: string
+# #     default: smoke
+# #     values:
+# #       - smoke
+# #       - detailed
+
+# # variables:
+# #   - group: VRT
+# #   - name: containerName
+# #     value: 'vrt-results'
+# #   - name: resultFolder
+# #     value: 'playwright-report'
+# #   - name: zipFileName
+# #     value: 'baseline.zip'
+# #   - name: blobPrefix
+# #     value: 'baseline'
+# #   - name: CI_WORKERS
+# #     value:  20
+# #   - name: CI
+# #     value: true
+# #   - name: selectedTestType
+# #     value: ${{ parameters.testType }}
+# #   - name: baselineBlobURL
+# #     value: 'https://stuatlhsmktsitescus.blob.core.windows.net/vrt-results/baseline/baseline.zip'
+# #   - name: baselineDir
+# #     value: 'playwright-report'
+
+# # steps:
+
+# # - task: NodeTool@0
+# #   inputs:
+# #     versionSpec: '20.x'
+# #   displayName: 'Install Node.js'
+
+# # - script: |
+# #     curl -o baseline.zip "$(baselineBlobURL)"
+# #     unzip -o baseline.zip -d $(baselineDir)
+# #   displayName: 'Download and unzip baseline'
+
+# # - script: |
+# #     npm ci
+# #     npx playwright install
+# #   displayName: 'Install dependencies and Playwright'
+
+# # - script: |
+# #     # npx playwright test --reporter html
+# #     npm run test
+# #   displayName: 'Run Playwright tests'
+# #   continueOnError: true  # Important to keep pipeline going
+
+# # - script: |
+# #     TIMESTAMP=$(date +'%Y-%m-%d')
+# #     DEST_DIR="history/${TIMESTAMP}--playwright-report"
+# #     echo "##vso[task.setvariable variable=uploadPath]$DEST_DIR"
+# #   displayName: 'Generate timestamped upload path'
+
+# # - script: |
+# #     echo "Uploading results to blob storage..."
+# #     az storage blob upload-batch \
+# #       --connection-string "$AZURE_STORAGE_CONNECTION_STRING" \
+# #       --destination "$(containerName)/$(uploadPath)" \
+# #       --source "$(resultFolder)" \
+# #       --overwrite
+# #   env:
+# #     AZURE_STORAGE_CONNECTION_STRING: $(AZURE_STORAGE_CONNECTION_STRING)
+# #   displayName: 'Upload results to Azure [Historical]'
+
+
+# # - script: |
+# #     echo "Uploading results to blob storage..."
+# #     az storage blob upload-batch \
+# #       --connection-string "$AZURE_STORAGE_CONNECTION_STRING" \
+# #       --destination "$(containerName)" \
+# #       --source "$(resultFolder)" \
+# #       --overwrite
+# #   env:
+# #     AZURE_STORAGE_CONNECTION_STRING: $(AZURE_STORAGE_CONNECTION_STRING)
+# #   displayName: 'Upload results to Azure'

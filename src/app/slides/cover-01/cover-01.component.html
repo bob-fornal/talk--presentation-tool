@@ -11,7 +11,8 @@
   @if (editing === false || toggleView === true) {
     <div class="cover--title" [innerHTML]="title"></div>
     <div class="cover--author">{{ author }}</div>
-    <div
+    <div class="cover--lower">
+      <div
       *ngIf="!!bio1 && bio1.length > 0"
       class="cover--bio left"
       [innerHTML]="bio1"></div>
@@ -19,7 +20,7 @@
       *ngIf="!!bio2 && bio2.length > 0"
       class="cover--bio right"
       [innerHTML]="bio2"></div>
-    <div class="cover--lower"></div>
+    </div>
   } @else {
     <input
       type="text"
@@ -34,20 +35,21 @@
       data-editing="author"
       [attr.data-required]="true"
       [value]="author" />
-    <div
-      *ngIf="!!bio1 && bio1.length > 0"
-      contenteditable
-      class="cover--bio left"
-      data-editing="bio1"
-      [attr.data-required]="false"
-      [innerText]="getCleanCode(bio1)"></div>
-    <div
-      *ngIf="!!bio2 && bio2.length > 0"
-      contenteditable
-      class="cover--bio right"
-      data-editing="bio2"
-      [attr.data-required]="false"
-      [innerText]="getCleanCode(bio2)"></div>
-    <div class="cover--lower"></div>
+    <div class="cover--lower">
+      <div
+        *ngIf="!!bio1 && bio1.length > 0"
+        contenteditable
+        class="cover--bio left"
+        data-editing="bio1"
+        [attr.data-required]="false"
+        [innerText]="getCleanCode(bio1)"></div>
+      <div
+        *ngIf="!!bio2 && bio2.length > 0"
+        contenteditable
+        class="cover--bio right"
+        data-editing="bio2"
+        [attr.data-required]="false"
+        [innerText]="getCleanCode(bio2)"></div>
+    </div>
   }
 </div>
