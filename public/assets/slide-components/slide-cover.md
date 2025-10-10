@@ -21,7 +21,7 @@ This is the implementation of this code.
       "image1": "/assets/images/code-squid.webp",
       "image2": "/assets/images/leading-edje.webp",
       "text1": "<div class=bold>Entrepreneur</div>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.",
-      "text2": "<div class=bold>Senior Solutions Developer</div><div class=bold>Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth."
+      "text2": "<div class=bold>Microsoft MVP | Senior Solutions Developer</div><div class=bold>Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth."
     }
   },
 ```
