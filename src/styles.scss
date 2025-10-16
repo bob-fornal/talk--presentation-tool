@@ -76,9 +76,16 @@ body {
     margin-bottom: 1em;
 
     position: fixed;
+    z-index: 200;
+  }
+
+  &:not(.cover-image-wrap) .navigation {
     bottom: 2vh;
     right: 2vw;
-    z-index: 200;
+  }
+  &.cover-image-wrap .navigation {
+    bottom: 20vh;
+    right: 2vw;
   }
 
   .slide-wrapper {

@@ -1,5 +1,6 @@
 {
   "ORDER": [
+    "cover-image-wrap",
     "cover-01",
     "edje-about",
 
@@ -116,6 +117,14 @@
     "  height: 100%;",
     "}"
   ],
+
+  "cover-image-wrap": {
+    "title": "Non-Automated Automated Testing",
+    "type": "cover-image-wrap",
+    "author": "Bob Fornal & Lwin Maung",
+    "image": "./assets/images/momentum-2025.webp",
+    "notes": ""
+  },
   "cover-01": {
     "title": "Non-Automated Automated Testing",
     "type": "cover-01",
