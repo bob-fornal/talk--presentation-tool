@@ -1,7 +1,11 @@
-<div class="outer-wrapper talk">
+<div class="outer-wrapper talk" [class]="type">
   <ng-container [ngSwitch]="type">
     <div class="slide-wrapper" *ngSwitchCase="'cover-01'">
       <cover-01 [title]="page.title" [author]="page.author!" [html]="page.html || ''" [bio1]="page.bio1 || undefined" [bio2]="page.bio2 || undefined"></cover-01>
+    </div>
+
+    <div class="slide-wrapper" *ngSwitchCase="'cover-image-wrap'">
+      <cover-image-wrap [title]="page.title" [author]="page.author!" [image]="page.image!"></cover-image-wrap>
     </div>
 
     <div class="slide-wrapper" *ngSwitchCase="'image-double'">

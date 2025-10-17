@@ -1,0 +1,45 @@
+
+@font-face {
+  font-family: 'AvenirRegular';
+  src: url('/assets/fonts/Avenir-Regular.ttf') format('truetype');
+}
+
+:host .navigation {
+  bottom: 4vh;
+}
+
+.cover-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: AvenirRegular;
+  color: white;
+
+  .cover--image-wrap {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .cover--title {
+    font-size: 40px;
+    font-weight: bold;
+    position: relative;
+    bottom: auto;
+    z-index: 1000;
+
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 1rem;
+  }
+  .cover--author {
+    font-size: 28px;
+    font-weight: normal;
+    position: relative;
+    z-index: 1000;
+    text-align: center;
+  }
+}
