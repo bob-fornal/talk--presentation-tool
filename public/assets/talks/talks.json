@@ -154,6 +154,7 @@
     }, {
       "folder": "cloudflare-for-hackathons",
       "title": "Cloudflare for Hackathons",
+      "pdf": "https://www.bobs-tech-presentations.com/assets/talks/cloudflare-for-hackathons/cloudflare-for-hackathons-minified.pdf",
       "tags": [
         "cloudflare",
         "hackathon"
