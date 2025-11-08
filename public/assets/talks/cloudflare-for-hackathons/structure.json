@@ -80,6 +80,9 @@
     "}",
     "td.center {",
     "  text-align: left !important;",
+    "}",
+    ".strikethrough {",
+    "  text-decoration: line-through;",
     "}"
   ],
 
@@ -94,14 +97,16 @@
   "edje-about": {
     "title": "",
     "type": "GLOBAL/edje-about--centered",
-    "visibility": true
+    "notes": "",
+    "visibility": false
   },
 
   "hackathon-intro": {
     "title": "Hackathons: Introduction",
     "type": "panel-double",
     "text1": "<div class=green>Common hackathon constraints ...</div> <ul> <li>Very short timelines.</li> <li>Limited infrastructure resources.</li> <li>Need for quick iteration and fast demos.</li> </ul>",
-    "text2": "<div class=green>Personal Implementations ...</div> <ul> <li>Tried <span class=orange>Angular</span> (took too long to initialize and pull down).</li> <li>Used <span class=orange>HTML</span>, <span class=orange>CSS</span>, & <span class=orange>jQuery-lite</span> (have experience with jQuery).</li> <li>Had others generate mock data (excel converted to <span class=orange>JSON</span>).</li> </ul> <div class=green>Thoughts ...</div> <ul> <li>Implementing features without framework can't scale past event.</li> <li>No \"real\" functionality (Create, Read, Update, & Delete).</li> <ul>"
+    "text2": "<div class=green>Personal Implementations ...</div> <ul> <li>Tried <span class=orange>Angular</span> (took too long to initialize and pull down).</li> <li>Used <span class=orange>HTML</span>, <span class=orange>CSS</span>, & <span class=orange>jQuery-lite</span> (have experience with jQuery).</li> <li>Had others generate mock data (excel converted to <span class=orange>JSON</span>).</li> </ul> <div class=green>Thoughts ...</div> <ul> <li>Implementing features without framework can't scale past event.</li> <li>No \"real\" functionality (Create, Read, Update, & Delete).</li> <ul>",
+    "notes": "<div class=green>Common hackathon constraints ...</div> <ul> <li>Very short timelines.</li> <li>Limited infrastructure resources.</li> <li>Need for quick iteration and fast demos.</li> </ul> <div class=green>Thoughts ...</div> <ul> <li>Implementing features without framework can't scale past event.</li> <li>No \"real\" functionality (Create, Read, Update, & Delete).</li> <ul>"
   },
 
   "why-are-we-here": {
@@ -115,33 +120,37 @@
   "overview": {
     "title": "Overview",
     "type": "panel-single",
-    "text1": "<ol> <li>Accounts (with Users)</li> <li>Domains</li> <li>Pricing</li> <li>Worker Scripts (APIs, CRON Jobs, Environment Variables, Secrets)</li> <li>Key Vaults (fast document database)</li> <li>D1 Database (SQLite)</li> <li>Pages (repository or upload; frameworks)</li> <li>Image Storage (transformations)</li> </ol>"
+    "text1": "<ol> <li>Accounts (with Users)</li> <li>Domains</li> <li>Pricing</li> <li>Worker Scripts (APIs, CRON Jobs, Environment Variables, Secrets)</li> <li>Key Vaults (fast document database)</li> <li>D1 Database (SQLite)</li> <li>Pages (repository or upload; frameworks)</li> <li class=strikethrough>Image Storage (transformations)</li> </ol>",
+    "notes": "We're going to take a look at several parts of what Cloudflare can do. Remember, I switched to HTML, CSS, and jQuery because there was minimal setup and configuration. The same can be said for Cloudflare."
   },
 
   "01-02--accounts-domains": {
     "title": "Accounts & Domains",
     "type": "panel-double",
     "text1": "<div class=green>Accounts</div> <ul> <li><span class=code>Manage</span> > <span class=code>Members</span> allows invitation of members.</li> </ul>",
-    "text2": "<div class=green>Domains</div> <ul> <li>Manage</li> <li>Transfer</li> <li>Register</li> </ul>"
+    "text2": "<div class=green>Domains</div> <ul> <li>Manage</li> <li>Transfer</li> <li>Register</li> </ul>",
+    "notes": "Create a new account for the event. Add your main account and anyone else you feel is needed for the event."
   },
   "03--pricing": {
     "title": "Pricing",
     "type": "panel-double",
-    "text1": "<div class=green>Pricing (Workers plans: Free)</div> <ul> <li><span class=orange>Worker & Pages Functions</span> (10ms CPU, 100k/day)</li> <li><span class=orange>Builds</span> (1 concurrent slot)</li> <li><span class=orange>D1</span> (100k writes/day, 5GB)</li> <li><span class=orange>KV</span> (100k read/day, 1k write, delete, list/day)</li> <li><span class=orange>Hyperdrive</span> (100k queries/day)</li> </ul>",
-    "text2": "<div class=green>Pricing (Workers plans: Paid)</div> <ul> <li><span class=orange>Worker & Pages Functions</span> (15min CPU, 10M/day)</li> <li><span class=orange>Builds</span> (6 concurrent slots)</li> <li><span class=orange>D1</span></li> <li><span class=orange>KV</span></li> <li><span class=orange>Hyperdrive</span> (unlimited)</li> </ul>"
+    "text1": "<div class=green>Pricing (Workers plans: <span class=bold>Free</span>)</div> <ul> <li><span class=orange>Worker & Pages Functions</span> (10ms CPU, 100k/day)</li> <li><span class=orange>Builds</span> (1 concurrent slot)</li> <li><span class=orange>D1</span> (100k writes/day, 5GB)</li> <li><span class=orange>KV</span> (100k read/day, 1k write, delete, list/day)</li> <li><span class=orange>Hyperdrive</span> (100k queries/day)</li> </ul>",
+    "text2": "<div class=green>Pricing (Workers plans: <span class=bold>Paid</spam>)</div> <ul> <li><span class=orange>Worker & Pages Functions</span> (15min CPU, 10M/day)</li> <li><span class=orange>Builds</span> (6 concurrent slots)</li> <li><span class=orange>D1</span></li> <li><span class=orange>KV</span></li> <li><span class=orange>Hyperdrive</span> (unlimited)</li> </ul>",
+    "notes": "While looking at these differences in Free versus Paid, you have to remember that this is for a Hackathon. But, it is only $5.00 per month."
   },
   "04--worker-script-notes": {
     "title": "Worker Scripts",
     "type": "panel-double",
     "text1": "<div class=green>Think \"API.\" ...</div> <ul> <li>JavaScript</li> <li>TypeScript</li> <li>Python</li> <li>Rust</li> </ul> <div class=green>Findings ...</div> <ul> <li>60-second cache.</li> <li>Connect: Routes, DB, KV, Secrets (and more).</li> <li>Free 100,000 requests/day (paid, no limit).</li> <li>Module Pattern (<span class=code>import/export</span>, multiple files).</li> <li><span class=code>ctx.waitUntil</span> (extend lifetime of worker).</li> <li>Cron Jobs.</li> </ul>",
-    "text2": "<div class=green>Keep in mind ...</div> <ul> <li>Cache-buster, CORS, paging.</li> </ul> <div class=green>Deployment</div> <ul> <li>GitHub Actions (build process).</li> <li>Connect to Github via Settings (was able to not build).</li> </ul> <div class=green>Options</div> <ul> <li>Sites deployed as Worker Scripts rather than Pages (this feature is the direction Cloudflare is going and will develop code for; Pages will have limited improvements in the future).</li> </ul>"
+    "text2": "<div class=green>Keep in mind ...</div> <ul> <li>Cache-buster, CORS, paging.</li> </ul> <div class=green>Deployment</div> <ul> <li>GitHub Actions (build process).</li> <li>Connect to Github via Settings (was able to not build).</li> </ul> <div class=green>Options</div> <ul> <li>Sites deployed as Worker Scripts rather than Pages (this feature is the direction Cloudflare is going and will develop code for; Pages will have limited improvements in the future).</li> </ul>",
+    "notes": "This is not a Node.js Server, a Lambda, or a Function App. It's a very small script that runs as a man-in-the-middle, taking the request and allowing for manipulation or replacement of the content. It can access Key Vaults and Databases as well."
   },
   "05--key-vault-notes": {
     "title": "Key Vaults",
     "type": "panel-double",
     "text1": "<div class=green>Findings ...</div> <ul> <li>Low Latency, Edge Compute.</li> <li>1,200 rw/5-minutes (have to rethink large number of writes).</li> </ul> <div class=green>Data ...</div> <ul> <li><span class=code>key</span> (512B)</li> <li><span class=code>value</span> (5MB)</li> <li><span class=code>metadata</span> (1kB)</li> </ul>",
-    "text2": "<div class=green>Keep in mind ...</div> <ul> <li>...</li> </ul>",
-    "notes": "<div>Findings ...</div> <ul> <li>Low Latency, Edge Compute.</li> <li>1,200 rw/5-minutes (have to rethink large number of writes).</li> </ul> <div>Data ...</div> <ul> <li><span class=code>key</span> (512B)</li> <li><span class=code>value</span> (5MB)</li> <li><span class=code>metadata</span> (1kB)</li> </ul>"
+    "text2": "<div class=green>Keep in mind ...</div> <ul> <li>Metadata: can only see via API.</li> <li>This is where it's easy to hit the paywall limit.</li> </ul>",
+    "notes": "<div>Findings ...</div> <ul> <li>Low Latency, Edge Compute.</li> <li>1,200 rw/5-minutes (have to rethink large number of writes).</li> </ul> <div>Data ...</div> <ul> <li><span class=code>key</span> (512B)</li> <li><span class=code>value</span> (5MB)</li> <li><span class=code>metadata</span> (1kB)</li> </ul> <div class=green>Keep in mind ...</div> <ul> <li>Metadata: can only see via API.</li> <li>This is where it's easy to hit the paywall limit.</li> </ul>"
   },
   "06--database-d1-notes": {
     "title": "D1 Databases",
@@ -152,13 +161,17 @@
   },
   "07--pages": {
     "title": "Pages",
-    "type": "panel-single",
-    "text1": ""
+    "type": "panel-double",
+    "text1": "<div class=green>Findings ...</div> <ul> <li>Available on all plans.</li> <li>Unlimited bandwidth (Free)</li> <li>500 deploys per month (Free)</li> <li>Cloudflare is recommending Pages in favor of Workers.</ul>",
+    "text2": "<div class=green>Findings (deprecation) ...</div> <ul> <li>Workers are low-latency and at the edge.</li> <li>Existing projects, use Pages. New projects, use workers.</li> </ul>",
+    "notes": "<div class=green>Findings ...</div> <ul> <li>Available on all plans.</li> <li>Unlimited bandwidth (Free)</li> <li>500 deploys per month (Free)</li> <li>Cloudflare is recommending Pages in favor of Workers.</ul> <div>Findings (deprecation) ...</div> <ul> <li>Workers are low-latency and at the edge.</li> <li>Existing projects, use Pages. New projects, use workers.</li> </ul>"
   },
   "08--image-storage": {
     "title": "Image Storage",
     "type": "panel-single",
-    "text1": ""
+    "text1": "",
+    "notes": "",
+    "visibility": false
   },
 
   "cloudflare-summary-and-best-practices": {
@@ -180,7 +193,7 @@
     "title": "",
     "type": "image-only",
     "background": "transparent",
-    "image": "./assets/images/time-for-questions--30ms-qr.webp",
+    "image": "./assets/images/time-for-questions--cfh-qr.webp",
     "notes": ""
   }
 }
