@@ -97,7 +97,8 @@
   "edje-about": {
     "title": "",
     "type": "GLOBAL/edje-about--centered",
-    "visibility": true
+    "notes": "",
+    "visibility": false
   },
 
   "hackathon-intro": {
@@ -169,6 +170,7 @@
     "title": "Image Storage",
     "type": "panel-single",
     "text1": "",
+    "notes": "",
     "visibility": false
   },
 
