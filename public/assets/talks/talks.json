@@ -195,6 +195,15 @@
       ]
     },
     {
+      "folder": "playwright-vrt-runner-in-39-lines",
+      "title": "Playwright VRT Runner in 39-lines of TypeScript",
+      "pdf": "https://www.bobs-tech-presentations.com/assets/talks/non-automated-automated-testing/non-automated-automated-testing-compressed.pdf",
+      "tags": [
+        "devops",
+        "testing"
+      ]
+    },
+    {
       "folder": "the-impact-of-testing-on-a-devops-pipeline",
       "title": "The Impact of Testing on a DevOps Pipeline",
       "pdf": "https://www.bobs-tech-presentations.com/assets/talks/the-impact-of-testing-on-a-devops-pipeline/the-impact-of-testing-on-a-devops-pipeline-compressed.pdf",

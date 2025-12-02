@@ -60,5 +60,13 @@
       "  color: black;",
       "}"
     ]
+  },
+  "bttf": {
+    "title": "Back To The Future",
+    "key": "bttf",
+    "ADJUSTMENT": [
+      ".outer-wrapper/background: url(\"./assets/images/cover--bttf.webp\");",
+      ".outer-wrapper/color: #69f0ae;"
+    ]
   }
 }

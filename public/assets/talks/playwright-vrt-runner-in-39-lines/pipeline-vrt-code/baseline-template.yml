@@ -1,0 +1,95 @@
+parameters:
+  - name: domainName
+    type: string
+  - name: displayName
+    type: string
+  - name: CI_WORKERS
+    type: number
+  - name: CI_COOKIE
+    type: boolean
+  - name: selectedTestType
+    type: string
+  - name: fulldomainName
+    type: string
+
+jobs:
+- job: RunTests_${{ parameters.domainName }}
+  displayName: 'Create ${{ parameters.displayName }} baseline'
+  
+  variables:
+  - group: VRT
+  - name: containerName
+    value: 'vrt-results'
+  - name: resultFolder
+    value: 'playwright-report'
+  - name: baselineImages
+    value: 'tests/smoke-tests.spec.ts-snapshots'
+  - name: zipFileName
+    value: 'baseline.zip'
+  - name: blobPrefix
+    value: 'baseline'
+  - name: CI_WORKERS
+    value:  ${{ parameters.CI_WORKERS }}
+  - name: CI
+    value: true
+  - name: CI_COOKIE
+    value: ${{ parameters.CI_COOKIE }}
+
+  pool:
+    vmImage: 'ubuntu-latest'
+
+  steps:
+    - checkout: self
+
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '18.x'
+      displayName: 'Install Node.js'
+
+    - script: |
+        npm ci
+      displayName: 'Install dependencies'
+    
+    - script: |
+        npx playwright install --with-deps --only-shell
+      displayName: 'Install Browsers'
+
+    - script: |
+        cd tests
+        printf "%s\n" "{" >> "smoke-tests.json"
+        printf "  \"MAX_DIFF_PIXEL_RATIO\": %s,\n" "0.05" >> "smoke-tests.json"
+        printf "  \"DOMAIN\": \"%s\",\n" "${{ parameters.fulldomainName }}" >> "smoke-tests.json"
+        printf "  \"DATA\": [\n" >> "smoke-tests.json"
+        cat "test-data/${{ parameters.domainName}}-smoke.txt" >> "smoke-tests.json"
+        if [ "${{ parameters.selectedTestType }}" = "detailed" ] ; then
+          cat "test-data/${{ parameters.domainName}}-detailed.txt" >> "smoke-tests.json"
+        fi
+        printf "  ]\n" >> "smoke-tests.json"
+        printf "%s\n" "}" >> "smoke-tests.json"
+        cd ..
+      displayName: 'Create Data Set'
+
+    - script: |
+        npx playwright test || true
+      displayName: 'Run Playwright Tests for ${{ parameters.displayName }}'
+
+    - script: |
+        mkdir artifacts
+        zip -r artifacts/$(zipFileName) $(baselineImages)
+      displayName: 'Zip test results'
+
+    - script: |
+        echo "Uploading $(zipFileName) to blob storage..."
+        echo "Uploading $(zipFileName) to blob storage..."
+        echo "Container: $(containerName)"
+        echo "Display name: ${{ parameters.displayName }}"
+        echo "Connection string (first 10 chars): $(AZURE_STORAGE_CONNECTION_STRING:0:10)"
+        az storage blob upload \
+          --connection-string "$AZURE_STORAGE_CONNECTION_STRING" \
+          --container-name $(containerName) \
+          --name "baseline/${{ parameters.displayName }}/$(zipFileName)" \
+          --file "artifacts/"$(zipFileName) \
+          --overwrite
+      env:
+        AZURE_STORAGE_CONNECTION_STRING: $(AZURE_STORAGE_CONNECTION_STRING)
+      displayName: 'Upload zip to Azure'
