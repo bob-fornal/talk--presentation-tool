@@ -1,0 +1,86 @@
+{
+  "ORDER": [
+    "cover-01",
+
+    "what-is-typescript",
+
+    "typscript-pros",
+    "typscript-cons",
+
+    "time-for-questions"
+  ],
+
+  "STYLE": [
+    ".outer-wrapper {",
+    "  background: url(\"./assets/images/--bg-grid--green.webp\");",
+    "  background-repeat: no-repeat;",
+    "  background-size: cover;",
+    "  color: #69f0ae;",
+    "  font-family: Arial, sans-serif;",
+    "}",
+    ".italic {",
+    "  font-style: italic;",
+    "}",
+    ".italic-green {",
+    "  font-style: italic;",
+    "  font-weight: bold;",
+    "  color: #69f0ae;",
+    "}",
+    ".bold-green {",
+    "  font-weight: bold;",
+    "  color: #69f0ae;",
+    "}",
+    ".indented {",
+    "  padding-left: 1em;",
+    "}",
+    ".indent-padded {",
+    "  padding: 1em;",
+    "}",
+    ".code {",
+    "  color: yellow;",
+    "  font-family: Menlo, Monaco, \"Courier New\", monospace;",
+    "}"
+  ],
+  
+  "cover-01": {
+    "title": "TypeScript Issues",
+    "type": "cover-01",
+    "author": "Bob Fornal",
+    "bio1": "<img class=bio-logo src=./assets/images/code-squid.webp /><br/><div class=\"bold bio-header\">Entrepreneur</div>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.",
+    "bio2": "<img class=bio-logo src=./assets/images/leading-edje.webp /><br/><div class=bold>Microsoft MVP | Senior Solutions Developer</div><div class=\"bold bio-header\">Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth.",
+    "notes": "I've recently been working on \"fullstack\" Azure DevOps (using Terraform) with Function App, database, and frontend code."
+  },
+
+  "what-is-typescript": {
+    "title": "What is TypeScript?",
+    "type": "image-text",
+    "orientation": "right",
+    "text1": "<div><span class=bold-green>The Goal</span> ...</div> <div class=indent-padded>To build better, faster and more responsive software <span class=bold-green>by</span> bringing Development and Operations teams together.</div> <div><span class=bold>DevOps</span> ...</div> <div class=indent-padded>Is a <span class=bold-green>cultural shift</span> to remove the barriers for <span class=bold-green>shorter and more frequent</span> software deliveries, and to respond well to changing business requirements.</div> <div>The <span class=bold-green>cultural shift</span> depends on continuously optimizing:</div> <ul><li>Workflow</li><li>Architecture</li><li>Infrastructure</li></ul>",
+    "image": "./assets/images/dev-ops-loop.webp",
+    "notes": "<ul><li>DevOps is all about streamlining and automating your entire software delivery lifecycle.</li><li>It starts with adopting the agile best practice of CI, where developers check code into a shared repository several times a day.</li><li>Each check-in is then verified by an automated build, allowing teams to detect errors and conflicts as soon as possible.</li><li>Automation frameworks and CI tools such as Jenkins and Bamboo are also used to build, test and deploy applications automatically when requirements change in order to speed up the release process.</li><ul>"
+  },
+  "typescript-pros": {
+    "title": "What is the Agile Model?",
+    "type": "image-text",
+    "orientation": "left",
+    "text1": "<div>Software developed with the Agile Model adheres to the following four basic priorities:</div><ol><li>Individuals and interactions over processes and tools;</li><li><span class=bold-green>Working software</span> over comprehensive documentation;</li><li>Customer collaboration over contract negotiation; and</li><li><span class=bold-green>Responding to change</span> over following a plan.</li></ol> <div>In Agile development:</div><ul><li>A <span class=bold-green>test-first approach</span> is used, rather than a test-at-the-end approach, when developing.</li><li>Code is developed <span class=bold-green>and tested</span> in small increments of functionality.</li></ul>",
+    "image": "./assets/images/agile-methodology.webp",
+    "notes": "<ul><li>Agile is a way of focusing on people and interactions, working software, and responding to change.</li><li>Agile uses a test-first approach against small sets of functional code.</li></ul>"
+  },
+  "typescript-cons": {
+    "title": "What is the Agile Model?",
+    "type": "image-text",
+    "orientation": "left",
+    "text1": "<div>Software developed with the Agile Model adheres to the following four basic priorities:</div><ol><li>Individuals and interactions over processes and tools;</li><li><span class=bold-green>Working software</span> over comprehensive documentation;</li><li>Customer collaboration over contract negotiation; and</li><li><span class=bold-green>Responding to change</span> over following a plan.</li></ol> <div>In Agile development:</div><ul><li>A <span class=bold-green>test-first approach</span> is used, rather than a test-at-the-end approach, when developing.</li><li>Code is developed <span class=bold-green>and tested</span> in small increments of functionality.</li></ul>",
+    "image": "./assets/images/agile-methodology.webp",
+    "notes": "<ul><li>Agile is a way of focusing on people and interactions, working software, and responding to change.</li><li>Agile uses a test-first approach against small sets of functional code.</li></ul>"
+  },
+
+  "time-for-questions": {
+    "title": "",
+    "type": "image-only",
+    "background": "transparent",
+    "image": "./assets/images/time-for-questions--iotdevops-qr.png",
+    "notes": ""
+  }
+}
