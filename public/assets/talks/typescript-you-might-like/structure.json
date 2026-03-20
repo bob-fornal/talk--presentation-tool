@@ -1,0 +1,503 @@
+{
+  "ORDER": [
+    "cover-01",
+    "edje-about",
+
+    "we-have-all-been-there",
+    "introduction-what-we-will-cover",
+
+    "part-one-introduction",
+    "01-01-just-enough-types",
+    "01-02-type-when-it-matters",
+    "01-03-unknown-safety-net",
+    "part-one-summary",
+
+    "part-two-introduction",
+    "02-01-discriminated-unions",
+    "02-02-literal-types",
+    "02-03-readonly",
+    "part-two-summary",
+
+    "part-three-introduction",
+    "03-01-template-literal-types",
+    "03-02-index-signatures-with-constraints",
+    "03-03-satisfies-operator",
+    "03-04-non-nullable-and-utility-types",
+    "part-three-summary",
+
+    "part-four-introduction",
+    "04-01-dry-derive-types",
+    "04-02-typeof-and-keyof",
+    "part-four-summary",
+
+    "part-five-introduction",
+    "05-01-type-safe-event-emitters",
+    "05-02-builder-pattern-with-type-state",
+    "05-03-type-safe-dependency-injection",
+    "part-five-summary",
+
+    "part-six-introduction",
+    "06-01-exhaustive-switch-checks",
+    "06-02-branded-types",
+    "06-03-assert-functions",
+    "06-04-type-predicates-for-array-filtering",
+    "part-six-summary",
+
+    "part-seven-introduction",
+    "07-01-do-not-abuse-generics",
+    "07-02-avoid-type-assertions",
+    "07-03-do-not-fight-the-compiler",
+    "part-seven-summary",
+
+    "part-eight-introduction",
+    "08-01-start-small",
+    "08-02-the-80-20-rule",
+    "part-eight-summary",
+
+    "quick-wins-you-can-apply-today",
+    "key-takeaways",
+    "resources-for-further-learning",
+
+    "time-for-questions"
+  ],
+
+  "STYLE": [
+    ".outer-wrapper {",
+    "  background: url(\"./assets/images/--bg-grid--green.webp\");",
+    "  background-repeat: no-repeat;",
+    "  background-size: cover;",
+    "  color: #69f0ae;",
+    "  font-family: Arial, sans-serif;",
+    "}",
+    ".italic {",
+    "  font-style: italic;",
+    "}",
+    ".italic-green {",
+    "  font-style: italic;",
+    "  font-weight: bold;",
+    "  color: #69f0ae;",
+    "}",
+    ".bold-green {",
+    "  font-weight: bold;",
+    "  color: #69f0ae;",
+    "}",
+    ".blue {",
+    "  color: #40c4ff;",
+    "}",
+    ".indented {",
+    "  padding-left: 1em;",
+    "}",
+    ".indent-padded {",
+    "  padding: 1em;",
+    "}",
+    ".code {",
+    "  color: yellow;",
+    "  font-family: Menlo, Monaco, \"Courier New\", monospace;",
+    "}"
+  ],
+  
+  "cover-01": {
+    "title": "TypeScript You MIGHT Like",
+    "type": "cover-01",
+    "author": "Bob Fornal",
+    "bio1": "<img class=bio-logo src=./assets/images/code-squid.webp /><br/><div class=\"bold bio-header\">Entrepreneur</div>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.",
+    "bio2": "<img class=bio-logo src=./assets/images/leading-edje.webp /> <br/> <div class=bold>Microsoft MVP | Torc Ambassador |</div> <div class=bold>Senior Solutions Developer II at Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth.",
+    "notes": "I've recently been working on \"fullstack\" Azure DevOps (using Terraform) with Function App, database, and frontend code."
+  },
+  "edje-about": {
+    "title": "",
+    "type": "GLOBAL/edje-about--centered",
+    "visibility": true,
+    "notes": ""
+  },
+
+  "we-have-all-been-there": {
+    "title": "TypeScript: We've All Been There",
+    "type": "image-text",
+    "orientation": "right",
+    "text1": "",
+    "image": "",
+    "notes": "<div>\"TypeScript error message from hell\"</div> <div>\"We've all been here. Let's fix that.\"</div> <div>Key Message \"TypeScript is a tool, not a religion. Use what helps, skip what doesn't.\"</div>"
+  },
+
+  "introduction-what-we-will-cover": {
+    "title": "What We'll Cover",
+    "type": "panel-single",
+    "text1": "<ol> <li>Just Enough Types Philosophy.</li> <li>Patterns That Prevent Bugs.</li> <li>Features You're Probably Overlooking.</li> <li>Keeping Types Manageable.</li> <li>Real-World Patterns with TypeScript.</li> <li>Practical Tips & Tricks.</li> <li>Common Pitfalls to Avoid.</li> <li>Adoption Strategy.</li> </ol>"
+  },
+
+  "part-one-introduction": {
+    "title": "Part 1: Just Enough Types Philosophy",
+    "type": "panel-single",
+    "text1": "<ol> <li>Just enough types: stop fighting inference.</li> <li>Type when it matters.</li> <li>The <span class=code>unknown</span> safety net.</li> </ol>"
+  },
+  "01-01-just-enough-types": {
+    "title": "Just Enough Types: Stop Fighting Inference",
+    "type": "code-editor",
+    "folder": "01/01-just-enough-types",
+    "files": [
+      "wrong.js",
+      "right.js"
+    ],
+    "notes": "Stop fighting inferences.",
+    "visibility": true
+  },
+  "01-02-type-when-it-matters": {
+    "title": "Just Enough Types: Type When It Matters",
+    "type": "code-editor",
+    "folder": "01/02-type-when-it-matters",
+    "files": [
+      "typing.js"
+    ],
+    "notes": "Function boundaries ARE the right place.",
+    "visibility": true
+  },
+  "01-03-unknown-safety-net": {
+    "title": "Just Enough Types: The \"Unknown\" Safety Net",
+    "type": "code-editor",
+    "folder": "01/03-unknown-safety-net",
+    "files": [
+      "any.js",
+      "unknown.js"
+    ],
+    "notes": "<div>The \"any\" is an escape hatch.</div> <div>Use \"unknown\" for safe type narrowing</div>",
+    "visibility": true
+  },
+  "part-one-summary": {
+    "title": "Part 1: Summary",
+    "type": "panel-single",
+    "text1": "<ol> <li>Just enough types: stop fighting inference.</li> <li>Type when it matters.</li> <li>The <span class=code>unknown</span> safety net.</li> </ol>"
+  },
+
+  "part-two-introduction": {
+    "title": "Part 2: Patterns That Prevent Bugs",
+    "type": "panel-single",
+    "text1": "<ol> <li>Discriminated Unions prevent bug patterns.</li> <li>Literal Types are better than <span class=code>enums</span>.</li> <li><span class=code>Readonly</span> stops accidental mutations (makes intent clear).</li> </ol>"
+  },
+  "02-01-discriminated-unions": {
+    "title": "Bug Pattern Prevention: Discriminated Unions",
+    "type": "code-editor",
+    "folder": "02/01-discriminated-unions",
+    "files": [
+      "wrong.js",
+      "right.js",
+      "real.js"
+    ],
+    "notes": "<div>Boolean flag nightmare that kills <span class=code>unknown</span> checks.</div> <div>Make invalid states impossible.</div>",
+    "visibility": true
+  },
+  "02-02-literal-types": {
+    "title": "Literal Types (better than enums)",
+    "type": "code-editor",
+    "folder": "02/02-literal-types",
+    "files": [
+      "wrong.js",
+      "right.js",
+      "real.js"
+    ],
+    "notes": "<div>Better than <span class=code>enums</span></div> <div>Literal Types = autocomplete + safety</div>",
+    "visibility": true
+  },
+  "02-03-readonly": {
+    "title": "Readonly (stop accidental mutations)",
+    "type": "code-editor",
+    "folder": "02/03-readonly",
+    "files": [
+      "sneaky-bug.js",
+      "right.js"
+    ],
+    "notes": "<div>Readonly is a powerful tool for immutability.</div> <div>Readonly arrays and objects prevent accidental mutations.</div> <div>Readonly also makes intent clear to other developers.</div>",
+    "visibility": true
+  },
+  "part-two-summary": {
+    "title": "Part 2: Summary",
+    "type": "panel-single",
+    "text1": "<ol> <li>Discriminated Unions prevent bug patterns.</li> <li>Literal Types are better than <span class=code>enums</span>.</li> <li><span class=code>Readonly</span> stops accidental mutations (makes intent clear).</li> </ol>"
+  },
+
+  "part-three-introduction": {
+    "title": "Part 3: Features You're Probably Overlooking",
+    "type": "panel-single",
+    "text1": "<ol> <li>Template Literal Types for type-safe strings.</li> <li>Index Signatures with Constraints for type-safe dictionaries.</li> <li><span class=code>Satisfies</span> Operator for type-safe objects.</li> <li><span class=code>NonNullable</span> and Utility Types to stop <span class=code>null</span>/<span class=code>undefined</span> bugs.</li> </ol>"
+  },
+  "03-01-template-literal-types": {
+    "title": "Template Literal Types (type-safe routes)",
+    "type": "code-editor",
+    "folder": "03/01-template-literal-types",
+    "files": [
+      "wrong.js",
+      "real.js"
+    ],
+    "notes": "<div>Stop strongly-typed code.</div> <div>Template literal types = safety + autocomplete for strings.</div>",
+    "visibility": true
+  },
+  "03-02-index-signatures-with-constraints": {
+    "title": "Index Signatures with Constraints (type-safe dictionaries)",
+    "type": "code-editor",
+    "folder": "03/02-index-signatures-with-constraints",
+    "files": [
+      "too-loose.js",
+      "constrained.js",
+      "better.js"
+    ],
+    "notes": "<div>Type-safe dictionaries.</div> <div>Index signatures with constraints = safety + autocomplete for object keys.</div>",
+    "visibility": true
+  },
+  "03-03-satisfies-operator": {
+    "title": "Satisfies Operator (type-safe objects)",
+    "type": "code-editor",
+    "folder": "03/03-satisfies-operator",
+    "files": [
+      "old-dilemma.js",
+      "satisfies.js",
+      "real.js"
+    ],
+    "notes": "<div>Type-safe objects.</div> <div>Satisfies operator = safety + autocomplete for object values.</div>",
+    "visibility": true
+  },
+  "03-04-non-nullable-and-utility-types": {
+    "title": "NonNullable and Utility Types (stop null/undefined bugs)",
+    "type": "code-editor",
+    "folder": "03/04-non-nullable-and-utility-types",
+    "files": [
+      "code.js"
+    ],
+    "notes": "<div>Stop <span class=code>null</span>/<span class=code>undefined</span> bugs.</div> <div>NonNullable and utility types = safety + intent clarity for <span class=code>null</span>/<span class=code>undefined</span>.</div>",
+    "visibility": true
+  },
+  "part-three-summary": {
+    "title": "Part 3: Summary",
+    "type": "panel-single",
+    "text1": "<ol> <li>Template Literal Types for type-safe strings.</li> <li>Index Signatures with Constraints for type-safe dictionaries.</li> <li><span class=code>Satisfies</span> Operator for type-safe objects.</li> <li><span class=code>NonNullable</span> and Utility Types to stop <span class=code>null</span>/<span class=code>undefined</span> bugs.</li> </ol>"
+  },
+
+  "part-four-introduction": {
+    "title": "Part 4: Keeping Types Manageable",
+    "type": "panel-single",
+    "text1": "<ol> <li>DRY Derive Types with <span class=code>Omit</span>, <span class=code>Partial</span>, and <span class=code>Pick</span>.</li> <li>Let Code Generate Types with <span class=code>typeof</span> and <span class=code>keyof</span>.</li> </ol>"
+  },
+  "04-01-dry-derive-types": {
+    "title": "DRY Derive Types with \"Omit,\" \"Partial,\" and \"Pick\"",
+    "type": "code-editor",
+    "folder": "04/01-dry-derive-types",
+    "files": [
+      "wrong.js",
+      "right.js"
+    ],
+    "notes": "<div>DRY Derive Types with \"Omit,\" \"Partial,\" and \"Pick\".</div> <div>Use \"Omit,\" \"Partial,\" and \"Pick\" to avoid repetition and keep types in sync.</div>",
+    "visibility": true
+  },
+  "04-02-typeof-and-keyof": {
+    "title": "Let Code Generate Types (\"typeof\" and \"keyof\")",
+    "type": "code-editor",
+    "folder": "04/02-typeof-and-keyof",
+    "files": [
+      "correct.js",
+      "real.js"
+    ],
+    "notes": "<div>Let code generate types with \"typeof\" and \"keyof\".</div> <div>Use \"typeof\" and \"keyof\" to create types based on existing values and keys.</div>",
+    "visibility": true
+  },
+  "part-four-summary": {
+    "title": "Part 4: Summary",
+    "type": "panel-single",
+    "text1": "<ol> <li>DRY Derive Types with <span class=code>Omit</span>, <span class=code>Partial</span>, and <span class=code>Pick</span>.</li> <li>Let Code Generate Types with <span class=code>typeof</span> and <span class=code>keyof</span>.</li> </ol>"
+  },
+
+  "part-five-introduction": {
+    "title": "Part 5: Real-World Patterns with TypeScript",
+    "type": "panel-single",
+    "text1": "<ol> <li>Type-Safe Event Emitters with generics and mapped types.</li> <li>Builder Pattern with Type State using generics and conditional types.</li> <li>Type-Safe Dependency Injection with interfaces and generics.</li> </ol>"
+  },
+  "05-01-type-safe-event-emitters": {
+    "title": "Type-Safe Event Emitters",
+    "type": "code-editor",
+    "folder": "05/01-type-safe-event-emitters",
+    "files": [
+      "wrong.js",
+      "right.js"
+    ],
+    "notes": "<div>Type-safe event emitters.</div> <div>Use generics and mapped types to create type-safe event emitters.</div>",
+    "visibility": true
+  },
+  "05-02-builder-pattern-with-type-state": {
+    "title": "Builder Pattern with Type State",
+    "type": "code-editor",
+    "folder": "05/02-builder-pattern-with-type-state",
+    "files": [
+      "code.js"
+    ],
+    "notes": "<div>Builder pattern with type state.</div> <div>Use generics and conditional types to create a builder pattern that enforces correct method chaining.</div>",
+    "visibility": true
+  },
+  "05-03-type-safe-dependency-injection": {
+    "title": "Type-Safe Dependency Injection",
+    "type": "code-editor",
+    "folder": "05/03-type-safe-dependency-injection",
+    "files": [
+      "code.js"
+    ],
+    "notes": "<div>Type-safe dependency injection.</div> <div>Use interfaces and generics to create a type-safe dependency injection system.</div>",
+    "visibility": true
+  },
+  "part-five-summary": {
+    "title": "Part 5: Summary",
+    "type": "panel-single",
+    "text1": "<ol> <li>Type-Safe Event Emitters.</li> <li>Builder Pattern with Type State.</li> <li>Type-Safe Dependency Injection.</li> </ol>"
+  },
+
+
+  "part-six-introduction": {
+    "title": "Part 6: Practical Tips & Tricks",
+    "type": "panel-single",
+    "text1": "<ol> <li>Exhaustive Switch Checks with discriminated unions and the <span class=code>never</span> type.</li> <li>Branded Types to prevent mixing similar types.</li> <li>Assert Functions (custom type guards) for complex type checks.</li> <li>Type Predicates for Array Filtering to create type-safe array filters.</li> </ol>"
+  },
+  "06-01-exhaustive-switch-checks": {
+    "title": "Exhaustive Switch Checks",
+    "type": "code-editor",
+    "folder": "06/01-exhaustive-switch-checks",
+    "files": [
+      "code.js"
+    ],
+    "notes": "<div>Exhaustive switch checks.</div> <div>Use discriminated unions and the <span class=code>never</span> type to ensure all cases are handled in switch statements.</div>",
+    "visibility": true
+  },
+  "06-02-branded-types": {
+    "title": "Branded Types (Prevent Mixing Similar Types)",
+    "type": "code-editor",
+    "folder": "06/02-branded-types",
+    "files": [
+      "wrong.js",
+      "right.js"
+    ],
+    "notes": "<div>Branded types.</div> <div>Use branded types to create nominal types for added type safety.</div>",
+    "visibility": true
+  },
+  "06-03-assert-functions": {
+    "title": "Assert Functions",
+    "type": "code-editor",
+    "folder": "06/03-assert-functions",
+    "files": [
+      "code.js"
+    ],
+    "notes": "<div>Assert functions (custom type guards).</div> <div>Use assert functions to create custom type guards for complex type checks.</div>",
+    "visibility": true
+  },
+  "06-04-type-predicates-for-array-filtering": {
+    "title": "Type Predicates for Array Filtering",
+    "type": "code-editor",
+    "folder": "06/04-type-predicates-for-array-filtering",
+    "files": [
+      "code.js"
+    ],
+    "notes": "<div>Type predicates for array filtering.</div> <div>Use type predicates to create type-safe array filters that narrow types.</div>",
+    "visibility": true
+  },
+  "part-six-summary": {
+    "title": "Part 6: Summary",
+    "type": "panel-single",
+    "text1": "<ol> <li>Exhaustive Switch Checks with discriminated unions and the <span class=code>never</span> type.</li> <li>Branded Types to prevent mixing similar types.</li> <li>Assert Functions (custom type guards) for complex type checks.</li> <li>Type Predicates for Array Filtering to create type-safe array filters.</li> </ol>"
+  },
+
+  "part-seven-introduction": {
+    "title": "Part 7: Common Pitfalls to Avoid",
+    "type": "panel-single",
+    "text1": "<ol> <li>Do NOT Abuse Generics.</li> <li>Avoid Type Assertions (unless necessary).</li> <li>Do NOT Fight the Compiler.</li> </ol>"
+  },
+  "07-01-do-not-abuse-generics": {
+    "title": "Do NOT Abuse Generics",
+    "type": "code-editor",
+    "folder": "07/01-do-not-abuse-generics",
+    "files": [
+      "wrong.js",
+      "right.js"
+    ],
+    "notes": "<div>Generics are powerful, but they can be overused.</div> <div>Don't use generics when a specific type is sufficient.</div>",
+    "visibility": true
+  },
+  "07-02-avoid-type-assertions": {
+    "title": "Avoid Type Assertions (unless necessary)",
+    "type": "code-editor",
+    "folder": "07/02-avoid-type-assertions",
+    "files": [
+      "wrong.js",
+      "right.js"
+    ],
+    "notes": "<div>Type assertions (\"as\") can be a sign of a design problem.</div> <div>Avoid type assertions by improving your types or using \"unknown\" for safe narrowing.</div>",
+    "visibility": true
+  },
+  "07-03-do-not-fight-the-compiler": {
+    "title": "Do NOT Fight the Compiler",
+    "type": "code-editor",
+    "folder": "07/03-do-not-fight-the-compiler",
+    "files": [
+      "code.js"
+    ],
+    "notes": "<div>Don't fight the compiler.</div> <div>Embrace TypeScript's type system and let it guide your code design for better safety and maintainability.</div>",
+    "visibility": true
+  },
+  "part-seven-summary": {
+    "title": "Part 7: Summary",
+    "type": "panel-single",
+    "text1": "<ol> <li>Do NOT Abuse Generics.</li> <li>Avoid Type Assertions (unless necessary).</li> <li>Do NOT Fight the Compiler.</li> </ol>"
+  },
+
+  "part-eight-introduction": {
+    "title": "Part 8: Adoption Strategy",
+    "type": "panel-single",
+    "text1": "<ol> <li>Start Small: Incremental Adoption.</li> <li>The 80/20 Rule: Focus on high-value areas first.</li> </ol>"
+  },
+  "08-01-start-small": {
+    "title": "Start Small: Incremental Adoption",
+    "type": "code-editor",
+    "folder": "08/01-start-small",
+    "files": [
+      "code.js"
+    ],
+    "notes": "<div>Start small with incremental adoption.</div> <div>Introduce TypeScript gradually to your codebase, starting with new files or modules.</div>",
+    "visibility": true
+  },
+  "08-02-the-80-20-rule": {
+    "title": "The 80/20 Rule",
+    "type": "panel-single",
+    "text1": "<div class=bold-green>Focus on high-value areas first:</div> <ol> <li>API boundaries (requests/responses).</li> <li>Shared utility functions.</li> <li>State management.</li> <li>Configuration objects.</li> </ol> <div class=bold-green>Skip (for now):</div> <ul> <li>One-off scripts.</li> <li>Legacy code you rarely touch.</li> <li>Over-typed utility functions.</li> </ul>",
+    "notes": "<div class=bold-green>The 80/20 rule: focus on high-impact areas.</div> <div>Focus on high-value areas first:</div> <ol> <li>API boundaries (requests/responses)</li> <li>Shared utility functions</li> <li>State management</li> <li>Configuration objects</li> </ol> <div class=bold-green>Skip (for now):</div> <ul> <li>One-off scripts</li> <li>Legacy code you rarely touch</li> <li>Over-typed utility functions</li> </ul>",
+    "visibility": true
+  },
+  "part-eight-summary": {
+    "title": "Part 8: Summary",
+    "type": "panel-single",
+    "text1": "<ol> <li>Start small with incremental adoption.</li> <li>Focus on high-value areas first (80/20 rule).</li> </ol>"
+  },
+
+  "quick-wins-you-can-apply-today": {
+    "title": "Quick Wins You Can Apply Today",
+    "type": "code-editor",
+    "folder": "quick-wins-you-can-apply-today",
+    "files": [
+      "code.js"
+    ],
+    "notes": "<ul> <li>Literal types for constants</li> <li>Readonly for immutability</li> <li>satisfies for safe configuration</li> <li>Type predicates for filtering</li> <li>Exhaustive checks</li> </ul>",
+    "visibility": true
+  },
+  "key-takeaways": {
+    "title": "Key Takeaways",
+    "type": "panel-single",
+    "text1": "<ol> <li>Type at boundaries, infer in the middle.</li> <li>Make invalid states unrepresentable (discriminated unions).</li> <li>Derive types from single sources (DRY principle).</li> <li>Use <span class=code>unknown</span>, not <span class=code>any</span>.</li> <li>TypeScript is a tool, not a test of purity.</li> </ol>",
+    "notes": "<ol> <li>Type at boundaries, infer in the middle.</li> <li>Make invalid states unrepresentable (discriminated unions).</li> <li>Derive types from single sources (DRY principle).</li> <li>Use <span class=code>unknown</span>, not <span class=code>any</span>.</li> <li>TypeScript is a tool, not a test of purity.</li> </ol>"
+  },
+  "resources-for-further-learning": {
+    "title": "Resources for Further Learning",
+    "type": "panel-single",
+    "text1": "<div class=bold-green>Resources</div> <ul> <li>Official TypeScript Documentation: <span class=blue>https://www.typescriptlang.org/docs</span></li> <li>TypeScript Playground: <span class=blue>https://www.typescriptlang.org/play</span></li> <li>TypeScript Community: <span class=blue>https://www.typescriptlang.org/community</span></li> <li>Total TypeScript: <span class=blue>https://totaltypescript.com</span> (Matt Pocock)</li> <li>Type Challenges: <span class=blue>https://github.com/type-challenges/type-challenges</span></li> </ul> <div class=bold-green>The Philosophy</div> <br/> <div class=indented>\"Perfect types don't exist. Better types do.\"</div> <div class=indented>\"Start where you are. Use what helps. Skip what doesn't.\"</div>",
+    "notes": "<ul> <li>TypeScript doesn't have to be painful.</li> <li>These patterns have saved hours of debugging, prevented production bugs, and made the code easier to refactor.</li> <li>Pick one or two that resonate with you, try them, and see if TypeScript becomes something you MIGHT actually ... like.</li> </ul>"
+  },
+
+  "time-for-questions": {
+    "title": "",
+    "type": "image-only",
+    "background": "transparent",
+    "image": "./assets/images/time-for-questions--iotdevops-qr.png",
+    "notes": ""
+  }
+}

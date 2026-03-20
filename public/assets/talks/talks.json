@@ -93,6 +93,10 @@
       "title": "Tools"
     },
     {
+      "tag": "typescript",
+      "title": "TypeScript"
+    },
+    {
       "tag": "unit-tests",
       "title": "Unit Tests"
     },
@@ -211,6 +215,13 @@
         "cloud",
         "devops",
         "testing"
+      ]
+    },
+    {
+      "folder": "typescript-you-might-like",
+      "title": "TypeScript You MIGHT Like",
+      "tags": [
+        "typescript"
       ]
     },
     {
