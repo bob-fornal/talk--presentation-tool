@@ -28,7 +28,13 @@
       </mat-selection-list>
     </div>
     <div class="panel--editor">
-      <ngx-monaco-editor class="editor" style="height: 100%;" [(ngModel)]="script" [options]="editorOptions"></ngx-monaco-editor>
+      <ngx-monaco-editor
+        class="editor"
+        style="height: 100%;"
+        (onInit)="onEditorInit($event)"
+        [(ngModel)]="script"
+        [options]="editorOptions"
+      ></ngx-monaco-editor>
     </div>
     <div #handleScript>
       <div [attr.src]="filepath"></div>

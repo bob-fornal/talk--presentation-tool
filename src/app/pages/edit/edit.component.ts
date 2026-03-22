@@ -65,7 +65,7 @@ export class EditComponent implements OnDestroy, OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private service: EditService,
-    private style: StyleService
+    private style: StyleService,
   ) {
     this.subscriptions.add(this.code.structure.subscribe(this.handleStructure.bind(this)));
     this.subscriptions.add(this.code.talks.subscribe(this.handleTalks.bind(this)));

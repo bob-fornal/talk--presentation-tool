@@ -100,9 +100,9 @@
     "title": "TypeScript You MIGHT Like",
     "type": "cover-01",
     "author": "Bob Fornal",
-    "bio1": "<img class=bio-logo src=./assets/images/code-squid.webp /><br/><div class=\"bold bio-header\">Entrepreneur</div>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.",
-    "bio2": "<img class=bio-logo src=./assets/images/leading-edje.webp /> <br/> <div class=bold>Microsoft MVP | Torc Ambassador |</div> <div class=bold>Senior Solutions Developer II at Leading EDJE, Inc.</div>Passionate about learning, testing, mentoring, speaking, and personal growth.",
-    "notes": "I've recently been working on \"fullstack\" Azure DevOps (using Terraform) with Function App, database, and frontend code."
+    "bio1": "<img class=bio-logo src=./assets/images/code-squid.webp /><br/><div class=\"bold bio-header\">Entrepreneur</div> <div class=bio-content>Code-squid provides solid, in-depth frontend training that is supported with real-world code projects. Blessed husband and proud father of two.</div>",
+    "bio2": "<img class=bio-logo src=./assets/images/leading-edje.webp /> <br/> <div class=bold>Microsoft MVP | Torc Ambassador |</div> <div class=bold>Senior Solutions Developer II at Leading EDJE, Inc.</div> <div class=bio-content>Passionate about learning, testing, mentoring, speaking, and personal growth.</div>",
+    "notes": "I've had quite a few conversations over the years where the developers are polarized. About half LOVE TypeScript and the other half HATE it. The ones who hate it are usually fighting against the type system, writing tons of type annotations, and getting frustrated with the error messages. In this talk, I want to share some patterns and best practices that have helped me and my teams use TypeScript in a way that is actually enjoyable and beneficial. My goal is to show that TypeScript doesn't have to be painful, and that with the right approach, you MIGHT actually ... like it."
   },
   "edje-about": {
     "title": "",
@@ -132,7 +132,7 @@
     "text1": "<ol> <li>Just enough types: stop fighting inference.</li> <li>Type when it matters.</li> <li>The <span class=code>unknown</span> safety net.</li> </ol>"
   },
   "01-01-just-enough-types": {
-    "title": "Just Enough Types: Stop Fighting Inference",
+    "title": "1.1. Just Enough Types: Stop Fighting Inference",
     "type": "code-editor",
     "folder": "01/01-just-enough-types",
     "files": [
@@ -143,7 +143,7 @@
     "visibility": true
   },
   "01-02-type-when-it-matters": {
-    "title": "Just Enough Types: Type When It Matters",
+    "title": "1.2. Just Enough Types: Type When It Matters",
     "type": "code-editor",
     "folder": "01/02-type-when-it-matters",
     "files": [
@@ -153,7 +153,7 @@
     "visibility": true
   },
   "01-03-unknown-safety-net": {
-    "title": "Just Enough Types: The \"Unknown\" Safety Net",
+    "title": "1.3. Just Enough Types: The \"Unknown\" Safety Net",
     "type": "code-editor",
     "folder": "01/03-unknown-safety-net",
     "files": [
@@ -175,7 +175,7 @@
     "text1": "<ol> <li>Discriminated Unions prevent bug patterns.</li> <li>Literal Types are better than <span class=code>enums</span>.</li> <li><span class=code>Readonly</span> stops accidental mutations (makes intent clear).</li> </ol>"
   },
   "02-01-discriminated-unions": {
-    "title": "Bug Pattern Prevention: Discriminated Unions",
+    "title": "2.1. Bug Pattern Prevention: Discriminated Unions",
     "type": "code-editor",
     "folder": "02/01-discriminated-unions",
     "files": [
@@ -187,7 +187,7 @@
     "visibility": true
   },
   "02-02-literal-types": {
-    "title": "Literal Types (better than enums)",
+    "title": "2.2. Literal Types (better than enums)",
     "type": "code-editor",
     "folder": "02/02-literal-types",
     "files": [
@@ -199,7 +199,7 @@
     "visibility": true
   },
   "02-03-readonly": {
-    "title": "Readonly (stop accidental mutations)",
+    "title": "2.3. Readonly (stop accidental mutations)",
     "type": "code-editor",
     "folder": "02/03-readonly",
     "files": [
@@ -221,18 +221,18 @@
     "text1": "<ol> <li>Template Literal Types for type-safe strings.</li> <li>Index Signatures with Constraints for type-safe dictionaries.</li> <li><span class=code>Satisfies</span> Operator for type-safe objects.</li> <li><span class=code>NonNullable</span> and Utility Types to stop <span class=code>null</span>/<span class=code>undefined</span> bugs.</li> </ol>"
   },
   "03-01-template-literal-types": {
-    "title": "Template Literal Types (type-safe routes)",
+    "title": "3.1. Template Literal Types (type-safe routes)",
     "type": "code-editor",
     "folder": "03/01-template-literal-types",
     "files": [
-      "wrong.js",
+      "code.js",
       "real.js"
     ],
     "notes": "<div>Stop strongly-typed code.</div> <div>Template literal types = safety + autocomplete for strings.</div>",
     "visibility": true
   },
   "03-02-index-signatures-with-constraints": {
-    "title": "Index Signatures with Constraints (type-safe dictionaries)",
+    "title": "3.2. Index Signatures with Constraints (type-safe dictionaries)",
     "type": "code-editor",
     "folder": "03/02-index-signatures-with-constraints",
     "files": [
@@ -244,7 +244,7 @@
     "visibility": true
   },
   "03-03-satisfies-operator": {
-    "title": "Satisfies Operator (type-safe objects)",
+    "title": "3.3. Satisfies Operator (type-safe objects)",
     "type": "code-editor",
     "folder": "03/03-satisfies-operator",
     "files": [
@@ -256,7 +256,7 @@
     "visibility": true
   },
   "03-04-non-nullable-and-utility-types": {
-    "title": "NonNullable and Utility Types (stop null/undefined bugs)",
+    "title": "3.4. NonNullable and Utility Types (stop null/undefined bugs)",
     "type": "code-editor",
     "folder": "03/04-non-nullable-and-utility-types",
     "files": [
@@ -277,7 +277,7 @@
     "text1": "<ol> <li>DRY Derive Types with <span class=code>Omit</span>, <span class=code>Partial</span>, and <span class=code>Pick</span>.</li> <li>Let Code Generate Types with <span class=code>typeof</span> and <span class=code>keyof</span>.</li> </ol>"
   },
   "04-01-dry-derive-types": {
-    "title": "DRY Derive Types with \"Omit,\" \"Partial,\" and \"Pick\"",
+    "title": "4.1. DRY Derive Types with \"Omit,\" \"Partial,\" and \"Pick\"",
     "type": "code-editor",
     "folder": "04/01-dry-derive-types",
     "files": [
@@ -288,7 +288,7 @@
     "visibility": true
   },
   "04-02-typeof-and-keyof": {
-    "title": "Let Code Generate Types (\"typeof\" and \"keyof\")",
+    "title": "4.2. Let Code Generate Types (\"typeof\" and \"keyof\")",
     "type": "code-editor",
     "folder": "04/02-typeof-and-keyof",
     "files": [
@@ -310,7 +310,7 @@
     "text1": "<ol> <li>Type-Safe Event Emitters with generics and mapped types.</li> <li>Builder Pattern with Type State using generics and conditional types.</li> <li>Type-Safe Dependency Injection with interfaces and generics.</li> </ol>"
   },
   "05-01-type-safe-event-emitters": {
-    "title": "Type-Safe Event Emitters",
+    "title": "5.1. Type-Safe Event Emitters",
     "type": "code-editor",
     "folder": "05/01-type-safe-event-emitters",
     "files": [
@@ -321,7 +321,7 @@
     "visibility": true
   },
   "05-02-builder-pattern-with-type-state": {
-    "title": "Builder Pattern with Type State",
+    "title": "5.2. Builder Pattern with Type State",
     "type": "code-editor",
     "folder": "05/02-builder-pattern-with-type-state",
     "files": [
@@ -331,7 +331,7 @@
     "visibility": true
   },
   "05-03-type-safe-dependency-injection": {
-    "title": "Type-Safe Dependency Injection",
+    "title": "5.3. Type-Safe Dependency Injection",
     "type": "code-editor",
     "folder": "05/03-type-safe-dependency-injection",
     "files": [
@@ -353,7 +353,7 @@
     "text1": "<ol> <li>Exhaustive Switch Checks with discriminated unions and the <span class=code>never</span> type.</li> <li>Branded Types to prevent mixing similar types.</li> <li>Assert Functions (custom type guards) for complex type checks.</li> <li>Type Predicates for Array Filtering to create type-safe array filters.</li> </ol>"
   },
   "06-01-exhaustive-switch-checks": {
-    "title": "Exhaustive Switch Checks",
+    "title": "6.1. Exhaustive Switch Checks",
     "type": "code-editor",
     "folder": "06/01-exhaustive-switch-checks",
     "files": [
@@ -363,7 +363,7 @@
     "visibility": true
   },
   "06-02-branded-types": {
-    "title": "Branded Types (Prevent Mixing Similar Types)",
+    "title": "6.2. Branded Types (Prevent Mixing Similar Types)",
     "type": "code-editor",
     "folder": "06/02-branded-types",
     "files": [
@@ -374,7 +374,7 @@
     "visibility": true
   },
   "06-03-assert-functions": {
-    "title": "Assert Functions",
+    "title": "6.3. Assert Functions",
     "type": "code-editor",
     "folder": "06/03-assert-functions",
     "files": [
@@ -384,7 +384,7 @@
     "visibility": true
   },
   "06-04-type-predicates-for-array-filtering": {
-    "title": "Type Predicates for Array Filtering",
+    "title": "6.4. Type Predicates for Array Filtering",
     "type": "code-editor",
     "folder": "06/04-type-predicates-for-array-filtering",
     "files": [
@@ -405,7 +405,7 @@
     "text1": "<ol> <li>Do NOT Abuse Generics.</li> <li>Avoid Type Assertions (unless necessary).</li> <li>Do NOT Fight the Compiler.</li> </ol>"
   },
   "07-01-do-not-abuse-generics": {
-    "title": "Do NOT Abuse Generics",
+    "title": "7.1. Do NOT Abuse Generics",
     "type": "code-editor",
     "folder": "07/01-do-not-abuse-generics",
     "files": [
@@ -416,7 +416,7 @@
     "visibility": true
   },
   "07-02-avoid-type-assertions": {
-    "title": "Avoid Type Assertions (unless necessary)",
+    "title": "7.2. Avoid Type Assertions (unless necessary)",
     "type": "code-editor",
     "folder": "07/02-avoid-type-assertions",
     "files": [
@@ -427,7 +427,7 @@
     "visibility": true
   },
   "07-03-do-not-fight-the-compiler": {
-    "title": "Do NOT Fight the Compiler",
+    "title": "7.3. Do NOT Fight the Compiler",
     "type": "code-editor",
     "folder": "07/03-do-not-fight-the-compiler",
     "files": [
@@ -448,7 +448,7 @@
     "text1": "<ol> <li>Start Small: Incremental Adoption.</li> <li>The 80/20 Rule: Focus on high-value areas first.</li> </ol>"
   },
   "08-01-start-small": {
-    "title": "Start Small: Incremental Adoption",
+    "title": "8.1. Start Small: Incremental Adoption",
     "type": "code-editor",
     "folder": "08/01-start-small",
     "files": [
@@ -458,7 +458,7 @@
     "visibility": true
   },
   "08-02-the-80-20-rule": {
-    "title": "The 80/20 Rule",
+    "title": "8.2. The 80/20 Rule",
     "type": "panel-single",
     "text1": "<div class=bold-green>Focus on high-value areas first:</div> <ol> <li>API boundaries (requests/responses).</li> <li>Shared utility functions.</li> <li>State management.</li> <li>Configuration objects.</li> </ol> <div class=bold-green>Skip (for now):</div> <ul> <li>One-off scripts.</li> <li>Legacy code you rarely touch.</li> <li>Over-typed utility functions.</li> </ul>",
     "notes": "<div class=bold-green>The 80/20 rule: focus on high-impact areas.</div> <div>Focus on high-value areas first:</div> <ol> <li>API boundaries (requests/responses)</li> <li>Shared utility functions</li> <li>State management</li> <li>Configuration objects</li> </ol> <div class=bold-green>Skip (for now):</div> <ul> <li>One-off scripts</li> <li>Legacy code you rarely touch</li> <li>Over-typed utility functions</li> </ul>",

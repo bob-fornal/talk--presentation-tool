@@ -1,0 +1,20 @@
+<div class="print-wrapper">
+  @for(key of getStructure(); track key; let index = $index; let last = $last) {
+    <div class="title">{{ getTitle(key) }}</div>
+
+    @switch(getType(key)) {
+      @case('cover-01') {
+        <div class="author">Author: {{ getAuthor(key) }}</div>
+        <div class="bio" [innerHTML]="getBio1(key)"></div>
+        @if (getBio2(key)) {
+          <div class="bio" [innerHTML]="getBio2(key)"></div>
+        }
+        <div class="notes" [innerHTML]="getNotes(key)"></div>
+      }
+    }
+
+    @if (!last) {
+      <div class="page-break"></div>
+    }
+  }
+</div>

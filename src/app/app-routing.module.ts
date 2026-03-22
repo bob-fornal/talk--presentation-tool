@@ -9,6 +9,7 @@ import { TalkComponent } from './pages/talk/talk.component';
 import { PollingComponent } from './pages/polling/polling.component';
 
 import { DitchYourJavascriptForCssComponent } from './demos/ditch-your-javascript-for-css/ditch-your-javascript-for-css.component';
+import { PrintDeckComponent } from './pages/print-deck/print-deck.component';
 
 const routes: Routes = [
   { path: 'polling/:folder/:slideKey', component: PollingComponent, data: { type: 'talk-slide' } },
@@ -18,6 +19,7 @@ const routes: Routes = [
 
   { path: 'control-panel/:folder/:slideKey', component: ControlPanelComponent },
   { path: 'courses', component: CoursesComponent },
+  { path: 'print-deck/:folder', component: PrintDeckComponent},
 
   { path: 'demo/ditch-your-javascript-for-css', component: DitchYourJavascriptForCssComponent },
 

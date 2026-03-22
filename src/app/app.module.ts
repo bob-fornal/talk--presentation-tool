@@ -61,6 +61,7 @@ import { ActiveEventComponent } from './features/active-event/active-event.compo
 import { PanelSingleTableComponent } from './slides/panel-single-table/panel-single-table.component';
 
 import { DitchYourJavascriptForCssComponent } from './demos/ditch-your-javascript-for-css/ditch-your-javascript-for-css.component';
+import { PrintDeckComponent } from './pages/print-deck/print-deck.component';
 
 @NgModule({
   declarations: [
@@ -94,6 +95,7 @@ import { DitchYourJavascriptForCssComponent } from './demos/ditch-your-javascrip
     ActiveEventComponent,
     PanelSingleTableComponent,
     DitchYourJavascriptForCssComponent,
+    PrintDeckComponent,
   ],
   imports: [
     BrowserModule,

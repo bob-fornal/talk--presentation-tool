@@ -81,6 +81,11 @@ export class CeDisplayComponent implements OnChanges, OnDestroy {
     }
   };
 
+  editor: any;
+  onEditorInit = (editor: any) => {
+    this.editor = editor;
+  };
+
   editorOptions = {
     theme: 'vs-dark',
     language: 'typescript',
@@ -97,12 +102,19 @@ export class CeDisplayComponent implements OnChanges, OnDestroy {
   script: string = 'function x() {\n  console.log("Hello world");\n}';
   filepath: string = '';
 
+  scrollEditorToTop(): void {
+    if (this.editor) {
+      this.editor.setScrollPosition({ scrollTop: 0 });
+    }
+  }
+
   fileSelection = async (file: string): Promise<void> => {
     this.selected = file;
     const fileAndPath: string = `./assets/talks/${ this.path }/${ this.folder }/${ file }`;
     const code: string = await this.code.getCode(fileAndPath);
     this.script = code;
     this.cdr.detectChanges();
+    this.scrollEditorToTop();
 
     const message: BroadcastMessage = { type: 'file-update', payload: { file } };
     this.service.publish(message);
