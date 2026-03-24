@@ -80,18 +80,16 @@
 
 .image-text {
   display: flex;
-  margin-bottom: 1em;
+  flex-direction: column;
 
   .image {
-    width: 45%;
-    height: 200px;
+    width: 60%;
     background-size: cover;
     background-position: center;
-    margin-right: 1em;
+    margin-bottom: 1em;
   }
-
   .text {
-    width: 50%;
+    margin-bottom: 1em;
   }
 }
 

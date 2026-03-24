@@ -125,6 +125,11 @@ export class PrintDeckComponent {
     return slide.text3;
   }
 
+  hasCodeFiles = (key: string): boolean => {
+    const slide: any = this.structure[key];
+    return (slide.files && slide.files.length > 0) || (slide.pdfInclude && slide.pdfInclude.length > 0);
+  }
+  
   getCodeFiles = (key: string): Array<string> => {
     const slide: any = this.structure[key];
     return [...(slide.files || []), ...(slide.pdfInclude || [])];

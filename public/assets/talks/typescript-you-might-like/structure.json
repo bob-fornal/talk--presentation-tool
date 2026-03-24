@@ -73,6 +73,10 @@
     "  font-weight: bold;",
     "  color: #69f0ae;",
     "}",
+    ".bold-red {",
+    "  font-weight: bold;",
+    "  color: #ff5252;",
+    "}",
     ".blue {",
     "  color: #40c4ff;",
     "}",
@@ -105,18 +109,22 @@
 
   "we-have-all-been-there": {
     "title": "TypeScript: We've All Been There",
-    "type": "code-editor",
+    "type": "image-text",
+    "orientation": "left",
+    "text1": "<div class=bold-red>The ongoing Horror Show ...</div> <ul> <li>Async/Await Issues (Freddy Krueger's Promise Nightmare).</li> <li>Circular Type References (The Hills Have Eyes: inbred mutations).</li> <li>Conditional Types Gone Wrong (The Thing - shapeshifting horror).</li> <li><span class=bold-red>Deeply Nested Object Access (Hereditary's ancestral curse).</span></li> <li>Generic Type Inference Hell (Hellraiser's Cenobites).</li> <li>Massive Instances (Godzilla - IDE destroyer).</li> <li>Method Chaining with Complex Types (The Ring's 7-day curse).</li> <li>Union Type Narrowing Failure (Get Out - the Sunken Place).</li> </ul>",
     "folder": "00-we-have-all-been-there",
-    "files": [
-      "long-instance.js",
+    "pdfInclude": [
+      "horror-show.ts",
+      "async-await-type-inference-issues.js",
+      "circular-type-references.js",
+      "conditional-types-gone-wrong.js",
       "deeply-nested-object-access.js",
       "generic-type-inference-hell.js",
-      "union-type-narrowing-failure.js",
-      "async-await-type-inference-issues.js",
+      "long-instance.js",
       "method-chaining-with-complex-types.js",
-      "conditional-types-gone-wrong.js",
-      "circular-type-references.js"
+      "union-type-narrowing-failure.js"
     ],
+    "image": "./assets/images/typescript-error-message-from-hell.webp",
     "notes": "<div>\"TypeScript error message from hell\"</div> <div>\"We've all been here. Let's fix that.\"</div> <div>Key Message \"TypeScript is a tool, not a religion. Use what helps, skip what doesn't.\"</div>"
   },
 
@@ -335,7 +343,6 @@
     "type": "panel-single",
     "text1": "<ol> <li>Type-Safe Event Emitters.</li> <li>Builder Pattern with Type State.</li> <li>Type-Safe Dependency Injection.</li> </ol>"
   },
-
 
   "06-01-exhaustive-switch-checks": {
     "title": "6.1. Exhaustive Switch Checks",
