@@ -1,6 +1,18 @@
 html, body {
   height: 100%;
 }
+@media print {
+  body {
+    background-color: white;
+    -webkit-print-color-adjust: exact; /* Chrome/Safari/Edge */
+    print-color-adjust: exact;         /* Firefox */
+  }
+  body, html {
+    margin: 0;
+    padding: 0;
+  }
+}
+
 body {
   --navigation-width: 400px;
   --font--xxs: 0.8em;

@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 import { CodeService } from '../../core/services/code.service';
 import { Talk, Talks } from '../../core/interfaces/talks';
 
-import { Structure } from '../../core/interfaces/structure';
+import { Structure, StructureType } from '../../core/interfaces/structure';
 import { StyleService } from '../../core/services/style.service';
+import { SlideStructure } from '../../core/interfaces/slide-types';
 
 @Component({
   selector: 'app-print-deck',
@@ -16,7 +17,8 @@ import { StyleService } from '../../core/services/style.service';
   styleUrl: './print-deck.component.scss'
 })
 export class PrintDeckComponent {
-  path: string = '';
+  @Input() path: string = '';
+
   structure: Structure = { ORDER: [], STYLE: [] };
 
   constructor(
@@ -48,9 +50,11 @@ export class PrintDeckComponent {
     this.code.getStructure(path);
   };
 
-  handleStructure = (structure: Structure): void => {
+  handleStructure = async(structure: Structure): Promise<void> => {
     this.structure = structure;
     console.log('structure', structure);
+    await this.getCodeFromFiles();
+    console.log('storedCode', this.storedCode);
   };
 
   talks: Array<Talk> = [];
@@ -65,7 +69,8 @@ export class PrintDeckComponent {
     const order = this.structure.ORDER;
     const structure = order.filter((key: string) => {
       const slide: any = this.structure[key];
-      return slide.title !== '';
+      if (slide.hasOwnProperty('visibility') === false && slide.title !== '') return true;
+      return slide.title !== '' && slide.visibility === true;
     });
     return structure;
   }
@@ -100,12 +105,55 @@ export class PrintDeckComponent {
     return this.fixBioContent(slide.bio2);
   }
 
+  getImage = (key: string): string => {
+    const slide: any = this.structure[key];
+    return slide.image;
+  }
+
+  getText1 = (key: string): string => {
+    const slide: any = this.structure[key];
+    return slide.text1;
+  }
+
+  getText2 = (key: string): string => {
+    const slide: any = this.structure[key];
+    return slide.text2;
+  }
+
+  getText3 = (key: string): string => {
+    const slide: any = this.structure[key];
+    return slide.text3;
+  }
+
+  getCodeFiles = (key: string): Array<string> => {
+    const slide: any = this.structure[key];
+    return slide.files;
+  }
+
+  getCodeKey = (key: string, file: string): string => {
+    return `${key}-${file}`;
+  }
+
+  storedCode: { [key: string]: string } = {};
+  getCodeFromFiles = async () => {
+    for (let slideKey in this.structure.ORDER) {
+      const key: string = this.structure.ORDER[slideKey];
+      const slide: StructureType = this.structure[key] as StructureType;
+      const files: Array<string> = slide.files!;
+      for (let file in files) {
+        const fileName: string = files[file];
+        const fileAndPath: string = `./assets/talks/${ this.path }/${slide.folder }/${ fileName }`;
+        this.storedCode[`${key}-${fileName}`] = 'loading';
+        this.storedCode[`${key}-${fileName}`] = await this.code.getCode(fileAndPath);
+      }
+    }
+  }
+ 
   fixBioContent = (content: string): string => {
     const imageMatch = /<img class=bio-logo src=([^\s]+) \/?>/;
     const fixed: string = content
       .replace(imageMatch, '')
       .replace(/$<br\/>/, '');
-      console.log('fixed', fixed);
     return fixed;
   }
 }

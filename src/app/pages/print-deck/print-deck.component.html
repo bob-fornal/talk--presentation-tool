@@ -1,5 +1,9 @@
 <div class="print-wrapper">
-  @for(key of getStructure(); track key; let index = $index; let last = $last) {
+  @for(key of getStructure(); track key; let index = $index; let first = $first) {
+    @if (!first) {
+      <div class="page-break"></div>
+    }
+
     <div class="title">{{ getTitle(key) }}</div>
 
     @switch(getType(key)) {
@@ -11,10 +15,28 @@
         }
         <div class="notes" [innerHTML]="getNotes(key)"></div>
       }
-    }
-
-    @if (!last) {
-      <div class="page-break"></div>
+      @case('image-text') {
+        <div class="image-text">
+          <div class="image" [style.background-image]="'url(' + getImage(key) + ')'"></div>
+          <div class="text" [innerHTML]="getText1(key)"></div>
+        </div>
+        <div class="notes" [innerHTML]="getNotes(key)"></div>
+      }
+      @case('panel-single') {
+        <div class="panel-single">
+          <div class="text" [innerHTML]="getText1(key)"></div>
+        </div>
+        <div class="notes" [innerHTML]="getNotes(key)"></div>
+      }
+      @case('code-editor') {
+        @for(code of getCodeFiles(key); track code; let first = $first) {
+          <div class="print-code-wrapper" [class.first]="first">
+            <div class="filename" [class.first]="first">{{ code }}</div>
+            <div class="print-code" [innerText]="storedCode[getCodeKey(key, code)] || 'loading'"></div>
+          </div>
+        }
+        <div class="notes" [innerHTML]="getNotes(key)"></div>
+      }
     }
   }
 </div>
