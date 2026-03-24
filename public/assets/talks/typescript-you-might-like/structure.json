@@ -6,50 +6,42 @@
     "we-have-all-been-there",
     "introduction-what-we-will-cover",
 
-    "part-one-introduction",
     "01-01-just-enough-types",
     "01-02-type-when-it-matters",
     "01-03-unknown-safety-net",
     "part-one-summary",
 
-    "part-two-introduction",
     "02-01-discriminated-unions",
     "02-02-literal-types",
     "02-03-readonly",
     "part-two-summary",
 
-    "part-three-introduction",
     "03-01-template-literal-types",
     "03-02-index-signatures-with-constraints",
     "03-03-satisfies-operator",
     "03-04-non-nullable-and-utility-types",
     "part-three-summary",
 
-    "part-four-introduction",
     "04-01-dry-derive-types",
     "04-02-typeof-and-keyof",
     "part-four-summary",
 
-    "part-five-introduction",
     "05-01-type-safe-event-emitters",
     "05-02-builder-pattern-with-type-state",
     "05-03-type-safe-dependency-injection",
     "part-five-summary",
 
-    "part-six-introduction",
     "06-01-exhaustive-switch-checks",
     "06-02-branded-types",
     "06-03-assert-functions",
     "06-04-type-predicates-for-array-filtering",
     "part-six-summary",
 
-    "part-seven-introduction",
     "07-01-do-not-abuse-generics",
     "07-02-avoid-type-assertions",
     "07-03-do-not-fight-the-compiler",
     "part-seven-summary",
 
-    "part-eight-introduction",
     "08-01-start-small",
     "08-02-the-80-20-rule",
     "part-eight-summary",
@@ -113,10 +105,18 @@
 
   "we-have-all-been-there": {
     "title": "TypeScript: We've All Been There",
-    "type": "image-text",
-    "orientation": "right",
-    "text1": "",
-    "image": "",
+    "type": "code-editor",
+    "folder": "00-we-have-all-been-there",
+    "files": [
+      "long-instance.js",
+      "deeply-nested-object-access.js",
+      "generic-type-inference-hell.js",
+      "union-type-narrowing-failure.js",
+      "async-await-type-inference-issues.js",
+      "method-chaining-with-complex-types.js",
+      "conditional-types-gone-wrong.js",
+      "circular-type-references.js"
+    ],
     "notes": "<div>\"TypeScript error message from hell\"</div> <div>\"We've all been here. Let's fix that.\"</div> <div>Key Message \"TypeScript is a tool, not a religion. Use what helps, skip what doesn't.\"</div>"
   },
 
@@ -126,11 +126,6 @@
     "text1": "<ol> <li>Just Enough Types Philosophy.</li> <li>Patterns That Prevent Bugs.</li> <li>Features You're Probably Overlooking.</li> <li>Keeping Types Manageable.</li> <li>Real-World Patterns with TypeScript.</li> <li>Practical Tips & Tricks.</li> <li>Common Pitfalls to Avoid.</li> <li>Adoption Strategy.</li> </ol>"
   },
 
-  "part-one-introduction": {
-    "title": "Part 1: Just Enough Types Philosophy",
-    "type": "panel-single",
-    "text1": "<ol> <li>Just enough types: stop fighting inference.</li> <li>Type when it matters.</li> <li>The <span class=code>unknown</span> safety net.</li> </ol>"
-  },
   "01-01-just-enough-types": {
     "title": "1.1. Just Enough Types: Stop Fighting Inference",
     "type": "code-editor",
@@ -169,11 +164,6 @@
     "text1": "<ol> <li>Just enough types: stop fighting inference.</li> <li>Type when it matters.</li> <li>The <span class=code>unknown</span> safety net.</li> </ol>"
   },
 
-  "part-two-introduction": {
-    "title": "Part 2: Patterns That Prevent Bugs",
-    "type": "panel-single",
-    "text1": "<ol> <li>Discriminated Unions prevent bug patterns.</li> <li>Literal Types are better than <span class=code>enums</span>.</li> <li><span class=code>Readonly</span> stops accidental mutations (makes intent clear).</li> </ol>"
-  },
   "02-01-discriminated-unions": {
     "title": "2.1. Bug Pattern Prevention: Discriminated Unions",
     "type": "code-editor",
@@ -215,11 +205,6 @@
     "text1": "<ol> <li>Discriminated Unions prevent bug patterns.</li> <li>Literal Types are better than <span class=code>enums</span>.</li> <li><span class=code>Readonly</span> stops accidental mutations (makes intent clear).</li> </ol>"
   },
 
-  "part-three-introduction": {
-    "title": "Part 3: Features You're Probably Overlooking",
-    "type": "panel-single",
-    "text1": "<ol> <li>Template Literal Types for type-safe strings.</li> <li>Index Signatures with Constraints for type-safe dictionaries.</li> <li><span class=code>Satisfies</span> Operator for type-safe objects.</li> <li><span class=code>NonNullable</span> and Utility Types to stop <span class=code>null</span>/<span class=code>undefined</span> bugs.</li> </ol>"
-  },
   "03-01-template-literal-types": {
     "title": "3.1. Template Literal Types (type-safe routes)",
     "type": "code-editor",
@@ -280,11 +265,6 @@
     "text1": "<ol> <li>Template Literal Types for type-safe strings.</li> <li>Index Signatures with Constraints for type-safe dictionaries.</li> <li><span class=code>Satisfies</span> Operator for type-safe objects.</li> <li><span class=code>NonNullable</span> and Utility Types to stop <span class=code>null</span>/<span class=code>undefined</span> bugs.</li> </ol>"
   },
 
-  "part-four-introduction": {
-    "title": "Part 4: Keeping Types Manageable",
-    "type": "panel-single",
-    "text1": "<ol> <li>DRY Derive Types with <span class=code>Omit</span>, <span class=code>Partial</span>, and <span class=code>Pick</span>.</li> <li>Let Code Generate Types with <span class=code>typeof</span> and <span class=code>keyof</span>.</li> </ol>"
-  },
   "04-01-dry-derive-types": {
     "title": "4.1. DRY Derive Types with \"Omit,\" \"Partial,\" and \"Pick\"",
     "type": "code-editor",
@@ -313,11 +293,6 @@
     "text1": "<ol> <li>DRY Derive Types with <span class=code>Omit</span>, <span class=code>Partial</span>, and <span class=code>Pick</span>.</li> <li>Let Code Generate Types with <span class=code>typeof</span> and <span class=code>keyof</span>.</li> </ol>"
   },
 
-  "part-five-introduction": {
-    "title": "Part 5: Real-World Patterns with TypeScript",
-    "type": "panel-single",
-    "text1": "<ol> <li>Type-Safe Event Emitters with generics and mapped types.</li> <li>Builder Pattern with Type State using generics and conditional types.</li> <li>Type-Safe Dependency Injection with interfaces and generics.</li> </ol>"
-  },
   "05-01-type-safe-event-emitters": {
     "title": "5.1. Type-Safe Event Emitters",
     "type": "code-editor",
@@ -362,11 +337,6 @@
   },
 
 
-  "part-six-introduction": {
-    "title": "Part 6: Practical Tips & Tricks",
-    "type": "panel-single",
-    "text1": "<ol> <li>Exhaustive Switch Checks with discriminated unions and the <span class=code>never</span> type.</li> <li>Branded Types to prevent mixing similar types.</li> <li>Assert Functions (custom type guards) for complex type checks.</li> <li>Type Predicates for Array Filtering to create type-safe array filters.</li> </ol>"
-  },
   "06-01-exhaustive-switch-checks": {
     "title": "6.1. Exhaustive Switch Checks",
     "type": "code-editor",
@@ -414,11 +384,6 @@
     "text1": "<ol> <li>Exhaustive Switch Checks with discriminated unions and the <span class=code>never</span> type.</li> <li>Branded Types to prevent mixing similar types.</li> <li>Assert Functions (custom type guards) for complex type checks.</li> <li>Type Predicates for Array Filtering to create type-safe array filters.</li> </ol>"
   },
 
-  "part-seven-introduction": {
-    "title": "Part 7: Common Pitfalls to Avoid",
-    "type": "panel-single",
-    "text1": "<ol> <li>Do NOT Abuse Generics.</li> <li>Avoid Type Assertions (unless necessary).</li> <li>Do NOT Fight the Compiler.</li> </ol>"
-  },
   "07-01-do-not-abuse-generics": {
     "title": "7.1. Do NOT Abuse Generics",
     "type": "code-editor",
@@ -457,11 +422,6 @@
     "text1": "<ol> <li>Do NOT Abuse Generics.</li> <li>Avoid Type Assertions (unless necessary).</li> <li>Do NOT Fight the Compiler.</li> </ol>"
   },
 
-  "part-eight-introduction": {
-    "title": "Part 8: Adoption Strategy",
-    "type": "panel-single",
-    "text1": "<ol> <li>Start Small: Incremental Adoption.</li> <li>The 80/20 Rule: Focus on high-value areas first.</li> </ol>"
-  },
   "08-01-start-small": {
     "title": "8.1. Start Small: Incremental Adoption",
     "type": "code-editor",

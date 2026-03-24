@@ -14,7 +14,7 @@
     display: block;
     page-break-before: always;
   }
-  .print-code-wrapper {
+  .print-code-wrapper:not(.first) {
     break-inside: avoid-page;
     page-break-inside: avoid;
   }

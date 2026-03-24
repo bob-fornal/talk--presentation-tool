@@ -32,7 +32,7 @@
         @for(code of getCodeFiles(key); track code; let first = $first) {
           <div class="print-code-wrapper" [class.first]="first">
             <div class="filename" [class.first]="first">{{ code }}</div>
-            <div class="print-code" [innerText]="storedCode[getCodeKey(key, code)] || 'loading'"></div>
+            <div class="print-code" [class.first]="first" [innerText]="storedCode[getCodeKey(key, code)] || 'loading'"></div>
           </div>
         }
         <div class="notes" [innerHTML]="getNotes(key)"></div>
