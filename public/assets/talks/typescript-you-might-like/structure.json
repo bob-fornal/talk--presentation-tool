@@ -228,6 +228,9 @@
       "code.js",
       "real.js"
     ],
+    "pdfInclude": [
+      "testing.ts"
+    ],
     "notes": "<div>Stop strongly-typed code.</div> <div>Template literal types = safety + autocomplete for strings.</div>",
     "visibility": true
   },
@@ -252,6 +255,9 @@
       "satisfies.js",
       "real.js"
     ],
+    "pdfInclude": [
+      "testing.ts"
+    ],
     "notes": "<div>Type-safe objects.</div> <div>Satisfies operator = safety + autocomplete for object values.</div>",
     "visibility": true
   },
@@ -261,6 +267,9 @@
     "folder": "03/04-non-nullable-and-utility-types",
     "files": [
       "code.js"
+    ],
+    "pdfInclude": [
+      "testing.ts"
     ],
     "notes": "<div>Stop <span class=code>null</span>/<span class=code>undefined</span> bugs.</div> <div>NonNullable and utility types = safety + intent clarity for <span class=code>null</span>/<span class=code>undefined</span>.</div>",
     "visibility": true
@@ -327,6 +336,9 @@
     "files": [
       "code.js"
     ],
+    "pdfInclude": [
+      "testing.ts"
+    ],
     "notes": "<div>Builder pattern with type state.</div> <div>Use generics and conditional types to create a builder pattern that enforces correct method chaining.</div>",
     "visibility": true
   },
@@ -336,6 +348,9 @@
     "folder": "05/03-type-safe-dependency-injection",
     "files": [
       "code.js"
+    ],
+    "pdfInclude": [
+      "testing.ts"
     ],
     "notes": "<div>Type-safe dependency injection.</div> <div>Use interfaces and generics to create a type-safe dependency injection system.</div>",
     "visibility": true

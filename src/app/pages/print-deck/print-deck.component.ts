@@ -127,7 +127,7 @@ export class PrintDeckComponent {
 
   getCodeFiles = (key: string): Array<string> => {
     const slide: any = this.structure[key];
-    return slide.files;
+    return [...(slide.files || []), ...(slide.pdfInclude || [])];
   }
 
   getCodeKey = (key: string, file: string): string => {
@@ -139,7 +139,7 @@ export class PrintDeckComponent {
     for (let slideKey in this.structure.ORDER) {
       const key: string = this.structure.ORDER[slideKey];
       const slide: StructureType = this.structure[key] as StructureType;
-      const files: Array<string> = slide.files!;
+      const files: Array<string> = [...(slide.files || []), ...(slide.pdfInclude || [])];
       for (let file in files) {
         const fileName: string = files[file];
         const fileAndPath: string = `./assets/talks/${ this.path }/${slide.folder }/${ fileName }`;
