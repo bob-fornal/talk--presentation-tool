@@ -237,7 +237,7 @@
       "better.js"
     ],
     "notes": "<div>Type-safe dictionaries.</div> <div>Index signatures with constraints = safety + autocomplete for object keys.</div>",
-    "visibility": true
+    "visibility": false
   },
   "03-03-satisfies-operator": {
     "title": "3.3. Satisfies Operator (type-safe objects)",
@@ -265,12 +265,12 @@
       "testing.ts"
     ],
     "notes": "<div>Stop <span class=code>null</span>/<span class=code>undefined</span> bugs.</div> <div>NonNullable and utility types = safety + intent clarity for <span class=code>null</span>/<span class=code>undefined</span>.</div>",
-    "visibility": true
+    "visibility": false
   },
   "part-three-summary": {
     "title": "Part 3: Summary",
     "type": "panel-single",
-    "text1": "<ol> <li>Template Literal Types for type-safe strings.</li> <li>Index Signatures with Constraints for type-safe dictionaries.</li> <li><span class=code>Satisfies</span> Operator for type-safe objects.</li> <li><span class=code>NonNullable</span> and Utility Types to stop <span class=code>null</span>/<span class=code>undefined</span> bugs.</li> </ol>"
+    "text1": "<ol> <li>Template Literal Types for type-safe strings.</li> <li><s>Index Signatures with Constraints for type-safe dictionaries.</s></li> <li><span class=code>Satisfies</span> Operator for type-safe objects.</li> <li><s><span class=code>NonNullable</span> and Utility Types to stop <span class=code>null</span>/<span class=code>undefined</span> bugs.</s></li> </ol>"
   },
 
   "04-01-dry-derive-types": {
@@ -363,7 +363,7 @@
       "right.js"
     ],
     "notes": "<div>Branded types.</div> <div>Use branded types to create nominal types for added type safety.</div>",
-    "visibility": true
+    "visibility": false
   },
   "06-03-assert-functions": {
     "title": "6.3. Assert Functions",
@@ -373,7 +373,7 @@
       "code.js"
     ],
     "notes": "<div>Assert functions (custom type guards).</div> <div>Use assert functions to create custom type guards for complex type checks.</div>",
-    "visibility": true
+    "visibility": false
   },
   "06-04-type-predicates-for-array-filtering": {
     "title": "6.4. Type Predicates for Array Filtering",
@@ -388,7 +388,7 @@
   "part-six-summary": {
     "title": "Part 6: Summary",
     "type": "panel-single",
-    "text1": "<ol> <li>Exhaustive Switch Checks with discriminated unions and the <span class=code>never</span> type.</li> <li>Branded Types to prevent mixing similar types.</li> <li>Assert Functions (custom type guards) for complex type checks.</li> <li>Type Predicates for Array Filtering to create type-safe array filters.</li> </ol>"
+    "text1": "<ol> <li>Exhaustive Switch Checks with discriminated unions and the <span class=code>never</span> type.</li> <li><s>Branded Types to prevent mixing similar types.</s></li> <li><s>Assert Functions (custom type guards) for complex type checks.</s></li> <li>Type Predicates for Array Filtering to create type-safe array filters.</li> </ol>"
   },
 
   "07-01-do-not-abuse-generics": {
