@@ -1,6 +1,8 @@
+/// <reference types="jasmine" />
+
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ImageTextComponent } from './image-text.component';
+import { ImageDoubleComponent } from './image-double.component';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -11,14 +13,14 @@ import { EditButtonsComponent } from '../../shared/edit-buttons/edit-buttons.com
 import { ActivatedRoute } from '@angular/router';
 import { MockActivatedRoute } from '../../_spec/mock-activated-route.spec';
 
-describe('ImageTextComponent', () => {
-  let component: ImageTextComponent;
-  let fixture: ComponentFixture<ImageTextComponent>;
+describe('ImageDoubleComponent', () => {
+  let component: ImageDoubleComponent;
+  let fixture: ComponentFixture<ImageDoubleComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        ImageTextComponent,
+        ImageDoubleComponent,
         EditButtonsComponent,
       ],
       imports: [
@@ -32,7 +34,7 @@ describe('ImageTextComponent', () => {
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ImageTextComponent);
+    fixture = TestBed.createComponent(ImageDoubleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -35,6 +35,7 @@ export type StructureType = {
   script?: string;
   folder?: string;
   files?: Array<string>;
+  pdfInclude?: Array<string>;
   triggers?: Array<Trigger>;
   environment_keys?: Array<string>;
 }

@@ -1,0 +1,44 @@
+<div class="print-wrapper">
+  @for(key of getStructure(); track key; let index = $index; let first = $first) {
+    @if (!first) {
+      <div class="page-break"></div>
+    }
+
+    <div class="title">{{ getTitle(key) }}</div>
+
+    @switch(getType(key)) {
+      @case('cover-01') {
+        <div class="author">Author: {{ getAuthor(key) }}</div>
+        <div class="bio" [innerHTML]="getBio1(key)"></div>
+        @if (getBio2(key)) {
+          <div class="bio" [innerHTML]="getBio2(key)"></div>
+        }
+      }
+      @case('image-text') {
+        <div class="image-text">
+          <img class="image" [src]="getImage(key)" />
+          <div class="text" [innerHTML]="getText1(key)"></div>
+        </div>
+      }
+      @case('panel-single') {
+        <div class="panel-single">
+          <div class="text" [innerHTML]="getText1(key)"></div>
+        </div>
+      }
+      @case('code-editor') {
+        // This case is handled in the code files section below
+      }
+    }
+
+    @if (hasCodeFiles(key)) {
+      @for(code of getCodeFiles(key); track code; let first = $first) {
+        <div class="print-code-wrapper" [class.first]="first">
+          <div class="filename" [class.first]="first">{{ code }}</div>
+          <div class="print-code" [class.first]="first" [innerText]="storedCode[getCodeKey(key, code)] || 'loading'"></div>
+        </div>
+      }
+    }
+    <div class="notes" [innerHTML]="getNotes(key)"></div>
+
+  }
+</div>

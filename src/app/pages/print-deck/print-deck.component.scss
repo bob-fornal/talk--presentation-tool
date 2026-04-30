@@ -1,0 +1,101 @@
+.print-wrapper {
+  box-sizing: border-box;
+  padding: 2em;
+  margin: 0;
+  width: 100vw;
+
+  border: none;
+  background-color: white;
+  color: black;
+}
+
+@media print {
+  .page-break {
+    display: block;
+    page-break-before: always;
+  }
+  .print-code-wrapper:not(.first) {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+}
+
+@media not print {
+  .page-break {
+    border-bottom: 1px solid gray;
+    margin: 1em 0;
+    height: 0;
+  }
+}
+
+.print-code-wrapper {
+  margin: 0 0 0 1em;
+  background-color: #f5f5f5;
+
+  &:not(first) {
+    padding: 0 1em 1em 1em;
+  }
+  &.first {
+    padding: 1em;
+  }
+}
+.filename {
+  font-size: 1,0em;
+  font-weight: bold;
+
+  &:not(first) {
+    padding: 0.5em 0;
+  }
+  &.first {
+    padding: 0 0 0.5em 0;
+  }
+}
+.print-code {
+  font-family: Courier, "Courier New", monospace;
+  font-size: 0.8em;
+  white-space: pre-wrap;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0 0 0.5em 0;
+  border: none;
+}
+.author {
+  font-size: 1.2em;
+  margin: 0 0 1em 0;
+}
+
+::ng-deep .bio {
+  .bold {
+    font-weight: bold;
+    margin-bottom: 0 !important;
+    padding-left: 1em;
+  }
+  .bio-content {
+    padding-left: 1em;
+  }
+}
+
+.image-text {
+  display: flex;
+  flex-direction: column;
+
+  .image {
+    width: 60%;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 1em;
+  }
+  .text {
+    margin-bottom: 1em;
+  }
+}
+
+
+.notes {
+  margin-top: 1em;
+  font-size: 0.9em;
+  padding-left: 1em;
+}
